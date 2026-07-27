@@ -1,2 +1,57 @@
-# LLM-Spatial-omics-Clustering
-LLM Spatial-omics Clustering
+# Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
+
+Repository scaffold for the manuscript analysis:
+
+> *Evaluation of Clustering Methods and Large Language Models for Spatial
+> Proteomic Cell Type Annotation*
+
+This repository is intentionally structure-only. The figure notebooks contain
+section headings and panel checklists, but no analysis code, results, or
+manuscript data.
+
+## Repository layout
+
+```text
+.
+├── configs/                         # Future run and plotting configuration
+├── data/                            # Local-only raw, interim, and processed data
+├── docs/                            # Figure map and project documentation
+├── notebooks/
+│   ├── main/                        # One notebook per main manuscript figure
+│   └── supplementary/               # Reserved for finalized supplementary figures
+├── outputs/                         # Generated outputs, separated by figure
+├── prompts/                         # Future version-controlled LLM prompts
+├── src/
+│   └── llm_spatial_omics_clustering # Future shared Python code
+└── tests/                           # Future tests for shared code
+```
+
+## Main figure notebooks
+
+| Figure | Topic | Notebook |
+| --- | --- | --- |
+| 1 | REDSEA spillover correction | `notebooks/main/figure_01_redsea_spillover_correction.ipynb` |
+| 2 | Clustering-method benchmark | `notebooks/main/figure_02_clustering_method_benchmark.ipynb` |
+| 3 | LLM annotation benchmark | `notebooks/main/figure_03_llm_annotation_benchmark.ipynb` |
+| 4 | End-to-end Leiden–GPT pipeline | `notebooks/main/figure_04_leiden_gpt_end_to_end.ipynb` |
+
+The current manuscript references supplementary figures, but does not define a
+stable supplementary figure map. See
+[`docs/figure_map.md`](docs/figure_map.md) before adding those notebooks.
+
+## Working conventions
+
+- Keep one notebook as the entry point for each manuscript figure.
+- Put reusable data processing, metrics, and plotting functions in `src/`
+  rather than copying them between notebooks.
+- Keep LLM prompts and label ontologies in `prompts/`, separate from notebook
+  execution.
+- Write generated tables and panels to the matching `outputs/figure_XX/`
+  directory.
+- Keep raw and derived data out of Git; each local data tier is documented in
+  `data/`.
+- Make every completed notebook runnable from top to bottom without hidden
+  state.
+
+Environment and data-access instructions will be added when the analysis
+dependencies and data locations are finalized.

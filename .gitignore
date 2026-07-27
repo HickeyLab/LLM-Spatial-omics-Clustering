@@ -1,0 +1,42 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments and local configuration
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors
+.idea/
+.vscode/
+
+# Local manuscript data
+data/raw/*
+!data/raw/README.md
+data/interim/*
+!data/interim/README.md
+data/processed/*
+!data/processed/README.md
+
+# Generated figure artifacts
+outputs/figure_01/*
+!outputs/figure_01/README.md
+outputs/figure_02/*
+!outputs/figure_02/README.md
+outputs/figure_03/*
+!outputs/figure_03/README.md
+outputs/figure_04/*
+!outputs/figure_04/README.md
+outputs/supplementary/*
+!outputs/supplementary/README.md
