@@ -40,3 +40,6 @@ outputs/figure_04/*
 !outputs/figure_04/README.md
 outputs/supplementary/*
 !outputs/supplementary/README.md
+# V3 generated artifacts
+outputs/v3_source_rebuilt/
+source_rebuilt_v3_outputs/
