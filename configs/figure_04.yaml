@@ -1,0 +1,102 @@
+# Figure 4 configuration. LLM credentials are intentionally never stored here.
+figure: 4
+title: "End-to-end evaluation of the Leiden-GPT annotation pipeline"
+
+# Figure 4 does not rerun clustering or choose a new annotation result. Every
+# biological panel consumes this one Figure 3 mapping contract.
+figure_03_dependency:
+  config_path: configs/figure_03.yaml
+  source_panel: panel_d
+  provider: openai
+  condition: reasoning
+  method: leiden
+  marker_state: optimized
+  expected_clusters: 55
+  expected_source_cells: 220082
+  expected_regions: 8
+
+evaluation:
+  # Unlike Figure 3's 20-class benchmarking universe, the end-to-end Figure 4
+  # analysis includes all source cells, including reference-label Noise.
+  universe: "all B004 source cells, including Noise"
+  expected_cells: 220082
+  expected_noise_cells: 10495
+  expected_truth_classes: 21
+  class_order:
+    - B
+    - CD4+ T cell
+    - CD66+ Enterocyte
+    - CD7+ Immune
+    - CD8+ T
+    - Cycling TA
+    - DC
+    - Endothelial
+    - Enterocyte
+    - Goblet
+    - ICC
+    - Lymphatic
+    - M2 Macrophage
+    - MUC1+ Enterocyte
+    - Nerve
+    - Neuroendocrine
+    - Neutrophil
+    - Noise
+    - Plasma
+    - Smooth muscle
+    - Stroma
+
+error_decomposition:
+  # Per cluster:
+  #   correct          = observed truth/prediction agreement
+  #   clustering loss  = 1 - majority-label purity
+  #   annotation loss  = majority-label purity - observed agreement
+  # The three arithmetic fractions sum to one. They are not claimed to be
+  # mutually exclusive causal assignments for individual cells.
+  minimum_example_cells: 500
+  minimum_mixed_loss: 0.15
+  example_order:
+    - annotation_limited
+    - clustering_limited
+    - mixed_loss
+
+style:
+  correct_color: "#2F7D6B"
+  annotation_loss_color: "#E38B20"
+  clustering_loss_color: "#D5D5D5"
+  pooled_f1_color: "#D9DEE5"
+  pooled_f1_edge_color: "#A8B0BC"
+  confusion_cmap: RdYlGn
+  region_colors:
+    2e65eeef2dd18bee2a0baf1cec6d35a1: "#003F5C"
+    5318485b16983482401c3be24b6c42ad: "#2F4B7C"
+    63d000170e475af142f6e8673de5eb0f: "#665191"
+    768b7adb649959b6a4e354867595032d: "#A05195"
+    76d3efd17b6fc83aaac13e961824c5ae: "#D45087"
+    8da8f27977d946b8c912d42c8827b55c: "#F95D6A"
+    ae422532f260b3d6fc662aae69b05d33: "#FF7C43"
+    dceadbb36871071f30c308ca091fbdc8: "#FFA600"
+
+panels:
+  panel_a:
+    title: "End-to-end Leiden clustering and GPT annotation workflow"
+    output_stem: figure_04a_leiden_gpt_workflow
+
+  panel_b:
+    title: "Row Normalized Confusion Matrix"
+    output_stem: figure_04b_row_normalized_confusion_matrix
+
+  panel_c:
+    title: "Cell-type-specific F1 scores"
+    output_stem: figure_04c_cell_type_f1_scores
+
+  panel_d:
+    title: "Representative Failure Modes"
+    output_stem: figure_04d_representative_failure_modes
+
+  panel_e:
+    title: "Overall Accuracy"
+    output_stem: figure_04e_overall_error_decomposition
+
+  panel_f:
+    title: "Outcome fractions for each Leiden cluster"
+    output_stem: figure_04f_leiden_cluster_outcomes

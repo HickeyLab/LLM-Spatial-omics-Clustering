@@ -1,0 +1,21 @@
+cell_type,color_hex
+B,#9edae5
+CD4+ T cell,#c49c94
+CD7+ Immune,#e65cc3
+CD8+ T,#98df8a
+CD66+ Enterocyte,#c5b0d5
+Cycling TA,#e65c5c
+DC,#dbdb8d
+Endothelial,#e377c2
+Enterocyte,#1f77b4
+Goblet,#f7b6d2
+ICC,#5c7ee6
+Lymphatic,#17becf
+M2 Macrophage,#2ca02c
+MUC1+ Enterocyte,#c7c7c7
+Nerve,#d62728
+Neuroendocrine,#5ce67e
+Neutrophil,#5ce6e6
+Plasma,#ffbb78
+Smooth muscle,#ff7f0e
+Stroma,#aec7e8

@@ -18,6 +18,12 @@ Included notebooks:
 - `table_s01_clustering_methods_v3.ipynb`
 - `table_s02_marker_summary_optimization_v3.ipynb`
 
+`figure_01_redsea_spillover_correction_v3.ipynb` is a source-availability
+record only: Figure 1 is intentionally omitted from the current V3 packet
+until its REDSEA inputs are recovered. The `figure_s01_*` and `figure_s02_*`
+notebooks render the current packet's Supplementary Figures S3 and S4,
+respectively.
+
 Executed notebooks, nested archive/reproduction copies, short-name aliases,
 rendered PDFs/PNGs, and generated manifests remain outside this source
 directory.

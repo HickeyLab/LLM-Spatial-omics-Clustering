@@ -16,12 +16,13 @@ them sequentially as publication panels `A–H`:
 | G | K |
 | H | L |
 
-Panel A is a local workflow schematic. The source notebook's other cells are
-intentionally non-executable while their environment-variable lookups resolve
-to tracked placeholder values. Do not paste a real credential into the
-notebook; export the corresponding `*_API_KEY` variable or use a notebook
-secret manager. Each cell searches upward from the working directory for the
-repository; when Jupyter starts elsewhere, set `FIGURE_REPOSITORY_ROOT`.
+Panel A is a local workflow schematic. The notebook has one cleared runnable
+code cell per historical source panel. LLM-dependent cells fail closed when
+their environment-variable lookups resolve to tracked placeholder values; no
+credential is embedded in the notebook. Export the corresponding
+`*_API_KEY` variable or use a notebook secret manager. Each cell searches
+upward from the working directory for the repository; when Jupyter starts
+elsewhere, set `FIGURE_REPOSITORY_ROOT`.
 
 ## Figure 2 dependency
 
