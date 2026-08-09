@@ -13,7 +13,7 @@ ownership only; it does not add or reproduce any analysis.
 | 4 | End-to-end evaluation of the Leiden–GPT annotation pipeline | A–F | `notebooks/main/figure_04_leiden_gpt_end_to_end.ipynb` | `outputs/figure_04/` |
 
 Figure 1 remains `VERIFY:` source-unavailable and is intentionally omitted from
-the current V3 publication packet; its reserved notebook and output directory
+the current final publication packet; its reserved notebook and output directory
 record the scope without generating placeholder panels.
 
 Figure 3 publication labels are sequential `A–H`. They map to the retained

@@ -79,7 +79,7 @@ cache hashes are retained in provenance. Reasoning/thinking blocks and
 signatures are removed from the stored provider response. A replaced cache is
 archived under `outputs/figure_03/cache/llm_annotations/history/`.
 
-The historical DeepSeek V3.2 aliases were retired on 2026-07-24. Fresh
+The historical DeepSeek 3.2 aliases were retired on 2026-07-24. Fresh
 DeepSeek generation is therefore blocked before calls to any active provider;
 only a contract-matched historical cache can complete the four-provider
 panels. A V4 migration would be a new analysis and requires explicit author

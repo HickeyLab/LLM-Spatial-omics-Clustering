@@ -164,7 +164,7 @@ providers:
     label: DeepSeek
     api_key_name: DEEPSEEK_API_KEY
     endpoint: "https://api.deepseek.com/chat/completions"
-    # These aliases reproduced V3.2 in February 2026 and were retired on
+    # These aliases reproduced 3.2 in February 2026 and were retired on
     # 2026-07-24. Fresh calls are blocked. Exact historical caches may still be
     # used; migration to V4 requires explicit author approval and a new analysis.
     generation_status: retired
@@ -172,11 +172,11 @@ providers:
     migration_requires_author_approval: true
     conditions:
       non_reasoning:
-        display_name: "DeepSeek-V3.2"
+        display_name: "DeepSeek-3.2"
         model_id: deepseek-chat
         temperature_supported: true
       reasoning:
-        display_name: "DeepSeek-V3.2 Thinking"
+        display_name: "DeepSeek-3.2 Thinking"
         model_id: deepseek-reasoner
         # DeepSeek documented temperature as unsupported in reasoning mode.
         temperature_supported: false

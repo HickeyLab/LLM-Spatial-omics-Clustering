@@ -16,7 +16,7 @@ Generated PNG/PDF files, supporting tables, response caches, and provenance
 records remain local and gitignored. Recreate them from the relevant notebook
 cell rather than committing generated artifacts or credentials.
 
-The exact historical DeepSeek V3.2 model identifiers were retired on
+The exact historical DeepSeek 3.2 model identifiers were retired on
 2026-07-24. Four-provider panels therefore require matching historical
 DeepSeek cache entries; otherwise they stop before any active-provider API
 call. A newer DeepSeek model would constitute a separately approved analysis.

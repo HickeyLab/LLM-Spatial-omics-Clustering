@@ -15,9 +15,9 @@ Each notebook should eventually:
 `supplementary/` is reserved until the manuscript's supplementary numbering is
 finalized.
 
-## V3 source-rebuild notebooks
+## final source-rebuild notebooks
 
-`v3/` contains the source notebooks from the V3 annotation-accuracy track.
+`final/` contains the source notebooks from the final annotation-accuracy track.
 They are kept as one isolated notebook namespace and use the declared H5AD,
 paired OME-TIFF, and raw-LLM input contract. Generated figures, manifests,
 executed copies, archive copies, and duplicate short-name aliases are not
