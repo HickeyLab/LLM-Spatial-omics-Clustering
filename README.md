@@ -13,7 +13,7 @@ artifacts remain local-only.
 
 ```text
 .
-├── configs/                         # Future run and plotting configuration
+├── configs/                         # Version-controlled figure contracts
 ├── data/                            # Local-only raw, interim, and processed data
 ├── docs/                            # Figure map and project documentation
 ├── notebooks/
@@ -23,7 +23,7 @@ artifacts remain local-only.
 ├── outputs/                         # Generated outputs, separated by figure
 ├── src/
 │   └── llm_spatial_omics_clustering # Shared Python code
-└── tests/                           # Future tests for shared code
+└── tests/                           # Focused contract tests
 ```
 
 ## Main figure notebooks

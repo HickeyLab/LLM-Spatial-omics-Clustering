@@ -13,5 +13,5 @@ panel metric calculations without rerunning the complete notebook.
 Run the focused suite from the repository root with:
 
 ```bash
-python -m pytest tests/test_figure_s01.py
+PYTHONPATH=src python -m unittest discover -s tests -p 'test_final_figures_runtime.py'
 ```

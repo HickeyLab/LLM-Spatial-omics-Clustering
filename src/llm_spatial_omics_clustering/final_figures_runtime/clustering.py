@@ -29,7 +29,7 @@ from .metrics import KEY_COLUMNS, MetricsValidationError, label_free_metrics, va
 
 
 class ClusteringError(RuntimeError):
-    """Raised when a v2 clustering backend cannot meet its contract."""
+    """Raised when a final-figures clustering backend cannot meet its contract."""
 
 
 # Match the image-native runner's channel equivalences.  This is a schema
@@ -117,10 +117,10 @@ class SpatialSortScreenSubset:
 
 
 # The legacy streaming runner checkpoint filenames that are read, but never
-# modified, by ``--stage cell --resume``.  The v2 wrapper may hardlink or copy
+# modified, by ``--stage cell --resume``.  The final-runtime wrapper may hardlink or copy
 # only this closed set into a candidate-specific cell-SOM directory.  It never
 # links cell-SOM artifacts, labels, or a legacy master table.
-_PIXIE_PREFIX_CACHE_SCHEMA = "reproduction_v2.pixie_prefix_cache.v1"
+_PIXIE_PREFIX_CACHE_SCHEMA = "final_figures.pixie_prefix_cache.v1"
 _PIXIE_PREFIX_CHECKPOINTS = (
     "checkpoints/mask_areas.npz",
     "checkpoints/pixel_normalization.npz",
@@ -262,7 +262,7 @@ def deterministic_spatialsort_screen_subset(
     features: np.ndarray,
     *,
     cells_per_fov: int,
-    sampling_salt: str = "reproduction_v2.spatialsort_screen.v1",
+    sampling_salt: str = "final_figures.spatialsort_screen.v1",
 ) -> SpatialSortScreenSubset:
     """Create a reproducible equal-FOV H5AD-only screen subset.
 
@@ -351,7 +351,7 @@ def deterministic_spatialsort_screen_subset(
     ]
     digest_payload = json.dumps(
         {
-            "schema": "reproduction_v2.spatialsort_screen_subset.v1",
+            "schema": "final_figures.spatialsort_screen_subset.v1",
             "cells_per_fov": cells_per_fov,
             "sampling_salt": salt,
             "selected_keys": sample_records,
@@ -568,7 +568,7 @@ def run_leiden(cells: pd.DataFrame, features: np.ndarray, settings: LeidenSettin
         import anndata as ad
         import scanpy as sc
     except ImportError as exc:  # pragma: no cover - dependency environment guard
-        raise ClusteringError("Leiden v2 requires anndata and scanpy") from exc
+        raise ClusteringError("Leiden backend requires anndata and scanpy") from exc
     canonical = _canonical_cells(cells)
     values = transform_h5ad_features(features)
     if len(canonical) != values.shape[0]:
@@ -578,11 +578,11 @@ def run_leiden(cells: pd.DataFrame, features: np.ndarray, settings: LeidenSettin
         raise ClusteringError("Leiden requires at least two usable principal components")
     representation = PCA(n_components=n_pcs, random_state=settings.seed, svd_solver="randomized").fit_transform(values)
     adata = ad.AnnData(X=np.zeros((len(canonical), 1), dtype=np.float32))
-    adata.obsm["X_v2"] = representation.astype(np.float32, copy=False)
+    adata.obsm["X_final"] = representation.astype(np.float32, copy=False)
     sc.pp.neighbors(
         adata,
         n_neighbors=min(int(settings.n_neighbors), len(canonical) - 1),
-        use_rep="X_v2",
+        use_rep="X_final",
         n_pcs=None,
         metric="euclidean",
         random_state=settings.seed,
@@ -591,12 +591,12 @@ def run_leiden(cells: pd.DataFrame, features: np.ndarray, settings: LeidenSettin
         adata,
         resolution=float(settings.resolution),
         random_state=int(settings.seed),
-        key_added="v2_cluster",
+        key_added="final_cluster",
         n_iterations=2,
         flavor="igraph",
         directed=False,
     )
-    labels = adata.obs["v2_cluster"].astype(str).to_numpy(copy=True)
+    labels = adata.obs["final_cluster"].astype(str).to_numpy(copy=True)
     assignments = _assignment(canonical, labels, "leiden")
     return ClusterRun(
         method="leiden",
@@ -612,7 +612,7 @@ def run_flowsom(cells: pd.DataFrame, features: np.ndarray, settings: FlowSOMSett
     try:
         from flowsom import FlowSOM
     except ImportError as exc:  # pragma: no cover - dependency environment guard
-        raise ClusteringError("FlowSOM v2 requires the flowsom package") from exc
+        raise ClusteringError("FlowSOM backend requires the flowsom package") from exc
     canonical = _canonical_cells(cells)
     values = transform_h5ad_features(features)
     if len(canonical) != values.shape[0]:
@@ -710,7 +710,7 @@ def write_spatialsort_inputs(
 
 
 def _import_spatialsort_inference(source_root: Path):
-    """Import the untouched vendored MCMC kernel for the isolated v2 adapter."""
+    """Import the untouched vendored MCMC kernel for the isolated final-runtime adapter."""
 
     source_root = source_root.resolve()
     if not (source_root / "src" / "inference" / "mcmc.py").is_file():
@@ -737,7 +737,7 @@ def run_spatialsort(
     use_fast_kernel: bool = False,
     use_fast_beta_dmh_2k: bool = False,
 ) -> ClusterRun:
-    """Run SpatialSort with explicit, default-off v2 acceleration gates.
+    """Run SpatialSort with explicit, default-off final-runtime acceleration gates.
 
     ``use_fast_kernel`` is intentionally not part of :class:`SpatialSortSettings`.
     Keeping it out of the registered settings payload ensures this optional
@@ -755,7 +755,7 @@ def run_spatialsort(
         raise ClusteringError("SpatialSort dmh_iterations must be a positive integer")
     if settings.point_estimate != "last_iteration":
         raise ClusteringError(
-            "v2 SpatialSort supports only point_estimate='last_iteration'; "
+            "Final SpatialSort supports only point_estimate='last_iteration'; "
             "legacy MPEAR is quadratic in cell count and remains isolated in the vendored runner"
         )
     if not isinstance(use_fast_kernel, bool):
@@ -794,7 +794,7 @@ def run_spatialsort(
     vendor_root = destination / "vendor"
     vendor_root.mkdir(parents=True, exist_ok=True)
     # Call the untouched vendored kernel directly.  Avoiding its legacy
-    # MPEAR post-processing is an explicit v2 adapter decision: MPEAR builds
+    # MPEAR post-processing is an explicit final-runtime adapter decision: MPEAR builds
     # an O(cells^2) matrix, whereas the final MCMC state is already a valid
     # source-model output and can be reconstructed in the explicit cell order.
     if use_fast_beta_dmh_2k:
@@ -832,10 +832,10 @@ def run_spatialsort(
             # the existing x-gate artifact name as a standalone audit record
             # when a future protocol explicitly combines both substitutions.
             fast_kernel_metadata = {
-                "schema_version": "reproduction_v2.spatialsort_fast_2k.v1",
-                "backend": "v2-local-delta-spatialsort-2k+fast-beta-dmh-2k",
+                "schema_version": "final_figures.spatialsort_fast_2k.v1",
+                "backend": "local-delta-spatialsort-2k+fast-beta-dmh-2k",
                 "substituted_operation": "finite_2k_collapsed_gibbs_x_update_only",
-                "beta_updates": "v2-fast-beta-dmh-2k",
+                "beta_updates": "fast-beta-dmh-2k",
                 "parity_validation": dict(fast_parity),
             }
             provenance_path = destination / "fast_kernel_provenance.json"
@@ -900,12 +900,12 @@ def run_spatialsort(
     assignments["method"] = "spatialsort"
     if use_fast_beta_dmh_2k:
         backend = (
-            "v2-fast-beta-dmh-2k+local-delta-x"
+            "fast-beta-dmh-2k+local-delta-x"
             if use_fast_kernel
-            else "v2-fast-beta-dmh-2k+vendored-x"
+            else "fast-beta-dmh-2k+vendored-x"
         )
     elif use_fast_kernel:
-        backend = "v2-local-delta-spatialsort-2k"
+        backend = "local-delta-spatialsort-2k"
     else:
         backend = "vendored-spatialsort"
     diagnostics: dict[str, Any] = {
@@ -1036,7 +1036,7 @@ def _tiff_filesystem_identity(cells: pd.DataFrame, tiffs_dir: str | Path) -> Map
     The cache is deliberately scoped to a local, immutable TIFF directory.  A
     path, device/inode, size, ctime, and mtime change invalidates reuse before
     the legacy runner is called.  OME schema validation remains a separate
-    explicit v2 contract check.
+    explicit final-runtime contract check.
     """
 
     root = Path(tiffs_dir).expanduser().resolve()
@@ -1069,13 +1069,13 @@ def _tiff_filesystem_identity(cells: pd.DataFrame, tiffs_dir: str | Path) -> Map
 
 
 def _default_pixie_prefix_cache_root(output_root: Path) -> Path:
-    """Place default shared cache under the enclosing v2 output root when known."""
+    """Place the fresh final-figures cache under the enclosing output root when known."""
 
     resolved = output_root.resolve()
     for ancestor in (resolved, *resolved.parents):
         if ancestor.name == "runs":
-            return ancestor.parent / "pixie_prefix_cache"
-    return resolved.parent / "pixie_prefix_cache"
+            return ancestor.parent / "final_figures_pixie_prefix_cache"
+    return resolved.parent / "final_figures_pixie_prefix_cache"
 
 
 def _prefix_payload(
@@ -1150,7 +1150,7 @@ def _required_prefix_checkpoint_identities(prefix_dir: Path) -> list[dict[str, A
 
 
 def _prefix_manifest_matches(prefix_dir: Path, expected_payload: Mapping[str, Any]) -> bool:
-    manifest_path = prefix_dir / "v2_prefix_manifest.json"
+    manifest_path = prefix_dir / "prefix_manifest.json"
     if not manifest_path.is_file():
         return False
     manifest = _read_json_mapping(manifest_path, label="PIXIE prefix manifest")
@@ -1218,10 +1218,10 @@ def _prepare_pixie_tiff_view(
     """Create an exact-FOV symlink view required by the legacy runner.
 
     ``run_streaming_tiff_pixie.py`` intentionally rejects any TIFF FOV not in
-    its master registry.  A v2 development, selection, or sealed subset thus
+    its master registry.  A final-runtime development, selection, or sealed subset thus
     cannot safely point the runner at the complete B004 TIFF directory.  This
     view contains directory symlinks only: pixel bytes remain in the original
-    paired OME-TIFF files and no image data are copied into v2 outputs.
+    paired OME-TIFF files and no image data are copied into final-runtime outputs.
     """
 
     source = source_tiffs.resolve()
@@ -1232,7 +1232,7 @@ def _prepare_pixie_tiff_view(
         "file_ids": [str(file_id) for file_id in file_ids],
         "tiff_filesystem_identity_sha256": str(tiff_identity["sha256"]),
     }
-    manifest_path = prefix_dir / "v2_tiff_view.json"
+    manifest_path = prefix_dir / "tiff_view.json"
     view = prefix_dir / "tiff_fov_view"
     if view.exists() or view.is_symlink():
         if not manifest_path.is_file() or _read_json_mapping(
@@ -1258,7 +1258,7 @@ def _prepare_pixie_tiff_view(
             os.symlink(target, view / str(file_id), target_is_directory=True)
     except OSError as exc:
         raise ClusteringError(
-            "Cannot create a v2 TIFF FOV symlink view; refusing to copy image data or use extra FOVs"
+            "Cannot create a final-runtime TIFF FOV symlink view; refusing to copy image data or use extra FOVs"
         ) from exc
     _write_json(manifest_path, payload)
     return view
@@ -1348,8 +1348,8 @@ def _recover_zero_signal_prefix(
     for source_prefix in sorted(prefix_root.glob("prefix_*")):
         if source_prefix.resolve() == destination.resolve():
             continue
-        request = source_prefix / "v2_prefix_request.json"
-        if not request.is_file() or (source_prefix / "v2_prefix_manifest.json").is_file():
+        request = source_prefix / "prefix_request.json"
+        if not request.is_file() or (source_prefix / "prefix_manifest.json").is_file():
             continue
         try:
             source_payload = _read_json_mapping(request, label="PIXIE recovery source request")
@@ -1394,7 +1394,7 @@ def _recover_zero_signal_prefix(
         "target_payload_sha256": _json_sha256(dict(payload)),
         "raw_checkpoint_materialization": materialized,
     }
-    _write_json(destination / "v2_zero_signal_recovery.json", recovery)
+    _write_json(destination / "zero_signal_recovery.json", recovery)
     return recovery
 
 
@@ -1425,12 +1425,12 @@ def _prepare_pixie_prefix_cache(
                 tiff_identity=tiff_identity,
             ),
         )
-    request_path = prefix_dir / "v2_prefix_request.json"
+    request_path = prefix_dir / "prefix_request.json"
     if prefix_dir.exists() and any(prefix_dir.iterdir()):
         if not resume or not request_path.is_file():
             raise ClusteringError(
                 f"Refusing to reuse incomplete PIXIE prefix cache {prefix_dir}; "
-                "choose a fresh v2 output root or resume the exact registered prefix"
+                "choose a fresh final-figures output root or resume the exact registered prefix"
             )
         if _read_json_mapping(request_path, label="PIXIE prefix request") != dict(payload):
             raise ClusteringError("Incomplete PIXIE prefix request does not match the current inputs")
@@ -1470,7 +1470,7 @@ def _prepare_pixie_prefix_cache(
         )
     identities = _required_prefix_checkpoint_identities(prefix_dir)
     _write_json(
-        prefix_dir / "v2_prefix_manifest.json",
+        prefix_dir / "prefix_manifest.json",
         {
             "schema": _PIXIE_PREFIX_CACHE_SCHEMA,
             "status": "complete",
@@ -1501,7 +1501,7 @@ def _prepare_pixie_cell_stage(
 ) -> tuple[Path, Mapping[str, Any]]:
     """Create a candidate-local cell stage that can read an immutable prefix."""
 
-    materialization_path = destination / "v2_prefix_materialization.json"
+    materialization_path = destination / "prefix_materialization.json"
     registry_path = destination / "h5ad_pixie_registry.csv"
     registry_sha256 = _registry_csv_sha256(registry_frame)
     expected = {
@@ -1514,7 +1514,7 @@ def _prepare_pixie_cell_stage(
     if destination.exists() and any(destination.iterdir()):
         if not resume or not materialization_path.is_file():
             raise ClusteringError(
-                f"PIXIE candidate output already exists without a resumable v2 materialization: {destination}"
+                f"PIXIE candidate output already exists without a resumable final-runtime materialization: {destination}"
             )
         materialization = _read_json_mapping(materialization_path, label="PIXIE materialization")
         if {key: materialization.get(key) for key in expected} != expected:
@@ -1557,7 +1557,7 @@ def run_tiff_pixie(
     """Execute a candidate-local cell SOM over a verified image-native prefix.
 
     Pixel sampling, pixel SOM, and per-cell pixel composition are independent
-    of the cell-SOM side and metacluster count.  v2 therefore creates one
+    of the cell-SOM side and metacluster count.  The final runtime therefore creates one
     immutable prefix for an exact H5AD registry/TIFF/pixel-settings signature,
     then materializes only the legacy runner's read-only prefix checkpoints in
     each configuration-hashed candidate directory.  This preserves tile-based
@@ -1573,7 +1573,7 @@ def run_tiff_pixie(
         )
     if settings.zero_signal_policy != "qc_unclustered":
         raise ClusteringError(
-            "v2 TIFF PIXIE requires zero_signal_policy='qc_unclustered' to preserve "
+            "Final TIFF PIXIE requires zero_signal_policy='qc_unclustered' to preserve "
             "the complete H5AD cell registry without assigning zero-signal cells to a biological cluster"
         )
     run_hash = stable_config_hash("pixie", settings_dict)

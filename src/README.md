@@ -7,7 +7,6 @@ Reusable loading, preprocessing, evaluation, and plotting code lives in the
 - `figure_s01.py`: Supplementary Figure 1 ground-truth and clustering
 - `final_figures_runtime/`: shared H5AD-derived clustering, TIFF validation,
   and metric helpers used by the final figure notebooks
-  diagnostics
 
 The Supplementary Figure 1 module reuses Figure 2's validated cohort and
 method-assignment loaders so its PIXIE panels use the image-native TIFF result.

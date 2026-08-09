@@ -24,7 +24,7 @@ KEY_COLUMNS = ("File_ID", "ID")
 
 
 class MetricsValidationError(ValueError):
-    """Raised when assignment or evaluation inputs violate the v2 contract."""
+    """Raised when assignment or evaluation inputs violate the final-runtime contract."""
 
 
 @dataclass(frozen=True)
