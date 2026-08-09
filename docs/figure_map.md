@@ -9,16 +9,12 @@ ownership only; it does not add or reproduce any analysis.
 | --- | --- | --- | --- | --- |
 | 1 | Effects of REDSEA spillover correction on downstream cell clustering | A–I | `notebooks/main/figure_01_redsea_spillover_correction.ipynb` | `outputs/figure_01/` |
 | 2 | Benchmarking unsupervised cell-type clustering methods | A–J | `notebooks/main/figure_02_clustering_method_benchmark.ipynb` | `outputs/figure_02/` |
-| 3 | Benchmarking LLM-assisted cell-type annotation | A–H | `notebooks/main/figure_03_llm_annotation_benchmark.ipynb` | `outputs/figure_03/` |
-| 4 | End-to-end evaluation of the Leiden–GPT annotation pipeline | A–F | `notebooks/main/figure_04_leiden_gpt_end_to_end.ipynb` | `outputs/figure_04/` |
+| 3 | Benchmarking LLM-assisted cell-type annotation | A–L | `notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb` | `outputs/source_rebuilt/` |
+| 4 | End-to-end evaluation of the Leiden–GPT annotation pipeline | A–F | `notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb` | `outputs/source_rebuilt/` |
 
 Figure 1 remains `VERIFY:` source-unavailable and is intentionally omitted from
 the current final publication packet; its reserved notebook and output directory
 record the scope without generating placeholder panels.
-
-Figure 3 publication labels are sequential `A–H`. They map to the retained
-historical source panels `A, F, G, H, I, J, K, L` respectively; the source
-notebook retains its historical panel IDs for provenance.
 
 ## Supplementary figures
 
@@ -29,7 +25,7 @@ until final captions are supplied.
 | Figure | Working topic | Panels | Notebook | Output directory |
 | --- | --- | --- | --- | --- |
 | S1 | `VERIFY:` Ground-truth phenotypes and clustering diagnostics | A--E | `notebooks/supplementary/figure_s01_clustering_inputs_and_diagnostics.ipynb` | `outputs/supplementary/figure_s01/` |
-| S2 | `VERIFY:` Leiden--GPT count confusion and per-cluster accuracy | A--B | `notebooks/supplementary/figure_s02_leiden_gpt_diagnostics.ipynb` | `outputs/supplementary/figure_s02/` |
+| S2 | Source-rebuilt LLM annotation diagnostics | A--B | `notebooks/final_figures/figure_s02_annotation_diagnostics.ipynb` | `outputs/source_rebuilt/` |
 
 The manuscript also references `S4` and `S5`, but does not include complete
 supplementary captions. Some panel numbers remain reused for different

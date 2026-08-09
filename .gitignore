@@ -34,10 +34,6 @@ outputs/figure_01/*
 !outputs/figure_01/README.md
 outputs/figure_02/*
 !outputs/figure_02/README.md
-outputs/figure_03/*
-!outputs/figure_03/README.md
-outputs/figure_04/*
-!outputs/figure_04/README.md
 outputs/supplementary/*
 !outputs/supplementary/README.md
 # final generated artifacts

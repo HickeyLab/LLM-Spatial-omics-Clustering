@@ -20,17 +20,16 @@ Runtime dependencies are recorded in `requirements-figure-s01.txt`.
 
 ## Supplementary Figure 2
 
-`figure_s02_leiden_gpt_diagnostics.ipynb` contains exactly two
+The final source notebook
+`../final_figures/figure_s02_annotation_diagnostics.ipynb` contains exactly two
 independently runnable code cells:
 
 - A: unnormalized cell-count confusion matrix
 - B: per-Leiden-cluster correctness, annotation loss, and clustering loss
 
-Both cells reuse Figure 4's one provenance-locked
-OpenAI/reasoning/optimized-Leiden annotation result. They read
-`OPENAI_API_KEY` and fail closed on the checked-in placeholder before reading
-the H5AD or cache or writing outputs. The notebook is therefore intentionally
-unexecuted until a real local key is supplied. See `docs/figure_s02.md`.
+Both cells use the source-locked final model set and the same environment-only
+or cached raw-response boundary as the other final figure notebooks. Generated
+artifacts are written outside the versioned notebook source tree.
 
 ## Future supplementary figures
 

@@ -17,7 +17,8 @@ manuscript data.
 ├── data/                            # Local-only raw, interim, and processed data
 ├── docs/                            # Figure map and project documentation
 ├── notebooks/
-│   ├── main/                        # One notebook per main manuscript figure
+│   ├── main/                        # Core Figure 1--2 notebooks
+│   ├── final_figures/               # Source-locked final figure notebooks
 │   └── supplementary/               # Reserved for finalized supplementary figures
 ├── outputs/                         # Generated outputs, separated by figure
 ├── prompts/                         # Future version-controlled LLM prompts
@@ -32,8 +33,8 @@ manuscript data.
 | --- | --- | --- |
 | 1 | REDSEA spillover correction | `notebooks/main/figure_01_redsea_spillover_correction.ipynb` |
 | 2 | Clustering-method benchmark | `notebooks/main/figure_02_clustering_method_benchmark.ipynb` |
-| 3 | LLM annotation benchmark | `notebooks/main/figure_03_llm_annotation_benchmark.ipynb` |
-| 4 | End-to-end Leiden–GPT pipeline | `notebooks/main/figure_04_leiden_gpt_end_to_end.ipynb` |
+| 3 | LLM annotation benchmark | `notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb` |
+| 4 | End-to-end Leiden–GPT pipeline | `notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb` |
 
 The current manuscript references supplementary figures, but does not define a
 stable supplementary figure map. See
