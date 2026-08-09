@@ -1,5 +1,194 @@
 # Figure 2 configuration. Source data remain local and are not committed.
 figure: 2
+
+panel_b:
+  title: "Ground-truth cell type distribution"
+  status: executed
+
+  data:
+    # Set CELL_MASKS_DATA_ROOT to the directory containing this H5AD.  When it
+    # is unset, the Figure 2 code searches ancestor directories for the file.
+    root_env: CELL_MASKS_DATA_ROOT
+    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
+    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+
+  cohort:
+    donor_label: B004
+    expected_cells: 220082
+    file_ids:
+      - 76d3efd17b6fc83aaac13e961824c5ae
+      - ae422532f260b3d6fc662aae69b05d33
+      - dceadbb36871071f30c308ca091fbdc8
+      - 2e65eeef2dd18bee2a0baf1cec6d35a1
+      - 8da8f27977d946b8c912d42c8827b55c
+      - 5318485b16983482401c3be24b6c42ad
+      - 63d000170e475af142f6e8673de5eb0f
+      - 768b7adb649959b6a4e354867595032d
+    expected_cells_by_file_id:
+      76d3efd17b6fc83aaac13e961824c5ae: 18721
+      ae422532f260b3d6fc662aae69b05d33: 25652
+      dceadbb36871071f30c308ca091fbdc8: 34848
+      2e65eeef2dd18bee2a0baf1cec6d35a1: 22656
+      8da8f27977d946b8c912d42c8827b55c: 36464
+      5318485b16983482401c3be24b6c42ad: 25362
+      63d000170e475af142f6e8673de5eb0f: 23267
+      768b7adb649959b6a4e354867595032d: 33112
+
+  labels:
+    truth_column: cell_type_update
+    # Panel B in the supplied reference displays raw, non-Noise labels.  It
+    # does not apply the later 20-class evaluation harmonization.
+    excluded_labels: [Noise]
+    expected_label_count: 27
+    expected_included_cells: 209587
+    expected_excluded_counts:
+      Noise: 10495
+    # This explicit contract both verifies the supplied panel and fixes the
+    # descending display order when the source H5AD is rerun.
+    expected_counts:
+      Epithelial: 30833
+      Stromal: 21084
+      Smooth muscle: 19362
+      Plasma: 19301
+      M2 Macrophage: 14803
+      CD8+ T: 14048
+      Nerve: 10715
+      CD49a+ Smooth muscle: 9749
+      CD66+ Epithelial: 9468
+      TA: 8170
+      CD4+ T: 8140
+      CD36 low Endothelial: 7846
+      Goblet: 7068
+      CD36 high Endothelial: 5287
+      MUC1+ Epithelial: 3746
+      ITLN+ Epithelial: 3664
+      DC: 3102
+      PDPN+ Stromal: 2703
+      B: 2587
+      Cycling TA: 2524
+      M1 Macrophage: 1266
+      Paneth: 1070
+      Neuroendocrine: 1020
+      Neutrophil: 903
+      ICC: 769
+      CD57+ Epithelial: 185
+      NK: 174
+
+  style:
+    color_map_filename: cell_type_colors.csv
+    figure_size_inches: [12.0, 6.0]
+    left: 0.18
+    right: 0.99
+    bottom: 0.58
+    top: 0.96
+    panel_label: B
+    panel_label_x: 0.015
+    panel_label_y: 0.95
+    panel_label_fontsize: 36
+    x_axis_label: Cell Type
+    y_axis_label: Cell Count
+    axis_label_fontsize: 18
+    y_tick_label_fontsize: 14
+    x_tick_label_fontsize: 14
+    x_tick_label_rotation: 90
+    y_limit: 32500
+    y_ticks: [0, 10000, 20000, 30000]
+    bar_width: 0.8
+    bar_edgecolor: "#ffffff"
+    bar_linewidth: 0.3
+
+  outputs:
+    counts_csv: outputs/figure_02/figure_02b_b004_ground_truth_cell_type_counts.csv
+    panel_png: outputs/figure_02/figure_02b_b004_ground_truth_cell_type_distribution.png
+    panel_pdf: outputs/figure_02/figure_02b_b004_ground_truth_cell_type_distribution.pdf
+    provenance_json: outputs/figure_02/figure_02b_b004_provenance.json
+
+panel_c:
+  title: "A Ground Truth Tissue Region"
+  status: executed
+
+  data:
+    # Set CELL_MASKS_DATA_ROOT to the directory containing this H5AD.  When it
+    # is unset, the Figure 2 code searches ancestor directories for the file.
+    root_env: CELL_MASKS_DATA_ROOT
+    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
+    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+
+  region:
+    donor_label: B004
+    source_slide_name: B004-A-404
+    file_id: 8da8f27977d946b8c912d42c8827b55c
+    expected_cells: 36464
+    # The supplied Panel C screenshot was matched to the distinctive tissue
+    # geometry of this region. The B004-A-404-to-File_ID mapping is also
+    # present in the local segmentation/truth validation scripts.
+    selection_provenance: "supplied Panel C screenshot and local B004 slide-to-File_ID map"
+
+  labels:
+    truth_column: cell_type_update
+    # Unlike the Panel B bar chart, Panel C retains every raw label, including
+    # the pale-pink Noise cells visible in the supplied tissue-region map.
+    expected_label_count: 27
+    expected_counts:
+      B: 192
+      CD36 high Endothelial: 893
+      CD36 low Endothelial: 1334
+      CD4+ T: 1139
+      CD49a+ Smooth muscle: 3475
+      CD66+ Epithelial: 1362
+      CD8+ T: 3567
+      Cycling TA: 620
+      DC: 208
+      Epithelial: 3260
+      Goblet: 1583
+      ICC: 203
+      ITLN+ Epithelial: 279
+      M1 Macrophage: 218
+      M2 Macrophage: 2010
+      MUC1+ Epithelial: 654
+      NK: 16
+      Nerve: 1842
+      Neuroendocrine: 260
+      Neutrophil: 366
+      Noise: 3202
+      PDPN+ Stromal: 194
+      Paneth: 347
+      Plasma: 2633
+      Smooth muscle: 3026
+      Stromal: 2753
+      TA: 828
+
+  coordinates:
+    columns: [x, y]
+    # Raw H5AD coordinate bounds, used to verify both FOV selection and the
+    # native orientation that matches the reference panel.
+    expected_bounds:
+      x: [301.0, 9509.0]
+      y: [13.0, 9985.0]
+
+  style:
+    color_map_filename: cell_type_colors.csv
+    figure_size_inches: [6.0, 6.6]
+    # This preserves the H5AD x/y aspect while aligning the tissue extent,
+    # panel letter, and title with the supplied Panel C reference.
+    axes_position: [0.113, 0.06, 0.845, 0.832]
+    point_size: 2.0
+    point_alpha: 0.8
+    panel_label: C
+    panel_label_x: 0.03
+    panel_label_y: 0.95
+    panel_label_fontsize: 42
+    title: "A Ground Truth Tissue Region"
+    title_x: 0.55
+    title_y: 0.93
+    title_fontsize: 20
+
+  outputs:
+    cells_csv: outputs/figure_02/figure_02c_b004_a404_ground_truth_tissue_cells.csv
+    panel_png: outputs/figure_02/figure_02c_b004_a404_ground_truth_tissue_region.png
+    panel_pdf: outputs/figure_02/figure_02c_b004_a404_ground_truth_tissue_region.pdf
+    provenance_json: outputs/figure_02/figure_02c_b004_a404_provenance.json
+
 panel_d:
   title: "Ground-truth and method-derived UMAP embeddings"
   status: in_progress
@@ -9,6 +198,7 @@ panel_d:
     # is unset, the Figure 2 code searches ancestor directories for the file.
     root_env: CELL_MASKS_DATA_ROOT
     h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
+    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
     tiffs_directory_relative_to_data_root: ../Tiffs
 
   cohort:
@@ -145,3 +335,600 @@ panel_d:
     panel_png: outputs/figure_02/figure_02d_b004_umap_comparison.png
     panel_pdf: outputs/figure_02/figure_02d_b004_umap_comparison.pdf
     provenance_json: outputs/figure_02/figure_02d_b004_provenance.json
+
+panel_e:
+  title: "Cell-Type Classification Weighted F1 by Clustering Method"
+  status: executed
+
+  data:
+    # Ground-truth labels are read directly from this H5AD. The order of its
+    # observations is preserved because the original calculation did not
+    # document a separate tie-break rule for equally common cluster labels.
+    root_env: CELL_MASKS_DATA_ROOT
+    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
+    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+
+  cohort:
+    donor_label: B004
+    expected_cells: 220082
+    file_ids:
+      - 76d3efd17b6fc83aaac13e961824c5ae
+      - ae422532f260b3d6fc662aae69b05d33
+      - dceadbb36871071f30c308ca091fbdc8
+      - 2e65eeef2dd18bee2a0baf1cec6d35a1
+      - 8da8f27977d946b8c912d42c8827b55c
+      - 5318485b16983482401c3be24b6c42ad
+      - 63d000170e475af142f6e8673de5eb0f
+      - 768b7adb649959b6a4e354867595032d
+    expected_cells_by_file_id:
+      76d3efd17b6fc83aaac13e961824c5ae: 18721
+      ae422532f260b3d6fc662aae69b05d33: 25652
+      dceadbb36871071f30c308ca091fbdc8: 34848
+      2e65eeef2dd18bee2a0baf1cec6d35a1: 22656
+      8da8f27977d946b8c912d42c8827b55c: 36464
+      5318485b16983482401c3be24b6c42ad: 25362
+      63d000170e475af142f6e8673de5eb0f: 23267
+      768b7adb649959b6a4e354867595032d: 33112
+
+  # Keep the assignment tables exactly aligned with Panel D. In particular,
+  # PIXIE is the 50-cluster image-native TIFF result rather than the older
+  # table-level MiniSom artifact used by the supplied legacy screenshot.
+  clustering_source_panel: panel_d
+  methods:
+    - key: flowsom
+      label: FlowSOM
+    - key: leiden
+      label: Leiden
+    - key: spatialsort
+      label: SpatialSort
+    - key: pixie
+      label: PIXIE
+
+  evaluation:
+    truth_column: cell_type_update
+    excluded_labels: [Noise]
+    expected_excluded_counts:
+      Noise: 10495
+    expected_evaluation_cells: 209587
+    expected_evaluation_class_count: 20
+    # This is the historical 20-class harmonization used by the regional F1
+    # source implementation. Paneth-to-Goblet is retained because it is in
+    # that code path even though it is not listed in the abbreviated methods
+    # prose.
+    harmonization_map:
+      Epithelial: Enterocyte
+      CD66+ Epithelial: CD66+ Enterocyte
+      MUC1+ Epithelial: MUC1+ Enterocyte
+      CD57+ Epithelial: Enterocyte
+      ITLN+ Epithelial: Goblet
+      TA: Cycling TA
+      CD4+ T: CD4+ T cell
+      Stromal: Stroma
+      PDPN+ Stromal: Lymphatic
+      CD36 high Endothelial: Endothelial
+      CD36 low Endothelial: Endothelial
+      CD49a+ Smooth muscle: Smooth muscle
+      Paneth: Goblet
+      M1 Macrophage: M2 Macrophage
+      NK: CD7+ Immune
+
+  # Exact TIFF-PIXIE results under the attached Methods-compatible selected
+  # configuration. The first three method columns match the supplied Panel E
+  # reference; PIXIE necessarily differs because that reference used an older
+  # non-TIFF assignment table.
+  expected_scores:
+    76d3efd17b6fc83aaac13e961824c5ae:
+      n_cells: 17766
+      FlowSOM: 0.70546856871687891
+      Leiden: 0.69739407526147568
+      SpatialSort: 0.48168692842154026
+      PIXIE: 0.57121534566533305
+    ae422532f260b3d6fc662aae69b05d33:
+      n_cells: 24713
+      FlowSOM: 0.65978049775864778
+      Leiden: 0.66591107853266396
+      SpatialSort: 0.44516731260182058
+      PIXIE: 0.49774226401306976
+    dceadbb36871071f30c308ca091fbdc8:
+      n_cells: 34640
+      FlowSOM: 0.66287158519833378
+      Leiden: 0.63127369043536541
+      SpatialSort: 0.42921536856312109
+      PIXIE: 0.58858249380858119
+    2e65eeef2dd18bee2a0baf1cec6d35a1:
+      n_cells: 22050
+      FlowSOM: 0.76388424639508745
+      Leiden: 0.75739564946093052
+      SpatialSort: 0.53787064890023673
+      PIXIE: 0.6501438844622639
+    8da8f27977d946b8c912d42c8827b55c:
+      n_cells: 33262
+      FlowSOM: 0.74748716396351644
+      Leiden: 0.73005642174860952
+      SpatialSort: 0.48951672243925576
+      PIXIE: 0.65291553346297326
+    5318485b16983482401c3be24b6c42ad:
+      n_cells: 24654
+      FlowSOM: 0.73694742843744465
+      Leiden: 0.68885342054646603
+      SpatialSort: 0.47796041913409265
+      PIXIE: 0.62655009692869001
+    63d000170e475af142f6e8673de5eb0f:
+      n_cells: 21902
+      FlowSOM: 0.75495255410109341
+      Leiden: 0.76456742020771662
+      SpatialSort: 0.55940165674580633
+      PIXIE: 0.55878095690188756
+    768b7adb649959b6a4e354867595032d:
+      n_cells: 30600
+      FlowSOM: 0.69660884777396292
+      Leiden: 0.68987834608925858
+      SpatialSort: 0.4526410135604394
+      PIXIE: 0.4973453219492161
+
+  style:
+    font_family: Arial
+    figure_size_inches: [3.2, 3.4]
+    left: 0.22
+    right: 0.98
+    bottom: 0.18
+    top: 0.92
+    panel_label: E
+    panel_label_x: 0.03
+    panel_label_y: 0.98
+    panel_label_fontsize: 30
+    x_axis_label: Clustering Method
+    y_axis_label: Cell-Type Classification Weighted F1
+    axis_label_fontsize: 12
+    x_tick_label_fontsize: 10
+    y_tick_label_fontsize: 9
+    y_limits: [0.4, 0.8]
+    y_ticks: [0.4, 0.5, 0.6, 0.7, 0.8]
+    method_position_start: 1.0
+    method_spacing: 0.85
+    x_margin: 0.42
+    box_width: 0.48
+    box_facecolor: "#E5E7EB"
+    box_edgecolor: "#111827"
+    box_linewidth: 1.2
+    median_linewidth: 1.2
+    whisker_linewidth: 1.1
+    cap_linewidth: 1.1
+    jitter_seed: 7
+    jitter_half_width: 0.18
+    point_size: 24
+    point_alpha: 0.95
+    grid_linewidth: 0.6
+    grid_alpha: 0.4
+    region_colors:
+      2e65eeef2dd18bee2a0baf1cec6d35a1: "#003F5C"
+      5318485b16983482401c3be24b6c42ad: "#2F4B7C"
+      63d000170e475af142f6e8673de5eb0f: "#665191"
+      768b7adb649959b6a4e354867595032d: "#A05195"
+      76d3efd17b6fc83aaac13e961824c5ae: "#D45087"
+      8da8f27977d946b8c912d42c8827b55c: "#F95D6A"
+      ae422532f260b3d6fc662aae69b05d33: "#FF7C43"
+      dceadbb36871071f30c308ca091fbdc8: "#FFA600"
+
+  outputs:
+    scores_csv: outputs/figure_02/figure_02e_b004_weighted_f1_by_clustering_method.csv
+    panel_png: outputs/figure_02/figure_02e_b004_weighted_f1_by_clustering_method.png
+    panel_pdf: outputs/figure_02/figure_02e_b004_weighted_f1_by_clustering_method.pdf
+    provenance_json: outputs/figure_02/figure_02e_b004_provenance.json
+
+panel_f:
+  title: "F1 score by reference cell type and clustering method"
+  status: executed
+  # Reuse one immutable source contract instead of copying H5AD/cohort facts.
+  data_source_panel: panel_e
+  cohort_source_panel: panel_d
+  clustering_source_panel: panel_d
+  evaluation_source_panel: panel_e
+
+  methods:
+    - key: flowsom
+      label: FlowSOM
+    - key: leiden
+      label: Leiden
+    - key: spatialsort
+      label: SpatialSort
+    - key: pixie
+      label: PIXIE
+
+  # Retain the supplied reference's row layout even though TIFF PIXIE changes
+  # the all-method mean used for the historical automatic sort.
+  row_order:
+    - Smooth muscle
+    - Endothelial
+    - Plasma
+    - M2 Macrophage
+    - Enterocyte
+    - Nerve
+    - CD8+ T
+    - Stroma
+    - CD4+ T cell
+    - Goblet
+    - Cycling TA
+    - B
+    - DC
+    - CD66+ Enterocyte
+    - Neutrophil
+    - Neuroendocrine
+    - Lymphatic
+    - MUC1+ Enterocyte
+    - ICC
+    - CD7+ Immune
+
+  style:
+    font_family: Arial
+    figure_size_inches: [7.4, 6.5]
+    left: 0.28
+    right: 0.98
+    bottom: 0.11
+    top: 0.91
+    width_ratios: [4.0, 1.55]
+    height_ratios: [0.055, 1.0]
+    wspace: 0.08
+    hspace: 0.08
+    panel_label: F
+    panel_label_x: 0.02
+    panel_label_y: 0.98
+    panel_label_fontsize: 32
+    x_axis_label: Clustering Method
+    y_axis_label: Cell Type
+    axis_label_fontsize: 12
+    x_tick_label_fontsize: 10
+    y_tick_label_fontsize: 9
+    cmap: RdYlGn
+    color_limits: [0.0, 1.0]
+    colorbar_label: F1 Score
+    colorbar_ticks: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+    colorbar_tick_fontsize: 9
+    count_axis_label: Cell Count
+    count_bar_color: "#64748B"
+    count_bar_height: 0.76
+    count_x_limit: 31000
+    count_tick_label_fontsize: 9
+    grid_linewidth: 0.6
+    grid_alpha: 0.4
+
+  outputs:
+    metrics_csv: outputs/figure_02/figure_02f_b004_f1_by_cell_type.csv
+    panel_png: outputs/figure_02/figure_02f_b004_f1_by_cell_type.png
+    panel_pdf: outputs/figure_02/figure_02f_b004_f1_by_cell_type.pdf
+    provenance_json: outputs/figure_02/figure_02f_b004_provenance.json
+
+panel_g:
+  title: "Tissue-level purity by clustering method"
+  status: executed
+  data_source_panel: panel_e
+  cohort_source_panel: panel_d
+  clustering_source_panel: panel_d
+  evaluation_source_panel: panel_e
+
+  methods:
+    - key: flowsom
+      label: FlowSOM
+    - key: leiden
+      label: Leiden
+    - key: spatialsort
+      label: SpatialSort
+    - key: pixie
+      label: PIXIE
+
+  style:
+    font_family: Arial
+    figure_size_inches: [3.2, 3.4]
+    left: 0.22
+    right: 0.98
+    bottom: 0.18
+    top: 0.92
+    panel_label: G
+    panel_label_x: 0.03
+    panel_label_y: 0.98
+    panel_label_fontsize: 30
+    x_axis_label: Clustering Method
+    y_axis_label: Tissue-level Purity (%)
+    axis_label_fontsize: 12
+    x_tick_label_fontsize: 10
+    y_tick_label_fontsize: 9
+    y_limits: [45.0, 80.0]
+    y_ticks: [50.0, 60.0, 70.0, 80.0]
+    method_position_start: 1.0
+    method_spacing: 0.85
+    x_margin: 0.42
+    box_width: 0.48
+    box_facecolor: "#E5E7EB"
+    box_edgecolor: "#111827"
+    box_linewidth: 1.2
+    median_linewidth: 1.2
+    whisker_linewidth: 1.1
+    cap_linewidth: 1.1
+    jitter_seed: 7
+    jitter_half_width: 0.18
+    point_size: 24
+    point_alpha: 0.95
+    grid_linewidth: 0.6
+    grid_alpha: 0.4
+    region_colors:
+      2e65eeef2dd18bee2a0baf1cec6d35a1: "#003F5C"
+      5318485b16983482401c3be24b6c42ad: "#2F4B7C"
+      63d000170e475af142f6e8673de5eb0f: "#665191"
+      768b7adb649959b6a4e354867595032d: "#A05195"
+      76d3efd17b6fc83aaac13e961824c5ae: "#D45087"
+      8da8f27977d946b8c912d42c8827b55c: "#F95D6A"
+      ae422532f260b3d6fc662aae69b05d33: "#FF7C43"
+      dceadbb36871071f30c308ca091fbdc8: "#FFA600"
+
+  outputs:
+    scores_csv: outputs/figure_02/figure_02g_b004_purity_by_clustering_method.csv
+    panel_png: outputs/figure_02/figure_02g_b004_purity_by_clustering_method.png
+    panel_pdf: outputs/figure_02/figure_02g_b004_purity_by_clustering_method.pdf
+    provenance_json: outputs/figure_02/figure_02g_b004_provenance.json
+
+panel_h:
+  title: "Purity by reference cell type and clustering method"
+  status: executed
+  data_source_panel: panel_e
+  cohort_source_panel: panel_d
+  clustering_source_panel: panel_d
+  evaluation_source_panel: panel_e
+
+  methods:
+    - key: flowsom
+      label: FlowSOM
+    - key: leiden
+      label: Leiden
+    - key: spatialsort
+      label: SpatialSort
+    - key: pixie
+      label: PIXIE
+
+  row_order:
+    - Endothelial
+    - Smooth muscle
+    - Plasma
+    - Enterocyte
+    - Nerve
+    - M2 Macrophage
+    - CD8+ T
+    - Stroma
+    - CD4+ T cell
+    - Neutrophil
+    - Goblet
+    - B
+    - Cycling TA
+    - CD66+ Enterocyte
+    - DC
+    - Neuroendocrine
+    - Lymphatic
+    - ICC
+    - MUC1+ Enterocyte
+    - CD7+ Immune
+
+  style:
+    font_family: Arial
+    figure_size_inches: [7.4, 6.5]
+    left: 0.28
+    right: 0.98
+    bottom: 0.11
+    top: 0.91
+    width_ratios: [4.0, 1.55]
+    height_ratios: [0.055, 1.0]
+    wspace: 0.08
+    hspace: 0.08
+    panel_label: H
+    panel_label_x: 0.02
+    panel_label_y: 0.98
+    panel_label_fontsize: 32
+    x_axis_label: Clustering Method
+    y_axis_label: Cell Type
+    axis_label_fontsize: 12
+    x_tick_label_fontsize: 10
+    y_tick_label_fontsize: 9
+    cmap: RdYlGn
+    value_multiplier: 100.0
+    color_limits: [0.0, 100.0]
+    colorbar_label: Purity
+    colorbar_ticks: [0.0, 20.0, 40.0, 60.0, 80.0, 100.0]
+    colorbar_percent: true
+    colorbar_tick_fontsize: 9
+    count_axis_label: Cell Count
+    count_bar_color: "#64748B"
+    count_bar_height: 0.76
+    count_x_limit: 31000
+    count_tick_label_fontsize: 9
+    grid_linewidth: 0.6
+    grid_alpha: 0.4
+
+  outputs:
+    metrics_csv: outputs/figure_02/figure_02h_b004_purity_by_cell_type.csv
+    panel_png: outputs/figure_02/figure_02h_b004_purity_by_cell_type.png
+    panel_pdf: outputs/figure_02/figure_02h_b004_purity_by_cell_type.pdf
+    provenance_json: outputs/figure_02/figure_02h_b004_provenance.json
+
+panel_i:
+  title: "CD8+ T-cell protein-marker expression by clustering method"
+  status: executed
+  data_source_panel: panel_d
+  cohort_source_panel: panel_d
+  clustering_source_panel: panel_d
+  truth_column: cell_type_update
+  target_cell_type: CD8+ T
+  expression_threshold: 0.0
+  expected_marker_count: 45
+  # The H5AD X order is deliberately fixed: no auxillary obs markers are
+  # included in this dot plot.
+  marker_order:
+    - CD45RO
+    - CD56
+    - CD15
+    - CD163
+    - MUC2
+    - CD34
+    - CD36
+    - aDefensin5
+    - CD49a
+    - HLA-DR
+    - CD38
+    - CollagenIV
+    - CD4
+    - CD138
+    - CD44
+    - Vimentin
+    - CD66
+    - Podoplanin
+    - CHGA
+    - CD3
+    - SOX9
+    - CD161
+    - Synaptophysin
+    - CD57
+    - ITLN1
+    - CD127
+    - CD45
+    - CD49f
+    - aSMA
+    - Cytokeratin
+    - CD8
+    - CD19
+    - BCL2
+    - CD90
+    - CD21
+    - CD7
+    - CD11c
+    - Ki67
+    - CD68
+    - MUC1
+    - CD206
+    - CD16
+    - CD117
+    - CD69
+    - CD31
+
+  methods:
+    - key: leiden
+      label: Leiden
+    - key: flowsom
+      label: FlowSOM
+    - key: spatialsort
+      label: SpatialSort
+    - key: pixie
+      label: PIXIE
+
+  style:
+    font_family: Arial
+    figure_size_inches: [12.5, 3.8]
+    axes_position: [0.14, 0.40, 0.73, 0.39]
+    panel_label: I
+    panel_label_x: 0.02
+    panel_label_y: 0.96
+    panel_label_fontsize: 30
+    x_axis_label: Protein Marker
+    y_axis_label: Clustering Method
+    axis_label_fontsize: 11
+    x_tick_label_fontsize: 8
+    y_tick_label_fontsize: 10
+    x_label_pad: 15
+    cmap: Reds
+    point_edgecolor: "#777777"
+    point_edgewidth: 0.35
+    minimum_point_size: 1.0
+    size_scale: 250.0
+    size_legend_position: [0.14, 0.09, 0.22, 0.16]
+    size_legend_values: [20, 40, 60, 80, 100]
+    size_legend_color: "#8a8a8a"
+    size_legend_label: "Fraction of\nCells in\nGroup (%)"
+    colorbar_position: [0.75, 0.09, 0.12, 0.04]
+    colorbar_label_x: 0.90
+    colorbar_label_y: 0.14
+    colorbar_label: "Mean\nExpression\nin Group"
+    legend_tick_fontsize: 8
+    legend_label_fontsize: 10
+    spine_color: "#333333"
+    spine_linewidth: 0.7
+
+  outputs:
+    summaries_csv: outputs/figure_02/figure_02i_b004_cd8_t_marker_summaries.csv
+    panel_png: outputs/figure_02/figure_02i_b004_cd8_t_marker_dotplot.png
+    panel_pdf: outputs/figure_02/figure_02i_b004_cd8_t_marker_dotplot.pdf
+    provenance_json: outputs/figure_02/figure_02i_b004_provenance.json
+
+panel_j:
+  title: "Spatial Agreement Across Clustering Methods"
+  status: executed
+  data_source_panel: panel_d
+  cohort_source_panel: panel_d
+  clustering_source_panel: panel_d
+  truth_column: cell_type_update
+  coordinate_columns: [x, y]
+  excluded_labels: [Noise]
+  expected_excluded_counts:
+    Noise: 10495
+
+  methods:
+    - key: leiden
+      label: Leiden
+    - key: flowsom
+      label: FlowSOM
+    - key: spatialsort
+      label: SpatialSort
+    - key: pixie
+      label: PIXIE
+
+  # These TIFF-PIXIE-specific windows were selected by the local deterministic
+  # candidate search. VERIFY: its seed, percentile bounds, and radius grid are
+  # implementation-derived rather than specified in the attached Methods.
+  examples:
+    - name: Low Agreement
+      file_id: 768b7adb649959b6a4e354867595032d
+      x0: 628.8963782271768
+      x1: 1807.976378227177
+      y0: 4284.35251560926
+      y1: 5377.052515609261
+      expected_cells: 1091
+    - name: High Agreement
+      file_id: 5318485b16983482401c3be24b6c42ad
+      x0: 5410.872398326905
+      x1: 6493.352398326904
+      y0: 2493.564030947239
+      y1: 3447.153030947239
+      expected_cells: 1041
+
+  style:
+    font_family: Arial
+    figure_size_inches: [12.0, 5.1]
+    left: 0.18
+    right: 0.99
+    bottom: 0.08
+    top: 0.83
+    width_ratios: [1.0, 1.12, 1.12, 1.12, 1.12, 1.12]
+    wspace: 0.12
+    hspace: 0.12
+    panel_label: J
+    panel_label_x: 0.02
+    panel_label_y: 0.96
+    panel_label_fontsize: 28
+    title: Spatial Agreement Across Clustering Methods
+    title_x: 0.61
+    title_y: 0.96
+    title_fontsize: 13
+    row_label_x: 0.13
+    row_label_fontsize: 11
+    example_order: [Low Agreement, High Agreement]
+    column_title_fontsize: 10
+    column_title_pad: 7
+    whole_point_size: 0.45
+    zoom_point_size: 5.5
+    point_alpha: 0.82
+    callout_color: "#222222"
+    callout_linewidth: 0.7
+    frame_color: "#d9d9d9"
+    frame_linewidth: 0.5
+    color_map_filename: cell_type_colors.csv
+
+  outputs:
+    examples_csv: outputs/figure_02/figure_02j_b004_spatial_agreement_examples.csv
+    panel_png: outputs/figure_02/figure_02j_b004_spatial_agreement.png
+    panel_pdf: outputs/figure_02/figure_02j_b004_spatial_agreement.pdf
+    provenance_json: outputs/figure_02/figure_02j_b004_provenance.json

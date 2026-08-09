@@ -1,0 +1,255 @@
+# Supplementary Figure 1 configuration.
+#
+# The user-supplied composite fixes the numbering and panel map as S1 A--E.
+# Source data and generated outputs remain local and are not committed.
+supplementary_figure: 1
+working_title: "VERIFY: Reference-label phenotypes and clustering diagnostics"
+
+figure_02_dependency:
+  config_path: configs/figure_02.yaml
+  expected_source_cells: 220082
+  expected_non_noise_cells: 209587
+  truth_column: cell_type_update
+  excluded_label: Noise
+  expected_raw_label_count_including_noise: 28
+  expected_raw_label_count_excluding_noise: 27
+  expected_methods:
+    leiden: 55
+    flowsom: 300
+    spatialsort: 60
+    pixie: 50
+  method_order:
+    - [leiden, Leiden]
+    - [flowsom, FlowSOM]
+    - [spatialsort, SpatialSort]
+    - [pixie, PIXIE]
+
+shared:
+  color_map_path: configs/cell_type_colors.csv
+  font_family: Arial
+  random_seed: 42
+  panel_label_fontsize: 24
+
+panel_a:
+  title: "Ground-truth cell-type protein expression"
+  # Both orders are recomputed by average-linkage clustering with correlation
+  # distance. Keeping the recovered orders here turns silent data drift into a
+  # validation error rather than a visually different publication panel.
+  cell_type_order:
+    - CD57+ Epithelial
+    - NK
+    - Neuroendocrine
+    - Paneth
+    - Cycling TA
+    - CD66+ Epithelial
+    - Epithelial
+    - Goblet
+    - ITLN+ Epithelial
+    - MUC1+ Epithelial
+    - TA
+    - DC
+    - M1 Macrophage
+    - M2 Macrophage
+    - Plasma
+    - B
+    - CD4+ T
+    - CD8+ T
+    - Neutrophil
+    - CD36 high Endothelial
+    - CD36 low Endothelial
+    - ICC
+    - Stromal
+    - CD49a+ Smooth muscle
+    - Smooth muscle
+    - Nerve
+    - PDPN+ Stromal
+  marker_order:
+    - Podoplanin
+    - Vimentin
+    - CD56
+    - CD90
+    - aSMA
+    - CD34
+    - CD31
+    - CD36
+    - CD49a
+    - CollagenIV
+    - CD117
+    - CD11c
+    - CD68
+    - HLA-DR
+    - CD163
+    - CD206
+    - CD57
+    - CD44
+    - CD38
+    - CD138
+    - CD161
+    - CD19
+    - CD21
+    - CD127
+    - BCL2
+    - CD3
+    - CD69
+    - CD4
+    - CD45
+    - CD45RO
+    - CD8
+    - CD7
+    - CD66
+    - CD15
+    - CD16
+    - CHGA
+    - MUC2
+    - aDefensin5
+    - Synaptophysin
+    - Ki67
+    - ITLN1
+    - MUC1
+    - SOX9
+    - CD49f
+    - Cytokeratin
+  expression_threshold: 0.0
+  style:
+    figure_size_inches: [18.0, 8.0]
+    dot_size_range: [2.0, 95.0]
+    dot_edge_color: "#8c8c8c"
+    dot_edge_width: 0.25
+    color_map: Reds
+  outputs:
+    summary_csv: outputs/supplementary/figure_s01/figure_s01a_marker_dotplot_summary.csv
+    panel_png: outputs/supplementary/figure_s01/figure_s01a_marker_dotplot.png
+    panel_pdf: outputs/supplementary/figure_s01/figure_s01a_marker_dotplot.pdf
+    provenance_json: outputs/supplementary/figure_s01/figure_s01a_provenance.json
+
+panel_b:
+  title: "All Tissue Regions"
+  # This is the lexicographic order used by the source 2x4 montage.
+  file_id_order:
+    - 2e65eeef2dd18bee2a0baf1cec6d35a1
+    - 5318485b16983482401c3be24b6c42ad
+    - 63d000170e475af142f6e8673de5eb0f
+    - 768b7adb649959b6a4e354867595032d
+    - 76d3efd17b6fc83aaac13e961824c5ae
+    - 8da8f27977d946b8c912d42c8827b55c
+    - ae422532f260b3d6fc662aae69b05d33
+    - dceadbb36871071f30c308ca091fbdc8
+  style:
+    figure_size_inches: [18.0, 9.0]
+    point_size: 2.0
+    point_alpha: 0.8
+    horizontal_space: 0.0
+    vertical_space: 0.02
+  outputs:
+    region_summary_csv: outputs/supplementary/figure_s01/figure_s01b_region_summary.csv
+    panel_png: outputs/supplementary/figure_s01/figure_s01b_all_tissue_regions.png
+    panel_pdf: outputs/supplementary/figure_s01/figure_s01b_all_tissue_regions.pdf
+    provenance_json: outputs/supplementary/figure_s01/figure_s01b_provenance.json
+
+panel_c:
+  title: "Cluster composition by method"
+  # Raw truth labels, including Noise, are stacked in global frequency order.
+  cell_type_order:
+    - Epithelial
+    - Stromal
+    - Smooth muscle
+    - Plasma
+    - M2 Macrophage
+    - CD8+ T
+    - Nerve
+    - Noise
+    - CD49a+ Smooth muscle
+    - CD66+ Epithelial
+    - TA
+    - CD4+ T
+    - CD36 low Endothelial
+    - Goblet
+    - CD36 high Endothelial
+    - MUC1+ Epithelial
+    - ITLN+ Epithelial
+    - DC
+    - PDPN+ Stromal
+    - B
+    - Cycling TA
+    - M1 Macrophage
+    - Paneth
+    - Neuroendocrine
+    - Neutrophil
+    - ICC
+    - CD57+ Epithelial
+    - NK
+  displayed_cluster_limit:
+    flowsom: 60
+  style:
+    figure_size_inches: [10.5, 8.5]
+    bar_width: 0.92
+    bar_edge_color: white
+    bar_edge_width: 0.15
+  outputs:
+    composition_csv: outputs/supplementary/figure_s01/figure_s01c_cluster_composition.csv
+    panel_png: outputs/supplementary/figure_s01/figure_s01c_cluster_composition.png
+    panel_pdf: outputs/supplementary/figure_s01/figure_s01c_cluster_composition.pdf
+    provenance_json: outputs/supplementary/figure_s01/figure_s01c_provenance.json
+
+panel_d:
+  title: "FlowSOM purity by requested cluster count"
+  source_filename: flowsom_k_sweep_purity.csv
+  source_sha256: "723dfd9508fc1a9bcb700ba77cf37f04de18016667e3768807f600549add0338"
+  # Recovered historical exploratory sweep. It predates the final
+  # RF-MDI-weighted/no-PCA Figure 2 FlowSOM configuration.
+  provenance_status: "VERIFY: recovered exploratory FlowSOM sweep; exact generator and final-method-equivalent sweep are not available"
+  expected_rows:
+    - [10, 10, 0.37564634999681934]
+    - [50, 50, 0.4309302896193237]
+    - [100, 100, 0.4582655555656528]
+    - [150, 150, 0.4760362046873438]
+    - [200, 200, 0.4848829072800138]
+    - [250, 250, 0.4883770594596559]
+    - [300, 300, 0.49248916313010604]
+    - [350, 324, 0.4931889023182268]
+  style:
+    figure_size_inches: [4.4, 3.3]
+    line_color: "#2784c2"
+    marker_size: 4.0
+    y_label: "Purity (%)"
+    x_label: "Number of Clusters"
+  outputs:
+    sweep_csv: outputs/supplementary/figure_s01/figure_s01d_flowsom_cluster_sweep.csv
+    panel_png: outputs/supplementary/figure_s01/figure_s01d_flowsom_cluster_sweep.png
+    panel_pdf: outputs/supplementary/figure_s01/figure_s01d_flowsom_cluster_sweep.pdf
+    provenance_json: outputs/supplementary/figure_s01/figure_s01d_provenance.json
+
+panel_e:
+  title: "Clustering metric distributions"
+  # Raw non-Noise labels are used without the 20-class Figure 2 evaluation
+  # harmonization. F1/Recall use global, retrospective cluster-majority labels.
+  majority_tie_break: "largest count, then lexicographically smallest label"
+  metrics:
+    - key: adjusted_rand_index
+      label: "Adjusted Rand Index"
+      grain: region
+    - key: adjusted_mutual_information
+      label: "Adjusted Mutual Information"
+      grain: region
+    - key: shannon_index
+      label: "Shannon Index"
+      grain: cluster
+    - key: f1_score
+      label: "F1 Score"
+      grain: cell_type
+    - key: recall
+      label: "Recall"
+      grain: cell_type
+    - key: purity_percent
+      label: "Purity (%)"
+      grain: cluster
+  style:
+    figure_size_inches: [20.0, 3.4]
+    jitter_width: 0.13
+    point_size: 12.0
+    box_width: 0.62
+  outputs:
+    metrics_csv: outputs/supplementary/figure_s01/figure_s01e_clustering_metrics.csv
+    panel_png: outputs/supplementary/figure_s01/figure_s01e_clustering_metrics.png
+    panel_pdf: outputs/supplementary/figure_s01/figure_s01e_clustering_metrics.pdf
+    provenance_json: outputs/supplementary/figure_s01/figure_s01e_provenance.json
