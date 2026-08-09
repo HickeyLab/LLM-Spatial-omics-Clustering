@@ -1,13 +1,13 @@
 # Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
 
-Repository scaffold for the manuscript analysis:
+Repository for the manuscript analysis:
 
 > *Evaluation of Clustering Methods and Large Language Models for Spatial
 > Proteomic Cell Type Annotation*
 
-This repository is intentionally structure-only. The figure notebooks contain
-section headings and panel checklists, but no analysis code, results, or
-manuscript data.
+This repository contains source-traced figure notebooks and the shared code
+and contracts needed to rerun the available analyses. Raw data and generated
+artifacts remain local-only.
 
 ## Repository layout
 
@@ -17,13 +17,12 @@ manuscript data.
 ├── data/                            # Local-only raw, interim, and processed data
 ├── docs/                            # Figure map and project documentation
 ├── notebooks/
-│   ├── main/                        # Core Figure 1--2 notebooks
+│   ├── main/                        # Core Figure 2 notebook
 │   ├── final_figures/               # Source-locked final figure notebooks
 │   └── supplementary/               # Reserved for finalized supplementary figures
 ├── outputs/                         # Generated outputs, separated by figure
-├── prompts/                         # Future version-controlled LLM prompts
 ├── src/
-│   └── llm_spatial_omics_clustering # Future shared Python code
+│   └── llm_spatial_omics_clustering # Shared Python code
 └── tests/                           # Future tests for shared code
 ```
 
@@ -31,7 +30,7 @@ manuscript data.
 
 | Figure | Topic | Notebook |
 | --- | --- | --- |
-| 1 | REDSEA spillover correction | `notebooks/main/figure_01_redsea_spillover_correction.ipynb` |
+| 1 | REDSEA spillover correction | `notebooks/final_figures/figure_01_redsea_spillover_correction.ipynb` |
 | 2 | Clustering-method benchmark | `notebooks/main/figure_02_clustering_method_benchmark.ipynb` |
 | 3 | LLM annotation benchmark | `notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb` |
 | 4 | End-to-end Leiden–GPT pipeline | `notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb` |
@@ -45,8 +44,6 @@ stable supplementary figure map. See
 - Keep one notebook as the entry point for each manuscript figure.
 - Put reusable data processing, metrics, and plotting functions in `src/`
   rather than copying them between notebooks.
-- Keep LLM prompts and label ontologies in `prompts/`, separate from notebook
-  execution.
 - Write generated tables and panels to the matching `outputs/figure_XX/`
   directory.
 - Keep raw and derived data out of Git; each local data tier is documented in

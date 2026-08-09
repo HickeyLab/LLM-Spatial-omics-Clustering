@@ -7,7 +7,7 @@ ownership only; it does not add or reproduce any analysis.
 
 | Figure | Caption topic | Panels | Notebook | Output directory |
 | --- | --- | --- | --- | --- |
-| 1 | Effects of REDSEA spillover correction on downstream cell clustering | A–I | `notebooks/main/figure_01_redsea_spillover_correction.ipynb` | `outputs/figure_01/` |
+| 1 | Effects of REDSEA spillover correction on downstream cell clustering | A–I | `notebooks/final_figures/figure_01_redsea_spillover_correction.ipynb` | `outputs/figure_01/` |
 | 2 | Benchmarking unsupervised cell-type clustering methods | A–J | `notebooks/main/figure_02_clustering_method_benchmark.ipynb` | `outputs/figure_02/` |
 | 3 | Benchmarking LLM-assisted cell-type annotation | A–L | `notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb` | `outputs/source_rebuilt/` |
 | 4 | End-to-end evaluation of the Leiden–GPT annotation pipeline | A–F | `notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb` | `outputs/source_rebuilt/` |

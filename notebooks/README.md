@@ -1,8 +1,8 @@
 # Notebooks
 
-`main/` contains one structure-only notebook for each defined main manuscript
-figure. Notebook filenames begin with the two-digit figure number so they sort
-in manuscript order.
+`main/` contains the executable legacy Figure 2 benchmark notebook. Notebook
+filenames begin with the two-digit figure number so they sort in manuscript
+order.
 
 Each notebook should eventually:
 
@@ -17,7 +17,8 @@ finalized.
 
 ## final source-rebuild notebooks
 
-`final/` contains the source notebooks from the final annotation-accuracy track.
+`final_figures/` contains the source notebooks from the final
+annotation-accuracy track.
 They are kept as one isolated notebook namespace and use the declared H5AD,
 paired OME-TIFF, and raw-LLM input contract. Generated figures, manifests,
 executed copies, archive copies, and duplicate short-name aliases are not
