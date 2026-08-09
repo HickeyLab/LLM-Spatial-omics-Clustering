@@ -27,3 +27,6 @@ respectively.
 Executed notebooks, nested archive/reproduction copies, short-name aliases,
 rendered PDFs/PNGs, and generated manifests remain outside this source
 directory.
+
+The shared clustering implementation used by the final figure notebooks is
+tracked in `src/llm_spatial_omics_clustering/final_figures_runtime/`.
