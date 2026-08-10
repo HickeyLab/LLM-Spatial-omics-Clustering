@@ -34,8 +34,10 @@ class Figure02ContractTests(unittest.TestCase):
         self.assertEqual(len(panel_b["labels"]["expected_counts"]), 27)
         self.assertEqual(
             panel_b["data"]["h5ad_sha256"],
-            "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0",
+            "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49",
         )
+        self.assertEqual(panel_b["data"]["h5ad_filename"], "20260130_HuBMAP_experted_annotated.h5ad")
+        self.assertTrue(panel_b["data"]["download"])
         self.assertEqual(panel_b["data"]["h5ad_sha256"], panel_d["data"]["h5ad_sha256"])
         self.assertEqual(panel_c["status"], "executed")
         self.assertEqual(panel_c["region"]["donor_label"], "B004")
@@ -48,8 +50,8 @@ class Figure02ContractTests(unittest.TestCase):
         self.assertEqual(panel_c["labels"]["expected_label_count"], 27)
         self.assertEqual(panel_c["labels"]["expected_counts"]["Noise"], 3202)
         self.assertEqual(panel_c["coordinates"]["columns"], ["x", "y"])
-        self.assertEqual(panel_c["coordinates"]["expected_bounds"]["x"], [301.0, 9509.0])
-        self.assertEqual(panel_c["coordinates"]["expected_bounds"]["y"], [13.0, 9985.0])
+        self.assertEqual(panel_c["coordinates"]["expected_bounds"]["x"], [13.0, 9985.0])
+        self.assertEqual(panel_c["coordinates"]["expected_bounds"]["y"], [301.0, 9509.0])
         self.assertEqual(panel_c["data"]["h5ad_sha256"], panel_b["data"]["h5ad_sha256"])
         self.assertEqual(panel_d["features"]["expected_total_markers"], 48)
         self.assertEqual(
@@ -78,10 +80,10 @@ class Figure02ContractTests(unittest.TestCase):
     def test_panel_b_distribution_when_source_data_are_available(self) -> None:
         config = load_figure_config()
         try:
-            data_root = resolve_data_root(config, panel_key="panel_b")
+            data_root = resolve_data_root(config, panel_key="panel_b", download_if_missing=False)
         except FileNotFoundError:
             self.skipTest(
-                "Local H5AD is not available; set CELL_MASKS_DATA_ROOT to run this integration check."
+                "Duke H5AD cache is not available; run the downloader to run this integration check."
             )
         distribution = load_panel_b_distribution(config, data_root=data_root)
         self.assertEqual(distribution.source_cell_count, 220082)
@@ -101,10 +103,10 @@ class Figure02ContractTests(unittest.TestCase):
     def test_panel_c_spatial_data_when_source_data_are_available(self) -> None:
         config = load_figure_config()
         try:
-            data_root = resolve_data_root(config, panel_key="panel_c")
+            data_root = resolve_data_root(config, panel_key="panel_c", download_if_missing=False)
         except FileNotFoundError:
             self.skipTest(
-                "Local H5AD is not available; set CELL_MASKS_DATA_ROOT to run this integration check."
+                "Duke H5AD cache is not available; run the downloader to run this integration check."
             )
         data = load_panel_c_spatial_data(config, data_root=data_root)
         self.assertEqual(data.source_cell_count, 36464)
@@ -120,10 +122,10 @@ class Figure02ContractTests(unittest.TestCase):
     def test_b004_h5ad_contract_when_source_data_are_available(self) -> None:
         config = load_figure_config()
         try:
-            data_root = resolve_data_root(config)
+            data_root = resolve_data_root(config, download_if_missing=False)
         except FileNotFoundError:
             self.skipTest(
-                "Local H5AD is not available; set CELL_MASKS_DATA_ROOT to run this integration check."
+                "Duke H5AD cache is not available; run the downloader to run this integration check."
             )
         data = load_b004_h5ad(config, data_root=data_root)
         self.assertEqual(len(data.cells), 220082)
@@ -133,10 +135,10 @@ class Figure02ContractTests(unittest.TestCase):
     def test_panel_e_metrics_when_source_data_are_available(self) -> None:
         config = load_figure_config()
         try:
-            data_root = resolve_data_root(config, panel_key="panel_e")
+            data_root = resolve_data_root(config, panel_key="panel_e", download_if_missing=False)
         except FileNotFoundError:
             self.skipTest(
-                "Local H5AD is not available; set CELL_MASKS_DATA_ROOT to run this integration check."
+                "Duke H5AD cache is not available; run the downloader to run this integration check."
             )
         data = load_panel_e_metrics(config, data_root=data_root)
         self.assertEqual(data.source_cell_count, 220082)
@@ -185,10 +187,10 @@ class Figure02ContractTests(unittest.TestCase):
     def test_panels_fgh_metrics_when_source_data_are_available(self) -> None:
         config = load_figure_config()
         try:
-            data_root = resolve_data_root(config, panel_key="panel_f")
+            data_root = resolve_data_root(config, panel_key="panel_f", download_if_missing=False)
         except FileNotFoundError:
             self.skipTest(
-                "Local H5AD is not available; set CELL_MASKS_DATA_ROOT to run this integration check."
+                "Duke H5AD cache is not available; run the downloader to run this integration check."
             )
         panel_f = load_panel_fh_metrics(config, panel_key="panel_f", data_root=data_root)
         panel_h = load_panel_fh_metrics(config, panel_key="panel_h", data_root=data_root)

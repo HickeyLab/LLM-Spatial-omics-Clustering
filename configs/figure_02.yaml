@@ -6,11 +6,12 @@ panel_b:
   status: executed
 
   data:
-    # Set CELL_MASKS_DATA_ROOT to the directory containing this H5AD.  When it
-    # is unset, the Figure 2 code searches ancestor directories for the file.
+    # If the H5AD is absent, the Figure 2 code downloads and verifies it from
+    # the Duke Research Data Repository into data/raw/duke_research_repository.
     root_env: CELL_MASKS_DATA_ROOT
-    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
-    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+    h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    download: true
 
   cohort:
     donor_label: B004
@@ -108,11 +109,11 @@ panel_c:
   status: executed
 
   data:
-    # Set CELL_MASKS_DATA_ROOT to the directory containing this H5AD.  When it
-    # is unset, the Figure 2 code searches ancestor directories for the file.
+    # The source is downloaded automatically when it is absent; see panel_b.
     root_env: CELL_MASKS_DATA_ROOT
-    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
-    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+    h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    download: true
 
   region:
     donor_label: B004
@@ -163,8 +164,10 @@ panel_c:
     # Raw H5AD coordinate bounds, used to verify both FOV selection and the
     # native orientation that matches the reference panel.
     expected_bounds:
-      x: [301.0, 9509.0]
-      y: [13.0, 9985.0]
+      # Native coordinate bounds in the Duke repository H5AD. The older local
+      # export used the same two axes in the opposite order.
+      x: [13.0, 9985.0]
+      y: [301.0, 9509.0]
 
   style:
     color_map_filename: cell_type_colors.csv
@@ -194,11 +197,11 @@ panel_d:
   status: in_progress
 
   data:
-    # Set CELL_MASKS_DATA_ROOT to the directory containing this H5AD.  When it
-    # is unset, the Figure 2 code searches ancestor directories for the file.
+    # The source is downloaded automatically when it is absent; see panel_b.
     root_env: CELL_MASKS_DATA_ROOT
-    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
-    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+    h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    download: true
     tiffs_directory_relative_to_data_root: ../Tiffs
 
   cohort:
@@ -345,8 +348,9 @@ panel_e:
     # observations is preserved because the original calculation did not
     # document a separate tie-break rule for equally common cluster labels.
     root_env: CELL_MASKS_DATA_ROOT
-    h5ad_filename: 20251007_cleaned_trainingdata_yang.h5ad
-    h5ad_sha256: "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0"
+    h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    download: true
 
   cohort:
     donor_label: B004
