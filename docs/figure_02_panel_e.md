@@ -3,9 +3,10 @@
 ## Scope
 
 Panel E compares the four configured clustering methods across the eight B004
-`File_ID` values. It uses `obs.cell_type_update` from
-`20251007_cleaned_trainingdata_yang.h5ad` as the reference annotation, excludes
-`Noise`, and harmonizes the remaining labels into 20 evaluation classes.
+`File_ID` values. It uses `obs.cell_type_update` from the Duke archive member
+`CODEX_annotated/20260130_HuBMAP_experted_annotated.h5ad` as the reference
+annotation, excludes `Noise`, and harmonizes the remaining labels into 20
+evaluation classes.
 
 ## Calculation
 
@@ -37,9 +38,9 @@ recomputed and therefore differ.
 
 ## Reproduction
 
-Set `CELL_MASKS_DATA_ROOT` to the directory containing the H5AD and the three
-non-PIXIE assignment CSVs. The TIFF PIXIE output remains local and gitignored
-under the repository's `data/processed/` tree. Execute only the fifth code cell
+The Figure 2 loader downloads the H5AD into its ignored Duke cache when absent.
+The three non-PIXIE assignment CSVs and TIFF PIXIE output remain local and
+gitignored under the repository's `data/processed/` tree. Execute only the fifth code cell
 of [`figure_02_clustering_method_benchmark.ipynb`](../notebooks/main/figure_02_clustering_method_benchmark.ipynb).
 
 The cell writes the regional score table, PNG, PDF, and JSON provenance record

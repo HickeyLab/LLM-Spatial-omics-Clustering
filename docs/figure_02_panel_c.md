@@ -4,13 +4,16 @@
 
 Panel C is the B004 tissue region `B004-A-404`, whose H5AD `File_ID` is
 `8da8f27977d946b8c912d42c8827b55c`. The supplied reference was matched to
-this region's distinctive spatial geometry and checked against the local B004
+this region's distinctive spatial geometry and checked against the B004
 slide-to-`File_ID` map.
 
-The panel reads only `File_ID`, `ID`, `x`, `y`, and `cell_type_update` from
-`20251007_cleaned_trainingdata_yang.h5ad`. It validates 36,464 unique cells,
-the raw-coordinate bounds `x=301..9509` and `y=13..9985`, and the exact
-raw-label distribution before rendering.
+The panel reads only `File_ID`, `ID`, `x`, `y`, and `cell_type_update` from the
+Duke archive member `CODEX_annotated/20260130_HuBMAP_experted_annotated.h5ad`.
+It validates 36,464 unique cells, the Duke H5AD native-coordinate bounds
+`x=13..9985` and `y=301..9509`, and the exact raw-label distribution before
+rendering. The older local export used these two coordinate axes in the
+opposite order; the Figure 2 contract now follows the Duke source without an
+implicit axis swap.
 
 ## Rendering choices
 
@@ -25,15 +28,13 @@ cell-type distribution bar chart.
 
 ## Running from a clone
 
-The H5AD remains local. After making it available, set
-`CELL_MASKS_DATA_ROOT` to the directory containing it and run the Figure 2
-notebook with the pinned local environment:
+The H5AD remains local in the ignored Duke cache. The loader downloads it when
+absent; run the Figure 2 notebook with the pinned local environment:
 
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-figure-02.txt
-CELL_MASKS_DATA_ROOT=/path/to/cell_masks \
-  PYTHONPATH=src .venv/bin/python -m jupyter nbconvert --execute --to notebook --inplace \
+PYTHONPATH=src .venv/bin/python -m jupyter nbconvert --execute --to notebook --inplace \
   notebooks/main/figure_02_clustering_method_benchmark.ipynb \
   --ExecutePreprocessor.timeout=-1 --ExecutePreprocessor.kernel_name=python3
 ```
