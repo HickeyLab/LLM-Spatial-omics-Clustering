@@ -4,9 +4,12 @@
 
 Panel D uses only the eight `File_ID` values declared in
 [`configs/figure_02.yaml`](../configs/figure_02.yaml), which are the specified
-B004 tissue regions. The source is
-`20251007_cleaned_trainingdata_yang.h5ad`; the panel input is built directly
-from its 45 `X` variables plus `obs` columns `CD123`, `Hoechst1`, and `CDX2`.
+B004 tissue regions. The source is the Duke Research Data Repository member
+`CODEX_annotated/20260130_HuBMAP_experted_annotated.h5ad`; the panel input is
+built directly from its 45 `X` variables plus `obs` columns `CD123`,
+`Hoechst1`, and `CDX2`. If the source is absent, the Figure 2 loader downloads
+and verifies the public archive into the ignored
+`data/raw/duke_research_repository/` cache.
 The reference label is `obs.cell_type_update`.
 
 Each of the five views uses one shared UMAP geometry and colors cells by:
@@ -16,6 +19,15 @@ Each of the five views uses one shared UMAP geometry and colors cells by:
    TIFF-derived PIXIE cluster.
 
 Cluster identifiers are unsupervised labels and are not plotted directly.
+
+The source record is [Duke Research Data Repository record 505](https://research.repository.duke.edu/record/505),
+DOI [10.7924/r4r505](https://doi.org/10.7924/r4r505). The archive is about 2.2
+GB; the extracted H5AD is about 105 MB. To acquire it explicitly before
+running the figure:
+
+```bash
+PYTHONPATH=src python3.12 -m llm_spatial_omics_clustering.duke_h5ad
+```
 
 ## Method-derived assignments
 

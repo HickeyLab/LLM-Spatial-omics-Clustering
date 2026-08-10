@@ -4,8 +4,8 @@
 
 Panel B uses only the eight B004 `File_ID` values declared in
 [`configs/figure_02.yaml`](../configs/figure_02.yaml). It reads
-`obs.cell_type_update` directly from
-`20251007_cleaned_trainingdata_yang.h5ad`; neither `master.csv` nor
+`obs.cell_type_update` directly from the Duke archive member
+`CODEX_annotated/20260130_HuBMAP_experted_annotated.h5ad`; neither `master.csv` nor
 `truth.csv` is required for the panel.
 
 The input contract validates 220,082 unique `(File_ID, ID)` cells, the eight
@@ -25,19 +25,20 @@ the configuration and checked at runtime. Colors come from the compact,
 tracked [`configs/cell_type_colors.csv`](../configs/cell_type_colors.csv)
 snapshot; a same-named local color key is only a fallback if that tracked file
 is unavailable. The configuration also records the source H5AD's SHA-256:
-`a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0`.
+`5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49`.
 
 ## Running from a clone
 
-The H5AD and clustering artifacts remain local. After making them available,
-set `CELL_MASKS_DATA_ROOT` to the directory containing the H5AD and install
-the pinned Figure 2 environment:
+The H5AD and clustering artifacts remain local. The Figure 2 loader downloads
+the verified H5AD into its ignored cache when it is absent. To acquire it
+explicitly, run `PYTHONPATH=src python3.12 -m
+llm_spatial_omics_clustering.duke_h5ad`, then install the pinned Figure 2
+environment:
 
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-figure-02.txt
-CELL_MASKS_DATA_ROOT=/path/to/cell_masks \
-  PYTHONPATH=src .venv/bin/python -m jupyter nbconvert --execute --to notebook --inplace \
+PYTHONPATH=src .venv/bin/python -m jupyter nbconvert --execute --to notebook --inplace \
   notebooks/main/figure_02_clustering_method_benchmark.ipynb \
   --ExecutePreprocessor.timeout=-1 --ExecutePreprocessor.kernel_name=python3
 ```

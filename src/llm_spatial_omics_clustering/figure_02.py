@@ -33,6 +33,8 @@ import numpy as np
 import pandas as pd
 import yaml
 
+from .duke_h5ad import DukeH5ADDownloadError, download_duke_h5ad
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_ROOT = Path(__file__).resolve().parent
@@ -154,7 +156,10 @@ def _candidate_data_roots(h5ad_filename: str, root_env: str) -> list[Path]:
     candidates: list[Path] = []
     configured = os.environ.get(root_env)
     if configured:
-        candidates.append(Path(configured).expanduser())
+        configured_path = Path(configured).expanduser()
+        candidates.append(
+            configured_path.parent if configured_path.suffix.lower() == ".h5ad" else configured_path
+        )
     for base in (Path.cwd(), REPOSITORY_ROOT):
         candidates.extend((base, *base.parents))
     seen: set[Path] = set()
@@ -187,8 +192,13 @@ def _source_panel_config(
     return source
 
 
-def resolve_data_root(config: Mapping[str, Any], *, panel_key: str = "panel_d") -> Path:
-    """Find the local source-data directory without committing an absolute path."""
+def resolve_data_root(
+    config: Mapping[str, Any],
+    *,
+    panel_key: str = "panel_d",
+    download_if_missing: bool = True,
+) -> Path:
+    """Find or acquire the declared source-data directory."""
     source_panel = _source_panel_config(config, panel_key, "data_source_panel")
     if "data" not in source_panel:
         raise Figure02ValidationError(f"Figure 2 configuration has no data source for {panel_key!r}")
@@ -198,8 +208,26 @@ def resolve_data_root(config: Mapping[str, Any], *, panel_key: str = "panel_d") 
     for root in _candidate_data_roots(filename, env_name):
         if (root / filename).is_file():
             return root
+    if bool(data_config.get("download", False)) and download_if_missing:
+        configured = os.environ.get(env_name)
+        configured_path = Path(configured).expanduser() if configured else None
+        cache_root = (
+            (
+                configured_path.parent
+                if configured_path is not None and configured_path.suffix.lower() == ".h5ad"
+                else configured_path
+            )
+            if configured_path is not None
+            else REPOSITORY_ROOT / "data" / "raw" / "duke_research_repository"
+        )
+        try:
+            return download_duke_h5ad(cache_root).path.parent
+        except DukeH5ADDownloadError as exc:
+            raise FileNotFoundError(
+                f"Unable to acquire {filename} from the Duke Research Data Repository"
+            ) from exc
     raise FileNotFoundError(
-        f"Cannot find {filename}. Set {env_name} to the containing directory."
+        f"Cannot find {filename}. Set {env_name} to the containing directory or enable its Duke download."
     )
 
 
