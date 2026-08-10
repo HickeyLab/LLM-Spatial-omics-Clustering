@@ -30,3 +30,10 @@ directory.
 
 The shared clustering implementation used by the final figure notebooks is
 tracked in `src/llm_spatial_omics_clustering/final_figures_runtime/`.
+
+Before rebuilding a figure, each active source-rebuild notebook acquires the
+paired B004 OME-TIFF inputs exclusively from the public HuBMAP asset service.
+`SOURCE_REBUILD_TIFF_ROOT` is only the cache location for those downloads, not
+an alternative TIFF input source. The downloader validates the eight declared
+H5AD `File_ID` values, supports resumable transfers, and requires a
+free-space preflight before it writes the roughly 46 GiB TIFF cache.

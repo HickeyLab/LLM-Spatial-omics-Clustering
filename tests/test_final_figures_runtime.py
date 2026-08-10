@@ -49,6 +49,21 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
             Path("/tmp/final_figures_output/final_figures_pixie_prefix_cache").resolve(),
         )
 
+    def test_final_source_notebooks_acquire_hubmap_tiffs_without_a_mode_switch(self):
+        notebook_root = Path(__file__).resolve().parents[1] / "notebooks" / "final_figures"
+        notebooks = sorted(notebook_root.glob("figure_*.ipynb"))
+        active = [path for path in notebooks if path.name != "figure_01_redsea_spillover_correction.ipynb"]
+        self.assertEqual(len(active), 5)
+        for path in active:
+            source = path.read_text(encoding="utf-8")
+            self.assertNotIn("SOURCE_REBUILD_TIFF_MODE", source, path.name)
+            self.assertNotIn("TIFF_MODE =", source, path.name)
+            self.assertIn("download_b004_hubmap_tiff_pairs", source, path.name)
+            self.assertIn("HUBMAP_TIFF_DOWNLOAD = download_b004_hubmap_tiff_pairs", source, path.name)
+            self.assertIn("validate_hubmap_tiff_cache", source, path.name)
+            self.assertIn("final_figures_runtime.hubmap import B004_FILE_IDS", source, path.name)
+            self.assertNotIn("768b7adb649959b6b7b8741c282677eef", source, path.name)
+
 
 if __name__ == "__main__":
     unittest.main()

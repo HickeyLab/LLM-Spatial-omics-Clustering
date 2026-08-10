@@ -1033,7 +1033,7 @@ def _pixie_split_key(cells: pd.DataFrame) -> list[dict[str, str]]:
 def _tiff_filesystem_identity(cells: pd.DataFrame, tiffs_dir: str | Path) -> Mapping[str, Any]:
     """Fingerprint paired TIFF identities without an expensive full pixel read.
 
-    The cache is deliberately scoped to a local, immutable TIFF directory.  A
+    The cache is deliberately scoped to an immutable HuBMAP TIFF directory. A
     path, device/inode, size, ctime, and mtime change invalidates reuse before
     the legacy runner is called.  OME schema validation remains a separate
     explicit final-runtime contract check.
