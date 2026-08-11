@@ -1,4 +1,11 @@
-# Supplementary Figure 1 reproducibility contract
+# Historical Supplementary Figure 1 reproducibility contract (current S3)
+
+This is the retained compatibility contract for the older S1 panel set. The
+current manuscript mapping is Supplementary Figure S3; the canonical current
+source-rebuild notebook is
+`notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
+The `figure_s01` configuration, module, test, and output names below remain
+unchanged so existing reproductions continue to resolve.
 
 Supplementary Figure 1 documents the raw reference-label phenotypes and the
 inputs and diagnostics used for the Figure 2 clustering benchmark. The panel

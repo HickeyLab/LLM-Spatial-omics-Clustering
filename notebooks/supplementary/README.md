@@ -1,6 +1,6 @@
 # Supplementary figure notebooks
 
-## Supplementary Figure 1
+## Historical Supplementary Figure 1 contract (current S3)
 
 `figure_s01_clustering_inputs_and_diagnostics.ipynb` contains one independent
 code cell for each of Panels A--E:
@@ -18,10 +18,16 @@ uses a frozen, hash-validated historical table and remains explicitly marked
 
 Runtime dependencies are recorded in `requirements-figure-s01.txt`.
 
-## Supplementary Figure 2
+This notebook and its `figure_s01` configuration/module names are retained for
+backward-compatible reproduction of the older S1 contract. In the current
+manuscript numbering, this panel set is Supplementary Figure S3. The canonical
+current source-rebuild notebook is
+`../final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
+
+## Current Supplementary Figure 4
 
 The final source notebook
-`../final_figures/figure_s02_annotation_diagnostics.ipynb` contains exactly two
+`../final_figures/figure_s04_annotation_diagnostics.ipynb` contains exactly two
 independently runnable code cells:
 
 - A: unnormalized cell-count confusion matrix
