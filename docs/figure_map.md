@@ -18,24 +18,23 @@ record the scope without generating placeholder panels.
 
 ## Supplementary figures
 
-The user-supplied composites fix Supplementary Figure 1 as Panels A--E and
-Supplementary Figure 2 as Panels A--B. Their working titles remain `VERIFY:`
-until final captions are supplied.
+The current tracked figure files contain four distinct supplementary figures.
+The older `notebooks/supplementary/` S1 contract is retained for reproducibility
+but is a compatibility artifact for the current S3 panel set; it is not another
+current S1 figure.
 
 | Figure | Working topic | Panels | Notebook | Output directory |
 | --- | --- | --- | --- | --- |
-| S1 | `VERIFY:` Ground-truth phenotypes and clustering diagnostics | A--E | `notebooks/supplementary/figure_s01_clustering_inputs_and_diagnostics.ipynb` | `outputs/supplementary/figure_s01/` |
-| S2 | Source-rebuilt LLM annotation diagnostics | A--B | `notebooks/final_figures/figure_s02_annotation_diagnostics.ipynb` | `outputs/source_rebuilt/` |
+| S1 | Before/after compensation clustering metrics | A--C | `notebooks/final_figures/figure_s01_clustering_metrics.ipynb` | `outputs/source_rebuilt/` |
+| S2 | Before/after compensation spatial cell-type comparisons | A--B | `notebooks/final_figures/figure_s02_spatial_celltypes.ipynb` | `outputs/source_rebuilt/` |
+| S3 | `VERIFY:` Ground-truth phenotypes and clustering diagnostics | A--E | `notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb` | `outputs/source_rebuilt/` |
+| S4 | Source-rebuilt LLM annotation diagnostics | A--B | `notebooks/final_figures/figure_s04_annotation_diagnostics.ipynb` | `outputs/source_rebuilt/` |
 
-The manuscript also references `S4` and `S5`, but does not include complete
-supplementary captions. Some panel numbers remain reused for different
-analyses:
+The manuscript still references `S5` without a complete caption or source
+notebook. It remains `VERIFY:` and is not assigned a tracked figure file.
 
-- `S4` is referenced for both compensation metrics and end-to-end pipeline
-  analyses.
-- `S3` is not referenced.
-
-Create notebooks for the remaining supplementary figures only after their
-numbering and captions are reconciled. Until then,
-`notebooks/supplementary/` and `outputs/supplementary/` remain their reserved
-locations.
+The compatibility notebook
+`notebooks/supplementary/figure_s01_clustering_inputs_and_diagnostics.ipynb`
+and its `configs/figure_s01.yaml`/`src/.../figure_s01.py` implementation retain
+their historical S1 names. Their current publication mapping is S3; the
+canonical source-rebuild notebook is the S3 path in the table above.

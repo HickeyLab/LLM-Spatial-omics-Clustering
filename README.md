@@ -35,9 +35,10 @@ artifacts remain local-only.
 | 3 | LLM annotation benchmark | `notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb` |
 | 4 | End-to-end Leiden–GPT pipeline | `notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb` |
 
-The current manuscript references supplementary figures, but does not define a
-stable supplementary figure map. See
-[`docs/figure_map.md`](docs/figure_map.md) before adding those notebooks.
+The current supplementary figure map is documented in
+[`docs/figure_map.md`](docs/figure_map.md). It assigns the tracked figure
+notebooks to Supplementary Figures S1--S4 and keeps the older S1/S2 source
+contracts explicitly marked as compatibility artifacts.
 
 ## Working conventions
 
