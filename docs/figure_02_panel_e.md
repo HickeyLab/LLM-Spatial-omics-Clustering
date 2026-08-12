@@ -41,7 +41,7 @@ recomputed and therefore differ.
 The Figure 2 loader downloads the H5AD into its ignored Duke cache when absent.
 The three non-PIXIE assignment CSVs and TIFF PIXIE output remain local and
 gitignored under the repository's `data/processed/` tree. Execute only the fifth code cell
-of [`figure_02_clustering_method_benchmark.ipynb`](../notebooks/main/figure_02_clustering_method_benchmark.ipynb).
+of [`figure_02_clustering_method_benchmark.ipynb`](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb).
 
 The cell writes the regional score table, PNG, PDF, and JSON provenance record
 to `outputs/figure_02/`; those generated artifacts stay local and gitignored.
