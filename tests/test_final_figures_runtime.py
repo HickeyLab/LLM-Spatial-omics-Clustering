@@ -51,8 +51,14 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
 
     def test_final_source_notebooks_acquire_hubmap_tiffs_without_a_mode_switch(self):
         notebook_root = Path(__file__).resolve().parents[1] / "notebooks" / "final_figures"
-        notebooks = sorted(notebook_root.glob("figure_*.ipynb"))
-        active = [path for path in notebooks if path.name != "figure_01_redsea_spillover_correction.ipynb"]
+        source_rebuild_names = (
+            "figure_02_clustering_method_benchmark.ipynb",
+            "figure_03_llm_annotation_benchmark.ipynb",
+            "figure_04_leiden_gpt_end_to_end.ipynb",
+            "figure_s03_clustering_inputs_and_diagnostics.ipynb",
+            "figure_s04_annotation_diagnostics.ipynb",
+        )
+        active = [notebook_root / name for name in source_rebuild_names]
         self.assertEqual(len(active), 5)
         for path in active:
             source = path.read_text(encoding="utf-8")

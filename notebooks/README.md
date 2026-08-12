@@ -1,25 +1,16 @@
 # Notebooks
 
-`main/` contains the executable legacy Figure 2 benchmark notebook. Notebook
-filenames begin with the two-digit figure number so they sort in manuscript
-order.
+`final_figures/` is the single canonical notebook collection for the current
+publication packet. It contains Figures 1--4, Supplementary Figures S1--S4,
+tables, the metric registry, and the supplementary note.
 
-Each notebook should eventually:
+Figure 1 and Supplementary Figures S1--S2 contain executed plots. Figures
+2--4 and Supplementary Figures S3--S4 show hash-verified publication previews
+near the top and keep the full reconstruction code below them.
 
-1. declare its inputs and configuration;
-2. call shared functions from `src/`;
-3. generate only its assigned figure panels and supporting tables;
-4. write artifacts to its matching directory under `outputs/`; and
-5. finish with figure-specific validation checks.
+`supplementary/` retains an independently executable historical S1 contract
+for provenance. Its panel set maps to current Supplementary Figure S3, so it
+is not an alternative current figure entry point.
 
-`supplementary/` is reserved until the manuscript's supplementary numbering is
-finalized.
-
-## final source-rebuild notebooks
-
-`final_figures/` contains the source notebooks from the final
-annotation-accuracy track.
-They are kept as one isolated notebook namespace and use the declared H5AD,
-paired OME-TIFF, and raw-LLM input contract. Generated figures, manifests,
-executed copies, archive copies, and duplicate short-name aliases are not
-versioned here.
+Generated figures, manifests, raw model responses, and newly executed notebook
+copies belong under `outputs/` and remain untracked.

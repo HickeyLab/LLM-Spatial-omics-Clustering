@@ -1,56 +1,100 @@
 # Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
 
-Repository for the manuscript analysis:
+Reviewer-facing analysis repository for the manuscript *Evaluation of
+Clustering Methods and Large Language Models for Spatial Proteomic Cell Type
+Annotation*.
 
-> *Evaluation of Clustering Methods and Large Language Models for Spatial
-> Proteomic Cell Type Annotation*
+The canonical figure notebooks, visible results, input contracts, and shared
+analysis code are kept together here. Raw data and generated run artifacts are
+excluded from Git.
 
-This repository contains source-traced figure notebooks and the shared code
-and contracts needed to rerun the available analyses. Raw data and generated
-artifacts remain local-only.
+## Start here
+
+No setup is needed to inspect the results on GitHub. Open a notebook in the
+table below; each one either contains its executed plots or shows a
+source-traced publication preview near the top.
+
+| Item | Notebook | Visible result |
+| --- | --- | --- |
+| Figure 1 | [`figure_01_spillover_compensation.ipynb`](notebooks/final_figures/figure_01_spillover_compensation.ipynb) | Executed plots embedded |
+| Figure 2 | [`figure_02_clustering_method_benchmark.ipynb`](notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) | Publication preview |
+| Figure 3 | [`figure_03_llm_annotation_benchmark.ipynb`](notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) | Publication preview |
+| Figure 4 | [`figure_04_leiden_gpt_end_to_end.ipynb`](notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb) | Publication preview |
+| Supplementary Figure S1 | [`figure_s01_clustering_metrics.ipynb`](notebooks/final_figures/figure_s01_clustering_metrics.ipynb) | Executed plots embedded |
+| Supplementary Figure S2 | [`figure_s02_spatial_celltypes.ipynb`](notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) | Executed plots embedded |
+| Supplementary Figure S3 | [`figure_s03_clustering_inputs_and_diagnostics.ipynb`](notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb) | Publication preview |
+| Supplementary Figure S4 | [`figure_s04_annotation_diagnostics.ipynb`](notebooks/final_figures/figure_s04_annotation_diagnostics.ipynb) | Publication preview |
+
+![Figure 2 publication output](notebooks/final_figures/previews/figure_02.png)
+
+The tracked previews are byte-for-byte copies of validated source-traced
+publication outputs. Their audit hashes are recorded in
+[`notebooks/final_figures/previews/README.md`](notebooks/final_figures/previews/README.md).
+They are browsing aids, not stored execution state for the reconstruction
+notebooks.
 
 ## Repository layout
 
 ```text
 .
-├── configs/                         # Version-controlled figure contracts
-├── data/                            # Local-only raw, interim, and processed data
-├── docs/                            # Figure map and project documentation
+├── configs/                         # Version-controlled analysis contracts
+├── data/                            # Local-only source-data caches
+├── docs/                            # Figure maps and provenance notes
 ├── notebooks/
-│   ├── main/                        # Core Figure 2 notebook
-│   ├── final_figures/               # Source-locked final figure notebooks
-│   └── supplementary/               # Reserved for finalized supplementary figures
-├── outputs/                         # Generated outputs, separated by figure
-├── src/
-│   └── llm_spatial_omics_clustering # Shared Python code
-└── tests/                           # Focused contract tests
+│   ├── final_figures/               # One canonical collection for the manuscript
+│   └── supplementary/               # Historical S1 compatibility reconstruction
+├── outputs/                         # Gitignored generated tables and figures
+├── src/llm_spatial_omics_clustering # Shared loading, clustering, and metrics code
+└── tests/                           # Focused contract and runtime tests
 ```
 
-## Main figure notebooks
+`notebooks/final_figures/` is the only current figure entry point. The
+historical notebook under `notebooks/supplementary/` is retained because its
+older S1 contract maps to the current S3 analysis; it is not a second current
+figure.
 
-| Figure | Topic | Notebook |
-| --- | --- | --- |
-| 1 | REDSEA spillover correction | `notebooks/final_figures/figure_01_redsea_spillover_correction.ipynb` |
-| 2 | Clustering-method benchmark | `notebooks/main/figure_02_clustering_method_benchmark.ipynb` |
-| 3 | LLM annotation benchmark | `notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb` |
-| 4 | End-to-end Leiden–GPT pipeline | `notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb` |
+## Local setup
 
-The current supplementary figure map is documented in
-[`docs/figure_map.md`](docs/figure_map.md). It assigns the tracked figure
-notebooks to Supplementary Figures S1--S4 and keeps the older S1/S2 source
-contracts explicitly marked as compatibility artifacts.
+Python 3.12 is the supported runtime.
 
-## Working conventions
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -r requirements.txt
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_final_figures_runtime.py'
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_hubmap_tiff_download.py'
+```
 
-- Keep one notebook as the entry point for each manuscript figure.
-- Put reusable data processing, metrics, and plotting functions in `src/`
-  rather than copying them between notebooks.
-- Write generated tables and panels to the matching `outputs/figure_XX/`
-  directory.
-- Keep raw and derived data out of Git; each local data tier is documented in
-  `data/`.
-- Make every completed notebook runnable from top to bottom without hidden
-  state.
+Launch the canonical notebooks with:
 
-Environment and data-access instructions will be added when the analysis
-dependencies and data locations are finalized.
+```bash
+.venv/bin/python -m jupyter notebook notebooks/final_figures
+```
+
+## Full regeneration
+
+Figure 1 and Supplementary Figures S1--S2 use the declared before/after
+compensation H5AD inputs. Figures 2--4 and Supplementary Figures S3--S4
+download and checksum-validate the public annotated H5AD from [Duke Research
+Data Repository record 505](https://research.repository.duke.edu/record/505),
+then acquire the eight paired HuBMAP OME-TIFF expression/mask assets. Allow
+roughly 46 GiB for the TIFF cache plus working space.
+
+The annotation notebooks also require an OpenRouter API key. Configure the
+external method locations before a full run:
+
+```bash
+export OPENROUTER_API_KEY='...'
+export SOURCE_REBUILD_SPATIALSORT_SOURCE_ROOT='/path/to/SpatialSort'
+export SOURCE_REBUILD_PIXIE_RUNNER_PATH='/path/to/run_streaming_tiff_pixie.py'
+```
+
+SpatialSort can be obtained from
+[`Roth-Lab/SpatialSort`](https://github.com/Roth-Lab/SpatialSort). The
+hash-validated low-disk PIXIE runner used by this analysis is not bundled in
+this repository. A clean clone therefore supports result review and focused
+validation, but a completely unattended end-to-end rebuild still requires
+that external file.
+
+Generated tables, panels, download receipts, and raw model responses are
+written under `outputs/` and remain ignored by Git.

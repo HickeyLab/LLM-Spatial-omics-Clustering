@@ -33,9 +33,9 @@ absent; run the Figure 2 notebook with the pinned local environment:
 
 ```bash
 python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements-figure-02.txt
+.venv/bin/python -m pip install -r requirements.txt
 PYTHONPATH=src .venv/bin/python -m jupyter nbconvert --execute --to notebook --inplace \
-  notebooks/main/figure_02_clustering_method_benchmark.ipynb \
+  notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb \
   --ExecutePreprocessor.timeout=-1 --ExecutePreprocessor.kernel_name=python3
 ```
 

@@ -24,11 +24,10 @@ manuscript numbering, this panel set is Supplementary Figure S3. The canonical
 current source-rebuild notebook is
 `../final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
 
-## Current Supplementary Figure 4
+## Current Supplementary Figure S4
 
 The final source notebook
-`../final_figures/figure_s04_annotation_diagnostics.ipynb` contains exactly two
-independently runnable code cells:
+`../final_figures/figure_s04_annotation_diagnostics.ipynb` renders two panels:
 
 - A: unnormalized cell-count confusion matrix
 - B: per-Leiden-cluster correctness, annotation loss, and clustering loss

@@ -1,6 +1,9 @@
 # Figure 2 outputs
 
-Generated only by `notebooks/main/figure_02_clustering_method_benchmark.ipynb`.
+This directory retains panel-level outputs from the earlier Figure 2
+reconstruction. The canonical publication notebook is
+`notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb`; its
+current source-rebuilt artifacts are written under `outputs/source_rebuilt/`.
 
 Current executable panels:
 
