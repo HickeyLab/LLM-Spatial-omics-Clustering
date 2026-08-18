@@ -1,13 +1,12 @@
-# Historical Supplementary Figure 1 reproducibility contract (current S3)
+# Supplementary Figure S3 panel-level reproducibility contract
 
-This is the retained compatibility contract for the older S1 panel set. The
-current manuscript mapping is Supplementary Figure S3; the canonical current
-source-rebuild notebook is
-`notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
-The `figure_s01` configuration, module, test, and output names below remain
-unchanged so existing reproductions continue to resolve.
+This contract supports the current Supplementary Figure S3 panel set. The
+canonical reviewer-facing source-rebuild notebook is
+`notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`;
+the supporting notebook documented here runs each panel independently. Its
+configuration, module, test, and output names all use the current S3 number.
 
-Supplementary Figure 1 documents the raw reference-label phenotypes and the
+Supplementary Figure S3 documents the raw reference-label phenotypes and the
 inputs and diagnostics used for the Figure 2 clustering benchmark. The panel
 map is fixed by the supplied composite:
 
@@ -23,7 +22,7 @@ diagnostics` because no final manuscript title was supplied.
 ## Notebook contract
 
 The notebook is
-`notebooks/supplementary/figure_s01_clustering_inputs_and_diagnostics.ipynb`.
+`notebooks/supplementary/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
 It contains exactly five code cells and no setup or narrative cells:
 
 1. Cell 1 runs Panel A.
@@ -41,8 +40,8 @@ stored outputs record the generated artifact paths.
 
 The implementation and frozen panel contract are:
 
-- `src/llm_spatial_omics_clustering/figure_s01.py`
-- `configs/figure_s01.yaml`
+- `src/llm_spatial_omics_clustering/figure_s03.py`
+- `configs/figure_s03.yaml`
 
 No LLM or external API call is used in this supplementary figure.
 
@@ -60,7 +59,7 @@ API. They reuse:
 
 The shared source universe contains 220,082 cells and 28 raw reference labels,
 including 10,495 `Noise` cells. Removing `Noise` leaves 209,587 cells and 27
-raw labels. Supplementary Figure 1 does **not** use the later 20-class Figure 2
+raw labels. Supplementary Figure S3 does **not** use the later 20-class Figure 2
 evaluation harmonization.
 
 The selected cluster counts are:
@@ -106,7 +105,7 @@ s_{c,m} =
 A constant marker is assigned a scaled value of zero. Cell types and markers
 are independently ordered from the raw group-mean matrix using average
 linkage with correlation distance. The exact recovered 27-row and 45-column
-orders are frozen in `configs/figure_s01.yaml`; the computation must reproduce
+orders are frozen in `configs/figure_s03.yaml`; the computation must reproduce
 both orders or the panel fails validation.
 
 The audit CSV contains one row per cell-type/marker pair, including cell and
@@ -163,7 +162,7 @@ index is approximately 0.190, and their largest clusters contain 36,108 and
 31,211 cells, respectively.
 
 Panels C and E intentionally use the current Figure 2 TIFF-derived PIXIE
-partition so Supplementary Figure 1 builds on the published notebook
+partition so Supplementary Figure S3 builds on the published notebook
 dependency rather than silently mixing two PIXIE definitions. Consequently,
 the PIXIE bars and metric points are expected to differ from the supplied
 legacy screenshot. This difference is recorded in each panel's provenance
@@ -249,24 +248,21 @@ upper-bound purity used elsewhere in the manuscript.
 ## Generated outputs
 
 Each panel writes an audit table, a 300-dpi PNG, a vector PDF, and a provenance
-JSON under `outputs/supplementary/figure_s01/`:
+JSON under `outputs/supplementary/figure_s03/`:
 
 | Panel | Audit table | Figure stem | Provenance |
 |---|---|---|---|
-| A | `figure_s01a_marker_dotplot_summary.csv` | `figure_s01a_marker_dotplot` | `figure_s01a_provenance.json` |
-| B | `figure_s01b_region_summary.csv` | `figure_s01b_all_tissue_regions` | `figure_s01b_provenance.json` |
-| C | `figure_s01c_cluster_composition.csv` | `figure_s01c_cluster_composition` | `figure_s01c_provenance.json` |
-| D | `figure_s01d_flowsom_cluster_sweep.csv` | `figure_s01d_flowsom_cluster_sweep` | `figure_s01d_provenance.json` |
-| E | `figure_s01e_clustering_metrics.csv` | `figure_s01e_clustering_metrics` | `figure_s01e_provenance.json` |
+| A | `figure_s03a_marker_dotplot_summary.csv` | `figure_s03a_marker_dotplot` | `figure_s03a_provenance.json` |
+| B | `figure_s03b_region_summary.csv` | `figure_s03b_all_tissue_regions` | `figure_s03b_provenance.json` |
+| C | `figure_s03c_cluster_composition.csv` | `figure_s03c_cluster_composition` | `figure_s03c_provenance.json` |
+| D | `figure_s03d_flowsom_cluster_sweep.csv` | `figure_s03d_flowsom_cluster_sweep` | `figure_s03d_provenance.json` |
+| E | `figure_s03e_clustering_metrics.csv` | `figure_s03e_clustering_metrics` | `figure_s03e_provenance.json` |
 
 The provenance records include source universes, cluster counts, formulas,
 input or table hashes, output-table fingerprints, coordinate orientation, and
 the Panel C/E PIXIE and Panel D FlowSOM caveats.
 
-## Local-only status
+## Generated-file boundary
 
-The notebook, configuration, implementation, tests, documentation, and
-generated panels are local working-tree artifacts. Nothing from this
-Supplementary Figure 1 work has been committed or pushed. Generated files
-under `outputs/supplementary/` are ignored by Git; only the supplementary
-output README is retained by the repository ignore rules.
+Generated files under `outputs/supplementary/` are ignored by Git; only the
+supplementary output README is retained by the repository ignore rules.

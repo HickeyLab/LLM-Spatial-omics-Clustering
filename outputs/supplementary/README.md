@@ -2,14 +2,13 @@
 
 Use one subdirectory per finalized supplementary figure.
 
-## Historical Supplementary Figure 1 outputs (current S3 compatibility path)
+## Supplementary Figure S3 panel-level outputs
 
-`figure_s01/` contains the panel-level PNG/PDF figures, analysis tables, and
+`figure_s03/` contains the panel-level PNG/PDF figures, analysis tables, and
 provenance JSON files produced by
-`notebooks/supplementary/figure_s01_clustering_inputs_and_diagnostics.ipynb`.
-Each filename starts with its panel identifier (`figure_s01a` through
-`figure_s01e`). These are retained under the historical compatibility path;
-the current publication mapping for this panel set is Supplementary Figure S3.
+`notebooks/supplementary/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
+Each filename starts with its current panel identifier (`figure_s03a` through
+`figure_s03e`).
 
 ## Current Supplementary Figures S1--S4
 

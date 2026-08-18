@@ -42,16 +42,16 @@ notebooks.
 ├── docs/                            # Figure maps and provenance notes
 ├── notebooks/
 │   ├── final_figures/               # One canonical collection for the manuscript
-│   └── supplementary/               # Historical S1 compatibility reconstruction
+│   └── supplementary/               # Supporting panel-level figure runners
 ├── outputs/                         # Gitignored generated tables and figures
 ├── src/llm_spatial_omics_clustering # Shared loading, clustering, and metrics code
 └── tests/                           # Focused contract and runtime tests
 ```
 
-`notebooks/final_figures/` is the only current figure entry point. The
-historical notebook under `notebooks/supplementary/` is retained because its
-older S1 contract maps to the current S3 analysis; it is not a second current
-figure.
+`notebooks/final_figures/` is the only reviewer-facing figure entry point. A
+supporting notebook under `notebooks/supplementary/` can regenerate the five
+Supplementary Figure S3 panels independently; it uses the same S3 numbering
+throughout and is not a second manuscript figure.
 
 ## Local setup
 

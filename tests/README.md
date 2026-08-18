@@ -3,11 +3,11 @@
 Focused figure tests mirror the reusable modules under `src/`:
 
 - `test_figure_02.py`
-- `test_figure_s01.py`
+- `test_figure_s03.py`
 - `test_final_figures_runtime.py`
 - `test_hubmap_tiff_download.py`
 
-The Supplementary Figure 1 tests cover its configuration and five-cell
+The Supplementary Figure S3 tests cover its configuration and five-cell
 notebook contract, exact-key Figure 2 dependencies, frozen FlowSOM sweep, and
 panel metric calculations without rerunning the complete notebook.
 
