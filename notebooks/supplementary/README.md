@@ -1,8 +1,8 @@
 # Supplementary figure notebooks
 
-## Historical Supplementary Figure 1 contract (current S3)
+## Supplementary Figure S3 panel runner
 
-`figure_s01_clustering_inputs_and_diagnostics.ipynb` contains one independent
+`figure_s03_clustering_inputs_and_diagnostics.ipynb` contains one independent
 code cell for each of Panels A--E:
 
 - A: ground-truth protein-expression dot plot
@@ -16,12 +16,11 @@ from Figure 2, including the image-native TIFF-derived PIXIE result. Panel D
 uses a frozen, hash-validated historical table and remains explicitly marked
 `VERIFY:` because it is not a sweep of the final Figure 2 FlowSOM pipeline.
 
-Runtime dependencies are recorded in `requirements-figure-s01.txt`.
+Runtime dependencies are recorded in `requirements-figure-s03.txt`.
 
-This notebook and its `figure_s01` configuration/module names are retained for
-backward-compatible reproduction of the older S1 contract. In the current
-manuscript numbering, this panel set is Supplementary Figure S3. The canonical
-current source-rebuild notebook is
+This supporting notebook, its `figure_s03` configuration and module, and its
+generated output names all follow the current manuscript numbering. The
+canonical reviewer-facing source-rebuild notebook is
 `../final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
 
 ## Current Supplementary Figure S4

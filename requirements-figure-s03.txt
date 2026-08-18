@@ -1,4 +1,4 @@
-# Direct runtime versions for the Supplementary Figure 1 notebook and checks.
+# Direct runtime versions for the Supplementary Figure S3 notebook and checks.
 anndata==0.11.1
 h5py==3.12.1
 ipykernel==6.29.4

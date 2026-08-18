@@ -1,4 +1,4 @@
-"""Contract and local-data checks for Supplementary Figure 1, Panels A--E."""
+"""Contract and local-data checks for Supplementary Figure S3, Panels A--E."""
 
 import json
 from pathlib import Path
@@ -9,7 +9,7 @@ import numpy as np
 from llm_spatial_omics_clustering.figure_02 import (
     load_figure_config as load_figure_02_config,
 )
-from llm_spatial_omics_clustering.figure_s01 import (
+from llm_spatial_omics_clustering.figure_s03 import (
     build_panel_a_summary,
     build_panel_c_composition,
     build_panel_e_metrics,
@@ -22,12 +22,12 @@ from llm_spatial_omics_clustering.figure_s01 import (
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
 
-class FigureS01ContractTests(unittest.TestCase):
+class FigureS03ContractTests(unittest.TestCase):
     def test_config_locks_panel_map_and_current_figure_02_assignments(self) -> None:
         config = load_figure_config()
         dependency = config["figure_02_dependency"]
 
-        self.assertEqual(config["supplementary_figure"], 1)
+        self.assertEqual(config["supplementary_figure"], 3)
         self.assertTrue(str(config["working_title"]).startswith("VERIFY:"))
         self.assertEqual(dependency["expected_source_cells"], 220082)
         self.assertEqual(dependency["expected_non_noise_cells"], 209587)
@@ -77,7 +77,7 @@ class FigureS01ContractTests(unittest.TestCase):
         for panel_key in ("panel_a", "panel_b", "panel_c", "panel_d", "panel_e"):
             for output_path in config[panel_key]["outputs"].values():
                 self.assertTrue(
-                    str(output_path).startswith("outputs/supplementary/figure_s01/")
+                    str(output_path).startswith("outputs/supplementary/figure_s03/")
                 )
 
         figure_02_config = load_figure_02_config(
@@ -97,7 +97,7 @@ class FigureS01ContractTests(unittest.TestCase):
     def test_five_cell_notebook_and_frozen_panel_d_sweep(self) -> None:
         notebook_path = (
             REPOSITORY_ROOT
-            / "notebooks/supplementary/figure_s01_clustering_inputs_and_diagnostics.ipynb"
+            / "notebooks/supplementary/figure_s03_clustering_inputs_and_diagnostics.ipynb"
         )
         notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
         self.assertEqual(notebook["nbformat"], 4)

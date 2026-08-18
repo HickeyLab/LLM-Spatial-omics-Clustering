@@ -1,4 +1,4 @@
-"""Reproducible implementation of Supplementary Figure 1, Panels A--E.
+"""Reproducible implementation of Supplementary Figure S3, Panels A--E.
 
 Panels A--C and E import the exact B004 cohort and selected clustering
 assignments from the Figure 2 contract.  That choice intentionally makes the
@@ -37,12 +37,12 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PANEL_KEYS = tuple(f"panel_{letter}" for letter in "abcde")
 
 
-class FigureS01ValidationError(ValueError):
-    """Raised when a Supplementary Figure 1 input violates its contract."""
+class FigureS03ValidationError(ValueError):
+    """Raised when a Supplementary Figure S3 input violates its contract."""
 
 
 @dataclass(frozen=True)
-class FigureS01Inputs:
+class FigureS03Inputs:
     """Validated Figure 2 cohort, raw expression, and selected assignments."""
 
     cells: pd.DataFrame
@@ -57,14 +57,14 @@ class FigureS01Inputs:
 
 
 def load_figure_config(config_path: str | Path | None = None) -> dict[str, Any]:
-    """Load and minimally validate the Supplementary Figure 1 configuration."""
-    path = Path(config_path) if config_path else REPOSITORY_ROOT / "configs/figure_s01.yaml"
+    """Load and minimally validate the Supplementary Figure S3 configuration."""
+    path = Path(config_path) if config_path else REPOSITORY_ROOT / "configs/figure_s03.yaml"
     with path.open(encoding="utf-8") as handle:
         config = yaml.safe_load(handle)
-    if not isinstance(config, dict) or int(config.get("supplementary_figure", -1)) != 1:
-        raise FigureS01ValidationError(f"Invalid Supplementary Figure 1 config: {path}")
+    if not isinstance(config, dict) or int(config.get("supplementary_figure", -1)) != 3:
+        raise FigureS03ValidationError(f"Invalid Supplementary Figure S3 config: {path}")
     if not set(PANEL_KEYS).issubset(config):
-        raise FigureS01ValidationError(f"Config does not define Panels A--E: {path}")
+        raise FigureS03ValidationError(f"Config does not define Panels A--E: {path}")
     return config
 
 
@@ -81,7 +81,7 @@ def _resolve_config_path(
     config_path: str | Path | None,
 ) -> Path:
     if config_path is None:
-        return repository_root / "configs/figure_s01.yaml"
+        return repository_root / "configs/figure_s03.yaml"
     path = Path(config_path).expanduser()
     return (repository_root / path).resolve() if not path.is_absolute() else path.resolve()
 
@@ -134,7 +134,7 @@ def _method_specs(config: Mapping[str, Any]) -> list[tuple[str, str]]:
     ]
     expected = config["figure_02_dependency"]["expected_methods"]
     if {key for key, _ in specs} != set(expected):
-        raise FigureS01ValidationError("Method order and expected method keys differ")
+        raise FigureS03ValidationError("Method order and expected method keys differ")
     return specs
 
 
@@ -147,9 +147,9 @@ def _load_color_map(
     frame = pd.read_csv(path)
     required = {"cell_type_update", "color_hex"}
     if missing := required.difference(frame.columns):
-        raise FigureS01ValidationError(f"Color map is missing columns: {sorted(missing)}")
+        raise FigureS03ValidationError(f"Color map is missing columns: {sorted(missing)}")
     if frame["cell_type_update"].duplicated().any():
-        raise FigureS01ValidationError("Color map has duplicate cell-type labels")
+        raise FigureS03ValidationError("Color map has duplicate cell-type labels")
     colors = dict(
         zip(
             frame["cell_type_update"].astype(str),
@@ -158,7 +158,7 @@ def _load_color_map(
         )
     )
     if missing := set(map(str, observed_labels)).difference(colors):
-        raise FigureS01ValidationError(f"Color map has no entries for: {sorted(missing)}")
+        raise FigureS03ValidationError(f"Color map has no entries for: {sorted(missing)}")
     return colors
 
 
@@ -166,7 +166,7 @@ def _load_color_map(
 def _load_inputs_cached(
     repository_root_string: str,
     config_path_string: str,
-) -> FigureS01Inputs:
+) -> FigureS03Inputs:
     repository_root = Path(repository_root_string)
     config_path = Path(config_path_string)
     config = load_figure_config(config_path)
@@ -193,15 +193,15 @@ def _load_inputs_cached(
     cells["File_ID"] = cells["File_ID"].astype(str)
     cells["ID"] = pd.to_numeric(cells["ID"], errors="raise").astype(np.int64)
     if cells[["File_ID", "ID"]].duplicated().any():
-        raise FigureS01ValidationError("Figure 2 cells have duplicate (File_ID, ID) keys")
+        raise FigureS03ValidationError("Figure 2 cells have duplicate (File_ID, ID) keys")
 
     expected_methods = {
         str(key): int(value)
         for key, value in dependency["expected_methods"].items()
     }
     if set(assignments) != set(expected_methods):
-        raise FigureS01ValidationError(
-            "Figure 2 method keys differ from the S1 contract: "
+        raise FigureS03ValidationError(
+            "Figure 2 method keys differ from the S3 contract: "
             f"observed={sorted(assignments)}, expected={sorted(expected_methods)}"
         )
     for method_key, _ in _method_specs(config):
@@ -216,49 +216,49 @@ def _load_inputs_cached(
             sort=False,
         )
         if cells[method_key].isna().any():
-            raise FigureS01ValidationError(f"{method_key} has missing S1 assignments")
+            raise FigureS03ValidationError(f"{method_key} has missing S3 assignments")
 
     cluster_counts = {
         method_key: int(cells[method_key].nunique())
         for method_key, _ in _method_specs(config)
     }
     if cluster_counts != expected_methods:
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Selected assignment counts changed: {cluster_counts} != {expected_methods}"
         )
 
     source_count = int(len(cells))
     if source_count != int(dependency["expected_source_cells"]):
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Expected {dependency['expected_source_cells']:,} B004 cells; found {source_count:,}"
         )
     truth_column = str(dependency["truth_column"])
     if cells[truth_column].isna().any():
-        raise FigureS01ValidationError("B004 raw truth labels contain missing values")
+        raise FigureS03ValidationError("B004 raw truth labels contain missing values")
     cells[truth_column] = cells[truth_column].astype(str)
     raw_label_count = int(cells[truth_column].nunique())
     if raw_label_count != int(dependency["expected_raw_label_count_including_noise"]):
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Expected 28 raw labels including Noise; found {raw_label_count}"
         )
     non_noise_count = int(cells[truth_column].ne(str(dependency["excluded_label"])).sum())
     if non_noise_count != int(dependency["expected_non_noise_cells"]):
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Expected {dependency['expected_non_noise_cells']:,} non-Noise cells; "
             f"found {non_noise_count:,}"
         )
 
     # Figure 2 places three observation-derived markers before the 45 H5AD X
-    # variables. Supplementary Figure 1A deliberately uses only H5AD X.
+    # variables. Supplementary Figure S3A deliberately uses only H5AD X.
     obs_marker_count = len(figure_02_config["panel_d"]["features"]["h5ad_obs_markers"])
     marker_names = tuple(map(str, figure_02_data.marker_names[obs_marker_count:]))
     expression = np.asarray(figure_02_data.features[:, obs_marker_count:], dtype=np.float64)
     if expression.shape != (source_count, 45) or len(marker_names) != 45:
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Expected a 220,082 x 45 H5AD-X matrix; found {expression.shape}"
         )
 
-    return FigureS01Inputs(
+    return FigureS03Inputs(
         cells=cells,
         expression=expression,
         marker_names=marker_names,
@@ -275,15 +275,15 @@ def load_inputs(
     *,
     repository_root: str | Path | None = None,
     config_path: str | Path | None = None,
-) -> FigureS01Inputs:
-    """Load the shared S1 inputs through Figure 2's public, validated API."""
+) -> FigureS03Inputs:
+    """Load the shared S3 inputs through Figure 2's public, validated API."""
     root = _resolve_repository_root(repository_root)
     resolved_config = _resolve_config_path(root, config_path)
     return _load_inputs_cached(str(root), str(resolved_config))
 
 
 def build_panel_a_summary(
-    inputs: FigureS01Inputs,
+    inputs: FigureS03Inputs,
     config: Mapping[str, Any],
 ) -> pd.DataFrame:
     """Compute mean expression, positive fraction, and marker-scaled means."""
@@ -298,7 +298,7 @@ def build_panel_a_summary(
     if len(cell_types) != int(
         config["figure_02_dependency"]["expected_raw_label_count_excluding_noise"]
     ):
-        raise FigureS01ValidationError("Panel A raw non-Noise label count changed")
+        raise FigureS03ValidationError("Panel A raw non-Noise label count changed")
 
     mean_matrix = np.vstack(
         [expression[labels == cell_type].mean(axis=0) for cell_type in cell_types]
@@ -324,11 +324,11 @@ def build_panel_a_summary(
     expected_rows = [str(value) for value in config["panel_a"]["cell_type_order"]]
     expected_markers = [str(value) for value in config["panel_a"]["marker_order"]]
     if row_order != expected_rows:
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Panel A cell-type clustering order changed: {row_order}"
         )
     if marker_order != expected_markers:
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Panel A marker clustering order changed: {marker_order}"
         )
 
@@ -453,7 +453,7 @@ def run_panel_a(
     repository_root: str | Path | None = None,
     config_path: str | Path | None = None,
 ) -> dict[str, Path]:
-    """Compute, render, and provenance-lock Supplementary Figure 1A."""
+    """Compute, render, and provenance-lock Supplementary Figure S3A."""
     root = _resolve_repository_root(repository_root)
     resolved_config = _resolve_config_path(root, config_path)
     config = load_figure_config(resolved_config)
@@ -467,7 +467,7 @@ def run_panel_a(
     _json_dump(
         provenance_path,
         {
-            "panel": "S1A",
+            "panel": "S3A",
             "status": "executed",
             "source": "Figure 2 validated B004 H5AD cohort",
             "source_h5ad_sha256": inputs.figure_02_h5ad_sha256,
@@ -490,13 +490,13 @@ def run_panel_a(
 
 
 def _build_panel_b_region_summary(
-    inputs: FigureS01Inputs,
+    inputs: FigureS03Inputs,
     config: Mapping[str, Any],
 ) -> pd.DataFrame:
     truth_column = str(config["figure_02_dependency"]["truth_column"])
     order = [str(value) for value in config["panel_b"]["file_id_order"]]
     if set(order) != set(inputs.cells["File_ID"]) or len(order) != 8:
-        raise FigureS01ValidationError("Panel B File_ID order differs from B004")
+        raise FigureS03ValidationError("Panel B File_ID order differs from B004")
     rows: list[dict[str, Any]] = []
     for rank, file_id in enumerate(order, start=1):
         region = inputs.cells.loc[inputs.cells["File_ID"].eq(file_id)]
@@ -516,7 +516,7 @@ def _build_panel_b_region_summary(
 
 
 def _render_panel_b(
-    inputs: FigureS01Inputs,
+    inputs: FigureS03Inputs,
     config: Mapping[str, Any],
     color_map: Mapping[str, str],
 ) -> Any:
@@ -581,7 +581,7 @@ def run_panel_b(
     _json_dump(
         provenance_path,
         {
-            "panel": "S1B",
+            "panel": "S3B",
             "status": "executed",
             "source": "Figure 2 validated B004 H5AD cohort",
             "source_h5ad_sha256": inputs.figure_02_h5ad_sha256,
@@ -600,7 +600,7 @@ def run_panel_b(
 
 
 def build_panel_c_composition(
-    inputs: FigureS01Inputs,
+    inputs: FigureS03Inputs,
     config: Mapping[str, Any],
 ) -> pd.DataFrame:
     """Return a complete long cluster-by-raw-truth composition table."""
@@ -608,7 +608,7 @@ def build_panel_c_composition(
     expected_types = [str(value) for value in config["panel_c"]["cell_type_order"]]
     observed_types = set(inputs.cells[truth_column].astype(str))
     if set(expected_types) != observed_types:
-        raise FigureS01ValidationError("Panel C raw cell-type vocabulary changed")
+        raise FigureS03ValidationError("Panel C raw cell-type vocabulary changed")
     limits = {
         str(key): int(value)
         for key, value in config["panel_c"].get("displayed_cluster_limit", {}).items()
@@ -664,7 +664,7 @@ def build_panel_c_composition(
     if int(composition.groupby(["method_key", "cluster"])["cluster_total"].first().sum()) != (
         inputs.source_cell_count * len(_method_specs(config))
     ):
-        raise FigureS01ValidationError("Panel C composition totals do not cover every cell")
+        raise FigureS03ValidationError("Panel C composition totals do not cover every cell")
     return composition
 
 
@@ -771,7 +771,7 @@ def run_panel_c(
     _json_dump(
         provenance_path,
         {
-            "panel": "S1C",
+            "panel": "S3C",
             "status": "executed",
             "source": "Figure 2 selected assignments and raw B004 H5AD labels",
             "source_cells": inputs.source_cell_count,
@@ -818,12 +818,12 @@ def load_panel_d_sweep(
     observed_hash = _sha256_file(source_path)
     expected_hash = str(config["panel_d"]["source_sha256"])
     if observed_hash != expected_hash:
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Panel D sweep SHA-256 changed: {observed_hash} != {expected_hash}"
         )
     sweep = pd.read_csv(source_path)
     if list(sweep.columns) != ["k", "effective_k", "purity"]:
-        raise FigureS01ValidationError(f"Unexpected Panel D columns: {list(sweep.columns)}")
+        raise FigureS03ValidationError(f"Unexpected Panel D columns: {list(sweep.columns)}")
     expected = pd.DataFrame(
         config["panel_d"]["expected_rows"],
         columns=["k", "effective_k", "purity"],
@@ -834,7 +834,7 @@ def load_panel_d_sweep(
         rtol=0.0,
         atol=1e-15,
     ):
-        raise FigureS01ValidationError("Panel D sweep values differ from the frozen contract")
+        raise FigureS03ValidationError("Panel D sweep values differ from the frozen contract")
     return sweep, source_path
 
 
@@ -890,7 +890,7 @@ def run_panel_d(
     _json_dump(
         provenance_path,
         {
-            "panel": "S1D",
+            "panel": "S3D",
             "status": "executed_from_frozen_historical_table",
             "source_path": str(source_path),
             "source_sha256": _sha256_file(source_path),
@@ -918,7 +918,7 @@ def _majority_label(labels: pd.Series) -> str:
 
 
 def build_panel_e_metrics(
-    inputs: FigureS01Inputs,
+    inputs: FigureS03Inputs,
     config: Mapping[str, Any],
 ) -> pd.DataFrame:
     """Compute all six Panel E metric distributions from canonical assignments."""
@@ -929,10 +929,10 @@ def build_panel_e_metrics(
     excluded_label = str(config["figure_02_dependency"]["excluded_label"])
     cells = inputs.cells.loc[inputs.cells[truth_column].ne(excluded_label)].copy()
     if len(cells) != inputs.non_noise_cell_count:
-        raise FigureS01ValidationError("Panel E non-Noise universe changed")
+        raise FigureS03ValidationError("Panel E non-Noise universe changed")
     cell_types = sorted(cells[truth_column].astype(str).unique())
     if len(cell_types) != 27:
-        raise FigureS01ValidationError("Panel E must use 27 raw non-Noise labels")
+        raise FigureS03ValidationError("Panel E must use 27 raw non-Noise labels")
 
     records: list[dict[str, Any]] = []
     for method_key, method_label in _method_specs(config):
@@ -1069,7 +1069,7 @@ def build_panel_e_metrics(
     }
     observed = metrics.groupby("metric").size().to_dict()
     if observed != expected_observations:
-        raise FigureS01ValidationError(
+        raise FigureS03ValidationError(
             f"Panel E observation counts changed: {observed} != {expected_observations}"
         )
     return metrics
@@ -1181,7 +1181,7 @@ def run_panel_e(
     _json_dump(
         provenance_path,
         {
-            "panel": "S1E",
+            "panel": "S3E",
             "status": "executed",
             "source": "Figure 2 selected assignments and raw B004 H5AD labels",
             "source_cells": inputs.source_cell_count,
@@ -1210,8 +1210,8 @@ def run_panel_e(
 
 
 __all__ = [
-    "FigureS01Inputs",
-    "FigureS01ValidationError",
+    "FigureS03Inputs",
+    "FigureS03ValidationError",
     "build_panel_a_summary",
     "build_panel_c_composition",
     "build_panel_e_metrics",

@@ -1,8 +1,8 @@
-# Supplementary Figure 1 configuration.
+# Supplementary Figure S3 configuration.
 #
-# The user-supplied composite fixes the numbering and panel map as S1 A--E.
+# The current manuscript fixes the numbering and panel map as S3 A--E.
 # Source data and generated outputs remain local and are not committed.
-supplementary_figure: 1
+supplementary_figure: 3
 working_title: "VERIFY: Reference-label phenotypes and clustering diagnostics"
 
 figure_02_dependency:
@@ -117,10 +117,10 @@ panel_a:
     dot_edge_width: 0.25
     color_map: Reds
   outputs:
-    summary_csv: outputs/supplementary/figure_s01/figure_s01a_marker_dotplot_summary.csv
-    panel_png: outputs/supplementary/figure_s01/figure_s01a_marker_dotplot.png
-    panel_pdf: outputs/supplementary/figure_s01/figure_s01a_marker_dotplot.pdf
-    provenance_json: outputs/supplementary/figure_s01/figure_s01a_provenance.json
+    summary_csv: outputs/supplementary/figure_s03/figure_s03a_marker_dotplot_summary.csv
+    panel_png: outputs/supplementary/figure_s03/figure_s03a_marker_dotplot.png
+    panel_pdf: outputs/supplementary/figure_s03/figure_s03a_marker_dotplot.pdf
+    provenance_json: outputs/supplementary/figure_s03/figure_s03a_provenance.json
 
 panel_b:
   title: "All Tissue Regions"
@@ -141,10 +141,10 @@ panel_b:
     horizontal_space: 0.0
     vertical_space: 0.02
   outputs:
-    region_summary_csv: outputs/supplementary/figure_s01/figure_s01b_region_summary.csv
-    panel_png: outputs/supplementary/figure_s01/figure_s01b_all_tissue_regions.png
-    panel_pdf: outputs/supplementary/figure_s01/figure_s01b_all_tissue_regions.pdf
-    provenance_json: outputs/supplementary/figure_s01/figure_s01b_provenance.json
+    region_summary_csv: outputs/supplementary/figure_s03/figure_s03b_region_summary.csv
+    panel_png: outputs/supplementary/figure_s03/figure_s03b_all_tissue_regions.png
+    panel_pdf: outputs/supplementary/figure_s03/figure_s03b_all_tissue_regions.pdf
+    provenance_json: outputs/supplementary/figure_s03/figure_s03b_provenance.json
 
 panel_c:
   title: "Cluster composition by method"
@@ -186,10 +186,10 @@ panel_c:
     bar_edge_color: white
     bar_edge_width: 0.15
   outputs:
-    composition_csv: outputs/supplementary/figure_s01/figure_s01c_cluster_composition.csv
-    panel_png: outputs/supplementary/figure_s01/figure_s01c_cluster_composition.png
-    panel_pdf: outputs/supplementary/figure_s01/figure_s01c_cluster_composition.pdf
-    provenance_json: outputs/supplementary/figure_s01/figure_s01c_provenance.json
+    composition_csv: outputs/supplementary/figure_s03/figure_s03c_cluster_composition.csv
+    panel_png: outputs/supplementary/figure_s03/figure_s03c_cluster_composition.png
+    panel_pdf: outputs/supplementary/figure_s03/figure_s03c_cluster_composition.pdf
+    provenance_json: outputs/supplementary/figure_s03/figure_s03c_provenance.json
 
 panel_d:
   title: "FlowSOM purity by requested cluster count"
@@ -214,10 +214,10 @@ panel_d:
     y_label: "Purity (%)"
     x_label: "Number of Clusters"
   outputs:
-    sweep_csv: outputs/supplementary/figure_s01/figure_s01d_flowsom_cluster_sweep.csv
-    panel_png: outputs/supplementary/figure_s01/figure_s01d_flowsom_cluster_sweep.png
-    panel_pdf: outputs/supplementary/figure_s01/figure_s01d_flowsom_cluster_sweep.pdf
-    provenance_json: outputs/supplementary/figure_s01/figure_s01d_provenance.json
+    sweep_csv: outputs/supplementary/figure_s03/figure_s03d_flowsom_cluster_sweep.csv
+    panel_png: outputs/supplementary/figure_s03/figure_s03d_flowsom_cluster_sweep.png
+    panel_pdf: outputs/supplementary/figure_s03/figure_s03d_flowsom_cluster_sweep.pdf
+    provenance_json: outputs/supplementary/figure_s03/figure_s03d_provenance.json
 
 panel_e:
   title: "Clustering metric distributions"
@@ -249,7 +249,7 @@ panel_e:
     point_size: 12.0
     box_width: 0.62
   outputs:
-    metrics_csv: outputs/supplementary/figure_s01/figure_s01e_clustering_metrics.csv
-    panel_png: outputs/supplementary/figure_s01/figure_s01e_clustering_metrics.png
-    panel_pdf: outputs/supplementary/figure_s01/figure_s01e_clustering_metrics.pdf
-    provenance_json: outputs/supplementary/figure_s01/figure_s01e_provenance.json
+    metrics_csv: outputs/supplementary/figure_s03/figure_s03e_clustering_metrics.csv
+    panel_png: outputs/supplementary/figure_s03/figure_s03e_clustering_metrics.png
+    panel_pdf: outputs/supplementary/figure_s03/figure_s03e_clustering_metrics.pdf
+    provenance_json: outputs/supplementary/figure_s03/figure_s03e_provenance.json

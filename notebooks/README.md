@@ -8,9 +8,10 @@ Figure 1 and Supplementary Figures S1--S2 contain executed plots. Figures
 2--4 and Supplementary Figures S3--S4 show hash-verified publication previews
 near the top and keep the full reconstruction code below them.
 
-`supplementary/` retains an independently executable historical S1 contract
-for provenance. Its panel set maps to current Supplementary Figure S3, so it
-is not an alternative current figure entry point.
+`supplementary/` contains an independently executable panel runner for
+Supplementary Figure S3. It uses the same S3 numbering as the current
+manuscript and supports panel-level regeneration; it is not an alternative
+reviewer-facing figure entry point.
 
 Generated figures, manifests, raw model responses, and newly executed notebook
 copies belong under `outputs/` and remain untracked.
