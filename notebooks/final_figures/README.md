@@ -37,5 +37,11 @@ validates the eight declared H5AD `File_ID` values, supports resumable
 transfers, and performs a free-space preflight before writing the roughly
 46 GiB cache.
 
+Figure 1 and S1 use a separate historical input set: twelve local H5AD files
+forming six before/after REDSEA pairs; S2 uses the corresponding three-method
+subset. Figure 1 Panels C--F and S2 also use a historical HuBMAP reference.
+Record 505 does not contain the REDSEA files, and equivalence between its
+annotated H5AD and the historical Figure 1 reference has not been established.
+
 Shared clustering and validation code lives in
 `src/llm_spatial_omics_clustering/final_figures_runtime/`.

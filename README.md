@@ -73,12 +73,21 @@ Launch the canonical notebooks with:
 
 ## Full regeneration
 
-Figure 1 and Supplementary Figures S1--S2 use the declared before/after
-compensation H5AD inputs. Figures 2--4 and Supplementary Figures S3--S4
-download and checksum-validate the public annotated H5AD from [Duke Research
-Data Repository record 505](https://research.repository.duke.edu/record/505),
-then acquire the eight paired HuBMAP OME-TIFF expression/mask assets. Allow
-roughly 46 GiB for the TIFF cache plus working space.
+Figure 1 and Supplementary Figure S1 use twelve local H5AD files forming six
+before/after REDSEA pairs; Supplementary Figure S2 uses the corresponding
+three-method subset. Figure 1 Panels C--F and Supplementary Figure S2 also use
+the historical HuBMAP reference
+`20260130_HuBMAP_Yang_annotate_with_area.h5ad`. These inputs are not supplied
+by the Duke acquisition below.
+
+Figures 2--4 and Supplementary Figures S3--S4 download and checksum-validate
+`20260130_HuBMAP_experted_annotated.h5ad` from [Duke Research Data Repository
+record 505](https://research.repository.duke.edu/record/505), then acquire the
+eight paired HuBMAP OME-TIFF expression/mask assets. The Duke H5AD has the
+columns needed by the Figure 1 reference-matching step, but equivalence to the
+historical Figure 1 reference has not been established; record 505 also does
+not contain the twelve REDSEA H5AD inputs. Allow roughly 46 GiB for the TIFF
+cache plus working space.
 
 The annotation notebooks also require an OpenRouter API key. Configure the
 external method locations before a full run:
