@@ -26,3 +26,5 @@ Panels C--F and Supplementary Figure S2 also use the historical reference
 `20260130_HuBMAP_Yang_annotate_with_area.h5ad`. The Duke H5AD has the columns
 needed by that reference-matching step, but equivalence between the two H5ADs
 has not been established.
+
+Datasets for Figures 1, S1, and S2, are available in [Duke Research Data Repository record 565](https://research.repository.duke.edu/record/565). All datasets can be downloaded into the data/processed/ folder for the notebooks to run locally.
