@@ -37,11 +37,21 @@ validates the eight declared H5AD `File_ID` values, supports resumable
 transfers, and performs a free-space preflight before writing the roughly
 46 GiB cache.
 
-Figure 1 and S1 use a separate historical input set: twelve local H5AD files
-forming six before/after REDSEA pairs; S2 uses the corresponding three-method
-subset. Figure 1 Panels C--F and S2 also use a historical HuBMAP reference.
-Record 505 does not contain the REDSEA files, and equivalence between its
-annotated H5AD and the historical Figure 1 reference has not been established.
+Figure 1 and S1 use a separate historical input set: twelve H5AD files forming
+six before/after REDSEA pairs; S2 uses the corresponding three-method subset.
+Figure 1 Panels C--F and S2 also use the historical HuBMAP reference. The exact
+13-file input set is published in [Duke Research Data Repository record
+565](https://research.repository.duke.edu/record/565) (version 1, DOI
+[`10.7924/r4r565`](https://doi.org/10.7924/r4r565)); place the files in the
+repository-relative `data/processed/` directory. Record 505 remains the source
+for Figure 2 and later figures and is not treated as equivalent to the
+historical Figure 1 reference.
+
+The Figure 1, S1, and S2 notebooks preserve plots from their verified
+historical executions. Their source-discovery cells were updated for the
+published record 565 layout but were not followed by a full data-backed rerun;
+those cells are intentionally unexecuted, and the retained plots are review
+evidence rather than proof that the new local path has been executed.
 
 Shared clustering and validation code lives in
 `src/llm_spatial_omics_clustering/final_figures_runtime/`.
