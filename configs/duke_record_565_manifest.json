@@ -1,0 +1,75 @@
+{
+  "schema": "duke_research_repository_record_manifest.v1",
+  "record_url": "https://research.repository.duke.edu/record/565",
+  "doi": "10.7924/r4r565",
+  "version": 1,
+  "publication_date": "2026-08-21",
+  "checksum_algorithm": "md5",
+  "files": [
+    {
+      "filename": "20260130_HuBMAP_Yang_annotate_with_area.h5ad",
+      "size_bytes": 105036338,
+      "md5": "d1f2b7f855a7fb70cc3c190c3001321f"
+    },
+    {
+      "filename": "mesmer_beforeREDSEA_leiden.h5ad",
+      "size_bytes": 218555261,
+      "md5": "2bdb389218dd1b60151e54f47cbb79d5"
+    },
+    {
+      "filename": "mesmer_afterREDSEA_leiden.h5ad",
+      "size_bytes": 219731329,
+      "md5": "ade5a37a2f534f94d2cdd35b321529b2"
+    },
+    {
+      "filename": "instanseg_beforeREDSEA_leiden.h5ad",
+      "size_bytes": 267358837,
+      "md5": "4c610f2bf2c40ca75a8f51e90a8e9aac"
+    },
+    {
+      "filename": "instanseg_afterREDSEA_leiden.h5ad",
+      "size_bytes": 269213791,
+      "md5": "5e9fe91bf23bb0127e6846c3b48a1739"
+    },
+    {
+      "filename": "cellSAM_beforeREDSEA_leiden.h5ad",
+      "size_bytes": 263112096,
+      "md5": "dc237a22fbf974666bc12d1f87ec19d6"
+    },
+    {
+      "filename": "cellSAM_afterREDSEA_leiden.h5ad",
+      "size_bytes": 265575640,
+      "md5": "73d614c032dd18b28fcbb0bef889a202"
+    },
+    {
+      "filename": "cellposeSAM_beforeREDSEA_leiden.h5ad",
+      "size_bytes": 233576301,
+      "md5": "b4b3af54205f1d64c479777aad65b5d9"
+    },
+    {
+      "filename": "cellposeSAM_afterREDSEA_leiden.h5ad",
+      "size_bytes": 235009403,
+      "md5": "b4e97743f8d44f3abc0c7a02d293bbe6"
+    },
+    {
+      "filename": "cellpose_cyto3_beforeREDSEA_leiden.h5ad",
+      "size_bytes": 196192375,
+      "md5": "f426b1f7d52d5770cc464d2d75af86cf"
+    },
+    {
+      "filename": "cellpose_cyto3_afterREDSEA_leiden.h5ad",
+      "size_bytes": 197870218,
+      "md5": "10bb03db0cf627e987dbc298ec0ea52b"
+    },
+    {
+      "filename": "microSAM_beforeREDSEA_leiden.h5ad",
+      "size_bytes": 265118062,
+      "md5": "ca526a616e8c2755a28f5674027a34cd"
+    },
+    {
+      "filename": "microSAM_afterREDSEA_leiden.h5ad",
+      "size_bytes": 269149264,
+      "md5": "d4a38ac0162b53110d487d39d325d86b"
+    }
+  ]
+}

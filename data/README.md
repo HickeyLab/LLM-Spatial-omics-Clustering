@@ -19,12 +19,20 @@ verification receipt. The loader checks the archive MD5 and extracted H5AD
 SHA-256 before use.
 
 Record 505 is not presented as the complete Figure 1 source. Figure 1 and
-Supplementary Figure S1 require twelve local H5AD files forming six
-before/after REDSEA pairs; Supplementary Figure S2 uses the corresponding
-three-method subset. Those REDSEA inputs are not in the Duke archive. Figure 1
-Panels C--F and Supplementary Figure S2 also use the historical reference
-`20260130_HuBMAP_Yang_annotate_with_area.h5ad`. The Duke H5AD has the columns
-needed by that reference-matching step, but equivalence between the two H5ADs
-has not been established.
+Supplementary Figure S1 require twelve H5AD files forming six before/after
+REDSEA pairs; Supplementary Figure S2 uses the corresponding three-method
+subset. Figure 1 Panels C--F and Supplementary Figure S2 also use the
+historical reference `20260130_HuBMAP_Yang_annotate_with_area.h5ad`.
 
-Datasets for Figures 1, S1, and S2, are available in [Duke Research Data Repository record 565](https://research.repository.duke.edu/record/565). All datasets can be downloaded into the data/processed/ folder for the notebooks to run locally.
+That exact 13-file input set is published in [Duke Research Data Repository
+record 565](https://research.repository.duke.edu/record/565) (version 1, DOI
+[`10.7924/r4r565`](https://doi.org/10.7924/r4r565)). Download the files into
+the repository-relative `data/processed/` directory before running the Figure
+1, S1, or S2 notebooks. The published filenames, byte sizes, and MD5 checksums
+are pinned in
+[`configs/duke_record_565_manifest.json`](../configs/duke_record_565_manifest.json).
+
+Record 505 does not contain these REDSEA files. Its
+`20260130_HuBMAP_experted_annotated.h5ad` has the columns needed by the Figure 1
+reference-matching step, but equivalence to record 565's historical
+`20260130_HuBMAP_Yang_annotate_with_area.h5ad` has not been established.

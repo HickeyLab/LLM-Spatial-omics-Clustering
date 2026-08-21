@@ -77,8 +77,13 @@ Figure 1 and Supplementary Figure S1 use twelve local H5AD files forming six
 before/after REDSEA pairs; Supplementary Figure S2 uses the corresponding
 three-method subset. Figure 1 Panels C--F and Supplementary Figure S2 also use
 the historical HuBMAP reference
-`20260130_HuBMAP_Yang_annotate_with_area.h5ad`. These inputs are not supplied
-by the Duke acquisition below.
+`20260130_HuBMAP_Yang_annotate_with_area.h5ad`. These 13 files are publicly
+available in [Duke Research Data Repository record
+565](https://research.repository.duke.edu/record/565) (version 1, DOI
+[`10.7924/r4r565`](https://doi.org/10.7924/r4r565)). Download them into the
+repository-relative `data/processed/` directory before running the Figure 1,
+S1, or S2 notebooks. Published filenames, byte sizes, and MD5 checksums are
+recorded in [`configs/duke_record_565_manifest.json`](configs/duke_record_565_manifest.json).
 
 Figures 2--4 and Supplementary Figures S3--S4 download and checksum-validate
 `20260130_HuBMAP_experted_annotated.h5ad` from [Duke Research Data Repository
