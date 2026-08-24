@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 
@@ -49,7 +50,7 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
             Path("/tmp/final_figures_output/final_figures_pixie_prefix_cache").resolve(),
         )
 
-    def test_final_source_notebooks_acquire_hubmap_tiffs_without_a_mode_switch(self):
+    def test_final_source_notebooks_use_frozen_assignments_without_tiff_download(self):
         notebook_root = Path(__file__).resolve().parents[1] / "notebooks" / "final_figures"
         source_rebuild_names = (
             "figure_02_clustering_method_benchmark.ipynb",
@@ -61,14 +62,37 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
         active = [notebook_root / name for name in source_rebuild_names]
         self.assertEqual(len(active), 5)
         for path in active:
-            source = path.read_text(encoding="utf-8")
+            notebook = json.loads(path.read_text(encoding="utf-8"))
+            source = "\n".join(
+                "".join(cell.get("source", [])) for cell in notebook["cells"]
+            )
             self.assertNotIn("SOURCE_REBUILD_TIFF_MODE", source, path.name)
             self.assertNotIn("TIFF_MODE =", source, path.name)
-            self.assertIn("download_b004_hubmap_tiff_pairs", source, path.name)
-            self.assertIn("HUBMAP_TIFF_DOWNLOAD = download_b004_hubmap_tiff_pairs", source, path.name)
-            self.assertIn("validate_hubmap_tiff_cache", source, path.name)
+            self.assertNotIn("download_b004_hubmap_tiff_pairs", source, path.name)
+            self.assertNotIn("validate_hubmap_tiff_cache", source, path.name)
+            self.assertIn("SOURCE_REBUILD_ASSIGNMENTS_ROOT", source, path.name)
+            self.assertIn("FROZEN_ASSIGNMENT_MANIFEST", source, path.name)
+            self.assertIn("_load_frozen_assignments", source, path.name)
+            self.assertIn(
+                'EXPECTED_H5AD_SHA256 = "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"',
+                source,
+                path.name,
+            )
+            self.assertIn("observed_h5ad_sha256 = _sha256(h5ad_path)", source, path.name)
             self.assertIn("final_figures_runtime.hubmap import B004_FILE_IDS", source, path.name)
             self.assertNotIn("768b7adb649959b6b7b8741c282677eef", source, path.name)
+            self.assertEqual(
+                notebook["metadata"]["runtime_input_boundary"],
+                "H5AD + tracked frozen K=300 assignments + OpenRouter API key or cached raw response bundles",
+                path.name,
+            )
+            for cell in notebook["cells"]:
+                if "input_boundary" in cell.get("metadata", {}):
+                    self.assertEqual(
+                        cell["metadata"]["input_boundary"],
+                        "H5AD + tracked frozen K=300 assignments + OpenRouter API key or cached raw response bundles",
+                        f"{path.name}:{cell.get('id')}",
+                    )
 
 
 if __name__ == "__main__":

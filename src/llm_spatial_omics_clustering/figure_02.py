@@ -10,8 +10,8 @@ method's clusters to majority H5AD reference labels independently within each
 region, then reports the reference-cell-count-weighted mean of class-level F1.
 Panels F--H report global per-cell-type F1, per-region purity, and global
 per-cell-type purity.  Panel I summarizes H5AD protein expression in
-cluster-majority CD8+ T-cell groups, while Panel J shows fixed spatial examples
-using the same selected method assignments.
+four-LLM-consensus CD8+ T-cell groups, while Panel J shows fixed spatial
+examples using those consensus labels and the same selected assignments.
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from __future__ import annotations
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 import errno
+import gzip
 import hashlib
 import json
 import logging
@@ -121,7 +122,7 @@ class PanelIData:
 
 @dataclass(frozen=True)
 class PanelJData:
-    """Spatial labels and fixed low/high agreement example metadata for Panel J."""
+    """Consensus spatial labels and fixed low/high example metadata for Panel J."""
 
     cells: pd.DataFrame
     examples: pd.DataFrame
@@ -205,8 +206,16 @@ def resolve_data_root(
     data_config = source_panel["data"]
     filename = str(data_config["h5ad_filename"])
     env_name = str(data_config["root_env"])
+    declared_sha256 = str(data_config["h5ad_sha256"])
     for root in _candidate_data_roots(filename, env_name):
-        if (root / filename).is_file():
+        source_path = root / filename
+        if source_path.is_file():
+            observed_sha256 = _file_sha256(source_path)
+            if observed_sha256 != declared_sha256:
+                raise Figure02ValidationError(
+                    f"{source_path} has SHA-256 {observed_sha256}; "
+                    f"declared h5ad_sha256={declared_sha256}"
+                )
             return root
     if bool(data_config.get("download", False)) and download_if_missing:
         configured = os.environ.get(env_name)
@@ -221,7 +230,14 @@ def resolve_data_root(
             else REPOSITORY_ROOT / "data" / "raw" / "duke_research_repository"
         )
         try:
-            return download_duke_h5ad(cache_root).path.parent
+            downloaded_path = download_duke_h5ad(cache_root).path
+            observed_sha256 = _file_sha256(downloaded_path)
+            if observed_sha256 != declared_sha256:
+                raise Figure02ValidationError(
+                    f"{downloaded_path} has SHA-256 {observed_sha256}; "
+                    f"declared h5ad_sha256={declared_sha256}"
+                )
+            return downloaded_path.parent
         except DukeH5ADDownloadError as exc:
             raise FileNotFoundError(
                 f"Unable to acquire {filename} from the Duke Research Data Repository"
@@ -677,9 +693,23 @@ def _resolve_assignment_path(
     data_root: Path,
 ) -> Path:
     filename = Path(str(method_config["assignment_filename"]))
-    if method_name == "pixie":
+    if bool(method_config.get("repository_artifact", False)):
         return REPOSITORY_ROOT / filename
     return data_root / filename
+
+
+def _source_csv_sha256(path: Path) -> str:
+    """Hash the decompressed CSV bytes of a plain or gzip assignment table."""
+    digest = hashlib.sha256()
+    handle = (
+        gzip.open(path, "rb")
+        if path.suffix.lower() == ".gz"
+        else path.open("rb")
+    )
+    with handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
 
 def _validate_tiff_pixie_manifest(artifact_path: Path, method_config: Mapping[str, Any]) -> None:
@@ -705,6 +735,19 @@ def _validate_tiff_pixie_manifest(artifact_path: Path, method_config: Mapping[st
         if manifest_parameters.get(key) != selected_value:
             raise Figure02ValidationError(
                 f"PIXIE manifest parameter {key}={manifest_parameters.get(key)!r}; "
+                f"selected artifact contract requires {selected_value!r}"
+            )
+    pixel_training = manifest_parameters.get("pixel_som_training", {})
+    for key, selected_value in {
+        "sigma": selected_parameters["pixel_som_sigma"],
+        "learning_rate": selected_parameters["pixel_som_learning_rate"],
+        "passes": selected_parameters["pixel_som_passes"],
+        "decay": selected_parameters["pixel_som_decay"],
+        "initialization": selected_parameters["pixel_som_initialization"],
+    }.items():
+        if pixel_training.get(key) != selected_value:
+            raise Figure02ValidationError(
+                f"PIXIE pixel-SOM parameter {key}={pixel_training.get(key)!r}; "
                 f"selected artifact contract requires {selected_value!r}"
             )
     training = manifest_parameters.get("cell_som_training", {})
@@ -744,6 +787,14 @@ def _load_method_assignments_for_keys(
         artifact_path = _resolve_assignment_path(method_name, method_config, data_root=data_root)
         if not artifact_path.is_file():
             raise FileNotFoundError(f"{method_name} assignments are missing: {artifact_path}")
+        declared_sha256 = method_config.get("source_csv_sha256")
+        if declared_sha256 is not None:
+            observed_sha256 = _source_csv_sha256(artifact_path)
+            if observed_sha256 != str(declared_sha256):
+                raise Figure02ValidationError(
+                    f"{method_name} source CSV SHA-256 {observed_sha256}; "
+                    f"declared source_csv_sha256={declared_sha256}"
+                )
         if method_name == "pixie":
             _validate_tiff_pixie_manifest(artifact_path, method_config)
         label_column = str(method_config["assignment_column"])
@@ -751,6 +802,12 @@ def _load_method_assignments_for_keys(
         frame["File_ID"] = frame["File_ID"].astype(str)
         frame["ID"] = pd.to_numeric(frame["ID"], errors="raise").astype(np.int64)
         _validate_unique_keys(frame, f"{method_name} assignments")
+        declared_rows = method_config.get("expected_rows")
+        if declared_rows is not None and len(frame) != int(declared_rows):
+            raise Figure02ValidationError(
+                f"{method_name} selected artifact has {len(frame):,} rows; "
+                f"declared expected_rows={int(declared_rows):,}"
+            )
         joined = keys.merge(frame, on=["File_ID", "ID"], how="left", validate="one_to_one")
         if joined[label_column].isna().any():
             missing = int(joined[label_column].isna().sum())
@@ -764,6 +821,52 @@ def _load_method_assignments_for_keys(
             )
         assignments[method_name] = joined.rename(columns={label_column: "cluster"})
     return assignments
+
+
+def _load_four_llm_consensus_for_keys(
+    keys: pd.DataFrame,
+    config: Mapping[str, Any],
+) -> pd.DataFrame:
+    """Load source-traced per-cell four-LLM modal labels for Panels I and J."""
+    spec = config.get("four_llm_consensus")
+    if not isinstance(spec, Mapping):
+        raise Figure02ValidationError("Figure 2 has no four_llm_consensus contract")
+    path = REPOSITORY_ROOT / str(spec["assignment_filename"])
+    if not path.is_file():
+        raise FileNotFoundError(f"Four-LLM consensus labels are missing: {path}")
+    compressed_sha256 = _file_sha256(path)
+    if compressed_sha256 != str(spec["gzip_sha256"]):
+        raise Figure02ValidationError(
+            f"Four-LLM consensus gzip SHA-256 {compressed_sha256}; "
+            f"declared gzip_sha256={spec['gzip_sha256']}"
+        )
+    observed_sha256 = _source_csv_sha256(path)
+    declared_sha256 = str(spec["source_csv_sha256"])
+    if observed_sha256 != declared_sha256:
+        raise Figure02ValidationError(
+            f"Four-LLM consensus source CSV SHA-256 {observed_sha256}; "
+            f"declared source_csv_sha256={declared_sha256}"
+        )
+    columns = {str(method): str(column) for method, column in spec["columns"].items()}
+    frame = pd.read_csv(path, usecols=["File_ID", "ID", *columns.values()])
+    frame["File_ID"] = frame["File_ID"].astype(str)
+    frame["ID"] = pd.to_numeric(frame["ID"], errors="raise").astype(np.int64)
+    _validate_unique_keys(frame, "four-LLM consensus labels")
+    if len(frame) != int(spec["expected_rows"]):
+        raise Figure02ValidationError(
+            f"Four-LLM consensus table has {len(frame):,} rows; "
+            f"expected {int(spec['expected_rows']):,}"
+        )
+    normalized_keys = keys.loc[:, ["File_ID", "ID"]].copy()
+    normalized_keys["File_ID"] = normalized_keys["File_ID"].astype(str)
+    normalized_keys["ID"] = pd.to_numeric(normalized_keys["ID"], errors="raise").astype(np.int64)
+    _validate_unique_keys(normalized_keys, "requested four-LLM consensus keys")
+    joined = normalized_keys.merge(
+        frame, on=["File_ID", "ID"], how="left", validate="one_to_one", sort=False
+    )
+    if joined[list(columns.values())].isna().any().any():
+        raise Figure02ValidationError("Four-LLM consensus labels do not cover every requested cell")
+    return joined.rename(columns={column: method for method, column in columns.items()})
 
 
 def load_method_assignments(
@@ -1388,7 +1491,7 @@ def load_panel_i_data(
     *,
     data_root: str | Path | None = None,
 ) -> PanelIData:
-    """Summarize H5AD X markers in globally CD8+ T-majority clusters for I."""
+    """Summarize H5AD X markers in four-LLM-consensus CD8+ T clusters for I."""
     config = dict(config or load_figure_config())
     panel = config["panel_i"]
     truth_column = str(panel["truth_column"])
@@ -1404,6 +1507,9 @@ def load_panel_i_data(
         keys=raw_cells[["File_ID", "ID"]],
         data_root=data_root,
     )
+    consensus = _load_four_llm_consensus_for_keys(
+        raw_cells[["File_ID", "ID"]], config
+    )
     labeled = raw_cells[["File_ID", "ID", truth_column]].copy()
     selected_keys: dict[str, pd.DataFrame] = {}
     selected_cluster_counts: dict[str, int] = {}
@@ -1418,12 +1524,19 @@ def load_panel_i_data(
         )
         if joined["cluster"].isna().any():
             raise Figure02ValidationError(f"Panel I has missing {method_key} assignments")
-        predicted = _majority_predictions(
-            joined.rename(columns={"cluster": method_key}),
-            truth_column=truth_column,
-            method_key=method_key,
+        joined = joined.merge(
+            consensus[["File_ID", "ID", method_key]],
+            on=["File_ID", "ID"],
+            how="left",
+            validate="one_to_one",
+            sort=False,
         )
-        selected = joined.loc[predicted.eq(target_cell_type), ["File_ID", "ID", "cluster"]].copy()
+        if joined[method_key].isna().any():
+            raise Figure02ValidationError(f"Panel I has missing {method_key} consensus labels")
+        selected = joined.loc[
+            joined[method_key].astype(str).eq(target_cell_type),
+            ["File_ID", "ID", "cluster"],
+        ].copy()
         if selected.empty:
             raise Figure02ValidationError(
                 f"Panel I found no {target_cell_type!r} cells for {method_label}"
@@ -1492,7 +1605,7 @@ def load_panel_j_data(
     *,
     data_root: str | Path | None = None,
 ) -> PanelJData:
-    """Load fixed TIFF-PIXIE low/high spatial agreement examples for Panel J."""
+    """Load source-traced four-LLM-consensus spatial examples for Panel J."""
     config = dict(config or load_figure_config())
     panel = config["panel_j"]
     truth_column = str(panel["truth_column"])
@@ -1511,19 +1624,27 @@ def load_panel_j_data(
         keys=raw_cells[["File_ID", "ID"]],
         data_root=data_root,
     )
+    consensus = _load_four_llm_consensus_for_keys(
+        raw_cells[["File_ID", "ID"]], config
+    )
     labels = raw_cells[["File_ID", "ID", *coordinate_columns, truth_column]].copy()
     for method_key, method_label in method_specs:
-        joined = raw_cells[["File_ID", "ID", truth_column]].merge(
-            assignments[method_key][["File_ID", "ID", "cluster"]],
+        joined = raw_cells[["File_ID", "ID"]].merge(
+            consensus[["File_ID", "ID", method_key]],
             on=["File_ID", "ID"],
             how="left",
             validate="one_to_one",
             sort=False,
-        ).rename(columns={"cluster": method_key})
-        labels[method_label] = _majority_predictions(
-            joined, truth_column=truth_column, method_key=method_key
-        ).to_numpy()
+        )
+        if joined[method_key].isna().any():
+            raise Figure02ValidationError(f"Panel J has missing {method_key} consensus labels")
+        labels[method_label] = joined[method_key].astype(str).to_numpy()
     labels = labels.rename(columns={truth_column: "Ground Truth"})
+    truth_normalization = {
+        str(source): str(target)
+        for source, target in config["four_llm_consensus"]["truth_normalization_map"].items()
+    }
+    labels["Ground Truth"] = labels["Ground Truth"].astype(str).replace(truth_normalization)
     excluded_labels = [str(label) for label in panel["excluded_labels"]]
     raw_counts = labels["Ground Truth"].astype(str).value_counts(sort=True)
     excluded_counts = {label: int(raw_counts.loc[label]) for label in excluded_labels}
@@ -2704,6 +2825,7 @@ def _method_assignment_artifacts_for_panel(
         artifact = {
             "filename": str(method_config["assignment_filename"]),
             "sha256": _file_sha256(path),
+            "source_csv_sha256": str(method_config.get("source_csv_sha256", "")),
         }
         if method_name == "pixie":
             manifest_path = path.parent / "manifest.json"
@@ -2713,6 +2835,22 @@ def _method_assignment_artifacts_for_panel(
             artifact["manifest_sha256"] = _file_sha256(manifest_path)
         artifacts[method_name] = artifact
     return artifacts
+
+
+def _four_llm_consensus_artifact(config: Mapping[str, Any]) -> dict[str, Any]:
+    """Return the tracked Panel I/J consensus-label identity and rule."""
+    spec = config["four_llm_consensus"]
+    path = REPOSITORY_ROOT / str(spec["assignment_filename"])
+    if not path.is_file():
+        raise FileNotFoundError(f"Four-LLM consensus labels are missing: {path}")
+    return {
+        "filename": str(spec["assignment_filename"]),
+        "gzip_sha256": _file_sha256(path),
+        "source_csv_sha256": str(spec["source_csv_sha256"]),
+        "source_annotations_sha256": str(spec["source_annotations_sha256"]),
+        "models_in_tie_order": list(spec["models_in_tie_order"]),
+        "rule": str(spec["rule"]),
+    }
 
 
 def _write_panel_provenance(output_path: str | Path, payload: Mapping[str, Any]) -> Path:
@@ -2812,6 +2950,7 @@ def save_panel_i_provenance(
         "method_assignments": _method_assignment_artifacts_for_panel(
             config, panel_key="panel_i", data_root=data_root
         ),
+        "annotation_consensus": _four_llm_consensus_artifact(config),
         "target_cell_type": panel["target_cell_type"],
         "expression_threshold": panel["expression_threshold"],
         "marker_order": list(data.marker_names),
@@ -2844,6 +2983,7 @@ def save_panel_j_provenance(
         "method_assignments": _method_assignment_artifacts_for_panel(
             config, panel_key="panel_j", data_root=data_root
         ),
+        "annotation_consensus": _four_llm_consensus_artifact(config),
         "truth_column": panel["truth_column"],
         "coordinate_columns": panel["coordinate_columns"],
         "excluded_counts": data.excluded_counts,

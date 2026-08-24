@@ -29,48 +29,63 @@ running the figure:
 PYTHONPATH=src python3.12 -m llm_spatial_omics_clustering.duke_h5ad
 ```
 
-## Method-derived assignments
+## Frozen source-traced assignments
 
-Leiden, FlowSOM, and SpatialSort use the existing selected B004 assignment
-tables named in the configuration. They are exact-key validated against the
-H5AD cohort and must contain 55, 300, and 60 clusters respectively.
+Panel D uses the exact selected V3 cell assignments tracked under
+[`data/frozen/v3_k300_assignments/`](../data/frozen/v3_k300_assignments/README.md).
+All four methods were configured with a target of 300 clusters. Leiden,
+FlowSOM, and PIXIE occupy all 300 labels; SpatialSort occupies 246 of its 300
+configured labels. Every table contains the same 220,082 unique
+`File_ID` + `ID` keys.
 
-PIXIE must use the TIFF-derived artifact, not the pre-existing table-level
-50-cluster result. The local, gitignored artifact is produced by:
+| Method | Tracked assignment | Source CSV SHA-256 | Configured K | Occupied clusters |
+| --- | --- | --- | ---: | ---: |
+| Leiden | `data/frozen/v3_k300_assignments/leiden/assignments.csv.gz` | `1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18` | 300 | 300 |
+| FlowSOM | `data/frozen/v3_k300_assignments/flowsom/assignments.csv.gz` | `9c2d4cb5981214d07505d83346c47817d6e1761587a306cf123f6aa5b2adfe78` | 300 | 300 |
+| SpatialSort | `data/frozen/v3_k300_assignments/spatialsort/master_spatialsort_clusters.csv.gz` | `8e6f09377be96fbb998a16ca35a6376e89029edb0f855756f5533f4ff003e56e` | 300 | 246 |
+| PIXIE | `data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz` | `7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6` | 300 | 300 |
 
-```bash
-export CELL_MASKS_DATA_ROOT=/path/to/cell_masks
-python3.12 "$CELL_MASKS_DATA_ROOT/PIXIE/run_streaming_tiff_pixie.py" \
-  --master "$CELL_MASKS_DATA_ROOT/master.csv" \
-  --tiffs-dir "$(dirname "$CELL_MASKS_DATA_ROOT")/Tiffs" \
-  --output-dir data/processed/figure_02/pixie_tiff_methods_50 \
-  --include-hoechst --blur-sigma 2 --pixel-som-side 10 \
-  --pixel-meta-clusters 20 --som-passes 1 --cell-som-side 20 \
-  --cell-meta-clusters 50 --cell-som-sigma 2.0 \
-  --cell-som-learning-rate 0.3 --cell-som-iterations 5000 \
-  --cell-som-decay asymptotic --cell-som-initialization minisom_default \
-  --seed 42 --zero-signal-policy fail
-```
+The loader validates each decompressed source hash, row count, exact key set,
+and occupied-cluster count against
+[`manifest.json`](../data/frozen/v3_k300_assignments/manifest.json).
 
-The Panel D loader refuses incomplete PIXIE output or any manifest whose
-critical parameters differ from the configuration.
+The source-traced method contracts are:
 
-The runner is the local streaming implementation: it preserves the documented
-pixel-SOM → pixel-metacluster → pixel-to-cell composition → cell-SOM →
-cell-metacluster sequence while avoiding full-resolution pixel-table staging.
-It is therefore not represented as a byte-identical invocation of the archived
-ARK/PIXIE stack.
+- **Leiden:** 47 markers excluding `Hoechst1`, `arcsinh(x/5)`, and a
+  `StandardScaler` fit separately within each `File_ID`; a local Leiden
+  hierarchy with 24 PCs, 24 neighbors, resolution 1.1, minimum child size 100,
+  maximum 7 children, and seed 42 produced a 320-cluster base partition, then
+  20 deterministic within-parent Ward-style centroid merges produced K=300.
+  Harmony was not used.
+- **FlowSOM:** the 45 shared protein markers, `arcsinh(x/5)`, a full-cohort
+  `RobustScaler`, a 32-by-32 MiniSom with sigma 1.0, learning rate 0.3, 10,000
+  iterations, Ward metaclustering to K=300, and seed 42.
+- **SpatialSort:** the 45 shared protein markers, `arcsinh(x/5)`, a
+  full-cohort `RobustScaler`, within-region 24-nearest-neighbor graphs,
+  precision scale 0.65, an 8-entry trace containing 6 MCMC sweeps, one inner
+  double-Metropolis-Hastings iteration, the last-iteration point estimate, and
+  seed 42. The K=300 run has 246 occupied clusters.
+- **PIXIE:** paired 48-channel expression and integer-mask OME-TIFFs including
+  Hoechst, a 2-pixel Gaussian blur, a 10-by-10 pixel SOM and 20 pixel
+  metaclusters (sigma 5.0, learning rate 0.05, one pass), followed by a
+  24-by-24 cell SOM and 300 cell metaclusters; the cell SOM used sigma 2.0,
+  learning rate 0.3, 5,000 iterations, and seed 42.
+
+These files are frozen publication inputs. Tracking them makes the published
+partition reproducible without implying that a clean clone reruns the original
+external clustering engines.
 
 ## UMAP provenance
 
-The attached Methods text gives exact clustering settings but not UMAP
-settings. The current shared-UMAP settings were recovered from the existing
-local implementation (`umap_flowsom_simple.py`) and are recorded as
-`VERIFY:` in the configuration. They need author confirmation before being
-claimed as manuscript methods.
+The shared UMAP is a visualization-only geometry and is not part of any
+clustering method. Its recovered coordinate source is locked by SHA-256
+`0bf956a2c03d3371a07c675b0caa3f663765d49e4ae322e25b8b475d6728ceb9`.
+The recorded reconstruction contract uses `arcsinh(x/1)`, standardization,
+PCA retaining 90% variance, `File_ID` batch correction, 30 neighbors,
+`min_dist=0.3`, Euclidean distance, and seed 42. The zoom bounds are likewise
+source locked.
 
-The regenerated coordinates are not assumed to be byte-identical to any older
-untracked coordinate export: UMAP and Harmony results can vary with software
-versions despite a fixed seed. The visual geometry and declared B004 key set
-are validated here; the manuscript method statement remains unresolved until
-the intended embedding specification is confirmed.
+This recovered display contract does not redefine the source-traced clustering
+settings. In particular, Harmony-style batch correction belongs only to the
+shared visualization; the authoritative Leiden K=300 artifact did not use
+Harmony.

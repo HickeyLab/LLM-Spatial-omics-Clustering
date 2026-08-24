@@ -46,26 +46,29 @@ class FigureS03ContractTests(unittest.TestCase):
                     download_if_missing=False,
                 )
 
-    def test_frozen_sweep_lookup_never_downloads_the_duke_h5ad(self) -> None:
+    def test_repository_frozen_sweep_never_downloads_the_duke_h5ad(self) -> None:
         with patch(
             "llm_spatial_omics_clustering.figure_02.resolve_data_root",
             side_effect=FileNotFoundError("local data unavailable"),
         ) as resolve_data_root:
-            with self.assertRaisesRegex(FileNotFoundError, "local data unavailable"):
-                load_panel_d_sweep(repository_root=REPOSITORY_ROOT)
+            sweep, source_path = load_panel_d_sweep(repository_root=REPOSITORY_ROOT)
 
-        resolve_data_root.assert_called_once()
+        resolve_data_root.assert_not_called()
         self.assertEqual(
-            resolve_data_root.call_args.kwargs,
-            {"download_if_missing": False},
+            source_path,
+            REPOSITORY_ROOT / "data/frozen/figure_s03/flowsom_k_sweep_purity.csv",
         )
+        self.assertEqual(sweep.shape, (8, 3))
 
     def test_config_locks_panel_map_and_current_figure_02_assignments(self) -> None:
         config = load_figure_config()
         dependency = config["figure_02_dependency"]
 
         self.assertEqual(config["supplementary_figure"], 3)
-        self.assertTrue(str(config["working_title"]).startswith("VERIFY:"))
+        self.assertEqual(
+            config["working_title"],
+            "Reference cell-type characteristics and comparative evaluation of clustering methods",
+        )
         self.assertEqual(dependency["expected_source_cells"], 220082)
         self.assertEqual(dependency["expected_non_noise_cells"], 209587)
         self.assertEqual(dependency["excluded_label"], "Noise")
@@ -77,7 +80,7 @@ class FigureS03ContractTests(unittest.TestCase):
         )
         self.assertEqual(
             dependency["observed_methods"],
-            {"leiden": 55, "flowsom": 300, "spatialsort": 60, "pixie": 50},
+            {"leiden": 300, "flowsom": 300, "spatialsort": 246, "pixie": 300},
         )
         self.assertNotIn("expected_methods", dependency)
         self.assertEqual(
@@ -97,7 +100,12 @@ class FigureS03ContractTests(unittest.TestCase):
         self.assertEqual(len(config["panel_c"]["cell_type_order"]), 28)
         self.assertEqual(config["panel_c"]["displayed_cluster_limit"], {"flowsom": 60})
         self.assertEqual(len(config["panel_d"]["expected_rows"]), 8)
-        self.assertTrue(str(config["panel_d"]["provenance_status"]).startswith("VERIFY:"))
+        self.assertEqual(
+            config["panel_d"]["provenance_status"],
+            "archived_historical_source_only",
+        )
+        self.assertFalse(config["panel_d"]["generator_available"])
+        self.assertFalse(config["panel_d"]["final_method_equivalent"])
 
         metric_contract = {
             str(metric["key"]): str(metric["grain"])
@@ -135,17 +143,20 @@ class FigureS03ContractTests(unittest.TestCase):
         )
         pixie_contract = figure_02_methods["pixie"]
         self.assertEqual(pixie_contract["configured_clusters"], 300)
-        self.assertEqual(pixie_contract["observed_clusters"], 50)
+        self.assertEqual(pixie_contract["observed_clusters"], 300)
         self.assertEqual(
             pixie_contract["assignment_filename"],
-            "data/processed/figure_02/pixie_tiff_methods_50/master_pixie_clusters.csv",
+            "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz",
         )
         self.assertEqual(
             pixie_contract["selected_artifact_parameters"]["input"],
             "paired 48-channel OME-TIFF expression images and integer cell masks",
         )
         self.assertEqual(
-            pixie_contract["selected_artifact_parameters"]["cell_metaclusters"], 50
+            pixie_contract["selected_artifact_parameters"]["cell_som_shape"], [24, 24]
+        )
+        self.assertEqual(
+            pixie_contract["selected_artifact_parameters"]["cell_metaclusters"], 300
         )
         self.assertEqual(
             pixie_contract["selected_artifact_parameters"]["pixel_metaclusters"], 20
@@ -222,7 +233,7 @@ class FigureS03ContractTests(unittest.TestCase):
         )
         self.assertEqual(
             inputs.cluster_counts,
-            {"leiden": 55, "flowsom": 300, "spatialsort": 60, "pixie": 50},
+            {"leiden": 300, "flowsom": 300, "spatialsort": 246, "pixie": 300},
         )
 
         panel_a = build_panel_a_summary(inputs, config)
@@ -239,14 +250,14 @@ class FigureS03ContractTests(unittest.TestCase):
         )
 
         panel_c = build_panel_c_composition(inputs, config)
-        self.assertEqual(panel_c.shape, (6309, 9))
+        self.assertEqual(panel_c.shape, (13394, 9))
         self.assertEqual(
             panel_c.groupby("method_key").size().to_dict(),
-            {"flowsom": 3458, "leiden": 883, "pixie": 1066, "spatialsort": 902},
+            {"flowsom": 3835, "leiden": 2690, "pixie": 4011, "spatialsort": 2858},
         )
         self.assertEqual(
             panel_c.groupby("method_key")["cluster"].nunique().to_dict(),
-            {"flowsom": 300, "leiden": 55, "pixie": 50, "spatialsort": 60},
+            {"flowsom": 300, "leiden": 300, "pixie": 300, "spatialsort": 246},
         )
         self.assertEqual(
             panel_c.groupby("method_key")["cell_count"].sum().to_dict(),
@@ -259,16 +270,16 @@ class FigureS03ContractTests(unittest.TestCase):
         )
 
         panel_e = build_panel_e_metrics(inputs, config)
-        self.assertEqual(panel_e.shape, (1210, 10))
+        self.assertEqual(panel_e.shape, (2572, 10))
         self.assertEqual(
             panel_e.groupby("metric").size().to_dict(),
             {
                 "adjusted_mutual_information": 32,
                 "adjusted_rand_index": 32,
                 "f1_score": 108,
-                "purity_percent": 465,
+                "purity_percent": 1146,
                 "recall": 108,
-                "shannon_index": 465,
+                "shannon_index": 1146,
             },
         )
         pixie_medians = (
@@ -277,12 +288,12 @@ class FigureS03ContractTests(unittest.TestCase):
             .median()
         )
         expected_pixie_medians = {
-            "adjusted_rand_index": 0.36246387565561256,
-            "adjusted_mutual_information": 0.4787237976117945,
-            "shannon_index": 1.6017005234958166,
-            "f1_score": 0.0,
-            "recall": 0.0,
-            "purity_percent": 49.58060216120221,
+            "adjusted_rand_index": 0.23558787141140625,
+            "adjusted_mutual_information": 0.42451304543927326,
+            "shannon_index": 1.5150539839148771,
+            "f1_score": 0.10770719122863592,
+            "recall": 0.06616481774960381,
+            "purity_percent": 50.621186716967074,
         }
         self.assertEqual(set(pixie_medians.index), set(expected_pixie_medians))
         for metric, expected in expected_pixie_medians.items():

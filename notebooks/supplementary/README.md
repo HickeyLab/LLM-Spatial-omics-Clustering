@@ -11,10 +11,12 @@ code cell for each of Panels A--E:
 - D: recovered exploratory FlowSOM cluster-count sensitivity curve
 - E: clustering metric distributions
 
-Panels A--C and E reuse the validated B004 cohort and clustering assignments
-from Figure 2, including the image-native TIFF-derived PIXIE result. Panel D
-uses a frozen, hash-validated historical table and remains explicitly marked
-`VERIFY:` because it is not a sweep of the final Figure 2 FlowSOM pipeline.
+Panels A--C and E reuse the validated B004 cohort and frozen K=300 clustering
+assignments from Figure 2. Their observed occupied-cluster counts are Leiden
+300, FlowSOM 300, SpatialSort 246, and PIXIE 300. Panel D uses a frozen,
+hash-validated historical table. No durable generator exists for that archived
+sweep, and it is explicitly not a tuning or validation run of the final
+FlowSOM pipeline.
 
 Runtime dependencies are recorded in `requirements-figure-s03.txt`.
 

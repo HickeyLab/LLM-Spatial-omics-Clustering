@@ -15,3 +15,4 @@ parent notebooks.
 | `figure_04.png` | `4e9892f2199cb820048bee54ff25a709899cc668a2b39743bbaa6ec63111934e` |
 | `figure_s03.png` | `da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5` |
 | `figure_s04.png` | `a278669227eea94741308c821b308d4023de3e22ed73e4699179a0e32086504a` |
+| `table_s02.png` | `98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa` |

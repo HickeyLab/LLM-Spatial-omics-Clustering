@@ -1,0 +1,32 @@
+{
+  "schema_version": "llm_spatial_omics_clustering.frozen_pixie_k300.v1",
+  "status": "complete",
+  "parameters": {
+    "include_hoechst": true,
+    "blur_sigma": 2.0,
+    "pixel_som_side": 10,
+    "pixel_meta_clusters": 20,
+    "cell_som_side": 24,
+    "cell_meta_clusters": 300,
+    "seed": 42,
+    "pixel_som_training": {
+      "sigma": 5.0,
+      "learning_rate": 0.05,
+      "passes": 1,
+      "decay": "linear",
+      "initialization": "data"
+    },
+    "cell_som_training": {
+      "sigma": 2.0,
+      "learning_rate": 0.3,
+      "iterations": 5000,
+      "decay": "asymptotic",
+      "initialization": "minisom_default"
+    }
+  },
+  "outputs": {
+    "clustered_cells": 220082,
+    "cell_clusters": 300
+  },
+  "source_csv_sha256": "7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6"
+}

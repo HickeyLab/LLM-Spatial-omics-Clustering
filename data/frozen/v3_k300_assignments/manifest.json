@@ -1,0 +1,122 @@
+{
+  "schema_version": "llm_spatial_omics_clustering.frozen_v3_k300_assignments.v1",
+  "cohort": {
+    "name": "B004",
+    "cells": 220082,
+    "fields_of_view": 8,
+    "key_columns": ["File_ID", "ID"],
+    "key_sha256": "7fced5df4b9ff6814059e1786a32154a1b871fe5d2bb4d90d63f2c87fd2b351a"
+  },
+  "methods": {
+    "leiden": {
+      "path": "leiden/assignments.csv.gz",
+      "source_csv_sha256": "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18",
+      "gzip_sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+      "assignment_column": "leiden_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 300,
+      "contract": {
+        "features": "47 markers excluding Hoechst1",
+        "transform": "arcsinh(x / 5)",
+        "scaling": "StandardScaler fit independently within each File_ID",
+        "base_partition": "local Leiden hierarchy with K=320",
+        "base_settings": {
+          "pca_components": 24,
+          "n_neighbors": 24,
+          "resolution": 1.1,
+          "minimum_child_size": 100,
+          "maximum_children": 7,
+          "seed": 42,
+          "harmony": false
+        },
+        "coarsening": "20 deterministic, within-parent Ward-style centroid merges to K=300"
+      }
+    },
+    "flowsom": {
+      "path": "flowsom/assignments.csv.gz",
+      "source_csv_sha256": "9c2d4cb5981214d07505d83346c47817d6e1761587a306cf123f6aa5b2adfe78",
+      "gzip_sha256": "12a00cb7b4fe9bdb8d17a333c72f38cf28c473378f9defdaf4feaea97e56c6d8",
+      "assignment_column": "flowsom_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 300,
+      "contract": {
+        "features": "45 shared protein markers",
+        "transform": "arcsinh(x / 5)",
+        "scaling": "RobustScaler fit on the full B004 cohort",
+        "som_shape": [32, 32],
+        "som_sigma": 1.0,
+        "som_learning_rate": 0.3,
+        "som_iterations": 10000,
+        "metaclustering": "Ward, K=300",
+        "seed": 42
+      }
+    },
+    "spatialsort": {
+      "path": "spatialsort/master_spatialsort_clusters.csv.gz",
+      "source_csv_sha256": "8e6f09377be96fbb998a16ca35a6376e89029edb0f855756f5533f4ff003e56e",
+      "gzip_sha256": "8639c66f7456ec0794ff14c5b39385a654ea8b83e926846a2ac7d822f7ed5a8a",
+      "assignment_column": "spatialsort_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 246,
+      "contract": {
+        "features": "45 shared protein markers",
+        "transform": "arcsinh(x / 5)",
+        "scaling": "RobustScaler fit on the full B004 cohort",
+        "n_neighbors": 24,
+        "precision_scale": 0.65,
+        "trace_iterations": 8,
+        "actual_mcmc_sweeps": 6,
+        "double_metropolis_hastings_iterations": 1,
+        "point_estimate": "last iteration",
+        "seed": 42
+      }
+    },
+    "pixie": {
+      "path": "pixie/master_pixie_clusters.csv.gz",
+      "source_csv_sha256": "7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6",
+      "gzip_sha256": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805",
+      "assignment_column": "pixie_cell_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 300,
+      "contract": {
+        "input": "paired 48-channel OME-TIFF expression images and integer cell masks",
+        "include_hoechst": true,
+        "gaussian_sigma_pixels": 2.0,
+        "pixel_som_shape": [10, 10],
+        "pixel_som_sigma": 5.0,
+        "pixel_som_learning_rate": 0.05,
+        "pixel_som_initialization": "data",
+        "pixel_som_decay": "linear",
+        "pixel_som_passes": 1,
+        "pixel_metaclusters": 20,
+        "cell_som_shape": [24, 24],
+        "cell_som_sigma": 2.0,
+        "cell_som_learning_rate": 0.3,
+        "cell_som_iterations": 5000,
+        "cell_metaclusters": 300,
+        "seed": 42
+      }
+    }
+  },
+  "four_llm_consensus": {
+    "path": "panel_i_j_four_llm_consensus.csv.gz",
+    "source_annotations_sha256": "d0ee46ecf58bd77e306348e9f3cfb7a1a0ed40d02a26d4950fdd597d7d4701a9",
+    "derived_source_csv_sha256": "2f4bb89713c4c2b720fa37ea5ec475197f14f3e17f22bacbe165d45915696216",
+    "gzip_sha256": "3dd9ed66671f267ceae259832cff665c5aede40eccbef17ca8d091b65abe363e",
+    "rows": 220082,
+    "models_in_tie_order": ["GPT", "Claude", "Gemini", "DeepSeek"],
+    "rule": "modal label per method; first model in the declared order among tied modal labels",
+    "columns": {
+      "leiden": "leiden_consensus",
+      "flowsom": "flowsom_consensus",
+      "spatialsort": "spatialsort_consensus",
+      "pixie": "pixie_tiff_consensus"
+    },
+    "used_by": ["Figure 2 Panel I", "Figure 2 Panel J"]
+  },
+  "provenance": {
+    "figure_02_panel_d_source_trace": "historical V1 layout replay using the frozen optimized-V3 assignments",
+    "truth_used_for_clustering": false,
+    "selection_scope": "retrospective in-sample V3 analysis; not held-out validation"
+  }
+}
