@@ -1,9 +1,5 @@
 # Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
 
-Reviewer-facing analysis repository for the manuscript *Evaluation of
-Clustering Methods and Large Language Models for Spatial Proteomic Cell Type
-Annotation*.
-
 The canonical figure notebooks, visible results, input contracts, and shared
 analysis code are kept together here. Raw data and generated run artifacts are
 excluded from Git.
