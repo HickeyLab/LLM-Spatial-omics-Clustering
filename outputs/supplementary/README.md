@@ -16,6 +16,3 @@ The four current supplementary source notebooks under
 `notebooks/final_figures/` write their generated artifacts under the ignored
 `outputs/source_rebuilt/` directory. No checked-in placeholder execution is
 represented as a generated panel.
-
-Future finalized supplementary figures should use sibling directories named
-`figure_sXX/`.

@@ -40,4 +40,3 @@ outputs/supplementary/*
 !outputs/supplementary/README.md
 # final generated artifacts
 outputs/source_rebuilt/
-source_rebuilt_outputs/

@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
@@ -23,6 +24,20 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
 
 class FigureS03ContractTests(unittest.TestCase):
+    def test_frozen_sweep_lookup_never_downloads_the_duke_h5ad(self) -> None:
+        with patch(
+            "llm_spatial_omics_clustering.figure_02.resolve_data_root",
+            side_effect=FileNotFoundError("local data unavailable"),
+        ) as resolve_data_root:
+            with self.assertRaisesRegex(FileNotFoundError, "local data unavailable"):
+                load_panel_d_sweep(repository_root=REPOSITORY_ROOT)
+
+        resolve_data_root.assert_called_once()
+        self.assertEqual(
+            resolve_data_root.call_args.kwargs,
+            {"download_if_missing": False},
+        )
+
     def test_config_locks_panel_map_and_current_figure_02_assignments(self) -> None:
         config = load_figure_config()
         dependency = config["figure_02_dependency"]
@@ -142,7 +157,10 @@ class FigureS03ContractTests(unittest.TestCase):
     def test_panels_a_c_e_when_local_figure_02_data_are_available(self) -> None:
         config = load_figure_config()
         try:
-            inputs = load_inputs(repository_root=REPOSITORY_ROOT)
+            inputs = load_inputs(
+                repository_root=REPOSITORY_ROOT,
+                download_if_missing=False,
+            )
         except FileNotFoundError:
             self.skipTest(
                 "Local Figure 2 H5AD or assignments are unavailable; "

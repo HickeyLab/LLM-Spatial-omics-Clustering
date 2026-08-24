@@ -166,6 +166,7 @@ def _load_color_map(
 def _load_inputs_cached(
     repository_root_string: str,
     config_path_string: str,
+    download_if_missing: bool,
 ) -> FigureS03Inputs:
     repository_root = Path(repository_root_string)
     config_path = Path(config_path_string)
@@ -181,7 +182,10 @@ def _load_inputs_cached(
     )
 
     figure_02_config = load_figure_02_config(figure_02_config_path)
-    data_root = resolve_data_root(figure_02_config)
+    data_root = resolve_data_root(
+        figure_02_config,
+        download_if_missing=download_if_missing,
+    )
     figure_02_data = load_b004_h5ad(figure_02_config, data_root=data_root)
     assignments = load_method_assignments(
         figure_02_data,
@@ -275,11 +279,12 @@ def load_inputs(
     *,
     repository_root: str | Path | None = None,
     config_path: str | Path | None = None,
+    download_if_missing: bool = True,
 ) -> FigureS03Inputs:
     """Load the shared S3 inputs through Figure 2's public, validated API."""
     root = _resolve_repository_root(repository_root)
     resolved_config = _resolve_config_path(root, config_path)
-    return _load_inputs_cached(str(root), str(resolved_config))
+    return _load_inputs_cached(str(root), str(resolved_config), download_if_missing)
 
 
 def build_panel_a_summary(
@@ -811,7 +816,7 @@ def load_panel_d_sweep(
 
     figure_02_path = root / str(config["figure_02_dependency"]["config_path"])
     figure_02_config = load_figure_02_config(figure_02_path)
-    data_root = resolve_data_root(figure_02_config)
+    data_root = resolve_data_root(figure_02_config, download_if_missing=False)
     source_path = data_root / str(config["panel_d"]["source_filename"])
     if not source_path.is_file():
         raise FileNotFoundError(f"Recovered Panel D sweep is missing: {source_path}")
