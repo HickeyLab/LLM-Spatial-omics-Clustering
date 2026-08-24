@@ -21,10 +21,11 @@ table below.
 | Supplementary Figure S4 | [`figure_s04_annotation_diagnostics.ipynb`](notebooks/final_figures/figure_s04_annotation_diagnostics.ipynb) |
 | Supplementary Table S1 | [`table_s01_clustering_methods.ipynb`](notebooks/final_figures/table_s01_clustering_methods.ipynb) |
 | Supplementary Table S2 | [`table_s02_marker_summary_optimization.ipynb`](notebooks/final_figures/table_s02_marker_summary_optimization.ipynb) |
+| Supplementary Note 1 | [`supplementary_note_01_llm_cluster_annotation.ipynb`](notebooks/final_figures/supplementary_note_01_llm_cluster_annotation.ipynb) |
 
-Figures 1, S1, and S2 and Tables S1–S2 contain embedded executed outputs;
-Figures 2–4 and S3–S4 display validated publication previews and are not
-stored as executed notebooks.
+Figures 1, S1, and S2, Tables S1–S2, and Supplementary Note 1 contain embedded
+executed outputs; Figures 2–4 and S3–S4 display validated publication previews
+and are not stored as executed notebooks.
 
 Validated publication previews and their audit hashes are available in
 [`notebooks/final_figures/previews/`](notebooks/final_figures/previews/README.md).
