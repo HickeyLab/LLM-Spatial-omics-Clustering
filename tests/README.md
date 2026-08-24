@@ -1,19 +1,12 @@
 # Tests
 
-Focused figure tests mirror the reusable modules under `src/`:
+The focused tests cover the Duke download and provenance contracts, Figure 2
+and Supplementary Figure S3 configurations, shared final-figure runtime,
+HuBMAP TIFF acquisition, and supplementary-figure labels. They use bounded
+fixtures and do not rerun the complete manuscript notebooks.
 
-- `test_figure_02.py`
-- `test_figure_s03.py`
-- `test_final_figures_runtime.py`
-- `test_hubmap_tiff_download.py`
-
-The Supplementary Figure S3 tests cover its configuration and five-cell
-notebook contract, exact-key Figure 2 dependencies, frozen FlowSOM sweep, and
-panel metric calculations without rerunning the complete notebook.
-
-Run the focused suite from the repository root with:
+Run the full suite from the repository root with:
 
 ```bash
-PYTHONPATH=src python -m unittest discover -s tests -p 'test_final_figures_runtime.py'
-PYTHONPATH=src python -m unittest discover -s tests -p 'test_hubmap_tiff_download.py'
+PYTHONPATH=src python3.12 -m unittest discover -s tests -p 'test_*.py'
 ```

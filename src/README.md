@@ -3,6 +3,7 @@
 Reusable loading, preprocessing, evaluation, and plotting code lives in the
 `llm_spatial_omics_clustering` package:
 
+- `duke_h5ad.py`: checksum-validated Duke record 505 H5AD acquisition
 - `figure_02.py`: B004 cohort and clustering-method benchmark
 - `figure_s03.py`: Supplementary Figure S3 ground-truth and clustering
 - `final_figures_runtime/`: shared H5AD-derived clustering, TIFF validation,

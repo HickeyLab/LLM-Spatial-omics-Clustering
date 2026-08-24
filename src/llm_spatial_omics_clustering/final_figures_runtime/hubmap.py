@@ -687,7 +687,7 @@ def download_b004_hubmap_tiff_pairs(
 
 def _main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Download B004 HuBMAP OME-TIFF pairs.")
-    parser.add_argument("--h5ad", required=True, help="Registered Yang source H5AD")
+    parser.add_argument("--h5ad", required=True, help="Checksum-verified Duke record 505 H5AD")
     parser.add_argument("--tiff-root", required=True, help="Destination cache for paired OME-TIFF files")
     parser.add_argument("--timeout-seconds", type=int, default=DEFAULT_TIMEOUT_SECONDS)
     parser.add_argument("--reserve-gib", type=float, default=1.0)
