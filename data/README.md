@@ -1,7 +1,17 @@
 # Data
 
-The manuscript data are not stored in Git. Keep local files in the appropriate
-tier:
+Large manuscript data are not stored in Git. Two small publication-critical
+input sets are versioned so their notebooks run from a clean clone:
+
+- [`frozen/v3_k300_assignments/`](frozen/v3_k300_assignments/README.md) contains
+  byte-preserving compressed copies of the four source-traced K=300 assignment
+  tables and a manifest that pins their decompressed SHA-256 values, common
+  220,082-cell key set, and observed cluster counts (300, 300, 246, and 300).
+  It also contains the hash-locked four-LLM modal labels used by Figure 2
+  Panels I and J.
+- [`tables/`](tables/README.md) contains the authoritative Table S2 source.
+
+Keep larger local files in the appropriate tier:
 
 - `raw/`: immutable source data.
 - `interim/`: temporary or partially transformed data.

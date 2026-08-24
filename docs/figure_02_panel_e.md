@@ -18,30 +18,26 @@ those F1 values. The boxplot shows all eight regional observations with the
 median, interquartile range, and Matplotlib's default 1.5-IQR whiskers.
 
 The attached Methods text supports the regional majority mapping, exclusion of
-absent classes, cell-count weighting, and eight plotted observations. `VERIFY:`
-the Methods text does not define a tie-break when multiple labels are equally
-common in a cluster. The implementation preserves the fixed H5AD observation
-order and the legacy `value_counts().idxmax()` behavior for those ties.
+absent classes, cell-count weighting, and eight plotted observations. For an
+equal-count majority tie, the source implementation preserves the fixed H5AD
+observation order and uses the first label returned by the legacy
+`value_counts().idxmax()` calculation. This deterministic implementation rule
+is recorded explicitly in the configuration.
 
 ## Assignment sources
 
-FlowSOM, Leiden, and SpatialSort use the selected assignment tables configured
-for Panel D. PIXIE uses the image-native, 50-cell-cluster TIFF artifact at
-`data/processed/figure_02/pixie_tiff_methods_50/master_pixie_clusters.csv` and
-validates its manifest against the configured TIFF parameters.
-
-This choice intentionally differs from the supplied legacy screenshot's PIXIE
-series: that screenshot was generated from the older table-level
-`PIXIE/pixie_meta50_styled_clusters.csv` artifact, not TIFF-based PIXIE. The
-three non-PIXIE series reproduce its regional values; the TIFF PIXIE points are
-recomputed and therefore differ.
+All methods use the source-traced Panel D assignments tracked beneath
+`data/frozen/v3_k300_assignments/`. Every method targeted K=300; the observed
+occupied-cluster counts are Leiden 300, FlowSOM 300, SpatialSort 246, and PIXIE
+300. The loader validates their source CSV hashes and exact 220,082-cell key
+coverage against the frozen assignment manifest before calculating this panel.
 
 ## Reproduction
 
-The Figure 2 loader downloads the H5AD into its ignored Duke cache when absent.
-The three non-PIXIE assignment CSVs and TIFF PIXIE output remain local and
-gitignored under the repository's `data/processed/` tree. Execute only the fifth code cell
-of [`figure_02_clustering_method_benchmark.ipynb`](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb).
+The Figure 2 loader downloads the H5AD into its ignored Duke cache when absent;
+the exact assignment inputs are version controlled. Run
+[`figure_02_clustering_method_benchmark.ipynb`](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb)
+to rebuild the panel from those validated inputs.
 
 The cell writes the regional score table, PNG, PDF, and JSON provenance record
 to `outputs/figure_02/`; those generated artifacts stay local and gitignored.

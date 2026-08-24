@@ -16,8 +16,8 @@ map is fixed by the supplied composite:
 - D: recovered FlowSOM purity-versus-cluster-count sweep
 - E: distributions of six clustering metrics
 
-The working title remains `VERIFY: Reference-label phenotypes and clustering
-diagnostics` because no final manuscript title was supplied.
+The manuscript title is **Reference cell-type characteristics and comparative
+evaluation of clustering methods**.
 
 ## Notebook contract
 
@@ -53,8 +53,9 @@ API. They reuse:
 - the same eight-file B004 cohort;
 - the H5AD `cell_type_update`, `x`, and `y` observations;
 - the 45 native H5AD `X` protein markers;
-- the selected Leiden, FlowSOM, SpatialSort, and TIFF-derived PIXIE
-  assignments from `configs/figure_02.yaml`; and
+- the source-traced Leiden, FlowSOM, SpatialSort, and TIFF-derived PIXIE K=300
+  assignments tracked under `data/frozen/v3_k300_assignments/` and declared in
+  `configs/figure_02.yaml`; and
 - exact `File_ID` plus `ID` joins, validated one-to-one.
 
 The shared source universe contains 220,082 cells and 28 raw reference labels,
@@ -62,19 +63,20 @@ including 10,495 `Noise` cells. Removing `Noise` leaves 209,587 cells and 27
 raw labels. Supplementary Figure S3 does **not** use the later 20-class Figure 2
 evaluation harmonization.
 
-The selected cluster counts are:
+The configured and observed cluster counts are:
 
-| Method | Clusters |
-|---|---:|
-| Leiden | 55 |
-| FlowSOM | 300 |
-| SpatialSort | 60 |
-| PIXIE | 50 |
+| Method | Configured K | Occupied clusters |
+|---|---:|---:|
+| Leiden | 300 | 300 |
+| FlowSOM | 300 | 300 |
+| SpatialSort | 300 | 246 |
+| PIXIE | 300 | 300 |
 
 The source H5AD hash, expected cohort size, per-region counts, label counts,
 method names, and cluster counts are validated before any dependent panel is
-rendered. Set `CELL_MASKS_DATA_ROOT` when the source H5AD and local clustering
-artifacts cannot be found by the Figure 2 ancestor-directory search.
+rendered. Set `CELL_MASKS_DATA_ROOT` only when the source H5AD cannot be found
+or downloaded through the repository-relative Duke cache; the exact clustering
+assignments are version controlled.
 
 ## Panel A: ground-truth marker dot plot
 
@@ -144,36 +146,28 @@ n_{k,c} = \#\{i:z_i=k,\ y_i=c\}
 \]
 
 Clusters are sorted by total cell count, largest first. Equal-size clusters are
-ordered by the string representation of the cluster identifier. Leiden,
-SpatialSort, and PIXIE display every selected cluster. FlowSOM displays the 60
-largest of its 300 clusters and explicitly labels that truncation.
+ordered by the string representation of the cluster identifier. Leiden and
+PIXIE display all 300 occupied clusters, SpatialSort displays its 246 occupied
+clusters, and FlowSOM displays the 60 largest of its 300 occupied clusters and
+explicitly labels that truncation.
 
 The exported long table retains every cluster, including the 240 undisplayed
 FlowSOM clusters, and records method, cluster, size rank, raw cell type, stack
 rank, cell count, cluster total, and whether the cluster is displayed.
 
-### PIXIE provenance difference
+### Assignment provenance
 
-The supplied legacy composite used
-`PIXIE/pixie_meta50_styled_clusters.csv`, a table-level MiniSom partition.
-Figure 2 now defines PIXIE using the image-native TIFF pipeline. The two
-50-cluster partitions are not interchangeable: their partition adjusted Rand
-index is approximately 0.190, and their largest clusters contain 36,108 and
-31,211 cells, respectively.
-
-Panels C and E intentionally use the current Figure 2 TIFF-derived PIXIE
-partition so Supplementary Figure S3 builds on the published notebook
-dependency rather than silently mixing two PIXIE definitions. Consequently,
-the PIXIE bars and metric points are expected to differ from the supplied
-legacy screenshot. This difference is recorded in each panel's provenance
-JSON.
+Panels C and E use the same four frozen source-traced assignments as Figure 2.
+The PIXIE input is the selected image-native TIFF partition with K=300, not an
+older table-level substitute. Each assignment is exact-key joined and checked
+against its decompressed source CSV SHA-256 before use.
 
 ## Panel D: recovered FlowSOM cluster-count sweep
 
 Panel D is the only panel that does not use the selected Figure 2 assignments.
 It reproduces the supplied curve from the frozen local table
-`flowsom_k_sweep_purity.csv`. The loader validates the source SHA-256 and all
-eight rows before rendering.
+`data/frozen/figure_s03/flowsom_k_sweep_purity.csv`. The loader validates the
+source SHA-256 and all eight rows before rendering.
 
 For requested cluster count \(K\), the plotted weighted purity is:
 
@@ -186,19 +180,21 @@ The frozen requested counts are 10, 50, 100, 150, 200, 250, 300, and 350. The
 last request has only 324 effective clusters because the recovered SOM contains
 324 nodes.
 
-`VERIFY:` this is a recovered exploratory sweep, not a resolution sweep of the
-final Figure 2 FlowSOM method. Historical execution evidence indicates a
+This is an archived historical exploratory sweep, not a resolution sweep of
+the final Figure 2 FlowSOM method. Historical execution evidence indicates a
 48-marker input, `arcsinh(x/1)`, selection of the 30 highest-variance markers,
 standard scaling, PCA retaining 90% variance, an 18-by-18 MiniSom, sigma 9,
-learning rate 0.4, seed 42, 5,000 random updates, and Ward metaclustering.
-However, no durable repository generator or final-method-equivalent sweep is
-available.
+learning rate 0.4, seed 42, 5,000 random updates, and Ward metaclustering. No
+durable repository generator is available, so the frozen source table is the
+reproducibility boundary for this panel.
 
-The final Figure 2 FlowSOM configuration uses random-forest MDI weighting and
-no PCA. At 300 clusters, the frozen exploratory sweep has 49.25% raw-class
-purity, whereas the final partition has approximately 66.93%. Panel D must
-therefore remain labeled as historical and must not be described as tuning or
-validating the final Figure 2 FlowSOM configuration.
+The final Figure 2 FlowSOM artifact instead uses 45 shared protein markers,
+`arcsinh(x/5)`, a full-cohort `RobustScaler`, a 32-by-32 MiniSom with sigma
+1.0, learning rate 0.3, 10,000 iterations, Ward metaclustering to K=300, and
+seed 42. At 300 clusters, the frozen exploratory sweep has 49.25% raw-class
+purity, whereas the final partition has approximately 66.93%. Panel D is
+therefore a historical illustration only and must not be described as tuning
+or validating the final Figure 2 FlowSOM configuration.
 
 ## Panel E: clustering metric distributions
 
@@ -258,9 +254,9 @@ JSON under `outputs/supplementary/figure_s03/`:
 | D | `figure_s03d_flowsom_cluster_sweep.csv` | `figure_s03d_flowsom_cluster_sweep` | `figure_s03d_provenance.json` |
 | E | `figure_s03e_clustering_metrics.csv` | `figure_s03e_clustering_metrics` | `figure_s03e_provenance.json` |
 
-The provenance records include source universes, cluster counts, formulas,
-input or table hashes, output-table fingerprints, coordinate orientation, and
-the Panel C/E PIXIE and Panel D FlowSOM caveats.
+The provenance records include source universes, configured and occupied
+cluster counts, formulas, input or table hashes, output-table fingerprints,
+coordinate orientation, and the archived-source-only boundary for Panel D.
 
 ## Generated-file boundary
 

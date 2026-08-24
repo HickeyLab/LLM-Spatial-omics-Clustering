@@ -7,9 +7,9 @@ used an older table-level MiniSom partition, whereas Figure 2 now fixes the
 image-native TIFF-derived PIXIE result.
 
 Panel D is a separate recovered historical input.  Its eight-row CSV came
-from an exploratory FlowSOM pipeline, not the final MDI-weighted/no-PCA
-configuration.  The loader validates that CSV byte-for-byte and records the
-gap in provenance; it does not misrepresent the curve as a rerun of Figure 2.
+from an exploratory FlowSOM pipeline, not the final 45-marker, robust-scaled
+K=300 configuration. The loader validates that CSV byte-for-byte and records
+the gap in provenance; it does not misrepresent the curve as a rerun of Figure 2.
 """
 
 from __future__ import annotations
@@ -838,17 +838,7 @@ def load_panel_d_sweep(
     resolved_config = _resolve_config_path(root, config_path)
     config = load_figure_config(resolved_config)
 
-    # Use Figure 2's data-root resolver so the path remains portable and no
-    # user-specific absolute directory is tracked in the notebook.
-    from llm_spatial_omics_clustering.figure_02 import (
-        load_figure_config as load_figure_02_config,
-        resolve_data_root,
-    )
-
-    figure_02_path = root / str(config["figure_02_dependency"]["config_path"])
-    figure_02_config = load_figure_02_config(figure_02_path)
-    data_root = resolve_data_root(figure_02_config, download_if_missing=False)
-    source_path = data_root / str(config["panel_d"]["source_filename"])
+    source_path = root / str(config["panel_d"]["source_filename"])
     if not source_path.is_file():
         raise FileNotFoundError(f"Recovered Panel D sweep is missing: {source_path}")
     observed_hash = _sha256_file(source_path)
@@ -933,9 +923,12 @@ def run_panel_d(
             "purity_definition": "sum over clusters of the largest raw truth count, divided by N",
             "x_axis": "requested k; the k=350 request has effective_k=324",
             "provenance_status": str(config["panel_d"]["provenance_status"]),
+            "generator_available": bool(config["panel_d"]["generator_available"]),
+            "final_method_equivalent": bool(config["panel_d"]["final_method_equivalent"]),
             "scientific_gap": (
-                "This exploratory sweep used variance selection and PCA. It is not a "
-                "resolution sweep of the final Figure 2 MDI-weighted/no-PCA FlowSOM method."
+                "This exploratory sweep used variance selection and PCA. It is an "
+                "archived illustration, not tuning or validation of the final Figure 2 "
+                "45-marker, robust-scaled K=300 FlowSOM method."
             ),
             "sweep_sha256": _dataframe_fingerprint(sweep),
         },

@@ -19,9 +19,12 @@ table below.
 | Supplementary Figure S2 | [`figure_s02_spatial_celltypes.ipynb`](notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
 | Supplementary Figure S3 | [`figure_s03_clustering_inputs_and_diagnostics.ipynb`](notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb) |
 | Supplementary Figure S4 | [`figure_s04_annotation_diagnostics.ipynb`](notebooks/final_figures/figure_s04_annotation_diagnostics.ipynb) |
+| Supplementary Table S1 | [`table_s01_clustering_methods.ipynb`](notebooks/final_figures/table_s01_clustering_methods.ipynb) |
+| Supplementary Table S2 | [`table_s02_marker_summary_optimization.ipynb`](notebooks/final_figures/table_s02_marker_summary_optimization.ipynb) |
 
-Figures 1, S1, and S2 contain embedded executed outputs; Figures 2–4 and S3–S4
-display validated publication previews and are not stored as executed notebooks.
+Figures 1, S1, and S2 and Tables S1–S2 contain embedded executed outputs;
+Figures 2–4 and S3–S4 display validated publication previews and are not
+stored as executed notebooks.
 
 Validated publication previews and their audit hashes are available in
 [`notebooks/final_figures/previews/`](notebooks/final_figures/previews/README.md).
@@ -31,7 +34,7 @@ Validated publication previews and their audit hashes are available in
 ```text
 .
 ├── configs/                         # Version-controlled analysis contracts
-├── data/                            # Local-only source-data caches
+├── data/                            # Versioned small inputs and ignored source-data caches
 ├── docs/                            # Figure maps and provenance notes
 ├── notebooks/
 │   ├── final_figures/               # One canonical collection for the manuscript
@@ -80,28 +83,33 @@ recorded in [`configs/duke_record_565_manifest.json`](configs/duke_record_565_ma
 
 Figures 2--4 and Supplementary Figures S3--S4 download and checksum-validate
 `20260130_HuBMAP_experted_annotated.h5ad` from [Duke Research Data Repository
-record 505](https://research.repository.duke.edu/record/505), then acquire the
-eight paired HuBMAP OME-TIFF expression/mask assets. The Duke H5AD has the
-columns needed by the Figure 1 reference-matching step, but equivalence to the
-historical Figure 1 reference has not been established; record 505 also does
-not contain the twelve REDSEA H5AD inputs. Allow roughly 46 GiB for the TIFF
-cache plus working space.
+record 505](https://research.repository.duke.edu/record/505). Their normal
+analytical replay loads the exact source-traced clustering partitions tracked
+under [`data/frozen/v3_k300_assignments/`](data/frozen/v3_k300_assignments/README.md):
+all methods targeted K=300, with occupied counts 300, 300, 246, and 300 for
+Leiden, FlowSOM, SpatialSort, and PIXIE. The notebooks validate decompressed
+source hashes and the shared 220,082-cell key set; they do not download the
+roughly 46 GiB TIFF collection or rerun the upstream clustering engines.
 
-The annotation notebooks also require an OpenRouter API key. Configure the
-external method locations before a full run:
+The annotation notebooks require an OpenRouter API key in live mode or the
+corresponding cached raw response bundles. Supply a live key through the
+environment:
 
 ```bash
 export OPENROUTER_API_KEY='...'
-export SOURCE_REBUILD_SPATIALSORT_SOURCE_ROOT='/path/to/SpatialSort'
-export SOURCE_REBUILD_PIXIE_RUNNER_PATH='/path/to/run_streaming_tiff_pixie.py'
 ```
 
-SpatialSort can be obtained from
-[`Roth-Lab/SpatialSort`](https://github.com/Roth-Lab/SpatialSort). The
-hash-validated low-disk PIXIE runner used by this analysis is not bundled in
-this repository. A clean clone therefore supports result review and focused
-validation, but a completely unattended end-to-end rebuild still requires
-that external file.
+Re-running the upstream image-native PIXIE or SpatialSort clustering engines
+from raw data is a separate provenance task. It requires the paired HuBMAP
+OME-TIFF expression/mask assets (roughly 46 GiB), external method software,
+and the source-traced settings recorded in the frozen assignment manifest.
+That upstream engine rerun is not required to reproduce the published tables
+and downstream analyses from the exact frozen partitions.
+
+The Duke record 505 H5AD has the columns needed by the Figure 1
+reference-matching step, but equivalence to the historical Figure 1 reference
+has not been established; record 505 also does not contain the twelve REDSEA
+H5AD inputs.
 
 Generated tables, panels, download receipts, and raw model responses are
 written under `outputs/` and remain ignored by Git.

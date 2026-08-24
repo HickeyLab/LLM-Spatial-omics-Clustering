@@ -1,9 +1,10 @@
 # Supplementary Figure S3 configuration.
 #
 # The current manuscript fixes the numbering and panel map as S3 A--E.
-# Source data and generated outputs remain local and are not committed.
+# Large source data and generated outputs remain local; the selected clustering
+# assignments imported from Figure 2 are version controlled.
 supplementary_figure: 3
-working_title: "VERIFY: Reference-label phenotypes and clustering diagnostics"
+working_title: "Reference cell-type characteristics and comparative evaluation of clustering methods"
 
 figure_02_dependency:
   config_path: configs/figure_02.yaml
@@ -21,10 +22,10 @@ figure_02_dependency:
     spatialsort: 300
     pixie: 300
   observed_methods:
-    leiden: 55
+    leiden: 300
     flowsom: 300
-    spatialsort: 60
-    pixie: 50
+    spatialsort: 246
+    pixie: 300
   method_order:
     - [leiden, Leiden]
     - [flowsom, FlowSOM]
@@ -200,11 +201,16 @@ panel_c:
 
 panel_d:
   title: "FlowSOM purity by requested cluster count"
-  source_filename: flowsom_k_sweep_purity.csv
+  source_filename: data/frozen/figure_s03/flowsom_k_sweep_purity.csv
+  repository_artifact: true
   source_sha256: "723dfd9508fc1a9bcb700ba77cf37f04de18016667e3768807f600549add0338"
-  # Recovered historical exploratory sweep. It predates the final
-  # RF-MDI-weighted/no-PCA Figure 2 FlowSOM configuration.
-  provenance_status: "VERIFY: recovered exploratory FlowSOM sweep; exact generator and final-method-equivalent sweep are not available"
+  # Archived historical exploratory sweep. Its table is source-hash-locked,
+  # but no durable generator exists and it is not equivalent to the final
+  # 45-marker, K=300 FlowSOM publication artifact.
+  provenance_status: archived_historical_source_only
+  generator_available: false
+  final_method_equivalent: false
+  interpretation: "historical illustration only; not tuning or validation of the final FlowSOM configuration"
   expected_rows:
     - [10, 10, 0.37564634999681934]
     - [50, 50, 0.4309302896193237]

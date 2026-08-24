@@ -8,8 +8,11 @@ Version-controlled figure contracts and small supporting manifests live here:
 - `figure_s03.yaml`: Supplementary Figure S3 ground-truth and clustering
   diagnostics
 
-`figure_s03.yaml` imports the Figure 2 cohort and selected assignments rather
-than defining another clustering result. It also hash-locks the recovered
-Panel D FlowSOM sweep and preserves its unresolved provenance as `VERIFY:`.
+`figure_02.yaml` points to the source-traced, versioned K=300 assignment tables
+under `data/frozen/v3_k300_assignments/`. `figure_s03.yaml` imports that same
+cohort and assignment contract rather than defining another clustering result.
+It also hash-locks Supplementary Figure S3 Panel D as an archived historical
+FlowSOM sensitivity table with no durable generator; that panel is explicitly
+not equivalent to the final FlowSOM method.
 
 Do not add credentials or machine-specific paths.

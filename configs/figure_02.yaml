@@ -1,5 +1,37 @@
-# Figure 2 configuration. Source data remain local and are not committed.
+# Figure 2 configuration. Large raw data remain local; the exact selected
+# clustering partitions and Panel I/J consensus labels are version controlled.
 figure: 2
+
+four_llm_consensus:
+  assignment_filename: data/frozen/v3_k300_assignments/panel_i_j_four_llm_consensus.csv.gz
+  repository_artifact: true
+  source_annotations_sha256: "d0ee46ecf58bd77e306348e9f3cfb7a1a0ed40d02a26d4950fdd597d7d4701a9"
+  source_csv_sha256: "2f4bb89713c4c2b720fa37ea5ec475197f14f3e17f22bacbe165d45915696216"
+  gzip_sha256: "3dd9ed66671f267ceae259832cff665c5aede40eccbef17ca8d091b65abe363e"
+  expected_rows: 220082
+  models_in_tie_order: [GPT, Claude, Gemini, DeepSeek]
+  rule: "modal label per method; first model in the declared order among tied modal labels"
+  columns:
+    leiden: leiden_consensus
+    flowsom: flowsom_consensus
+    spatialsort: spatialsort_consensus
+    pixie: pixie_tiff_consensus
+  truth_normalization_map:
+    Epithelial: Enterocyte
+    CD66+ Epithelial: CD66+ Enterocyte
+    MUC1+ Epithelial: MUC1+ Enterocyte
+    CD57+ Epithelial: Enterocyte
+    ITLN+ Epithelial: Goblet
+    TA: Cycling TA
+    CD4+ T: CD4+ T cell
+    Stromal: Stroma
+    PDPN+ Stromal: Lymphatic
+    CD36 high Endothelial: Endothelial
+    CD36 low Endothelial: Endothelial
+    CD49a+ Smooth muscle: Smooth muscle
+    Paneth: Neuroendocrine
+    M1 Macrophage: M2 Macrophage
+    NK: CD7+ Immune
 
 panel_b:
   title: "Ground-truth cell type distribution"
@@ -194,7 +226,7 @@ panel_c:
 
 panel_d:
   title: "Ground-truth and method-derived UMAP embeddings"
-  status: in_progress
+  status: source_traced
 
   data:
     # The source is downloaded automatically when it is absent; see panel_b.
@@ -202,7 +234,6 @@ panel_d:
     h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
     h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
     download: true
-    tiffs_directory_relative_to_data_root: ../Tiffs
 
   cohort:
     donor_label: B004
@@ -234,11 +265,10 @@ panel_d:
     coordinate_columns: [x, y]
 
   shared_umap:
-    # The attached Methods text does not specify how the visual UMAP was made.
-    # These settings reproduce the existing implementation in
-    # cell_masks/umap_flowsom_simple.py and must remain labelled as
-    # implementation-derived pending author confirmation.
-    provenance: "VERIFY: implementation-derived settings; not specified in the attached Methods text"
+    # Recovered and source-hash-locked visualization settings. They define the
+    # shared display geometry only and are not part of any clustering method.
+    provenance_status: implementation_recovered_visualization_only
+    source_coordinates_sha256: "0bf956a2c03d3371a07c675b0caa3f663765d49e4ae322e25b8b475d6728ceb9"
     arcsinh_cofactor: 1.0
     standardize: true
     pca_variance_explained: 0.90
@@ -253,8 +283,7 @@ panel_d:
     # Styling-only local input; labels still come from the H5AD.
     color_map_filename: cell_type_colors.csv
     zoom:
-      # Recovered from the existing UMAP callout implementation.
-      provenance: "VERIFY: implementation-derived callout bounds; not specified in the attached Methods text"
+      provenance_status: source_locked_visualization_bounds
       x0: -2.6090098449614283
       y0: 9.438447911614285
       size: 2.98063852273
@@ -262,83 +291,100 @@ panel_d:
     point_alpha: 0.6
 
   clustering_methods:
-    # Every benchmark method was configured to target K=300. The frozen
-    # selected artifacts can have fewer occupied clusters; observed_clusters
-    # records the exact artifact count validated by Panels D--J.
+    # Byte-preserving gzip copies of the source-traced V3 assignments are
+    # version-controlled so every clean clone uses the exact publication
+    # partitions. Every method targeted K=300; SpatialSort occupied 246 labels.
     leiden:
-      assignment_filename: leiden_refined_best_full_clusters.csv
-      assignment_column: cluster
-      configured_clusters: 300
-      observed_clusters: 55
-      selected_artifact_parameters:
-        features: "48 H5AD-derived cell-level features"
-        standardize: true
-        pca_components: 21
-        n_neighbors: 15
-        metric: euclidean
-        leiden_resolution: 1.8
-        # VERIFY: the attached final-run paragraph does not state whether
-        # Harmony was applied. Existing source artifacts used it.
-        harmony: "VERIFY: existing artifact used Harmony; confirm final-run use"
-
-    flowsom:
-      assignment_filename: flowsom_mdi_weighted_best_clusters.csv
-      assignment_column: Cluster
+      assignment_filename: data/frozen/v3_k300_assignments/leiden/assignments.csv.gz
+      repository_artifact: true
+      source_csv_sha256: "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18"
+      expected_rows: 220082
+      assignment_column: leiden_cluster
       configured_clusters: 300
       observed_clusters: 300
       selected_artifact_parameters:
-        features: "30 highest-variance features selected after arcsinh(x/1)"
-        random_forest_trees: 200
-        random_forest_class_weight: balanced
-        random_forest_importance: mean_decrease_in_impurity
-        standardize_weighted_features: true
-        pca: false
-        som_shape: [18, 18]
+        features: "47 markers excluding Hoechst1"
+        transform: "arcsinh(x/5)"
+        scaling: "StandardScaler fit independently within each File_ID"
+        pca_components: 24
+        n_neighbors: 24
+        metric: euclidean
+        leiden_resolution: 1.1
+        minimum_child_size: 100
+        maximum_children: 7
+        base_clusters: 320
+        coarsening: "20 deterministic within-parent Ward-style centroid merges"
+        random_seed: 42
+        harmony: false
+
+    flowsom:
+      assignment_filename: data/frozen/v3_k300_assignments/flowsom/assignments.csv.gz
+      repository_artifact: true
+      source_csv_sha256: "9c2d4cb5981214d07505d83346c47817d6e1761587a306cf123f6aa5b2adfe78"
+      expected_rows: 220082
+      assignment_column: flowsom_cluster
+      configured_clusters: 300
+      observed_clusters: 300
+      selected_artifact_parameters:
+        features: "45 shared protein markers"
+        transform: "arcsinh(x/5)"
+        scaling: "RobustScaler fit on the full B004 cohort"
+        som_shape: [32, 32]
+        som_sigma: 1.0
+        som_learning_rate: 0.3
+        som_iterations: 10000
         metaclusters: 300
         random_seed: 42
+        truth_used: false
 
     spatialsort:
-      assignment_filename: spatialsort_full_clusters.csv
+      assignment_filename: data/frozen/v3_k300_assignments/spatialsort/master_spatialsort_clusters.csv.gz
+      repository_artifact: true
+      source_csv_sha256: "8e6f09377be96fbb998a16ca35a6376e89029edb0f855756f5533f4ff003e56e"
+      expected_rows: 220082
       assignment_column: spatialsort_cluster
       configured_clusters: 300
-      observed_clusters: 60
+      observed_clusters: 246
       selected_artifact_parameters:
         features: "45 H5AD X variables"
-        spatial_graph: "15-nearest-neighbor graph constructed within each region"
+        transform: "arcsinh(x/5)"
+        scaling: "RobustScaler fit on the full B004 cohort"
+        spatial_graph: "24-nearest-neighbor graph constructed within each region"
         use_priors: false
         use_anchor_cells: false
-        initialization: "unseeded five-start Gaussian mixture model"
-        mcmc_iterations: 15
-        inner_double_metropolis_hastings_iterations: 5
-        precision_scale: 0.5
-        # The source Methods text explicitly says no fixed seed was documented.
-        random_seed: null
+        trace_iterations: 8
+        actual_mcmc_sweeps: 6
+        inner_double_metropolis_hastings_iterations: 1
+        precision_scale: 0.65
+        point_estimate: last_iteration
+        random_seed: 42
 
     pixie:
-      # This frozen methods_50 artifact has 50 occupied cell metaclusters and
-      # is not a K300 result. It is produced by the exact streaming TIFF
-      # command in docs/figure_02_panel_d.md and is intentionally gitignored.
-      assignment_filename: data/processed/figure_02/pixie_tiff_methods_50/master_pixie_clusters.csv
+      assignment_filename: data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz
+      repository_artifact: true
+      source_csv_sha256: "7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6"
+      expected_rows: 220082
       assignment_column: pixie_cell_cluster
       configured_clusters: 300
-      observed_clusters: 50
+      observed_clusters: 300
       selected_artifact_parameters:
         input: "paired 48-channel OME-TIFF expression images and integer cell masks"
         include_hoechst: true
         gaussian_sigma_pixels: 2.0
         pixel_som_shape: [10, 10]
+        pixel_som_sigma: 5.0
         pixel_som_learning_rate: 0.05
         pixel_som_initialization: data
         pixel_som_decay: linear
         pixel_som_passes: 1
         pixel_metaclusters: 20
-        cell_som_shape: [20, 20]
         cell_som_sigma: 2.0
         cell_som_learning_rate: 0.3
         cell_som_iterations: 5000
         cell_som_initialization: minisom_default
         cell_som_decay: asymptotic
-        cell_metaclusters: 50
+        cell_som_shape: [24, 24]
+        cell_metaclusters: 300
         random_seed: 42
 
   outputs:
@@ -382,9 +428,8 @@ panel_e:
       63d000170e475af142f6e8673de5eb0f: 23267
       768b7adb649959b6a4e354867595032d: 33112
 
-  # Keep the assignment tables exactly aligned with Panel D. In particular,
-  # PIXIE is the 50-cluster image-native TIFF result rather than the older
-  # table-level MiniSom artifact used by the supplied legacy screenshot.
+  # Keep all assignment tables exactly aligned with the frozen K=300 Panel D
+  # source contract (SpatialSort has 246 occupied labels).
   clustering_source_panel: panel_d
   methods:
     - key: flowsom
@@ -403,6 +448,7 @@ panel_e:
       Noise: 10495
     expected_evaluation_cells: 209587
     expected_evaluation_class_count: 20
+    majority_tie_break: first_label_in_h5ad_observation_order
     # This is the historical 20-class harmonization used by the regional F1
     # source implementation. Paneth-to-Goblet is retained because it is in
     # that code path even though it is not listed in the abbreviated methods
@@ -424,59 +470,57 @@ panel_e:
       M1 Macrophage: M2 Macrophage
       NK: CD7+ Immune
 
-  # Exact TIFF-PIXIE results under the attached Methods-compatible selected
-  # configuration. The first three method columns match the supplied Panel E
-  # reference; PIXIE necessarily differs because that reference used an older
-  # non-TIFF assignment table.
+  # Exact regional results derived from the source-traced K=300 assignments
+  # (SpatialSort has 246 occupied labels) and the preserved H5AD tie rule.
   expected_scores:
     76d3efd17b6fc83aaac13e961824c5ae:
       n_cells: 17766
-      FlowSOM: 0.70546856871687891
-      Leiden: 0.69739407526147568
-      SpatialSort: 0.48168692842154026
-      PIXIE: 0.57121534566533305
+      FlowSOM: 0.6110019653077514
+      Leiden: 0.7217359174765388
+      SpatialSort: 0.5063077707381008
+      PIXIE: 0.6109030657448912
     ae422532f260b3d6fc662aae69b05d33:
       n_cells: 24713
-      FlowSOM: 0.65978049775864778
-      Leiden: 0.66591107853266396
-      SpatialSort: 0.44516731260182058
-      PIXIE: 0.49774226401306976
+      FlowSOM: 0.586857116014293
+      Leiden: 0.7078217212133856
+      SpatialSort: 0.46850481398790356
+      PIXIE: 0.5618115345845467
     dceadbb36871071f30c308ca091fbdc8:
       n_cells: 34640
-      FlowSOM: 0.66287158519833378
-      Leiden: 0.63127369043536541
-      SpatialSort: 0.42921536856312109
-      PIXIE: 0.58858249380858119
+      FlowSOM: 0.5982319158172061
+      Leiden: 0.6925835553324383
+      SpatialSort: 0.4898774479891886
+      PIXIE: 0.6235810514924619
     2e65eeef2dd18bee2a0baf1cec6d35a1:
       n_cells: 22050
-      FlowSOM: 0.76388424639508745
-      Leiden: 0.75739564946093052
-      SpatialSort: 0.53787064890023673
-      PIXIE: 0.6501438844622639
+      FlowSOM: 0.736835267409702
+      Leiden: 0.7881805924279147
+      SpatialSort: 0.5544034420147563
+      PIXIE: 0.6755626737130034
     8da8f27977d946b8c912d42c8827b55c:
       n_cells: 33262
-      FlowSOM: 0.74748716396351644
-      Leiden: 0.73005642174860952
-      SpatialSort: 0.48951672243925576
-      PIXIE: 0.65291553346297326
+      FlowSOM: 0.6810375814619306
+      Leiden: 0.7796938145991509
+      SpatialSort: 0.5151706274414259
+      PIXIE: 0.6903828380702391
     5318485b16983482401c3be24b6c42ad:
       n_cells: 24654
-      FlowSOM: 0.73694742843744465
-      Leiden: 0.68885342054646603
-      SpatialSort: 0.47796041913409265
-      PIXIE: 0.62655009692869001
+      FlowSOM: 0.6483947253240292
+      Leiden: 0.7298912600139701
+      SpatialSort: 0.4816554802766776
+      PIXIE: 0.6462443981818545
     63d000170e475af142f6e8673de5eb0f:
       n_cells: 21902
-      FlowSOM: 0.75495255410109341
-      Leiden: 0.76456742020771662
-      SpatialSort: 0.55940165674580633
-      PIXIE: 0.55878095690188756
+      FlowSOM: 0.6219178712097673
+      Leiden: 0.7848443110471105
+      SpatialSort: 0.5393973136330767
+      PIXIE: 0.6096170270168965
     768b7adb649959b6a4e354867595032d:
       n_cells: 30600
-      FlowSOM: 0.69660884777396292
-      Leiden: 0.68987834608925858
-      SpatialSort: 0.4526410135604394
-      PIXIE: 0.4973453219492161
+      FlowSOM: 0.5764412143137472
+      Leiden: 0.7075453403880636
+      SpatialSort: 0.3986962284832613
+      PIXIE: 0.5042419466745838
 
   style:
     font_family: Arial
@@ -765,9 +809,14 @@ panel_i:
   data_source_panel: panel_d
   cohort_source_panel: panel_d
   clustering_source_panel: panel_d
+  annotation_consensus_source: four_llm_consensus
   truth_column: cell_type_update
   target_cell_type: CD8+ T
   expression_threshold: 0.0
+  annotation_label_source: four_llm_consensus
+  selection_rule: "per-method consensus label equals CD8+ T"
+  reference_truth_filter: none_including_noise
+  summary_cell_scope: all_cells_in_selected_clusters_including_noise
   expected_marker_count: 45
   # The H5AD X order is deliberately fixed: no auxillary obs markers are
   # included in this dot plot.
@@ -872,9 +921,12 @@ panel_j:
   data_source_panel: panel_d
   cohort_source_panel: panel_d
   clustering_source_panel: panel_d
+  annotation_consensus_source: four_llm_consensus
   truth_column: cell_type_update
   coordinate_columns: [x, y]
   excluded_labels: [Noise]
+  display_label_source: four_llm_consensus
+  ground_truth_display: normalized_21_class_reference
   expected_excluded_counts:
     Noise: 10495
 
@@ -888,24 +940,31 @@ panel_j:
     - key: pixie
       label: PIXIE
 
-  # These TIFF-PIXIE-specific windows were selected by the local deterministic
-  # candidate search. VERIFY: its seed, percentile bounds, and radius grid are
-  # implementation-derived rather than specified in the attached Methods.
+  example_selection:
+    status: recovered_post_hoc_illustrative_search
+    random_seed: 42
+    coordinate_quantile_bounds: [0.05, 0.95]
+    inner_center_margin_fraction: 0.05
+    candidate_centers_per_fov: 120
+    radius_fractions: [0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.12, 0.14]
+    retained_cell_count_range: [900, 1100]
+    score: "agreement_or_disagreement*0.60 + n_truth_types/27*0.15 + density*0.25"
+    validation_scope: post_hoc_illustration_not_independent_validation
   examples:
     - name: Low Agreement
       file_id: 768b7adb649959b6a4e354867595032d
-      x0: 628.8963782271768
-      x1: 1807.976378227177
-      y0: 4284.35251560926
-      y1: 5377.052515609261
-      expected_cells: 1091
+      x0: 4546.435323674194
+      x1: 6230.835323674193
+      y0: 8121.140794695537
+      y1: 9682.140794695537
+      expected_cells: 1086
     - name: High Agreement
-      file_id: 5318485b16983482401c3be24b6c42ad
-      x0: 5410.872398326905
-      x1: 6493.352398326904
-      y0: 2493.564030947239
-      y1: 3447.153030947239
-      expected_cells: 1041
+      file_id: 76d3efd17b6fc83aaac13e961824c5ae
+      x0: 6698.995539724947
+      x1: 8237.795539724948
+      y0: 6947.954817410747
+      y1: 8268.104817410747
+      expected_cells: 915
 
   style:
     font_family: Arial
