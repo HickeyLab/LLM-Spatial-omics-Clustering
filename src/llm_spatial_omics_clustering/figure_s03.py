@@ -127,14 +127,36 @@ def _save_figure(
     return paths
 
 
+def _method_cluster_contracts(
+    config: Mapping[str, Any],
+) -> tuple[dict[str, int], dict[str, int]]:
+    dependency = config["figure_02_dependency"]
+    configured = {
+        str(key): int(value)
+        for key, value in dependency["configured_methods"].items()
+    }
+    observed = {
+        str(key): int(value)
+        for key, value in dependency["observed_methods"].items()
+    }
+    if set(configured) != set(observed):
+        raise FigureS03ValidationError(
+            "Configured and observed method contracts have different keys"
+        )
+    return configured, observed
+
+
 def _method_specs(config: Mapping[str, Any]) -> list[tuple[str, str]]:
     specs = [
         (str(method_key), str(method_label))
         for method_key, method_label in config["figure_02_dependency"]["method_order"]
     ]
-    expected = config["figure_02_dependency"]["expected_methods"]
-    if {key for key, _ in specs} != set(expected):
-        raise FigureS03ValidationError("Method order and expected method keys differ")
+    configured, observed = _method_cluster_contracts(config)
+    method_keys = {key for key, _ in specs}
+    if method_keys != set(configured) or method_keys != set(observed):
+        raise FigureS03ValidationError(
+            "Method order and configured/observed method keys differ"
+        )
     return specs
 
 
@@ -182,6 +204,18 @@ def _load_inputs_cached(
     )
 
     figure_02_config = load_figure_02_config(figure_02_config_path)
+    configured_methods, observed_methods = _method_cluster_contracts(config)
+    figure_02_configured_methods = {
+        str(method_key): int(method_config["configured_clusters"])
+        for method_key, method_config in figure_02_config["panel_d"][
+            "clustering_methods"
+        ].items()
+    }
+    if figure_02_configured_methods != configured_methods:
+        raise FigureS03ValidationError(
+            "S3 configured method counts differ from Figure 2: "
+            f"s3={configured_methods}, figure_02={figure_02_configured_methods}"
+        )
     data_root = resolve_data_root(
         figure_02_config,
         download_if_missing=download_if_missing,
@@ -199,14 +233,10 @@ def _load_inputs_cached(
     if cells[["File_ID", "ID"]].duplicated().any():
         raise FigureS03ValidationError("Figure 2 cells have duplicate (File_ID, ID) keys")
 
-    expected_methods = {
-        str(key): int(value)
-        for key, value in dependency["expected_methods"].items()
-    }
-    if set(assignments) != set(expected_methods):
+    if set(assignments) != set(observed_methods):
         raise FigureS03ValidationError(
             "Figure 2 method keys differ from the S3 contract: "
-            f"observed={sorted(assignments)}, expected={sorted(expected_methods)}"
+            f"loaded={sorted(assignments)}, declared={sorted(observed_methods)}"
         )
     for method_key, _ in _method_specs(config):
         frame = assignments[method_key][["File_ID", "ID", "cluster"]].copy()
@@ -226,9 +256,10 @@ def _load_inputs_cached(
         method_key: int(cells[method_key].nunique())
         for method_key, _ in _method_specs(config)
     }
-    if cluster_counts != expected_methods:
+    if cluster_counts != observed_methods:
         raise FigureS03ValidationError(
-            f"Selected assignment counts changed: {cluster_counts} != {expected_methods}"
+            "Selected artifact occupied-cluster counts changed: "
+            f"loaded={cluster_counts}, declared_observed={observed_methods}"
         )
 
     source_count = int(len(cells))

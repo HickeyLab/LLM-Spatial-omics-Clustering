@@ -2,15 +2,18 @@
 
 import json
 from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
 import numpy as np
+import yaml
 
 from llm_spatial_omics_clustering.figure_02 import (
     load_figure_config as load_figure_02_config,
 )
 from llm_spatial_omics_clustering.figure_s03 import (
+    FigureS03ValidationError,
     build_panel_a_summary,
     build_panel_c_composition,
     build_panel_e_metrics,
@@ -24,6 +27,25 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
 
 class FigureS03ContractTests(unittest.TestCase):
+    def test_configured_counts_must_match_figure_02_before_data_loading(self) -> None:
+        config = load_figure_config()
+        config["figure_02_dependency"]["configured_methods"]["leiden"] = 299
+        with TemporaryDirectory() as temporary:
+            config_path = Path(temporary) / "figure_s03.yaml"
+            config_path.write_text(
+                yaml.safe_dump(config, sort_keys=False),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(
+                FigureS03ValidationError,
+                "configured method counts differ from Figure 2",
+            ):
+                load_inputs(
+                    repository_root=REPOSITORY_ROOT,
+                    config_path=config_path,
+                    download_if_missing=False,
+                )
+
     def test_frozen_sweep_lookup_never_downloads_the_duke_h5ad(self) -> None:
         with patch(
             "llm_spatial_omics_clustering.figure_02.resolve_data_root",
@@ -50,9 +72,14 @@ class FigureS03ContractTests(unittest.TestCase):
         self.assertEqual(dependency["expected_raw_label_count_including_noise"], 28)
         self.assertEqual(dependency["expected_raw_label_count_excluding_noise"], 27)
         self.assertEqual(
-            dependency["expected_methods"],
+            dependency["configured_methods"],
+            {"leiden": 300, "flowsom": 300, "spatialsort": 300, "pixie": 300},
+        )
+        self.assertEqual(
+            dependency["observed_methods"],
             {"leiden": 55, "flowsom": 300, "spatialsort": 60, "pixie": 50},
         )
+        self.assertNotIn("expected_methods", dependency)
         self.assertEqual(
             [list(spec) for spec in dependency["method_order"]],
             [
@@ -98,15 +125,30 @@ class FigureS03ContractTests(unittest.TestCase):
         figure_02_config = load_figure_02_config(
             REPOSITORY_ROOT / str(dependency["config_path"])
         )
-        pixie_contract = figure_02_config["panel_d"]["clustering_methods"]["pixie"]
-        self.assertEqual(pixie_contract["expected_clusters"], 50)
+        figure_02_methods = figure_02_config["panel_d"]["clustering_methods"]
+        self.assertEqual(
+            {
+                method: contract["configured_clusters"]
+                for method, contract in figure_02_methods.items()
+            },
+            dependency["configured_methods"],
+        )
+        pixie_contract = figure_02_methods["pixie"]
+        self.assertEqual(pixie_contract["configured_clusters"], 300)
+        self.assertEqual(pixie_contract["observed_clusters"], 50)
         self.assertEqual(
             pixie_contract["assignment_filename"],
             "data/processed/figure_02/pixie_tiff_methods_50/master_pixie_clusters.csv",
         )
         self.assertEqual(
-            pixie_contract["parameters"]["input"],
+            pixie_contract["selected_artifact_parameters"]["input"],
             "paired 48-channel OME-TIFF expression images and integer cell masks",
+        )
+        self.assertEqual(
+            pixie_contract["selected_artifact_parameters"]["cell_metaclusters"], 50
+        )
+        self.assertEqual(
+            pixie_contract["selected_artifact_parameters"]["pixel_metaclusters"], 20
         )
 
     def test_five_cell_notebook_and_frozen_panel_d_sweep(self) -> None:

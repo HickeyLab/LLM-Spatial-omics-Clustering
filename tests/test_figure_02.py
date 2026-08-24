@@ -1,8 +1,14 @@
 """Contract checks for the Figure 2 Panel B through J implementations."""
 
+from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
 
+import pandas as pd
+
 from llm_spatial_omics_clustering.figure_02 import (
+    Figure02ValidationError,
+    _load_method_assignments_for_keys,
     load_b004_h5ad,
     load_figure_config,
     load_panel_b_distribution,
@@ -15,7 +21,43 @@ from llm_spatial_omics_clustering.figure_02 import (
 
 
 class Figure02ContractTests(unittest.TestCase):
-    def test_figure_02_config_declares_b004_panel_b_and_exact_cluster_counts(self) -> None:
+    def test_assignment_loader_validates_observed_not_configured_count(self) -> None:
+        keys = pd.DataFrame({"File_ID": ["region", "region"], "ID": [1, 2]})
+        method_config = {
+            "assignment_filename": "leiden.csv",
+            "assignment_column": "cluster",
+            "configured_clusters": 300,
+            "observed_clusters": 2,
+            "selected_artifact_parameters": {},
+        }
+        with TemporaryDirectory() as temporary:
+            data_root = Path(temporary)
+            pd.DataFrame(
+                {
+                    "File_ID": ["region", "region"],
+                    "ID": [1, 2],
+                    "cluster": ["cluster_a", "cluster_b"],
+                }
+            ).to_csv(data_root / "leiden.csv", index=False)
+
+            assignments = _load_method_assignments_for_keys(
+                keys,
+                {"leiden": method_config},
+                data_root=data_root,
+            )
+            self.assertEqual(assignments["leiden"]["cluster"].nunique(), 2)
+
+            method_config["observed_clusters"] = 3
+            with self.assertRaisesRegex(
+                Figure02ValidationError, "declared observed_clusters=3"
+            ):
+                _load_method_assignments_for_keys(
+                    keys,
+                    {"leiden": method_config},
+                    data_root=data_root,
+                )
+
+    def test_figure_02_config_declares_b004_panel_b_and_cluster_contracts(self) -> None:
         config = load_figure_config()
         panel_b = config["panel_b"]
         panel_c = config["panel_c"]
@@ -54,12 +96,36 @@ class Figure02ContractTests(unittest.TestCase):
         self.assertEqual(panel_c["coordinates"]["expected_bounds"]["y"], [301.0, 9509.0])
         self.assertEqual(panel_c["data"]["h5ad_sha256"], panel_b["data"]["h5ad_sha256"])
         self.assertEqual(panel_d["features"]["expected_total_markers"], 48)
+        clustering_methods = panel_d["clustering_methods"]
         self.assertEqual(
             {
-                name: spec["expected_clusters"]
-                for name, spec in panel_d["clustering_methods"].items()
+                name: spec["configured_clusters"]
+                for name, spec in clustering_methods.items()
+            },
+            {"leiden": 300, "flowsom": 300, "spatialsort": 300, "pixie": 300},
+        )
+        self.assertEqual(
+            {
+                name: spec["observed_clusters"]
+                for name, spec in clustering_methods.items()
             },
             {"leiden": 55, "flowsom": 300, "spatialsort": 60, "pixie": 50},
+        )
+        for method_config in clustering_methods.values():
+            self.assertNotIn("expected_clusters", method_config)
+            self.assertNotIn("parameters", method_config)
+            self.assertIn("selected_artifact_parameters", method_config)
+        pixie = clustering_methods["pixie"]
+        self.assertEqual(
+            pixie["assignment_filename"],
+            "data/processed/figure_02/pixie_tiff_methods_50/master_pixie_clusters.csv",
+        )
+        self.assertEqual(pixie["observed_clusters"], 50)
+        self.assertEqual(
+            pixie["selected_artifact_parameters"]["cell_metaclusters"], 50
+        )
+        self.assertEqual(
+            pixie["selected_artifact_parameters"]["pixel_metaclusters"], 20
         )
         self.assertEqual(panel_e["status"], "executed")
         self.assertEqual(panel_e["cohort"], panel_d["cohort"])
