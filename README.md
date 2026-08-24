@@ -23,13 +23,8 @@ table below.
 Figures 1, S1, and S2 contain embedded executed outputs; Figures 2–4 and S3–S4
 display validated publication previews and are not stored as executed notebooks.
 
-![Figure 2 publication output](notebooks/final_figures/previews/figure_02.png)
-
-The tracked previews are byte-for-byte copies of validated source-traced
-publication outputs. Their audit hashes are recorded in
-[`notebooks/final_figures/previews/README.md`](notebooks/final_figures/previews/README.md).
-They are browsing aids, not stored execution state for the reconstruction
-notebooks.
+Validated publication previews and their audit hashes are available in
+[`notebooks/final_figures/previews/`](notebooks/final_figures/previews/README.md).
 
 ## Repository layout
 
