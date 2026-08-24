@@ -13,7 +13,14 @@ figure_02_dependency:
   excluded_label: Noise
   expected_raw_label_count_including_noise: 28
   expected_raw_label_count_excluding_noise: 27
-  expected_methods:
+  # All methods target K=300; the selected frozen artifacts retain their
+  # observed occupied-cluster counts for exact historical validation.
+  configured_methods:
+    leiden: 300
+    flowsom: 300
+    spatialsort: 300
+    pixie: 300
+  observed_methods:
     leiden: 55
     flowsom: 300
     spatialsort: 60

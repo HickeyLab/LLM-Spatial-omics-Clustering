@@ -262,11 +262,15 @@ panel_d:
     point_alpha: 0.6
 
   clustering_methods:
+    # Every benchmark method was configured to target K=300. The frozen
+    # selected artifacts can have fewer occupied clusters; observed_clusters
+    # records the exact artifact count validated by Panels D--J.
     leiden:
       assignment_filename: leiden_refined_best_full_clusters.csv
       assignment_column: cluster
-      expected_clusters: 55
-      parameters:
+      configured_clusters: 300
+      observed_clusters: 55
+      selected_artifact_parameters:
         features: "48 H5AD-derived cell-level features"
         standardize: true
         pca_components: 21
@@ -280,8 +284,9 @@ panel_d:
     flowsom:
       assignment_filename: flowsom_mdi_weighted_best_clusters.csv
       assignment_column: Cluster
-      expected_clusters: 300
-      parameters:
+      configured_clusters: 300
+      observed_clusters: 300
+      selected_artifact_parameters:
         features: "30 highest-variance features selected after arcsinh(x/1)"
         random_forest_trees: 200
         random_forest_class_weight: balanced
@@ -295,8 +300,9 @@ panel_d:
     spatialsort:
       assignment_filename: spatialsort_full_clusters.csv
       assignment_column: spatialsort_cluster
-      expected_clusters: 60
-      parameters:
+      configured_clusters: 300
+      observed_clusters: 60
+      selected_artifact_parameters:
         features: "45 H5AD X variables"
         spatial_graph: "15-nearest-neighbor graph constructed within each region"
         use_priors: false
@@ -309,12 +315,14 @@ panel_d:
         random_seed: null
 
     pixie:
-      # This local artifact is produced by the exact streaming TIFF command in
-      # docs/figure_02_panel_d.md.  It is intentionally gitignored.
+      # This frozen methods_50 artifact has 50 occupied cell metaclusters and
+      # is not a K300 result. It is produced by the exact streaming TIFF
+      # command in docs/figure_02_panel_d.md and is intentionally gitignored.
       assignment_filename: data/processed/figure_02/pixie_tiff_methods_50/master_pixie_clusters.csv
       assignment_column: pixie_cell_cluster
-      expected_clusters: 50
-      parameters:
+      configured_clusters: 300
+      observed_clusters: 50
+      selected_artifact_parameters:
         input: "paired 48-channel OME-TIFF expression images and integer cell masks"
         include_hoechst: true
         gaussian_sigma_pixels: 2.0

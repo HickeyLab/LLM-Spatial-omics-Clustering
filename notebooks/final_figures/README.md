@@ -22,11 +22,13 @@ until a reviewer performs a full local rebuild.
 
 ## Supporting notebooks
 
-- `00_metric_contract_and_artifact_registry.ipynb`
 - `supplementary_note_01_llm_cluster_annotation.ipynb`
-- `table_01_clustering_methods.ipynb`
 - `table_s01_clustering_methods.ipynb`
-- `table_s02_marker_summary_optimization.ipynb`
+
+Table S1 reports the configured K=300 target for all four clustering methods.
+The frozen selected artifacts used by the figure code can contain fewer
+occupied clusters; those observed counts are validated separately in the
+tracked Figure 2 and Supplementary Figure S3 contracts.
 
 The small `previews/` collection is intentionally tracked for review. Its
 files are output snapshots, never runtime inputs.

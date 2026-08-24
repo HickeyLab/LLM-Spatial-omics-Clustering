@@ -691,32 +691,34 @@ def _validate_tiff_pixie_manifest(artifact_path: Path, method_config: Mapping[st
         raise Figure02ValidationError(
             f"PIXIE run is not complete (status={manifest.get('status')!r}): {manifest_path}"
         )
-    expected = method_config["parameters"]
-    observed = manifest.get("parameters", {})
-    for key, expected_value in {
-        "include_hoechst": expected["include_hoechst"],
-        "blur_sigma": expected["gaussian_sigma_pixels"],
-        "pixel_som_side": expected["pixel_som_shape"][0],
-        "pixel_meta_clusters": expected["pixel_metaclusters"],
-        "cell_som_side": expected["cell_som_shape"][0],
-        "cell_meta_clusters": expected["cell_metaclusters"],
-        "seed": expected["random_seed"],
+    selected_parameters = method_config["selected_artifact_parameters"]
+    manifest_parameters = manifest.get("parameters", {})
+    for key, selected_value in {
+        "include_hoechst": selected_parameters["include_hoechst"],
+        "blur_sigma": selected_parameters["gaussian_sigma_pixels"],
+        "pixel_som_side": selected_parameters["pixel_som_shape"][0],
+        "pixel_meta_clusters": selected_parameters["pixel_metaclusters"],
+        "cell_som_side": selected_parameters["cell_som_shape"][0],
+        "cell_meta_clusters": selected_parameters["cell_metaclusters"],
+        "seed": selected_parameters["random_seed"],
     }.items():
-        if observed.get(key) != expected_value:
+        if manifest_parameters.get(key) != selected_value:
             raise Figure02ValidationError(
-                f"PIXIE manifest parameter {key}={observed.get(key)!r}; expected {expected_value!r}"
+                f"PIXIE manifest parameter {key}={manifest_parameters.get(key)!r}; "
+                f"selected artifact contract requires {selected_value!r}"
             )
-    training = observed.get("cell_som_training", {})
-    for key, expected_value in {
-        "sigma": expected["cell_som_sigma"],
-        "learning_rate": expected["cell_som_learning_rate"],
-        "iterations": expected["cell_som_iterations"],
-        "decay": expected["cell_som_decay"],
-        "initialization": expected["cell_som_initialization"],
+    training = manifest_parameters.get("cell_som_training", {})
+    for key, selected_value in {
+        "sigma": selected_parameters["cell_som_sigma"],
+        "learning_rate": selected_parameters["cell_som_learning_rate"],
+        "iterations": selected_parameters["cell_som_iterations"],
+        "decay": selected_parameters["cell_som_decay"],
+        "initialization": selected_parameters["cell_som_initialization"],
     }.items():
-        if training.get(key) != expected_value:
+        if training.get(key) != selected_value:
             raise Figure02ValidationError(
-                f"PIXIE cell-SOM parameter {key}={training.get(key)!r}; expected {expected_value!r}"
+                f"PIXIE cell-SOM parameter {key}={training.get(key)!r}; "
+                f"selected artifact contract requires {selected_value!r}"
             )
 
 
@@ -753,11 +755,12 @@ def _load_method_assignments_for_keys(
         if joined[label_column].isna().any():
             missing = int(joined[label_column].isna().sum())
             raise Figure02ValidationError(f"{method_name} is missing {missing:,} B004 assignments")
-        cluster_count = int(joined[label_column].nunique())
-        expected_count = int(method_config["expected_clusters"])
-        if cluster_count != expected_count:
+        observed_count = int(joined[label_column].nunique())
+        declared_observed_count = int(method_config["observed_clusters"])
+        if observed_count != declared_observed_count:
             raise Figure02ValidationError(
-                f"{method_name} has {cluster_count} clusters; expected {expected_count}"
+                f"{method_name} selected artifact has {observed_count} occupied clusters; "
+                f"declared observed_clusters={declared_observed_count}"
             )
         assignments[method_name] = joined.rename(columns={label_column: "cluster"})
     return assignments
@@ -949,14 +952,14 @@ def load_panel_e_metrics(
             )
 
     cluster_counts = {method_key: int(scored_cells[method_key].nunique()) for method_key in method_keys}
-    expected_cluster_counts = {
-        str(method_key): int(method_config["expected_clusters"])
+    declared_observed_cluster_counts = {
+        str(method_key): int(method_config["observed_clusters"])
         for method_key, method_config in method_configs.items()
     }
-    if cluster_counts != expected_cluster_counts:
+    if cluster_counts != declared_observed_cluster_counts:
         raise Figure02ValidationError(
             "Panel E cluster counts differ from the selected method assignments: "
-            f"observed={cluster_counts}, expected={expected_cluster_counts}"
+            f"loaded={cluster_counts}, declared_observed={declared_observed_cluster_counts}"
         )
 
     rows: list[dict[str, Any]] = []
@@ -1225,15 +1228,15 @@ def _load_scored_evaluation_cells(
         if scored[method_key].isna().any():
             raise Figure02ValidationError(f"{panel_key} has missing {method_key} assignments")
     cluster_counts = {method_key: int(scored[method_key].nunique()) for method_key, _ in method_specs}
-    expected_cluster_counts = {
+    declared_observed_cluster_counts = {
         method_key: int(config[str(config[panel_key].get("clustering_source_panel", "panel_d"))]
-                        ["clustering_methods"][method_key]["expected_clusters"])
+                        ["clustering_methods"][method_key]["observed_clusters"])
         for method_key, _ in method_specs
     }
-    if cluster_counts != expected_cluster_counts:
+    if cluster_counts != declared_observed_cluster_counts:
         raise Figure02ValidationError(
             f"{panel_key} cluster counts differ from selected assignments: "
-            f"observed={cluster_counts}, expected={expected_cluster_counts}"
+            f"loaded={cluster_counts}, declared_observed={declared_observed_cluster_counts}"
         )
     return (
         scored,
