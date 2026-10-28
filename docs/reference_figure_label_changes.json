@@ -1,0 +1,194 @@
+{
+  "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
+  "scope": "Display labels only. All source pixels outside the declared label rectangles must remain identical.",
+  "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
+  "font": "DejaVuSans.ttf",
+  "figures": [
+    {
+      "file": "notebooks/final_figures/previews/figure_02.png",
+      "source_sha256": "44978280393bac9756e3e826e60a244cf7a2845399635e82df93c0a3f8fb6cd7",
+      "size_pixels": [
+        4200,
+        4800
+      ],
+      "labels": [
+        {
+          "panel": "C",
+          "old": "A Ground Truth Tissue Region",
+          "new": "Reference annotations",
+          "rect": [
+            164,
+            816,
+            691,
+            73
+          ],
+          "x": 485,
+          "y": 879,
+          "size": 44.53
+        },
+        {
+          "panel": "D",
+          "old": "Ground Truth",
+          "new": "Reference annotations",
+          "rect": [
+            994,
+            848,
+            539,
+            56
+          ],
+          "x": 1263,
+          "y": 900,
+          "size": 42.19
+        },
+        {
+          "panel": "J",
+          "old": "Ground Truth",
+          "new": "Reference annotations",
+          "rect": [
+            2454,
+            4043,
+            448,
+            63
+          ],
+          "x": 2679,
+          "y": 4095,
+          "size": 37.5
+        }
+      ],
+      "updated_sha256": "655b8b3a844c608b4bf767101f7b282855ed9f562da82434292434b3fcd38c75"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_03.png",
+      "source_sha256": "cc6f8982a657b92fec5ce5df0e015ddf3620f124447824e950ca33d4b154eeb6",
+      "size_pixels": [
+        4200,
+        4452
+      ],
+      "labels": [
+        {
+          "panel": "H",
+          "old": "Ground Truth",
+          "new": "Reference annotations",
+          "rect": [
+            805,
+            3640,
+            460,
+            55
+          ],
+          "x": 1032,
+          "y": 3688,
+          "size": 38
+        }
+      ],
+      "updated_sha256": "6d2e2e744e20c3dc1ebaccdcb54d557dd8624327b1abc160da7786a3b350bbc0"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_04.png",
+      "source_sha256": "4e9892f2199cb820048bee54ff25a709899cc668a2b39743bbaa6ec63111934e",
+      "size_pixels": [
+        4200,
+        3168
+      ],
+      "labels": [
+        {
+          "panel": "B",
+          "old": "Truth",
+          "new": "Reference cell type",
+          "rect": [
+            338,
+            1179,
+            78,
+            472
+          ],
+          "x": 377,
+          "y": 1415,
+          "size": 38.96,
+          "rotate": -90
+        }
+      ],
+      "updated_sha256": "4a69bc025a8ce8125520627697b1f584c89a66bdf0632b2d49ed9b598fc41115"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s03.png",
+      "source_sha256": "da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5",
+      "size_pixels": [
+        4200,
+        4512
+      ],
+      "labels": [
+        {
+          "panel": "A",
+          "old": "Ground-truth protein expression",
+          "new": "Protein expression by reference cell type",
+          "rect": [
+            143,
+            84,
+            948,
+            84
+          ],
+          "x": 148,
+          "y": 130,
+          "size": 39.66,
+          "align": "left"
+        },
+        {
+          "panel": "B",
+          "old": "Ground-truth tissue regions",
+          "new": "Reference annotations across tissue regions",
+          "rect": [
+            2237,
+            84,
+            1025,
+            84
+          ],
+          "x": 2248,
+          "y": 130,
+          "size": 39.66,
+          "align": "left"
+        }
+      ],
+      "updated_sha256": "8cd3209e6e846cd71fb538e6d6184c8661516cbee7b77cb6da2ec8694b87306c"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s04.png",
+      "source_sha256": "a278669227eea94741308c821b308d4023de3e22ed73e4699179a0e32086504a",
+      "size_pixels": [
+        4200,
+        4800
+      ],
+      "labels": [
+        {
+          "panel": "A left",
+          "old": "Truth",
+          "new": "Reference cell type",
+          "rect": [
+            56,
+            539,
+            84,
+            551
+          ],
+          "x": 103,
+          "y": 813,
+          "size": 42.19,
+          "rotate": -90
+        },
+        {
+          "panel": "A right",
+          "old": "Truth",
+          "new": "Reference cell type",
+          "rect": [
+            2116,
+            534,
+            87,
+            551
+          ],
+          "x": 2163,
+          "y": 809,
+          "size": 42.19,
+          "rotate": -90
+        }
+      ],
+      "updated_sha256": "344e9823bad0da078d8eb0aa6f8bdf4ba3aed56cf4d63a2da8fd14ac46ffc2c7"
+    }
+  ]
+}

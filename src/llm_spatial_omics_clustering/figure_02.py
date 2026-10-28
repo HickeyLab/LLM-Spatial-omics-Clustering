@@ -1983,7 +1983,7 @@ def render_panel_c(
     fig.text(
         float(style.get("title_x", 0.55)),
         float(style.get("title_y", 0.93)),
-        str(style.get("title", "A Ground Truth Tissue Region")),
+        str(style.get("title", "Reference annotations")),
         fontsize=float(style.get("title_fontsize", 20)),
         ha="center",
         va="top",
@@ -2539,7 +2539,7 @@ def render_panel_j(
                 spine.set_linewidth(float(style.get("frame_linewidth", 0.5)))
             if row_index == 0:
                 axis.set_title(
-                    label_column,
+                    "Reference annotations" if label_column == "Ground Truth" else label_column,
                     fontsize=float(style.get("column_title_fontsize", 10)),
                     pad=float(style.get("column_title_pad", 7)),
                 )
@@ -2607,7 +2607,7 @@ def render_panel_d(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     panel_order = ["Ground Truth", "leiden", "flowsom", "spatialsort", "pixie"]
-    panel_titles = ["Ground Truth", "Leiden", "FlowSOM", "SpatialSort", "PIXIE"]
+    panel_titles = ["Reference annotations", "Leiden", "FlowSOM", "SpatialSort", "PIXIE"]
     colors = dict(color_map or default_color_map(panel_table["Ground Truth"].astype(str)))
     colors.setdefault("Unassigned", "#808080")
     fig, axes = plt.subplots(1, len(panel_order), figsize=(16.4, 6.7))

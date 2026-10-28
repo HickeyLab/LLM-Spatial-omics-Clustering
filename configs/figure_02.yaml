@@ -34,7 +34,7 @@ four_llm_consensus:
     NK: CD7+ Immune
 
 panel_b:
-  title: "Ground-truth cell type distribution"
+  title: "Reference cell type distribution"
   status: executed
 
   data:
@@ -137,7 +137,7 @@ panel_b:
     provenance_json: outputs/figure_02/figure_02b_b004_provenance.json
 
 panel_c:
-  title: "A Ground Truth Tissue Region"
+  title: "Reference annotations"
   status: executed
 
   data:
@@ -213,7 +213,7 @@ panel_c:
     panel_label_x: 0.03
     panel_label_y: 0.95
     panel_label_fontsize: 42
-    title: "A Ground Truth Tissue Region"
+    title: "Reference annotations"
     title_x: 0.55
     title_y: 0.93
     title_fontsize: 20
@@ -225,7 +225,7 @@ panel_c:
     provenance_json: outputs/figure_02/figure_02c_b004_a404_provenance.json
 
 panel_d:
-  title: "Ground-truth and method-derived UMAP embeddings"
+  title: "Reference annotations and method-derived UMAP embeddings"
   status: source_traced
 
   data:
