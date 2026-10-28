@@ -32,8 +32,8 @@ The Figure 3 changes and matching caption are documented in
 Figures 4D–E and S4B now identify the Historical majority-based diagnostic.
 Figure S8 uses the corrected aggregate-identity terminology. These source
 calculations retain minority-label matches. See
-[the source/count audit](diagnostic_identity_labels.md). Eight previews now have
-45 declared overlay regions, including frozen Figure 1, S1 and S8 source snapshots.
+[the source/count audit](diagnostic_identity_labels.md). Nine previews now have
+54 declared overlay regions, including frozen Figure 1, S1 and S8 source snapshots.
 
 Figure 1B and S1 use “Tissue-region-level change” and/or “Mean across tissue
 regions.” S3E identifies its ARI/AMI dots as imaged tissue regions. The legacy
@@ -44,3 +44,7 @@ restored from existing cached plots. See [the crosswalk and manuscript wording](
 S3A and 2I identify their source-verified strict cutoff in stored processed
 values, with scaled means identified separately for color. See
 [the marker-expression audit](marker_expression_thresholds.md).
+
+Table S2 removes displayed “V3” shorthand and the unsupported benchmark-use
+claim. Its PIXIE-style export identity is preserved with an explicit qualification.
+See [the implementation and archived-prompt audit](table_s02_export_provenance.md).

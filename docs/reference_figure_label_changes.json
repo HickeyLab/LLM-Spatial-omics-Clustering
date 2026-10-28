@@ -1,6 +1,6 @@
 {
   "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
-  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Eight publication previews with 45 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling.",
+  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Nine publication previews with 54 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling. Table S2 distinguishes retrospective export selection from original numerical prompts and retains the unverified legacy PIXIE-style identity.",
   "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
   "font": "DejaVuSans.ttf",
   "figures": [
@@ -840,6 +840,152 @@
         }
       ],
       "updated_sha256": "d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75"
+    },
+    {
+      "file": "notebooks/final_figures/previews/table_s02.png",
+      "source_sha256": "98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa",
+      "size_pixels": [
+        4200,
+        4650
+      ],
+      "labels": [
+        {
+          "panel": "A heading",
+          "old": "V3 candidate ranges",
+          "new": "Retrospective marker-name-list parameter selection: candidate ranges",
+          "rect": [
+            500,
+            165,
+            3200,
+            85
+          ],
+          "x": 2100,
+          "y": 230,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "B heading",
+          "old": "V3 candidate-grid cardinality",
+          "new": "Candidate-grid cardinalities",
+          "rect": [
+            500,
+            1260,
+            3200,
+            85
+          ],
+          "x": 2100,
+          "y": 1325,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "C heading",
+          "old": "V3 fine-grid search space",
+          "new": "Declared fine-grid search space",
+          "rect": [
+            500,
+            2330,
+            3200,
+            80
+          ],
+          "x": 2100,
+          "y": 2395,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "D heading",
+          "old": "Selected V3 parameters used for benchmark",
+          "new": "Recorded marker-name-list export parameters",
+          "rect": [
+            500,
+            3440,
+            3200,
+            80
+          ],
+          "x": 2100,
+          "y": 3505,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "A method header",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            3380,
+            280,
+            690,
+            90
+          ],
+          "x": 3715,
+          "y": 345,
+          "size": 40,
+          "bold": true,
+          "background": "#f5f5f5"
+        },
+        {
+          "panel": "B method row",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            110,
+            2137,
+            490,
+            82
+          ],
+          "x": 117,
+          "y": 2201,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "panel": "C method row",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            110,
+            3241,
+            490,
+            82
+          ],
+          "x": 117,
+          "y": 3305,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "panel": "D method row",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            110,
+            4350,
+            490,
+            82
+          ],
+          "x": 117,
+          "y": 4414,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "panel": "Implementation note",
+          "old": "No implementation-equivalence note",
+          "new": "PIXIE-style export denotes the legacy source branch. Benchmark PIXIE equivalence is unverified.",
+          "rect": [
+            100,
+            4500,
+            4000,
+            120
+          ],
+          "x": 2100,
+          "y": 4580,
+          "size": 42
+        }
+      ],
+      "updated_sha256": "4a7df43e70a1c0a1bf4a03f469c810dc8a0644d07ac0fa7a77ef3d4f6fee9bd1"
     }
   ]
 }

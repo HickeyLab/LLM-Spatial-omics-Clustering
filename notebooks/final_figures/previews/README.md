@@ -4,7 +4,7 @@ These PNG files preserve the source-traced publication results and include
 reference terminology, verified metric labels and a prompt-provenance workflow
 revision. They
 are committed so reviewers can inspect the results on GitHub without rerunning
-an analysis. Every pixel outside the 45 declared overlay areas is unchanged.
+an analysis. Every pixel outside the 54 declared overlay areas is unchanged.
 
 The revised map headings use **Reference annotations**. Confusion-matrix
 reference axes use **Reference cell type**. Original dataset labels and
@@ -41,7 +41,7 @@ The parent notebooks and input contracts still govern analytical regeneration.
 The current notebooks may reconstruct panels differently from the historical
 publication composites, as documented in their existing provenance records.
 
-To reproduce or verify the display-only previews, use the five pinned original
+To reproduce or verify the display-only previews, use the six pinned original
 images from Git, frozen original Figure 1/S1/S8 snapshots and the Matplotlib/Pillow
 environment:
 
@@ -65,6 +65,10 @@ No clustering, metric calculation, or model call is performed.
 | `figure_s03.png` | `da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5` | `737131b62959d8e5a061d8d68eb15f54980a84bce0f3ef082fa8a5333aba8eaa` |
 | `figure_s04.png` | `a278669227eea94741308c821b308d4023de3e22ed73e4699179a0e32086504a` | `a45b758a2a0453f2f1cecd78eac369abc6ba682ac97390d3157de6bad26515ad` |
 | `figure_s08.png` | `805d5d84b70c3d5c6d0b2c4f02a9a5f185e9b38f70a53a435a9f6747ac6b2168` | `2e122310bf5195939f257f5d255cbd82220e75d194f306b32fb342bddecb6622` |
+| `table_s02.png` | `98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa` | `4a7df43e70a1c0a1bf4a03f469c810dc8a0644d07ac0fa7a77ef3d4f6fee9bd1` |
 
-The unchanged `table_s02.png` SHA-256 is
-`98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa`.
+Table S2 uses retrospective marker-name-list parameter selection, removes
+displayed version shorthand and identifies recorded export settings. Its legacy
+PIXIE-style export remains distinct from the benchmark PIXIE implementation.
+The original numerical prompt records do not verify use of the selected export
+parameters. See [the source and prompt audit](../../../docs/table_s02_export_provenance.md).

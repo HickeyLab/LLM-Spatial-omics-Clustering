@@ -24,7 +24,7 @@ NOTEBOOK_PATH = (
 PREVIEW_PATH = REPOSITORY_ROOT / "notebooks/final_figures/previews/table_s02.png"
 
 SOURCE_SHA256 = "e91af5dfc7ef27687aa8b07acbc74b86f9c2f119228dc1d2db20034f5ec671f4"
-PREVIEW_SHA256 = "98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa"
+PREVIEW_SHA256 = "4a7df43e70a1c0a1bf4a03f469c810dc8a0644d07ac0fa7a77ef3d4f6fee9bd1"
 EXPECTED_METHODS = ["FlowSOM", "Leiden", "SpatialSort", "PIXIE-style adaptation"]
 EXPECTED_COMBINATIONS = [1_152, 960, 960, 960]
 

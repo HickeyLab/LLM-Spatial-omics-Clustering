@@ -28,7 +28,7 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
     mask = np.zeros((original.height, original.width), dtype=bool)
     for label in spec['labels']:
         x, y, width, height = label['rect']
-        draw.rectangle((x, y, x + width - 1, y + height - 1), fill='white')
+        draw.rectangle((x, y, x + width - 1, y + height - 1), fill=label.get('background', 'white'))
         mask[y:y + height, x:x + width] = True
         if label.get('restore_strip'):
             repair = label['restore_strip']
@@ -38,7 +38,8 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
         if label.get('kind') == 'prompt_workflow':
             draw_prompt_workflow(result, label['rect'], font_path)
             continue
-        font = ImageFont.truetype(str(font_path), round(label['size']))
+        label_font = font_path.with_name('DejaVuSans-Bold.ttf') if label.get('bold') else font_path
+        font = ImageFont.truetype(str(label_font), round(label['size']))
         if label.get('kind') == 'component_legend':
             for entry in label['entries']:
                 left, baseline = entry['x'], label['y']
