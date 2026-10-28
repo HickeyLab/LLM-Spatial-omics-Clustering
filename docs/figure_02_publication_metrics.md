@@ -52,7 +52,9 @@ text rectangles recorded in `reference_figure_label_changes.json`.
 - Regional cell-count-weighted F1: support-weighted mean of classwise F1 after
   region-specific majority assignment. The later module computes this for E,
   but it is not the metric in the embedded publication E.
-- Regional cluster purity: `sum_cluster max_reference n(cluster, reference) / N`
+- Cluster purity within one cluster: its majority-reference-label cell count
+  divided by its total cell count.
+- Regional cell-count-weighted cluster purity: `sum_cluster max_reference n(cluster, reference) / N`
   within a region. The later module computes this for G, but it is not the
   metric in the embedded publication G.
 - Direct reference agreement: matches from one fixed prediction map divided by

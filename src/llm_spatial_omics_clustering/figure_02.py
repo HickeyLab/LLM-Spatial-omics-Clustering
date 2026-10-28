@@ -9,7 +9,7 @@ Panel E evaluates the same method assignments region by region.  It maps a
 method's clusters to majority H5AD reference labels independently within each
 region, then reports the reference-cell-count-weighted mean of class-level F1.
 Panels F--H report global per-cell-type F1, per-region purity, and global
-per-cell-type purity.  Panel I summarizes H5AD protein expression in
+per-cell-type recall.  Panel I summarizes H5AD protein expression in
 four-LLM-consensus CD8+ T-cell groups, while Panel J shows fixed spatial
 examples using those consensus labels and the same selected assignments.
 """
@@ -1374,7 +1374,7 @@ def load_panel_fh_metrics(
     panel_key: str,
     data_root: str | Path | None = None,
 ) -> PanelCellTypeMetrics:
-    """Compute Panel F/H global F1 and per-reference-class purity values.
+    """Compute Panel F/H global F1 and per-reference-class recall values.
 
     The screenshot's legacy "purity" is classwise recall: the fraction of
     cells of a reference type recovered by a globally majority-mapped cluster.
