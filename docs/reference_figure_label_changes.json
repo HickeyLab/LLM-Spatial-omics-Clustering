@@ -53,9 +53,95 @@
           "x": 2679,
           "y": 4095,
           "size": 37.5
+        },
+        {
+          "panel": "E title",
+          "old": "Cell-level accuracy",
+          "new": "Post-hoc selected reference agreement",
+          "rect": [
+            281,
+            1650,
+            1688,
+            63
+          ],
+          "x": 1148.44,
+          "y": 1699.22,
+          "size": 39.84
+        },
+        {
+          "panel": "E axis",
+          "old": "Exact accuracy",
+          "new": "Reference agreement",
+          "rect": [
+            12,
+            1727,
+            89,
+            527
+          ],
+          "x": 56.25,
+          "y": 1989.84,
+          "size": 39.84,
+          "rotate": true
+        },
+        {
+          "panel": "G title",
+          "old": "Tissue-level accuracy",
+          "new": "Post-hoc selected reference agreement",
+          "rect": [
+            281,
+            2334,
+            1688,
+            63
+          ],
+          "x": 1148.44,
+          "y": 2383.59,
+          "size": 39.84
+        },
+        {
+          "panel": "G axis",
+          "old": "Exact accuracy",
+          "new": "Reference agreement",
+          "rect": [
+            12,
+            2407,
+            89,
+            518
+          ],
+          "x": 56.25,
+          "y": 2664.84,
+          "size": 39.84,
+          "rotate": true
+        },
+        {
+          "panel": "H colorbar",
+          "old": "Purity (%)",
+          "new": "Recall (%)",
+          "rect": [
+            652,
+            3141,
+            384,
+            61
+          ],
+          "x": 820.31,
+          "y": 3192.19,
+          "size": 42.19
+        },
+        {
+          "panel": "H title",
+          "old": "Purity by cell type",
+          "new": "Recall by cell type",
+          "rect": [
+            586,
+            3359,
+            516,
+            56
+          ],
+          "x": 820.31,
+          "y": 3400.78,
+          "size": 42.19
         }
       ],
-      "updated_sha256": "655b8b3a844c608b4bf767101f7b282855ed9f562da82434292434b3fcd38c75"
+      "updated_sha256": "0dd21fb6c30dc1910b804e6bf32495914cc15ba9bcfde53487b67f3b610153ae"
     },
     {
       "file": "notebooks/final_figures/previews/figure_03.png",

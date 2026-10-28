@@ -723,7 +723,7 @@ panel_g:
     provenance_json: outputs/figure_02/figure_02g_b004_provenance.json
 
 panel_h:
-  title: "Purity by reference cell type and clustering method"
+  title: "Recall by reference cell type and clustering method"
   status: executed
   data_source_panel: panel_e
   cohort_source_panel: panel_d
@@ -785,7 +785,7 @@ panel_h:
     cmap: RdYlGn
     value_multiplier: 100.0
     color_limits: [0.0, 100.0]
-    colorbar_label: Purity
+    colorbar_label: Recall
     colorbar_ticks: [0.0, 20.0, 40.0, 60.0, 80.0, 100.0]
     colorbar_percent: true
     colorbar_tick_fontsize: 9

@@ -3,12 +3,15 @@
 These PNG files preserve the validated source-traced publication results and
 include a display-label revision for reference-annotation uncertainty. They
 are committed so reviewers can inspect the results on GitHub without rerunning
-an analysis. Every pixel outside the nine declared label areas is unchanged.
+an analysis. Every pixel outside the 15 declared label areas is unchanged.
 
 The revised map headings use **Reference annotations**. Confusion-matrix
 reference axes use **Reference cell type**. Original dataset labels and
 harmonized evaluation labels remain distinct. Biological class names, label
-normalization maps, legends, predictions, and numerical results are unchanged.
+normalization maps, legends, predictions, and numerical results are unchanged. Figure 2 E/G now identify
+the actual post-hoc selected reference agreement score, and H identifies recall
+instead of its historical “Purity” display label. See
+[the numerical source audit](../../../docs/figure_02_publication_metrics.md).
 
 These previews are not notebook execution state or reconstruction inputs.
 The parent notebooks and input contracts still govern analytical regeneration.
@@ -30,7 +33,7 @@ No clustering, metric calculation, or model call is performed.
 
 | Preview | Original SHA-256 | Revised SHA-256 |
 | --- | --- | --- |
-| `figure_02.png` | `44978280393bac9756e3e826e60a244cf7a2845399635e82df93c0a3f8fb6cd7` | `655b8b3a844c608b4bf767101f7b282855ed9f562da82434292434b3fcd38c75` |
+| `figure_02.png` | `44978280393bac9756e3e826e60a244cf7a2845399635e82df93c0a3f8fb6cd7` | `0dd21fb6c30dc1910b804e6bf32495914cc15ba9bcfde53487b67f3b610153ae` |
 | `figure_03.png` | `cc6f8982a657b92fec5ce5df0e015ddf3620f124447824e950ca33d4b154eeb6` | `6d2e2e744e20c3dc1ebaccdcb54d557dd8624327b1abc160da7786a3b350bbc0` |
 | `figure_04.png` | `4e9892f2199cb820048bee54ff25a709899cc668a2b39743bbaa6ec63111934e` | `4a69bc025a8ce8125520627697b1f584c89a66bdf0632b2d49ed9b598fc41115` |
 | `figure_s03.png` | `da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5` | `8cd3209e6e846cd71fb538e6d6184c8661516cbee7b77cb6da2ec8694b87306c` |

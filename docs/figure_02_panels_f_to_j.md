@@ -1,6 +1,11 @@
 # Figure 2 Panels F–J
 
-These five notebook cells use the same B004 H5AD reference labels and frozen
+> **Publication boundary:** The G purity calculation described here belongs to
+> the later module, not embedded publication G, which repeats E’s post-hoc
+> selected reference agreement. F/H publication metrics remain F1 and recall.
+> See [the publication metric audit](figure_02_publication_metrics.md).
+
+These later module helpers use the same B004 H5AD reference labels and frozen
 source-traced assignments as Panel D. All methods targeted K=300; Leiden,
 FlowSOM, SpatialSort, and PIXIE have 300, 300, 246, and 300 occupied clusters,
 respectively. `Noise` is excluded only where the historical metric or spatial
@@ -45,6 +50,6 @@ The per-cell consensus input is tracked as
 source-annotation, derived-CSV, and gzip hashes are locked in the frozen
 assignment manifest.
 
-Run only the relevant Figure 2 notebook code cell. Each writes local CSV,
+Call the corresponding later Figure 2 module loader and renderer. Each writes local CSV,
 PNG, PDF, and JSON provenance artifacts under `outputs/figure_02/`; generated
 artifacts remain gitignored.
