@@ -78,12 +78,12 @@ rendered. Set `CELL_MASKS_DATA_ROOT` only when the source H5AD cannot be found
 or downloaded through the repository-relative Duke cache; the exact clustering
 assignments are version controlled.
 
-## Panel A: ground-truth marker dot plot
+## Panel A: reference marker-expression dot plot
 
 Panel A uses the 209,587 non-Noise cells, 27 raw cell types, and exactly the 45
-native H5AD `X` markers. The three auxiliary Figure 2 observation markers
-`CD123`, `Hoechst1`, and `CDX2` are excluded. No expression transformation is
-applied by this panel.
+stored processed H5AD `X` markers. The three auxiliary Figure 2 observation markers
+`CD123`, `Hoechst1`, and `CDX2` are excluded. No additional expression transformation is
+applied by this panel. This does not imply that stored X is raw fluorescence.
 
 For cell type \(c\) and marker \(m\):
 
@@ -111,7 +111,7 @@ orders are frozen in `configs/figure_s03.yaml`; the computation must reproduce
 both orders or the panel fails validation.
 
 The audit CSV contains one row per cell-type/marker pair, including cell and
-marker display ranks, cell count, raw mean expression, fraction positive, and
+marker display ranks, cell count, stored mean expression, the above-cutoff fraction (legacy column `fraction_positive`), and
 marker-scaled mean expression.
 
 ## Panel B: all tissue regions
@@ -262,3 +262,8 @@ coordinate orientation, and the archived-source-only boundary for Panel D.
 
 Generated files under `outputs/supplementary/` are ignored by Git; only the
 supplementary output README is retained by the repository ignore rules.
+
+The displayed cutoff is strict stored processed `X > 0.0`, verified separately
+from Figure 2I. These operational fractions are not validated marker-positive
+fractions. See [the publication source audit](marker_expression_thresholds.md)
+for preprocessing, denominators, color scaling and alternative notebook boundaries.

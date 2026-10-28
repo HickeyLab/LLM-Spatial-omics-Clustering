@@ -899,11 +899,11 @@ panel_i:
     size_legend_position: [0.14, 0.09, 0.22, 0.16]
     size_legend_values: [20, 40, 60, 80, 100]
     size_legend_color: "#8a8a8a"
-    size_legend_label: "Fraction of\nCells in\nGroup (%)"
+    size_legend_label: "Fraction with\nprocessed X > {expression_threshold:g}\n(%)"
     colorbar_position: [0.75, 0.09, 0.12, 0.04]
     colorbar_label_x: 0.90
     colorbar_label_y: 0.14
-    colorbar_label: "Mean\nExpression\nin Group"
+    colorbar_label: "Scaled mean\nexpression"
     legend_tick_fontsize: 8
     legend_label_fontsize: 10
     spine_color: "#333333"

@@ -322,7 +322,7 @@ def build_panel_a_summary(
     inputs: FigureS03Inputs,
     config: Mapping[str, Any],
 ) -> pd.DataFrame:
-    """Compute mean expression, positive fraction, and marker-scaled means."""
+    """Compute stored-value means, above-cutoff fractions and scaled means."""
     from scipy.cluster.hierarchy import leaves_list, linkage
 
     truth_column = str(config["figure_02_dependency"]["truth_column"])
@@ -392,6 +392,7 @@ def build_panel_a_summary(
                     "marker_display_rank": marker_rank,
                     "n_cells": n_cells,
                     "mean_expression": float(mean_matrix[row_index, marker_index]),
+                    # Legacy compatibility key: above-cutoff fraction, not validated positivity.
                     "fraction_positive": float(fraction_matrix[row_index, marker_index]),
                     "marker_scaled_mean_expression": float(scaled[row_index, marker_index]),
                 }
@@ -458,7 +459,7 @@ def _render_panel_a(
     ]
     axis.legend(
         handles=size_handles,
-        title="Fraction of Cells\nin Group (%)",
+        title=f"Fraction with processed\nX > {float(config['panel_a']['expression_threshold']):g} (%)",
         loc="upper left",
         bbox_to_anchor=(1.01, 0.48),
         ncol=5,
@@ -472,7 +473,7 @@ def _render_panel_a(
     colorbar = figure.colorbar(points, cax=color_axis, orientation="horizontal")
     colorbar.set_ticks([0.0, 0.5, 1.0])
     colorbar.ax.tick_params(labelsize=7)
-    color_axis.set_title("Mean Expression\nin Group", fontsize=9, pad=7)
+    color_axis.set_title("Scaled mean expression", fontsize=9, pad=7)
     figure.text(
         0.012,
         0.97,
@@ -511,10 +512,13 @@ def run_panel_a(
             "evaluation_cells": inputs.non_noise_cell_count,
             "raw_cell_types": 27,
             "markers": 45,
-            "expression_transform": "none",
+            "expression_transform": "none at dot-plot stage; stored processed H5AD X",
+            "expression_threshold": float(config["panel_a"]["expression_threshold"]),
+            "threshold_operator": ">",
+            "biological_positivity_validation": "not established",
             "row_and_column_order": "average linkage; correlation distance",
-            "dot_size": "fraction of cells with raw expression > 0",
-            "dot_color": "raw group mean, min-max scaled within each marker",
+            "dot_size": f"fraction of cells with stored processed X > {float(config['panel_a']['expression_threshold']):g}",
+            "dot_color": "stored group mean, min-max scaled within each marker across displayed reference cell types",
             "summary_sha256": _dataframe_fingerprint(summary),
         },
     )
