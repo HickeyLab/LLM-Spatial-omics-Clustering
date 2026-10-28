@@ -32,5 +32,11 @@ The Figure 3 changes and matching caption are documented in
 Figures 4D–E and S4B now identify the Historical majority-based diagnostic.
 Figure S8 uses the corrected aggregate-identity terminology. These source
 calculations retain minority-label matches. See
-[the source/count audit](diagnostic_identity_labels.md). Six previews now have
-29 declared overlay regions, including the frozen S8 source snapshot.
+[the source/count audit](diagnostic_identity_labels.md). Eight previews now have
+41 declared overlay regions, including frozen Figure 1, S1 and S8 source snapshots.
+
+Figure 1B and S1 use “Tissue-region-level change” and/or “Mean across tissue
+regions.” S3E identifies its ARI/AMI dots as imaged tissue regions. The legacy
+`slide_name`, `sample_ID` and `File_ID` fields resolve to the same eight B004
+image datasets. No distinct physical-slide or FOV replicate is asserted. S1 was
+restored from existing cached plots. See [the crosswalk and manuscript wording](tissue_region_analysis_units.md).

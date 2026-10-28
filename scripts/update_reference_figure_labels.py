@@ -30,6 +30,11 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
         x, y, width, height = label['rect']
         draw.rectangle((x, y, x + width - 1, y + height - 1), fill='white')
         mask[y:y + height, x:x + width] = True
+        if label.get('restore_strip'):
+            repair = label['restore_strip']
+            dx, dy, dw, dh = repair['destination']
+            tile = original.crop(tuple(repair['source'])).resize((dw, dh), Image.Resampling.NEAREST)
+            result.paste(tile, (dx, dy))
         if label.get('kind') == 'prompt_workflow':
             draw_prompt_workflow(result, label['rect'], font_path)
             continue
@@ -37,12 +42,19 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
         if label.get('kind') == 'component_legend':
             for entry in label['entries']:
                 left, baseline = entry['x'], label['y']
-                side = round(label['size'])
-                draw.rectangle((left, baseline - side + 3, left + side, baseline + 2), fill=entry['color'])
+                side = round(entry.get('marker_size', label['size']))
+                marker_box = (left, baseline - side + 3, left + side, baseline + 2)
+                if entry.get('marker') == 'circle':
+                    draw.ellipse(marker_box, fill=entry['color'])
+                elif entry.get('marker') == 'diamond':
+                    mx, my = left + side / 2, baseline - side / 2 + 2
+                    draw.polygon([(mx, my-side/2), (mx+side/2, my), (mx, my+side/2), (mx-side/2, my)], fill=entry['color'])
+                else:
+                    draw.rectangle(marker_box, fill=entry['color'])
                 draw.text((left + side + 8, baseline), entry['label'], font=font, fill='black', anchor='ls')
             continue
         if label.get('lines'):
-            anchor = 'rs' if label.get('align') == 'right' else 'ls'
+            anchor = {'right': 'rs', 'center': 'ms'}.get(label.get('align'), 'ls')
             for index, value in enumerate(label['lines']):
                 draw.text((label['x'], label['y'] + index * label['line_spacing']), value, font=font, fill='black', anchor=anchor)
             continue

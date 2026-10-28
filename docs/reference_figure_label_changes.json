@@ -1,6 +1,6 @@
 {
   "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
-  "scope": "Display labels, legends and the explanatory Figure 3A workflow overlay only. All source pixels outside the 29 declared overlay rectangles remain identical.",
+  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Eight publication previews with 41 declared overlay regions. Numerical results and biological vocabularies are preserved.",
   "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
   "font": "DejaVuSans.ttf",
   "figures": [
@@ -381,9 +381,24 @@
           "y": 130,
           "size": 39.66,
           "align": "left"
+        },
+        {
+          "panel": "E regional observation key",
+          "old": "No explicit ARI/AMI observation-unit key",
+          "new": "ARI / AMI black dots: imaged tissue region (n = 8)",
+          "rect": [
+            1190,
+            3382,
+            1851,
+            71
+          ],
+          "x": 2115,
+          "y": 3433,
+          "size": 37,
+          "coordinate_note": "Scaled from the 1906-pixel-wide manuscript copy to this 4200-pixel-wide pinned publication source."
         }
       ],
-      "updated_sha256": "8cd3209e6e846cd71fb538e6d6184c8661516cbee7b77cb6da2ec8694b87306c"
+      "updated_sha256": "29af79b85ddd2675c6fb7e2a9eb49119e5bb766ee4b9b118a5e8218b2ec85b63"
     },
     {
       "file": "notebooks/final_figures/previews/figure_s04.png",
@@ -541,6 +556,232 @@
         }
       ],
       "updated_sha256": "2e122310bf5195939f257f5d255cbd82220e75d194f306b32fb342bddecb6622"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_01.png",
+      "source_file": "data/frozen/publication_artwork/figure_01_original.png",
+      "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "size_pixels": [
+        1851,
+        2048
+      ],
+      "labels": [
+        {
+          "panel": "B old point legend",
+          "old": "Slide-level change",
+          "new": "",
+          "rect": [
+            180,
+            537,
+            130,
+            21
+          ],
+          "x": 180,
+          "y": 553,
+          "size": 14
+        },
+        {
+          "panel": "B old point marker",
+          "old": "point marker",
+          "new": "",
+          "rect": [
+            157,
+            543,
+            12,
+            13
+          ],
+          "x": 157,
+          "y": 553,
+          "size": 14
+        },
+        {
+          "panel": "B old mean legend",
+          "old": "Mean slide-level change",
+          "new": "",
+          "rect": [
+            180,
+            558,
+            176,
+            23
+          ],
+          "x": 180,
+          "y": 575,
+          "size": 14,
+          "restore_strip": {
+            "source": [
+              315,
+              586,
+              322,
+              587
+            ],
+            "destination": [
+              315,
+              558,
+              7,
+              23
+            ]
+          }
+        },
+        {
+          "panel": "B old mean marker",
+          "old": "mean diamond",
+          "new": "",
+          "rect": [
+            153,
+            558,
+            20,
+            22
+          ],
+          "x": 157,
+          "y": 575,
+          "size": 14
+        },
+        {
+          "panel": "B tissue-region legend",
+          "kind": "component_legend",
+          "old": "Legend inside plot",
+          "new": "Tissue-region-level change / Mean across tissue regions",
+          "rect": [
+            145,
+            473,
+            640,
+            27
+          ],
+          "y": 494,
+          "size": 14,
+          "entries": [
+            {
+              "x": 158,
+              "color": "#222222",
+              "marker": "circle",
+              "marker_size": 8,
+              "label": "Tissue-region-level change"
+            },
+            {
+              "x": 475,
+              "color": "#999999",
+              "marker": "diamond",
+              "marker_size": 9,
+              "label": "Mean across tissue regions"
+            }
+          ]
+        }
+      ],
+      "updated_sha256": "1739f07c937f9e18d70fd853ea635e5874a87fc40535294bb67467714da9ce89"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s01.png",
+      "source_file": "data/frozen/publication_artwork/figure_s01_original.png",
+      "source_sha256": "5bff24b93d3610eaae5a83bd8303ed52ba56d60c9408235a0715e115ea10c8f4",
+      "size_pixels": [
+        1135,
+        1656
+      ],
+      "labels": [
+        {
+          "panel": "A title",
+          "old": "Mean slide-level Silhouette score",
+          "new": "Mean across tissue regions\nSilhouette score in PCA space, before vs after compensation",
+          "lines": [
+            "Mean across tissue regions",
+            "Silhouette score in PCA space, before vs after compensation"
+          ],
+          "rect": [
+            44,
+            12,
+            1089,
+            44
+          ],
+          "x": 638,
+          "y": 32,
+          "line_spacing": 20,
+          "size": 18,
+          "align": "center"
+        },
+        {
+          "panel": "A method label",
+          "old": "Cellpose Cyto3",
+          "new": "CellposeCyto3",
+          "rect": [
+            300,
+            521,
+            180,
+            29
+          ],
+          "x": 405,
+          "y": 536,
+          "size": 18
+        },
+        {
+          "panel": "B title",
+          "old": "Mean slide-level Davies\u2013Bouldin index",
+          "new": "Mean across tissue regions\nDavies\u2013Bouldin index in PCA space, before vs after compensation",
+          "lines": [
+            "Mean across tissue regions",
+            "Davies\u2013Bouldin index in PCA space, before vs after compensation"
+          ],
+          "rect": [
+            44,
+            560,
+            1089,
+            44
+          ],
+          "x": 638,
+          "y": 580,
+          "line_spacing": 20,
+          "size": 18,
+          "align": "center"
+        },
+        {
+          "panel": "B method label",
+          "old": "Cellpose Cyto3",
+          "new": "CellposeCyto3",
+          "rect": [
+            300,
+            1069,
+            180,
+            29
+          ],
+          "x": 378,
+          "y": 1084,
+          "size": 18
+        },
+        {
+          "panel": "C title",
+          "old": "Mean slide-level Calinski\u2013Harabasz index",
+          "new": "Mean across tissue regions\nCalinski\u2013Harabasz index in PCA space, before vs after compensation",
+          "lines": [
+            "Mean across tissue regions",
+            "Calinski\u2013Harabasz index in PCA space, before vs after compensation"
+          ],
+          "rect": [
+            44,
+            1108,
+            1089,
+            44
+          ],
+          "x": 638,
+          "y": 1128,
+          "line_spacing": 20,
+          "size": 18,
+          "align": "center"
+        },
+        {
+          "panel": "C method label",
+          "old": "Cellpose Cyto3",
+          "new": "CellposeCyto3",
+          "rect": [
+            300,
+            1617,
+            180,
+            29
+          ],
+          "x": 392,
+          "y": 1632,
+          "size": 18
+        }
+      ],
+      "updated_sha256": "d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75"
     }
   ]
 }

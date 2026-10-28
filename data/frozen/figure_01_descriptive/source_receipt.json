@@ -1,0 +1,27 @@
+{
+  "source_hashes": {
+    "outputs/revision/segmentation/matching/Mesmer_before.csv.gz": "bd6af0384ba945e76c44c97c789fe0af75497535290430f02c66f66c1d0cab74",
+    "outputs/revision/segmentation/matching/Mesmer_after.csv.gz": "4e37274f4dfb20e8a6b1071db4b5bfa842687c48366b7672b6a72207d1357776",
+    "outputs/revision/segmentation/matching/CellposeSAM_before.csv.gz": "ae5b4eddcaacb132dcd9064c053fbf6d7b2909666f106b7f2757448a9f351b3c",
+    "outputs/revision/segmentation/matching/CellposeSAM_after.csv.gz": "6265f37a7219650a91b140601ceccd9417e21263791eadfa4981c2a7b83dc085",
+    "outputs/revision/segmentation/matching/CellposeCyto3_before.csv.gz": "85cea695c0c6bd08096d86be743a2d46091a87b99c96a25c477fd429d14bd9d1",
+    "outputs/revision/segmentation/matching/CellposeCyto3_after.csv.gz": "daa61564952326de3670fbe017dd5c1179032b36e3a7faa02c632a80c9006ec5"
+  },
+  "historical_source_notebook": "notebooks/final_figures/figure_01_spillover_compensation.ipynb",
+  "matching": "cached directed nearest neighbor, distance <=10, same historical reference",
+  "cluster_labels": "global dominant reference label within each method and condition, ties resolved alphabetically",
+  "pairing": "historical inner pairing of regional cell-type F1 rows present in each condition",
+  "zero_f1": "zero when true or predicted cells exist but no true positives",
+  "both_conditions_absent": "excluded",
+  "missing_one_condition": "not included, matching historical notebook inner join",
+  "methods_in_panel_order": [
+    "Mesmer",
+    "CellposeSAM",
+    "CellposeCyto3"
+  ],
+  "new_model_calls": 0,
+  "new_clustering_fits": 0,
+  "significance_tests": 0,
+  "n_regional_points": 663,
+  "n_method_celltypes": 84
+}
