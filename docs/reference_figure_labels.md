@@ -28,3 +28,9 @@ score.
 
 The Figure 3 changes and matching caption are documented in
 [the prompt-provenance and modal-label notes](figure_03_workflow_and_modal_labels.md).
+
+Figures 4D–E and S4B now identify the Historical majority-based diagnostic.
+Figure S8 uses the corrected aggregate-identity terminology. These source
+calculations retain minority-label matches. See
+[the source/count audit](diagnostic_identity_labels.md). Six previews now have
+29 declared overlay regions, including the frozen S8 source snapshot.

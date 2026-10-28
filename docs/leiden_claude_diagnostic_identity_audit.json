@@ -1,0 +1,96 @@
+{
+  "n_cells": 220082,
+  "n_clusters": 300,
+  "predictions_constant_per_cluster": true,
+  "minority_matches_retained": true,
+  "definitions": {
+    "Direct reference agreement": "A = sum of all prediction-reference matches / N, including minority-label matches",
+    "Within-cluster bound gap": "1 - U, where U = sum_cluster max_reference count(cluster, reference) / N",
+    "Net annotation gap": "U - A = (majority-reference mismatches - minority-label matches) / N"
+  },
+  "identity": "A + (1 - U) + (U - A) = 1",
+  "source_inputs": {
+    "truth": {
+      "bytes": 10884290,
+      "path": "truth.csv",
+      "sha256": "b305e065ced797885603bf293c6c1d4e94a6d263fcc7e70ee2fa7faa70465866"
+    },
+    "leiden_assignment": {
+      "bytes": 13024610,
+      "path": "outputs/v3_annotation_accuracy_maximization/optimized_v3_in_sample_selector/refits/leiden_k300_hierarchy_coarsened_seed42/assignments.csv",
+      "sha256": "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18"
+    },
+    "raw_leiden_claude": {
+      "bytes": 59314838,
+      "path": "outputs/v3_annotation_accuracy_maximization/optimized_v3_in_sample_selector/scored_all_four_final/final_all_four_annotations.csv",
+      "sha256": "d0ee46ecf58bd77e306348e9f3cfb7a1a0ed40d02a26d4950fdd597d7d4701a9"
+    }
+  },
+  "historical_harmonization": {
+    "Epithelial": "Enterocyte",
+    "CD66+ Epithelial": "CD66+ Enterocyte",
+    "MUC1+ Epithelial": "MUC1+ Enterocyte",
+    "CD57+ Epithelial": "Enterocyte",
+    "ITLN+ Epithelial": "Goblet",
+    "TA": "Cycling TA",
+    "CD4+ T": "CD4+ T cell",
+    "Stromal": "Stroma",
+    "PDPN+ Stromal": "Lymphatic",
+    "CD36 high Endothelial": "Endothelial",
+    "CD36 low Endothelial": "Endothelial",
+    "CD49a+ Smooth muscle": "Smooth muscle",
+    "Paneth": "Neuroendocrine",
+    "M1 Macrophage": "M2 Macrophage",
+    "NK": "CD7+ Immune"
+  },
+  "source_code_sha256": "2ecd30a57ed2515ea0a0a31e32bdab8cd45fa75586bca8c35f0ae02a2dad1a86",
+  "s4_cluster_source_sha256": "53e6c087d6a42338d6c143b2c9355c20b15bf35bd84271c7dfad8770673e58a7",
+  "source_display_calculation": "The source-era Figure 4D/E and S4B already compute direct agreement, U-A and 1-U. Their stage-loss and failure-mode wording is not a causal interpretation.",
+  "selected_examples": {
+    "annotation": {
+      "cluster": "6::4",
+      "majority_truth": "Smooth muscle",
+      "predicted": "Stroma"
+    },
+    "clustering": {
+      "cluster": "33::6",
+      "majority_truth": "Neutrophil",
+      "predicted": "Neutrophil"
+    },
+    "mixed": {
+      "cluster": "4::4",
+      "majority_truth": "Cycling TA",
+      "predicted": "Goblet"
+    }
+  },
+  "summary": [
+    {
+      "reference_vocabulary": "historical_21",
+      "n_cells": 220082,
+      "direct_matches": 123099,
+      "cluster_majority_bound_cells": 157015,
+      "within_cluster_bound_gap_cells": 63067,
+      "net_annotation_gap_cells": 33916,
+      "minority_matches": 7486,
+      "majority_mismatches": 41402,
+      "direct_reference_agreement": 0.5593324306394889,
+      "within_cluster_bound_gap": 0.28656137257931136,
+      "net_annotation_gap": 0.15410619678119974
+    },
+    {
+      "reference_vocabulary": "original_28",
+      "n_cells": 220082,
+      "direct_matches": 70478,
+      "cluster_majority_bound_cells": 151164,
+      "within_cluster_bound_gap_cells": 68918,
+      "net_annotation_gap_cells": 80686,
+      "minority_matches": 3330,
+      "majority_mismatches": 84016,
+      "direct_reference_agreement": 0.32023518506738397,
+      "within_cluster_bound_gap": 0.3131469179669396,
+      "net_annotation_gap": 0.3666178969656764
+    }
+  ],
+  "cluster_count_table_sha256": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf",
+  "cluster_count_table": "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv"
+}

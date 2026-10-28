@@ -34,6 +34,18 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
             draw_prompt_workflow(result, label['rect'], font_path)
             continue
         font = ImageFont.truetype(str(font_path), round(label['size']))
+        if label.get('kind') == 'component_legend':
+            for entry in label['entries']:
+                left, baseline = entry['x'], label['y']
+                side = round(label['size'])
+                draw.rectangle((left, baseline - side + 3, left + side, baseline + 2), fill=entry['color'])
+                draw.text((left + side + 8, baseline), entry['label'], font=font, fill='black', anchor='ls')
+            continue
+        if label.get('lines'):
+            anchor = 'rs' if label.get('align') == 'right' else 'ls'
+            for index, value in enumerate(label['lines']):
+                draw.text((label['x'], label['y'] + index * label['line_spacing']), value, font=font, fill='black', anchor=anchor)
+            continue
         if label.get('rotate'):
             bounds = font.getbbox(label['new'])
             tile = Image.new('RGBA', (bounds[2] - bounds[0] + 20, bounds[3] - bounds[1] + 20))
@@ -58,7 +70,10 @@ def main() -> None:
     font_path = args.font or Path(matplotlib.get_data_path()) / 'fonts/ttf/DejaVuSans.ttf'
     manifest = json.loads(MANIFEST.read_text())
     for spec in manifest['figures']:
-        source = subprocess.check_output(['git', 'show', f"{manifest['source_revision']}:{spec['file']}"], cwd=ROOT)
+        if spec.get('source_file'):
+            source = (ROOT / spec['source_file']).read_bytes()
+        else:
+            source = subprocess.check_output(['git', 'show', f"{manifest['source_revision']}:{spec['file']}"], cwd=ROOT)
         result = render(source, spec, font_path)
         path = ROOT / spec['file']
         if args.check:

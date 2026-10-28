@@ -1,6 +1,6 @@
 {
   "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
-  "scope": "Display labels and the explanatory Figure 3A workflow overlay only. All source pixels outside the declared overlay rectangles must remain identical.",
+  "scope": "Display labels, legends and the explanatory Figure 3A workflow overlay only. All source pixels outside the 29 declared overlay rectangles remain identical.",
   "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
   "font": "DejaVuSans.ttf",
   "figures": [
@@ -216,9 +216,133 @@
           "y": 1415,
           "size": 38.96,
           "rotate": -90
+        },
+        {
+          "panel": "D heading",
+          "old": "Failure modes",
+          "new": "Historical majority-based diagnostic",
+          "rect": [
+            902,
+            2385,
+            1046,
+            64
+          ],
+          "x": 910.55,
+          "y": 2433.93,
+          "size": 41.02,
+          "align": "left"
+        },
+        {
+          "panel": "E heading",
+          "old": "Overall accuracy: Leiden and Claude",
+          "new": "Historical majority-based diagnostic",
+          "rect": [
+            2549,
+            2395,
+            1538,
+            72
+          ],
+          "x": 2559.38,
+          "y": 2450.33,
+          "size": 41.02,
+          "align": "left"
+        },
+        {
+          "panel": "D example 1",
+          "old": "Annotation-limited",
+          "new": "Example 1\nMajority: Smooth muscle\nPredicted: Stroma",
+          "lines": [
+            "Example 1",
+            "Majority: Smooth muscle",
+            "Predicted: Stroma"
+          ],
+          "rect": [
+            133,
+            2440,
+            765,
+            154
+          ],
+          "x": 881.84,
+          "y": 2485.19,
+          "line_spacing": 45.11,
+          "size": 41.02,
+          "align": "right"
+        },
+        {
+          "panel": "D example 2",
+          "old": "Clustering-limited",
+          "new": "Example 2\nMajority: Neutrophil\nPredicted: Neutrophil",
+          "lines": [
+            "Example 2",
+            "Majority: Neutrophil",
+            "Predicted: Neutrophil"
+          ],
+          "rect": [
+            133,
+            2629,
+            765,
+            154
+          ],
+          "x": 881.84,
+          "y": 2673.83,
+          "line_spacing": 45.11,
+          "size": 41.02,
+          "align": "right"
+        },
+        {
+          "panel": "D example 3",
+          "old": "Mixed loss",
+          "new": "Example 3\nMajority: Cycling TA\nPredicted: Goblet",
+          "lines": [
+            "Example 3",
+            "Majority: Cycling TA",
+            "Predicted: Goblet"
+          ],
+          "rect": [
+            133,
+            2817,
+            765,
+            154
+          ],
+          "x": 881.84,
+          "y": 2862.48,
+          "line_spacing": 45.11,
+          "size": 41.02,
+          "align": "right"
+        },
+        {
+          "panel": "D\u2013E component key",
+          "kind": "component_legend",
+          "old": "No component legend",
+          "new": "Direct reference agreement / Net annotation gap / Within-cluster bound gap",
+          "rect": [
+            718,
+            3084,
+            3076,
+            72
+          ],
+          "y": 3137.24,
+          "size": 41.02,
+          "entries": [
+            {
+              "x": 800,
+              "color": "#2A6F5B",
+              "label": "Direct reference agreement"
+            },
+            {
+              "x": 1846,
+              "color": "#D9852B",
+              "label": "Net annotation gap"
+            },
+            {
+              "x": 2707,
+              "color": "#D9D9D9",
+              "label": "Within-cluster bound gap"
+            }
+          ]
         }
       ],
-      "updated_sha256": "4a69bc025a8ce8125520627697b1f584c89a66bdf0632b2d49ed9b598fc41115"
+      "updated_sha256": "e28a65852072f7e397d0ecd08f58b36d5f16843424310c314bc0ece5939f3cd3"
     },
     {
       "file": "notebooks/final_figures/previews/figure_s03.png",
@@ -298,9 +422,125 @@
           "y": 809,
           "size": 42.19,
           "rotate": -90
+        },
+        {
+          "panel": "Figure heading",
+          "old": "Cell-level confusion and cluster-level error decomposition",
+          "new": "Figure S4. Cell-level confusion and historical majority-based diagnostic for Claude on Leiden clusters",
+          "rect": [
+            750,
+            0,
+            2906,
+            70
+          ],
+          "x": 2100.0,
+          "y": 46.88,
+          "size": 37.5
+        },
+        {
+          "panel": "B heading",
+          "old": "Cluster errors",
+          "new": "Historical majority-based diagnostic",
+          "rect": [
+            164,
+            1931,
+            1875,
+            77
+          ],
+          "x": 175.78,
+          "y": 1987.5,
+          "size": 42.19,
+          "align": "left"
+        },
+        {
+          "panel": "B component key",
+          "kind": "component_legend",
+          "old": "Final correct annotation / Lost at annotation step / Lost at clustering step",
+          "new": "Direct reference agreement / Net annotation gap / Within-cluster bound gap",
+          "rect": [
+            2156,
+            1922,
+            2016,
+            94
+          ],
+          "y": 1985.16,
+          "size": 37.5,
+          "entries": [
+            {
+              "x": 2180,
+              "color": "#59A14F",
+              "label": "Direct reference agreement"
+            },
+            {
+              "x": 2906,
+              "color": "#F28E2B",
+              "label": "Net annotation gap"
+            },
+            {
+              "x": 3457,
+              "color": "#D9D9D9",
+              "label": "Within-cluster bound gap"
+            }
+          ]
         }
       ],
-      "updated_sha256": "344e9823bad0da078d8eb0aa6f8bdf4ba3aed56cf4d63a2da8fd14ac46ffc2c7"
+      "updated_sha256": "a45b758a2a0453f2f1cecd78eac369abc6ba682ac97390d3157de6bad26515ad"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s08.png",
+      "source_file": "data/frozen/publication_artwork/figure_s08_original.png",
+      "source_sha256": "805d5d84b70c3d5c6d0b2c4f02a9a5f185e9b38f70a53a435a9f6747ac6b2168",
+      "size_pixels": [
+        2048,
+        1094
+      ],
+      "labels": [
+        {
+          "panel": "Identity heading",
+          "old": "Historical Leiden\u2013Claude error decomposition",
+          "new": "Corrected aggregate error identity: Leiden\u2013Claude",
+          "rect": [
+            690,
+            8,
+            1305,
+            70
+          ],
+          "x": 1290,
+          "y": 65,
+          "size": 46
+        },
+        {
+          "panel": "Direct agreement key",
+          "old": "Direct reference matches",
+          "new": "Direct reference agreement",
+          "rect": [
+            320,
+            850,
+            537,
+            59
+          ],
+          "x": 334,
+          "y": 894,
+          "size": 37,
+          "align": "left"
+        },
+        {
+          "panel": "Bound gap key",
+          "old": "Within-cluster mixing gap",
+          "new": "Within-cluster bound gap",
+          "rect": [
+            975,
+            855,
+            540,
+            54
+          ],
+          "x": 987,
+          "y": 894,
+          "size": 37,
+          "align": "left"
+        }
+      ],
+      "updated_sha256": "2e122310bf5195939f257f5d255cbd82220e75d194f306b32fb342bddecb6622"
     }
   ]
 }
