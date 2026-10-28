@@ -1,6 +1,6 @@
 {
   "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
-  "scope": "Display labels only. All source pixels outside the declared label rectangles must remain identical.",
+  "scope": "Display labels and the explanatory Figure 3A workflow overlay only. All source pixels outside the declared overlay rectangles must remain identical.",
   "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
   "font": "DejaVuSans.ttf",
   "figures": [
@@ -164,9 +164,35 @@
           "x": 1032,
           "y": 3688,
           "size": 38
+        },
+        {
+          "panel": "A prompt and export paths",
+          "kind": "prompt_workflow",
+          "old": "Cluster Features marker-name lists -> Optimization -> Annotation",
+          "new": "Original numerical prompt inputs feed annotation; retrospective marker-name-list exports have a separate branch",
+          "rect": [
+            1478,
+            54,
+            1735,
+            622
+          ]
+        },
+        {
+          "panel": "H modal heading",
+          "old": "Modal consensus",
+          "new": "Modal predicted label",
+          "rect": [
+            3587,
+            3641,
+            522,
+            52
+          ],
+          "x": 3843.48,
+          "y": 3684.64,
+          "size": 36.96
         }
       ],
-      "updated_sha256": "6d2e2e744e20c3dc1ebaccdcb54d557dd8624327b1abc160da7786a3b350bbc0"
+      "updated_sha256": "fc57a50fbb04388a3cbcc0e0d963c142506f15f457e6cac7c3fc44e912138aa0"
     },
     {
       "file": "notebooks/final_figures/previews/figure_04.png",

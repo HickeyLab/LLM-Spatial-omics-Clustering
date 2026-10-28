@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce label-only publication previews without rerunning an analysis.
+"""Reproduce display-only publication previews without rerunning an analysis.
 
 The original PNGs are read from the pinned Git revision and checksum-verified.
 Internal truth-column names and biological label vocabularies are not changed.
@@ -13,6 +13,7 @@ from pathlib import Path
 import subprocess
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+from figure_03_workflow_artwork import draw_prompt_workflow
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / 'docs/reference_figure_label_changes.json'
@@ -29,6 +30,9 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
         x, y, width, height = label['rect']
         draw.rectangle((x, y, x + width - 1, y + height - 1), fill='white')
         mask[y:y + height, x:x + width] = True
+        if label.get('kind') == 'prompt_workflow':
+            draw_prompt_workflow(result, label['rect'], font_path)
+            continue
         font = ImageFont.truetype(str(font_path), round(label['size']))
         if label.get('rotate'):
             bounds = font.getbbox(label['new'])
@@ -41,7 +45,7 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
             draw.text((label['x'], label['y']), label['new'], font=font, fill='black', anchor=anchor)
     differences = np.any(np.asarray(original) != np.asarray(result), axis=2)
     if np.any(differences & ~mask):
-        raise ValueError(f"Label rendering escaped its declared text areas: {spec['file']}")
+        raise ValueError(f"Label rendering escaped its declared overlay areas: {spec['file']}")
     return result
 
 
