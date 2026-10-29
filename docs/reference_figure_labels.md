@@ -48,3 +48,9 @@ values, with scaled means identified separately for color. See
 Table S2 removes displayed “V3” shorthand and the unsupported benchmark-use
 claim. Its PIXIE-style export identity is preserved with an explicit qualification.
 See [the implementation and archived-prompt audit](table_s02_export_provenance.md).
+
+Figure S7 adds a tenth preview, rendered separately from 32 frozen values.
+Condition and metric labels match the manuscript, and both panels use the
+performance-heatmap palette with a shared 0–100% scale. It is outside the
+nine-image text-overlay manifest because its quantitative color mapping
+changes. See [the S7 notes](figure_s07_condition_labels.md).

@@ -1,0 +1,59 @@
+{
+  "data": "data/frozen/figure_s07/condition_agreement.csv",
+  "data_sha256": "c00fb67f6aedb99270a5e1af524ad5fcc1367476a3fe3063e6723f1ff7400289",
+  "preview": "notebooks/final_figures/previews/figure_s07.png",
+  "title": "Figure S7  Controlled direct LLM annotation in B004 test regions",
+  "methods": [
+    "leiden",
+    "flowsom",
+    "spatialsort",
+    "pixie_tiff"
+  ],
+  "method_labels": [
+    "Leiden",
+    "FlowSOM",
+    "SpatialSort",
+    "PIXIE"
+  ],
+  "models": [
+    "gpt",
+    "claude",
+    "gemini",
+    "deepseek"
+  ],
+  "model_labels": [
+    "GPT",
+    "Claude",
+    "Gemini",
+    "DeepSeek"
+  ],
+  "arms": [
+    "marker_only",
+    "retrieval"
+  ],
+  "condition_labels": [
+    "Marker-only",
+    "Reference-assisted"
+  ],
+  "condition_subtitles": [
+    "Marker-expression profiles only",
+    "With labeled reference profiles"
+  ],
+  "color_map": "RdYlGn",
+  "color_limits": [
+    0,
+    100
+  ],
+  "colorbar_ticks": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100
+  ],
+  "colorbar_label": "Reference agreement (%)",
+  "palette_reference": "configs/figure_02.yaml:panel_h.style",
+  "denominator": "Within each test region, all eligible planned reference cells, including invalid or missing predictions as errors. The displayed value is the unweighted mean of the two regional agreement fractions.",
+  "original_artwork_sha256": "41190b2a5494d5591c52188e108011805b01baac0ec9fe49f4467a83dbcb507c"
+}

@@ -19,3 +19,8 @@ coordinates and the eight-region crosswalk are recorded in
 `docs/tissue_region_analysis_units.json`. The original cached notebook outputs
 remain historical snapshots. Source and revised composite checksums are in
 `docs/reference_figure_label_changes.json`.
+
+`figure_s07_original.png` is the exact original S7 PNG exported from the
+manuscript before the condition-label and palette revision. It is kept for
+provenance and comparison. The revised S7 is rendered from its separate frozen
+32-row result table, with source hashes in `docs/figure_s07_source_audit.json`.
