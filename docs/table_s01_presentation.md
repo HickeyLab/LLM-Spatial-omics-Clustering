@@ -33,5 +33,6 @@ DOCX, and inspect its page before native insertion. The PNG in
 `notebooks/final_figures/previews/table_s01.png` is a review snapshot from that
 verified rendering. It is not used as a substitute for the editable table.
 
-Native formatting is prepared but awaits manual Mac unlock. Keep surrounding
-caption text and unrelated suggestions intact when applying it.
+Native editable formatting is applied. The exported DOCX preserves all 45 cells
+and the caption, and the native PDF confirms Arial typography and one-page
+table/caption placement. Unrelated suggestions remain pending review.

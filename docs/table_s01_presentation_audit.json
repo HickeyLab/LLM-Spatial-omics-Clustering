@@ -11,7 +11,7 @@
   "caption_unchanged": true,
   "scope": "Formatting only. Original editable native table content preserved.",
   "historical_notebook": "The older three-column configuration table is a distinct historical presentation and is not substituted for the current native table.",
-  "native_status": "Prepared. Formatting is pending manual Mac unlock.",
+  "native_status": "Editable formatting applied in Google Docs. All 45 cells and caption text preserved; Arial confirmed in native PDF, table and caption share page 44.",
   "editable_docx_cells_match_current_manuscript": true,
   "rendered_pdf_cells_match_current_manuscript": true,
   "rendered_pages": 1,
@@ -21,5 +21,6 @@
   "sanitizer": "Removed one unused Title-style border, no table or caption text changes.",
   "preview_sha256": "3249d364562a982d13628eaba4e3b0004aac694e3af8781a7bf987a3b833670d",
   "editable_docx_sha256": "ea278e92a4c09d8ddb38d6012b1593953be07c00dfb1d115c6a91b4f5ada905a",
-  "visual_review": "All text, column alignment, padding, wrapping, borders and caption inspected on the one rendered page."
+  "visual_review": "All text, column alignment, padding, wrapping, borders and caption inspected on the one rendered page.",
+  "native_verification": "docs/native_figure_update_verification.json"
 }

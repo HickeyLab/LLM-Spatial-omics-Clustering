@@ -85,6 +85,7 @@
     100
   ],
   "palette_source": "configs/figure_02.yaml:panel_h.style",
-  "native_document_status": "Prepared replacement; manual Mac unlock still required before applying.",
-  "display_source_after_sha256": "9b7123d0022ff94c5cd79f2fe017c1d82f0e33a177223bc64b66239e9186a96a"
+  "native_document_status": "Image replacement applied and exact source hash verified in native DOCX. Caption saved as a suggestion pending review.",
+  "display_source_after_sha256": "9b7123d0022ff94c5cd79f2fe017c1d82f0e33a177223bc64b66239e9186a96a",
+  "native_verification": "docs/native_figure_update_verification.json"
 }

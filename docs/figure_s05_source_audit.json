@@ -33,7 +33,7 @@
   "new_model_calls": 0,
   "other_s5_panels": "Matching sensitivity and regional scatter panels use categorical colors, preserved unchanged.",
   "s7": "Uses the same RdYlGn family with a shared 0\u2013100% scale appropriate to agreement.",
-  "native_status": "Replacement pending manual Mac unlock.",
+  "native_status": "Image replacement applied and exact source hash verified in native DOCX. Caption saved as a suggestion pending review.",
   "source_engine": "revision_20261021/src/llm_spatial_omics_clustering/revision/segmentation.py",
   "source_engine_before_sha256": "e8f5dcbf5831c50657691a8a539266afbc2430cdba04b3db2f0d2d0ebd5f85c7",
   "source_engine_after_sha256": "d2feaf83ee339bcf05296a36865f4a0a0fbe95344aeb51f73a00dd679dc47d6e",
@@ -61,5 +61,6 @@
       2048
     ],
     "output_sha256": "888324f25bd14f7075e76292b15006212241f6b0f4da117fdf3423ee2e535bd4"
-  }
+  },
+  "native_verification": "docs/native_figure_update_verification.json"
 }

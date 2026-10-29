@@ -38,7 +38,7 @@
   "new_model_calls": 0,
   "artwork_source": "Pinned Git publication preview table_s02.png, not the unrelated S4 image preceding the S2 caption",
   "artwork_source_sha256": "98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa",
-  "native_document_state": "Cached DOCX has the S2 caption without an embedded S2 image. Native image/suggestion state requires inspection after Mac unlock.",
+  "native_document_state": "Missing image restored before its caption. Google Docs stores a 1850\u00d72048 rendition of the 4200\u00d74650 source. Six wording edits saved as suggestions pending review.",
   "source_hashes_after_display_revision": {
     "v3_scripts/build_v3_table02_marker_summary_optimization.py": "7cad20f18bc9d639a804d046106923ba2b46ce4ae161449f60636610993ad27d"
   },
@@ -48,5 +48,6 @@
     "combined_best_clusters.py",
     "PIXIE/pixie_meta50_styled_clusters.csv"
   ],
-  "canonical_panel_exclusion": "v3_scripts/source_traced_publication_panel_map.py explicitly excludes legacy 50-cluster convenience assignments and generic combined-table PIXIE columns"
+  "canonical_panel_exclusion": "v3_scripts/source_traced_publication_panel_map.py explicitly excludes legacy 50-cluster convenience assignments and generic combined-table PIXIE columns",
+  "native_verification": "docs/native_figure_update_verification.json"
 }

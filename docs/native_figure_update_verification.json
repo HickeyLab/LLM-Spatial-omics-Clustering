@@ -1,0 +1,62 @@
+{
+  "native_document": "Google Docs manuscript",
+  "native_images_applied": [
+    {
+      "figure": "Figure 2",
+      "exact_source_hash_match": true,
+      "source_sha256": "0964dfd88af6abd255fe085620b1cf7f91191d7e25927764cf3a98f043e8eff5"
+    },
+    {
+      "figure": "Figure S3",
+      "exact_source_hash_match": true,
+      "source_sha256": "99d48dc983f33f208006cd15814000e3b9030115d8210710fb236447cc5c6f6c"
+    },
+    {
+      "figure": "Figure S5C",
+      "exact_source_hash_match": true,
+      "source_sha256": "888324f25bd14f7075e76292b15006212241f6b0f4da117fdf3423ee2e535bd4"
+    },
+    {
+      "figure": "Figure S7",
+      "exact_source_hash_match": true,
+      "source_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce"
+    },
+    {
+      "figure": "Table S2",
+      "stored_as_resized_image": true,
+      "source_pixels": [
+        4200,
+        4650
+      ],
+      "native_pixels": [
+        1850,
+        2048
+      ],
+      "RGB_RMSE_against_Lanczos_scaled_source": 5.1009789526460345,
+      "native_sha256": "85d884fbf19eec3f491e6104b3346f29f6801bedab9adcc8ddef75dc566ed305",
+      "native_media_precedes_caption": true
+    }
+  ],
+  "text_suggestions_pending_review": true,
+  "Table_S1": {
+    "editable": true,
+    "all_45_cells_preserved": true,
+    "caption_text_preserved": true,
+    "font": "Arial confirmed in live toolbar and exported PDF",
+    "caption_on_same_page": 44
+  },
+  "Table_S2_text_edits_saved": 6,
+  "S5_caption_edit_saved": true,
+  "S7_caption_edit_saved": true,
+  "docx_sha256": "6983ced7b6a6cc148800b3c6bdada0be061c8056924c524ca86bcc8f619123a3",
+  "PDF_caption_status": "PDF exports retain accepted caption text. New caption/Methods/Results wording is saved as Google Docs suggestions pending review.",
+  "layout_reviewed_pages": [
+    33,
+    40,
+    44,
+    45,
+    48,
+    49
+  ],
+  "layout_review": "All requested images fit without clipping; editable S1 and its unchanged caption share page 44. S2 image precedes its caption. New wording remains reviewable as suggestions."
+}

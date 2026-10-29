@@ -39,5 +39,5 @@ centered on zero, with red indicating decreases and green increases in F1
 after compensation.
 
 All existing qualifications about within-donor regions and descriptive
-resampling intervals are retained. The native image and caption replacement
-are prepared and await manual Mac unlock.
+resampling intervals are retained. The native image replacement is applied and verified. The caption addition is
+saved as a suggestion pending review.
