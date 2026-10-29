@@ -1,0 +1,65 @@
+{
+  "source_csv": "revision_20261021/outputs/revision/segmentation/paired_statistics.csv",
+  "source_csv_sha256": "6bf3cda7741ab3ae504ebe6aa543f7c0e0c491229a14fa5b629c471c01c7ca4b",
+  "filters": {
+    "variant": "directed_10",
+    "population": "shared_fixed_objects"
+  },
+  "rows": 336,
+  "backends": [
+    "Leiden",
+    "FlowSOM"
+  ],
+  "segmentation_methods": [
+    "Mesmer",
+    "CellposeCyto3",
+    "CellposeSAM",
+    "CellSAM",
+    "InstanSeg",
+    "MicroSAM"
+  ],
+  "cell_type_count": 28,
+  "metric": "mean_difference: mean paired regional F1(after)-F1(before); fraction multiplied by 100 for display",
+  "source_limit_formula": "100 * max(0.05, max(abs(mean_difference)))",
+  "original_and_updated_limits_pp": [
+    -63.88700666034828,
+    63.88700666034828
+  ],
+  "palette_before": "RdBu_r",
+  "palette_after": "RdYlGn",
+  "original_artwork_sha256": "2ca554e61b4767320b768e34884012fc1ecd16391b38ab669ec7efb5be4d4418",
+  "numeric_results_changed": false,
+  "new_fits": 0,
+  "new_model_calls": 0,
+  "other_s5_panels": "Matching sensitivity and regional scatter panels use categorical colors, preserved unchanged.",
+  "s7": "Uses the same RdYlGn family with a shared 0\u2013100% scale appropriate to agreement.",
+  "native_status": "Replacement pending manual Mac unlock.",
+  "source_engine": "revision_20261021/src/llm_spatial_omics_clustering/revision/segmentation.py",
+  "source_engine_before_sha256": "e8f5dcbf5831c50657691a8a539266afbc2430cdba04b3db2f0d2d0ebd5f85c7",
+  "source_engine_after_sha256": "d2feaf83ee339bcf05296a36865f4a0a0fbe95344aeb51f73a00dd679dc47d6e",
+  "updated_artwork_sha256": "888324f25bd14f7075e76292b15006212241f6b0f4da117fdf3423ee2e535bd4",
+  "original_source_matrix_color_verification": {
+    "matched_cells": 336,
+    "total_cells": 336,
+    "largest_8bit_RGB_component_difference": 1,
+    "method": "Each original cell background matched RdBu_r of its exact frozen effect using the original shared limits."
+  },
+  "verification": {
+    "annotations": 336,
+    "annotations_exactly_match_frozen_values": true,
+    "palette": "RdYlGn",
+    "shared_norm_object": true,
+    "limits": [
+      -63.88700666034828,
+      63.88700666034828
+    ],
+    "center": 0,
+    "minimum_text_contrast_ratio": 4.6364593941915535,
+    "all_text_inside_figure": true,
+    "footprint_pixels": [
+      2043,
+      2048
+    ],
+    "output_sha256": "888324f25bd14f7075e76292b15006212241f6b0f4da117fdf3423ee2e535bd4"
+  }
+}
