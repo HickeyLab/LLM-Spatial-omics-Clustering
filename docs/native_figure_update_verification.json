@@ -41,9 +41,15 @@
   "Table_S1": {
     "editable": true,
     "all_45_cells_preserved": true,
-    "caption_text_preserved": true,
-    "font": "Arial confirmed in live toolbar and exported PDF",
-    "caption_on_same_page": 44
+    "caption_words_preserved": true,
+    "style": "IEEE-style matching supplied example",
+    "font": "Times New Roman",
+    "caption_above": true,
+    "notes_below": true,
+    "no_shading": true,
+    "no_vertical_rules": true,
+    "caption_on_same_page": 46,
+    "latest_verification": "docs/table_s01_presentation_audit.json"
   },
   "Table_S2_text_edits_saved": 6,
   "S5_caption_edit_saved": true,

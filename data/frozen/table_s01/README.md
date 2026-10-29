@@ -2,7 +2,8 @@
 
 `manuscript_table.json` contains the exact five headers, 40 body cells and
 caption from the current native manuscript table exported on 2026-10-28.
-The styling revision preserves all 45 cells and the caption verbatim.
+The styling revision preserves all 45 cell texts verbatim and every caption
+word. The IEEE-style presentation changes caption capitalization and placement.
 The JSON is protected by the checksum in `configs/table_s01.json`.
 
 The earlier three-column configuration table in the historical notebook is

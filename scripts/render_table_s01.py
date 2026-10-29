@@ -7,6 +7,7 @@ import hashlib
 from html import escape
 import json
 from pathlib import Path
+import re
 
 from docx import Document
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
@@ -41,6 +42,14 @@ def element(parent, tag, **attributes):
     return node
 
 
+def caption_parts(data):
+    lead, separator, rest = data["caption"].partition("benchmark.")
+    if not separator or not lead.startswith("Table S1. "):
+        raise ValueError("Expected Table S1 caption lead")
+    title = (lead + separator).removeprefix("Table S1. ").rstrip(".")
+    return title.upper(), rest.strip()
+
+
 def build_document(config, data):
     document = Document()
     section = document.sections[0]
@@ -54,6 +63,14 @@ def build_document(config, data):
     normal.paragraph_format.space_before = Pt(0)
     normal.paragraph_format.space_after = Pt(0)
     normal.paragraph_format.line_spacing = config["line_spacing"]
+    title, notes = caption_parts(data)
+    for index, text in enumerate((config["caption_label"], title)):
+        paragraph = document.add_paragraph()
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        paragraph.paragraph_format.keep_with_next = True
+        paragraph.paragraph_format.space_after = Pt(3 if index == 0 else 9)
+        run = paragraph.add_run(text)
+        run.font.size = Pt(11 if index == 0 else 10)
     table = document.add_table(rows=9, cols=5)
     table.autofit = False
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -61,8 +78,10 @@ def build_document(config, data):
         col.width = Inches(width)
     properties = table._tbl.tblPr
     borders = element(properties, "tblBorders")
-    for side in ("top", "bottom", "left", "right", "insideH", "insideV"):
-        element(borders, side, val="single", sz=4, color=config["border_color"])
+    for side in ("top", "bottom"):
+        element(borders, side, val="single", sz=round(config["top_bottom_rule_pt"] * 8), color=config["border_color"])
+    for side in ("left", "right", "insideH", "insideV"):
+        element(borders, side, val="nil")
     matrix = [data["headers"], *data["rows"]]
     for row_index, (row, values) in enumerate(zip(table.rows, matrix)):
         row_properties = row._tr.get_or_add_trPr()
@@ -78,49 +97,59 @@ def build_document(config, data):
                 element(padding, side, w=amount, type="dxa")
             fill = config["header_fill"] if row_index == 0 else config["field_fill"] if col_index == 0 else config["body_fill"]
             element(cell_properties, "shd", val="clear", fill=fill)
+            if row_index == 0:
+                header_border = element(cell_properties, "tcBorders")
+                element(header_border, "bottom", val="single", sz=round(config["header_rule_pt"] * 8), color=config["border_color"])
             paragraph = cell.paragraphs[0]
             paragraph.paragraph_format.keep_together = True
-            short_value = row_index in (1, 4, 8) and col_index > 0
+            short_value = len(value) <= 18 and col_index > 0
             paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER if (row_index == 0 and col_index > 0) or short_value else WD_ALIGN_PARAGRAPH.LEFT
             run = paragraph.add_run(value)
-            run.bold = row_index == 0 or col_index == 0
+            run.bold = config["header_bold"] if row_index == 0 else config["field_bold"] if col_index == 0 else False
             run.font.name = config["font"]
             run.font.size = Pt(config["header_font_size_pt"] if row_index == 0 else config["font_size_pt"])
             run.font.color.rgb = RGBColor.from_string("000000" if row_index == 0 else config["text_color"])
     paragraph = document.add_paragraph()
-    paragraph.paragraph_format.space_before = Pt(10)
+    paragraph.paragraph_format.space_before = Pt(8)
     paragraph.paragraph_format.line_spacing = 1.1
     paragraph.paragraph_format.keep_together = True
-    lead, separator, rest = data["caption"].partition("benchmark.")
-    if not separator:
-        raise ValueError("Expected Table S1 caption lead")
-    run = paragraph.add_run(lead + separator)
-    run.bold = True
-    paragraph.add_run(rest)
+    paragraph.add_run(notes)
     for run in paragraph.runs:
-        run.font.size = Pt(10)
+        run.font.size = Pt(9.5)
         run.font.color.rgb = RGBColor.from_string("000000")
     document.core_properties.title = "Table S1 clustering configurations"
-    document.core_properties.subject = "Presentation revision preserving current manuscript table content"
+    document.core_properties.subject = "IEEE-style presentation matching the supplied example, preserving manuscript content"
     return document
 
 
 def html_table(config, data):
-    """Retain a native editable-table path for pasting into the existing document."""
+    """Return the centered caption, native editable table and unchanged notes."""
     rows = []
     for r, values in enumerate([data["headers"], *data["rows"]]):
         cells = []
         for c, (value, width) in enumerate(zip(values, config["column_width_inches"])):
             fill = config["header_fill"] if r == 0 else config["field_fill"] if c == 0 else config["body_fill"]
-            weight = "bold" if r == 0 or c == 0 else "normal"
-            align = "center" if (r == 0 and c > 0) or (r in (1, 4, 8) and c > 0) else "left"
-            style = (f"width:{width}in;padding:5pt 4.5pt;border:0.5pt solid #{config['border_color']};"
+            weight = "bold" if (config["header_bold"] if r == 0 else config["field_bold"] if c == 0 else False) else "normal"
+            align = "center" if c > 0 and (r == 0 or len(value) <= 18) else "left"
+            rules = "border:none;"
+            if r == 0:
+                rules += f"border-top:{config['top_bottom_rule_pt']}pt solid #000000;border-bottom:{config['header_rule_pt']}pt solid #000000;"
+            if r == len(data["rows"]):
+                rules += f"border-bottom:{config['top_bottom_rule_pt']}pt solid #000000;"
+            style = (f"width:{width}in;padding:4pt 4.5pt;{rules}"
                      f"background-color:#{fill};font-family:{config['font']};font-size:{config['header_font_size_pt'] if r == 0 else config['font_size_pt']}pt;"
-                     f"font-weight:{weight};color:#{config['text_color']};text-align:{align};vertical-align:middle;line-height:108%;")
+                     f"font-weight:{weight};color:#{config['text_color']};text-align:{align};vertical-align:middle;line-height:105%;")
             tag = "th" if r == 0 else "td"
-            cells.append(f'<{tag} style="{style}">{escape(value)}</{tag}>')
+            span_style = f"font-family:'{config['font']}';font-size:{config['font_size_pt']}pt;font-weight:{weight};color:#000000;"
+            cells.append(f'<{tag} style="{style}"><span style="{span_style}">{escape(value)}</span></{tag}>')
         rows.append("<tr>" + "".join(cells) + "</tr>")
-    return '<table style="border-collapse:collapse;table-layout:fixed;width:6.5in;">' + "".join(rows) + "</table>\n"
+    title, notes = caption_parts(data)
+    caption_style = f"text-align:center;font-family:'{config['font']}';color:#000000;font-weight:normal;line-height:105%;"
+    return (f'<p style="{caption_style}font-size:11pt;margin:0 0 3pt 0;">{config["caption_label"]}</p>'
+            f'<p style="{caption_style}font-size:10pt;margin:0 0 9pt 0;">{escape(title)}</p>'
+            '<table style="border-collapse:collapse;table-layout:fixed;border:none;width:6.5in;">'
+            + "".join(rows) + "</table>\n"
+            + f'<p style="font-family:\'{config["font"]}\';font-size:9.5pt;font-weight:normal;color:#000000;line-height:110%;margin:8pt 0 0 0;">{escape(notes)}</p>')
 
 
 def verify_document(path, data):
@@ -130,8 +159,12 @@ def verify_document(path, data):
     actual = [[cell.text for cell in row.cells] for row in document.tables[0].rows]
     if actual != [data["headers"], *data["rows"]]:
         raise ValueError("A Table S1 cell changed")
-    if document.paragraphs[-1].text != data["caption"]:
-        raise ValueError("Table S1 caption changed")
+    title, notes = caption_parts(data)
+    if [p.text for p in document.paragraphs] != ["TABLE S1", title, notes]:
+        raise ValueError("Table S1 caption layout differs")
+    words = lambda text: re.findall(r"\w+", text.casefold())
+    if words(" ".join(p.text for p in document.paragraphs)) != words(data["caption"]):
+        raise ValueError("Table S1 caption words changed")
 
 
 def main():
@@ -142,12 +175,12 @@ def main():
     config, data = load_inputs()
     if args.check:
         verify_document(args.check, data)
-        print("Verified all 45 Table S1 cells and the unchanged caption")
+        print("Verified all 45 Table S1 cells and all caption words")
         return
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    target = args.output_dir / "Table_S1_professional.docx"
+    target = args.output_dir / "Table_S1_IEEE.docx"
     build_document(config, data).save(target)
-    (args.output_dir / "Table_S1_professional.html").write_text(html_table(config, data))
+    (args.output_dir / "Table_S1_IEEE.html").write_text(html_table(config, data))
     verify_document(target, data)
     print(target)
 
