@@ -39,7 +39,7 @@ shared:
   panel_label_fontsize: 24
 
 panel_a:
-  title: "Ground-truth cell-type protein expression"
+  title: "Protein expression by reference cell type"
   # Both orders are recomputed by average-linkage clustering with correlation
   # distance. Keeping the recovered orders here turns silent data drift into a
   # validation error rather than a visually different publication panel.

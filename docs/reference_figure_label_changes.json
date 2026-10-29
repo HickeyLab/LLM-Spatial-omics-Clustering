@@ -1,0 +1,991 @@
+{
+  "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
+  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Nine publication previews with 54 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling. Table S2 distinguishes retrospective export selection from original numerical prompts and retains the unverified legacy PIXIE-style identity.",
+  "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
+  "font": "DejaVuSans.ttf",
+  "figures": [
+    {
+      "file": "notebooks/final_figures/previews/figure_02.png",
+      "source_sha256": "44978280393bac9756e3e826e60a244cf7a2845399635e82df93c0a3f8fb6cd7",
+      "size_pixels": [
+        4200,
+        4800
+      ],
+      "labels": [
+        {
+          "panel": "C",
+          "old": "A Ground Truth Tissue Region",
+          "new": "Reference annotations",
+          "rect": [
+            164,
+            816,
+            691,
+            73
+          ],
+          "x": 485,
+          "y": 879,
+          "size": 44.53
+        },
+        {
+          "panel": "D",
+          "old": "Ground Truth",
+          "new": "Reference annotations",
+          "rect": [
+            994,
+            848,
+            539,
+            56
+          ],
+          "x": 1263,
+          "y": 900,
+          "size": 42.19
+        },
+        {
+          "panel": "J",
+          "old": "Ground Truth",
+          "new": "Reference annotations",
+          "rect": [
+            2454,
+            4043,
+            448,
+            63
+          ],
+          "x": 2679,
+          "y": 4095,
+          "size": 37.5
+        },
+        {
+          "panel": "E title",
+          "old": "Cell-level accuracy",
+          "new": "Post-hoc selected reference agreement",
+          "rect": [
+            281,
+            1650,
+            1688,
+            63
+          ],
+          "x": 1148.44,
+          "y": 1699.22,
+          "size": 39.84
+        },
+        {
+          "panel": "E axis",
+          "old": "Exact accuracy",
+          "new": "Reference agreement",
+          "rect": [
+            12,
+            1727,
+            89,
+            527
+          ],
+          "x": 56.25,
+          "y": 1989.84,
+          "size": 39.84,
+          "rotate": true
+        },
+        {
+          "panel": "G title",
+          "old": "Tissue-level accuracy",
+          "new": "Post-hoc selected reference agreement",
+          "rect": [
+            281,
+            2334,
+            1688,
+            63
+          ],
+          "x": 1148.44,
+          "y": 2383.59,
+          "size": 39.84
+        },
+        {
+          "panel": "G axis",
+          "old": "Exact accuracy",
+          "new": "Reference agreement",
+          "rect": [
+            12,
+            2407,
+            89,
+            518
+          ],
+          "x": 56.25,
+          "y": 2664.84,
+          "size": 39.84,
+          "rotate": true
+        },
+        {
+          "panel": "H colorbar",
+          "old": "Purity (%)",
+          "new": "Recall (%)",
+          "rect": [
+            652,
+            3141,
+            384,
+            61
+          ],
+          "x": 820.31,
+          "y": 3192.19,
+          "size": 42.19
+        },
+        {
+          "panel": "H title",
+          "old": "Purity by cell type",
+          "new": "Recall by cell type",
+          "rect": [
+            586,
+            3359,
+            516,
+            56
+          ],
+          "x": 820.31,
+          "y": 3400.78,
+          "size": 42.19
+        },
+        {
+          "panel": "I size legend",
+          "old": "Fraction of cells",
+          "new": "Fraction with processed X > 0 (%)",
+          "rect": [
+            2311,
+            3188,
+            914,
+            89
+          ],
+          "x": 2770,
+          "y": 3253,
+          "size": 40
+        },
+        {
+          "panel": "I color legend",
+          "old": "Mean expression",
+          "new": "Scaled mean expression",
+          "rect": [
+            3398,
+            3188,
+            703,
+            89
+          ],
+          "x": 3708,
+          "y": 3253,
+          "size": 40
+        }
+      ],
+      "updated_sha256": "3754e02fd6edc95132a020c68a196fd86edd5d596a8ff23b8dd9f9795a83c1a9"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_03.png",
+      "source_sha256": "cc6f8982a657b92fec5ce5df0e015ddf3620f124447824e950ca33d4b154eeb6",
+      "size_pixels": [
+        4200,
+        4452
+      ],
+      "labels": [
+        {
+          "panel": "H",
+          "old": "Ground Truth",
+          "new": "Reference annotations",
+          "rect": [
+            805,
+            3640,
+            460,
+            55
+          ],
+          "x": 1032,
+          "y": 3688,
+          "size": 38
+        },
+        {
+          "panel": "A prompt and export paths",
+          "kind": "prompt_workflow",
+          "old": "Cluster Features marker-name lists -> Optimization -> Annotation",
+          "new": "Original numerical prompt inputs feed annotation; retrospective marker-name-list exports have a separate branch",
+          "rect": [
+            1478,
+            54,
+            1735,
+            622
+          ]
+        },
+        {
+          "panel": "H modal heading",
+          "old": "Modal consensus",
+          "new": "Modal predicted label",
+          "rect": [
+            3587,
+            3641,
+            522,
+            52
+          ],
+          "x": 3843.48,
+          "y": 3684.64,
+          "size": 36.96
+        }
+      ],
+      "updated_sha256": "fc57a50fbb04388a3cbcc0e0d963c142506f15f457e6cac7c3fc44e912138aa0"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_04.png",
+      "source_sha256": "4e9892f2199cb820048bee54ff25a709899cc668a2b39743bbaa6ec63111934e",
+      "size_pixels": [
+        4200,
+        3168
+      ],
+      "labels": [
+        {
+          "panel": "B",
+          "old": "Truth",
+          "new": "Reference cell type",
+          "rect": [
+            338,
+            1179,
+            78,
+            472
+          ],
+          "x": 377,
+          "y": 1415,
+          "size": 38.96,
+          "rotate": -90
+        },
+        {
+          "panel": "D heading",
+          "old": "Failure modes",
+          "new": "Historical majority-based diagnostic",
+          "rect": [
+            902,
+            2385,
+            1046,
+            64
+          ],
+          "x": 910.55,
+          "y": 2433.93,
+          "size": 41.02,
+          "align": "left"
+        },
+        {
+          "panel": "E heading",
+          "old": "Overall accuracy: Leiden and Claude",
+          "new": "Historical majority-based diagnostic",
+          "rect": [
+            2549,
+            2395,
+            1538,
+            72
+          ],
+          "x": 2559.38,
+          "y": 2450.33,
+          "size": 41.02,
+          "align": "left"
+        },
+        {
+          "panel": "D example 1",
+          "old": "Annotation-limited",
+          "new": "Example 1\nMajority: Smooth muscle\nPredicted: Stroma",
+          "lines": [
+            "Example 1",
+            "Majority: Smooth muscle",
+            "Predicted: Stroma"
+          ],
+          "rect": [
+            133,
+            2440,
+            765,
+            154
+          ],
+          "x": 881.84,
+          "y": 2485.19,
+          "line_spacing": 45.11,
+          "size": 41.02,
+          "align": "right"
+        },
+        {
+          "panel": "D example 2",
+          "old": "Clustering-limited",
+          "new": "Example 2\nMajority: Neutrophil\nPredicted: Neutrophil",
+          "lines": [
+            "Example 2",
+            "Majority: Neutrophil",
+            "Predicted: Neutrophil"
+          ],
+          "rect": [
+            133,
+            2629,
+            765,
+            154
+          ],
+          "x": 881.84,
+          "y": 2673.83,
+          "line_spacing": 45.11,
+          "size": 41.02,
+          "align": "right"
+        },
+        {
+          "panel": "D example 3",
+          "old": "Mixed loss",
+          "new": "Example 3\nMajority: Cycling TA\nPredicted: Goblet",
+          "lines": [
+            "Example 3",
+            "Majority: Cycling TA",
+            "Predicted: Goblet"
+          ],
+          "rect": [
+            133,
+            2817,
+            765,
+            154
+          ],
+          "x": 881.84,
+          "y": 2862.48,
+          "line_spacing": 45.11,
+          "size": 41.02,
+          "align": "right"
+        },
+        {
+          "panel": "D\u2013E component key",
+          "kind": "component_legend",
+          "old": "No component legend",
+          "new": "Direct reference agreement / Net annotation gap / Within-cluster bound gap",
+          "rect": [
+            718,
+            3084,
+            3076,
+            72
+          ],
+          "y": 3137.24,
+          "size": 41.02,
+          "entries": [
+            {
+              "x": 800,
+              "color": "#2A6F5B",
+              "label": "Direct reference agreement"
+            },
+            {
+              "x": 1846,
+              "color": "#D9852B",
+              "label": "Net annotation gap"
+            },
+            {
+              "x": 2707,
+              "color": "#D9D9D9",
+              "label": "Within-cluster bound gap"
+            }
+          ]
+        }
+      ],
+      "updated_sha256": "e28a65852072f7e397d0ecd08f58b36d5f16843424310c314bc0ece5939f3cd3"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s03.png",
+      "source_sha256": "da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5",
+      "size_pixels": [
+        4200,
+        4512
+      ],
+      "labels": [
+        {
+          "panel": "A",
+          "old": "Ground-truth protein expression",
+          "new": "Protein expression by reference cell type",
+          "rect": [
+            143,
+            84,
+            948,
+            84
+          ],
+          "x": 148,
+          "y": 130,
+          "size": 39.66,
+          "align": "left"
+        },
+        {
+          "panel": "B",
+          "old": "Ground-truth tissue regions",
+          "new": "Reference annotations across tissue regions",
+          "rect": [
+            2237,
+            84,
+            1025,
+            84
+          ],
+          "x": 2248,
+          "y": 130,
+          "size": 39.66,
+          "align": "left"
+        },
+        {
+          "panel": "E regional observation key",
+          "old": "No explicit ARI/AMI observation-unit key",
+          "new": "ARI / AMI black dots: imaged tissue region (n = 8)",
+          "rect": [
+            1190,
+            3382,
+            1851,
+            71
+          ],
+          "x": 2115,
+          "y": 3433,
+          "size": 37,
+          "coordinate_note": "Scaled from the 1906-pixel-wide manuscript copy to this 4200-pixel-wide pinned publication source."
+        },
+        {
+          "panel": "A size legend",
+          "old": "Fraction of cells in group (%)",
+          "new": "Fraction with processed X > 0 (%)",
+          "rect": [
+            1776,
+            877,
+            84,
+            679
+          ],
+          "x": 1818,
+          "y": 1216,
+          "size": 37,
+          "rotate": true
+        },
+        {
+          "panel": "A color legend",
+          "old": "Mean expression",
+          "new": "Scaled mean expression",
+          "rect": [
+            1769,
+            353,
+            90,
+            452
+          ],
+          "x": 1814,
+          "y": 580,
+          "size": 35,
+          "rotate": true
+        }
+      ],
+      "updated_sha256": "737131b62959d8e5a061d8d68eb15f54980a84bce0f3ef082fa8a5333aba8eaa"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s04.png",
+      "source_sha256": "a278669227eea94741308c821b308d4023de3e22ed73e4699179a0e32086504a",
+      "size_pixels": [
+        4200,
+        4800
+      ],
+      "labels": [
+        {
+          "panel": "A left",
+          "old": "Truth",
+          "new": "Reference cell type",
+          "rect": [
+            56,
+            539,
+            84,
+            551
+          ],
+          "x": 103,
+          "y": 813,
+          "size": 42.19,
+          "rotate": -90
+        },
+        {
+          "panel": "A right",
+          "old": "Truth",
+          "new": "Reference cell type",
+          "rect": [
+            2116,
+            534,
+            87,
+            551
+          ],
+          "x": 2163,
+          "y": 809,
+          "size": 42.19,
+          "rotate": -90
+        },
+        {
+          "panel": "Figure heading",
+          "old": "Cell-level confusion and cluster-level error decomposition",
+          "new": "Figure S4. Cell-level confusion and historical majority-based diagnostic for Claude on Leiden clusters",
+          "rect": [
+            750,
+            0,
+            2906,
+            70
+          ],
+          "x": 2100.0,
+          "y": 46.88,
+          "size": 37.5
+        },
+        {
+          "panel": "B heading",
+          "old": "Cluster errors",
+          "new": "Historical majority-based diagnostic",
+          "rect": [
+            164,
+            1931,
+            1875,
+            77
+          ],
+          "x": 175.78,
+          "y": 1987.5,
+          "size": 42.19,
+          "align": "left"
+        },
+        {
+          "panel": "B component key",
+          "kind": "component_legend",
+          "old": "Final correct annotation / Lost at annotation step / Lost at clustering step",
+          "new": "Direct reference agreement / Net annotation gap / Within-cluster bound gap",
+          "rect": [
+            2156,
+            1922,
+            2016,
+            94
+          ],
+          "y": 1985.16,
+          "size": 37.5,
+          "entries": [
+            {
+              "x": 2180,
+              "color": "#59A14F",
+              "label": "Direct reference agreement"
+            },
+            {
+              "x": 2906,
+              "color": "#F28E2B",
+              "label": "Net annotation gap"
+            },
+            {
+              "x": 3457,
+              "color": "#D9D9D9",
+              "label": "Within-cluster bound gap"
+            }
+          ]
+        }
+      ],
+      "updated_sha256": "a45b758a2a0453f2f1cecd78eac369abc6ba682ac97390d3157de6bad26515ad"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s08.png",
+      "source_file": "data/frozen/publication_artwork/figure_s08_original.png",
+      "source_sha256": "805d5d84b70c3d5c6d0b2c4f02a9a5f185e9b38f70a53a435a9f6747ac6b2168",
+      "size_pixels": [
+        2048,
+        1094
+      ],
+      "labels": [
+        {
+          "panel": "Identity heading",
+          "old": "Historical Leiden\u2013Claude error decomposition",
+          "new": "Corrected aggregate error identity: Leiden\u2013Claude",
+          "rect": [
+            690,
+            8,
+            1305,
+            70
+          ],
+          "x": 1290,
+          "y": 65,
+          "size": 46
+        },
+        {
+          "panel": "Direct agreement key",
+          "old": "Direct reference matches",
+          "new": "Direct reference agreement",
+          "rect": [
+            320,
+            850,
+            537,
+            59
+          ],
+          "x": 334,
+          "y": 894,
+          "size": 37,
+          "align": "left"
+        },
+        {
+          "panel": "Bound gap key",
+          "old": "Within-cluster mixing gap",
+          "new": "Within-cluster bound gap",
+          "rect": [
+            975,
+            855,
+            540,
+            54
+          ],
+          "x": 987,
+          "y": 894,
+          "size": 37,
+          "align": "left"
+        }
+      ],
+      "updated_sha256": "2e122310bf5195939f257f5d255cbd82220e75d194f306b32fb342bddecb6622"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_01.png",
+      "source_file": "data/frozen/publication_artwork/figure_01_original.png",
+      "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "size_pixels": [
+        1851,
+        2048
+      ],
+      "labels": [
+        {
+          "panel": "B old point legend",
+          "old": "Slide-level change",
+          "new": "",
+          "rect": [
+            180,
+            537,
+            130,
+            21
+          ],
+          "x": 180,
+          "y": 553,
+          "size": 14
+        },
+        {
+          "panel": "B old point marker",
+          "old": "point marker",
+          "new": "",
+          "rect": [
+            157,
+            543,
+            12,
+            13
+          ],
+          "x": 157,
+          "y": 553,
+          "size": 14
+        },
+        {
+          "panel": "B old mean legend",
+          "old": "Mean slide-level change",
+          "new": "",
+          "rect": [
+            180,
+            558,
+            176,
+            23
+          ],
+          "x": 180,
+          "y": 575,
+          "size": 14,
+          "restore_strip": {
+            "source": [
+              315,
+              586,
+              322,
+              587
+            ],
+            "destination": [
+              315,
+              558,
+              7,
+              23
+            ]
+          }
+        },
+        {
+          "panel": "B old mean marker",
+          "old": "mean diamond",
+          "new": "",
+          "rect": [
+            153,
+            558,
+            20,
+            22
+          ],
+          "x": 157,
+          "y": 575,
+          "size": 14
+        },
+        {
+          "panel": "B tissue-region legend",
+          "kind": "component_legend",
+          "old": "Legend inside plot",
+          "new": "Tissue-region-level change / Mean across tissue regions",
+          "rect": [
+            145,
+            473,
+            640,
+            27
+          ],
+          "y": 494,
+          "size": 14,
+          "entries": [
+            {
+              "x": 158,
+              "color": "#222222",
+              "marker": "circle",
+              "marker_size": 8,
+              "label": "Tissue-region-level change"
+            },
+            {
+              "x": 475,
+              "color": "#999999",
+              "marker": "diamond",
+              "marker_size": 9,
+              "label": "Mean across tissue regions"
+            }
+          ]
+        }
+      ],
+      "updated_sha256": "1739f07c937f9e18d70fd853ea635e5874a87fc40535294bb67467714da9ce89"
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s01.png",
+      "source_file": "data/frozen/publication_artwork/figure_s01_original.png",
+      "source_sha256": "5bff24b93d3610eaae5a83bd8303ed52ba56d60c9408235a0715e115ea10c8f4",
+      "size_pixels": [
+        1135,
+        1656
+      ],
+      "labels": [
+        {
+          "panel": "A title",
+          "old": "Mean slide-level Silhouette score",
+          "new": "Mean across tissue regions\nSilhouette score in PCA space, before vs after compensation",
+          "lines": [
+            "Mean across tissue regions",
+            "Silhouette score in PCA space, before vs after compensation"
+          ],
+          "rect": [
+            44,
+            12,
+            1089,
+            44
+          ],
+          "x": 638,
+          "y": 32,
+          "line_spacing": 20,
+          "size": 18,
+          "align": "center"
+        },
+        {
+          "panel": "A method label",
+          "old": "Cellpose Cyto3",
+          "new": "CellposeCyto3",
+          "rect": [
+            300,
+            521,
+            180,
+            29
+          ],
+          "x": 405,
+          "y": 536,
+          "size": 18
+        },
+        {
+          "panel": "B title",
+          "old": "Mean slide-level Davies\u2013Bouldin index",
+          "new": "Mean across tissue regions\nDavies\u2013Bouldin index in PCA space, before vs after compensation",
+          "lines": [
+            "Mean across tissue regions",
+            "Davies\u2013Bouldin index in PCA space, before vs after compensation"
+          ],
+          "rect": [
+            44,
+            560,
+            1089,
+            44
+          ],
+          "x": 638,
+          "y": 580,
+          "line_spacing": 20,
+          "size": 18,
+          "align": "center"
+        },
+        {
+          "panel": "B method label",
+          "old": "Cellpose Cyto3",
+          "new": "CellposeCyto3",
+          "rect": [
+            300,
+            1069,
+            180,
+            29
+          ],
+          "x": 378,
+          "y": 1084,
+          "size": 18
+        },
+        {
+          "panel": "C title",
+          "old": "Mean slide-level Calinski\u2013Harabasz index",
+          "new": "Mean across tissue regions\nCalinski\u2013Harabasz index in PCA space, before vs after compensation",
+          "lines": [
+            "Mean across tissue regions",
+            "Calinski\u2013Harabasz index in PCA space, before vs after compensation"
+          ],
+          "rect": [
+            44,
+            1108,
+            1089,
+            44
+          ],
+          "x": 638,
+          "y": 1128,
+          "line_spacing": 20,
+          "size": 18,
+          "align": "center"
+        },
+        {
+          "panel": "C method label",
+          "old": "Cellpose Cyto3",
+          "new": "CellposeCyto3",
+          "rect": [
+            300,
+            1617,
+            180,
+            29
+          ],
+          "x": 392,
+          "y": 1632,
+          "size": 18
+        }
+      ],
+      "updated_sha256": "d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75"
+    },
+    {
+      "file": "notebooks/final_figures/previews/table_s02.png",
+      "source_sha256": "98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa",
+      "size_pixels": [
+        4200,
+        4650
+      ],
+      "labels": [
+        {
+          "panel": "A heading",
+          "old": "V3 candidate ranges",
+          "new": "Retrospective marker-name-list parameter selection: candidate ranges",
+          "rect": [
+            500,
+            165,
+            3200,
+            85
+          ],
+          "x": 2100,
+          "y": 230,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "B heading",
+          "old": "V3 candidate-grid cardinality",
+          "new": "Candidate-grid cardinalities",
+          "rect": [
+            500,
+            1260,
+            3200,
+            85
+          ],
+          "x": 2100,
+          "y": 1325,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "C heading",
+          "old": "V3 fine-grid search space",
+          "new": "Declared fine-grid search space",
+          "rect": [
+            500,
+            2330,
+            3200,
+            80
+          ],
+          "x": 2100,
+          "y": 2395,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "D heading",
+          "old": "Selected V3 parameters used for benchmark",
+          "new": "Recorded marker-name-list export parameters",
+          "rect": [
+            500,
+            3440,
+            3200,
+            80
+          ],
+          "x": 2100,
+          "y": 3505,
+          "size": 42,
+          "bold": true
+        },
+        {
+          "panel": "A method header",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            3380,
+            280,
+            690,
+            90
+          ],
+          "x": 3715,
+          "y": 345,
+          "size": 40,
+          "bold": true,
+          "background": "#f5f5f5"
+        },
+        {
+          "panel": "B method row",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            110,
+            2137,
+            490,
+            82
+          ],
+          "x": 117,
+          "y": 2201,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "panel": "C method row",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            110,
+            3241,
+            490,
+            82
+          ],
+          "x": 117,
+          "y": 3305,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "panel": "D method row",
+          "old": "PIXIE-style",
+          "new": "PIXIE-style export",
+          "rect": [
+            110,
+            4350,
+            490,
+            82
+          ],
+          "x": 117,
+          "y": 4414,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "panel": "Implementation note",
+          "old": "No implementation-equivalence note",
+          "new": "PIXIE-style export denotes the legacy source branch. Benchmark PIXIE equivalence is unverified.",
+          "rect": [
+            100,
+            4500,
+            4000,
+            120
+          ],
+          "x": 2100,
+          "y": 4580,
+          "size": 42
+        }
+      ],
+      "updated_sha256": "4a7df43e70a1c0a1bf4a03f469c810dc8a0644d07ac0fa7a77ef3d4f6fee9bd1"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ Panel E evaluates the same method assignments region by region.  It maps a
 method's clusters to majority H5AD reference labels independently within each
 region, then reports the reference-cell-count-weighted mean of class-level F1.
 Panels F--H report global per-cell-type F1, per-region purity, and global
-per-cell-type purity.  Panel I summarizes H5AD protein expression in
+per-cell-type recall.  Panel I summarizes H5AD protein expression in
 four-LLM-consensus CD8+ T-cell groups, while Panel J shows fixed spatial
 examples using those consensus labels and the same selected assignments.
 """
@@ -1374,7 +1374,7 @@ def load_panel_fh_metrics(
     panel_key: str,
     data_root: str | Path | None = None,
 ) -> PanelCellTypeMetrics:
-    """Compute Panel F/H global F1 and per-reference-class purity values.
+    """Compute Panel F/H global F1 and per-reference-class recall values.
 
     The screenshot's legacy "purity" is classwise recall: the fraction of
     cells of a reference type recovered by a globally majority-mapped cluster.
@@ -1582,6 +1582,7 @@ def load_panel_i_data(
             for marker, mean, fraction in zip(marker_names, means, fractions, strict=True)
         )
     summaries = pd.DataFrame(rows)
+    summaries.attrs["expression_threshold"] = float(panel["expression_threshold"])
     summaries["scaled_mean_expression"] = 0.0
     for marker in marker_names:
         marker_mask = summaries["marker"].eq(marker)
@@ -1983,7 +1984,7 @@ def render_panel_c(
     fig.text(
         float(style.get("title_x", 0.55)),
         float(style.get("title_y", 0.93)),
-        str(style.get("title", "A Ground Truth Tissue Region")),
+        str(style.get("title", "Reference annotations")),
         fontsize=float(style.get("title_fontsize", 20)),
         ha="center",
         va="top",
@@ -2306,13 +2307,22 @@ def render_panel_i(
     method_order: Sequence[str],
     style: Mapping[str, Any] | None = None,
     dpi: int = 300,
+    expression_threshold: float | None = None,
 ) -> Path:
-    """Render the Panel I CD8+ T-cell marker-expression bubble plot."""
+    """Render Panel I; provide the calculation cutoff for CSV-loaded summaries.
+
+    In-memory loader output carries its cutoff in DataFrame.attrs. For legacy
+    tables without attrs, the explicit argument or current panel config is used.
+    """
     import matplotlib.pyplot as plt
     from matplotlib.cm import ScalarMappable
     from matplotlib.colors import Normalize
 
     style = dict(style or {})
+    threshold = float(
+        expression_threshold if expression_threshold is not None
+        else summaries.attrs.get("expression_threshold", load_figure_config()["panel_i"]["expression_threshold"])
+    )
     markers = [str(marker) for marker in marker_order]
     methods = [str(method) for method in method_order]
     required_columns = {
@@ -2389,7 +2399,7 @@ def render_panel_i(
         spine.set_linewidth(float(style.get("spine_linewidth", 0.7)))
 
     # The two compact legend axes preserve the source panel's independent
-    # encodings: dot area is expression-positive cell fraction; red intensity
+    # encodings: dot area encodes the stored-value above-cutoff fraction; red intensity
     # is the marker-wise standardized mean expression.
     size_axis = fig.add_axes([float(value) for value in style.get("size_legend_position", (0.14, 0.09, 0.22, 0.16))])
     size_axis.axis("off")
@@ -2408,7 +2418,7 @@ def render_panel_i(
     size_axis.text(
         -0.45,
         0.76,
-        str(style.get("size_legend_label", "Fraction of\\nCells in\\nGroup (%)")),
+        str(style.get("size_legend_label", "Fraction with\nprocessed X > {expression_threshold:g}\n(%)")).format(expression_threshold=threshold),
         ha="right",
         va="center",
         fontsize=float(style.get("legend_label_fontsize", 10)),
@@ -2423,7 +2433,7 @@ def render_panel_i(
     fig.text(
         float(style.get("colorbar_label_x", 0.90)),
         float(style.get("colorbar_label_y", 0.14)),
-        str(style.get("colorbar_label", "Mean\\nExpression\\nin Group")),
+        str(style.get("colorbar_label", "Scaled mean\nexpression")),
         ha="left",
         va="center",
         fontsize=float(style.get("legend_label_fontsize", 10)),
@@ -2539,7 +2549,7 @@ def render_panel_j(
                 spine.set_linewidth(float(style.get("frame_linewidth", 0.5)))
             if row_index == 0:
                 axis.set_title(
-                    label_column,
+                    "Reference annotations" if label_column == "Ground Truth" else label_column,
                     fontsize=float(style.get("column_title_fontsize", 10)),
                     pad=float(style.get("column_title_pad", 7)),
                 )
@@ -2607,7 +2617,7 @@ def render_panel_d(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     panel_order = ["Ground Truth", "leiden", "flowsom", "spatialsort", "pixie"]
-    panel_titles = ["Ground Truth", "Leiden", "FlowSOM", "SpatialSort", "PIXIE"]
+    panel_titles = ["Reference annotations", "Leiden", "FlowSOM", "SpatialSort", "PIXIE"]
     colors = dict(color_map or default_color_map(panel_table["Ground Truth"].astype(str)))
     colors.setdefault("Unassigned", "#808080")
     fig, axes = plt.subplots(1, len(panel_order), figsize=(16.4, 6.7))
@@ -2953,6 +2963,10 @@ def save_panel_i_provenance(
         "annotation_consensus": _four_llm_consensus_artifact(config),
         "target_cell_type": panel["target_cell_type"],
         "expression_threshold": panel["expression_threshold"],
+        "threshold_operator": ">",
+        "expression_transform": "none at dot-plot stage; stored processed H5AD X",
+        "dot_color": "stored group mean, min-max scaled within marker across four method groups",
+        "biological_positivity_validation": "not established",
         "marker_order": list(data.marker_names),
         "source_cell_count": data.source_cell_count,
         "selected_cell_counts": data.selected_cell_counts,

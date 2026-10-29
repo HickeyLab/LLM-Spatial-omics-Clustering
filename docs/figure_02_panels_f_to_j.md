@@ -1,6 +1,11 @@
 # Figure 2 Panels F–J
 
-These five notebook cells use the same B004 H5AD reference labels and frozen
+> **Publication boundary:** The G purity calculation described here belongs to
+> the later module, not embedded publication G, which repeats E’s post-hoc
+> selected reference agreement. F/H publication metrics remain F1 and recall.
+> See [the publication metric audit](figure_02_publication_metrics.md).
+
+These later module helpers use the same B004 H5AD reference labels and frozen
 source-traced assignments as Panel D. All methods targeted K=300; Leiden,
 FlowSOM, SpatialSort, and PIXIE have 300, 300, 246, and 300 occupied clusters,
 respectively. `Noise` is excluded only where the historical metric or spatial
@@ -16,7 +21,7 @@ validated against `data/frozen/v3_k300_assignments/manifest.json`.
 - **H:** the historical label “purity” means per-reference-cell-type recall
   after a global majority mapping, not cluster purity.
 - **I:** native H5AD-X marker means for cells whose deterministic, per-method
-  four-LLM modal label is `CD8+ T`; dot area is the fraction with `X > 0` and
+  four-LLM modal label is `CD8+ T`; dot area encodes the fraction with stored processed `X > 0.0` and
   color is min–max scaled independently per marker. Modal ties use GPT,
   Claude, Gemini, then DeepSeek order. No reference-truth filter is applied,
   so cells whose reference label is `Noise` remain in the summaries. The
@@ -45,6 +50,11 @@ The per-cell consensus input is tracked as
 source-annotation, derived-CSV, and gzip hashes are locked in the frozen
 assignment manifest.
 
-Run only the relevant Figure 2 notebook code cell. Each writes local CSV,
+Call the corresponding later Figure 2 module loader and renderer. Each writes local CSV,
 PNG, PDF, and JSON provenance artifacts under `outputs/figure_02/`; generated
 artifacts remain gitignored.
+
+For the publication 2I/S3A dot plots, the strict cutoff, stored matrix,
+preprocessing boundary and color-only min–max scaling are described in
+[the marker-expression audit](marker_expression_thresholds.md). Above-cutoff
+fractions do not establish biological marker positivity.

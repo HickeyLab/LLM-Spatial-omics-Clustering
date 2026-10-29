@@ -1,0 +1,337 @@
+method,clustering,variant,population,cell_type,n_regions,mean_difference
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,B,8,-0.11433156488800746
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD36 high Endothelial,8,-0.020899692697771657
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.025284108155237905
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD4+ T,8,-0.0600396266430028
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.06900402911064943
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD57+ Epithelial,8,0.01389497719215381
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.023732725111745033
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,CD8+ T,8,-0.029028938715411394
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Cycling TA,8,0.06026979693915836
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,DC,8,0.010982156467210513
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Epithelial,8,-0.044395307594551056
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Goblet,8,-0.06753506569268941
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,ICC,8,0.010674029183946703
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.06833623681565335
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,M1 Macrophage,8,0.05633068992801954
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.061358745189413276
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,-0.03270440251572327
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,NK,8,0.1322438232499208
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Nerve,8,-0.03986311199729649
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.017329124184852086
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Neutrophil,8,-0.04674703525557394
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Noise,8,0.011423306631169685
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.08360528151345425
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Paneth,8,0.018584855448991792
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Plasma,8,-0.018237073151239708
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Smooth muscle,8,-0.1049991686812959
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,Stromal,8,-0.03561563102458752
+CellSAM,FlowSOM,directed_10,shared_fixed_objects,TA,8,-0.016021820025291407
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,B,8,-0.12155384097474999
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD36 high Endothelial,8,-0.0012377996604095443
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.006430462856446259
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD4+ T,8,0.015072349844677944
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.18332607842449122
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD57+ Epithelial,8,0.03397002002843811
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.10101080200347275
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,CD8+ T,8,-0.03755671846690892
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Cycling TA,8,0.056732599139928994
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,DC,8,-0.054916190526075555
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Epithelial,8,-0.03323765778757985
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Goblet,8,-0.017184292533878452
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,ICC,8,0.049865100679524224
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.024649293819877946
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,M1 Macrophage,8,0.06302950822596194
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.03711443247233763
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.001913265306122449
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,NK,8,0.1167312661498708
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Nerve,8,-0.06590661254927382
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.09673055540755307
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Neutrophil,8,-0.02311691951962592
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Noise,8,0.00027360175105120565
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.03566341658152679
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Paneth,8,-0.03755285555650968
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Plasma,8,-0.04136991817495425
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Smooth muscle,8,-0.05622317350284675
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,Stromal,8,-0.06623758800401075
+CellposeCyto3,FlowSOM,directed_10,shared_fixed_objects,TA,8,-0.06257214748855439
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,B,8,-0.10640063813617764
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD36 high Endothelial,8,-0.05208426187205785
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.048916365870380216
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD4+ T,8,0.010392838469258606
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.07262800170452668
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD57+ Epithelial,8,-0.011336714058145257
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.00768475566395674
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,CD8+ T,8,-0.000517456305754671
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Cycling TA,8,-0.011803235605184228
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,DC,8,0.007565931330742473
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Epithelial,8,-0.05706091677187965
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Goblet,8,-0.061644766647542766
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,ICC,8,-0.10040565707490194
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.1308124313669496
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,M1 Macrophage,8,-0.06930417290036048
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.04881964701877289
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.011328695769936352
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,NK,8,0.0
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Nerve,8,-0.057955799028369386
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.048707756482093724
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Neutrophil,8,-0.052704590817507495
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Noise,8,0.018812337057906026
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.025174130415976177
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Paneth,8,-0.009996455407509847
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Plasma,8,-0.004216082902201532
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Smooth muscle,8,-0.06893106716549169
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,Stromal,8,-0.07274822141314011
+CellposeSAM,FlowSOM,directed_10,shared_fixed_objects,TA,8,-0.014801944067096118
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,B,8,-0.08824381277536124
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD36 high Endothelial,8,-0.07920303883480947
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.07079218057115264
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD4+ T,8,-0.018037295424821326
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,0.0
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD57+ Epithelial,8,-0.007152997548075021
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD66+ Epithelial,8,0.047817844534848164
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,CD8+ T,8,-0.08012814227672055
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Cycling TA,8,-0.02727569973117974
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,DC,8,-0.09786891483988695
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Epithelial,8,-0.07996713421218593
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Goblet,8,0.025549896631599244
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,ICC,8,-0.028903704579927386
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.005200604667056474
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,M1 Macrophage,8,0.08369421586859749
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.07248163033178884
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,-0.1043624023750341
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,NK,8,0.0
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Nerve,8,-0.07558672375913728
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.062469346716584905
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Neutrophil,8,0.005732398452995224
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Noise,8,-0.04211139021920435
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.06323597887137675
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Paneth,8,-0.03467950392735551
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Plasma,8,-0.05175524625101344
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Smooth muscle,8,-0.0582557959100039
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,Stromal,8,-0.09472269649307818
+InstanSeg,FlowSOM,directed_10,shared_fixed_objects,TA,8,-0.13170054183770646
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,B,8,-0.04847390823643745
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD36 high Endothelial,8,-0.08681500584859143
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.06536712958625297
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD4+ T,8,-0.015082109158339095
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.06555349144029564
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD57+ Epithelial,8,0.007146536041890843
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.16072034321559908
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,CD8+ T,8,0.015096884682306855
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Cycling TA,8,-0.11686857873112606
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,DC,8,-0.03351722105001194
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Epithelial,8,-0.03772057501225762
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Goblet,8,-0.016101195954441233
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,ICC,8,-0.15942832707494015
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.10054965027154937
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,M1 Macrophage,8,0.24040249618773257
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.03951738686964758
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.014944752635091128
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,NK,8,0.0
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Nerve,8,-0.01669476939109378
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.04949556067582526
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Neutrophil,8,0.027883277424913335
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Noise,8,0.0019109473170598641
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.02545352449458548
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Paneth,8,-0.010628230416539916
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Plasma,8,-0.016205829138505115
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Smooth muscle,8,-0.045939198776704895
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,Stromal,8,-0.009003146078636053
+Mesmer,FlowSOM,directed_10,shared_fixed_objects,TA,8,-0.078285260048958
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,B,8,-0.09611669421294103
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD36 high Endothelial,8,-0.06061143503794038
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.029408387627892774
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD4+ T,8,-0.02535280565881059
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.30957813363443754
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD57+ Epithelial,8,0.007450322231722949
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.04436053442338722
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,CD8+ T,8,-0.037184480704274984
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Cycling TA,8,0.040136076742509366
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,DC,8,-0.021912290208890982
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Epithelial,8,-0.035624494097555345
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Goblet,8,0.007586772698245857
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,ICC,8,-0.01928727114394232
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.11759749643304192
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,M1 Macrophage,8,-0.029395899375311806
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.07906918302459978
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,-0.03321982139094576
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,NK,8,0.0
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Nerve,8,-0.07899783261959281
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.040989771460217574
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Neutrophil,8,-0.08475454340778829
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Noise,8,0.0010668016648391837
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.040083826056268444
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Paneth,8,-0.013070384962700105
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Plasma,8,-0.022883511278201443
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Smooth muscle,8,-0.026156816601098948
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,Stromal,8,0.016747158128569382
+MicroSAM,FlowSOM,directed_10,shared_fixed_objects,TA,8,0.033747696376214185
+CellSAM,Leiden,directed_10,shared_fixed_objects,B,8,0.2083924881011682
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD36 high Endothelial,8,0.6388700666034828
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD36 low Endothelial,8,0.09900663316393869
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD4+ T,8,0.09663271232382264
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.022946618129409836
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD57+ Epithelial,5,0.0
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD66+ Epithelial,8,0.004778623591393562
+CellSAM,Leiden,directed_10,shared_fixed_objects,CD8+ T,8,0.19367586833441663
+CellSAM,Leiden,directed_10,shared_fixed_objects,Cycling TA,8,0.14974027608642054
+CellSAM,Leiden,directed_10,shared_fixed_objects,DC,8,-0.01348023061978873
+CellSAM,Leiden,directed_10,shared_fixed_objects,Epithelial,8,0.008249209421100072
+CellSAM,Leiden,directed_10,shared_fixed_objects,Goblet,8,0.11734966691959944
+CellSAM,Leiden,directed_10,shared_fixed_objects,ICC,8,0.0
+CellSAM,Leiden,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.15334525203167004
+CellSAM,Leiden,directed_10,shared_fixed_objects,M1 Macrophage,8,0.0
+CellSAM,Leiden,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.00526419721950569
+CellSAM,Leiden,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,-0.039562930144647596
+CellSAM,Leiden,directed_10,shared_fixed_objects,NK,8,0.0
+CellSAM,Leiden,directed_10,shared_fixed_objects,Nerve,8,0.05679075951978378
+CellSAM,Leiden,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.023051005453483896
+CellSAM,Leiden,directed_10,shared_fixed_objects,Neutrophil,8,0.04198789188969353
+CellSAM,Leiden,directed_10,shared_fixed_objects,Noise,8,-0.10899515661314021
+CellSAM,Leiden,directed_10,shared_fixed_objects,PDPN+ Stromal,8,0.49941878904568104
+CellSAM,Leiden,directed_10,shared_fixed_objects,Paneth,8,-0.03605460638874787
+CellSAM,Leiden,directed_10,shared_fixed_objects,Plasma,8,0.015669834935384715
+CellSAM,Leiden,directed_10,shared_fixed_objects,Smooth muscle,8,0.04558826316000683
+CellSAM,Leiden,directed_10,shared_fixed_objects,Stromal,8,-0.014779548590713273
+CellSAM,Leiden,directed_10,shared_fixed_objects,TA,8,0.07016801176551252
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,B,8,0.13977055018720935
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD36 high Endothelial,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.11705684799153865
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD4+ T,8,-0.030945009291532797
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,7,-0.3862340407396133
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD57+ Epithelial,5,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.08584822467589122
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,CD8+ T,8,-0.0907298509087166
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Cycling TA,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,DC,8,0.540231219362161
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Epithelial,8,0.027791748733531206
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Goblet,8,0.012344106827498008
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,ICC,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,M1 Macrophage,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,M2 Macrophage,8,0.03290105590571994
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,NK,8,0.0
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Nerve,8,-0.050551998384628025
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.11040036905291224
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Neutrophil,8,0.007056223156304189
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Noise,8,0.02995926061828337
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,PDPN+ Stromal,8,0.45732035188248077
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Paneth,8,-0.026865226465658046
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Plasma,8,0.017586102942988218
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Smooth muscle,8,-0.010624358124649465
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,Stromal,8,0.021544563084421833
+CellposeCyto3,Leiden,directed_10,shared_fixed_objects,TA,8,0.06151206765873508
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,B,8,4.8372740603416786e-05
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD36 high Endothelial,8,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.05067814185725588
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD4+ T,8,-0.012050900260063876
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.08901334631639163
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD57+ Epithelial,5,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD66+ Epithelial,8,0.016658624094882352
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,CD8+ T,8,-0.0117052422897089
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Cycling TA,8,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,DC,8,-0.3682903843733215
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Epithelial,8,-0.028322702938745066
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Goblet,8,0.025306686098454285
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,ICC,8,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,M1 Macrophage,8,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,M2 Macrophage,8,0.03300349437141325
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,-0.028932178932178934
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,NK,8,0.0
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Nerve,8,-0.07132069199157973
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.02907300396214959
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Neutrophil,8,-0.021365522388100598
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Noise,8,0.00976617452417523
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.046916747792341756
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Paneth,8,-0.1928125665228847
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Plasma,8,0.0036831027934626816
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Smooth muscle,8,-0.028060568286351853
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,Stromal,8,-0.017082471617695015
+CellposeSAM,Leiden,directed_10,shared_fixed_objects,TA,8,0.0
+InstanSeg,Leiden,directed_10,shared_fixed_objects,B,8,-0.04793031135416312
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD36 high Endothelial,8,0.5553483005318631
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.007878202441375368
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD4+ T,8,-0.07592464847476306
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.2820381723846993
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD57+ Epithelial,8,0.1810923349427192
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.009203083695716985
+InstanSeg,Leiden,directed_10,shared_fixed_objects,CD8+ T,8,-0.02137129533833791
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Cycling TA,8,0.38214296109096324
+InstanSeg,Leiden,directed_10,shared_fixed_objects,DC,8,-0.10567518933938772
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Epithelial,8,-0.05092569473127054
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Goblet,8,-0.04073856626525538
+InstanSeg,Leiden,directed_10,shared_fixed_objects,ICC,8,0.0
+InstanSeg,Leiden,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,0.14412249595620258
+InstanSeg,Leiden,directed_10,shared_fixed_objects,M1 Macrophage,8,0.0
+InstanSeg,Leiden,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.10991808215932133
+InstanSeg,Leiden,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.0
+InstanSeg,Leiden,directed_10,shared_fixed_objects,NK,8,0.0
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Nerve,8,-0.17255067246248262
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.050567649574122124
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Neutrophil,8,-0.034372774642200656
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Noise,8,0.09899546491495456
+InstanSeg,Leiden,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.08054049750953626
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Paneth,8,-0.06105041860884161
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Plasma,8,-0.006547344066085814
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Smooth muscle,8,-0.09106052455164741
+InstanSeg,Leiden,directed_10,shared_fixed_objects,Stromal,8,-0.024172506531459165
+InstanSeg,Leiden,directed_10,shared_fixed_objects,TA,8,-0.009540750323415266
+Mesmer,Leiden,directed_10,shared_fixed_objects,B,8,-0.009024598844463414
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD36 high Endothelial,8,0.6205164793487692
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.011573061386948233
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD4+ T,8,-0.04699512026010061
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,0.0023314764573216244
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD57+ Epithelial,6,0.0
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD66+ Epithelial,8,-0.0858572380749717
+Mesmer,Leiden,directed_10,shared_fixed_objects,CD8+ T,8,-0.15846610776141953
+Mesmer,Leiden,directed_10,shared_fixed_objects,Cycling TA,8,0.0
+Mesmer,Leiden,directed_10,shared_fixed_objects,DC,8,0.40815073160929793
+Mesmer,Leiden,directed_10,shared_fixed_objects,Epithelial,8,-0.02077870228718108
+Mesmer,Leiden,directed_10,shared_fixed_objects,Goblet,8,-0.003256417329946278
+Mesmer,Leiden,directed_10,shared_fixed_objects,ICC,8,0.0
+Mesmer,Leiden,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,-0.17822316578806566
+Mesmer,Leiden,directed_10,shared_fixed_objects,M1 Macrophage,8,0.0
+Mesmer,Leiden,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.07436120320434216
+Mesmer,Leiden,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.0
+Mesmer,Leiden,directed_10,shared_fixed_objects,NK,8,0.0
+Mesmer,Leiden,directed_10,shared_fixed_objects,Nerve,8,0.06751459142550173
+Mesmer,Leiden,directed_10,shared_fixed_objects,Neuroendocrine,8,0.006966023284713768
+Mesmer,Leiden,directed_10,shared_fixed_objects,Neutrophil,8,0.005992043686343904
+Mesmer,Leiden,directed_10,shared_fixed_objects,Noise,8,-0.024172540203919537
+Mesmer,Leiden,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.025437874249529042
+Mesmer,Leiden,directed_10,shared_fixed_objects,Paneth,8,0.10104851589879173
+Mesmer,Leiden,directed_10,shared_fixed_objects,Plasma,8,-0.02373106868928894
+Mesmer,Leiden,directed_10,shared_fixed_objects,Smooth muscle,8,0.002252156117047835
+Mesmer,Leiden,directed_10,shared_fixed_objects,Stromal,8,0.10002721599690373
+Mesmer,Leiden,directed_10,shared_fixed_objects,TA,8,0.030621337875322823
+MicroSAM,Leiden,directed_10,shared_fixed_objects,B,8,0.013206505091767046
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD36 high Endothelial,8,0.4953098718616149
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD36 low Endothelial,8,-0.3777093412261192
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD4+ T,8,0.04144314976863101
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD49a+ Smooth muscle,8,-0.2871332870163149
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD57+ Epithelial,5,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD66+ Epithelial,8,0.0261354119553621
+MicroSAM,Leiden,directed_10,shared_fixed_objects,CD8+ T,8,0.056239440890160156
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Cycling TA,8,0.3511613159811162
+MicroSAM,Leiden,directed_10,shared_fixed_objects,DC,8,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Epithelial,8,-0.015666686720952255
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Goblet,8,0.020296005725616233
+MicroSAM,Leiden,directed_10,shared_fixed_objects,ICC,8,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,ITLN+ Epithelial,8,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,M1 Macrophage,8,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,M2 Macrophage,8,-0.18364225866775885
+MicroSAM,Leiden,directed_10,shared_fixed_objects,MUC1+ Epithelial,8,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,NK,8,0.0
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Nerve,8,0.18000660851996123
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Neuroendocrine,8,-0.5364916628949481
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Neutrophil,8,-0.058633887204040884
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Noise,8,0.005196143183536409
+MicroSAM,Leiden,directed_10,shared_fixed_objects,PDPN+ Stromal,8,-0.0643565020882788
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Paneth,8,-0.06476007496752423
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Plasma,8,0.015153442204976712
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Smooth muscle,8,-0.058966448338151733
+MicroSAM,Leiden,directed_10,shared_fixed_objects,Stromal,8,-0.049493685886596625
+MicroSAM,Leiden,directed_10,shared_fixed_objects,TA,8,0.0

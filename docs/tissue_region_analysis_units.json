@@ -1,0 +1,100 @@
+{
+  "analysis_unit": "imaged tissue region",
+  "n_regions": 8,
+  "donor": "B004",
+  "compensation_grouping_field": "slide_name",
+  "matched_reference_grouping_field": "sample_ID",
+  "S3E_ARI_AMI_grouping_field": "File_ID",
+  "crosswalk": [
+    {
+      "region_id": "B004-A-304",
+      "File_ID": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "HuBMAP_ID": "HBM784.TKZX.992",
+      "dataset_label": "B004-A-304-SmallIntestine-Ileum-CODEX",
+      "tissue_location": "Ileum"
+    },
+    {
+      "region_id": "B004-A-408",
+      "File_ID": "5318485b16983482401c3be24b6c42ad",
+      "HuBMAP_ID": "HBM433.ZLWP.627",
+      "dataset_label": "B004-A-408-SmallIntestine-Jejunum-CODEX",
+      "tissue_location": "Proximal-Jejunum"
+    },
+    {
+      "region_id": "B004-A-004",
+      "File_ID": "63d000170e475af142f6e8673de5eb0f",
+      "HuBMAP_ID": "HBM538.PGFT.538",
+      "dataset_label": "B004-A-004-LargeIntestine-Sigmoid-CODEX",
+      "tissue_location": "Sigmoid"
+    },
+    {
+      "region_id": "B004-A-104",
+      "File_ID": "768b7adb649959b6a4e354867595032d",
+      "HuBMAP_ID": "HBM889.KDGM.632",
+      "dataset_label": "B004-A-104-LargeIntestine-Transverse-CODEX",
+      "tissue_location": "Transverse"
+    },
+    {
+      "region_id": "B004-A-204",
+      "File_ID": "76d3efd17b6fc83aaac13e961824c5ae",
+      "HuBMAP_ID": "HBM657.JVPV.825",
+      "dataset_label": "B004-A-204-LargeIntestine-Ascending-CODEX",
+      "tissue_location": "Ascending"
+    },
+    {
+      "region_id": "B004-A-404",
+      "File_ID": "8da8f27977d946b8c912d42c8827b55c",
+      "HuBMAP_ID": "HBM776.SDCW.837",
+      "dataset_label": "B004-A-404-SmallIntestine-MidJejunum-CODEX",
+      "tissue_location": "Mid-Jejunum"
+    },
+    {
+      "region_id": "B004-A-008",
+      "File_ID": "ae422532f260b3d6fc662aae69b05d33",
+      "HuBMAP_ID": "HBM946.GRVG.379",
+      "dataset_label": "B004-A-008-LargeIntestine-Descending-CODEX",
+      "tissue_location": "Descending"
+    },
+    {
+      "region_id": "B004-A-504",
+      "File_ID": "dceadbb36871071f30c308ca091fbdc8",
+      "HuBMAP_ID": "HBM842.LQDP.877",
+      "dataset_label": "B004-A-504-SmallIntestine-Duodenum-CODEX",
+      "tissue_location": "Duodenum"
+    }
+  ],
+  "crosswalk_source": "src/llm_spatial_omics_clustering/final_figures_runtime/hubmap.py",
+  "crosswalk_source_sha256": "410a7ff7fb3e437432c806a654a7a426f00d488f959e344a1bbccc51bd2282fd",
+  "S1_recovery": "Three existing cached notebook PNG outputs, composed vertically without recalculating any metric",
+  "S1_source_notebook": "notebooks/final_figures/figure_s01_clustering_metrics.ipynb",
+  "S1_cached_components": [
+    {
+      "notebook_cell": 16,
+      "source_sha256": "131d8324e1822730dd02eaf31048ef42724e0ddb42589b5edb7763f5031ff3d0",
+      "position": [
+        44,
+        12
+      ]
+    },
+    {
+      "notebook_cell": 17,
+      "source_sha256": "0af7dcbea1eebea4622b3d6bd668c16aa9f23f925f74a2f652b4aeb7704d67ba",
+      "position": [
+        44,
+        560
+      ]
+    },
+    {
+      "notebook_cell": 18,
+      "source_sha256": "50a1a7a102e07ffe3b35aab8ddeefc00707fbf067ccbdc390e30810b8e730108",
+      "position": [
+        44,
+        1108
+      ]
+    }
+  ],
+  "physical_slide_or_distinct_FOV_mapping": "Not established by these analysis fields. No additional physical-slide or FOV replicate is claimed.",
+  "other_S3E_units": "Shannon diversity and purity remain cluster-level. F1 and recall remain cell-type-level.",
+  "new_fits": 0,
+  "new_metric_calculations": 0
+}

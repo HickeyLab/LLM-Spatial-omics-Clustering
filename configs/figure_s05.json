@@ -1,0 +1,71 @@
+{
+  "data": "data/frozen/figure_s05/celltype_mean_effects.csv",
+  "data_sha256": "ad08d229fbef84f0c175ba5c518685d340dd24deaa4a86a42407a7f7f6fb7f46",
+  "preview": "notebooks/final_figures/previews/figure_s05c.png",
+  "title": "Cell-type compensation changes on shared objects",
+  "methods": [
+    "Mesmer",
+    "CellposeCyto3",
+    "CellposeSAM",
+    "CellSAM",
+    "InstanSeg",
+    "MicroSAM"
+  ],
+  "backends": [
+    "Leiden",
+    "FlowSOM"
+  ],
+  "cell_types": [
+    "B",
+    "CD36 high Endothelial",
+    "CD36 low Endothelial",
+    "CD4+ T",
+    "CD49a+ Smooth muscle",
+    "CD57+ Epithelial",
+    "CD66+ Epithelial",
+    "CD8+ T",
+    "Cycling TA",
+    "DC",
+    "Epithelial",
+    "Goblet",
+    "ICC",
+    "ITLN+ Epithelial",
+    "M1 Macrophage",
+    "M2 Macrophage",
+    "MUC1+ Epithelial",
+    "NK",
+    "Nerve",
+    "Neuroendocrine",
+    "Neutrophil",
+    "Noise",
+    "PDPN+ Stromal",
+    "Paneth",
+    "Plasma",
+    "Smooth muscle",
+    "Stromal",
+    "TA"
+  ],
+  "color_map": "RdYlGn",
+  "color_limits": [
+    -63.88700666034828,
+    63.88700666034828
+  ],
+  "color_center": 0,
+  "colorbar_ticks": [
+    -60,
+    -40,
+    -20,
+    0,
+    20,
+    40,
+    60
+  ],
+  "colorbar_label": "Mean regional \u0394F1 (percentage points)",
+  "palette_reference": "configs/figure_02.yaml:panel_h.style",
+  "footnotes": [
+    "Values are mean paired regional changes in B004. Positive values indicate higher F1 after compensation.",
+    "Red: decrease. Yellow: zero change. Green: increase. Both panels share the same symmetric scale.",
+    "Regional counts and variation are reported separately. Regions are subsamples of one donor."
+  ],
+  "original_artwork_sha256": "2ca554e61b4767320b768e34884012fc1ecd16391b38ab669ec7efb5be4d4418"
+}

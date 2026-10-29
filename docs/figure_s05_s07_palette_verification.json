@@ -1,0 +1,38 @@
+{
+  "S5C": {
+    "annotations": 336,
+    "annotations_exactly_match_frozen_values": true,
+    "palette": "RdYlGn",
+    "shared_norm_object": true,
+    "limits": [
+      -63.88700666034828,
+      63.88700666034828
+    ],
+    "center": 0,
+    "minimum_text_contrast_ratio": 4.6364593941915535,
+    "all_text_inside_figure": true,
+    "footprint_pixels": [
+      2043,
+      2048
+    ],
+    "output_sha256": "888324f25bd14f7075e76292b15006212241f6b0f4da117fdf3423ee2e535bd4"
+  },
+  "S7": {
+    "annotations": 32,
+    "annotations_exactly_match_frozen_values": true,
+    "palette": "RdYlGn",
+    "shared_norm_object": true,
+    "limits": [
+      0.0,
+      100.0
+    ],
+    "center": null,
+    "minimum_text_contrast_ratio": 4.989983537929237,
+    "all_text_inside_figure": true,
+    "footprint_pixels": [
+      2048,
+      805
+    ],
+    "output_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce"
+  }
+}

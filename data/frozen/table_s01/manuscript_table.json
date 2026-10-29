@@ -1,0 +1,68 @@
+{
+  "headers": [
+    "Field",
+    "Leiden",
+    "FlowSOM",
+    "SpatialSort",
+    "PIXIE"
+  ],
+  "rows": [
+    [
+      "Inputs",
+      "47 markers",
+      "45 markers",
+      "45 markers",
+      "48 image channels"
+    ],
+    [
+      "Transform",
+      "arcsinh(x/5)",
+      "arcsinh(x/5)",
+      "arcsinh(x/5)",
+      "Pixel and cell composition pipeline"
+    ],
+    [
+      "Scaling",
+      "StandardScaler within each region",
+      "Full-cohort RobustScaler",
+      "Full-cohort RobustScaler",
+      "Channel and composition normalization"
+    ],
+    [
+      "Configured and occupied clusters",
+      "300 and 300",
+      "300 and 300",
+      "300 and 246",
+      "300 and 300"
+    ],
+    [
+      "Implementation",
+      "K320 local Leiden with 20 within-parent merges",
+      "32×32 self-organizing map followed by Ward clustering",
+      "24 neighbors and precision 0.65",
+      "10×10 pixel map and 24×24 cell map"
+    ],
+    [
+      "Sigma and learning rate",
+      "See Leiden procedure in Section 2.7",
+      "1.0 and 0.3",
+      "Not applicable",
+      "Pixel 5.0 and 0.05. Cell 2.0 and 0.3"
+    ],
+    [
+      "Iterations",
+      "See Leiden procedure in Section 2.7",
+      "10,000",
+      "8 recorded iterations and 6 actual sampling steps",
+      "One pixel pass and 5,000 cell iterations"
+    ],
+    [
+      "Seed",
+      "42",
+      "42",
+      "42",
+      "42"
+    ]
+  ],
+  "caption": "Table S1. Final clustering configurations and hyperparameters used in the comparative benchmark. The table reports the number of clusters and selected hyperparameters for FlowSOM, Leiden, SpatialSort, and the PIXIE cell-level adaptation, including map dimensions, metacluster counts, neighborhood and dimensionality-reduction settings, spatial-model parameters, iteration counts, and random-seed handling. PCA, principal component analysis. SOM, self-organizing map. Inputs comprise 47, 45 and 45 markers for Leiden, FlowSOM and SpatialSort, respectively, and 48 image channels for PIXIE. Pixel-level and cell-level settings are reported separately for PIXIE."
+}

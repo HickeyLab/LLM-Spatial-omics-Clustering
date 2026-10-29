@@ -34,7 +34,7 @@ four_llm_consensus:
     NK: CD7+ Immune
 
 panel_b:
-  title: "Ground-truth cell type distribution"
+  title: "Reference cell type distribution"
   status: executed
 
   data:
@@ -42,7 +42,7 @@ panel_b:
     # the Duke Research Data Repository into data/raw/duke_research_repository.
     root_env: CELL_MASKS_DATA_ROOT
     h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
-    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a"
     download: true
 
   cohort:
@@ -137,14 +137,14 @@ panel_b:
     provenance_json: outputs/figure_02/figure_02b_b004_provenance.json
 
 panel_c:
-  title: "A Ground Truth Tissue Region"
+  title: "Reference annotations"
   status: executed
 
   data:
     # The source is downloaded automatically when it is absent; see panel_b.
     root_env: CELL_MASKS_DATA_ROOT
     h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
-    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a"
     download: true
 
   region:
@@ -213,7 +213,7 @@ panel_c:
     panel_label_x: 0.03
     panel_label_y: 0.95
     panel_label_fontsize: 42
-    title: "A Ground Truth Tissue Region"
+    title: "Reference annotations"
     title_x: 0.55
     title_y: 0.93
     title_fontsize: 20
@@ -225,14 +225,14 @@ panel_c:
     provenance_json: outputs/figure_02/figure_02c_b004_a404_provenance.json
 
 panel_d:
-  title: "Ground-truth and method-derived UMAP embeddings"
+  title: "Reference annotations and method-derived UMAP embeddings"
   status: source_traced
 
   data:
     # The source is downloaded automatically when it is absent; see panel_b.
     root_env: CELL_MASKS_DATA_ROOT
     h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
-    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a"
     download: true
 
   cohort:
@@ -403,7 +403,7 @@ panel_e:
     # document a separate tie-break rule for equally common cluster labels.
     root_env: CELL_MASKS_DATA_ROOT
     h5ad_filename: 20260130_HuBMAP_experted_annotated.h5ad
-    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"
+    h5ad_sha256: "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a"
     download: true
 
   cohort:
@@ -723,7 +723,7 @@ panel_g:
     provenance_json: outputs/figure_02/figure_02g_b004_provenance.json
 
 panel_h:
-  title: "Purity by reference cell type and clustering method"
+  title: "Recall by reference cell type and clustering method"
   status: executed
   data_source_panel: panel_e
   cohort_source_panel: panel_d
@@ -785,7 +785,7 @@ panel_h:
     cmap: RdYlGn
     value_multiplier: 100.0
     color_limits: [0.0, 100.0]
-    colorbar_label: Purity
+    colorbar_label: Recall
     colorbar_ticks: [0.0, 20.0, 40.0, 60.0, 80.0, 100.0]
     colorbar_percent: true
     colorbar_tick_fontsize: 9
@@ -899,11 +899,11 @@ panel_i:
     size_legend_position: [0.14, 0.09, 0.22, 0.16]
     size_legend_values: [20, 40, 60, 80, 100]
     size_legend_color: "#8a8a8a"
-    size_legend_label: "Fraction of\nCells in\nGroup (%)"
+    size_legend_label: "Fraction with\nprocessed X > {expression_threshold:g}\n(%)"
     colorbar_position: [0.75, 0.09, 0.12, 0.04]
     colorbar_label_x: 0.90
     colorbar_label_y: 0.14
-    colorbar_label: "Mean\nExpression\nin Group"
+    colorbar_label: "Scaled mean\nexpression"
     legend_tick_fontsize: 8
     legend_label_fontsize: 10
     spine_color: "#333333"

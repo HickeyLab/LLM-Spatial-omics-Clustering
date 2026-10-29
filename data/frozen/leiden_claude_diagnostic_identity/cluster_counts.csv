@@ -1,0 +1,301 @@
+cluster,n_cells,predicted_label,historical_21_majority_label,historical_21_bound_cells,historical_21_direct_matches,historical_21_minority_matches,historical_21_majority_mismatches,original_28_majority_label,original_28_bound_cells,original_28_direct_matches,original_28_minority_matches,original_28_majority_mismatches
+0::0,935,MUC1+ Enterocyte,Enterocyte,522,91,91,522,Epithelial,522,0,0,522
+0::1,947,Enterocyte,Enterocyte,901,901,0,0,Epithelial,901,0,0,901
+0::2,994,Enterocyte,Enterocyte,622,622,0,0,Epithelial,622,0,0,622
+0::3,920,Enterocyte,Enterocyte,693,693,0,0,Epithelial,693,0,0,693
+0::4,1034,Enterocyte,Enterocyte,505,505,0,0,Epithelial,505,0,0,505
+0::5,939,Cycling TA,Enterocyte,703,173,173,703,Epithelial,701,13,13,701
+0::6,7321,Enterocyte,Enterocyte,4896,4896,0,0,Epithelial,4895,0,0,4895
+10::0,588,M2 Macrophage,M2 Macrophage,552,552,0,0,M2 Macrophage,551,551,0,0
+10::1,634,M2 Macrophage,M2 Macrophage,629,629,0,0,M2 Macrophage,628,628,0,0
+10::2,682,M2 Macrophage,M2 Macrophage,669,669,0,0,M2 Macrophage,668,668,0,0
+10::3,469,M2 Macrophage,M2 Macrophage,423,423,0,0,M2 Macrophage,418,418,0,0
+10::4,474,M2 Macrophage,M2 Macrophage,410,410,0,0,M2 Macrophage,410,410,0,0
+10::5,496,M2 Macrophage,M2 Macrophage,416,416,0,0,M2 Macrophage,414,414,0,0
+10::6,3466,M2 Macrophage,M2 Macrophage,3021,3021,0,0,M2 Macrophage,3018,3018,0,0
+11::0,499,Noise,M2 Macrophage,303,3,3,303,M2 Macrophage,303,3,3,303
+11::1,643,Plasma,Stroma,452,114,114,452,Stromal,452,114,114,452
+11::2,739,Noise,Stroma,497,1,1,497,Stromal,497,1,1,497
+11::3,656,Plasma,Stroma,415,159,159,415,Stromal,415,159,159,415
+11::4,557,CD4+ T cell,Stroma,282,14,14,282,Stromal,282,0,0,282
+11::5,919,Plasma,Stroma,598,77,77,598,Stromal,598,77,77,598
+11::6,2343,Noise,Stroma,1162,46,46,1162,Stromal,1162,46,46,1162
+12::0,612,Endothelial,Endothelial,467,467,0,0,CD36 low Endothelial,297,0,0,297
+12::1,440,Endothelial,Endothelial,337,337,0,0,CD36 low Endothelial,307,0,0,307
+12::2,475,Stroma,Stroma,298,298,0,0,Stromal,298,0,0,298
+12::3,634,Endothelial,Endothelial,574,574,0,0,CD36 high Endothelial,446,0,0,446
+12::4,529,Endothelial,Endothelial,457,457,0,0,CD36 low Endothelial,457,0,0,457
+12::5,529,Endothelial,Endothelial,313,313,0,0,CD36 low Endothelial,178,0,0,178
+12::6,3049,Endothelial,Endothelial,2374,2374,0,0,CD36 low Endothelial,2320,0,0,2320
+13::0,521,Goblet,Goblet,327,327,0,0,Goblet,287,287,0,0
+13::1,726,Goblet,Goblet,567,567,0,0,Goblet,535,535,0,0
+13::2,545,Goblet,Goblet,518,518,0,0,Goblet,493,493,0,0
+13::3,465,Goblet,Goblet,438,438,0,0,Goblet,437,437,0,0
+13::4,414,Goblet,Goblet,395,395,0,0,Goblet,366,366,0,0
+13::5,537,Goblet,Goblet,494,494,0,0,Goblet,475,475,0,0
+13::6,2725,Goblet,Goblet,2279,2279,0,0,Goblet,2156,2156,0,0
+14::0,467,CD4+ T cell,CD8+ T,208,106,106,208,CD8+ T,208,0,0,208
+14::1,642,B,CD4+ T cell,475,82,82,475,CD4+ T,475,82,82,475
+14::2,687,CD4+ T cell,Plasma,432,204,204,432,Plasma,432,0,0,432
+14::3,404,CD4+ T cell,CD4+ T cell,346,346,0,0,CD4+ T,346,0,0,346
+14::4,520,CD4+ T cell,CD4+ T cell,346,346,0,0,CD4+ T,346,0,0,346
+14::5,447,CD4+ T cell,CD4+ T cell,308,308,0,0,CD4+ T,308,0,0,308
+14::6,2572,CD4+ T cell,CD4+ T cell,1344,1344,0,0,CD4+ T,1344,0,0,1344
+15::0,554,Stroma,Nerve,349,92,92,349,Nerve,349,0,0,349
+15::1,506,Nerve,Nerve,504,504,0,0,Nerve,504,504,0,0
+15::2,602,Nerve,Nerve,451,451,0,0,Nerve,451,451,0,0
+15::3,394,Stroma,Nerve,222,67,67,222,Nerve,222,0,0,222
+15::4,405,Nerve,Plasma,221,183,183,221,Plasma,221,183,183,221
+15::5,483,Nerve,Nerve,481,481,0,0,Nerve,481,481,0,0
+15::6,2499,Nerve,Nerve,2004,2004,0,0,Nerve,2004,2004,0,0
+16::0,537,M2 Macrophage,Plasma,190,139,139,190,Plasma,190,77,77,190
+16::1,780,M2 Macrophage,M2 Macrophage,576,576,0,0,M2 Macrophage,415,415,0,0
+16::2,653,M2 Macrophage,M2 Macrophage,276,276,0,0,M2 Macrophage,266,266,0,0
+16::3,695,M2 Macrophage,CD4+ T cell,332,272,272,332,CD4+ T,332,248,248,332
+16::4,637,M2 Macrophage,M2 Macrophage,570,570,0,0,M2 Macrophage,430,430,0,0
+16::5,450,M2 Macrophage,M2 Macrophage,417,417,0,0,M2 Macrophage,223,223,0,0
+16::6,1567,M2 Macrophage,M2 Macrophage,857,857,0,0,M2 Macrophage,745,745,0,0
+17::0,794,CD8+ T,CD8+ T,435,435,0,0,CD8+ T,435,435,0,0
+17::1,553,CD4+ T cell,CD4+ T cell,476,476,0,0,CD4+ T,476,0,0,476
+17::2,625,B,CD4+ T cell,533,73,73,533,CD4+ T,533,73,73,533
+17::3,403,CD4+ T cell,CD4+ T cell,317,317,0,0,CD4+ T,317,0,0,317
+17::4,560,CD4+ T cell,CD4+ T cell,437,437,0,0,CD4+ T,437,0,0,437
+17::5,296,CD8+ T,Plasma,178,20,20,178,Plasma,178,20,20,178
+17::6,1912,CD4+ T cell,CD4+ T cell,1120,1120,0,0,CD4+ T,1120,0,0,1120
+18::0,708,CD8+ T,CD8+ T,595,595,0,0,CD8+ T,595,595,0,0
+18::1,666,CD8+ T,CD8+ T,604,604,0,0,CD8+ T,604,604,0,0
+18::2,473,CD8+ T,CD8+ T,453,453,0,0,CD8+ T,453,453,0,0
+18::3,538,CD8+ T,CD8+ T,299,299,0,0,CD8+ T,299,299,0,0
+18::4,473,CD8+ T,CD8+ T,332,332,0,0,CD8+ T,332,332,0,0
+18::5,412,CD8+ T,CD8+ T,288,288,0,0,CD8+ T,288,288,0,0
+18::6,1278,CD8+ T,CD8+ T,870,870,0,0,CD8+ T,870,870,0,0
+19::1,557,Noise,Smooth muscle,555,1,1,555,Smooth muscle,555,1,1,555
+19::3,413,Smooth muscle,Smooth muscle,380,380,0,0,Smooth muscle,378,378,0,0
+19::4,318,Smooth muscle,Smooth muscle,256,256,0,0,Smooth muscle,253,253,0,0
+19::5,348,Noise,Smooth muscle,330,6,6,330,Smooth muscle,325,6,6,325
+19::6,2051,Smooth muscle,Smooth muscle,1875,1875,0,0,Smooth muscle,1748,1748,0,0
+19::coarsened_012,724,Smooth muscle,Smooth muscle,720,720,0,0,Smooth muscle,719,719,0,0
+1::0,1232,CD66+ Enterocyte,Enterocyte,1028,143,143,1028,Epithelial,1020,0,0,1020
+1::1,953,CD66+ Enterocyte,CD66+ Enterocyte,778,778,0,0,CD66+ Epithelial,778,0,0,778
+1::2,937,CD66+ Enterocyte,CD66+ Enterocyte,596,596,0,0,CD66+ Epithelial,596,0,0,596
+1::3,877,CD66+ Enterocyte,CD66+ Enterocyte,656,656,0,0,CD66+ Epithelial,656,0,0,656
+1::4,1150,CD66+ Enterocyte,CD66+ Enterocyte,902,902,0,0,CD66+ Epithelial,902,0,0,902
+1::5,856,CD66+ Enterocyte,CD66+ Enterocyte,367,367,0,0,CD66+ Epithelial,367,0,0,367
+1::6,6596,Enterocyte,Enterocyte,3112,3112,0,0,Epithelial,3111,0,0,3111
+20::0,410,M2 Macrophage,M2 Macrophage,392,392,0,0,M2 Macrophage,380,380,0,0
+20::1,335,M2 Macrophage,Stroma,235,82,82,235,Stromal,235,81,81,235
+20::2,427,M2 Macrophage,Stroma,197,160,160,197,Stromal,197,89,89,197
+20::3,574,DC,DC,428,428,0,0,DC,428,428,0,0
+20::4,380,M2 Macrophage,M2 Macrophage,269,269,0,0,M2 Macrophage,264,264,0,0
+20::5,516,M2 Macrophage,M2 Macrophage,238,238,0,0,M2 Macrophage,227,227,0,0
+20::6,1751,M2 Macrophage,M2 Macrophage,899,899,0,0,M2 Macrophage,739,739,0,0
+21::0,353,Nerve,Nerve,271,271,0,0,Nerve,271,271,0,0
+21::1,385,Nerve,Nerve,288,288,0,0,Nerve,288,288,0,0
+21::2,536,Nerve,Nerve,468,468,0,0,Nerve,468,468,0,0
+21::3,369,Nerve,Nerve,358,358,0,0,Nerve,358,358,0,0
+21::4,347,Nerve,Nerve,305,305,0,0,Nerve,305,305,0,0
+21::5,311,Nerve,Nerve,227,227,0,0,Nerve,227,227,0,0
+21::6,1889,Nerve,Nerve,1297,1297,0,0,Nerve,1297,1297,0,0
+22::0,302,Noise,Smooth muscle,242,3,3,242,CD49a+ Smooth muscle,210,3,3,210
+22::1,428,Noise,Smooth muscle,426,1,1,426,CD49a+ Smooth muscle,418,1,1,418
+22::2,434,Noise,Smooth muscle,401,3,3,401,CD49a+ Smooth muscle,377,3,3,377
+22::5,415,Noise,Smooth muscle,405,0,0,405,CD49a+ Smooth muscle,400,0,0,400
+22::coarsened_015,1990,Noise,Smooth muscle,1882,5,5,1882,CD49a+ Smooth muscle,1634,5,5,1634
+23::2,394,Stroma,Stroma,327,327,0,0,Stromal,327,0,0,327
+23::3,427,Noise,Stroma,178,6,6,178,Stromal,178,6,6,178
+23::4,375,Noise,Enterocyte,273,13,13,273,Epithelial,273,13,13,273
+23::5,1663,Noise,Enterocyte,829,86,86,829,Epithelial,826,86,86,826
+23::coarsened_016,628,Noise,Stroma,371,10,10,371,Stromal,371,10,10,371
+24::0,468,Plasma,Plasma,468,468,0,0,Plasma,468,468,0,0
+24::1,369,Plasma,Plasma,369,369,0,0,Plasma,369,369,0,0
+24::2,296,Plasma,Plasma,296,296,0,0,Plasma,296,296,0,0
+24::3,433,Plasma,Plasma,433,433,0,0,Plasma,433,433,0,0
+24::4,380,Plasma,Plasma,380,380,0,0,Plasma,380,380,0,0
+24::5,461,Plasma,Plasma,461,461,0,0,Plasma,461,461,0,0
+24::6,1054,Plasma,Plasma,1046,1046,0,0,Plasma,1046,1046,0,0
+25::0,223,CD66+ Enterocyte,CD66+ Enterocyte,58,58,0,0,CD66+ Epithelial,58,0,0,58
+25::1,233,CD66+ Enterocyte,CD66+ Enterocyte,132,132,0,0,CD66+ Epithelial,132,0,0,132
+25::2,250,CD66+ Enterocyte,CD66+ Enterocyte,225,225,0,0,CD66+ Epithelial,225,0,0,225
+25::3,408,Cycling TA,Cycling TA,168,168,0,0,TA,139,29,29,139
+25::4,464,Cycling TA,Cycling TA,343,343,0,0,TA,336,7,7,336
+25::5,408,CD66+ Enterocyte,CD66+ Enterocyte,267,267,0,0,CD66+ Epithelial,267,0,0,267
+25::6,1463,CD66+ Enterocyte,CD66+ Enterocyte,705,705,0,0,CD66+ Epithelial,705,0,0,705
+26::0,234,Smooth muscle,Smooth muscle,178,178,0,0,Smooth muscle,178,178,0,0
+26::1,257,M2 Macrophage,Smooth muscle,152,87,87,152,Smooth muscle,152,82,82,152
+26::2,314,Smooth muscle,Plasma,161,132,132,161,Plasma,161,132,132,161
+26::3,375,Smooth muscle,Smooth muscle,286,286,0,0,Smooth muscle,286,286,0,0
+26::4,348,Stroma,Smooth muscle,200,88,88,200,Smooth muscle,200,0,0,200
+26::5,243,Stroma,Smooth muscle,178,28,28,178,Smooth muscle,176,0,0,176
+26::6,1523,Smooth muscle,Smooth muscle,1016,1016,0,0,Smooth muscle,1016,1016,0,0
+27::0,551,Lymphatic,Lymphatic,251,251,0,0,PDPN+ Stromal,251,0,0,251
+27::1,250,Lymphatic,Lymphatic,143,143,0,0,PDPN+ Stromal,143,0,0,143
+27::2,192,Lymphatic,Lymphatic,190,190,0,0,PDPN+ Stromal,190,0,0,190
+27::3,279,Lymphatic,Lymphatic,217,217,0,0,PDPN+ Stromal,217,0,0,217
+27::4,206,Lymphatic,Stroma,175,18,18,175,Stromal,175,0,0,175
+27::5,318,Lymphatic,Lymphatic,247,247,0,0,PDPN+ Stromal,247,0,0,247
+27::6,1359,Lymphatic,Lymphatic,1065,1065,0,0,PDPN+ Stromal,1065,0,0,1065
+28::2,244,Noise,Noise,173,173,0,0,Noise,173,173,0,0
+28::3,239,Noise,Noise,157,157,0,0,Noise,157,157,0,0
+28::5,1898,Noise,Noise,1061,1061,0,0,Noise,1061,1061,0,0
+28::coarsened_011,673,Noise,Noise,467,467,0,0,Noise,467,467,0,0
+29::0,259,ICC,Stroma,110,72,72,110,Stromal,110,72,72,110
+29::1,359,ICC,ICC,222,222,0,0,ICC,222,222,0,0
+29::2,326,ICC,Stroma,109,68,68,109,Stromal,109,68,68,109
+29::3,247,ICC,Stroma,220,4,4,220,Stromal,220,4,4,220
+29::4,419,ICC,Stroma,192,35,35,192,Stromal,192,35,35,192
+29::5,231,ICC,Nerve,134,44,44,134,Nerve,134,44,44,134
+29::6,1193,ICC,Stroma,385,255,255,385,Stromal,385,255,255,385
+2::0,1368,Plasma,Plasma,1176,1176,0,0,Plasma,1176,1176,0,0
+2::1,979,Plasma,Plasma,915,915,0,0,Plasma,915,915,0,0
+2::2,1255,Plasma,Plasma,1168,1168,0,0,Plasma,1168,1168,0,0
+2::3,1332,Plasma,Plasma,1323,1323,0,0,Plasma,1323,1323,0,0
+2::4,718,Plasma,Plasma,683,683,0,0,Plasma,683,683,0,0
+2::5,952,Plasma,Plasma,666,666,0,0,Plasma,666,666,0,0
+2::6,5217,Plasma,Plasma,4350,4350,0,0,Plasma,4350,4350,0,0
+30::0,363,Enterocyte,Enterocyte,160,160,0,0,Epithelial,160,0,0,160
+30::1,245,Enterocyte,Enterocyte,159,159,0,0,Epithelial,159,0,0,159
+30::2,284,Cycling TA,Cycling TA,268,268,0,0,Cycling TA,256,256,0,0
+30::3,286,Cycling TA,Cycling TA,255,255,0,0,Cycling TA,219,219,0,0
+30::4,220,Cycling TA,Cycling TA,220,220,0,0,Cycling TA,219,219,0,0
+30::5,244,Cycling TA,Cycling TA,230,230,0,0,Cycling TA,211,211,0,0
+30::6,1254,Cycling TA,Cycling TA,982,982,0,0,Cycling TA,524,524,0,0
+31::0,240,CD66+ Enterocyte,CD66+ Enterocyte,229,229,0,0,CD66+ Epithelial,229,0,0,229
+31::1,265,CD66+ Enterocyte,Noise,168,34,34,168,Noise,168,0,0,168
+31::4,239,Enterocyte,Stroma,115,49,49,115,Stromal,115,0,0,115
+31::5,1630,Noise,Noise,481,481,0,0,Noise,481,481,0,0
+31::coarsened_014,490,Enterocyte,Enterocyte,406,406,0,0,Epithelial,406,0,0,406
+32::coarsened_013,1633,Noise,Noise,1332,1332,0,0,Noise,1332,1332,0,0
+32::coarsened_019,964,Noise,Noise,899,899,0,0,Noise,899,899,0,0
+33::0,284,Neutrophil,M2 Macrophage,153,25,25,153,M2 Macrophage,153,25,25,153
+33::1,214,Neutrophil,Neutrophil,105,105,0,0,Neutrophil,105,105,0,0
+33::2,223,Neutrophil,Noise,80,73,73,80,Noise,80,73,73,80
+33::3,244,Neutrophil,Noise,144,3,3,144,Noise,144,3,3,144
+33::4,269,Neutrophil,CD66+ Enterocyte,123,6,6,123,CD66+ Epithelial,123,6,6,123
+33::5,213,Neutrophil,Neutrophil,160,160,0,0,Neutrophil,160,160,0,0
+33::6,1103,Neutrophil,Neutrophil,464,464,0,0,Neutrophil,464,464,0,0
+34::0,251,CD7+ Immune,B,148,11,11,148,B,148,0,0,148
+34::1,273,CD7+ Immune,Enterocyte,70,0,0,70,Epithelial,64,0,0,64
+34::2,242,CD7+ Immune,B,67,18,18,67,B,67,0,0,67
+34::3,319,CD8+ T,CD4+ T cell,149,73,73,149,CD4+ T,149,73,73,149
+34::4,218,B,B,155,155,0,0,B,155,155,0,0
+34::5,217,Nerve,B,82,64,64,82,B,82,64,64,82
+34::6,895,CD7+ Immune,B,326,37,37,326,B,326,0,0,326
+35::0,191,Noise,Enterocyte,87,35,35,87,Epithelial,87,35,35,87
+35::1,224,Noise,Stroma,170,50,50,170,Stromal,170,50,50,170
+35::2,241,CD66+ Enterocyte,Enterocyte,150,70,70,150,Epithelial,150,0,0,150
+35::3,223,Enterocyte,Enterocyte,213,213,0,0,Epithelial,213,0,0,213
+35::4,191,CD8+ T,CD8+ T,120,120,0,0,CD8+ T,120,120,0,0
+35::5,1069,CD7+ Immune,Enterocyte,401,0,0,401,Epithelial,401,0,0,401
+36::0,188,MUC1+ Enterocyte,Cycling TA,107,44,44,107,TA,107,0,0,107
+36::1,208,MUC1+ Enterocyte,MUC1+ Enterocyte,173,173,0,0,MUC1+ Epithelial,173,0,0,173
+36::2,153,MUC1+ Enterocyte,Cycling TA,150,3,3,150,TA,150,0,0,150
+36::3,147,MUC1+ Enterocyte,Cycling TA,91,43,43,91,TA,91,0,0,91
+36::4,180,MUC1+ Enterocyte,MUC1+ Enterocyte,120,120,0,0,MUC1+ Epithelial,120,0,0,120
+36::5,1201,MUC1+ Enterocyte,MUC1+ Enterocyte,659,659,0,0,MUC1+ Epithelial,659,0,0,659
+37::0,181,Smooth muscle,Stroma,158,15,15,158,Stromal,158,14,14,158
+37::1,240,Smooth muscle,Smooth muscle,223,223,0,0,Smooth muscle,223,223,0,0
+37::2,208,Smooth muscle,Smooth muscle,171,171,0,0,Smooth muscle,169,169,0,0
+37::3,159,Smooth muscle,Smooth muscle,116,116,0,0,Smooth muscle,96,96,0,0
+37::4,250,Smooth muscle,Smooth muscle,164,164,0,0,Smooth muscle,164,164,0,0
+37::5,950,Smooth muscle,Smooth muscle,549,549,0,0,Smooth muscle,539,539,0,0
+38::0,194,DC,DC,181,181,0,0,DC,181,181,0,0
+38::1,140,DC,DC,114,114,0,0,DC,114,114,0,0
+38::2,147,M2 Macrophage,DC,126,21,21,126,DC,126,4,4,126
+38::3,138,DC,DC,79,79,0,0,DC,79,79,0,0
+38::4,214,DC,DC,146,146,0,0,DC,146,146,0,0
+38::5,760,DC,DC,581,581,0,0,DC,581,581,0,0
+39::0,196,B,B,84,84,0,0,B,84,84,0,0
+39::1,198,B,B,163,163,0,0,B,163,163,0,0
+39::2,240,Plasma,Plasma,210,210,0,0,Plasma,210,210,0,0
+39::3,175,B,B,173,173,0,0,B,173,173,0,0
+39::4,221,Plasma,Plasma,198,198,0,0,Plasma,198,198,0,0
+39::5,554,B,B,407,407,0,0,B,407,407,0,0
+3::0,656,CD8+ T,CD8+ T,500,500,0,0,CD8+ T,500,500,0,0
+3::1,1074,CD8+ T,CD8+ T,694,694,0,0,CD8+ T,694,694,0,0
+3::2,686,CD8+ T,CD8+ T,673,673,0,0,CD8+ T,673,673,0,0
+3::3,922,CD8+ T,CD8+ T,505,505,0,0,CD8+ T,505,505,0,0
+3::4,818,CD7+ Immune,CD8+ T,439,0,0,439,CD8+ T,439,0,0,439
+3::5,731,CD8+ T,CD8+ T,596,596,0,0,CD8+ T,596,596,0,0
+3::6,4711,CD7+ Immune,CD8+ T,2576,0,0,2576,CD8+ T,2576,0,0,2576
+40::coarsened_003,219,Noise,Stroma,124,87,87,124,Stromal,124,87,87,124
+40::coarsened_005,315,MUC1+ Enterocyte,Noise,267,0,0,267,Noise,267,0,0,267
+40::coarsened_007,1002,MUC1+ Enterocyte,Noise,528,14,14,528,Noise,528,0,0,528
+41::1,123,Noise,Stroma,74,27,27,74,Stromal,74,27,27,74
+41::2,107,MUC1+ Enterocyte,Noise,106,0,0,106,Noise,106,0,0,106
+41::3,120,MUC1+ Enterocyte,Noise,118,0,0,118,Noise,118,0,0,118
+41::5,763,MUC1+ Enterocyte,Noise,659,1,1,659,Noise,659,0,0,659
+41::coarsened_008,258,MUC1+ Enterocyte,Noise,190,0,0,190,Noise,190,0,0,190
+42::0,133,Noise,Stroma,89,2,2,89,Stromal,89,2,2,89
+42::2,142,Noise,Smooth muscle,136,1,1,136,CD49a+ Smooth muscle,136,1,1,136
+42::4,148,Noise,Smooth muscle,148,0,0,148,CD49a+ Smooth muscle,146,0,0,146
+42::5,606,Noise,Smooth muscle,528,16,16,528,CD49a+ Smooth muscle,523,16,16,523
+42::coarsened_006,314,Noise,Smooth muscle,311,0,0,311,CD49a+ Smooth muscle,306,0,0,306
+43::0,246,Neuroendocrine,Neuroendocrine,170,170,0,0,Neuroendocrine,170,170,0,0
+43::1,186,Neuroendocrine,Neuroendocrine,184,184,0,0,Neuroendocrine,184,184,0,0
+43::2,111,CD8+ T,Enterocyte,62,9,9,62,CD57+ Epithelial,62,9,9,62
+43::3,156,Neuroendocrine,Neuroendocrine,115,115,0,0,Neuroendocrine,115,115,0,0
+43::4,158,Neuroendocrine,Neuroendocrine,142,142,0,0,Neuroendocrine,142,142,0,0
+43::5,351,Neuroendocrine,Neuroendocrine,196,196,0,0,Neuroendocrine,194,194,0,0
+44::0,155,M2 Macrophage,M2 Macrophage,142,142,0,0,M2 Macrophage,142,142,0,0
+44::1,143,M2 Macrophage,M2 Macrophage,136,136,0,0,M2 Macrophage,136,136,0,0
+44::4,157,MUC1+ Enterocyte,M2 Macrophage,133,10,10,133,M2 Macrophage,133,0,0,133
+44::coarsened_018,670,Noise,M2 Macrophage,473,27,27,473,M2 Macrophage,473,27,27,473
+45::0,234,Neuroendocrine,Neuroendocrine,191,191,0,0,Paneth,190,1,1,190
+45::1,144,Neuroendocrine,Neuroendocrine,140,140,0,0,Paneth,140,0,0,140
+45::2,161,Neuroendocrine,Neuroendocrine,84,84,0,0,Paneth,84,0,0,84
+45::3,473,Neuroendocrine,Neuroendocrine,373,373,0,0,Paneth,372,1,1,372
+46::0,138,CD7+ Immune,Plasma,46,0,0,46,Plasma,46,0,0,46
+46::1,141,CD7+ Immune,Enterocyte,33,0,0,33,Epithelial,33,0,0,33
+46::2,113,CD8+ T,B,55,10,10,55,B,55,10,10,55
+46::3,364,CD7+ Immune,B,110,1,1,110,B,110,0,0,110
+47::0,98,Noise,Enterocyte,55,1,1,55,Epithelial,55,1,1,55
+47::1,532,Noise,Enterocyte,271,46,46,271,Epithelial,271,46,46,271
+48::0,83,Goblet,Smooth muscle,77,4,4,77,Smooth muscle,70,4,4,70
+48::1,304,Goblet,Goblet,118,118,0,0,Goblet,118,118,0,0
+49::0,69,Smooth muscle,Smooth muscle,69,69,0,0,Smooth muscle,69,69,0,0
+49::1,230,Nerve,Smooth muscle,219,8,8,219,Smooth muscle,219,8,8,219
+4::0,755,Enterocyte,Enterocyte,429,429,0,0,Epithelial,428,0,0,428
+4::1,948,MUC1+ Enterocyte,Cycling TA,587,90,90,587,TA,458,0,0,458
+4::2,751,Enterocyte,Cycling TA,383,171,171,383,TA,379,0,0,379
+4::3,674,Enterocyte,Cycling TA,332,170,170,332,TA,265,0,0,265
+4::4,841,Goblet,Cycling TA,491,307,307,491,TA,466,97,97,466
+4::5,676,Enterocyte,Enterocyte,537,537,0,0,Epithelial,537,0,0,537
+4::6,4559,Enterocyte,Goblet,1413,1202,1202,1413,Epithelial,1201,0,0,1201
+50::0,199,Smooth muscle,Smooth muscle,198,198,0,0,Smooth muscle,198,198,0,0
+51::0,98,Cycling TA,Cycling TA,66,66,0,0,Cycling TA,65,65,0,0
+52::0,39,Neutrophil,Neutrophil,33,33,0,0,Neutrophil,33,33,0,0
+53::0,33,Neuroendocrine,Enterocyte,20,6,6,20,Epithelial,20,6,6,20
+54::0,14,CD66+ Enterocyte,Enterocyte,14,0,0,14,Epithelial,14,0,0,14
+5::0,563,Enterocyte,Enterocyte,553,553,0,0,Epithelial,553,0,0,553
+5::1,642,Enterocyte,Enterocyte,605,605,0,0,Epithelial,605,0,0,605
+5::2,755,CD66+ Enterocyte,Enterocyte,370,347,347,370,Epithelial,370,0,0,370
+5::3,964,CD66+ Enterocyte,Enterocyte,789,163,163,789,Epithelial,789,0,0,789
+5::4,572,Enterocyte,Enterocyte,449,449,0,0,Epithelial,449,0,0,449
+5::5,546,Enterocyte,Enterocyte,436,436,0,0,Epithelial,436,0,0,436
+5::6,4508,Enterocyte,Enterocyte,3430,3430,0,0,Epithelial,3430,0,0,3430
+6::0,578,Smooth muscle,Smooth muscle,533,533,0,0,Smooth muscle,533,533,0,0
+6::1,571,Smooth muscle,Smooth muscle,565,565,0,0,Smooth muscle,565,565,0,0
+6::2,594,Smooth muscle,Smooth muscle,592,592,0,0,Smooth muscle,592,592,0,0
+6::3,726,Smooth muscle,Smooth muscle,701,701,0,0,Smooth muscle,701,701,0,0
+6::4,516,Stroma,Smooth muscle,476,1,1,476,Smooth muscle,476,0,0,476
+6::5,613,Smooth muscle,Smooth muscle,600,600,0,0,Smooth muscle,600,600,0,0
+6::6,4904,Smooth muscle,Smooth muscle,4682,4682,0,0,Smooth muscle,4646,4646,0,0
+7::0,818,Endothelial,Endothelial,813,813,0,0,CD36 high Endothelial,794,0,0,794
+7::1,650,Endothelial,Endothelial,403,403,0,0,CD36 high Endothelial,312,0,0,312
+7::2,916,Endothelial,Endothelial,647,647,0,0,CD36 low Endothelial,328,0,0,328
+7::3,907,M2 Macrophage,Endothelial,704,169,169,704,CD36 high Endothelial,605,90,90,605
+7::4,692,Endothelial,Endothelial,683,683,0,0,CD36 low Endothelial,651,0,0,651
+7::5,967,Endothelial,Endothelial,939,939,0,0,CD36 high Endothelial,860,0,0,860
+7::6,3294,Endothelial,Endothelial,3049,3049,0,0,CD36 low Endothelial,2109,0,0,2109
+8::1,753,Noise,Smooth muscle,752,0,0,752,CD49a+ Smooth muscle,571,0,0,571
+8::4,870,Noise,Nerve,451,1,1,451,Nerve,451,1,1,451
+8::6,3884,Noise,Smooth muscle,3002,140,140,3002,CD49a+ Smooth muscle,2099,140,140,2099
+8::coarsened_017,958,Noise,Smooth muscle,889,5,5,889,CD49a+ Smooth muscle,881,5,5,881
+8::coarsened_020,1307,Noise,Smooth muscle,1302,1,1,1302,CD49a+ Smooth muscle,1296,1,1,1296
+9::0,400,Lymphatic,Stroma,184,153,153,184,Stromal,184,0,0,184
+9::1,442,MUC1+ Enterocyte,Stroma,228,16,16,228,Stromal,228,0,0,228
+9::2,597,Noise,Stroma,295,275,275,295,Stromal,295,275,275,295
+9::3,480,Noise,Noise,410,410,0,0,Noise,410,410,0,0
+9::4,597,Endothelial,Stroma,386,65,65,386,Stromal,386,0,0,386
+9::5,419,Stroma,Stroma,390,390,0,0,Stromal,390,0,0,390
+9::6,3957,Stroma,Stroma,2498,2498,0,0,Stromal,2498,0,0,2498

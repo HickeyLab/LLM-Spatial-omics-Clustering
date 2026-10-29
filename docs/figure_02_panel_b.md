@@ -25,7 +25,7 @@ the configuration and checked at runtime. Colors come from the compact,
 tracked [`configs/cell_type_colors.csv`](../configs/cell_type_colors.csv)
 snapshot; a same-named local color key is only a fallback if that tracked file
 is unavailable. The configuration also records the source H5AD's SHA-256:
-`5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49`.
+`5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a`.
 
 ## Running from a clone
 

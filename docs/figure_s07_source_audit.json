@@ -1,0 +1,91 @@
+{
+  "source_csv": "revision_20261021/outputs/revision_20261025/four_llm_followup/donor_mean_region_metrics.csv",
+  "source_csv_sha256": "887a0e9a9958d13d7a65811d5c4948f7484ba3b1ef010f5d4a4dd692cc178929",
+  "frozen_rows": 32,
+  "all_32_displayed_values_match_original_to_one_decimal": true,
+  "original_display_values": {
+    "marker_only": [
+      [
+        41.7,
+        37.3,
+        22.2,
+        7.3
+      ],
+      [
+        33.5,
+        26.8,
+        20.0,
+        4.0
+      ],
+      [
+        21.7,
+        22.7,
+        15.6,
+        9.4
+      ],
+      [
+        39.7,
+        41.3,
+        19.0,
+        15.5
+      ]
+    ],
+    "retrieval": [
+      [
+        55.1,
+        48.4,
+        50.9,
+        49.0
+      ],
+      [
+        42.7,
+        47.9,
+        14.4,
+        35.5
+      ],
+      [
+        28.7,
+        29.8,
+        30.8,
+        16.3
+      ],
+      [
+        44.1,
+        43.6,
+        20.1,
+        36.5
+      ]
+    ]
+  },
+  "source_artwork_sha256": "41190b2a5494d5591c52188e108011805b01baac0ec9fe49f4467a83dbcb507c",
+  "score_formula": "correct / n, where n = len(all eligible reference cells in the region); unknown predictions are included as errors",
+  "distinct_conditional_metric": "conditional_delivered_agreement = correct / covered, not used by S7",
+  "aggregation": "unweighted mean of the two B004 test-region agreement values",
+  "code_sources": {
+    "revision_20261021/scripts/revision/report_four_llm_followup.py": "a0e4ae16e1ae0200bd8b660c1fb3084c03c928f2c6e026702f1677f2366c65f0",
+    "revision_20261021/scripts/revision/build_four_llm_revision.py": "846d8116657bb8680673b5e905b5a8cddcd602976a2e7f91dade76358753dd32",
+    "revision_20261021/src/llm_spatial_omics_clustering/revision/annotation_delivery.py": "6cb173b6ef150d0c993e3b50fa6f5cf1bfbb2d75ae5496eb1e8754b6fe987d1b"
+  },
+  "numeric_scoring_unchanged": true,
+  "internal_legacy_delivery_keys": "retained for compatibility",
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "new_score_recomputation": 0,
+  "denominator_fixture_check": {
+    "correct": 2,
+    "planned": 4,
+    "valid_predictions": 3,
+    "reference_agreement": 0.5,
+    "conditional_valid_prediction_agreement": 0.6666666666666666
+  },
+  "updated_artwork_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce",
+  "palette": "RdYlGn",
+  "shared_scale_percent": [
+    0,
+    100
+  ],
+  "palette_source": "configs/figure_02.yaml:panel_h.style",
+  "native_document_status": "Image replacement applied and exact source hash verified in native DOCX. Caption saved as a suggestion pending review.",
+  "display_source_after_sha256": "9b7123d0022ff94c5cd79f2fe017c1d82f0e33a177223bc64b66239e9186a96a",
+  "native_verification": "docs/native_figure_update_verification.json"
+}

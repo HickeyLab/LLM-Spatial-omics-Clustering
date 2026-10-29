@@ -1,5 +1,10 @@
 # Figure 2, Panel E — Regional weighted F1
 
+> **Publication boundary:** This document describes the later module function
+> `load_panel_e_metrics`, not the embedded publication panel E. That panel
+> displays post-hoc selected reference agreement, not weighted F1. See
+> [the publication metric audit](figure_02_publication_metrics.md).
+
 ## Scope
 
 Panel E compares the four configured clustering methods across the eight B004
@@ -10,7 +15,7 @@ evaluation classes.
 
 ## Calculation
 
-For every method and tissue region separately, the notebook assigns each
+For every method and tissue region separately, the module assigns each
 cluster its most frequent harmonized reference label. It then computes
 precision, recall, and F1 for every reference class present in that region;
 the panel's regional statistic is the reference-cell-count-weighted mean of
@@ -34,10 +39,11 @@ coverage against the frozen assignment manifest before calculating this panel.
 
 ## Reproduction
 
-The Figure 2 loader downloads the H5AD into its ignored Duke cache when absent;
-the exact assignment inputs are version controlled. Run
-[`figure_02_clustering_method_benchmark.ipynb`](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb)
-to rebuild the panel from those validated inputs.
+The later Figure 2 module loader downloads the H5AD into its ignored Duke cache when absent;
+the exact assignment inputs are version controlled. Use `load_panel_e_metrics`, `render_panel_e` and `save_panel_e_provenance` in
+`src/llm_spatial_omics_clustering/figure_02.py` for this reconstruction. The
+current notebook is another reconstruction and does not produce the embedded
+publication E/G metrics.
 
-The cell writes the regional score table, PNG, PDF, and JSON provenance record
+The module helpers write the regional score table, PNG, PDF, and JSON provenance record
 to `outputs/figure_02/`; those generated artifacts stay local and gitignored.

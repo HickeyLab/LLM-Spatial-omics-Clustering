@@ -1,0 +1,282 @@
+{
+    "0": [
+        "aSMA",
+        "SOX9",
+        "CollagenIV",
+        "CD90"
+    ],
+    "1": [
+        "Synaptophysin",
+        "CD56",
+        "CD90",
+        "Podoplanin"
+    ],
+    "2": [
+        "CHGA",
+        "CD15",
+        "aDefensin5",
+        "CD19"
+    ],
+    "3": [
+        "CD49a",
+        "aSMA",
+        "CollagenIV",
+        "CD44"
+    ],
+    "4": [
+        "aSMA",
+        "CD49a",
+        "CollagenIV",
+        "CD90"
+    ],
+    "5": [
+        "CD31",
+        "CD34",
+        "CD36",
+        "CollagenIV"
+    ],
+    "6": [
+        "aSMA",
+        "CollagenIV",
+        "CD90"
+    ],
+    "7": [
+        "Podoplanin",
+        "CD90",
+        "CD56",
+        "CD44"
+    ],
+    "8": [
+        "Synaptophysin",
+        "CD90",
+        "CD56"
+    ],
+    "9": [
+        "CD49a",
+        "aSMA",
+        "CHGA",
+        "aDefensin5"
+    ],
+    "10": [
+        "CD4",
+        "CD3",
+        "CD45",
+        "CD44"
+    ],
+    "11": [
+        "CollagenIV",
+        "CD90",
+        "CD49a",
+        "CD36"
+    ],
+    "12": [
+        "CD3",
+        "CD45",
+        "BCL2",
+        "CD8"
+    ],
+    "13": [
+        "CD31",
+        "CD36",
+        "CD34",
+        "CollagenIV"
+    ],
+    "14": [
+        "CD44",
+        "CollagenIV",
+        "Podoplanin",
+        "CD90"
+    ],
+    "15": [
+        "Cytokeratin",
+        "ITLN1",
+        "CD49f"
+    ],
+    "16": [
+        "CD7",
+        "CD49f",
+        "Cytokeratin"
+    ],
+    "17": [
+        "CollagenIV"
+    ],
+    "18": [
+        "MUC1",
+        "ITLN1",
+        "SOX9",
+        "CD49f"
+    ],
+    "19": [
+        "CollagenIV",
+        "Vimentin",
+        "CD44",
+        "CD36"
+    ],
+    "20": [
+        "CD38",
+        "CD138",
+        "BCL2",
+        "CD44"
+    ],
+    "21": [
+        "MUC2",
+        "SOX9"
+    ],
+    "22": [
+        "Cytokeratin",
+        "MUC2",
+        "CD49f",
+        "ITLN1"
+    ],
+    "23": [
+        "Synaptophysin",
+        "CD56",
+        "CD90",
+        "CD49f"
+    ],
+    "24": [
+        "CD21",
+        "CD57",
+        "BCL2",
+        "CD44"
+    ],
+    "25": [
+        "ITLN1",
+        "SOX9",
+        "Ki67",
+        "Cytokeratin"
+    ],
+    "26": [
+        "CHGA",
+        "Synaptophysin",
+        "SOX9",
+        "Cytokeratin"
+    ],
+    "27": [
+        "CD31",
+        "aSMA",
+        "CollagenIV",
+        "CD34"
+    ],
+    "28": [
+        "CD44",
+        "CD138",
+        "CD38",
+        "aSMA"
+    ],
+    "29": [
+        "CD11c",
+        "HLA-DR",
+        "CD45",
+        "CD4"
+    ],
+    "30": [
+        "Synaptophysin",
+        "CD90",
+        "CD56",
+        "CD44"
+    ],
+    "31": [
+        "CD117",
+        "Vimentin"
+    ],
+    "32": [
+        "CD4",
+        "CD45",
+        "CD3",
+        "Vimentin"
+    ],
+    "33": [
+        "aSMA",
+        "CollagenIV",
+        "CD49a",
+        "CD90"
+    ],
+    "34": [
+        "CD68",
+        "CD66",
+        "MUC1",
+        "CD49f"
+    ],
+    "35": [
+        "CD16",
+        "CD163",
+        "CD206"
+    ],
+    "36": [
+        "MUC1",
+        "SOX9",
+        "ITLN1",
+        "CD49f"
+    ],
+    "37": [
+        "Podoplanin",
+        "Vimentin"
+    ],
+    "38": [
+        "SOX9",
+        "CD49f",
+        "Cytokeratin",
+        "CD66"
+    ],
+    "39": [
+        "CD206",
+        "CD163",
+        "Vimentin"
+    ],
+    "40": [
+        "HLA-DR",
+        "CD68",
+        "CD206",
+        "CD163"
+    ],
+    "41": [
+        "Vimentin",
+        "CD34"
+    ],
+    "42": [
+        "CD36",
+        "CD31",
+        "CollagenIV",
+        "CD34"
+    ],
+    "43": [
+        "SOX9",
+        "ITLN1",
+        "CD49f",
+        "Cytokeratin"
+    ],
+    "44": [
+        "CD66",
+        "CD49f",
+        "CD68",
+        "CD7"
+    ],
+    "45": [
+        "Cytokeratin"
+    ],
+    "46": [
+        "CD45",
+        "CD7",
+        "CD3",
+        "CD8"
+    ],
+    "47": [
+        "CD127",
+        "CD16",
+        "CD57",
+        "CD45RO"
+    ],
+    "48": [
+        "MUC1",
+        "SOX9",
+        "ITLN1",
+        "Ki67"
+    ],
+    "49": [
+        "SOX9",
+        "MUC1",
+        "ITLN1",
+        "CD49f"
+    ]
+}

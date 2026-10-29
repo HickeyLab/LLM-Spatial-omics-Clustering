@@ -1,0 +1,22 @@
+--- a/revision_20261021/src/llm_spatial_omics_clustering/revision/segmentation.py
++++ b/revision_20261021/src/llm_spatial_omics_clustering/revision/segmentation.py
+@@ -405,14 +405,17 @@
+         block = primary_stats[primary_stats.clustering == backend]
+         values = block.pivot(index="cell_type", columns="method", values="mean_difference").reindex(index=labels, columns=methods)
+         q_values = block.pivot(index="cell_type", columns="method", values="q_value").reindex(index=labels, columns=methods)
+-        im = ax.imshow(values.to_numpy() * 100, cmap="RdBu_r", vmin=-maximum, vmax=maximum, aspect="auto")
++        im = ax.imshow(values.to_numpy() * 100, cmap="RdYlGn", vmin=-maximum, vmax=maximum, aspect="auto")
+         for yi in range(len(labels)):
+             for xi in range(len(methods)):
+                 value = values.iloc[yi, xi]
+                 if np.isfinite(value):
+                     star = "*" if q_values.iloc[yi, xi] < .05 else ""
++                    rgb = np.asarray(im.cmap(im.norm(value * 100))[:3])
++                    linear = np.where(rgb <= .04045, rgb / 12.92, ((rgb + .055) / 1.055) ** 2.4)
++                    text_color = "black" if float(linear @ [.2126, .7152, .0722]) > .179 else "white"
+                     ax.text(xi, yi, f"{round(value * 100)}{star}", ha="center", va="center", fontsize=16,
+-                            color="white" if abs(value * 100) > .62 * maximum else "black")
++                            color=text_color)
+         ax.set_xticks(range(len(methods)), methods, rotation=40, ha="right")
+         ax.set_yticks(range(len(labels)), labels, fontsize=16)
+         ax.set_title("MiniSom/Ward" if backend == "FlowSOM" else backend)

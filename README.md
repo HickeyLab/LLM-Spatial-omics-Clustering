@@ -14,7 +14,7 @@ table below.
 | Figure 1 | [`figure_01_spillover_compensation.ipynb`](notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
 | Figure 2 | [`figure_02_clustering_method_benchmark.ipynb`](notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
 | Figure 3 | [`figure_03_llm_annotation_benchmark.ipynb`](notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
-| Figure 4 | [`figure_04_leiden_gpt_end_to_end.ipynb`](notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb) |
+| Figure 4 | [`figure_04_leiden_claude_end_to_end.ipynb`](notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb) |
 | Supplementary Figure S1 | [`figure_s01_clustering_metrics.ipynb`](notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
 | Supplementary Figure S2 | [`figure_s02_spatial_celltypes.ipynb`](notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
 | Supplementary Figure S3 | [`figure_s03_clustering_inputs_and_diagnostics.ipynb`](notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb) |
@@ -24,8 +24,9 @@ table below.
 | Supplementary Note 1 | [`supplementary_note_01_llm_cluster_annotation.ipynb`](notebooks/final_figures/supplementary_note_01_llm_cluster_annotation.ipynb) |
 
 Figures 1, S1, and S2, Tables S1–S2, and Supplementary Note 1 contain embedded
-executed outputs; Figures 2–4 and S3–S4 display validated publication previews
-and are not stored as executed notebooks.
+executed outputs. Figures 2–3 and S3–S4 display validated publication previews.
+Figure 4 reconstructs the frozen historical Claude results and keeps its source
+notebook outputs empty, with a separate execution receipt.
 
 Validated publication previews and their audit hashes are available in
 [`notebooks/final_figures/previews/`](notebooks/final_figures/previews/README.md).
@@ -82,7 +83,7 @@ repository-relative `data/processed/` directory before running the Figure 1,
 S1, or S2 notebooks. Published filenames, byte sizes, and MD5 checksums are
 recorded in [`configs/duke_record_565_manifest.json`](configs/duke_record_565_manifest.json).
 
-Figures 2--4 and Supplementary Figures S3--S4 download and checksum-validate
+Figures 2--3 and Supplementary Figures S3--S4 download and checksum-validate
 `20260130_HuBMAP_experted_annotated.h5ad` from [Duke Research Data Repository
 record 505](https://research.repository.duke.edu/record/505). Their normal
 analytical replay loads the exact source-traced clustering partitions tracked
@@ -92,7 +93,14 @@ Leiden, FlowSOM, SpatialSort, and PIXIE. The notebooks validate decompressed
 source hashes and the shared 220,082-cell key set; they do not download the
 roughly 46 GiB TIFF collection or rerun the upstream clustering engines.
 
-The annotation notebooks require an OpenRouter API key in live mode or the
+The historical Figure 4 replay uses only the verified local reference H5AD,
+frozen Leiden assignments and the existing audited Claude cluster-label map.
+It requires no API key and has no inference or fitting mode. The old GPT-named
+Figure 4 notebook forwards to the Claude notebook. See the
+[replay instructions and provenance](docs/figure_04_historical_claude_replay.md)
+and [execution verification](docs/figure_04_historical_claude_execution.json).
+
+Other annotation notebooks require an OpenRouter API key in live mode or the
 corresponding cached raw response bundles. Supply a live key through the
 environment:
 
@@ -114,3 +122,9 @@ H5AD inputs.
 
 Generated tables, panels, download receipts, and raw model responses are
 written under `outputs/` and remain ignored by Git.
+
+## Revision synchronization
+
+[Repository sync status](docs/repository_sync_status_20261029.md) distinguishes
+changes on the revision branch, changes awaiting merge into `main`, and newer
+local research artifacts that still need a versioned release.
