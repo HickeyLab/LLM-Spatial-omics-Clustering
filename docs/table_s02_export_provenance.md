@@ -54,3 +54,7 @@ and the exact boundaries of this verification are in `table_s02_export_audit.jso
 Matching Methods, Results, Discussion, limitation and caption wording is in
 `table_s02_manuscript_wording.md`. The raw source CSV retains its original
 `PIXIE-style adaptation` field and byte checksum for compatibility.
+
+The current table uses the same IEEE-style presentation as S1, retaining all
+four parts as editable tables over two pages. All provenance wording and source
+values are preserved. See `table_s02_ieee.md` for layout and verification.

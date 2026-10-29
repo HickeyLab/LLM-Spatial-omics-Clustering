@@ -9,6 +9,9 @@ areas. Figures S5C and S7 are separately rendered from 336 and 32 frozen results
 with their revised palettes and labels. All numerical values are retained.
 Table S1 is a verified IEEE-style rendering of the current editable manuscript
 table, with all 45 cells and all caption words preserved during formatting.
+The current S2 style is shown in `table_s02_ieee_page_1.png` and
+`table_s02_ieee_page_2.png`; the earlier `table_s02.png` remains the historical
+label-overlay snapshot for reproducibility.
 
 The revised map headings use **Reference annotations**. Confusion-matrix
 reference axes use **Reference cell type**. Original dataset labels and
@@ -98,3 +101,7 @@ centered caption above, explanatory notes below, horizontal rules and no
 shading or vertical borders. Its editable DOCX and native HTML are generated
 from the current manuscript cells. See
 [the S1 presentation notes](../../../docs/table_s01_presentation.md).
+
+Table S2 uses the same IEEE-style convention across two readable, editable
+pages. All 135 cells and the provenance notes are preserved. See
+[the S2 presentation notes](../../../docs/table_s02_ieee.md).

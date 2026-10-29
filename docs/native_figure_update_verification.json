@@ -34,7 +34,8 @@
       ],
       "RGB_RMSE_against_Lanczos_scaled_source": 5.1009789526460345,
       "native_sha256": "85d884fbf19eec3f491e6104b3346f29f6801bedab9adcc8ddef75dc566ed305",
-      "native_media_precedes_caption": true
+      "native_media_precedes_caption": true,
+      "historical_image_replaced_by_editable_tables": true
     }
   ],
   "text_suggestions_pending_review": true,
@@ -64,5 +65,20 @@
     48,
     49
   ],
-  "layout_review": "All requested images fit without clipping; editable S1 and its unchanged caption share page 44. S2 image precedes its caption. New wording remains reviewable as suggestions."
+  "layout_review": "All requested images fit without clipping; editable S1 and its unchanged caption share page 44. S2 image precedes its caption. New wording remains reviewable as suggestions.",
+  "Table_S2": {
+    "editable_tables": 4,
+    "parts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "all_135_cells_preserved": true,
+    "style": "IEEE style matching Table S1",
+    "pages": 2,
+    "all_provenance_notes_preserved": true,
+    "caption_edits_accepted_for_reformatting": true,
+    "verification": "docs/table_s02_ieee_audit.json"
+  }
 }
