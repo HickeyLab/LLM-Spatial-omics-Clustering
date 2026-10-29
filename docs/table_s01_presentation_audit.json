@@ -1,0 +1,25 @@
+{
+  "source": "Current manuscript Google Docs DOCX export, 2026-10-28",
+  "document_id": "1aqZgv5aFS-fgXT2KnZw3CXcxD_W3X1HgjRz_KXf1L18",
+  "source_docx_sha256": "847dfbaae3631a3c4f694816da5c821701bd52a077dfdd81fd98e00d95cae9e7",
+  "source_table_xml_sha256": "1494932b8d06e842beb2d4f0fe6e118f3d40642b71da8f3aed82520b29be5937",
+  "table_dimensions": [
+    9,
+    5
+  ],
+  "unchanged_cells": 45,
+  "caption_unchanged": true,
+  "scope": "Formatting only. Original editable native table content preserved.",
+  "historical_notebook": "The older three-column configuration table is a distinct historical presentation and is not substituted for the current native table.",
+  "native_status": "Prepared. Formatting is pending manual Mac unlock.",
+  "editable_docx_cells_match_current_manuscript": true,
+  "rendered_pdf_cells_match_current_manuscript": true,
+  "rendered_pages": 1,
+  "no_fixed_row_heights": true,
+  "repeating_header": true,
+  "native_editable_html_cells": 45,
+  "sanitizer": "Removed one unused Title-style border, no table or caption text changes.",
+  "preview_sha256": "3249d364562a982d13628eaba4e3b0004aac694e3af8781a7bf987a3b833670d",
+  "editable_docx_sha256": "ea278e92a4c09d8ddb38d6012b1593953be07c00dfb1d115c6a91b4f5ada905a",
+  "visual_review": "All text, column alignment, padding, wrapping, borders and caption inspected on the one rendered page."
+}

@@ -7,6 +7,8 @@ are committed so reviewers can inspect the results on GitHub without rerunning
 an analysis. Nine previews preserve every pixel outside 54 declared overlay
 areas. Figures S5C and S7 are separately rendered from 336 and 32 frozen results
 with their revised palettes and labels. All numerical values are retained.
+Table S1 is a verified rendering of the current editable manuscript table,
+with all 45 cells and its caption preserved during formatting.
 
 The revised map headings use **Reference annotations**. Confusion-matrix
 reference axes use **Reference cell type**. Original dataset labels and
@@ -90,3 +92,8 @@ Figure S5C uses the same RdYlGn family, with the original symmetric limits
 centered on zero for signed changes in F1. Both backends share the same scale.
 S5A/B categorical series colors are preserved. See
 [the S5 palette and source notes](../../../docs/figure_s05_color_scale.md).
+
+Table S1 uses consistent typography, deliberate column widths, a restrained
+header, subtle field shading and light gray rules. Its editable DOCX and native
+HTML are generated from the current manuscript cells. See
+[the S1 presentation notes](../../../docs/table_s01_presentation.md).

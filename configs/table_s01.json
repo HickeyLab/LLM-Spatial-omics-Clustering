@@ -1,0 +1,27 @@
+{
+  "data": "data/frozen/table_s01/manuscript_table.json",
+  "data_sha256": "890463610200d233b6715f048181ea2dd483c2dfd5a50e414019b6731689b863",
+  "column_width_inches": [
+    1.15,
+    1.3375,
+    1.3375,
+    1.3375,
+    1.3375
+  ],
+  "font": "Arial",
+  "font_size_pt": 9.5,
+  "header_font_size_pt": 10,
+  "header_fill": "EAF0F5",
+  "field_fill": "F5F7F9",
+  "body_fill": "FFFFFF",
+  "text_color": "17212B",
+  "border_color": "D9D9D9",
+  "cell_padding_twips": {
+    "top": 100,
+    "bottom": 100,
+    "left": 90,
+    "right": 90
+  },
+  "line_spacing": 1.08,
+  "preview": "notebooks/final_figures/previews/table_s01.png"
+}
