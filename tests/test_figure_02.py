@@ -81,7 +81,7 @@ class Figure02ContractTests(unittest.TestCase):
         self.assertEqual(len(panel_b["labels"]["expected_counts"]), 27)
         self.assertEqual(
             panel_b["data"]["h5ad_sha256"],
-            "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49",
+            "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a",
         )
         self.assertEqual(panel_b["data"]["h5ad_filename"], "20260130_HuBMAP_experted_annotated.h5ad")
         self.assertTrue(panel_b["data"]["download"])

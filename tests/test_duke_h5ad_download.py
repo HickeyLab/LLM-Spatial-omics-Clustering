@@ -39,7 +39,7 @@ class DukeH5ADDownloadTests(unittest.TestCase):
         )
         self.assertEqual(
             duke_h5ad.DUKE_H5AD_SHA256,
-            "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49",
+            "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a",
         )
 
     def test_download_extracts_only_the_declared_member_and_writes_receipt(self) -> None:

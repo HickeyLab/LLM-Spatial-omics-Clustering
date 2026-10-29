@@ -9,16 +9,19 @@ the versioned source tree.
 - `figure_01_spillover_compensation.ipynb`
 - `figure_02_clustering_method_benchmark.ipynb`
 - `figure_03_llm_annotation_benchmark.ipynb`
-- `figure_04_leiden_gpt_end_to_end.ipynb`
+- `figure_04_leiden_claude_end_to_end.ipynb` (historical frozen Claude replay)
+- `figure_04_leiden_gpt_end_to_end.ipynb` (compatibility redirect to the Claude notebook)
 - `figure_s01_clustering_metrics.ipynb`
 - `figure_s02_spatial_celltypes.ipynb`
 - `figure_s03_clustering_inputs_and_diagnostics.ipynb`
 - `figure_s04_annotation_diagnostics.ipynb`
 
 Figure 1 and Supplementary Figures S1--S2 retain verified executed outputs.
-The active Figure 2--4 and S3--S4 notebooks display hash-verified publication
-previews from the validated run; their code-cell execution state remains empty
-until a reviewer performs a full local rebuild.
+The active Figure 2--3 and S3--S4 notebooks display hash-verified publication
+previews from the validated run. Figure 4 instead verifies and redraws its
+frozen historical Claude results. The canonical source notebooks keep empty
+code-cell outputs. Executed Figure 4 validation is recorded in
+[`figure_04_historical_claude_execution.json`](../../docs/figure_04_historical_claude_execution.json).
 
 ## Supporting notebooks
 
@@ -39,7 +42,7 @@ table panels from a clean clone. Generated files are written under
 The small `previews/` collection is intentionally tracked for review. Its
 files are output snapshots, never runtime inputs.
 
-Before replaying Figures 2--4 or S3--S4, the notebooks acquire the verified
+Before replaying Figures 2--3 or S3--S4, the notebooks acquire the verified
 Duke record 505 H5AD and validate the tracked source-traced assignments under
 `data/frozen/v3_k300_assignments/`. The replay does not download the paired
 B004 OME-TIFF inputs or rerun clustering. All methods targeted K=300; the
@@ -65,3 +68,20 @@ evidence rather than proof that the new local path has been executed.
 
 Shared clustering and validation code lives in
 `src/llm_spatial_omics_clustering/final_figures_runtime/`.
+
+## Historical Figure 4 model identity
+
+Figure 4 uses **Leiden–Claude**, specifically the archived `leiden__claude`
+prediction column. The canonical entry point is
+[figure_04_leiden_claude_end_to_end.ipynb](figure_04_leiden_claude_end_to_end.ipynb).
+The old GPT filename forwards to it for compatibility and does not select GPT
+predictions. The original GPT reconstruction is retained in the local author
+backup rather than presented as the manuscript's Figure 4 replay.
+
+This replay uses only the exact frozen Leiden assignment, the existing audited
+300-cluster Claude label map and the SHA-256-verified reference H5AD. No API key
+is needed. It has no live-inference or fitting mode. Set `FIGURE4_H5AD_PATH` only
+if the verified reference H5AD is stored outside its default repository path.
+Numerical reconstruction and provenance are documented in
+[figure_04_historical_claude_replay.md](../../docs/figure_04_historical_claude_replay.md).
+The separate publication preview is an output snapshot, never an analysis input.

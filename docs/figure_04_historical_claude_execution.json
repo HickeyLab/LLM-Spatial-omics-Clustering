@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-29",
+  "executions": [
+    {
+      "entry_point": "canonical",
+      "source": "notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb",
+      "source_sha256": "9bc7d1523f3c37cba0decc857c4594b26da4b96a152a52c34e72d936bddc7622",
+      "errors": 0,
+      "external_network_connections": 0,
+      "executed_code_cells": 11,
+      "rendered_images": 5,
+      "recomputed_cells": 220082,
+      "frozen_claude_clusters": 300,
+      "historical_matches": 123099,
+      "minority_matches": 7486,
+      "inference_calls": 0,
+      "classifier_fits": 0,
+      "clustering_fits": 0,
+      "executed_notebook_retained": "author workspace only"
+    },
+    {
+      "entry_point": "compatibility",
+      "source": "notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb",
+      "source_sha256": "c84d3c88962346dbe021ef143e4d65fb9a25e74123e3a9dae85ad112f9e03e13",
+      "errors": 0,
+      "external_network_connections": 0,
+      "executed_code_cells": 3,
+      "rendered_images": 5,
+      "recomputed_cells": 220082,
+      "frozen_claude_clusters": 300,
+      "historical_matches": 123099,
+      "minority_matches": 7486,
+      "inference_calls": 0,
+      "classifier_fits": 0,
+      "clustering_fits": 0,
+      "executed_notebook_retained": "author workspace only"
+    }
+  ],
+  "scope": "Executed in an isolated clean worktree based on the current GitHub revision branch. No raw data or executed notebook binaries are included in this code commit.",
+  "regression_tests_passed": 11,
+  "independent_metric_verification": {
+    "method": "sklearn confusion_matrix and f1_score",
+    "cohorts": 9,
+    "all_confusion_counts_exact": true,
+    "f1_absolute_tolerance": 1e-15,
+    "source": "Existing local Figure 4 verification recomputed on the identical pinned cells and labels."
+  },
+  "replay_source_sha256": "5fc201b3b01136a43df12b54a6c305821e69585b33bee84d2efdc2e67add43be",
+  "frozen_contract": {
+    "schema_version": "figure04.frozen_historical_claude_contract.v1",
+    "focal_pair": {
+      "clustering_method": "leiden",
+      "model_key": "claude",
+      "display": "Leiden\u2013Claude",
+      "historical_prediction_column": "leiden__claude"
+    },
+    "frozen_inputs": {
+      "cluster_counts": {
+        "path": "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv",
+        "sha256": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+      },
+      "assignments": {
+        "path": "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz",
+        "sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387"
+      },
+      "count_audit": {
+        "path": "docs/leiden_claude_diagnostic_identity_audit.json",
+        "sha256": "7e356628e1fff4d1e229ffaf786335a5c16663703e7b001b1d06ec3fbfa7a5a5"
+      }
+    },
+    "assignment_csv_sha256": "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18",
+    "reference_h5ad": {
+      "path": "data/raw/duke_research_repository/20260130_HuBMAP_experted_annotated.h5ad",
+      "sha256": "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a",
+      "record": "https://research.repository.duke.edu/record/505"
+    },
+    "publication_preview": {
+      "path": "notebooks/final_figures/previews/figure_04.png",
+      "sha256": "e28a65852072f7e397d0ecd08f58b36d5f16843424310c314bc0ece5939f3cd3",
+      "role": "Separate publication-layout output snapshot. Never an analytical replay input."
+    },
+    "example_clusters": [
+      "6::4",
+      "33::6",
+      "4::4"
+    ],
+    "regions": {
+      "2e65eeef2dd18bee2a0baf1cec6d35a1": {
+        "name": "Ileum",
+        "color": "#003F5C"
+      },
+      "5318485b16983482401c3be24b6c42ad": {
+        "name": "Proximal jejunum",
+        "color": "#2F4B7C"
+      },
+      "63d000170e475af142f6e8673de5eb0f": {
+        "name": "Sigmoid colon",
+        "color": "#665191"
+      },
+      "768b7adb649959b6a4e354867595032d": {
+        "name": "Transverse colon",
+        "color": "#A05195"
+      },
+      "76d3efd17b6fc83aaac13e961824c5ae": {
+        "name": "Ascending colon",
+        "color": "#D45087"
+      },
+      "8da8f27977d946b8c912d42c8827b55c": {
+        "name": "Mid-jejunum",
+        "color": "#F95D6A"
+      },
+      "ae422532f260b3d6fc662aae69b05d33": {
+        "name": "Descending colon",
+        "color": "#FF7C43"
+      },
+      "dceadbb36871071f30c308ca091fbdc8": {
+        "name": "Duodenum",
+        "color": "#FFA600"
+      }
+    },
+    "interpretation": "Historical reference agreement on a retrospectively selected partition. The primary replay uses the historical 21-label vocabulary including Noise. Original-28 scores are a vocabulary-mismatch diagnostic. The arithmetic components are not causal attributions. No new inference, fitting, tuning or clustering is performed.",
+    "canonical_notebook": "notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb",
+    "compatibility_notebook": "notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb"
+  }
+}

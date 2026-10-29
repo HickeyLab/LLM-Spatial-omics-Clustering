@@ -33,8 +33,11 @@ reference vocabularies and plotted values are unchanged.
 Figure S8 labels the corrected identity explicitly and uses the three exact
 metric names above. Its original image is retained as a checksum-verified
 source snapshot solely to reproduce the display-label changes. Later package
-notebook reconstructions are distinct and are not relabelled as these
-publication diagnostics.
+notebook reconstructions originally used a separate GPT workflow. The
+canonical Figure 4 notebook now replays the frozen historical Claude map
+and checks both reference vocabularies against this audit. The prior GPT
+reconstruction is retained only in the local author backup. See the
+[Figure 4 replay contract](figure_04_historical_claude_replay.md).
 
 ## Verification and provenance
 

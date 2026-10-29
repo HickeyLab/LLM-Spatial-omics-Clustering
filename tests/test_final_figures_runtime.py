@@ -55,12 +55,11 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
         source_rebuild_names = (
             "figure_02_clustering_method_benchmark.ipynb",
             "figure_03_llm_annotation_benchmark.ipynb",
-            "figure_04_leiden_gpt_end_to_end.ipynb",
             "figure_s03_clustering_inputs_and_diagnostics.ipynb",
             "figure_s04_annotation_diagnostics.ipynb",
         )
         active = [notebook_root / name for name in source_rebuild_names]
-        self.assertEqual(len(active), 5)
+        self.assertEqual(len(active), 4)
         for path in active:
             notebook = json.loads(path.read_text(encoding="utf-8"))
             source = "\n".join(
@@ -74,7 +73,7 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
             self.assertIn("FROZEN_ASSIGNMENT_MANIFEST", source, path.name)
             self.assertIn("_load_frozen_assignments", source, path.name)
             self.assertIn(
-                'EXPECTED_H5AD_SHA256 = "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49"',
+                'EXPECTED_H5AD_SHA256 = "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a"',
                 source,
                 path.name,
             )
