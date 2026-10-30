@@ -4,6 +4,16 @@ The canonical figure notebooks, visible results, input contracts, and shared
 analysis code are kept together here. Raw data and generated run artifacts are
 excluded from Git.
 
+## October 2026 revision outputs
+
+The [versioned revision release](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/releases/tag/revision-2026-10-30-v1)
+provides frozen model outputs, available request and failure records, settings,
+analysis source and supporting tables in seven hash-manifested archives.
+The [release guide](docs/revision_public_deposition_20261030.md) explains retrieval,
+protocol boundaries and the offline replay command. The notebook table below
+retains the earlier figure numbering. Use the release guide for the expanded
+revision analyses, including donor transfer and the additional supplements.
+
 ## Start here
 
 No setup is needed to inspect the results on GitHub. Open a notebook in the
