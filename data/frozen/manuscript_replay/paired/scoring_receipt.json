@@ -1,0 +1,63 @@
+{
+  "status": "complete",
+  "finished_at": "2026-10-29T01:11:57.131637+00:00",
+  "planned_calls": 384,
+  "status_counts": {
+    "completed": 331,
+    "invalid_output": 53
+  },
+  "valid_cluster_annotations": 25978,
+  "planned_cluster_annotations": 27504,
+  "prediction_maps": 96,
+  "repeats_per_condition": 3,
+  "provider_reported_cost_usd": 15.05326542882,
+  "held_or_charged_usd": 15.05326542882,
+  "positive_mean_comparisons": 1,
+  "negative_mean_comparisons": 15,
+  "metric_sha256": {
+    "regional_metrics.csv": "726b541aed15a8fcac100a0c8acf3268291dd38c9acd0084736e529767c79e5c",
+    "pooled_metrics.csv": "4a614686d18e3085698b190f03d7693df5ad380fde3710f2319b32f58a8ff868",
+    "cell_type_metrics.csv": "77dfcdffb5fcd42999f7c886aa510326c971df098270472bb984c54ddf834878",
+    "label_changes.csv": "d55ab66316c25b4ef7860eb1754758d14fb8146d0b0c4cb9cd7882fe4456e2fe",
+    "repeat_consistency.csv": "bbeec2ac6d2b41b7425a22fee132d73ac46e1bf2d80622724f06b95a7ee64369",
+    "paired_repeat_metrics.csv": "04b38a3690b2255b354e27abb783a6165b4ff16272dca974eeb99ff384a11ce0",
+    "paired_summary.csv": "aea9731123c51850679f539e3576fa6f84def6793330c1cb0383b753ebfdb559"
+  },
+  "reference_sha256": "f4ca2a07e72e50cd105e0973c461116d5e6f29f9909166b6baf85ccb44b595d2",
+  "prediction_freeze_sha256": "41649ac87b2c7711d959ae03e94a8df0e5f3f030559a3961959c51bf54dd8866",
+  "scorer_sha256": "5a6390c6d20f9b2757e546e0681dad917a4c1afb9013b45b0c99b2415114dea3",
+  "new_model_calls_during_scoring": 0,
+  "new_fits": 0,
+  "cost_amendment_sha256": "408a781a418f51dd4c2c6470405474fb88e10568ae4f49da50d7b687d43b93cc",
+  "out_of_scope_dispatch": {
+    "required_requests_settled": 384,
+    "reason": "Three-repeat cost amendment; no comparative reference scores used.",
+    "stop_signal": "SIGINT after all required raw responses and charges were persisted",
+    "dispatcher_pid": 59543,
+    "out_of_scope_requests_already_dispatched": [
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gpt/all_means_fractions/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gpt/all_means/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/claude/all_means_fractions/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/claude/all_means/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gemini/all_means/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gemini/all_means_fractions/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/deepseek/all_means/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/deepseek/all_means_fractions/3/0",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gpt/all_means/3/75"
+    ],
+    "out_of_scope_held_or_charged_usd": 1.3693618192600001,
+    "required_held_or_charged_usd": 15.053265428819994,
+    "out_of_scope_response_status_at_stop": {
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gpt/all_means_fractions/3/0": "completed",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gpt/all_means/3/0": "completed",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/claude/all_means_fractions/3/0": "completed",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/claude/all_means/3/0": "completed",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gemini/all_means/3/0": "completed",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gemini/all_means_fractions/3/0": "inflight",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/deepseek/all_means/3/0": "inflight",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/deepseek/all_means_fractions/3/0": "inflight",
+      "paired-means-fractions-20261028-v1/paired/B004/leiden/gpt/all_means/3/75": "inflight"
+    }
+  },
+  "scope": "Two test regions from one previously examined donor. Full-cohort fixed clustering/profiles. Repeats measure API variation, not independent biological replication."
+}

@@ -4,8 +4,9 @@ This is the complete current manuscript artwork set, using the reconciled
 Figure 1–5 and S1–S10 numbering. S3 is supplied as three separate panel files,
 so the 15 figures occupy 17 PNG files. Sources were checked against the current
 manuscript export on 2026-10-31, including its newer Figure 4, S3C, S6 and S7
-artwork. This directory uses manuscript numbering. The older analytical
-notebooks retain their existing identifiers.
+artwork. This directory and the current notebook index use manuscript numbering.
+Earlier analytical notebook versions are preserved in
+`notebooks/historical_reconstructions/`.
 
 Figure numbers and figure-level titles belong in the separate manuscript
 captions. They are removed from 10 images here. Panel headings, panel letters,
@@ -29,12 +30,9 @@ python scripts/render_manuscript_figures.py --check
 The script does no analysis, clustering, scoring, fitting or model inference.
 Validation is recorded in `docs/figure_title_cleanup_verification.json`.
 
-The three affected historical notebook previews (S4, S7 and S8) are also
-caption-free. These notebook labels differ from the reconciled manuscript
-numbering. S7's PNG renderer retains a checksum-pinned publication raster so
-font or Matplotlib-version differences cannot redraw its panels during this
-formatting change. Its analytical builder still supports reconstruction from
-the same 32 frozen condition results and omits the figure-level title.
+Current notebook previews are byte-identical copies of all 17 images here.
+Earlier preview overlays and numbering are preserved as historical records.
+See [the current preview policy](../../notebooks/final_figures/previews/README.md).
 
 Figure 3A additionally restores the manuscript's original Cluster Features ->
 Optimization artwork. The source snapshot and checksums were updated, while

@@ -1,0 +1,10 @@
+{
+  "source_audit_sha256": "aeb1b623339ced3e1a8b52905dd0260e2b4a9baefacf8e9075d0715dedf516e8",
+  "artifacts": {
+    "decomposition.png": "f568f08d610fa928e2f2bb79dc5dae22f68a89d694449547de5693d658527154",
+    "interpretation.txt": "c228461e46006108951d29d0963ab22c3ce1132f22b5f6c178291600d5f367e5"
+  },
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "network_access": false
+}

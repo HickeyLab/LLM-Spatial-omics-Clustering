@@ -1,0 +1,42 @@
+{
+  "frozen_at": "2026-10-25T16:42:58.699676+00:00",
+  "selection_regions": [
+    "5318485b16983482401c3be24b6c42ad",
+    "dceadbb36871071f30c308ca091fbdc8"
+  ],
+  "test_labels_used": false,
+  "request_file_sha256": "5bd8d1998182dca3b49983af882e7a73f43be451384900353b8c72ab4a2b94bf",
+  "requests": 128,
+  "selection_metric": "Mean calibration-region delivered agreement; missing predictions count as errors.",
+  "development_model": "deepseek/deepseek-v4-flash",
+  "choices": {
+    "leiden": {
+      "method": "leiden",
+      "candidate": "top3_fraction0",
+      "k": 3,
+      "fraction": 0,
+      "actual_mean_markers": 2.8733333333333335
+    },
+    "flowsom": {
+      "method": "flowsom",
+      "candidate": "top12_fraction0",
+      "k": 12,
+      "fraction": 0,
+      "actual_mean_markers": 11.11
+    },
+    "spatialsort": {
+      "method": "spatialsort",
+      "candidate": "top6_fraction0.25",
+      "k": 6,
+      "fraction": 0.25,
+      "actual_mean_markers": 5.780487804878049
+    },
+    "pixie_tiff": {
+      "method": "pixie_tiff",
+      "candidate": "top3_fraction0.5",
+      "k": 3,
+      "fraction": 0.5,
+      "actual_mean_markers": 2.6166666666666667
+    }
+  }
+}

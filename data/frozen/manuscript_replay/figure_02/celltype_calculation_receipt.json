@@ -1,0 +1,144 @@
+{
+  "source_cells": 220082,
+  "noise_excluded": 10495,
+  "evaluation_cells": 209587,
+  "classes": 20,
+  "source_hashes": {
+    "truth.csv": "b305e065ced797885603bf293c6c1d4e94a6d263fcc7e70ee2fa7faa70465866",
+    "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+    "data/frozen/v3_k300_assignments/flowsom/assignments.csv.gz": "12a00cb7b4fe9bdb8d17a333c72f38cf28c473378f9defdaf4feaea97e56c6d8",
+    "data/frozen/v3_k300_assignments/spatialsort/master_spatialsort_clusters.csv.gz": "8639c66f7456ec0794ff14c5b39385a654ea8b83e926846a2ac7d822f7ed5a8a",
+    "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805"
+  },
+  "harmonization": {
+    "Epithelial": "Enterocyte",
+    "CD66+ Epithelial": "CD66+ Enterocyte",
+    "MUC1+ Epithelial": "MUC1+ Enterocyte",
+    "CD57+ Epithelial": "Enterocyte",
+    "ITLN+ Epithelial": "Goblet",
+    "TA": "Cycling TA",
+    "CD4+ T": "CD4+ T cell",
+    "Stromal": "Stroma",
+    "PDPN+ Stromal": "Lymphatic",
+    "CD36 high Endothelial": "Endothelial",
+    "CD36 low Endothelial": "Endothelial",
+    "CD49a+ Smooth muscle": "Smooth muscle",
+    "Paneth": "Goblet",
+    "M1 Macrophage": "M2 Macrophage",
+    "NK": "CD7+ Immune"
+  },
+  "mapping_scope": "one global majority-reference label per fixed cluster, pooled across all eight B004 regions; reused for F and H",
+  "tie_rule": "alphabetically first tied majority label, consistent with the new E/G tie rule",
+  "global_ties": [
+    {
+      "method": "Leiden",
+      "cluster": "41::3",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_labels": "Cycling TA|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "cluster": "165",
+      "majority_label": "Cycling TA",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "FlowSOM",
+      "cluster": "184",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_labels": "M2 Macrophage|Neutrophil|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "cluster": "54",
+      "majority_label": "Endothelial",
+      "n_cells": 873,
+      "majority_cells": 131,
+      "tied_labels": "Endothelial|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "cluster": "186",
+      "majority_label": "Enterocyte",
+      "n_cells": 11,
+      "majority_cells": 4,
+      "tied_labels": "Enterocyte|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "cluster": "208",
+      "majority_label": "Nerve",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_labels": "Nerve|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "cluster": "246",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_labels": "Endothelial|Neuroendocrine"
+    },
+    {
+      "method": "PIXIE",
+      "cluster": "278",
+      "majority_label": "Enterocyte",
+      "n_cells": 22,
+      "majority_cells": 6,
+      "tied_labels": "Enterocyte|M2 Macrophage"
+    }
+  ],
+  "legacy_tie_differences": [
+    {
+      "method": "Leiden",
+      "cluster": "41::3",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_labels": "Cycling TA|Stroma",
+      "legacy_label": "Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "cluster": "165",
+      "majority_label": "Cycling TA",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_labels": "Cycling TA|Goblet",
+      "legacy_label": "Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "cluster": "54",
+      "majority_label": "Endothelial",
+      "n_cells": 873,
+      "majority_cells": 131,
+      "tied_labels": "Endothelial|M2 Macrophage",
+      "legacy_label": "M2 Macrophage"
+    }
+  ],
+  "max_f1_change_from_legacy_tie": 0.0065552473987858795,
+  "max_recall_change_from_legacy_tie": 0.009974872458691775,
+  "F_formula": "2 TP / (2 TP + FP + FN)",
+  "H_formula": "TP / (TP + FN)",
+  "artwork_scales": {
+    "F": "fraction, 0 to 1",
+    "H": "percentage, 0 to 100"
+  },
+  "cell_count_bars": "reference support after harmonization, shared across methods and summing to 209587",
+  "checks": [
+    "all frozen assignment gzip and CSV hashes verified against manifest and archived production lineage",
+    "exact-key one-to-one cell joins",
+    "80 F1 and 80 recall entries independently checked using sklearn and confusion counts",
+    "same global label map for F and H"
+  ],
+  "new_fits": 0,
+  "new_model_calls": 0
+}

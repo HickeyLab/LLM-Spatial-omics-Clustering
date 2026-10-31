@@ -1,0 +1,9 @@
+model,condition,batches,failed_or_partial_batches,missing_cluster_cases,mean_prompt_tokens,mean_completion_tokens
+claude,all_means,48,3,3,9982.6875,796.4166666666666
+claude,all_means_fractions,48,23,947,16559.25,832.6041666666666
+deepseek,all_means,48,10,426,7565.25,579.0
+deepseek,all_means_fractions,48,2,94,14065.1875,849.25
+gemini,all_means,48,13,52,13585.8125,683.0416666666666
+gemini,all_means_fractions,48,2,4,24524.125,700.6666666666666
+gpt,all_means,48,0,0,7561.875,585.0
+gpt,all_means_fractions,48,0,0,14059.8125,585.0

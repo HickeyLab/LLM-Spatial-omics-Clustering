@@ -5,11 +5,11 @@ by the legacy `slide_name` field and pairs shared identifiers across before and
 after conditions. Its matched HuBMAP reference field is `sample_ID`. The eight
 B004-A-… identifiers correspond one-to-one to the eight B004 `File_ID` dataset
 UUIDs in the workbook-derived repository crosswalk. The File_ID grouping is
-also the actual unit used for publication S3E's ARI and AMI calculations.
+also the actual unit used for publication S4E's ARI and AMI calculations.
 
 Use **Tissue-region-level change** and **Mean across tissue regions** in
 Figure 1B. Use **Mean across tissue regions** for the three S1 metric panels.
-Use **imaged tissue region** for S3E's ARI/AMI black dots. Keep Shannon diversity
+Use **imaged tissue region** for S4E's ARI/AMI black dots. Keep Shannon diversity
 and purity cluster-level, and F1/recall cell-type-level. Do not rename the
 biological classes or the internal legacy columns/compatibility variables.
 
@@ -35,7 +35,7 @@ reproducible overlay manifest records the exact source/destination rectangles.
 
 ### Methods analysis units
 
-The clustering input tables contained 220,082 cells from eight imaged tissue regions from one donor. For Figures 1B, S1 and the regional metrics in S3E, one imaged tissue region is one B004 image dataset. The legacy fields slide_name and sample_ID store its B004-A-… region identifier, while File_ID stores the corresponding dataset UUID. These are regional observations within one donor.
+The clustering input tables contained 220,082 cells from eight imaged tissue regions from one donor. For Figures 1B, S1 and the regional metrics in S4E, one imaged tissue region is one B004 image dataset. The legacy fields slide_name and sample_ID store its B004-A-… region identifier, while File_ID stores the corresponding dataset UUID. These are regional observations within one donor.
 
 ### Figure 1B caption
 
@@ -45,7 +45,7 @@ Points show tissue-region-level changes, diamonds show the mean across tissue re
 
 Gray and blue bars show the mean across tissue regions before and after REDSEA compensation, respectively. Each point represents one imaged tissue region (n = 8), and lines connect paired measurements from the same imaged tissue region.
 
-### Figure S3E caption
+### Figure S4E caption
 
 (E) Adjusted Rand index and adjusted mutual information computed separately for each of the eight imaged tissue regions (black dots, n = 8).
 

@@ -50,6 +50,8 @@ class DukeRecord565ManifestTests(unittest.TestCase):
         manifest_filenames = {entry["filename"] for entry in manifest["files"]}
         notebook_filenames: set[str] = set()
         for notebook_path in NOTEBOOKS:
+            if notebook_path.name == 'figure_01_spillover_compensation.ipynb':
+                notebook_path = notebook_path.parents[1] / 'historical_reconstructions' / notebook_path.name
             notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
             code_source = "\n".join(
                 "".join(cell.get("source", []))
@@ -66,6 +68,8 @@ class DukeRecord565ManifestTests(unittest.TestCase):
 
     def test_notebooks_use_the_repository_relative_published_layout(self) -> None:
         for notebook_path in NOTEBOOKS:
+            if notebook_path.name == 'figure_01_spillover_compensation.ipynb':
+                notebook_path = notebook_path.parents[1] / 'historical_reconstructions' / notebook_path.name
             notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
             serialized = json.dumps(notebook)
             opening_markdown = "".join(notebook["cells"][0]["source"])

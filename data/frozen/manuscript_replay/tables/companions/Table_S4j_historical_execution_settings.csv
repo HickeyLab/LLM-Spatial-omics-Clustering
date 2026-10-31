@@ -1,0 +1,5 @@
+Model,Requested model ID,Actual provider routes,Output cap (tokens),Contributing calls
+GPT,openai/gpt-5.6-sol,OpenAI,"8,192 or 16,384",32
+Claude,anthropic/claude-opus-5,Amazon Bedrock,"8,192 or 16,384",31
+Gemini,google/gemini-3.1-pro-preview,"Google, Google AI Studio","8,192 or 16,384",38
+DeepSeek,deepseek/deepseek-v4-pro,"Alibaba, Baidu, Cloudflare, DigitalOcean, GMICloud, Novita, SiliconFlow, StreamLake, Together","16,384",78

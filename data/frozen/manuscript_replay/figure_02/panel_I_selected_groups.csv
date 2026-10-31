@@ -1,0 +1,5 @@
+method,n_selected_cells,n_selected_clusters,reference_noise_cells_included
+Leiden,15970,20,21
+FlowSOM,8929,11,11
+SpatialSort,15535,21,20
+PIXIE,12042,10,48

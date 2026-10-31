@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Verify the actual publication E/G metric, independently of reconstruction code.
+"""Verify the superseded historical Figure 2 E/G selected-agreement audit.
+
+Current Figure 2 E/G use regional F1 and cluster purity. Verify current panels
+with scripts/verify_manuscript_replay.py. This file preserves the older audit.
 
 With --source-root, also recompute the frozen regional counts from the archived
 exact-key cell tables. No downloading, fitting, or model calls occur.
@@ -95,7 +98,7 @@ def verify(source_root: Path | None = None) -> None:
             if counts[key] != [int(row['n_cells']), int(row['correct_cells'])]:
                 raise ValueError(f'Independent source-cell recomputation differs: {key}')
         print('Verified all 128 regional rows from 220,082 exact-key source cells.')
-    print('Verified 32 regional post-hoc selected reference agreement values, repeated in E and G.')
+    print('Verified 32 historical selected-agreement values from superseded Figure 2 E/G. Use verify_manuscript_replay.py for current panels.')
 
 
 def main() -> None:

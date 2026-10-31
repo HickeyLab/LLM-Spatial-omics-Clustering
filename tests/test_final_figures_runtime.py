@@ -50,8 +50,8 @@ class FinalFiguresRuntimeTests(unittest.TestCase):
             Path("/tmp/final_figures_output/final_figures_pixie_prefix_cache").resolve(),
         )
 
-    def test_final_source_notebooks_use_frozen_assignments_without_tiff_download(self):
-        notebook_root = Path(__file__).resolve().parents[1] / "notebooks" / "final_figures"
+    def test_historical_source_notebooks_keep_frozen_assignment_contracts(self):
+        notebook_root = Path(__file__).resolve().parents[1] / "notebooks" / "historical_reconstructions"
         source_rebuild_names = (
             "figure_02_clustering_method_benchmark.ipynb",
             "figure_03_llm_annotation_benchmark.ipynb",

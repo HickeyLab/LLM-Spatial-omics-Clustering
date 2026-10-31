@@ -1,0 +1,17 @@
+method,model,delivered_reference_agreement,repeat_sd,prediction_coverage,attempted_repeats,complete_repeats,requested_model_id,planned_repeats,population
+flowsom,claude,0.419028838985378,0.03077667401718818,0.9115401728203661,3,0,anthropic/claude-opus-5,5,B004 two test regions; all failed observations retained as operational abstentions
+flowsom,deepseek,0.25970552078791326,0.0351494496863477,0.7838222851069409,3,0,deepseek/deepseek-v4-pro,5,B004 two test regions; all failed observations retained as operational abstentions
+flowsom,gemini,0.3774554893991497,0.011914751616564245,0.9839454391817218,3,2,google/gemini-3.1-pro-preview,5,B004 two test regions; all failed observations retained as operational abstentions
+flowsom,gpt,0.3946812616820003,0.005681947857356533,1.0,3,3,openai/gpt-5.6-sol,5,B004 two test regions; all failed observations retained as operational abstentions
+leiden,claude,0.4652485262122945,0.003805096308643011,1.0,3,3,anthropic/claude-opus-5,5,B004 two test regions; all failed observations retained as operational abstentions
+leiden,deepseek,0.4217404608725677,0.027160961593131437,0.9494970319463581,3,0,deepseek/deepseek-v4-pro,5,B004 two test regions; all failed observations retained as operational abstentions
+leiden,gemini,0.4452229113291191,0.01426885981315518,1.0,3,3,google/gemini-3.1-pro-preview,5,B004 two test regions; all failed observations retained as operational abstentions
+leiden,gpt,0.4061095224727469,0.0056309522743474135,1.0,3,3,openai/gpt-5.6-sol,5,B004 two test regions; all failed observations retained as operational abstentions
+pixie_tiff,claude,0.41644771723029855,0.004933950066116734,1.0,3,3,anthropic/claude-opus-5,5,B004 two test regions; all failed observations retained as operational abstentions
+pixie_tiff,deepseek,0.3118156997743649,0.006906569127570345,1.0,3,3,deepseek/deepseek-v4-pro,5,B004 two test regions; all failed observations retained as operational abstentions
+pixie_tiff,gemini,0.33798666122429855,0.05613893598463933,0.8616700222960051,3,1,google/gemini-3.1-pro-preview,5,B004 two test regions; all failed observations retained as operational abstentions
+pixie_tiff,gpt,0.3449427023430312,0.006645144015557369,1.0,3,3,openai/gpt-5.6-sol,5,B004 two test regions; all failed observations retained as operational abstentions
+spatialsort,claude,0.2963386352250377,0.004268707887697947,1.0,3,3,anthropic/claude-opus-5,5,B004 two test regions; all failed observations retained as operational abstentions
+spatialsort,deepseek,0.2517845435331673,0.024049796108479075,0.9605652109206536,3,2,deepseek/deepseek-v4-pro,5,B004 two test regions; all failed observations retained as operational abstentions
+spatialsort,gemini,0.25609112188123523,0.038882741104028284,0.9692624979844227,3,2,google/gemini-3.1-pro-preview,5,B004 two test regions; all failed observations retained as operational abstentions
+spatialsort,gpt,0.27332272820708975,0.0021772050194112857,1.0,3,3,openai/gpt-5.6-sol,5,B004 two test regions; all failed observations retained as operational abstentions

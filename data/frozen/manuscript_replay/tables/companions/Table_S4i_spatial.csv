@@ -1,0 +1,7 @@
+Input,Test region,Cells,Agreement %,Macro-F1,Coverage %
+Markers,768b7adb,33112,42.78,0.320,100.00
+Markers,8da8f279,36464,43.63,0.367,100.00
+Markers,Equal-region mean,69576,43.20,0.343,100.00
+Markers + neighborhood,768b7adb,33112,39.39,0.280,100.00
+Markers + neighborhood,8da8f279,36464,39.59,0.349,100.00
+Markers + neighborhood,Equal-region mean,69576,39.49,0.315,100.00

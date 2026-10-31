@@ -1,0 +1,17 @@
+Clustering,Model,Valid-label term (pp),Delivery term (pp),Total change (pp)
+Leiden,GPT,-4.34,+0.00,-4.34
+Leiden,Claude,-10.58,-18.62,-29.20
+Leiden,Gemini,-13.58,+0.94,-12.63
+Leiden,DeepSeek,-2.92,+0.71,-2.21
+FlowSOM,GPT,-8.00,+0.00,-8.00
+FlowSOM,Claude,-22.64,+0.00,-22.63
+FlowSOM,Gemini,-11.88,+0.07,-11.81
+FlowSOM,DeepSeek,-7.20,+0.37,-6.83
+SpatialSort,GPT,+0.39,+0.00,+0.39
+SpatialSort,Claude,-5.99,-11.47,-17.46
+SpatialSort,Gemini,-2.40,+0.01,-2.39
+SpatialSort,DeepSeek,-2.19,-0.14,-2.33
+PIXIE,GPT,-4.25,+0.00,-4.25
+PIXIE,Claude,-14.64,-5.89,-20.53
+PIXIE,Gemini,-9.51,+0.57,-8.94
+PIXIE,DeepSeek,-3.06,+0.69,-2.37

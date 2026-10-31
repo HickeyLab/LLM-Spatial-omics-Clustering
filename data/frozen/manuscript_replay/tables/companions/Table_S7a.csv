@@ -1,0 +1,8 @@
+Scoring reference,Labels,Highest map,Agreement (%),Reversed pairs
+Historical mappings,21,Leiden / Claude,55.933,0
+Preserve M1,22,Leiden / Claude,55.444,0
+Preserve NK,21,Leiden / Claude,55.903,0
+Preserve Paneth,22,Leiden / Claude,55.575,1
+Preserve all three,23,Leiden / Claude,55.055,1
+Historical Paneth to Goblet,21,Leiden / Claude,55.575,1
+Original 28 reference labels (diagnostic),28,Leiden / Gemini,34.389,31

@@ -1,0 +1,17 @@
+Method / model,Historical (%),Rank,Preserve three (%),Rank,Change (pp)
+Leiden / Claude,55.933,1,55.055,1,-0.878
+Leiden / Gemini,54.233,2,53.398,2,-0.836
+PIXIE / Claude,52.326,3,51.613,4,-0.714
+PIXIE / GPT,52.319,4,51.659,3,-0.659
+PIXIE / Gemini,51.848,5,51.158,5,-0.691
+Leiden / GPT,51.141,6,50.429,6,-0.712
+FlowSOM / Claude,50.482,7,49.700,7,-0.782
+PIXIE / DeepSeek,49.945,8,49.216,8,-0.729
+Leiden / DeepSeek,48.662,9,47.820,9,-0.842
+FlowSOM / Gemini,45.637,10,44.939,10,-0.698
+FlowSOM / GPT,44.493,11,43.802,11,-0.691
+FlowSOM / DeepSeek,43.082,12,42.285,12,-0.797
+SpatialSort / GPT,33.126,13,32.579,13,-0.547
+SpatialSort / Gemini,33.019,14,32.342,14,-0.676
+SpatialSort / DeepSeek,32.688,15,32.158,15,-0.530
+SpatialSort / Claude,31.313,16,30.779,16,-0.534

@@ -1,6 +1,6 @@
 {
   "data": "data/frozen/table_s02/manuscript_tables.json",
-  "data_sha256": "8d7adb91a527789e6cecd8d2287386b10f1e0e920343b6715dc05b02baebfe2b",
+  "data_sha256": "ae31789f2d387f796e5996c265406bd5d63f97692ea6d73498b8b8d8b9301a38",
   "style_reference": "configs/table_s01.json",
   "column_widths": {
     "A": [
@@ -47,5 +47,7 @@
       "C",
       "D"
     ]
-  ]
+  ],
+  "current_table_id": "S3",
+  "caption_label": "TABLE S3"
 }

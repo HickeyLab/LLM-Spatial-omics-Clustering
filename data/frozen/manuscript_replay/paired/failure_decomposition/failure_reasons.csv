@@ -1,0 +1,11 @@
+model,condition,reason,missing_cluster_cases,affected_batches
+claude,all_means,invalid_label_code,1,1
+claude,all_means,missing_query_id,2,2
+claude,all_means_fractions,duplicate_query_id,1,1
+claude,all_means_fractions,invalid_label_code,42,8
+claude,all_means_fractions,malformed_json,900,12
+claude,all_means_fractions,missing_query_id,4,3
+deepseek,all_means,invalid_label_code,426,10
+deepseek,all_means_fractions,invalid_label_code,94,2
+gemini,all_means,missing_query_id,52,13
+gemini,all_means_fractions,missing_query_id,4,2
