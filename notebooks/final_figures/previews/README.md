@@ -1,10 +1,9 @@
 # Publication previews
 
 These PNG files preserve the source-traced publication results and include
-reference terminology, verified metric labels and a prompt-provenance workflow
-revision. They
-are committed so reviewers can inspect the results on GitHub without rerunning
-an analysis. Nine previews preserve every pixel outside 54 declared overlay
+reference terminology, verified metric labels and the restored original Figure 3A
+workflow. They are committed so reviewers can inspect the results on GitHub without rerunning
+an analysis. Nine previews preserve every pixel outside 53 declared overlay
 areas. Figures S5C and S7 are separately rendered from 336 and 32 frozen results
 with their revised palettes and labels. All numerical values are retained.
 Table S1 is a verified IEEE-style rendering of the current editable manuscript
@@ -21,9 +20,8 @@ the actual post-hoc selected reference agreement score, and H identifies recall
 instead of its historical “Purity” display label. See
 [the numerical source audit](../../../docs/figure_02_publication_metrics.md).
 
-Figure 3H uses “Modal predicted label.” Figure 3A separates original numerical
-marker-expression profiles and task context from retrospective marker-name-list
-exports, which have their own branch. No export-to-LLM arrow is shown. See
+Figure 3H uses “Modal predicted label.” Figure 3A retains the original
+Cluster Features -> Optimization schematic restored in the manuscript. See
 [the workflow notes](../../../docs/figure_03_workflow_and_modal_labels.md).
 
 Figures 4D–E and S4B are explicitly Historical majority-based diagnostic
@@ -68,7 +66,7 @@ No clustering, metric calculation, or model call is performed.
 | --- | --- | --- |
 | `figure_01.png` | `4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593` | `1739f07c937f9e18d70fd853ea635e5874a87fc40535294bb67467714da9ce89` |
 | `figure_02.png` | `44978280393bac9756e3e826e60a244cf7a2845399635e82df93c0a3f8fb6cd7` | `3754e02fd6edc95132a020c68a196fd86edd5d596a8ff23b8dd9f9795a83c1a9` |
-| `figure_03.png` | `cc6f8982a657b92fec5ce5df0e015ddf3620f124447824e950ca33d4b154eeb6` | `fc57a50fbb04388a3cbcc0e0d963c142506f15f457e6cac7c3fc44e912138aa0` |
+| `figure_03.png` | `cc6f8982a657b92fec5ce5df0e015ddf3620f124447824e950ca33d4b154eeb6` | `8721c28b3950b8b7caf8feee3505fb4bf84e152760b64cbe0558e393c0ef60a2` |
 | `figure_04.png` | `4e9892f2199cb820048bee54ff25a709899cc668a2b39743bbaa6ec63111934e` | `e28a65852072f7e397d0ecd08f58b36d5f16843424310c314bc0ece5939f3cd3` |
 | `figure_s01.png` | `5bff24b93d3610eaae5a83bd8303ed52ba56d60c9408235a0715e115ea10c8f4` | `d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75` |
 | `figure_s03.png` | `da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5` | `737131b62959d8e5a061d8d68eb15f54980a84bce0f3ef082fa8a5333aba8eaa` |

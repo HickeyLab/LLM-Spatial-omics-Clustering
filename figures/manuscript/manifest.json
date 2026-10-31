@@ -41,7 +41,7 @@
     {
       "file": "figures/manuscript/Figure_3.png",
       "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_3.png",
-      "source_sha256": "d77cccf700f05efef0486dfb5eafc837b5a076d1946ff8f7698ff29ec8e93b18",
+      "source_sha256": "4084d7eb4861da9bd6c356b7c7f66375194e05fd657b966476f2448e11addf6b",
       "size_pixels": [
         1932,
         2048
@@ -59,7 +59,7 @@
           "new": ""
         }
       ],
-      "output_sha256": "2af6ecb4f7de2e71f98171c82cb617ef0f15fae92c17e59d57c4c248bac6339e"
+      "output_sha256": "0cdda185f24ea1e2dd19842995d9208bdec38969a0f8e374b25de13db8ab0a67"
     },
     {
       "file": "figures/manuscript/Figure_4.png",

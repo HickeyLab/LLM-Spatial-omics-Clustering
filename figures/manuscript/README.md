@@ -35,3 +35,8 @@ numbering. S7's PNG renderer retains a checksum-pinned publication raster so
 font or Matplotlib-version differences cannot redraw its panels during this
 formatting change. Its analytical builder still supports reconstruction from
 the same 32 frozen condition results and omits the figure-level title.
+
+Figure 3A additionally restores the manuscript's original Cluster Features ->
+Optimization artwork. The source snapshot and checksums were updated, while
+the title-removal layer and every pixel outside the input-workflow region were
+preserved. See [the restoration audit](../../docs/figure_03a_original_restoration_verification.json).
