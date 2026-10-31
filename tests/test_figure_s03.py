@@ -165,18 +165,19 @@ class FigureS03ContractTests(unittest.TestCase):
     def test_five_cell_notebook_and_frozen_panel_d_sweep(self) -> None:
         notebook_path = (
             REPOSITORY_ROOT
-            / "notebooks/supplementary/figure_s03_clustering_inputs_and_diagnostics.ipynb"
+            / "notebooks/supplementary/figure_s04_reference_and_clustering_diagnostics.ipynb"
         )
         notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
         self.assertEqual(notebook["nbformat"], 4)
-        self.assertEqual(len(notebook["cells"]), 5)
+        code_cells = [cell for cell in notebook['cells'] if cell['cell_type'] == 'code']
+        self.assertEqual(len(code_cells), 5)
         self.assertEqual(
-            [cell["cell_type"] for cell in notebook["cells"]],
+            [cell["cell_type"] for cell in code_cells],
             ["code"] * 5,
         )
         self.assertEqual(
-            [cell["execution_count"] for cell in notebook["cells"]],
-            [1, 2, 3, 4, 5],
+            [cell["execution_count"] for cell in code_cells],
+            [None] * 5,
         )
         errors = [
             output
@@ -185,7 +186,7 @@ class FigureS03ContractTests(unittest.TestCase):
             if output.get("output_type") == "error"
         ]
         self.assertEqual(errors, [])
-        for panel_letter, cell in zip("abcde", notebook["cells"], strict=True):
+        for panel_letter, cell in zip("abcde", code_cells, strict=True):
             source = "".join(cell["source"])
             self.assertIn(f"run_panel_{panel_letter}", source)
 

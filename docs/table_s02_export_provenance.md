@@ -1,4 +1,6 @@
-# Table S2 export selection and implementation provenance
+> Current table number: S3. Legacy `table_s02` paths and the audit below retain their original identifiers.
+
+# Table S3 export selection and implementation provenance
 
 Use **retrospective marker-name-list parameter selection** for this table.
 The display retains **PIXIE-style export**, defined as the historical source-table
@@ -47,7 +49,7 @@ for benchmark.” It is replaced by “Recorded marker-name-list export paramete
 A claim about a particular export setting being used in the original benchmark
 would require a verified link from that setting to the archived model-visible
 request. No such link is asserted here. The separate controlled revision's
-marker-choice experiments are outside the scope of Table S2 and are unchanged.
+marker-choice experiments are outside the scope of Table S3 and are unchanged.
 
 The frozen evidence is in `data/frozen/table_s02_export_provenance/`. Source hashes
 and the exact boundaries of this verification are in `table_s02_export_audit.json`.

@@ -1,0 +1,55 @@
+{
+  "status": "pass",
+  "models": 4,
+  "methods": 4,
+  "repeats": 3,
+  "test_regions": 2,
+  "all_96_regional_identities_reconciled": true,
+  "all_16_original_mean_changes_reproduced": true,
+  "raw_responses_replayed": 384,
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "network_access": false,
+  "overall_equal_comparison_mean": {
+    "total_change_pp": -9.721015214620959,
+    "label_contribution_pp": -7.673533230925393,
+    "delivery_contribution_pp": -2.047481983695565
+  },
+  "comparisons_with_negative_valid_label_contribution": 15,
+  "source_sha256": {
+    "active_protocol.json": "0799525e323af7fd267fba4f8b6fcb623dd88de9a90f39710f273635e380ba20",
+    "cost_amendment.json": "408a781a418f51dd4c2c6470405474fb88e10568ae4f49da50d7b687d43b93cc",
+    "requests_active.jsonl": "17133058c796251f17a187317cf2c740cdde684b1062c33e5e6a6e4de6b4298b",
+    "paired_freeze.json": "41649ac87b2c7711d959ae03e94a8df0e5f3f030559a3961959c51bf54dd8866",
+    "scoring_receipt.json": "94b5bc6cdc554497839c53b36d1cae4fb6be949c89e4e93b9d21abcda8b71021",
+    "final_audit_receipt.json": "6c5404cd3f56801f88f72c4f907c5a7d4658e65564647fb3ee9112838942ba40",
+    "request_feature_binding_audit.json": "d06b480971f8db1e039f0061e39b29711884ddf1ed2038dfe27fd7323fa30a5e",
+    "independent_feature_audit.json": "2e54f1e245c7c5370d2e5361a6d4ed1b7b928875ff3c07c40a73c073bd9f3bbb",
+    "independent_replay_receipt.json": "ff18863b39fcc1912f90cd2ec7e9f86b74a983530afbf3bf69c8685471f11e64",
+    "test_receipt.json": "e870db8e6ca0ff5ccd6690bc620ac8dfc40138478f8500e4772de5daa9310be7",
+    "cost_summary.json": "df654b014ccbd58eef3f70fb10d8ddf7c524c42a705f08a1b662dec1395cbaf7",
+    "delivery_receipt.json": "2892f544f363055fed0f6036a5a76f623d9e57ed7c9dd1d4ab16afbf499d2690"
+  },
+  "reference_sha256": "f4ca2a07e72e50cd105e0973c461116d5e6f29f9909166b6baf85ccb44b595d2",
+  "script_sha256": "ad7e521ede8a6333385d888c04074330a46a1a70c4aa833d9316a4cb69c231d5",
+  "output_sha256": {
+    "regional_decomposition.csv": "4d6624d4fdca9a75d9297a37628bac7f31b704362aa861adbad4eecb51365cba",
+    "comparison_decomposition.csv": "2034d7f76a3da68e5f12fd8cb67afb576dc733a7f2ca5f94205497be50d070a9",
+    "model_decomposition.csv": "1fb4c89d2b99f7163711cfedd148580b7da8a648fc59162d0a2bfe4dd0bc31be",
+    "label_transitions.csv": "5504d9a19d9ba134790d8246fad240827c6039a881ffc9d52511e4bd97f531e7",
+    "label_share_shifts.csv": "5421d2b19a3377e3dfd3de6860a0ba3fcfa1455afafbbdc69bdebd8d84c0a033",
+    "repeat_disagreement.csv": "8c44eb98e9d71e9df0e9beacbde75d09c2c0ba68ffd9d43d904921c5db6a7b35",
+    "repeat_disagreement_summary.csv": "caa8b4223117740f81f2655b27d9d9b19e929317fe75e6f4938a72f53c5868b3",
+    "raw_response_audit.csv": "99f74847dc8446deec3fc3f3d4aaa877511d49ca93be2a95bfc977eaf4fe557e",
+    "failure_reasons.csv": "0a61f47fd4c795229701ab4e78f9f0cfc79dec7763179842f5e99d927e918d89",
+    "failure_summary.csv": "da9f56ad1f403e66e08aa7d04b53fb695ad3315a51ca74f566bdbeed18d1581b"
+  },
+  "method": "Each cell belongs to both-valid, means-only-valid, fractions-only-valid or both-missing. Correctness differences on both-valid cells form the label term. Correct labels gained/lost in single-delivery cells form the delivery term. Average the same two test regions then three repeats, matching the original primary endpoint.",
+  "limits": [
+    "Accounting contributions do not identify the unobserved predictions for missing calls.",
+    "Conditional both-valid comparisons describe selected delivered pairs.",
+    "One previously examined donor and three calls per arm do not establish a general mechanism.",
+    "The prompts supply processed-X-above-zero fractions, not validated biological positivity.",
+    "Label changes contain stochastic run variation as well as effects of the representation."
+  ]
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render editable IEEE-style Table S2 without searches or analytical reruns."""
+"""Render editable IEEE-style Table S3 without searches or analytical reruns."""
 from __future__ import annotations
 
 import argparse
@@ -22,7 +22,7 @@ def load_inputs():
     config = json.loads((ROOT / "configs/table_s02.json").read_text())
     source = ROOT / config["data"]
     if hashlib.sha256(source.read_bytes()).hexdigest() != config["data_sha256"]:
-        raise ValueError("Table S2 presentation content checksum differs")
+        raise ValueError("Table S3 presentation content checksum differs")
     data = json.loads(source.read_text())
     if hashlib.sha256((ROOT / data["source_csv"]).read_bytes()).hexdigest() != data["source_csv_sha256"]:
         raise ValueError("The analytical source CSV changed")
@@ -41,14 +41,14 @@ def load_inputs():
 
 
 def notes_text(data):
-    prefix = "Table S2. Retrospective marker-name-list parameter selection. "
+    prefix = "Table S3. Retrospective marker-name-list parameter selection. "
     if not data["caption"].startswith(prefix):
-        raise ValueError("Unexpected S2 caption")
+        raise ValueError("Unexpected current Table S3 caption")
     return data["caption"][len(prefix):]
 
 
 def add_page_caption(document, continued=False):
-    for size, text in [(11, "TABLE S2" + (" (CONTINUED)" if continued else "")),
+    for size, text in [(11, "TABLE S3" + (" (CONTINUED)" if continued else "")),
                        (10, "RETROSPECTIVE MARKER-NAME-LIST PARAMETER SELECTION")]:
         paragraph = document.add_paragraph()
         paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -118,12 +118,12 @@ def build_document(config, style, data):
     paragraph.paragraph_format.keep_together = True
     for run in paragraph.runs:
         run.font.size = Pt(9.5)
-    document.core_properties.title = "Table S2 retrospective marker name list parameter selection"
+    document.core_properties.title = "Table S3 retrospective marker name list parameter selection"
     return document
 
 
 def html_page(config, style, data, page_index):
-    label = "TABLE S2" + (" (CONTINUED)" if page_index else "")
+    label = "TABLE S3" + (" (CONTINUED)" if page_index else "")
     base = "font-family:'Times New Roman';font-weight:normal;color:#000000;line-height:105%;"
     output = [f'<p style="{base}font-size:11pt;text-align:center;margin:0 0 4pt;">{label}</p>',
               f'<p style="{base}font-size:10pt;text-align:center;margin:0 0 4pt;">RETROSPECTIVE MARKER-NAME-LIST PARAMETER SELECTION</p>']
@@ -156,26 +156,26 @@ def verify_document(path, data):
     document = Document(path)
     matrices = [[[cell.text for cell in row.cells] for row in table.rows] for table in document.tables]
     if matrices != [[panel["headers"], *panel["rows"]] for panel in data["panels"]]:
-        raise ValueError("Table S2 cell content changed")
+        raise ValueError("Table S3 cell content changed")
     if document.paragraphs[-1].text != notes_text(data):
-        raise ValueError("Table S2 provenance notes changed")
+        raise ValueError("Table S3 provenance notes changed")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs/source_rebuilt/table_s02_ieee")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs/manuscript_replay/table_s03_ieee")
     parser.add_argument("--check", type=Path)
     args = parser.parse_args()
     config, style, data = load_inputs()
     if args.check:
         verify_document(args.check, data)
-        print("Verified 135 Table S2 cells and all provenance notes")
+        print("Verified 135 Table S3 cells and all provenance notes")
         return
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    target = args.output_dir / "Table_S2_IEEE.docx"
+    target = args.output_dir / "Table_S3_IEEE.docx"
     build_document(config, style, data).save(target)
     for index in range(len(config["page_panels"])):
-        (args.output_dir / f"Table_S2_IEEE_page_{index+1}.html").write_text(html_page(config, style, data, index))
+        (args.output_dir / f"Table_S3_IEEE_page_{index+1}.html").write_text(html_page(config, style, data, index))
     verify_document(target, data)
     print(target)
 

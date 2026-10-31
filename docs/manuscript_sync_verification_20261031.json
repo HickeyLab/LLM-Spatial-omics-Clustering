@@ -1,0 +1,232 @@
+{
+  "status": "pass",
+  "checked_on": "2026-10-31",
+  "baseline_main": "efb7653f8fb723bb533bc6c3e4053ce46ce094a0",
+  "unit_tests": {
+    "run": 49,
+    "skipped": 6,
+    "failed": 0,
+    "external_data_not_loaded": true
+  },
+  "numerical_verification": {
+    "status": "pass",
+    "frozen_input_files": 79,
+    "approved_images": 17,
+    "figure_2_regional_values": 64,
+    "figure_2_celltype_values": 160,
+    "figure_3_method_model_maps": 16,
+    "spatial_window_cells": [
+      1086,
+      915
+    ],
+    "paired_representation_comparisons": 16,
+    "new_model_calls": 0,
+    "new_fits": 0,
+    "network_access": false
+  },
+  "notebook_execution": {
+    "status": "pass",
+    "notebooks": [
+      {
+        "notebook": "notebooks/final_figures/figure_01_spillover_compensation.ipynb",
+        "source_sha256": "23cd92240d84cea04dcfb275b1d7e78f9c487029982bcd0328a38d7368190034",
+        "status": "pass",
+        "seconds": 3.62,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb",
+        "source_sha256": "2b540f19840829306f08f7fb6c4218ab0c4b05f46062f35b02986b6ce5b6ae9f",
+        "status": "pass",
+        "seconds": 3.62,
+        "code_cells": 9
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb",
+        "source_sha256": "efc0856a69ddf2b3fbcea5ddd8ca8b353ed4cace73282bf4e6162cc184cafbce",
+        "status": "pass",
+        "seconds": 4.21,
+        "code_cells": 10
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_05_donor_transfer.ipynb",
+        "source_sha256": "0fbaa8c1be75d2af5eab34a27c9f6de9b19ae39cacc40abcb6e8f5f2fef9c166",
+        "status": "pass",
+        "seconds": 2.34,
+        "code_cells": 4
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s03_matching_and_compensation.ipynb",
+        "source_sha256": "db64acd261c86fa39de3253342310bc7876e2fec47bf755ddb7387ed429dd46f",
+        "status": "pass",
+        "seconds": 2.94,
+        "code_cells": 3
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb",
+        "source_sha256": "44f152ecfcff73f237768530697ee03437c24f3571f9098f1c08d0503c826ebc",
+        "status": "pass",
+        "seconds": 2.67,
+        "code_cells": 3
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s05_common_marker_sensitivity.ipynb",
+        "source_sha256": "94fa866a7a9aa17e909dabc20d1f936008f9265deb5e3341fae2998684b7d456",
+        "status": "pass",
+        "seconds": 2.4,
+        "code_cells": 3
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s07_agreement_decomposition.ipynb",
+        "source_sha256": "9b4351d3c40b3ba2a42306262f5ae620ce60c11d276485a14d776fd3712669b2",
+        "status": "pass",
+        "seconds": 2.02,
+        "code_cells": 3
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb",
+        "source_sha256": "b8d4cdbca27adc445e9a42a813a424080f3e89b6e758acb508a262578d9d28c8",
+        "status": "pass",
+        "seconds": 2.57,
+        "code_cells": 3
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s08_controlled_b004_annotation.ipynb",
+        "source_sha256": "7260544e6b7007e85e436d910a18f27e7c879e0ff928d311eb2b348512b6232f",
+        "status": "pass",
+        "seconds": 1.92,
+        "code_cells": 3
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s09_calibration_and_neighborhood.ipynb",
+        "source_sha256": "cfa9f70724fd1a34f52c127153c0a1e06ea46b0fb3c3d7dde50e786fe16c8bed",
+        "status": "pass",
+        "seconds": 2.61,
+        "code_cells": 4
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s10_paired_representations.ipynb",
+        "source_sha256": "beabb9a4cdfab4a1f9208ecaa1f19463a4e009a0ed5b2c72896a0c0e1f038fa1",
+        "status": "pass",
+        "seconds": 2.43,
+        "code_cells": 4
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s1_matching_and_retention.ipynb",
+        "source_sha256": "99cbddbde8319f3ecc6134501c8c350ede032247affec0e3fb067b708da9dae9",
+        "status": "pass",
+        "seconds": 1.86,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s3_marker_summary_parameters.ipynb",
+        "source_sha256": "c85f1c479ba121a797f708e6a08986f8cd85814fd9bc9a45d8264da8a382a2b0",
+        "status": "pass",
+        "seconds": 1.86,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s2_clustering_and_channels.ipynb",
+        "source_sha256": "99b377321f6aafea63aeecbd5b471c90f2e61eb2e736ab0776862afa26a4ef36",
+        "status": "pass",
+        "seconds": 1.97,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s4_controlled_annotation.ipynb",
+        "source_sha256": "3fafbc2e2669f10e7078173d51ae2e547ad39fd1432120dbb34eb16308b43ff1",
+        "status": "pass",
+        "seconds": 2.66,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s6_paired_representations.ipynb",
+        "source_sha256": "96b0b3204333163ec08163b8d3d55bd8e7bf4e54b9e765edea4c9f72d179d172",
+        "status": "pass",
+        "seconds": 1.75,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s5_repeatability_and_prompt_controls.ipynb",
+        "source_sha256": "fdf307a4e0feba04fb44178dcf6dd3e13d4d5f4ebedec54d9fbd648d051a6c43",
+        "status": "pass",
+        "seconds": 1.82,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s7_conditional_comparisons.ipynb",
+        "source_sha256": "7d21fc779864f92723bf714878823a379a622ad22dbefe66f0b40b4872b0ffe2",
+        "status": "pass",
+        "seconds": 1.8,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/supplementary_note_01_llm_cluster_annotation.ipynb",
+        "source_sha256": "c2fa7e16e4f6527bf3d3d98284e2022d5e8de65b9104dbd8cb70afc4c43a3016",
+        "status": "pass",
+        "seconds": 1.65,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s8_label_mapping_sensitivity.ipynb",
+        "source_sha256": "afa8d90d7cfea45ca73a0379d4124632d2ba0a37dd259b0132e149e7adb5466e",
+        "status": "pass",
+        "seconds": 1.68,
+        "code_cells": 2
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s01_clustering_methods.ipynb",
+        "source_sha256": "eb9972dc906d8bdce2964aaba5c9e6ab2198719caaf03ff0c4ef337423be8e0e",
+        "status": "pass",
+        "seconds": 1.95,
+        "code_cells": 1
+      },
+      {
+        "notebook": "notebooks/final_figures/table_s02_marker_summary_optimization.ipynb",
+        "source_sha256": "8e5d9e46f2587ffcebf4e93efaeffe5fca5cd9b7211b11e34c6a98198328be92",
+        "status": "pass",
+        "seconds": 1.81,
+        "code_cells": 1
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb",
+        "source_sha256": "299518911e34169855edabfc50e63b91068c5125893f46ced5d99634ebfddf4e",
+        "status": "pass",
+        "seconds": 2.41,
+        "code_cells": 1
+      },
+      {
+        "notebook": "notebooks/final_figures/figure_s04_annotation_diagnostics.ipynb",
+        "source_sha256": "57c8b6e8c49b0c541cfc94ccc7233edd4127176f7a6ab979f79836a635ba021c",
+        "status": "pass",
+        "seconds": 2.18,
+        "code_cells": 1
+      }
+    ],
+    "new_model_calls": 0,
+    "new_fits": 0,
+    "external_network_blocked": true,
+    "manuscript_edited": false
+  },
+  "approved_native_images_byte_unchanged": 17,
+  "preview_images_verified": 17,
+  "frozen_input_manifest_sha256": "527de5f1b018689ff81084ac728e217ca6672c57f84148aded59760cbd7c9578",
+  "manuscript_edited": false,
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "release_archives_rewritten": false,
+  "renderers_executed": [
+    "render_figure_02_manuscript.py",
+    "render_figure_03_manuscript.py",
+    "render_figure_02_celltype_metrics.py",
+    "render_figure_02_ij_verified.py",
+    "revision/render_figure_05_red_green.py",
+    "render_figure_s09.py",
+    "revision/render_paired_means_fractions.py",
+    "revision/render_means_only_results.py",
+    "revision/render_paired_decomposition.py",
+    "render_current_tables.py",
+    "render_table_s01.py",
+    "render_table_s02.py"
+  ]
+}

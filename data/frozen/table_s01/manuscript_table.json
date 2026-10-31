@@ -64,5 +64,5 @@
       "42"
     ]
   ],
-  "caption": "Table S1. Final clustering configurations and hyperparameters used in the comparative benchmark. The table reports the number of clusters and selected hyperparameters for FlowSOM, Leiden, SpatialSort, and the PIXIE cell-level adaptation, including map dimensions, metacluster counts, neighborhood and dimensionality-reduction settings, spatial-model parameters, iteration counts, and random-seed handling. PCA, principal component analysis. SOM, self-organizing map. Inputs comprise 47, 45 and 45 markers for Leiden, FlowSOM and SpatialSort, respectively, and 48 image channels for PIXIE. Pixel-level and cell-level settings are reported separately for PIXIE."
+  "caption": "Table S2A. Clustering configurations and hyperparameters. Table S2A reports the clustering configurations and hyperparameters. Additional procedure details are given in Section 2.7. Leiden used 47 protein markers, while FlowSOM and SpatialSort used 45. PIXIE selected 47 protein channels and the Hoechst1 DNA channel from the 59 available image channels, then converted pixel-cluster assignments into cell-composition features. Pixel-level and cell-level settings are reported separately for PIXIE. Table S2B identifies channel membership."
 }

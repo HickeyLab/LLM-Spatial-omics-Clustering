@@ -1,0 +1,187 @@
+{
+  "policy": "Current display labels follow the manuscript. Companion filenames and bytes retain original identifiers. The versioned October30 release remains immutable.",
+  "tables": [
+    {
+      "current_label": "S2B",
+      "filename": "Table_S1_channel_membership.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S1_channel_membership.csv",
+      "sha256": "f8b9e16cb1569086ea5033f24c7e5de8da774e271d5c0484aeac957b0867c680",
+      "release_path": "supplementary_tables/Table_S1_channel_membership.csv"
+    },
+    {
+      "current_label": "S4a",
+      "filename": "S3a_regional_metrics.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S3a_regional_metrics.csv",
+      "sha256": "1d34385e49f35ca1b813cbd969f7dc4b2d30fb9d4938acc14f76cae8d86472bb",
+      "release_path": "supplementary_tables/S3a_regional_metrics.csv"
+    },
+    {
+      "current_label": "S4b",
+      "filename": "S3b_donor_metrics.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S3b_donor_metrics.csv",
+      "sha256": "887a0e9a9958d13d7a65811d5c4948f7484ba3b1ef010f5d4a4dd692cc178929",
+      "release_path": "supplementary_tables/S3b_donor_metrics.csv"
+    },
+    {
+      "current_label": "S4c",
+      "filename": "S3c_equal_donor_metrics.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S3c_equal_donor_metrics.csv",
+      "sha256": "6941f38055eee940720472313be566499efe569b1adf6c6a169cde0abd083fa8",
+      "release_path": "supplementary_tables/S3c_equal_donor_metrics.csv"
+    },
+    {
+      "current_label": "S4d",
+      "filename": "S3d_cell_type_metrics.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S3d_cell_type_metrics.csv",
+      "sha256": "61f87514eb445d0712b4b4f57d5db029ff8eb2ecd375dde06862f3ef0801ded5",
+      "release_path": "supplementary_tables/S3d_cell_type_metrics.csv"
+    },
+    {
+      "current_label": "S4e",
+      "filename": "S3e_cell_type_changes.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S3e_cell_type_changes.csv",
+      "sha256": "5d351f7005081ea0376b6014e676f5ee2327adb0f42927fc08dd9c7a30e44344",
+      "release_path": "supplementary_tables/S3e_cell_type_changes.csv"
+    },
+    {
+      "current_label": "S4f",
+      "filename": "S3f_all_model_donor_comparisons.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S3f_all_model_donor_comparisons.csv",
+      "sha256": "7651791645c045dcdacd3ee622bf48616d36a8c2fb1b33f485238b8af9792ec4",
+      "release_path": "supplementary_tables/S3f_all_model_donor_comparisons.csv"
+    },
+    {
+      "current_label": "S5a",
+      "filename": "S4a_repeat_variability.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4a_repeat_variability.csv",
+      "sha256": "a447da3ed3002b1d2b675f189472a8599125c3bb47d4bd62a9c36bc9463d1f02",
+      "release_path": "supplementary_tables/S4a_repeat_variability.csv"
+    },
+    {
+      "current_label": "S5b",
+      "filename": "S4b_consistency_and_review_coverage.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4b_consistency_and_review_coverage.csv",
+      "sha256": "f4d55acc73eb61b1844927d3c0c92764b36b4de20c15aeba56c4a6e49782d359",
+      "release_path": "supplementary_tables/S4b_consistency_and_review_coverage.csv"
+    },
+    {
+      "current_label": "S5c",
+      "filename": "S4c_prompt_control_changes.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4c_prompt_control_changes.csv",
+      "sha256": "5b9736e4bdc6431ce2bc4f893b7cd1f6fd63961932bc6cc9b22973e14a91724f",
+      "release_path": "supplementary_tables/S4c_prompt_control_changes.csv"
+    },
+    {
+      "current_label": "S5d",
+      "filename": "S4d_selected_marker_settings.json",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4d_selected_marker_settings.json",
+      "sha256": "f35d7697d1c4a946acff92c4c124276bdad9e2d22b0c58aa16a4d6035186e565",
+      "release_path": "supplementary_tables/S4d_selected_marker_settings.json"
+    },
+    {
+      "current_label": "S5e",
+      "filename": "S4e_four_model_settings.json",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4e_four_model_settings.json",
+      "sha256": "c8e3ad72cb64e1116894506c63900b8d035e716db006b46a8152d72afa7a3937",
+      "release_path": "supplementary_tables/S4e_four_model_settings.json"
+    },
+    {
+      "current_label": "S5f",
+      "filename": "S4f_prediction_delivery.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4f_prediction_delivery.csv",
+      "sha256": "90631cecf5f0a1763876ebe4effb0541f3d80359b68c6cb99080b9a71146dbbe",
+      "release_path": "supplementary_tables/S4f_prediction_delivery.csv"
+    },
+    {
+      "current_label": "S5g",
+      "filename": "S4g_separate_four_model_benchmark.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/S4g_separate_four_model_benchmark.csv",
+      "sha256": "054709e61ff2c65cbcad6c13675ad6fbaa80bcdc44ca3bf41de4bbb49ebb4be7",
+      "release_path": "supplementary_tables/S4g_separate_four_model_benchmark.csv"
+    },
+    {
+      "current_label": "S5h",
+      "filename": "Table_S4h_calibration.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S4h_calibration.csv",
+      "sha256": "04bed877971d58ade85cb8afae5d898ffe71955ee369fbb016f1f10c66cc1843",
+      "release_path": "supplementary_tables/Table_S4h_calibration.csv"
+    },
+    {
+      "current_label": "S5i",
+      "filename": "Table_S4i_spatial.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S4i_spatial.csv",
+      "sha256": "ef9a6cc43aed2b03d2b499b16afd8dd4eb56f6f627bf38840eb4b727fa1ab62b",
+      "release_path": "supplementary_tables/Table_S4i_spatial.csv"
+    },
+    {
+      "current_label": "S5j",
+      "filename": "Table_S4j_historical_execution_settings.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S4j_historical_execution_settings.csv",
+      "sha256": "196bb3b20a5dcf286dee0e282a965663c4c7fa2f8dce5e674d4760dfda4e1c4c",
+      "release_path": "supplementary_tables/Table_S4j_historical_execution_settings.csv"
+    },
+    {
+      "current_label": "S6a",
+      "filename": "Table_S6a.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S6a.csv",
+      "sha256": "99da251169bb26fe540869951e25ac85087b48ff54653626c7ae5b3a099af2db",
+      "release_path": "supplementary_tables/Table_S6a.csv"
+    },
+    {
+      "current_label": "S6b",
+      "filename": "Table_S6b.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S6b.csv",
+      "sha256": "bf613a369eae546a0a0d5811cd3b2e5041e91e70c9f6e3fb76fd093ed8602590",
+      "release_path": "supplementary_tables/Table_S6b.csv"
+    },
+    {
+      "current_label": "S6c",
+      "filename": "Table_S6c.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S6c.csv",
+      "sha256": "13248fb1baacd82b42aab1dc2afc95a949a429bfd7a5b9fc913a704bb53204ae",
+      "release_path": "supplementary_tables/Table_S6c.csv"
+    },
+    {
+      "current_label": "S6d",
+      "filename": "Table_S6d.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S6d.csv",
+      "sha256": "de704acf6d72b5f056d16811b381140cdc155072640368084162f5e04ec4a620",
+      "release_path": "supplementary_tables/Table_S6d.csv"
+    },
+    {
+      "current_label": "S7",
+      "filename": "Supplementary_Table_S5_conditional_comparisons.docx",
+      "path": "data/frozen/manuscript_replay/tables/companions/Supplementary_Table_S5_conditional_comparisons.docx",
+      "sha256": "850d97490c644ad4509542c2e61bf1f0e243ba315e9206fa3d73e4f167d85a5d",
+      "release_path": "supplementary_tables/Supplementary_Table_S5_conditional_comparisons.docx"
+    },
+    {
+      "current_label": "S7",
+      "filename": "conditional_comparisons.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/conditional_comparisons.csv",
+      "sha256": "aeed35a2da36ab65eddfd3a6ccbf5c9033d3be942d91a8ce7a91e22f39130e1c",
+      "release_path": "supplementary_tables/conditional_comparisons.csv"
+    },
+    {
+      "current_label": "S7",
+      "filename": "paired_regional_observations.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/paired_regional_observations.csv",
+      "sha256": "2ebc29a41d56c769afdfa3915ddfae0b0269f7795539958b7a14c9cf786f1200",
+      "release_path": "supplementary_tables/paired_regional_observations.csv"
+    },
+    {
+      "current_label": "S8a",
+      "filename": "Table_S7a.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S7a.csv",
+      "sha256": "875b2d14f360cd00d375bcd5e7967abdd180957fe732ddff4dfc3221829154f6",
+      "release_path": "supplementary_tables/Table_S7a.csv"
+    },
+    {
+      "current_label": "S8b",
+      "filename": "Table_S7b.csv",
+      "path": "data/frozen/manuscript_replay/tables/companions/Table_S7b.csv",
+      "sha256": "5a368f60d71f34316c893ec4ea6bad9b505c3a74d650b78ff3d4df35435bd1a3",
+      "release_path": "supplementary_tables/Table_S7b.csv"
+    }
+  ]
+}

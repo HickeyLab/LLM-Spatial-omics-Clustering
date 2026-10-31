@@ -1,4 +1,4 @@
-"""Reproducible implementation of Supplementary Figure S3, Panels A--E.
+"""Reproducible implementation of Supplementary Figure S4, Panels A--E.
 
 Panels A--C and E import the exact B004 cohort and selected clustering
 assignments from the Figure 2 contract.  That choice intentionally makes the
@@ -38,7 +38,7 @@ PANEL_KEYS = tuple(f"panel_{letter}" for letter in "abcde")
 
 
 class FigureS03ValidationError(ValueError):
-    """Raised when a Supplementary Figure S3 input violates its contract."""
+    """Raised when a Supplementary Figure S4 input violates its contract."""
 
 
 @dataclass(frozen=True)
@@ -57,12 +57,12 @@ class FigureS03Inputs:
 
 
 def load_figure_config(config_path: str | Path | None = None) -> dict[str, Any]:
-    """Load and minimally validate the Supplementary Figure S3 configuration."""
+    """Load and minimally validate the Supplementary Figure S4 configuration."""
     path = Path(config_path) if config_path else REPOSITORY_ROOT / "configs/figure_s03.yaml"
     with path.open(encoding="utf-8") as handle:
         config = yaml.safe_load(handle)
     if not isinstance(config, dict) or int(config.get("supplementary_figure", -1)) != 3:
-        raise FigureS03ValidationError(f"Invalid Supplementary Figure S3 config: {path}")
+        raise FigureS03ValidationError(f"Invalid Supplementary Figure S4 config: {path}")
     if not set(PANEL_KEYS).issubset(config):
         raise FigureS03ValidationError(f"Config does not define Panels A--E: {path}")
     return config
@@ -284,7 +284,7 @@ def _load_inputs_cached(
         )
 
     # Figure 2 places three observation-derived markers before the 45 H5AD X
-    # variables. Supplementary Figure S3A deliberately uses only H5AD X.
+    # variables. Supplementary Figure S4A deliberately uses only H5AD X.
     obs_marker_count = len(figure_02_config["panel_d"]["features"]["h5ad_obs_markers"])
     marker_names = tuple(map(str, figure_02_data.marker_names[obs_marker_count:]))
     expression = np.asarray(figure_02_data.features[:, obs_marker_count:], dtype=np.float64)
@@ -490,7 +490,7 @@ def run_panel_a(
     repository_root: str | Path | None = None,
     config_path: str | Path | None = None,
 ) -> dict[str, Path]:
-    """Compute, render, and provenance-lock Supplementary Figure S3A."""
+    """Compute, render, and provenance-lock Supplementary Figure S4A."""
     root = _resolve_repository_root(repository_root)
     resolved_config = _resolve_config_path(root, config_path)
     config = load_figure_config(resolved_config)

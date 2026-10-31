@@ -1,0 +1,160 @@
+{
+  "source_hashes": {
+    "annotations": "d0ee46ecf58bd77e306348e9f3cfb7a1a0ed40d02a26d4950fdd597d7d4701a9",
+    "master": "1cb84f01f939fca3c3a7d0fa9d9fd3450a351134dfed75cccf10607ae7aae107",
+    "h5ad": "a159bbeca2a4dd84dc265929d3b1d409c16be5e00a2f9819c012b8a5879c37e0",
+    "truth": "b305e065ced797885603bf293c6c1d4e94a6d263fcc7e70ee2fa7faa70465866",
+    "colors": "b4dceaa529442d49925da253efd3ae4f4cacb7ba99847d30b4c4fb8cef274e22"
+  },
+  "source_cells": 220082,
+  "modal_tie_rule": "first modal label in GPT, Claude, Gemini, DeepSeek order, without reference labels",
+  "modal_tie_counts": {
+    "leiden": 17503,
+    "flowsom": 11886,
+    "spatialsort": 17745,
+    "pixie_tiff": 8221
+  },
+  "frozen_consensus_labels_verified": 880328,
+  "cluster_labels_constant_within_all_frozen_clusters": true,
+  "panel_I": {
+    "groups": [
+      {
+        "method": "Leiden",
+        "n_selected_cells": 15970,
+        "n_selected_clusters": 20,
+        "reference_noise_cells_included": 21
+      },
+      {
+        "method": "FlowSOM",
+        "n_selected_cells": 8929,
+        "n_selected_clusters": 11,
+        "reference_noise_cells_included": 11
+      },
+      {
+        "method": "SpatialSort",
+        "n_selected_cells": 15535,
+        "n_selected_clusters": 21,
+        "reference_noise_cells_included": 20
+      },
+      {
+        "method": "PIXIE",
+        "n_selected_cells": 12042,
+        "n_selected_clusters": 10,
+        "reference_noise_cells_included": 48
+      }
+    ],
+    "marker_count": 45,
+    "method_marker_rows": 180,
+    "master_matches_H5AD_X_float32": true,
+    "cutoff": "stored processed value > 0.0, no additional transform",
+    "mean": "all selected cells, including zeros",
+    "scaling": "min-max across four method groups separately per marker",
+    "reference_filter": "none, including reference Noise"
+  },
+  "panel_J": {
+    "zoom_reference_filter": "exclude reference Noise",
+    "normalization": "21-label annotation vocabulary, Paneth to Neuroendocrine",
+    "windows": [
+      {
+        "example": "Low reference agreement",
+        "method": "Leiden",
+        "file_id": "768b7adb649959b6a4e354867595032d",
+        "n_cells": 1086,
+        "matched_cells": 386,
+        "reference_agreement": 0.35543278084714547,
+        "x0": 4546.435323674194,
+        "x1": 6230.835323674193,
+        "y0": 8121.140794695537,
+        "y1": 9682.140794695537
+      },
+      {
+        "example": "Low reference agreement",
+        "method": "FlowSOM",
+        "file_id": "768b7adb649959b6a4e354867595032d",
+        "n_cells": 1086,
+        "matched_cells": 269,
+        "reference_agreement": 0.24769797421731124,
+        "x0": 4546.435323674194,
+        "x1": 6230.835323674193,
+        "y0": 8121.140794695537,
+        "y1": 9682.140794695537
+      },
+      {
+        "example": "Low reference agreement",
+        "method": "SpatialSort",
+        "file_id": "768b7adb649959b6a4e354867595032d",
+        "n_cells": 1086,
+        "matched_cells": 225,
+        "reference_agreement": 0.20718232044198895,
+        "x0": 4546.435323674194,
+        "x1": 6230.835323674193,
+        "y0": 8121.140794695537,
+        "y1": 9682.140794695537
+      },
+      {
+        "example": "Low reference agreement",
+        "method": "PIXIE",
+        "file_id": "768b7adb649959b6a4e354867595032d",
+        "n_cells": 1086,
+        "matched_cells": 496,
+        "reference_agreement": 0.4567219152854512,
+        "x0": 4546.435323674194,
+        "x1": 6230.835323674193,
+        "y0": 8121.140794695537,
+        "y1": 9682.140794695537
+      },
+      {
+        "example": "High reference agreement",
+        "method": "Leiden",
+        "file_id": "76d3efd17b6fc83aaac13e961824c5ae",
+        "n_cells": 915,
+        "matched_cells": 664,
+        "reference_agreement": 0.7256830601092896,
+        "x0": 6698.995539724947,
+        "x1": 8237.795539724948,
+        "y0": 6947.954817410747,
+        "y1": 8268.104817410747
+      },
+      {
+        "example": "High reference agreement",
+        "method": "FlowSOM",
+        "file_id": "76d3efd17b6fc83aaac13e961824c5ae",
+        "n_cells": 915,
+        "matched_cells": 572,
+        "reference_agreement": 0.6251366120218579,
+        "x0": 6698.995539724947,
+        "x1": 8237.795539724948,
+        "y0": 6947.954817410747,
+        "y1": 8268.104817410747
+      },
+      {
+        "example": "High reference agreement",
+        "method": "SpatialSort",
+        "file_id": "76d3efd17b6fc83aaac13e961824c5ae",
+        "n_cells": 915,
+        "matched_cells": 617,
+        "reference_agreement": 0.6743169398907104,
+        "x0": 6698.995539724947,
+        "x1": 8237.795539724948,
+        "y0": 6947.954817410747,
+        "y1": 8268.104817410747
+      },
+      {
+        "example": "High reference agreement",
+        "method": "PIXIE",
+        "file_id": "76d3efd17b6fc83aaac13e961824c5ae",
+        "n_cells": 915,
+        "matched_cells": 628,
+        "reference_agreement": 0.6863387978142077,
+        "x0": 6698.995539724947,
+        "x1": 8237.795539724948,
+        "y0": 6947.954817410747,
+        "y1": 8268.104817410747
+      }
+    ],
+    "selection": "fixed source-output windows selected post hoc using reference agreement, composition and density; not independent validation",
+    "locator_source_includes_reference_noise": true
+  },
+  "new_fits": 0,
+  "new_model_calls": 0
+}

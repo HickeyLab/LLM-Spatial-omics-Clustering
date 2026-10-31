@@ -1,0 +1,1622 @@
+{
+  "tables": [
+    {
+      "rows": [
+        [
+          "Clustering",
+          "Nearest-centroid",
+          "Logistic regression",
+          "Reference-assisted GPT",
+          "Reference-assisted Claude",
+          "Reference-assisted Gemini",
+          "Reference-assisted DeepSeek"
+        ],
+        [
+          "Leiden",
+          "64.61",
+          "70.65",
+          "58.86",
+          "47.96",
+          "44.36",
+          "60.18"
+        ],
+        [
+          "FlowSOM",
+          "55.71",
+          "62.72",
+          "53.08",
+          "46.85",
+          "47.27",
+          "52.65"
+        ],
+        [
+          "SpatialSort",
+          "51.11",
+          "59.17",
+          "49.30",
+          "41.57",
+          "36.07",
+          "40.74"
+        ],
+        [
+          "PIXIE",
+          "56.11",
+          "57.17",
+          "51.09",
+          "41.99",
+          "42.38",
+          "45.16"
+        ]
+      ],
+      "label": "1",
+      "notes": "Direct LLM annotations with labeled reference profiles derived only from B004 training regions were compared with the nearest-centroid and multinomial logistic regression classifiers fitted using those same regions. GPT, Claude, Gemini and DeepSeek denote GPT-5.6-Sol, Claude Opus 5, Gemini 3.1 Pro Preview and DeepSeek V4 Pro, respectively."
+    },
+    {
+      "rows": [
+        [
+          "Donor",
+          "Clustering",
+          "GPT",
+          "Claude",
+          "Gemini",
+          "DeepSeek"
+        ],
+        [
+          "B005",
+          "Leiden",
+          "52.87 → 56.25",
+          "45.88 → 52.49",
+          "12.05 → 27.43",
+          "3.75 → 59.70"
+        ],
+        [
+          "B005",
+          "FlowSOM",
+          "39.56 → 49.50",
+          "39.08 → 48.97",
+          "19.38 → 49.85",
+          "6.09 → 42.91"
+        ],
+        [
+          "B005",
+          "SpatialSort",
+          "47.77 → 48.80",
+          "42.68 → 41.03",
+          "12.44 → 54.05",
+          "9.67 → 38.59"
+        ],
+        [
+          "B005",
+          "PIXIE",
+          "38.00 → 54.80",
+          "51.22 → 41.80",
+          "25.33 → 57.97",
+          "7.77 → 53.05"
+        ],
+        [
+          "B006",
+          "Leiden",
+          "45.43 → 61.46",
+          "51.37 → 43.44",
+          "18.27 → 61.30",
+          "13.59 → 60.66"
+        ],
+        [
+          "B006",
+          "FlowSOM",
+          "42.82 → 56.67",
+          "41.37 → 44.73",
+          "25.11 → 44.70",
+          "10.02 → 62.40"
+        ],
+        [
+          "B006",
+          "SpatialSort",
+          "34.91 → 49.80",
+          "39.43 → 42.11",
+          "16.10 → 18.10",
+          "4.83 → 42.89"
+        ],
+        [
+          "B006",
+          "PIXIE",
+          "26.45 → 47.39",
+          "32.47 → 42.17",
+          "22.86 → 26.79",
+          "13.46 → 37.28"
+        ],
+        [
+          "Average",
+          "Leiden",
+          "49.15 → 58.86",
+          "48.62 → 47.96",
+          "15.16 → 44.36",
+          "8.67 → 60.18"
+        ],
+        [
+          "Average",
+          "FlowSOM",
+          "41.19 → 53.08",
+          "40.22 → 46.85",
+          "22.24 → 47.27",
+          "8.06 → 52.65"
+        ],
+        [
+          "Average",
+          "SpatialSort",
+          "41.34 → 49.30",
+          "41.05 → 41.57",
+          "14.27 → 36.07",
+          "7.25 → 40.74"
+        ],
+        [
+          "Average",
+          "PIXIE",
+          "32.22 → 51.09",
+          "41.84 → 41.99",
+          "24.09 → 42.38",
+          "10.62 → 45.16"
+        ]
+      ],
+      "label": "2",
+      "notes": "Each cell reports agreement in percent without → with the five labeled reference profiles. All methods were evaluated on the common matched population. Regional agreement was averaged within each donor, and the two donor means were weighted equally for the average. Missing or invalid predictions remained errors in the planned denominators. GPT, Claude, Gemini and DeepSeek denote GPT-5.6-Sol, Claude Opus 5, Gemini 3.1 Pro Preview and DeepSeek V4 Pro, respectively. Additional metrics are provided in Tables S4a–S4f."
+    },
+    {
+      "rows": [
+        [
+          "Field",
+          "Leiden",
+          "FlowSOM",
+          "SpatialSort",
+          "PIXIE"
+        ],
+        [
+          "Inputs",
+          "47 markers",
+          "45 markers",
+          "45 markers",
+          "48 image channels"
+        ],
+        [
+          "Transform",
+          "arcsinh(x/5)",
+          "arcsinh(x/5)",
+          "arcsinh(x/5)",
+          "Pixel and cell composition pipeline"
+        ],
+        [
+          "Scaling",
+          "StandardScaler within each region",
+          "Full-cohort RobustScaler",
+          "Full-cohort RobustScaler",
+          "Channel and composition normalization"
+        ],
+        [
+          "Configured and occupied clusters",
+          "300 and 300",
+          "300 and 300",
+          "300 and 246",
+          "300 and 300"
+        ],
+        [
+          "Implementation",
+          "K320 local Leiden with 20 within-parent merges",
+          "32×32 self-organizing map followed by Ward clustering",
+          "24 neighbors and precision 0.65",
+          "10×10 pixel map and 24×24 cell map"
+        ],
+        [
+          "Sigma and learning rate",
+          "See Leiden procedure in Section 2.7",
+          "1.0 and 0.3",
+          "Not applicable",
+          "Pixel 5.0 and 0.05. Cell 2.0 and 0.3"
+        ],
+        [
+          "Iterations",
+          "See Leiden procedure in Section 2.7",
+          "10,000",
+          "8 recorded iterations and 6 actual sampling steps",
+          "One pixel pass and 5,000 cell iterations"
+        ],
+        [
+          "Seed",
+          "42",
+          "42",
+          "42",
+          "42"
+        ]
+      ],
+      "label": "S2A",
+      "notes": "Table S2A reports the clustering configurations and hyperparameters. Additional procedure details are given in Section 2.7. Leiden used 47 protein markers, while FlowSOM and SpatialSort used 45. PIXIE selected 47 protein channels and the Hoechst1 DNA channel from the 59 available image channels, then converted pixel-cluster assignments into cell-composition features. Pixel-level and cell-level settings are reported separately for PIXIE. Table S2B identifies channel membership."
+    },
+    {
+      "rows": [
+        [
+          "Channel group",
+          "Leiden",
+          "FlowSOM",
+          "SpatialSort",
+          "PIXIE"
+        ],
+        [
+          "Shared 45 protein markers",
+          "Included",
+          "Included",
+          "Included",
+          "Included"
+        ],
+        [
+          "CD123",
+          "Included",
+          "Excluded",
+          "Excluded",
+          "Included"
+        ],
+        [
+          "CDX2",
+          "Included",
+          "Excluded",
+          "Excluded",
+          "Included"
+        ],
+        [
+          "Hoechst1",
+          "Excluded",
+          "Excluded",
+          "Excluded",
+          "Included"
+        ],
+        [
+          "Total selected inputs",
+          "47",
+          "45",
+          "45",
+          "48"
+        ]
+      ],
+      "label": "S2B",
+      "notes": "Membership refers to inputs used for clustering, not all channels available in the source images. Hoechst1 is a DNA channel. PIXIE uses selected-channel pixel intensities to construct cell-composition features. The common-45-marker sensitivity analysis includes only the shared 45 protein markers for every method. Table_S1_channel_membership.csv lists all 48 channel names, source locations, OME aliases, method membership and supporting evidence."
+    },
+    {
+      "rows": [
+        [
+          "Parameter",
+          "FlowSOM",
+          "Leiden",
+          "SpatialSort",
+          "PIXIE-style export"
+        ],
+        [
+          "Expression threshold",
+          "0.25–0.39",
+          "0.30–0.44",
+          "0.35–0.49",
+          "0.10–0.24"
+        ],
+        [
+          "Fraction threshold",
+          "0.25–0.39",
+          "0.50–0.64",
+          "0.35–0.49",
+          "0.50–0.64"
+        ],
+        [
+          "Mean-expression threshold",
+          "0.10–0.20",
+          "0.02–0.10",
+          "0.02–0.10",
+          "0.02–0.10"
+        ],
+        [
+          "Maximum markers",
+          "2–4",
+          "3–5",
+          "5–7",
+          "3–5"
+        ],
+        [
+          "Fallback minimum markers",
+          "2",
+          "2",
+          "3",
+          "4"
+        ]
+      ],
+      "label": "S3A",
+      "notes": ""
+    },
+    {
+      "rows": [
+        [
+          "Method",
+          "Expression values",
+          "Fraction values",
+          "Mean-expression values",
+          "Maximum-marker values",
+          "Fallback values",
+          "Combinations"
+        ],
+        [
+          "FlowSOM",
+          "8",
+          "8",
+          "6",
+          "3",
+          "1",
+          "1,152"
+        ],
+        [
+          "Leiden",
+          "8",
+          "8",
+          "5",
+          "3",
+          "1",
+          "960"
+        ],
+        [
+          "SpatialSort",
+          "8",
+          "8",
+          "5",
+          "3",
+          "1",
+          "960"
+        ],
+        [
+          "PIXIE-style export",
+          "8",
+          "8",
+          "5",
+          "3",
+          "1",
+          "960"
+        ]
+      ],
+      "label": "S3B",
+      "notes": ""
+    },
+    {
+      "rows": [
+        [
+          "Method",
+          "Expression threshold",
+          "Fraction threshold",
+          "Mean-expression threshold",
+          "Maximum markers",
+          "Fallback minimum markers",
+          "Parameter combinations"
+        ],
+        [
+          "FlowSOM",
+          "0.25–0.39 (increment 0.02)",
+          "0.25–0.39 (increment 0.02)",
+          "0.10–0.20 (increment 0.02)",
+          "2–4",
+          "2",
+          "1,152"
+        ],
+        [
+          "Leiden",
+          "0.30–0.44 (increment 0.02)",
+          "0.50–0.64 (increment 0.02)",
+          "0.02–0.10 (increment 0.02)",
+          "3–5",
+          "2",
+          "960"
+        ],
+        [
+          "SpatialSort",
+          "0.35–0.49 (increment 0.02)",
+          "0.35–0.49 (increment 0.02)",
+          "0.02–0.10 (increment 0.02)",
+          "5–7",
+          "3",
+          "960"
+        ],
+        [
+          "PIXIE-style export",
+          "0.10–0.24 (increment 0.02)",
+          "0.50–0.64 (increment 0.02)",
+          "0.02–0.10 (increment 0.02)",
+          "3–5",
+          "4",
+          "960"
+        ]
+      ],
+      "label": "S3C",
+      "notes": ""
+    },
+    {
+      "rows": [
+        [
+          "Method",
+          "Expression threshold",
+          "Fraction threshold",
+          "Mean-expression threshold",
+          "Maximum markers",
+          "Fallback minimum markers",
+          "Parameter combinations"
+        ],
+        [
+          "FlowSOM",
+          "0.31",
+          "0.29",
+          "0.14",
+          "3",
+          "2",
+          "1,152"
+        ],
+        [
+          "Leiden",
+          "0.30",
+          "0.58",
+          "0.02",
+          "4",
+          "2",
+          "960"
+        ],
+        [
+          "SpatialSort",
+          "0.39",
+          "0.41",
+          "0.02",
+          "6",
+          "3",
+          "960"
+        ],
+        [
+          "PIXIE-style export",
+          "0.10",
+          "0.56",
+          "0.02",
+          "4",
+          "4",
+          "960"
+        ]
+      ],
+      "label": "S3D",
+      "notes": "(A) Declared candidate ranges by source-table method. (B) Number of candidate values and combinations. (C) Reported search ranges and step sizes. (D) Parameter settings recorded for the marker-name lists. The display label PIXIE-style export preserves the source-table label PIXIE-style adaptation. The available marker-name export contains 50 cluster lists, and equivalence to the main benchmark’s TIFF-derived PIXIE implementation with 300 occupied clusters has not been verified. These are retrospective selections using the full reference-labeled cohort and are not independently validated settings. They do not establish which inputs were supplied to the benchmark LLMs. Archived 21-label benchmark prompts instead contain numerical marker-expression profiles and task context (Supplementary Note 1)."
+    },
+    {
+      "rows": [
+        [
+          "Model",
+          "Requested model ID",
+          "Actual provider routes",
+          "Output cap (tokens)",
+          "Contributing calls"
+        ],
+        [
+          "GPT",
+          "openai/gpt-5.6-sol",
+          "OpenAI",
+          "8,192 or 16,384",
+          "32"
+        ],
+        [
+          "Claude",
+          "anthropic/claude-opus-5",
+          "Amazon Bedrock",
+          "8,192 or 16,384",
+          "31"
+        ],
+        [
+          "Gemini",
+          "google/gemini-3.1-pro-preview",
+          "Google, Google AI Studio",
+          "8,192 or 16,384",
+          "38"
+        ],
+        [
+          "DeepSeek",
+          "deepseek/deepseek-v4-pro",
+          "Alibaba, Baidu, Cloudflare, DigitalOcean, GMICloud, Novita, SiliconFlow, StreamLake, Together",
+          "16,384",
+          "78"
+        ]
+      ],
+      "label": "S5j",
+      "notes": "Counts identify responses contributing to the final sets of predicted cell-type labels, not independent repeats. All calls requested high reasoning effort and omitted top-p and seed. Temperature was omitted for GPT and set to 0 for the other models. Output caps are request limits, not context-window sizes."
+    },
+    {
+      "rows": [
+        [
+          "Clustering and model",
+          "Prompt",
+          "Cells",
+          "Raw Brier",
+          "Recal. Brier",
+          "Constant Brier",
+          "Raw ECE",
+          "Recal. ECE"
+        ],
+        [
+          "FlowSOM Claude",
+          "Markers",
+          "5735",
+          ".541",
+          ".260",
+          ".245",
+          ".579",
+          ".233"
+        ],
+        [
+          "FlowSOM Claude",
+          "Reference-assisted",
+          "5735",
+          ".516",
+          ".204",
+          ".261",
+          ".559",
+          ".087"
+        ],
+        [
+          "FlowSOM DeepSeek",
+          "Markers",
+          "5735",
+          ".432",
+          ".047",
+          ".041",
+          ".594",
+          ".063"
+        ],
+        [
+          "FlowSOM DeepSeek",
+          "Reference-assisted",
+          "5735",
+          ".341",
+          ".152",
+          ".249",
+          ".444",
+          ".180"
+        ],
+        [
+          "FlowSOM Gemini",
+          "Markers",
+          "5735",
+          ".463",
+          ".206",
+          ".190",
+          ".485",
+          ".078"
+        ],
+        [
+          "FlowSOM Gemini",
+          "Reference-assisted",
+          "5735",
+          ".300",
+          ".239",
+          ".248",
+          ".302",
+          ".110"
+        ],
+        [
+          "FlowSOM GPT",
+          "Markers",
+          "5735",
+          ".518",
+          ".228",
+          ".231",
+          ".552",
+          ".152"
+        ],
+        [
+          "FlowSOM GPT",
+          "Reference-assisted",
+          "5735",
+          ".319",
+          ".190",
+          ".258",
+          ".380",
+          ".089"
+        ],
+        [
+          "Leiden Claude",
+          "Markers",
+          "8927",
+          ".513",
+          ".240",
+          ".246",
+          ".532",
+          ".113"
+        ],
+        [
+          "Leiden Claude",
+          "Reference-assisted",
+          "8927",
+          ".403",
+          ".224",
+          ".250",
+          ".447",
+          ".071"
+        ],
+        [
+          "Leiden DeepSeek",
+          "Markers",
+          "8927",
+          ".334",
+          ".073",
+          ".075",
+          ".527",
+          ".164"
+        ],
+        [
+          "Leiden DeepSeek",
+          "Reference-assisted",
+          "8927",
+          ".277",
+          ".213",
+          ".263",
+          ".296",
+          ".121"
+        ],
+        [
+          "Leiden Gemini",
+          "Markers",
+          "8927",
+          ".448",
+          ".189",
+          ".184",
+          ".495",
+          ".125"
+        ],
+        [
+          "Leiden Gemini",
+          "Reference-assisted",
+          "8927",
+          ".310",
+          ".355",
+          ".316",
+          ".286",
+          ".309"
+        ],
+        [
+          "Leiden GPT",
+          "Markers",
+          "8927",
+          ".279",
+          ".307",
+          ".329",
+          ".297",
+          ".292"
+        ],
+        [
+          "Leiden GPT",
+          "Reference-assisted",
+          "8927",
+          ".317",
+          ".231",
+          ".232",
+          ".307",
+          ".093"
+        ],
+        [
+          "PIXIE Claude",
+          "Markers",
+          "5678",
+          ".453",
+          ".251",
+          ".250",
+          ".470",
+          ".119"
+        ],
+        [
+          "PIXIE Claude",
+          "Reference-assisted",
+          "5678",
+          ".477",
+          ".230",
+          ".259",
+          ".493",
+          ".026"
+        ],
+        [
+          "PIXIE DeepSeek",
+          "Markers",
+          "5678",
+          ".296",
+          ".142",
+          ".201",
+          ".473",
+          ".251"
+        ],
+        [
+          "PIXIE DeepSeek",
+          "Reference-assisted",
+          "5678",
+          ".299",
+          ".248",
+          ".258",
+          ".262",
+          ".102"
+        ],
+        [
+          "PIXIE Gemini",
+          "Markers",
+          "5678",
+          ".592",
+          ".131",
+          ".127",
+          ".669",
+          ".001"
+        ],
+        [
+          "PIXIE Gemini",
+          "Reference-assisted",
+          "5678",
+          ".541",
+          ".265",
+          ".276",
+          ".541",
+          ".102"
+        ],
+        [
+          "PIXIE GPT",
+          "Markers",
+          "5678",
+          ".350",
+          ".227",
+          ".247",
+          ".383",
+          ".135"
+        ],
+        [
+          "PIXIE GPT",
+          "Reference-assisted",
+          "5678",
+          ".518",
+          ".265",
+          ".263",
+          ".507",
+          ".111"
+        ],
+        [
+          "SpatialSort Claude",
+          "Markers",
+          "9373",
+          ".699",
+          ".145",
+          ".151",
+          ".742",
+          ".065"
+        ],
+        [
+          "SpatialSort Claude",
+          "Reference-assisted",
+          "9373",
+          ".538",
+          ".204",
+          ".205",
+          ".559",
+          ".049"
+        ],
+        [
+          "SpatialSort DeepSeek",
+          "Markers",
+          "9373",
+          ".567",
+          ".068",
+          ".069",
+          ".693",
+          ".021"
+        ],
+        [
+          "SpatialSort DeepSeek",
+          "Reference-assisted",
+          "9373",
+          ".417",
+          ".139",
+          ".150",
+          ".512",
+          ".017"
+        ],
+        [
+          "SpatialSort Gemini",
+          "Markers",
+          "9373",
+          ".333",
+          ".137",
+          ".138",
+          ".415",
+          ".047"
+        ],
+        [
+          "SpatialSort Gemini",
+          "Reference-assisted",
+          "9373",
+          ".545",
+          ".230",
+          ".233",
+          ".556",
+          ".037"
+        ],
+        [
+          "SpatialSort GPT",
+          "Markers",
+          "9373",
+          ".547",
+          ".169",
+          ".175",
+          ".602",
+          ".030"
+        ],
+        [
+          "SpatialSort GPT",
+          "Reference-assisted",
+          "9373",
+          ".478",
+          ".226",
+          ".229",
+          ".476",
+          ".027"
+        ]
+      ],
+      "label": "S5h",
+      "notes": "All 32 registered conditions are shown. Each row evaluates cells from the 37 clusters assigned to evaluation in its fixed 75-cluster subset, using the two test regions. Recalibration uses the other 38 clusters in the two validation regions. Cells gives the number of evaluation cells with a valid modal prediction. Brier score and expected calibration error (ECE, five equal-width bins) concern cell-level agreement with reference annotations. Lower values are better. Constant Brier uses a probability estimated from development cells. Full negative log likelihood, coverage, fit parameters and selective-risk results accompany the supplementary data."
+    },
+    {
+      "rows": [
+        [
+          "Input",
+          "Test region",
+          "Cells",
+          "Agreement %",
+          "Macro-F1",
+          "Coverage %"
+        ],
+        [
+          "Markers",
+          "768b7adb",
+          "33112",
+          "42.78",
+          ".320",
+          "100.00"
+        ],
+        [
+          "Markers",
+          "8da8f279",
+          "36464",
+          "43.63",
+          ".367",
+          "100.00"
+        ],
+        [
+          "Markers",
+          "Equal-region mean",
+          "69576",
+          "43.20",
+          ".343",
+          "100.00"
+        ],
+        [
+          "Markers + neighborhood input",
+          "768b7adb",
+          "33112",
+          "39.39",
+          ".280",
+          "100.00"
+        ],
+        [
+          "Markers + neighborhood input",
+          "8da8f279",
+          "36464",
+          "39.59",
+          ".349",
+          "100.00"
+        ],
+        [
+          "Markers + neighborhood input",
+          "Equal-region mean",
+          "69576",
+          "39.49",
+          ".315",
+          "100.00"
+        ]
+      ],
+      "label": "S5i",
+      "notes": "All 300 frozen Leiden clusters were annotated in each of three repeats per arm. Values average the three repeats. The equal-region mean gives each of the two test regions equal weight. All requested labels were returned. The 69,576 test cells are the same cells in both arms, and repeated calls are not independent biological replicates."
+    },
+    {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Means (%)",
+          "Means + fractions (%)",
+          "Paired change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT",
+          "40.36 ± 2.99",
+          "36.02 ± 3.96",
+          "-4.34 ± 5.96"
+        ],
+        [
+          "Leiden",
+          "Claude",
+          "39.83 ± 1.02",
+          "10.63 ± 3.53",
+          "-29.20 ± 4.55"
+        ],
+        [
+          "Leiden",
+          "Gemini",
+          "23.97 ± 2.42",
+          "11.34 ± 0.16",
+          "-12.63 ± 2.45"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "9.66 ± 0.96",
+          "7.45 ± 0.86",
+          "-2.21 ± 1.23"
+        ],
+        [
+          "FlowSOM",
+          "GPT",
+          "35.53 ± 1.05",
+          "27.54 ± 3.00",
+          "-8.00 ± 3.10"
+        ],
+        [
+          "FlowSOM",
+          "Claude",
+          "34.45 ± 1.74",
+          "11.82 ± 0.32",
+          "-22.63 ± 1.57"
+        ],
+        [
+          "FlowSOM",
+          "Gemini",
+          "19.47 ± 2.42",
+          "7.66 ± 2.32",
+          "-11.81 ± 4.71"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "8.86 ± 1.24",
+          "2.03 ± 0.30",
+          "-6.83 ± 1.22"
+        ],
+        [
+          "SpatialSort",
+          "GPT",
+          "22.43 ± 1.85",
+          "22.83 ± 0.95",
+          "0.39 ± 1.89"
+        ],
+        [
+          "SpatialSort",
+          "Claude",
+          "22.03 ± 1.86",
+          "4.57 ± 0.90",
+          "-17.46 ± 1.00"
+        ],
+        [
+          "SpatialSort",
+          "Gemini",
+          "12.91 ± 1.51",
+          "10.51 ± 1.32",
+          "-2.39 ± 1.13"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "7.02 ± 3.25",
+          "4.69 ± 1.54",
+          "-2.33 ± 3.02"
+        ],
+        [
+          "PIXIE",
+          "GPT",
+          "34.13 ± 1.28",
+          "29.87 ± 1.95",
+          "-4.25 ± 1.08"
+        ],
+        [
+          "PIXIE",
+          "Claude",
+          "37.38 ± 0.31",
+          "16.85 ± 3.36",
+          "-20.53 ± 3.29"
+        ],
+        [
+          "PIXIE",
+          "Gemini",
+          "21.83 ± 3.97",
+          "12.89 ± 3.30",
+          "-8.94 ± 6.04"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "6.43 ± 1.89",
+          "4.06 ± 0.49",
+          "-2.37 ± 1.44"
+        ]
+      ],
+      "label": "S6a",
+      "notes": "Values are mean ± sample SD across three runs after equally averaging two test regions. Paired changes are fractions minus means. Missing outputs remain errors."
+    },
+    {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Means macro-F1",
+          "Means + fractions macro-F1",
+          "Means coverage (%)",
+          "Means + fractions coverage (%)"
+        ],
+        [
+          "Leiden",
+          "GPT",
+          "0.331 ± 0.006",
+          "0.269 ± 0.011",
+          "100.00 ± 0.00",
+          "100.00 ± 0.00"
+        ],
+        [
+          "Leiden",
+          "Claude",
+          "0.350 ± 0.002",
+          "0.109 ± 0.011",
+          "100.00 ± 0.00",
+          "53.10 ± 16.89"
+        ],
+        [
+          "Leiden",
+          "Gemini",
+          "0.188 ± 0.028",
+          "0.055 ± 0.006",
+          "97.09 ± 1.97",
+          "100.00 ± 0.00"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "0.057 ± 0.006",
+          "0.026 ± 0.013",
+          "94.96 ± 8.74",
+          "100.00 ± 0.00"
+        ],
+        [
+          "FlowSOM",
+          "GPT",
+          "0.255 ± 0.004",
+          "0.181 ± 0.010",
+          "100.00 ± 0.00",
+          "100.00 ± 0.00"
+        ],
+        [
+          "FlowSOM",
+          "Claude",
+          "0.283 ± 0.021",
+          "0.087 ± 0.004",
+          "99.12 ± 1.16",
+          "99.68 ± 0.35"
+        ],
+        [
+          "FlowSOM",
+          "Gemini",
+          "0.130 ± 0.007",
+          "0.046 ± 0.012",
+          "97.69 ± 0.44",
+          "100.00 ± 0.00"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "0.054 ± 0.008",
+          "0.017 ± 0.005",
+          "90.55 ± 15.31",
+          "100.00 ± 0.00"
+        ],
+        [
+          "SpatialSort",
+          "GPT",
+          "0.134 ± 0.014",
+          "0.117 ± 0.005",
+          "100.00 ± 0.00",
+          "100.00 ± 0.00"
+        ],
+        [
+          "SpatialSort",
+          "Claude",
+          "0.135 ± 0.006",
+          "0.040 ± 0.003",
+          "100.00 ± 0.00",
+          "49.00 ± 15.10"
+        ],
+        [
+          "SpatialSort",
+          "Gemini",
+          "0.074 ± 0.006",
+          "0.030 ± 0.007",
+          "99.49 ± 0.89",
+          "99.97 ± 0.02"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "0.036 ± 0.011",
+          "0.025 ± 0.004",
+          "91.70 ± 14.37",
+          "88.18 ± 10.43"
+        ],
+        [
+          "PIXIE",
+          "GPT",
+          "0.215 ± 0.007",
+          "0.179 ± 0.013",
+          "100.00 ± 0.00",
+          "100.00 ± 0.00"
+        ],
+        [
+          "PIXIE",
+          "Claude",
+          "0.236 ± 0.001",
+          "0.113 ± 0.006",
+          "100.00 ± 0.00",
+          "82.63 ± 14.80"
+        ],
+        [
+          "PIXIE",
+          "Gemini",
+          "0.139 ± 0.023",
+          "0.050 ± 0.010",
+          "97.98 ± 1.41",
+          "100.00 ± 0.00"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "0.039 ± 0.002",
+          "0.020 ± 0.001",
+          "73.61 ± 14.72",
+          "100.00 ± 0.00"
+        ]
+      ],
+      "label": "S6b",
+      "notes": "Macro-F1 uses all 28 reference labels with absent-class F1 set to zero. Coverage is the proportion of cells with a valid prediction. Values are mean ± run SD on the same region-weighted endpoint."
+    },
+    {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Valid-label term (pp)",
+          "Delivery term (pp)",
+          "Total change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT",
+          "-4.34",
+          "+0.00",
+          "-4.34"
+        ],
+        [
+          "Leiden",
+          "Claude",
+          "-10.58",
+          "-18.62",
+          "-29.20"
+        ],
+        [
+          "Leiden",
+          "Gemini",
+          "-13.58",
+          "+0.94",
+          "-12.63"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "-2.92",
+          "+0.71",
+          "-2.21"
+        ],
+        [
+          "FlowSOM",
+          "GPT",
+          "-8.00",
+          "+0.00",
+          "-8.00"
+        ],
+        [
+          "FlowSOM",
+          "Claude",
+          "-22.64",
+          "+0.00",
+          "-22.63"
+        ],
+        [
+          "FlowSOM",
+          "Gemini",
+          "-11.88",
+          "+0.07",
+          "-11.81"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "-7.20",
+          "+0.37",
+          "-6.83"
+        ],
+        [
+          "SpatialSort",
+          "GPT",
+          "+0.39",
+          "+0.00",
+          "+0.39"
+        ],
+        [
+          "SpatialSort",
+          "Claude",
+          "-5.99",
+          "-11.47",
+          "-17.46"
+        ],
+        [
+          "SpatialSort",
+          "Gemini",
+          "-2.40",
+          "+0.01",
+          "-2.39"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "-2.19",
+          "-0.14",
+          "-2.33"
+        ],
+        [
+          "PIXIE",
+          "GPT",
+          "-4.25",
+          "+0.00",
+          "-4.25"
+        ],
+        [
+          "PIXIE",
+          "Claude",
+          "-14.64",
+          "-5.89",
+          "-20.53"
+        ],
+        [
+          "PIXIE",
+          "Gemini",
+          "-9.51",
+          "+0.57",
+          "-8.94"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "-3.06",
+          "+0.69",
+          "-2.37"
+        ]
+      ],
+      "label": "S6c",
+      "notes": "Both terms use the full region denominator and sum to the fractions-minus-means change. The label term counts net reference matches gained or lost when both arms returned valid labels. The delivery term counts matches gained or lost when only one arm returned a valid label. Neither term estimates labels for failed calls."
+    },
+    {
+      "rows": [
+        [
+          "Model",
+          "Requested model ID",
+          "Pinned route",
+          "Reasoning",
+          "Decoding fields sent"
+        ],
+        [
+          "GPT",
+          "openai/gpt-5.6-sol",
+          "openai",
+          "none",
+          "temperature and top-p omitted, seeds 42–44"
+        ],
+        [
+          "Claude",
+          "anthropic/claude-opus-5",
+          "anthropic",
+          "none",
+          "temperature and top-p omitted, seed omitted"
+        ],
+        [
+          "Gemini",
+          "google/gemini-3.1-pro-preview",
+          "google-ai-studio",
+          "low",
+          "temperature 0, top-p 1, seeds 42–44"
+        ],
+        [
+          "DeepSeek",
+          "deepseek/deepseek-v4-pro",
+          "streamlake/fp8",
+          "none",
+          "temperature 0, top-p 1, seed omitted"
+        ]
+      ],
+      "label": "S6d",
+      "notes": "All calls used https://openrouter.ai/api/v1/chat/completions, no tools or retrieval, no provider fallback, at most 75 clusters and a 4,096-token output cap. Unsupported fields were omitted. Provider/access/returned-ID records, prompt and parser hashes and complete call receipts are retained with the numerical source files. Access and calls occurred on 28 October 2026 in America/New_York (29 October UTC). Returned aliases do not prove immutable provider-side snapshots."
+    },
+    {
+      "rows": [
+        [
+          "Scoring reference",
+          "Labels",
+          "Top method–LLM pair",
+          "Agreement (%)",
+          "Reversed pairs"
+        ],
+        [
+          "Benchmark mappings",
+          "21",
+          "Leiden / Claude",
+          "55.933",
+          "0"
+        ],
+        [
+          "Preserve M1",
+          "22",
+          "Leiden / Claude",
+          "55.444",
+          "0"
+        ],
+        [
+          "Preserve NK",
+          "21",
+          "Leiden / Claude",
+          "55.903",
+          "0"
+        ],
+        [
+          "Preserve Paneth",
+          "22",
+          "Leiden / Claude",
+          "55.575",
+          "1"
+        ],
+        [
+          "Preserve all three",
+          "23",
+          "Leiden / Claude",
+          "55.055",
+          "1"
+        ],
+        [
+          "Alternative Paneth to Goblet",
+          "21",
+          "Leiden / Claude",
+          "55.575",
+          "1"
+        ],
+        [
+          "Original 28 reference labels (diagnostic)",
+          "28",
+          "Leiden / Gemini",
+          "34.389",
+          "31"
+        ]
+      ],
+      "label": "S8a",
+      "notes": "All scenarios use the same 220,082 cells and frozen predictions. Agreement is a percentage. Reversals count the 120 pooled pairwise orderings of annotation outputs relative to scoring. The original-28-label row is a vocabulary-mismatch diagnostic."
+    },
+    {
+      "rows": [
+        [
+          "Method / model",
+          "Benchmark (%)",
+          "Rank",
+          "Preserve three (%)",
+          "Rank",
+          "Change (pp)"
+        ],
+        [
+          "Leiden / Claude",
+          "55.933",
+          "1",
+          "55.055",
+          "1",
+          "-0.878"
+        ],
+        [
+          "Leiden / Gemini",
+          "54.233",
+          "2",
+          "53.398",
+          "2",
+          "-0.836"
+        ],
+        [
+          "PIXIE / Claude",
+          "52.326",
+          "3",
+          "51.613",
+          "4",
+          "-0.714"
+        ],
+        [
+          "PIXIE / GPT",
+          "52.319",
+          "4",
+          "51.659",
+          "3",
+          "-0.659"
+        ],
+        [
+          "PIXIE / Gemini",
+          "51.848",
+          "5",
+          "51.158",
+          "5",
+          "-0.691"
+        ],
+        [
+          "Leiden / GPT",
+          "51.141",
+          "6",
+          "50.429",
+          "6",
+          "-0.712"
+        ],
+        [
+          "FlowSOM / Claude",
+          "50.482",
+          "7",
+          "49.700",
+          "7",
+          "-0.782"
+        ],
+        [
+          "PIXIE / DeepSeek",
+          "49.945",
+          "8",
+          "49.216",
+          "8",
+          "-0.729"
+        ],
+        [
+          "Leiden / DeepSeek",
+          "48.662",
+          "9",
+          "47.820",
+          "9",
+          "-0.842"
+        ],
+        [
+          "FlowSOM / Gemini",
+          "45.637",
+          "10",
+          "44.939",
+          "10",
+          "-0.698"
+        ],
+        [
+          "FlowSOM / GPT",
+          "44.493",
+          "11",
+          "43.802",
+          "11",
+          "-0.691"
+        ],
+        [
+          "FlowSOM / DeepSeek",
+          "43.082",
+          "12",
+          "42.285",
+          "12",
+          "-0.797"
+        ],
+        [
+          "SpatialSort / GPT",
+          "33.126",
+          "13",
+          "32.579",
+          "13",
+          "-0.547"
+        ],
+        [
+          "SpatialSort / Gemini",
+          "33.019",
+          "14",
+          "32.342",
+          "14",
+          "-0.676"
+        ],
+        [
+          "SpatialSort / DeepSeek",
+          "32.688",
+          "15",
+          "32.158",
+          "15",
+          "-0.530"
+        ],
+        [
+          "SpatialSort / Claude",
+          "31.313",
+          "16",
+          "30.779",
+          "16",
+          "-0.534"
+        ]
+      ],
+      "label": "S8b",
+      "notes": "The three-label sensitivity preserves M1 Macrophage, NK and Paneth and holds other mappings fixed. Rank is among all 16 prediction sets, based on unrounded agreement. Changes are percentage points. GPT, Claude, Gemini and DeepSeek denote the manuscript models."
+    },
+    {
+      "rows": [
+        [
+          "Segmentation method",
+          "Processed before / after",
+          "Matched before / after",
+          "Shared IDs, fixed coordinates",
+          "Before-only IDs",
+          "After-only IDs"
+        ],
+        [
+          "Mesmer",
+          "162,439 / 161,867",
+          "133,665 / 133,266",
+          "161,656",
+          "783",
+          "211"
+        ],
+        [
+          "CellposeCyto3",
+          "145,925 / 145,270",
+          "118,668 / 118,104",
+          "145,011",
+          "914",
+          "259"
+        ],
+        [
+          "CellposeSAM",
+          "173,783 / 172,465",
+          "137,808 / 136,927",
+          "172,169",
+          "1,614",
+          "296"
+        ],
+        [
+          "CellSAM",
+          "195,752 / 194,832",
+          "154,163 / 153,385",
+          "194,071",
+          "1,681",
+          "761"
+        ],
+        [
+          "InstanSeg",
+          "198,959 / 196,717",
+          "146,477 / 144,996",
+          "195,459",
+          "3,500",
+          "1,258"
+        ],
+        [
+          "MicroSAM",
+          "197,314 / 197,400",
+          "149,626 / 149,080",
+          "196,124",
+          "1,190",
+          "1,276"
+        ]
+      ],
+      "label": "S1",
+      "notes": "Counts are pooled across eight B004 regions. Processed counts refer to objects in the deposited H5ADs after historical preprocessing. Matched counts include all objects accepted by directed nearest-neighbor matching at a maximum distance of 10 source-coordinate units after interchanging the reference x and y coordinates. Multiple segmented objects could match the same reference cell. Shared objects had the same CellID within a region and unchanged coordinates. Before-only and after-only counts use CellID, not saved row indices. The shared-object F1 analysis further required an accepted match to the same reference cell and label in both conditions, so the shared-object column is not its final scoring denominator. These counts describe retention and correspondence, not segmentation-boundary accuracy."
+    }
+  ],
+  "source": "Current manuscript export, 2026-10-31. No document edits."
+}

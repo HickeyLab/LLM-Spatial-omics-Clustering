@@ -1,12 +1,14 @@
-# Supplementary Figure S3 panel-level reproducibility contract
+> Current manuscript figure: S4. Legacy `figure_s03` module/config paths remain import-compatible. Use `notebooks/supplementary/figure_s04_reference_and_clustering_diagnostics.ipynb` for the supporting runner.
 
-This contract supports the current Supplementary Figure S3 panel set. The
+# Supplementary Figure S4 panel-level reproducibility contract
+
+This contract supports the current Supplementary Figure S4 panel set. The
 canonical reviewer-facing source-rebuild notebook is
-`notebooks/final_figures/figure_s03_clustering_inputs_and_diagnostics.ipynb`;
+`notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb`;
 the supporting notebook documented here runs each panel independently. Its
 configuration, module, test, and output names all use the current S3 number.
 
-Supplementary Figure S3 documents the raw reference-label phenotypes and the
+Supplementary Figure S4 documents the raw reference-label phenotypes and the
 inputs and diagnostics used for the Figure 2 clustering benchmark. The panel
 map is fixed by the supplied composite:
 
@@ -22,7 +24,7 @@ evaluation of clustering methods**.
 ## Notebook contract
 
 The notebook is
-`notebooks/supplementary/figure_s03_clustering_inputs_and_diagnostics.ipynb`.
+`notebooks/supplementary/figure_s04_reference_and_clustering_diagnostics.ipynb`.
 It contains exactly five code cells and no setup or narrative cells:
 
 1. Cell 1 runs Panel A.
@@ -60,7 +62,7 @@ API. They reuse:
 
 The shared source universe contains 220,082 cells and 28 raw reference labels,
 including 10,495 `Noise` cells. Removing `Noise` leaves 209,587 cells and 27
-raw labels. Supplementary Figure S3 does **not** use the later 20-class Figure 2
+raw labels. Supplementary Figure S4 does **not** use the later 20-class Figure 2
 evaluation harmonization.
 
 The configured and observed cluster counts are:

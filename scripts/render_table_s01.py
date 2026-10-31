@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build an editable, presentation-only Table S1 from current manuscript cells."""
+"""Build an editable, presentation-only Table S2A from current manuscript cells."""
 from __future__ import annotations
 
 import argparse
@@ -23,14 +23,14 @@ def load_inputs():
     config = json.loads((ROOT / "configs/table_s01.json").read_text())
     path = ROOT / config["data"]
     if hashlib.sha256(path.read_bytes()).hexdigest() != config["data_sha256"]:
-        raise ValueError("Table S1 frozen text checksum differs")
+        raise ValueError("Table S2A frozen text checksum differs")
     data = json.loads(path.read_text())
     if len(data["headers"]) != 5 or len(data["rows"]) != 8:
-        raise ValueError("Table S1 must have five columns and eight body rows")
+        raise ValueError("Table S2A must have five columns and eight body rows")
     if any(len(row) != 5 for row in data["rows"]):
-        raise ValueError("Unexpected Table S1 row width")
+        raise ValueError("Unexpected Table S2A row width")
     if abs(sum(config["column_width_inches"]) - 6.5) > 1e-8:
-        raise ValueError("Table S1 must fit the manuscript's 6.5-inch text width")
+        raise ValueError("Table S2A must fit the manuscript's 6.5-inch text width")
     return config, data
 
 
@@ -43,11 +43,11 @@ def element(parent, tag, **attributes):
 
 
 def caption_parts(data):
-    lead, separator, rest = data["caption"].partition("benchmark.")
-    if not separator or not lead.startswith("Table S1. "):
-        raise ValueError("Expected Table S1 caption lead")
-    title = (lead + separator).removeprefix("Table S1. ").rstrip(".")
-    return title.upper(), rest.strip()
+    prefix="Table S2A. "
+    if not data["caption"].startswith(prefix):raise ValueError("Expected current Table S2A caption")
+    title,separator,notes=data["caption"][len(prefix):].partition(". ")
+    if not separator:raise ValueError("Missing table notes")
+    return title.upper(),notes
 
 
 def build_document(config, data):
@@ -117,7 +117,7 @@ def build_document(config, data):
     for run in paragraph.runs:
         run.font.size = Pt(9.5)
         run.font.color.rgb = RGBColor.from_string("000000")
-    document.core_properties.title = "Table S1 clustering configurations"
+    document.core_properties.title = "Table S2A clustering configurations"
     document.core_properties.subject = "IEEE-style presentation matching the supplied example, preserving manuscript content"
     return document
 
@@ -155,32 +155,32 @@ def html_table(config, data):
 def verify_document(path, data):
     document = Document(path)
     if len(document.tables) != 1:
-        raise ValueError("Expected exactly one Table S1")
+        raise ValueError("Expected exactly one Table S2A")
     actual = [[cell.text for cell in row.cells] for row in document.tables[0].rows]
     if actual != [data["headers"], *data["rows"]]:
-        raise ValueError("A Table S1 cell changed")
+        raise ValueError("A Table S2A cell changed")
     title, notes = caption_parts(data)
-    if [p.text for p in document.paragraphs] != ["TABLE S1", title, notes]:
-        raise ValueError("Table S1 caption layout differs")
+    if [p.text for p in document.paragraphs] != ["TABLE S2A", title, notes]:
+        raise ValueError("Table S2A caption layout differs")
     words = lambda text: re.findall(r"\w+", text.casefold())
     if words(" ".join(p.text for p in document.paragraphs)) != words(data["caption"]):
-        raise ValueError("Table S1 caption words changed")
+        raise ValueError("Table S2A caption words changed")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs/source_rebuilt/table_s01")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs/manuscript_replay/table_s02a")
     parser.add_argument("--check", type=Path, help="Verify an existing editable DOCX's content")
     args = parser.parse_args()
     config, data = load_inputs()
     if args.check:
         verify_document(args.check, data)
-        print("Verified all 45 Table S1 cells and all caption words")
+        print("Verified all 45 Table S2A cells and all caption words")
         return
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    target = args.output_dir / "Table_S1_IEEE.docx"
+    target = args.output_dir / "Table_S2A_IEEE.docx"
     build_document(config, data).save(target)
-    (args.output_dir / "Table_S1_IEEE.html").write_text(html_table(config, data))
+    (args.output_dir / "Table_S2A_IEEE.html").write_text(html_table(config, data))
     verify_document(target, data)
     print(target)
 

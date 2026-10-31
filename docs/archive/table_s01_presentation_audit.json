@@ -1,0 +1,53 @@
+{
+  "source": "Current manuscript Google Docs DOCX export, 2026-10-28",
+  "document_id": "1aqZgv5aFS-fgXT2KnZw3CXcxD_W3X1HgjRz_KXf1L18",
+  "source_docx_sha256": "847dfbaae3631a3c4f694816da5c821701bd52a077dfdd81fd98e00d95cae9e7",
+  "source_table_xml_sha256": "1494932b8d06e842beb2d4f0fe6e118f3d40642b71da8f3aed82520b29be5937",
+  "table_dimensions": [
+    9,
+    5
+  ],
+  "unchanged_cells": 45,
+  "scope": "Formatting only. Original editable native table content preserved.",
+  "historical_notebook": "The older three-column configuration table is a distinct historical presentation and is not substituted for the current native table.",
+  "native_status": "IEEE-style editable table applied in Google Docs; table, title and notes share one page.",
+  "editable_docx_cells_match_current_manuscript": true,
+  "rendered_pdf_cells_match_current_manuscript": true,
+  "rendered_pages": 1,
+  "no_fixed_row_heights": true,
+  "repeating_header": true,
+  "native_editable_html_cells": 45,
+  "sanitizer": "Removed one unused Title-style border, no table or caption text changes.",
+  "preview_sha256": "a0c98c6dbc88f4b7b9784b4c9e8e49fd1546d967fabd5cdec21c2c93990794a6",
+  "visual_review": "All text, column alignment, padding, wrapping, borders and caption inspected on the one rendered page.",
+  "native_verification": "docs/native_figure_update_verification.json",
+  "style_reference": "User-supplied IEEE-style table example, 2026-10-28",
+  "style": "Times New Roman, centered caption above, black top/header/bottom rules, no vertical rules, no shading",
+  "caption_words_preserved": true,
+  "caption_layout_changed": true,
+  "font_size_pt": 10,
+  "verification": {
+    "style": "IEEE-style matching supplied example",
+    "all_45_native_cells_preserved": true,
+    "caption_words_preserved": true,
+    "caption_layout": "Centered TABLE S1 and uppercase title above; original explanatory notes below",
+    "no_shading": true,
+    "no_vertical_rules": true,
+    "native_editable": true,
+    "supplementary_numbering_preserved": true,
+    "native_docx_sha256": "372eaa19357f4738d6fe0dad7a86b46bc8e3fb4f551022e6e1ad7ed3e6572101",
+    "native_pdf_page": 46,
+    "native_pdf_all_word_and_value_counts_match": true,
+    "native_pdf_has_no_vertical_lines": true,
+    "native_pdf_fonts": [
+      "AAAAAA+ArialMT",
+      "BAAAAA+TimesNewRomanPS-BoldMT",
+      "CAAAAA+TimesNewRomanPSMT"
+    ],
+    "table_title_and_notes_share_page": true,
+    "preview_sha256": "a0c98c6dbc88f4b7b9784b4c9e8e49fd1546d967fabd5cdec21c2c93990794a6",
+    "native_pdf_visible_fonts": [
+      "CAAAAA+TimesNewRomanPSMT"
+    ]
+  }
+}

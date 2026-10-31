@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Reproduce display-only publication previews without rerunning an analysis.
+"""Verify or copy the current manuscript previews without rerunning analysis.
 
-The original PNGs are read from the pinned Git revision and checksum-verified.
-Internal truth-column names and biological label vocabularies are not changed.
+Current manifest entries use approved local artwork with zero overlays. The
+render helper remains available for historical title/overlay reconstruction.
 """
 from __future__ import annotations
 import argparse

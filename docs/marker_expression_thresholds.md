@@ -1,12 +1,12 @@
 # Publication marker-expression dot sizes
 
-The embedded S3A and 2I publication panels both use a strict operational cutoff
+The embedded S4A and 2I publication panels both use a strict operational cutoff
 of **stored processed marker value > 0.0**. This equality was verified from each
 actual producer separately. It is not a rule for all marker analyses.
 
 | Panel | Cells in the denominator | Values compared with cutoff | Added expression transform | Color |
 | --- | --- | --- | --- | --- |
-| S3A | All cells of each original reference type, excluding Noise, 209,587 cells across 27 types | 45 stored H5AD `X` marker values | None in the dot-plot calculation | All-cell group means, min–max scaled per marker across 27 reference types |
+| S4A | All cells of each original reference type, excluding Noise, 209,587 cells across 27 types | 45 stored H5AD `X` marker values | None in the dot-plot calculation | All-cell group means, min–max scaled per marker across 27 reference types |
 | 2I | Cells assigned CD8+ T by each method's modal raw LLM prediction | 45 historical H5AD marker columns exported through `master.csv` and converted to float32 `AnnData.X` | None in the dot-plot calculation | All-cell group means, min–max scaled per marker across four method groups |
 
 For each displayed group g and marker m, the encoded fraction is
@@ -17,7 +17,7 @@ is applied to the group means for color after the fractions are calculated,
 not to individual values before thresholding. Dot area is a visual encoding,
 including the producer's size floor/size scaling, not a calibrated positive-cell count.
 
-S3A is produced by `v3_scripts/historical_v1_figure_s01_replay.py`, historically
+S4A is produced by `v3_scripts/historical_v1_figure_s01_replay.py`, historically
 numbered S1. It reads `20251007_cleaned_trainingdata_yang.h5ad` directly and
 compares `X > 0`. Its retained biological vocabulary is the original 27
 non-Noise cell types. It does not use a harmonized evaluation vocabulary.
@@ -53,7 +53,7 @@ the loader's cutoff through DataFrame attrs, accepts an explicit cutoff for
 CSV-loaded tables and falls back to the configured panel cutoff for legacy
 inputs. Other analysis-specific cutoffs are unchanged.
 
-The final-figures notebook reconstructions are different calculations. S3A
+The final-figures notebook reconstructions are different calculations. S4A
 there applies arcsinh(x/5), selects 12 markers and 10 harmonized types and sizes
 dots by scaled means. Its corresponding 2I is a clustering-metric overview.
 They are now explicitly marked as alternatives and must not inherit this

@@ -1,0 +1,9 @@
+model,condition,planned_cases,valid_cases,strict_complete,case_delivery_fraction
+claude,marker_only,3357,3282,45,0.9776586237712243
+claude,retrieval,3357,3355,44,0.9994042299672327
+deepseek,marker_only,3357,3298,43,0.9824247840333631
+deepseek,retrieval,3357,3356,45,0.9997021149836163
+gemini,marker_only,3357,3307,28,0.9851057491808162
+gemini,retrieval,3357,2699,37,0.8039916592195413
+gpt,marker_only,3357,3357,46,1.0
+gpt,retrieval,3357,3357,46,1.0

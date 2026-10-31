@@ -1,0 +1,4527 @@
+{
+  "source_hashes": {
+    "truth.csv": "b305e065ced797885603bf293c6c1d4e94a6d263fcc7e70ee2fa7faa70465866",
+    "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+    "data/frozen/v3_k300_assignments/flowsom/assignments.csv.gz": "12a00cb7b4fe9bdb8d17a333c72f38cf28c473378f9defdaf4feaea97e56c6d8",
+    "data/frozen/v3_k300_assignments/spatialsort/master_spatialsort_clusters.csv.gz": "8639c66f7456ec0794ff14c5b39385a654ea8b83e926846a2ac7d822f7ed5a8a",
+    "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805"
+  },
+  "source_cells": 220082,
+  "excluded_noise_cells": 10495,
+  "evaluation_cells": 209587,
+  "evaluation_classes": 20,
+  "harmonization": {
+    "Epithelial": "Enterocyte",
+    "CD66+ Epithelial": "CD66+ Enterocyte",
+    "MUC1+ Epithelial": "MUC1+ Enterocyte",
+    "CD57+ Epithelial": "Enterocyte",
+    "ITLN+ Epithelial": "Goblet",
+    "TA": "Cycling TA",
+    "CD4+ T": "CD4+ T cell",
+    "Stromal": "Stroma",
+    "PDPN+ Stromal": "Lymphatic",
+    "CD36 high Endothelial": "Endothelial",
+    "CD36 low Endothelial": "Endothelial",
+    "CD49a+ Smooth muscle": "Smooth muscle",
+    "Paneth": "Goblet",
+    "M1 Macrophage": "M2 Macrophage",
+    "NK": "CD7+ Immune"
+  },
+  "majority_mapping": "separately within each method and tissue region, reused for both metrics",
+  "tie_rule": "alphabetically first reference label among equal-count majority labels; independent of input row order",
+  "tied_majority_clusters": [
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "15::0",
+      "majority_label": "Nerve",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "15::2",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 15,
+      "majority_cells": 6,
+      "tied_majority_labels": "CD4+ T cell|Nerve"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "30::1",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Cycling TA|CD8+ T"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "34::2",
+      "majority_label": "CD7+ Immune",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Nerve|CD7+ Immune"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "46::0",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Endothelial|Goblet"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "47::0",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "4::4",
+      "majority_label": "Cycling TA",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Goblet|Enterocyte|Cycling TA"
+    },
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "5::2",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "14::0",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 128,
+      "majority_cells": 49,
+      "tied_majority_labels": "CD8+ T|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "16::2",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 44,
+      "majority_cells": 17,
+      "tied_majority_labels": "M2 Macrophage|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "25::0",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD8+ T"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "25::1",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 7,
+      "majority_cells": 3,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "34::5",
+      "majority_label": "B",
+      "n_cells": 25,
+      "majority_cells": 9,
+      "tied_majority_labels": "Nerve|B"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "38::3",
+      "majority_label": "DC",
+      "n_cells": 8,
+      "majority_cells": 4,
+      "tied_majority_labels": "DC|M2 Macrophage"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "42::0",
+      "majority_label": "Smooth muscle",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "43::2",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Enterocyte|CD7+ Immune|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "46::3",
+      "majority_label": "Enterocyte",
+      "n_cells": 19,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "14::0",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 30,
+      "majority_cells": 11,
+      "tied_majority_labels": "Plasma|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "28::5",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Nerve|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "33::3",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|M2 Macrophage"
+    },
+    {
+      "method": "Leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "46::0",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|Plasma"
+    },
+    {
+      "method": "Leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "47::1",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "14::1",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|Cycling TA"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "20::5",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "21::5",
+      "majority_label": "Nerve",
+      "n_cells": 9,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|Nerve"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "31::4",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "33::6",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 16,
+      "majority_cells": 8,
+      "tied_majority_labels": "M2 Macrophage|Neutrophil"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "34::1",
+      "majority_label": "B",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Enterocyte|B"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "34::4",
+      "majority_label": "B",
+      "n_cells": 12,
+      "majority_cells": 5,
+      "tied_majority_labels": "B|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "3::1",
+      "majority_label": "B",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|Goblet|Nerve|MUC1+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "3::2",
+      "majority_label": "CD8+ T",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "4::1",
+      "majority_label": "Cycling TA",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "15::4",
+      "majority_label": "Nerve",
+      "n_cells": 26,
+      "majority_cells": 13,
+      "tied_majority_labels": "Nerve|Plasma"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "18::5",
+      "majority_label": "CD8+ T",
+      "n_cells": 7,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "25::3",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Cycling TA|CD66+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "26::1",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|M2 Macrophage|Plasma"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "29::4",
+      "majority_label": "Smooth muscle",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "33::3",
+      "majority_label": "DC",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|DC"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "34::6",
+      "majority_label": "B",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|B"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "37::0",
+      "majority_label": "Smooth muscle",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "41::coarsened_008",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "43::0",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Lymphatic|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "47::0",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "4::3",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "0::0",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|MUC1+ Enterocyte|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "11::2",
+      "majority_label": "Enterocyte",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|Goblet|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "16::0",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 11,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD4+ T cell|M2 Macrophage"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "1::0",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "26::1",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|M2 Macrophage"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "26::5",
+      "majority_label": "B",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|B|DC|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "27::1",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|CD4+ T cell|Lymphatic"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "34::1",
+      "majority_label": "B",
+      "n_cells": 19,
+      "majority_cells": 5,
+      "tied_majority_labels": "B|Cycling TA"
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "41::1",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|CD66+ Enterocyte|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "0::2",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "11::0",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Stroma|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "13::1",
+      "majority_label": "Enterocyte",
+      "n_cells": 10,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|Goblet"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "23::3",
+      "majority_label": "Smooth muscle",
+      "n_cells": 10,
+      "majority_cells": 3,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "26::5",
+      "majority_label": "Smooth muscle",
+      "n_cells": 11,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "30::0",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Cycling TA|Goblet"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "30::1",
+      "majority_label": "Cycling TA",
+      "n_cells": 9,
+      "majority_cells": 4,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "33::4",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 6,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD66+ Enterocyte|Endothelial"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "34::3",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 8,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD8+ T|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "34::6",
+      "majority_label": "Nerve",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|Plasma"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "38::1",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 12,
+      "majority_cells": 6,
+      "tied_majority_labels": "DC|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "38::3",
+      "majority_label": "DC",
+      "n_cells": 21,
+      "majority_cells": 10,
+      "tied_majority_labels": "DC|M2 Macrophage"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "46::1",
+      "majority_label": "B",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "B|M2 Macrophage|Enterocyte"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "5::5",
+      "majority_label": "CD8+ T",
+      "n_cells": 9,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|CD8+ T"
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "9::5",
+      "majority_label": "Nerve",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "0::0",
+      "majority_label": "Enterocyte",
+      "n_cells": 11,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|Goblet"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "11::1",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|M2 Macrophage"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "12::4",
+      "majority_label": "Endothelial",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Smooth muscle|Endothelial"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "25::1",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|CD8+ T"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "32::coarsened_019",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "33::0",
+      "majority_label": "Enterocyte",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|Neutrophil"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "33::3",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Nerve"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "34::2",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD7+ Immune|CD4+ T cell"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "36::4",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "39::0",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|CD8+ T"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "41::5",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Stroma|Smooth muscle"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "42::5",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Smooth muscle|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "44::0",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "4::0",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Cycling TA"
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "4::5",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Smooth muscle"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "118",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 14,
+      "majority_cells": 5,
+      "tied_majority_labels": "Stroma|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "144",
+      "majority_label": "Enterocyte",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Smooth muscle|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "164",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|CD66+ Enterocyte|Smooth muscle"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "175",
+      "majority_label": "CD8+ T",
+      "n_cells": 36,
+      "majority_cells": 12,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "217",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 14,
+      "majority_cells": 4,
+      "tied_majority_labels": "Smooth muscle|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "227",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Lymphatic|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "266",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "270",
+      "majority_label": "ICC",
+      "n_cells": 14,
+      "majority_cells": 5,
+      "tied_majority_labels": "ICC|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "281",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "283",
+      "majority_label": "Goblet",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Goblet|Smooth muscle"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "290",
+      "majority_label": "Lymphatic",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "M2 Macrophage|Lymphatic"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "72",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 27,
+      "majority_cells": 6,
+      "tied_majority_labels": "CD66+ Enterocyte|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "104",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 23,
+      "majority_cells": 9,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "115",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 23,
+      "majority_cells": 7,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "128",
+      "majority_label": "Neutrophil",
+      "n_cells": 15,
+      "majority_cells": 5,
+      "tied_majority_labels": "Neutrophil|Smooth muscle"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "130",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "144",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Smooth muscle"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "150",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|B"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "151",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "166",
+      "majority_label": "Endothelial",
+      "n_cells": 14,
+      "majority_cells": 3,
+      "tied_majority_labels": "Stroma|M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "178",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|CD4+ T cell"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "181",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 25,
+      "majority_cells": 6,
+      "tied_majority_labels": "Smooth muscle|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "201",
+      "majority_label": "Smooth muscle",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Smooth muscle|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "283",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "34",
+      "majority_label": "ICC",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "ICC|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "82",
+      "majority_label": "B",
+      "n_cells": 23,
+      "majority_cells": 8,
+      "tied_majority_labels": "B|CD4+ T cell"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "110",
+      "majority_label": "CD8+ T",
+      "n_cells": 10,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD8+ T|Plasma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "114",
+      "majority_label": "B",
+      "n_cells": 14,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD4+ T cell|B"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "126",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T|Cycling TA"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "131",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "189",
+      "majority_label": "Enterocyte",
+      "n_cells": 10,
+      "majority_cells": 4,
+      "tied_majority_labels": "Neutrophil|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "205",
+      "majority_label": "Enterocyte",
+      "n_cells": 12,
+      "majority_cells": 5,
+      "tied_majority_labels": "Neutrophil|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "206",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "211",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Neutrophil|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "217",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 7,
+      "majority_cells": 3,
+      "tied_majority_labels": "Neutrophil|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "278",
+      "majority_label": "Cycling TA",
+      "n_cells": 29,
+      "majority_cells": 6,
+      "tied_majority_labels": "Smooth muscle|Cycling TA"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "34",
+      "majority_label": "CD8+ T",
+      "n_cells": 5,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD8+ T|Endothelial|Stroma|ICC"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "40",
+      "majority_label": "DC",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|DC"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "78",
+      "majority_label": "Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Lymphatic|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "85",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|CD4+ T cell|DC"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "171",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "240",
+      "majority_label": "Goblet",
+      "n_cells": 8,
+      "majority_cells": 2,
+      "tied_majority_labels": "MUC1+ Enterocyte|Goblet"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "244",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Neutrophil|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "248",
+      "majority_label": "Cycling TA",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Neuroendocrine|DC|Cycling TA"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "265",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Cycling TA|CD4+ T cell"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "297",
+      "majority_label": "B",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "B|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "30",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 108,
+      "majority_cells": 40,
+      "tied_majority_labels": "M2 Macrophage|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "84",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|CD4+ T cell"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "9",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|M2 Macrophage|MUC1+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "95",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|B"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "109",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "127",
+      "majority_label": "Smooth muscle",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "133",
+      "majority_label": "Enterocyte",
+      "n_cells": 11,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "138",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "15",
+      "majority_label": "CD8+ T",
+      "n_cells": 17,
+      "majority_cells": 3,
+      "tied_majority_labels": "Enterocyte|ICC|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "152",
+      "majority_label": "Cycling TA",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "155",
+      "majority_label": "Cycling TA",
+      "n_cells": 68,
+      "majority_cells": 21,
+      "tied_majority_labels": "Enterocyte|Cycling TA"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "157",
+      "majority_label": "ICC",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|ICC"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "168",
+      "majority_label": "CD7+ Immune",
+      "n_cells": 27,
+      "majority_cells": 7,
+      "tied_majority_labels": "CD7+ Immune|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "187",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 17,
+      "majority_cells": 4,
+      "tied_majority_labels": "Goblet|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "194",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "197",
+      "majority_label": "Enterocyte",
+      "n_cells": 70,
+      "majority_cells": 15,
+      "tied_majority_labels": "Enterocyte|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "211",
+      "majority_label": "Goblet",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Neutrophil|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "217",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 9,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD66+ Enterocyte|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "297",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "300",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 118,
+      "majority_cells": 37,
+      "tied_majority_labels": "CD66+ Enterocyte|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "57",
+      "majority_label": "Goblet",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Goblet"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "84",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "M2 Macrophage|Plasma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "109",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 27,
+      "majority_cells": 12,
+      "tied_majority_labels": "CD8+ T|CD4+ T cell"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "119",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 65,
+      "majority_cells": 21,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "126",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|CD4+ T cell|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "149",
+      "majority_label": "MUC1+ Enterocyte",
+      "n_cells": 18,
+      "majority_cells": 7,
+      "tied_majority_labels": "Stroma|MUC1+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "193",
+      "majority_label": "CD8+ T",
+      "n_cells": 78,
+      "majority_cells": 17,
+      "tied_majority_labels": "Enterocyte|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "235",
+      "majority_label": "CD8+ T",
+      "n_cells": 41,
+      "majority_cells": 11,
+      "tied_majority_labels": "Stroma|CD8+ T"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "270",
+      "majority_label": "ICC",
+      "n_cells": 23,
+      "majority_cells": 9,
+      "tied_majority_labels": "ICC|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "281",
+      "majority_label": "Nerve",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "284",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Neutrophil|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "296",
+      "majority_label": "Cycling TA",
+      "n_cells": 67,
+      "majority_cells": 15,
+      "tied_majority_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "50",
+      "majority_label": "Endothelial",
+      "n_cells": 8,
+      "majority_cells": 4,
+      "tied_majority_labels": "Endothelial|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "51",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 32,
+      "majority_cells": 9,
+      "tied_majority_labels": "Stroma|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "62",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "78",
+      "majority_label": "Lymphatic",
+      "n_cells": 39,
+      "majority_cells": 12,
+      "tied_majority_labels": "Stroma|Lymphatic"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "130",
+      "majority_label": "Cycling TA",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Cycling TA|Goblet|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "144",
+      "majority_label": "B",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|B|CD66+ Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "19",
+      "majority_label": "B",
+      "n_cells": 9,
+      "majority_cells": 2,
+      "tied_majority_labels": "DC|CD4+ T cell|B"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "202",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "224",
+      "majority_label": "B",
+      "n_cells": 11,
+      "majority_cells": 4,
+      "tied_majority_labels": "M2 Macrophage|B"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "233",
+      "majority_label": "Enterocyte",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "Goblet|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "265",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "31",
+      "majority_label": "Enterocyte",
+      "n_cells": 28,
+      "majority_cells": 12,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "178",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 10,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "2",
+      "majority_label": "Enterocyte",
+      "n_cells": 23,
+      "majority_cells": 10,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "206",
+      "majority_label": "Goblet",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Smooth muscle|Goblet"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "246",
+      "majority_label": "Enterocyte",
+      "n_cells": 22,
+      "majority_cells": 9,
+      "tied_majority_labels": "Neutrophil|Enterocyte"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "256",
+      "majority_label": "Endothelial",
+      "n_cells": 19,
+      "majority_cells": 5,
+      "tied_majority_labels": "M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "263",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|CD4+ T cell"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "270",
+      "majority_label": "ICC",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|ICC"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "283",
+      "majority_label": "Endothelial",
+      "n_cells": 12,
+      "majority_cells": 4,
+      "tied_majority_labels": "Plasma|Endothelial"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "284",
+      "majority_label": "Enterocyte",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|Neutrophil"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "34",
+      "majority_label": "ICC",
+      "n_cells": 14,
+      "majority_cells": 5,
+      "tied_majority_labels": "ICC|Stroma"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "57",
+      "majority_label": "ICC",
+      "n_cells": 15,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|ICC"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "7",
+      "majority_label": "Nerve",
+      "n_cells": 20,
+      "majority_cells": 8,
+      "tied_majority_labels": "Stroma|Nerve"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "79",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 13,
+      "majority_cells": 3,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "81",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Neutrophil"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "110",
+      "majority_label": "Endothelial",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Endothelial|M2 Macrophage|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "128",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "147",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "152",
+      "majority_label": "Endothelial",
+      "n_cells": 23,
+      "majority_cells": 7,
+      "tied_majority_labels": "Nerve|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "169",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 16,
+      "majority_cells": 3,
+      "tied_majority_labels": "M2 Macrophage|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "201",
+      "majority_label": "CD8+ T",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "207",
+      "majority_label": "Enterocyte",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|Neuroendocrine|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "225",
+      "majority_label": "CD8+ T",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Lymphatic|CD8+ T|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "234",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "241",
+      "majority_label": "B",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Goblet|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "264",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Neuroendocrine|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "268",
+      "majority_label": "CD7+ Immune",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD7+ Immune|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "274",
+      "majority_label": "Endothelial",
+      "n_cells": 21,
+      "majority_cells": 7,
+      "tied_majority_labels": "Smooth muscle|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "33",
+      "majority_label": "CD8+ T",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|CD8+ T|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "57",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "85",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Enterocyte|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "108",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "113",
+      "majority_label": "Enterocyte",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|Stroma|MUC1+ Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "122",
+      "majority_label": "Nerve",
+      "n_cells": 28,
+      "majority_cells": 10,
+      "tied_majority_labels": "Smooth muscle|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "134",
+      "majority_label": "CD8+ T",
+      "n_cells": 16,
+      "majority_cells": 4,
+      "tied_majority_labels": "Nerve|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "158",
+      "majority_label": "CD7+ Immune",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD7+ Immune|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "169",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 11,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "183",
+      "majority_label": "Endothelial",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "Neutrophil|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "220",
+      "majority_label": "Plasma",
+      "n_cells": 303,
+      "majority_cells": 98,
+      "tied_majority_labels": "Smooth muscle|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "226",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "234",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "238",
+      "majority_label": "Enterocyte",
+      "n_cells": 25,
+      "majority_cells": 9,
+      "tied_majority_labels": "Enterocyte|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "241",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "261",
+      "majority_label": "B",
+      "n_cells": 28,
+      "majority_cells": 7,
+      "tied_majority_labels": "Enterocyte|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "263",
+      "majority_label": "CD8+ T",
+      "n_cells": 12,
+      "majority_cells": 3,
+      "tied_majority_labels": "Goblet|CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "268",
+      "majority_label": "B",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|CD4+ T cell|Nerve|Lymphatic"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "35",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Plasma|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "36",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "38",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD66+ Enterocyte|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "57",
+      "majority_label": "Endothelial",
+      "n_cells": 9,
+      "majority_cells": 4,
+      "tied_majority_labels": "Nerve|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "86",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 18,
+      "majority_cells": 4,
+      "tied_majority_labels": "M2 Macrophage|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "97",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "103",
+      "majority_label": "CD8+ T",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Goblet|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "104",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "108",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "109",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 5,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|M2 Macrophage|CD4+ T cell|DC|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "115",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Plasma|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "170",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 11,
+      "majority_cells": 2,
+      "tied_majority_labels": "ICC|Nerve|M2 Macrophage|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "178",
+      "majority_label": "B",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|Plasma|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "183",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|ICC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "217",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Endothelial|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "263",
+      "majority_label": "CD8+ T",
+      "n_cells": 10,
+      "majority_cells": 4,
+      "tied_majority_labels": "Cycling TA|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "280",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "MUC1+ Enterocyte|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "42",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Stroma|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "68",
+      "majority_label": "B",
+      "n_cells": 5,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|CD4+ T cell|Endothelial|MUC1+ Enterocyte|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "9",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|CD66+ Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "91",
+      "majority_label": "CD8+ T",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "93",
+      "majority_label": "CD8+ T",
+      "n_cells": 14,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD8+ T|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "127",
+      "majority_label": "DC",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "M2 Macrophage|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "129",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|CD4+ T cell|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "13",
+      "majority_label": "Nerve",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Nerve|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "135",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|DC|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "136",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Plasma|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "154",
+      "majority_label": "B",
+      "n_cells": 7,
+      "majority_cells": 3,
+      "tied_majority_labels": "B|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "155",
+      "majority_label": "Lymphatic",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|Lymphatic"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "158",
+      "majority_label": "Enterocyte",
+      "n_cells": 32,
+      "majority_cells": 11,
+      "tied_majority_labels": "Enterocyte|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "163",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "175",
+      "majority_label": "Goblet",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "271",
+      "majority_label": "B",
+      "n_cells": 10,
+      "majority_cells": 5,
+      "tied_majority_labels": "Cycling TA|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "281",
+      "majority_label": "Nerve",
+      "n_cells": 9,
+      "majority_cells": 3,
+      "tied_majority_labels": "Smooth muscle|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "283",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "293",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Neuroendocrine|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "50",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "75",
+      "majority_label": "DC",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "DC|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "102",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "135",
+      "majority_label": "DC",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "Endothelial|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "137",
+      "majority_label": "DC",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|M2 Macrophage|Nerve|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "154",
+      "majority_label": "Cycling TA",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "188",
+      "majority_label": "B",
+      "n_cells": 12,
+      "majority_cells": 5,
+      "tied_majority_labels": "B|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "226",
+      "majority_label": "CD8+ T",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Goblet|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "232",
+      "majority_label": "CD8+ T",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "267",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Smooth muscle|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "278",
+      "majority_label": "CD8+ T",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "293",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Neuroendocrine|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "57",
+      "majority_label": "Endothelial",
+      "n_cells": 9,
+      "majority_cells": 3,
+      "tied_majority_labels": "Endothelial|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "58",
+      "majority_label": "CD8+ T",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Cycling TA|CD8+ T|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "70",
+      "majority_label": "Lymphatic",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Lymphatic|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "73",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "75",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "88",
+      "majority_label": "Endothelial",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Smooth muscle|M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "9",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "108",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "124",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "132",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "147",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 11,
+      "majority_cells": 5,
+      "tied_majority_labels": "M2 Macrophage|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "148",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "268",
+      "majority_label": "B",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Lymphatic|ICC|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "281",
+      "majority_label": "Nerve",
+      "n_cells": 11,
+      "majority_cells": 3,
+      "tied_majority_labels": "Stroma|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "293",
+      "majority_label": "CD7+ Immune",
+      "n_cells": 16,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|Nerve|CD7+ Immune"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "33",
+      "majority_label": "CD8+ T",
+      "n_cells": 103,
+      "majority_cells": 32,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "35",
+      "majority_label": "CD7+ Immune",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD7+ Immune|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "49",
+      "majority_label": "Enterocyte",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|Enterocyte|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "104",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|CD8+ T|Plasma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "120",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 12,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "130",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|Lymphatic|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "136",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "137",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 9,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "145",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Plasma|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "199",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Neuroendocrine|Cycling TA"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "248",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "259",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "264",
+      "majority_label": "CD8+ T",
+      "n_cells": 13,
+      "majority_cells": 4,
+      "tied_majority_labels": "Neuroendocrine|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "267",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "270",
+      "majority_label": "Enterocyte",
+      "n_cells": 34,
+      "majority_cells": 12,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "271",
+      "majority_label": "B",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "M2 Macrophage|Cycling TA|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "283",
+      "majority_label": "B",
+      "n_cells": 5,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|M2 Macrophage|B|CD8+ T|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "293",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 11,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD66+ Enterocyte|Neuroendocrine"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "3",
+      "majority_label": "Smooth muscle",
+      "n_cells": 424,
+      "majority_cells": 135,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "31",
+      "majority_label": "Smooth muscle",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "51",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Endothelial"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "75",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "85",
+      "majority_label": "Enterocyte",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "86",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "88",
+      "majority_label": "Endothelial",
+      "n_cells": 12,
+      "majority_cells": 5,
+      "tied_majority_labels": "Endothelial|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "97",
+      "majority_label": "CD8+ T",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Nerve"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "102",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "103",
+      "majority_label": "CD8+ T",
+      "n_cells": 42,
+      "majority_cells": 16,
+      "tied_majority_labels": "Enterocyte|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "171",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "205",
+      "majority_label": "Smooth muscle",
+      "n_cells": 14,
+      "majority_cells": 7,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "21",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD66+ Enterocyte|Enterocyte|M2 Macrophage|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "241",
+      "majority_label": "B",
+      "n_cells": 25,
+      "majority_cells": 8,
+      "tied_majority_labels": "M2 Macrophage|B"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "254",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 80,
+      "majority_cells": 25,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "263",
+      "majority_label": "Goblet",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Goblet"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "271",
+      "majority_label": "B",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|Enterocyte|CD66+ Enterocyte"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "274",
+      "majority_label": "Smooth muscle",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Stroma"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "298",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 13,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD8+ T|CD4+ T cell"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "31",
+      "majority_label": "Smooth muscle",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Smooth muscle"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "40",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "60",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 20,
+      "majority_cells": 7,
+      "tied_majority_labels": "Plasma|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "61",
+      "majority_label": "DC",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|DC"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "68",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|M2 Macrophage"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "70",
+      "majority_label": "Lymphatic",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Stroma|Lymphatic"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "76",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Neuroendocrine"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "78",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 13,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|CD66+ Enterocyte|CD8+ T"
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "79",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD66+ Enterocyte|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "101",
+      "majority_label": "B",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|B"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "137",
+      "majority_label": "B",
+      "n_cells": 12,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|B"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "158",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 13,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "159",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "197",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "198",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "207",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "248",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|CD4+ T cell"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "25",
+      "majority_label": "Plasma",
+      "n_cells": 83,
+      "majority_cells": 17,
+      "tied_majority_labels": "Stroma|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "260",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "261",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Stroma|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "264",
+      "majority_label": "Endothelial",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Lymphatic|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "282",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "298",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Plasma|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "44",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "68",
+      "majority_label": "CD8+ T",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "78",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 19,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "cluster": "94",
+      "majority_label": "MUC1+ Enterocyte",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|MUC1+ Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "113",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "139",
+      "majority_label": "Plasma",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Plasma|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "14",
+      "majority_label": "DC",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "DC|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "157",
+      "majority_label": "Cycling TA",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "16",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|DC"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "180",
+      "majority_label": "Goblet",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "MUC1+ Enterocyte|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "197",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|MUC1+ Enterocyte|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "199",
+      "majority_label": "Enterocyte",
+      "n_cells": 18,
+      "majority_cells": 5,
+      "tied_majority_labels": "Enterocyte|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "20",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "MUC1+ Enterocyte|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "202",
+      "majority_label": "Cycling TA",
+      "n_cells": 13,
+      "majority_cells": 6,
+      "tied_majority_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "212",
+      "majority_label": "ICC",
+      "n_cells": 8,
+      "majority_cells": 2,
+      "tied_majority_labels": "ICC|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "222",
+      "majority_label": "MUC1+ Enterocyte",
+      "n_cells": 14,
+      "majority_cells": 6,
+      "tied_majority_labels": "MUC1+ Enterocyte|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "228",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|CD4+ T cell"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "256",
+      "majority_label": "Lymphatic",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "290",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "291",
+      "majority_label": "CD8+ T",
+      "n_cells": 63,
+      "majority_cells": 15,
+      "tied_majority_labels": "Goblet|CD8+ T|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "294",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 9,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T|DC"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "295",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "299",
+      "majority_label": "Endothelial",
+      "n_cells": 9,
+      "majority_cells": 3,
+      "tied_majority_labels": "Endothelial|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "cluster": "77",
+      "majority_label": "Lymphatic",
+      "n_cells": 15,
+      "majority_cells": 3,
+      "tied_majority_labels": "Nerve|Stroma|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "107",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Lymphatic|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "151",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "155",
+      "majority_label": "Enterocyte",
+      "n_cells": 8,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "158",
+      "majority_label": "Nerve",
+      "n_cells": 8,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|Smooth muscle|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "171",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|CD8+ T|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "175",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD8+ T|MUC1+ Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "197",
+      "majority_label": "Enterocyte",
+      "n_cells": 10,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "20",
+      "majority_label": "Lymphatic",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|MUC1+ Enterocyte|Lymphatic|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "205",
+      "majority_label": "CD8+ T",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "242",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "244",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|Plasma|M2 Macrophage|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "272",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "Nerve|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "290",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Stroma|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "294",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "M2 Macrophage|CD4+ T cell"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "296",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 10,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "298",
+      "majority_label": "Nerve",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Plasma|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "47",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "93",
+      "majority_label": "Endothelial",
+      "n_cells": 16,
+      "majority_cells": 8,
+      "tied_majority_labels": "M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "98",
+      "majority_label": "DC",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "DC|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "cluster": "99",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 67,
+      "majority_cells": 21,
+      "tied_majority_labels": "M2 Macrophage|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "108",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Nerve|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "116",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 12,
+      "majority_cells": 4,
+      "tied_majority_labels": "M2 Macrophage|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "156",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 6,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|CD8+ T|CD4+ T cell"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "161",
+      "majority_label": "Endothelial",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Endothelial|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "170",
+      "majority_label": "Plasma",
+      "n_cells": 37,
+      "majority_cells": 9,
+      "tied_majority_labels": "Stroma|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "199",
+      "majority_label": "Enterocyte",
+      "n_cells": 14,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "206",
+      "majority_label": "Plasma",
+      "n_cells": 25,
+      "majority_cells": 8,
+      "tied_majority_labels": "Plasma|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "213",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "232",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "258",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "294",
+      "majority_label": "Nerve",
+      "n_cells": 20,
+      "majority_cells": 5,
+      "tied_majority_labels": "Plasma|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "47",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "52",
+      "majority_label": "Cycling TA",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Smooth muscle|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "67",
+      "majority_label": "CD8+ T",
+      "n_cells": 9,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD8+ T|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "cluster": "98",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 11,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "114",
+      "majority_label": "Endothelial",
+      "n_cells": 12,
+      "majority_cells": 3,
+      "tied_majority_labels": "Endothelial|Stroma|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "117",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Plasma|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "129",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 8,
+      "majority_cells": 3,
+      "tied_majority_labels": "M2 Macrophage|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "131",
+      "majority_label": "Nerve",
+      "n_cells": 13,
+      "majority_cells": 4,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "155",
+      "majority_label": "Cycling TA",
+      "n_cells": 7,
+      "majority_cells": 3,
+      "tied_majority_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "177",
+      "majority_label": "DC",
+      "n_cells": 26,
+      "majority_cells": 5,
+      "tied_majority_labels": "M2 Macrophage|Nerve|DC"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "200",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "205",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 11,
+      "majority_cells": 2,
+      "tied_majority_labels": "Enterocyte|CD8+ T|CD66+ Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "209",
+      "majority_label": "Lymphatic",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Lymphatic|Neuroendocrine"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "216",
+      "majority_label": "Nerve",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Nerve|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "232",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "238",
+      "majority_label": "CD8+ T",
+      "n_cells": 9,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|Nerve|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "240",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Cycling TA|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "241",
+      "majority_label": "B",
+      "n_cells": 31,
+      "majority_cells": 5,
+      "tied_majority_labels": "Goblet|B"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "256",
+      "majority_label": "Nerve",
+      "n_cells": 28,
+      "majority_cells": 7,
+      "tied_majority_labels": "Plasma|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "258",
+      "majority_label": "Cycling TA",
+      "n_cells": 4,
+      "majority_cells": 2,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "278",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "292",
+      "majority_label": "Cycling TA",
+      "n_cells": 54,
+      "majority_cells": 17,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "295",
+      "majority_label": "Cycling TA",
+      "n_cells": 25,
+      "majority_cells": 9,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "299",
+      "majority_label": "Endothelial",
+      "n_cells": 10,
+      "majority_cells": 3,
+      "tied_majority_labels": "Stroma|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "cluster": "93",
+      "majority_label": "Endothelial",
+      "n_cells": 12,
+      "majority_cells": 4,
+      "tied_majority_labels": "Stroma|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "107",
+      "majority_label": "Cycling TA",
+      "n_cells": 23,
+      "majority_cells": 8,
+      "tied_majority_labels": "MUC1+ Enterocyte|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "113",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "M2 Macrophage|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "129",
+      "majority_label": "Enterocyte",
+      "n_cells": 56,
+      "majority_cells": 16,
+      "tied_majority_labels": "Stroma|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "157",
+      "majority_label": "Cycling TA",
+      "n_cells": 14,
+      "majority_cells": 5,
+      "tied_majority_labels": "Enterocyte|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "18",
+      "majority_label": "ICC",
+      "n_cells": 156,
+      "majority_cells": 31,
+      "tied_majority_labels": "ICC|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "186",
+      "majority_label": "Enterocyte",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "200",
+      "majority_label": "CD8+ T",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Enterocyte|CD8+ T|Neuroendocrine"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "225",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 12,
+      "majority_cells": 3,
+      "tied_majority_labels": "CD4+ T cell|DC"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "260",
+      "majority_label": "CD8+ T",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "264",
+      "majority_label": "Endothelial",
+      "n_cells": 15,
+      "majority_cells": 4,
+      "tied_majority_labels": "Endothelial|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "288",
+      "majority_label": "Cycling TA",
+      "n_cells": 5,
+      "majority_cells": 2,
+      "tied_majority_labels": "Goblet|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "290",
+      "majority_label": "CD8+ T",
+      "n_cells": 9,
+      "majority_cells": 2,
+      "tied_majority_labels": "CD8+ T|Endothelial|Plasma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "294",
+      "majority_label": "B",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "B|Plasma|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "41",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 19,
+      "majority_cells": 4,
+      "tied_majority_labels": "CD4+ T cell|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "77",
+      "majority_label": "Nerve",
+      "n_cells": 20,
+      "majority_cells": 5,
+      "tied_majority_labels": "Stroma|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "94",
+      "majority_label": "Cycling TA",
+      "n_cells": 7,
+      "majority_cells": 3,
+      "tied_majority_labels": "MUC1+ Enterocyte|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "95",
+      "majority_label": "Endothelial",
+      "n_cells": 13,
+      "majority_cells": 5,
+      "tied_majority_labels": "M2 Macrophage|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "cluster": "96",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 46,
+      "majority_cells": 13,
+      "tied_majority_labels": "M2 Macrophage|MUC1+ Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "131",
+      "majority_label": "Endothelial",
+      "n_cells": 21,
+      "majority_cells": 6,
+      "tied_majority_labels": "Nerve|Endothelial"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "159",
+      "majority_label": "Nerve",
+      "n_cells": 12,
+      "majority_cells": 3,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "168",
+      "majority_label": "Enterocyte",
+      "n_cells": 13,
+      "majority_cells": 3,
+      "tied_majority_labels": "Nerve|Stroma|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "177",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 21,
+      "majority_cells": 6,
+      "tied_majority_labels": "Nerve|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "207",
+      "majority_label": "B",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD8+ T|Lymphatic|B|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "257",
+      "majority_label": "Cycling TA",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "ICC|Cycling TA|Goblet|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "260",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "261",
+      "majority_label": "Smooth muscle",
+      "n_cells": 6,
+      "majority_cells": 3,
+      "tied_majority_labels": "Smooth muscle|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "264",
+      "majority_label": "Endothelial",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Endothelial|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "292",
+      "majority_label": "B",
+      "n_cells": 17,
+      "majority_cells": 4,
+      "tied_majority_labels": "B|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "56",
+      "majority_label": "Lymphatic",
+      "n_cells": 11,
+      "majority_cells": 5,
+      "tied_majority_labels": "Stroma|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "68",
+      "majority_label": "Enterocyte",
+      "n_cells": 16,
+      "majority_cells": 4,
+      "tied_majority_labels": "Enterocyte|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "cluster": "82",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 68,
+      "majority_cells": 20,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "117",
+      "majority_label": "Goblet",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Goblet|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "130",
+      "majority_label": "Endothelial",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Endothelial|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "139",
+      "majority_label": "Lymphatic",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Stroma|Lymphatic"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "152",
+      "majority_label": "CD66+ Enterocyte",
+      "n_cells": 118,
+      "majority_cells": 47,
+      "tied_majority_labels": "CD66+ Enterocyte|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "157",
+      "majority_label": "Enterocyte",
+      "n_cells": 43,
+      "majority_cells": 9,
+      "tied_majority_labels": "Goblet|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "186",
+      "majority_label": "Cycling TA",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "194",
+      "majority_label": "Goblet",
+      "n_cells": 15,
+      "majority_cells": 4,
+      "tied_majority_labels": "Goblet|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "207",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 4,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|CD8+ T|CD4+ T cell|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "208",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Smooth muscle"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "211",
+      "majority_label": "Cycling TA",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Neuroendocrine|Goblet|Cycling TA"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "228",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 10,
+      "majority_cells": 2,
+      "tied_majority_labels": "M2 Macrophage|DC|CD4+ T cell"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "232",
+      "majority_label": "Nerve",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Plasma|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "242",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 15,
+      "majority_cells": 6,
+      "tied_majority_labels": "CD4+ T cell|CD8+ T"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "254",
+      "majority_label": "Nerve",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "Nerve|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "263",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 15,
+      "majority_cells": 2,
+      "tied_majority_labels": "Smooth muscle|Nerve|CD4+ T cell|Plasma|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "288",
+      "majority_label": "Cycling TA",
+      "n_cells": 14,
+      "majority_cells": 4,
+      "tied_majority_labels": "Cycling TA|Goblet"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "295",
+      "majority_label": "Cycling TA",
+      "n_cells": 85,
+      "majority_cells": 32,
+      "tied_majority_labels": "Cycling TA|Enterocyte"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "296",
+      "majority_label": "CD4+ T cell",
+      "n_cells": 2,
+      "majority_cells": 1,
+      "tied_majority_labels": "CD4+ T cell|Stroma"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "41",
+      "majority_label": "M2 Macrophage",
+      "n_cells": 91,
+      "majority_cells": 13,
+      "tied_majority_labels": "Smooth muscle|M2 Macrophage"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "42",
+      "majority_label": "Nerve",
+      "n_cells": 7,
+      "majority_cells": 2,
+      "tied_majority_labels": "Stroma|Smooth muscle|Nerve"
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "cluster": "93",
+      "majority_label": "Lymphatic",
+      "n_cells": 3,
+      "majority_cells": 1,
+      "tied_majority_labels": "Smooth muscle|Lymphatic|M2 Macrophage"
+    }
+  ],
+  "legacy_order_dependent_score_comparison": [
+    {
+      "method": "Leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "old_order_dependent_weighted_f1": 0.7881805924279147,
+      "alphabetical_tie_weighted_f1": 0.7882877453362434,
+      "difference": 0.00010715290832863378
+    },
+    {
+      "method": "Leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "old_order_dependent_weighted_f1": 0.7298912600139701,
+      "alphabetical_tie_weighted_f1": 0.7301879857473128,
+      "difference": 0.00029672573334271757
+    },
+    {
+      "method": "Leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "old_order_dependent_weighted_f1": 0.7848443110471105,
+      "alphabetical_tie_weighted_f1": 0.7849833349369159,
+      "difference": 0.0001390238898053564
+    },
+    {
+      "method": "Leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "old_order_dependent_weighted_f1": 0.7075453403880636,
+      "alphabetical_tie_weighted_f1": 0.7075740041851731,
+      "difference": 2.8663797109529376e-05
+    },
+    {
+      "method": "Leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "old_order_dependent_weighted_f1": 0.7217359174765388,
+      "alphabetical_tie_weighted_f1": 0.7217342027002941,
+      "difference": -1.71477624466565e-06
+    },
+    {
+      "method": "Leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "old_order_dependent_weighted_f1": 0.7796938145991509,
+      "alphabetical_tie_weighted_f1": 0.7797471087418372,
+      "difference": 5.329414268628874e-05
+    },
+    {
+      "method": "Leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "old_order_dependent_weighted_f1": 0.7078217212133856,
+      "alphabetical_tie_weighted_f1": 0.7076470687815012,
+      "difference": -0.00017465243188441448
+    },
+    {
+      "method": "Leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "old_order_dependent_weighted_f1": 0.6925835553324383,
+      "alphabetical_tie_weighted_f1": 0.692543788769065,
+      "difference": -3.976656337334461e-05
+    },
+    {
+      "method": "FlowSOM",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "old_order_dependent_weighted_f1": 0.736835267409702,
+      "alphabetical_tie_weighted_f1": 0.7372708956311922,
+      "difference": 0.0004356282214902363
+    },
+    {
+      "method": "FlowSOM",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "old_order_dependent_weighted_f1": 0.6483947253240292,
+      "alphabetical_tie_weighted_f1": 0.6485674315760793,
+      "difference": 0.00017270625205012546
+    },
+    {
+      "method": "FlowSOM",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "old_order_dependent_weighted_f1": 0.6219178712097673,
+      "alphabetical_tie_weighted_f1": 0.6226200800460782,
+      "difference": 0.0007022088363108914
+    },
+    {
+      "method": "FlowSOM",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "old_order_dependent_weighted_f1": 0.5764412143137472,
+      "alphabetical_tie_weighted_f1": 0.5765030067247926,
+      "difference": 6.179241104542488e-05
+    },
+    {
+      "method": "FlowSOM",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "old_order_dependent_weighted_f1": 0.6110019653077514,
+      "alphabetical_tie_weighted_f1": 0.6127314468112125,
+      "difference": 0.0017294815034610833
+    },
+    {
+      "method": "FlowSOM",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "old_order_dependent_weighted_f1": 0.6810375814619306,
+      "alphabetical_tie_weighted_f1": 0.6813907380413969,
+      "difference": 0.0003531565794663294
+    },
+    {
+      "method": "FlowSOM",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "old_order_dependent_weighted_f1": 0.586857116014293,
+      "alphabetical_tie_weighted_f1": 0.587040205381892,
+      "difference": 0.00018308936759903194
+    },
+    {
+      "method": "FlowSOM",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "old_order_dependent_weighted_f1": 0.5982319158172061,
+      "alphabetical_tie_weighted_f1": 0.597880093266425,
+      "difference": -0.00035182255078114455
+    },
+    {
+      "method": "SpatialSort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "old_order_dependent_weighted_f1": 0.5544034420147563,
+      "alphabetical_tie_weighted_f1": 0.5546499200712323,
+      "difference": 0.00024647805647592946
+    },
+    {
+      "method": "SpatialSort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "old_order_dependent_weighted_f1": 0.4816554802766776,
+      "alphabetical_tie_weighted_f1": 0.48168434264103166,
+      "difference": 2.8862364354065306e-05
+    },
+    {
+      "method": "SpatialSort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "old_order_dependent_weighted_f1": 0.5393973136330767,
+      "alphabetical_tie_weighted_f1": 0.5394574974593779,
+      "difference": 6.018382630113006e-05
+    },
+    {
+      "method": "SpatialSort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "old_order_dependent_weighted_f1": 0.3986962284832613,
+      "alphabetical_tie_weighted_f1": 0.39830330842048917,
+      "difference": -0.00039292006277213964
+    },
+    {
+      "method": "SpatialSort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "old_order_dependent_weighted_f1": 0.5063077707381008,
+      "alphabetical_tie_weighted_f1": 0.5066640852679493,
+      "difference": 0.0003563145298484116
+    },
+    {
+      "method": "SpatialSort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "old_order_dependent_weighted_f1": 0.5151706274414259,
+      "alphabetical_tie_weighted_f1": 0.5152963088126592,
+      "difference": 0.00012568137123325496
+    },
+    {
+      "method": "SpatialSort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "old_order_dependent_weighted_f1": 0.46850481398790356,
+      "alphabetical_tie_weighted_f1": 0.4683891985671131,
+      "difference": -0.00011561542079047138
+    },
+    {
+      "method": "SpatialSort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "old_order_dependent_weighted_f1": 0.4898774479891886,
+      "alphabetical_tie_weighted_f1": 0.4904338248607362,
+      "difference": 0.0005563768715476369
+    },
+    {
+      "method": "PIXIE",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "old_order_dependent_weighted_f1": 0.6755626737130034,
+      "alphabetical_tie_weighted_f1": 0.6754424343430916,
+      "difference": -0.00012023936991178985
+    },
+    {
+      "method": "PIXIE",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "old_order_dependent_weighted_f1": 0.6462443981818545,
+      "alphabetical_tie_weighted_f1": 0.6469046140823627,
+      "difference": 0.0006602159005081321
+    },
+    {
+      "method": "PIXIE",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "old_order_dependent_weighted_f1": 0.6096170270168965,
+      "alphabetical_tie_weighted_f1": 0.609695241522741,
+      "difference": 7.82145058445538e-05
+    },
+    {
+      "method": "PIXIE",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "old_order_dependent_weighted_f1": 0.5042419466745838,
+      "alphabetical_tie_weighted_f1": 0.5044194249177529,
+      "difference": 0.00017747824316916017
+    },
+    {
+      "method": "PIXIE",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "old_order_dependent_weighted_f1": 0.6109030657448912,
+      "alphabetical_tie_weighted_f1": 0.6112122647357472,
+      "difference": 0.0003091989908560189
+    },
+    {
+      "method": "PIXIE",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "old_order_dependent_weighted_f1": 0.6903828380702391,
+      "alphabetical_tie_weighted_f1": 0.6903257065537686,
+      "difference": -5.713151647057657e-05
+    },
+    {
+      "method": "PIXIE",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "old_order_dependent_weighted_f1": 0.5618115345845467,
+      "alphabetical_tie_weighted_f1": 0.5619469650440692,
+      "difference": 0.00013543045952246757
+    },
+    {
+      "method": "PIXIE",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "old_order_dependent_weighted_f1": 0.6235810514924619,
+      "alphabetical_tie_weighted_f1": 0.6234830433517428,
+      "difference": -9.800814071914132e-05
+    }
+  ],
+  "weighted_f1_formula": "sum_c(n_c/N)*2TP_c/(2TP_c+FP_c+FN_c)",
+  "purity_formula": "sum_k max_c n_kc / N",
+  "independent_checks": [
+    "sklearn weighted F1 equals independently constructed confusion-matrix weighted F1",
+    "purity from contingency maxima equals exact agreement after the same regional majority mapping",
+    "frozen compressed and uncompressed assignment hashes and exact cell-key coverage verified"
+  ],
+  "new_fits": 0,
+  "new_llm_calls": 0,
+  "selection_scope": "reference-informed description of fixed partitions, not independent annotation validation"
+}

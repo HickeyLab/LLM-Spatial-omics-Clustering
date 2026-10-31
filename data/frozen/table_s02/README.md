@@ -1,13 +1,3 @@
-# Table S2 frozen presentation content
+# Current Table S3 presentation cells
 
-The four parts retain 135 header/body cell texts and all provenance notes.
-Their values were extracted from the existing display transformations of the
-checksum-pinned source CSV, after its grid-membership and cardinality checks.
-The CSV bytes, all 20 selected settings and candidate counts are unchanged.
-
-The current manuscript uses four editable IEEE-style tables over two pages:
-A/B on the first and C/D plus the explanatory notes on the second. The style
-is inherited from `configs/table_s01.json`. `PIXIE-style export` retains its
-qualified source identity and is not renamed to the benchmark implementation.
-
-See `docs/table_s02_ieee.md` and `docs/table_s02_ieee_audit.json`.
+The legacy directory name is retained for compatibility. The four table parts preserve the checked current native Table S3 cells and notes. The parameter-search CSV and its checksum remain unchanged. `scripts/render_table_s02.py` exports current Table S3, with no manuscript edits. See `docs/supplementary_table_numbering.md`.

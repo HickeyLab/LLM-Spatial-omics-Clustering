@@ -1,0 +1,330 @@
+{
+  "metric_name": "Post-hoc selected reference agreement",
+  "formula": "mean over four models of mean over cells in a region of 1[(phase7_prediction == harmonized_reference) OR (raw_method_model_prediction == harmonized_reference)]",
+  "evaluation_cells": 220082,
+  "reference_classes": 21,
+  "noise_included": true,
+  "harmonization": {
+    "Epithelial": "Enterocyte",
+    "CD66+ Epithelial": "CD66+ Enterocyte",
+    "MUC1+ Epithelial": "MUC1+ Enterocyte",
+    "CD57+ Epithelial": "Enterocyte",
+    "ITLN+ Epithelial": "Goblet",
+    "TA": "Cycling TA",
+    "CD4+ T": "CD4+ T cell",
+    "Stromal": "Stroma",
+    "PDPN+ Stromal": "Lymphatic",
+    "CD36 high Endothelial": "Endothelial",
+    "CD36 low Endothelial": "Endothelial",
+    "CD49a+ Smooth muscle": "Smooth muscle",
+    "Paneth": "Neuroendocrine",
+    "M1 Macrophage": "M2 Macrophage",
+    "NK": "CD7+ Immune"
+  },
+  "source_file_sha256": {
+    "outputs/v3_annotation_accuracy_maximization/optimized_v3_in_sample_selector/scored_all_four_final/final_all_four_annotations.csv": "d0ee46ecf58bd77e306348e9f3cfb7a1a0ed40d02a26d4950fdd597d7d4701a9",
+    "outputs/v3_annotation_accuracy_maximization/optimized_v3_in_sample_selector/scored_all_four_final/method_llm_metric_rows.csv": "84becf80a9d8278b7a8e097cfa40a7dfeb21af5152efaa11e57a7f65714992dc",
+    "truth.csv": "b305e065ced797885603bf293c6c1d4e94a6d263fcc7e70ee2fa7faa70465866"
+  },
+  "code_sources": {
+    "v3_scripts/build_v3_figure02_selector_summary.py": "95c8da87bd1a58db91191b7ec493e1cb88e049ddcb3a696e48a1d5e0e9c64b78",
+    "v3_scripts/historical_v1_figure02_replay.py": "aa5619305880e7699499d98f2020e261778733b17d2396c3c9f72269a6b91774",
+    "v3_scripts/build_historical_v1_figure02_page.py": "2424ccb40b42ec803dc610fa6fb360cef69d51191be3422211b766d9810bc06b"
+  },
+  "regional_source_table_sha256": "8a4946062e2ad4d311abaaea2a97d44548c7bff31e4fd91d26fa44d0e47c9f58",
+  "frozen_count_table_sha256": "621affb4f74ffee6d34a29f93daf12fdebb934f5858e2e62583b1b8c284e4d2d",
+  "source_rows": 128,
+  "plotted_values_per_panel": 32,
+  "duplicate_panels": [
+    "E",
+    "G"
+  ],
+  "selection_bias": "Full-cohort post-hoc reference-selected union. Not a deployable predictor, not independent validation, not F1, recall, cluster purity, or direct agreement of one fixed prediction map.",
+  "values": [
+    {
+      "method": "flowsom",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "n_cells": 22656,
+      "n_cell_model_evaluations": 90624,
+      "selected_matches": 70286,
+      "mean_selected_reference_agreement": 0.7755782132768362
+    },
+    {
+      "method": "flowsom",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "n_cells": 25362,
+      "n_cell_model_evaluations": 101448,
+      "selected_matches": 76968,
+      "mean_selected_reference_agreement": 0.758694109297374
+    },
+    {
+      "method": "flowsom",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "n_cells": 23267,
+      "n_cell_model_evaluations": 93068,
+      "selected_matches": 74875,
+      "mean_selected_reference_agreement": 0.8045192762281342
+    },
+    {
+      "method": "flowsom",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "n_cells": 33112,
+      "n_cell_model_evaluations": 132448,
+      "selected_matches": 94426,
+      "mean_selected_reference_agreement": 0.7129288475477168
+    },
+    {
+      "method": "flowsom",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "n_cells": 18721,
+      "n_cell_model_evaluations": 74884,
+      "selected_matches": 59036,
+      "mean_selected_reference_agreement": 0.7883660060894183
+    },
+    {
+      "method": "flowsom",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "n_cells": 36464,
+      "n_cell_model_evaluations": 145856,
+      "selected_matches": 117168,
+      "mean_selected_reference_agreement": 0.8033128565160158
+    },
+    {
+      "method": "flowsom",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "n_cells": 25652,
+      "n_cell_model_evaluations": 102608,
+      "selected_matches": 76639,
+      "mean_selected_reference_agreement": 0.7469105722750663
+    },
+    {
+      "method": "flowsom",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "n_cells": 34848,
+      "n_cell_model_evaluations": 139392,
+      "selected_matches": 105045,
+      "mean_selected_reference_agreement": 0.7535941804407713
+    },
+    {
+      "method": "leiden",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "n_cells": 22656,
+      "n_cell_model_evaluations": 90624,
+      "selected_matches": 67326,
+      "mean_selected_reference_agreement": 0.742915783898305
+    },
+    {
+      "method": "leiden",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "n_cells": 25362,
+      "n_cell_model_evaluations": 101448,
+      "selected_matches": 73459,
+      "mean_selected_reference_agreement": 0.7241049601766423
+    },
+    {
+      "method": "leiden",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "n_cells": 23267,
+      "n_cell_model_evaluations": 93068,
+      "selected_matches": 72473,
+      "mean_selected_reference_agreement": 0.7787101903984184
+    },
+    {
+      "method": "leiden",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "n_cells": 33112,
+      "n_cell_model_evaluations": 132448,
+      "selected_matches": 90814,
+      "mean_selected_reference_agreement": 0.6856577675767094
+    },
+    {
+      "method": "leiden",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "n_cells": 18721,
+      "n_cell_model_evaluations": 74884,
+      "selected_matches": 56127,
+      "mean_selected_reference_agreement": 0.749519256449976
+    },
+    {
+      "method": "leiden",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "n_cells": 36464,
+      "n_cell_model_evaluations": 145856,
+      "selected_matches": 111969,
+      "mean_selected_reference_agreement": 0.7676681110136024
+    },
+    {
+      "method": "leiden",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "n_cells": 25652,
+      "n_cell_model_evaluations": 102608,
+      "selected_matches": 70713,
+      "mean_selected_reference_agreement": 0.6891567908934976
+    },
+    {
+      "method": "leiden",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "n_cells": 34848,
+      "n_cell_model_evaluations": 139392,
+      "selected_matches": 93562,
+      "mean_selected_reference_agreement": 0.6712149908172635
+    },
+    {
+      "method": "spatialsort",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "n_cells": 22656,
+      "n_cell_model_evaluations": 90624,
+      "selected_matches": 68827,
+      "mean_selected_reference_agreement": 0.7594787252824858
+    },
+    {
+      "method": "spatialsort",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "n_cells": 25362,
+      "n_cell_model_evaluations": 101448,
+      "selected_matches": 75120,
+      "mean_selected_reference_agreement": 0.7404778802933523
+    },
+    {
+      "method": "spatialsort",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "n_cells": 23267,
+      "n_cell_model_evaluations": 93068,
+      "selected_matches": 74780,
+      "mean_selected_reference_agreement": 0.8034985172132204
+    },
+    {
+      "method": "spatialsort",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "n_cells": 33112,
+      "n_cell_model_evaluations": 132448,
+      "selected_matches": 92443,
+      "mean_selected_reference_agreement": 0.6979569340420392
+    },
+    {
+      "method": "spatialsort",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "n_cells": 18721,
+      "n_cell_model_evaluations": 74884,
+      "selected_matches": 57410,
+      "mean_selected_reference_agreement": 0.7666524224133326
+    },
+    {
+      "method": "spatialsort",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "n_cells": 36464,
+      "n_cell_model_evaluations": 145856,
+      "selected_matches": 114248,
+      "mean_selected_reference_agreement": 0.7832931110136024
+    },
+    {
+      "method": "spatialsort",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "n_cells": 25652,
+      "n_cell_model_evaluations": 102608,
+      "selected_matches": 74144,
+      "mean_selected_reference_agreement": 0.722594729455793
+    },
+    {
+      "method": "spatialsort",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "n_cells": 34848,
+      "n_cell_model_evaluations": 139392,
+      "selected_matches": 100425,
+      "mean_selected_reference_agreement": 0.720450241046832
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "n_cells": 22656,
+      "n_cell_model_evaluations": 90624,
+      "selected_matches": 71847,
+      "mean_selected_reference_agreement": 0.7928032309322034
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "5318485b16983482401c3be24b6c42ad",
+      "n_cells": 25362,
+      "n_cell_model_evaluations": 101448,
+      "selected_matches": 79591,
+      "mean_selected_reference_agreement": 0.7845497200536236
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "63d000170e475af142f6e8673de5eb0f",
+      "n_cells": 23267,
+      "n_cell_model_evaluations": 93068,
+      "selected_matches": 78520,
+      "mean_selected_reference_agreement": 0.8436841879056174
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "768b7adb649959b6a4e354867595032d",
+      "n_cells": 33112,
+      "n_cell_model_evaluations": 132448,
+      "selected_matches": 92214,
+      "mean_selected_reference_agreement": 0.6962279536119835
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "76d3efd17b6fc83aaac13e961824c5ae",
+      "n_cells": 18721,
+      "n_cell_model_evaluations": 74884,
+      "selected_matches": 59302,
+      "mean_selected_reference_agreement": 0.7919181667645959
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "8da8f27977d946b8c912d42c8827b55c",
+      "n_cells": 36464,
+      "n_cell_model_evaluations": 145856,
+      "selected_matches": 121211,
+      "mean_selected_reference_agreement": 0.831031976744186
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "ae422532f260b3d6fc662aae69b05d33",
+      "n_cells": 25652,
+      "n_cell_model_evaluations": 102608,
+      "selected_matches": 75197,
+      "mean_selected_reference_agreement": 0.7328570871666926
+    },
+    {
+      "method": "pixie_tiff",
+      "region": "dceadbb36871071f30c308ca091fbdc8",
+      "n_cells": 34848,
+      "n_cell_model_evaluations": 139392,
+      "selected_matches": 105875,
+      "mean_selected_reference_agreement": 0.7595486111111112
+    }
+  ],
+  "frozen_count_table": "data/frozen/figure_02_publication_metrics/regional_selected_agreement.csv",
+  "code_source_hashes_recorded_before_display_label_edit": true,
+  "source_image_verification": {
+    "github_original_sha256": "44978280393bac9756e3e826e60a244cf7a2845399635e82df93c0a3f8fb6cd7",
+    "panels": {
+      "E": {
+        "exact_native_pixel_match": true,
+        "source_panel_sha256": "797b576f1361438c39ffa46a312678c5a6f8b3d19daff2c72504b0b654e42600",
+        "page_top_left_pixels": [
+          36,
+          1662
+        ]
+      },
+      "G": {
+        "exact_native_pixel_match": true,
+        "source_panel_sha256": "dac0907057931d67b81b019a194bb1b74657264cec0c1eb52b9404665c71cb8d",
+        "page_top_left_pixels": [
+          36,
+          2340
+        ]
+      }
+    },
+    "manuscript_resizing_mean_absolute_channel_error": {
+      "NEAREST": 5.232538949875605,
+      "BILINEAR": 2.7355311257498607,
+      "BICUBIC": 3.1301952543712797,
+      "LANCZOS": 3.3365484873453775
+    }
+  }
+}

@@ -1,87 +1,38 @@
-# Canonical figure notebooks
+# Current manuscript notebooks
 
-This is the single current notebook collection for the manuscript. The
-notebooks declare their runtime inputs and write generated artifacts outside
-the versioned source tree.
+| Item | Panels | Notebook |
+| --- | --- | --- |
+| Figure 1 | A–F | [`figure_01_spillover_compensation.ipynb`](figure_01_spillover_compensation.ipynb) |
+| Figure 2 | A–J | [`figure_02_clustering_method_benchmark.ipynb`](figure_02_clustering_method_benchmark.ipynb) |
+| Figure 3 | A–H | [`figure_03_llm_annotation_benchmark.ipynb`](figure_03_llm_annotation_benchmark.ipynb) |
+| Figure 4 | A–E | [`figure_04_leiden_claude_end_to_end.ipynb`](figure_04_leiden_claude_end_to_end.ipynb) |
+| Figure 5 | Unlettered | [`figure_05_donor_transfer.ipynb`](figure_05_donor_transfer.ipynb) |
+| Figure S1 | A–C | [`figure_s01_clustering_metrics.ipynb`](figure_s01_clustering_metrics.ipynb) |
+| Figure S2 | A–B | [`figure_s02_spatial_celltypes.ipynb`](figure_s02_spatial_celltypes.ipynb) |
+| Figure S3 | A–C | [`figure_s03_matching_and_compensation.ipynb`](figure_s03_matching_and_compensation.ipynb) |
+| Figure S4 | A–E | [`figure_s04_reference_and_clustering_diagnostics.ipynb`](figure_s04_reference_and_clustering_diagnostics.ipynb) |
+| Figure S5 | A–B | [`figure_s05_common_marker_sensitivity.ipynb`](figure_s05_common_marker_sensitivity.ipynb) |
+| Figure S6 | A–B | [`figure_s06_annotation_diagnostics.ipynb`](figure_s06_annotation_diagnostics.ipynb) |
+| Figure S7 | Unlettered | [`figure_s07_agreement_decomposition.ipynb`](figure_s07_agreement_decomposition.ipynb) |
+| Figure S8 | Unlettered | [`figure_s08_controlled_b004_annotation.ipynb`](figure_s08_controlled_b004_annotation.ipynb) |
+| Figure S9 | A–D | [`figure_s09_calibration_and_neighborhood.ipynb`](figure_s09_calibration_and_neighborhood.ipynb) |
+| Figure S10 | Unlettered | [`figure_s10_paired_representations.ipynb`](figure_s10_paired_representations.ipynb) |
 
-## Figures
+| Current item | Notebook |
+| --- | --- |
+| Table S1 | [`table_s1_matching_and_retention.ipynb`](table_s1_matching_and_retention.ipynb) |
+| Table S2 | [`table_s2_clustering_and_channels.ipynb`](table_s2_clustering_and_channels.ipynb) |
+| Table S3 | [`table_s3_marker_summary_parameters.ipynb`](table_s3_marker_summary_parameters.ipynb) |
+| Table S4 | [`table_s4_controlled_annotation.ipynb`](table_s4_controlled_annotation.ipynb) |
+| Table S5 | [`table_s5_repeatability_and_prompt_controls.ipynb`](table_s5_repeatability_and_prompt_controls.ipynb) |
+| Table S6 | [`table_s6_paired_representations.ipynb`](table_s6_paired_representations.ipynb) |
+| Table S7 | [`table_s7_conditional_comparisons.ipynb`](table_s7_conditional_comparisons.ipynb) |
+| Table S8 | [`table_s8_label_mapping_sensitivity.ipynb`](table_s8_label_mapping_sensitivity.ipynb) |
 
-- `figure_01_spillover_compensation.ipynb`
-- `figure_02_clustering_method_benchmark.ipynb`
-- `figure_03_llm_annotation_benchmark.ipynb`
-- `figure_04_leiden_claude_end_to_end.ipynb` (historical frozen Claude replay)
-- `figure_04_leiden_gpt_end_to_end.ipynb` (compatibility redirect to the Claude notebook)
-- `figure_s01_clustering_metrics.ipynb`
-- `figure_s02_spatial_celltypes.ipynb`
-- `figure_s03_clustering_inputs_and_diagnostics.ipynb`
-- `figure_s04_annotation_diagnostics.ipynb`
+Figure 2 and 3 code follows the current panel definitions. Figures 5, S9 and S10 replot frozen numerical results. Other new supplementary entry points verify and display the approved artwork and link to the released scientific source. Figures 4, S1 and S2 retain their original analytical workflows and data requirements. Figure 1 provides the approved composite and numerical descriptive D–F replot, with the earlier H5AD notebook archived. See [reproduction instructions](../../docs/manuscript_reproduction.md).
 
-Figure 1 and Supplementary Figures S1--S2 retain verified executed outputs.
-The active Figure 2--3 and S3--S4 notebooks display hash-verified publication
-previews from the validated run. Figure 4 instead verifies and redraws its
-frozen historical Claude results. The canonical source notebooks keep empty
-code-cell outputs. Executed Figure 4 validation is recorded in
-[`figure_04_historical_claude_execution.json`](../../docs/figure_04_historical_claude_execution.json).
+The old S3 clustering filename forwards to current S4. The old S4 annotation filename forwards to current S6. The old Table S1 and S2 filenames forward to current S2 and S3. The GPT-named Figure 4 path forwards to Leiden–Claude. These compatibility paths are not additional manuscript figures or tables.
 
-## Supporting notebooks
+[Supplementary Note 1](supplementary_note_01_llm_cluster_annotation.ipynb) displays a verified historical numerical-profile request and its archived parsed labels. Earlier representative diagrams and alternative analytical notebooks are [archived](../historical_reconstructions/README.md).
 
-- `supplementary_note_01_llm_cluster_annotation.ipynb`
-- `table_s01_clustering_methods.ipynb`
-- `table_s02_marker_summary_optimization.ipynb`
-
-Table S1 reports the configured K=300 target for all four clustering methods.
-The frozen selected artifacts used by the figure code can contain fewer
-occupied clusters; those observed counts are validated separately in the
-tracked Figure 2 and Supplementary Figure S3 contracts.
-
-Table S2 validates the versioned marker-summary search grid, derives the four
-candidate-grid cardinalities (1,152, 960, 960, and 960), and regenerates its
-table panels from a clean clone. Generated files are written under
-`outputs/source_rebuilt/table_s02/`.
-
-The small `previews/` collection is intentionally tracked for review. Its
-files are output snapshots, never runtime inputs.
-
-Before replaying Figures 2--3 or S3--S4, the notebooks acquire the verified
-Duke record 505 H5AD and validate the tracked source-traced assignments under
-`data/frozen/v3_k300_assignments/`. The replay does not download the paired
-B004 OME-TIFF inputs or rerun clustering. All methods targeted K=300; the
-validated occupied counts are 300 (Leiden), 300 (FlowSOM), 246 (SpatialSort),
-and 300 (PIXIE). A raw engine-level PIXIE rerun remains a separate workflow
-requiring the roughly 46 GiB TIFF collection and external runner.
-
-Figure 1 and S1 use a separate historical input set: twelve H5AD files forming
-six before/after REDSEA pairs; S2 uses the corresponding three-method subset.
-Figure 1 Panels C--F and S2 also use the historical HuBMAP reference. The exact
-13-file input set is published in [Duke Research Data Repository record
-565](https://research.repository.duke.edu/record/565) (version 1, DOI
-[`10.7924/r4r565`](https://doi.org/10.7924/r4r565)); place the files in the
-repository-relative `data/processed/` directory. Record 505 remains the source
-for Figure 2 and later figures and is not treated as equivalent to the
-historical Figure 1 reference.
-
-The Figure 1, S1, and S2 notebooks preserve plots from their verified
-historical executions. Their source-discovery cells were updated for the
-published record 565 layout but were not followed by a full data-backed rerun;
-those cells are intentionally unexecuted, and the retained plots are review
-evidence rather than proof that the new local path has been executed.
-
-Shared clustering and validation code lives in
-`src/llm_spatial_omics_clustering/final_figures_runtime/`.
-
-## Historical Figure 4 model identity
-
-Figure 4 uses **Leiden–Claude**, specifically the archived `leiden__claude`
-prediction column. The canonical entry point is
-[figure_04_leiden_claude_end_to_end.ipynb](figure_04_leiden_claude_end_to_end.ipynb).
-The old GPT filename forwards to it for compatibility and does not select GPT
-predictions. The original GPT reconstruction is retained in the local author
-backup rather than presented as the manuscript's Figure 4 replay.
-
-This replay uses only the exact frozen Leiden assignment, the existing audited
-300-cluster Claude label map and the SHA-256-verified reference H5AD. No API key
-is needed. It has no live-inference or fitting mode. Set `FIGURE4_H5AD_PATH` only
-if the verified reference H5AD is stored outside its default repository path.
-Numerical reconstruction and provenance are documented in
-[figure_04_historical_claude_replay.md](../../docs/figure_04_historical_claude_replay.md).
-The separate publication preview is an output snapshot, never an analysis input.
+Current [previews](previews/README.md) are byte-identical copies of approved manuscript images. Source notebooks keep new code outputs empty. Validation runs and generated outputs are recorded separately and do not overwrite the manuscript.

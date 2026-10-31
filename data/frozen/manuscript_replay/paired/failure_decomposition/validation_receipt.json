@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "unit_tests_passed": 4,
+  "test_runtime_seconds": 0.6,
+  "source_files_unchanged": true,
+  "all_16_original_results_reconciled": true,
+  "all_384_raw_responses_replayed": true,
+  "new_model_calls": 0,
+  "additional_api_spend_usd": 0,
+  "network_access": false,
+  "notes": [
+    "Summary rates average two regions and three repeats. Count columns in summary tables are mean per-region per-repeat counts, not unique-cell totals.",
+    "Raw missing-cluster counts include repeated annotations of the same cluster.",
+    "Matched-delivery comparisons retain the same cells within each pair and do not impute missing labels."
+  ]
+}

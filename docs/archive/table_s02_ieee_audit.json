@@ -1,0 +1,43 @@
+{
+  "all_135_native_cells_exactly_preserved": true,
+  "all_20_selected_values_preserved": true,
+  "all_provenance_notes_preserved": true,
+  "S1_cells_preserved": true,
+  "editable_tables": 4,
+  "no_shading": true,
+  "no_vertical_rules": true,
+  "native_docx_sha256": "7a4b58632a557e056a6aec6bdafc9d795e33758a5272e2cdc5b99d006ef693ae",
+  "source_csv_sha256": "e91af5dfc7ef27687aa8b07acbc74b86f9c2f119228dc1d2db20034f5ec671f4",
+  "native_pdf_pages": [
+    48,
+    49
+  ],
+  "page_1_visible_fonts": [
+    "CAAAAA+TimesNewRomanPSMT"
+  ],
+  "page_2_visible_fonts": [
+    "CAAAAA+TimesNewRomanPSMT"
+  ],
+  "pdf_text_check": [
+    {
+      "page": 48,
+      "missing": {},
+      "extra": {}
+    },
+    {
+      "page": 49,
+      "missing": {},
+      "extra": {}
+    }
+  ],
+  "native_PDF_word_and_value_counts_match": true,
+  "native_layout_visually_reviewed": true,
+  "local_rendered_pages": 2,
+  "tests": "Three existing Table S2 tests passed after executing all three display-only notebook cells.",
+  "caption_numbering": "Table S2 retained; continued label added on page 2.",
+  "formatting_uses_S1_style_config": true,
+  "preview_sha256": {
+    "table_s02_ieee_page_1.png": "f76e7c500dd360db407f2a8972c02db0c9d78dffe10f0fe4317bb25ab6bc7dd7",
+    "table_s02_ieee_page_2.png": "7ac03ecd9718d57842e324cfb104d9188702c979a3edb61fdec13a690a727f59"
+  }
+}

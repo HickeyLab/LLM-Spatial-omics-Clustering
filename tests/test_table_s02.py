@@ -1,4 +1,7 @@
-"""Validate the clean-clone Table S2 source, notebook, and publication preview."""
+"""Preserve the historical parameter-search source and original preview.
+
+Current display number is Table S3. Legacy filenames and source bytes stay fixed.
+"""
 
 from __future__ import annotations
 
@@ -19,9 +22,9 @@ SOURCE_PATH = (
 )
 NOTEBOOK_PATH = (
     REPOSITORY_ROOT
-    / "notebooks/final_figures/table_s02_marker_summary_optimization.ipynb"
+    / "notebooks/historical_reconstructions/table_s02_marker_summary_optimization.ipynb"
 )
-PREVIEW_PATH = REPOSITORY_ROOT / "notebooks/final_figures/previews/table_s02.png"
+PREVIEW_PATH = REPOSITORY_ROOT / "notebooks/historical_reconstructions/previews/table_s02.png"
 
 SOURCE_SHA256 = "e91af5dfc7ef27687aa8b07acbc74b86f9c2f119228dc1d2db20034f5ec671f4"
 PREVIEW_SHA256 = "4a7df43e70a1c0a1bf4a03f469c810dc8a0644d07ac0fa7a77ef3d4f6fee9bd1"

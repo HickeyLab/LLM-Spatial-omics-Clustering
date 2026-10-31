@@ -1,0 +1,54 @@
+{
+  "table_source_sha256": "e91af5dfc7ef27687aa8b07acbc74b86f9c2f119228dc1d2db20034f5ec671f4",
+  "selected_values_match_extended_search_summary": true,
+  "compared_selected_values": 20,
+  "extended_search_script": "optimize_marker_thresholds_extended.py",
+  "extended_search_assignment_input": "best_clusters_combined.csv",
+  "legacy_pixie_assignment_column": "pixie_cluster",
+  "legacy_export_file": "cluster_marker_pixie_optimized.json",
+  "legacy_pixie_export_cluster_count": 50,
+  "legacy_export_shape": "cluster identifier to marker-name list, no numerical triples",
+  "main_benchmark_PIXIE": "TIFF-derived PIXIE K=300 with 300 occupied clusters, frozen artifact and archived pixie_tiff prompts",
+  "implementation_equivalence": "not established; source-table label is retained rather than globally standardized to PIXIE",
+  "V3_policy": "remove displayed version shorthand; retain historical version names only in internal paths/metadata",
+  "terminology": "retrospective marker-name-list parameter selection",
+  "benchmark_parameter_use_claim": "unsupported by archived contributing prompts; remove the claim",
+  "prompt_verification": {
+    "contributing_calls_checked": 179,
+    "target_profiles_checked": 4584,
+    "high_ranked_entries": 12,
+    "low_ranked_entries": 8,
+    "fields": [
+      "marker",
+      "mean_asinh",
+      "full_cohort_delta_z"
+    ],
+    "errors": []
+  },
+  "source_hashes": {
+    "optimize_marker_thresholds_extended.py": "f426a23c09b6fb0351661601a3e77fb9c2b36306c1cde76af1242eb8a1d852de",
+    "threshold_optimization_extended_summary.csv": "31e2b813140682fd731e95e9fe14462b462608c028abccf20f674633bbb256f9",
+    "optimized_marker_thresholds.json": "f9f3759bf5ad56f8b21348a05efb9a0a7c50747ed35197e30a72d09458852ead",
+    "cluster_marker_pixie_optimized.json": "b58020f0ded64bb9ea952e4424c6b6f01be62a4ecd603cb9deba5d8b9b5ea402",
+    "v3_scripts/build_v3_table02_marker_summary_optimization.py": "ec5ddc536c76fac6810a78304f4aa8384ecaba90c45483c3bdd893a03086c3e1",
+    "combined_best_clusters.py": "4375e353b096887607c4ee6adf321351e10e30282de6fb4bd89b17a69a4940e6",
+    "v3_scripts/source_traced_publication_panel_map.py": "5865ac0ed44c15ed9da69088f7e5549f1b0c01389e0ee573f1fc002bc3e8ba0c"
+  },
+  "new_searches": 0,
+  "new_model_calls": 0,
+  "artwork_source": "Pinned Git publication preview table_s02.png, not the unrelated S4 image preceding the S2 caption",
+  "artwork_source_sha256": "98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa",
+  "native_document_state": "IEEE-style four-part editable table applied over two pages. All 135 cells and provenance notes verified; prior caption edits accepted for placement above/below the tables. Unrelated suggestions remain intact.",
+  "source_hashes_after_display_revision": {
+    "v3_scripts/build_v3_table02_marker_summary_optimization.py": "7cad20f18bc9d639a804d046106923ba2b46ce4ae161449f60636610993ad27d"
+  },
+  "legacy_PIXIE_source_chain": [
+    "optimize_marker_thresholds_extended.py",
+    "best_clusters_combined.csv:pixie_cluster",
+    "combined_best_clusters.py",
+    "PIXIE/pixie_meta50_styled_clusters.csv"
+  ],
+  "canonical_panel_exclusion": "v3_scripts/source_traced_publication_panel_map.py explicitly excludes legacy 50-cluster convenience assignments and generic combined-table PIXIE columns",
+  "native_verification": "docs/native_figure_update_verification.json",
+  "presentation_verification": "docs/table_s02_ieee_audit.json"
+}
