@@ -1,0 +1,111 @@
+{
+  "figure_count": 15,
+  "image_count": 17,
+  "modified_image_count": 10,
+  "files": [
+    {
+      "file": "Figure_1.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_2.png",
+      "changed_pixels": 9128,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_3.png",
+      "changed_pixels": 11876,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_4.png",
+      "changed_pixels": 14532,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_5.png",
+      "changed_pixels": 27303,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S1.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S10.png",
+      "changed_pixels": 17412,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S2.png",
+      "changed_pixels": 1688,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S3A.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S3B.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S3C.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S4.png",
+      "changed_pixels": 5996,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S5.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S6.png",
+      "changed_pixels": 7858,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S7.png",
+      "changed_pixels": 12496,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S8.png",
+      "changed_pixels": 9693,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    },
+    {
+      "file": "Figure_S9.png",
+      "changed_pixels": 0,
+      "changed_outside_title": 0,
+      "dimensions_preserved": true
+    }
+  ],
+  "new_model_calls": 0,
+  "new_fits": 0
+}

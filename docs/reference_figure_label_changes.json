@@ -1,6 +1,6 @@
 {
   "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
-  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Nine publication previews with 54 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling. Table S2 distinguishes retrospective export selection from original numerical prompts and retains the unverified legacy PIXIE-style identity.",
+  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Nine publication previews with 54 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling. Table S2 distinguishes retrospective export selection from original numerical prompts and retains the unverified legacy PIXIE-style identity. Figure-level titles are removed from S4 and S8 without altering panel headings or labels.",
   "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
   "font": "DejaVuSans.ttf",
   "figures": [
@@ -339,7 +339,7 @@
           "align": "right"
         },
         {
-          "panel": "D\u2013E component key",
+          "panel": "D–E component key",
           "kind": "component_legend",
           "old": "No component legend",
           "new": "Direct reference agreement / Net annotation gap / Within-cluster bound gap",
@@ -499,7 +499,7 @@
         {
           "panel": "Figure heading",
           "old": "Cell-level confusion and cluster-level error decomposition",
-          "new": "Figure S4. Cell-level confusion and historical majority-based diagnostic for Claude on Leiden clusters",
+          "new": "",
           "rect": [
             750,
             0,
@@ -508,7 +508,9 @@
           ],
           "x": 2100.0,
           "y": 46.88,
-          "size": 37.5
+          "size": 37.5,
+          "kind": "erase",
+          "reason": "Figure-level title is supplied by the separate manuscript caption."
         },
         {
           "panel": "B heading",
@@ -557,7 +559,7 @@
           ]
         }
       ],
-      "updated_sha256": "a45b758a2a0453f2f1cecd78eac369abc6ba682ac97390d3157de6bad26515ad"
+      "updated_sha256": "994df7cee194c8bfaf116f83bf2722b31ab1e38963b763e4d8c27b7630032d6a"
     },
     {
       "file": "notebooks/final_figures/previews/figure_s08.png",
@@ -570,8 +572,8 @@
       "labels": [
         {
           "panel": "Identity heading",
-          "old": "Historical Leiden\u2013Claude error decomposition",
-          "new": "Corrected aggregate error identity: Leiden\u2013Claude",
+          "old": "Historical Leiden–Claude error decomposition",
+          "new": "",
           "rect": [
             690,
             8,
@@ -580,7 +582,9 @@
           ],
           "x": 1290,
           "y": 65,
-          "size": 46
+          "size": 46,
+          "kind": "erase",
+          "reason": "Figure-level title is supplied by the separate manuscript caption."
         },
         {
           "panel": "Direct agreement key",
@@ -613,7 +617,7 @@
           "align": "left"
         }
       ],
-      "updated_sha256": "2e122310bf5195939f257f5d255cbd82220e75d194f306b32fb342bddecb6622"
+      "updated_sha256": "97c63d6c0a5f020b3eadab4379811cee8b13edd9b8e3827e430f3589c9c6b559"
     },
     {
       "file": "notebooks/final_figures/previews/figure_01.png",
@@ -772,11 +776,11 @@
         },
         {
           "panel": "B title",
-          "old": "Mean slide-level Davies\u2013Bouldin index",
-          "new": "Mean across tissue regions\nDavies\u2013Bouldin index in PCA space, before vs after compensation",
+          "old": "Mean slide-level Davies–Bouldin index",
+          "new": "Mean across tissue regions\nDavies–Bouldin index in PCA space, before vs after compensation",
           "lines": [
             "Mean across tissue regions",
-            "Davies\u2013Bouldin index in PCA space, before vs after compensation"
+            "Davies–Bouldin index in PCA space, before vs after compensation"
           ],
           "rect": [
             44,
@@ -806,11 +810,11 @@
         },
         {
           "panel": "C title",
-          "old": "Mean slide-level Calinski\u2013Harabasz index",
-          "new": "Mean across tissue regions\nCalinski\u2013Harabasz index in PCA space, before vs after compensation",
+          "old": "Mean slide-level Calinski–Harabasz index",
+          "new": "Mean across tissue regions\nCalinski–Harabasz index in PCA space, before vs after compensation",
           "lines": [
             "Mean across tissue regions",
-            "Calinski\u2013Harabasz index in PCA space, before vs after compensation"
+            "Calinski–Harabasz index in PCA space, before vs after compensation"
           ],
           "rect": [
             44,
