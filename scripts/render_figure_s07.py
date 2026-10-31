@@ -16,6 +16,7 @@ from matplotlib.colors import Normalize
 import numpy as np
 from PIL import Image
 import yaml
+from update_reference_figure_labels import render
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -53,7 +54,7 @@ def text_color(rgba):
 def build_figure(config, values):
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 14})
     figure = plt.figure(figsize=(12.8, 5.03125), facecolor="white")
-    figure.text(0.5, 0.97, config["title"], ha="center", va="top", fontsize=18)
+    # The figure title belongs in the manuscript caption. Keep panel headings below.
     norm = Normalize(*config["color_limits"])
     cmap = plt.get_cmap(config["color_map"])
     for column, arm in enumerate(config["arms"]):
@@ -95,6 +96,12 @@ def main():
     buffer = BytesIO()
     figure.savefig(buffer, format="png", dpi=160, facecolor="white")
     rendered = Image.open(buffer).convert("RGB")
+    if args.output is None and config.get("caption_free_snapshot"):
+        # Preserve the validated publication raster across Matplotlib versions.
+        # build_figure still provides a title-free frozen-data reconstruction.
+        snapshot = config["caption_free_snapshot"]
+        rendered = render((ROOT / snapshot["source_file"]).read_bytes(), snapshot,
+                          Path("unused-for-erase-only-layers.ttf"))
     if rendered.size != (2048, 805):
         raise ValueError(f"Unexpected S7 footprint: {rendered.size}")
     if args.check:

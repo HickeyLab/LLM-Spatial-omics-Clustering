@@ -1,0 +1,316 @@
+{
+  "scope": "All 5 main and 10 supplementary manuscript figures, with S3 supplied as three panels. Reconciled manuscript numbering is separate from historical notebook numbering.",
+  "policy": "Figure-level numbers and titles belong in separate captions. Preserve panel headings, letters, axes, legends, notes, scientific values and image dimensions.",
+  "figure_count": 15,
+  "image_count": 17,
+  "files": [
+    {
+      "file": "figures/manuscript/Figure_1.png",
+      "source_file": "figures/manuscript/Figure_1.png",
+      "source_sha256": "d95c150c63b0d2dfd6dd3b9e07d05e1ebafd5f50a756405b90c42e45d9f4214b",
+      "size_pixels": [
+        1851,
+        2048
+      ],
+      "labels": [],
+      "output_sha256": "d95c150c63b0d2dfd6dd3b9e07d05e1ebafd5f50a756405b90c42e45d9f4214b"
+    },
+    {
+      "file": "figures/manuscript/Figure_2.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_2.png",
+      "source_sha256": "80dc7d40e10fe8498492bb05d3c4c5f7f8a480ed20113a1fefca84faccafb18c",
+      "size_pixels": [
+        1792,
+        2048
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            1792,
+            21
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "ed9a31839d6be5bc8f0549c11282f9188b1eaeb513f8bf7718ec434b02cd6676"
+    },
+    {
+      "file": "figures/manuscript/Figure_3.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_3.png",
+      "source_sha256": "d77cccf700f05efef0486dfb5eafc837b5a076d1946ff8f7698ff29ec8e93b18",
+      "size_pixels": [
+        1932,
+        2048
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            1932,
+            25
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "2af6ecb4f7de2e71f98171c82cb617ef0f15fae92c17e59d57c4c248bac6339e"
+    },
+    {
+      "file": "figures/manuscript/Figure_4.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_4.png",
+      "source_sha256": "932d6f36d42b95e38e5e7a8d0270face55b1df0ad99d6de41c80f9496a462ecc",
+      "size_pixels": [
+        2048,
+        1545
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            2048,
+            27
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "ca15d39ee019c1866e7b3524083d6b4420b40a00739e9a0458db2447bf063f93"
+    },
+    {
+      "file": "figures/manuscript/Figure_5.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_5.png",
+      "source_sha256": "096875d42fc20c54f7c350bdf02898ad9f3ae80e2ad493aea707e59f53f07a79",
+      "size_pixels": [
+        2048,
+        1490
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            2048,
+            68
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "8bbd8efee53a75b948414793b80c230c0fea90406583b9c1972e448257ec51c6"
+    },
+    {
+      "file": "figures/manuscript/Figure_S1.png",
+      "source_file": "figures/manuscript/Figure_S1.png",
+      "source_sha256": "d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75",
+      "size_pixels": [
+        1135,
+        1656
+      ],
+      "labels": [],
+      "output_sha256": "d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75"
+    },
+    {
+      "file": "figures/manuscript/Figure_S10.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_S10.png",
+      "source_sha256": "a7c193f64ca341cb00260e36b477e1c338a0524b504d70b57a034a0c2396b3be",
+      "size_pixels": [
+        2040,
+        1800
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            2040,
+            78
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "c1b165768a095289e367e4428ac71a7f2a0a088337c2f4b8e3171eafa7421c36"
+    },
+    {
+      "file": "figures/manuscript/Figure_S2.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_S2.png",
+      "source_sha256": "cc913103972a925c96ea1af760bcf55ef9d81690d36916de3f06e648c7aaf74e",
+      "size_pixels": [
+        1536,
+        2048
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            84,
+            70
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "acf42e6a48c720c9ff22adef5b0e6d09f6f27be3ab06ae2b081ad72ed7dca095"
+    },
+    {
+      "file": "figures/manuscript/Figure_S3A.png",
+      "source_file": "figures/manuscript/Figure_S3A.png",
+      "source_sha256": "49e08728c76f7ccdba4e971dd8e011d2709ab530f541280407a3eb8259027a21",
+      "size_pixels": [
+        2048,
+        1144
+      ],
+      "labels": [],
+      "output_sha256": "49e08728c76f7ccdba4e971dd8e011d2709ab530f541280407a3eb8259027a21"
+    },
+    {
+      "file": "figures/manuscript/Figure_S3B.png",
+      "source_file": "figures/manuscript/Figure_S3B.png",
+      "source_sha256": "df88022204ae84dcb9802b22eccc9b1a5d66011de5a0a702022dcccebf055099",
+      "size_pixels": [
+        2048,
+        1204
+      ],
+      "labels": [],
+      "output_sha256": "df88022204ae84dcb9802b22eccc9b1a5d66011de5a0a702022dcccebf055099"
+    },
+    {
+      "file": "figures/manuscript/Figure_S3C.png",
+      "source_file": "figures/manuscript/Figure_S3C.png",
+      "source_sha256": "2149ddaa0035bd412c25855d7f45b9e48cdc6982c559b5e2076c77bef6c26f48",
+      "size_pixels": [
+        1992,
+        2048
+      ],
+      "labels": [],
+      "output_sha256": "2149ddaa0035bd412c25855d7f45b9e48cdc6982c559b5e2076c77bef6c26f48"
+    },
+    {
+      "file": "figures/manuscript/Figure_S4.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_S4.png",
+      "source_sha256": "ebe56dfb8647f7e8ad7b367f430edbba49b7244235799016b522f3b7b5f5d345",
+      "size_pixels": [
+        1906,
+        2048
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            1906,
+            34
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "fb70988257aadf43a20c1c5b8dc0838604961cf8aed07a2d2e8731fd59801015"
+    },
+    {
+      "file": "figures/manuscript/Figure_S5.png",
+      "source_file": "figures/manuscript/Figure_S5.png",
+      "source_sha256": "3631b6b5db3a9f5efb0313f4532ab8014373cb24aab0b522d4c79e32d88e9714",
+      "size_pixels": [
+        2048,
+        1039
+      ],
+      "labels": [],
+      "output_sha256": "3631b6b5db3a9f5efb0313f4532ab8014373cb24aab0b522d4c79e32d88e9714"
+    },
+    {
+      "file": "figures/manuscript/Figure_S6.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_S6.png",
+      "source_sha256": "60532ddc181775c1fb2ad5c87e9add4097bd56ce3b57404e2d93a6f1b7a929a8",
+      "size_pixels": [
+        1792,
+        2048
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            1792,
+            34
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "3923c33df282202133ab1788386b77964af15f93e37560affdd939bd0ac0e550"
+    },
+    {
+      "file": "figures/manuscript/Figure_S7.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_S7.png",
+      "source_sha256": "1ce440da6385dc27df8238d1c3eff8a992bcf58644696c9ba2583bdab9280c2a",
+      "size_pixels": [
+        2048,
+        1094
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            2048,
+            80
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "5a187859f6ed9ad6d0a9619e57d2edfad0cd42faed90aa1da2c7c5ead7ba3c94"
+    },
+    {
+      "file": "figures/manuscript/Figure_S8.png",
+      "source_file": "data/frozen/publication_artwork/title_cleanup/Figure_S8.png",
+      "source_sha256": "730f65d4fd8a5d70f196af3501f3df219d19c4d4d21bfd8a36fa49d1048020f1",
+      "size_pixels": [
+        2048,
+        805
+      ],
+      "labels": [
+        {
+          "kind": "erase",
+          "rect": [
+            0,
+            0,
+            2048,
+            66
+          ],
+          "old": "Embedded figure number or figure-level title",
+          "new": ""
+        }
+      ],
+      "output_sha256": "a1f09e4cb4feca6670d37ab34732f48afb0ab0670be8dff03a6bfe2db1cc934b"
+    },
+    {
+      "file": "figures/manuscript/Figure_S9.png",
+      "source_file": "figures/manuscript/Figure_S9.png",
+      "source_sha256": "197ee116c98d286b3399987429af2489ce3b353f3926dde67d3ce94b4d51b18f",
+      "size_pixels": [
+        2048,
+        1663
+      ],
+      "labels": [],
+      "output_sha256": "197ee116c98d286b3399987429af2489ce3b353f3926dde67d3ce94b4d51b18f"
+    }
+  ],
+  "source": "Current manuscript image snapshots exported on 2026-10-31. Existing suggested artwork is retained as displayed in the proposed manuscript."
+}

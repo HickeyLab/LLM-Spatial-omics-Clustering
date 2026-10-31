@@ -55,5 +55,21 @@
   "colorbar_label": "Reference agreement (%)",
   "palette_reference": "configs/figure_02.yaml:panel_h.style",
   "denominator": "Within each test region, all eligible planned reference cells, including invalid or missing predictions as errors. The displayed value is the unweighted mean of the two regional agreement fractions.",
-  "original_artwork_sha256": "41190b2a5494d5591c52188e108011805b01baac0ec9fe49f4467a83dbcb507c"
+  "original_artwork_sha256": "41190b2a5494d5591c52188e108011805b01baac0ec9fe49f4467a83dbcb507c",
+  "caption_free_snapshot": {
+    "source_file": "data/frozen/publication_artwork/figure_s07_caption_source.png",
+    "source_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce",
+    "file": "notebooks/final_figures/previews/figure_s07.png",
+    "labels": [
+      {
+        "kind": "erase",
+        "rect": [
+          0,
+          0,
+          2048,
+          75
+        ]
+      }
+    ]
+  }
 }

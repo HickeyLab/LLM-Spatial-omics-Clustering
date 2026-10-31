@@ -1,0 +1,28 @@
+{
+  "export_date": "2026-10-31",
+  "image_count": 17,
+  "all_17_images_match": true,
+  "matching_images": [
+    "Figure_5.png",
+    "Figure_1.png",
+    "Figure_2.png",
+    "Figure_3.png",
+    "Figure_4.png",
+    "Figure_S1.png",
+    "Figure_S2.png",
+    "Figure_S3A.png",
+    "Figure_S3B.png",
+    "Figure_S3C.png",
+    "Figure_S4.png",
+    "Figure_S5.png",
+    "Figure_S6.png",
+    "Figure_S7.png",
+    "Figure_S8.png",
+    "Figure_S9.png",
+    "Figure_S10.png"
+  ],
+  "image_replacements_applied_in_suggesting_mode": true,
+  "all_image_replacements_present_in_latest_export": true,
+  "other_document_edits_were_concurrent": true,
+  "prose_and_captions_changed_by_this_task": false
+}

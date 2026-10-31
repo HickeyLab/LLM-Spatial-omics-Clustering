@@ -33,6 +33,7 @@
       2048,
       805
     ],
-    "output_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce"
+    "output_sha256": "ffd6e1ce525c37ecde107c1a9d85f62c83a40bc3dd7981aae0dd9e4a6748452d",
+    "before_title_cleanup_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce"
   }
 }

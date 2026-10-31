@@ -78,7 +78,7 @@
     "reference_agreement": 0.5,
     "conditional_valid_prediction_agreement": 0.6666666666666666
   },
-  "updated_artwork_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce",
+  "updated_artwork_sha256": "ffd6e1ce525c37ecde107c1a9d85f62c83a40bc3dd7981aae0dd9e4a6748452d",
   "palette": "RdYlGn",
   "shared_scale_percent": [
     0,
@@ -87,5 +87,7 @@
   "palette_source": "configs/figure_02.yaml:panel_h.style",
   "native_document_status": "Image replacement applied and exact source hash verified in native DOCX. Caption saved as a suggestion pending review.",
   "display_source_after_sha256": "9b7123d0022ff94c5cd79f2fe017c1d82f0e33a177223bc64b66239e9186a96a",
-  "native_verification": "docs/native_figure_update_verification.json"
+  "native_verification": "docs/native_figure_update_verification.json",
+  "before_title_cleanup_sha256": "8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce",
+  "title_cleanup": "Figure-level title removed. Panel headings, labels, values and all other pixels are unchanged."
 }

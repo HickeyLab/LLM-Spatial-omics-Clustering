@@ -16,6 +16,11 @@ revision analyses, including donor transfer and the additional supplements.
 
 ## Start here
 
+The complete caption-free manuscript artwork, using the reconciled Figure
+1–5 and S1–S10 numbering, is in [`figures/manuscript/`](figures/manuscript/README.md).
+Panel headings and labels are preserved. Figure numbers and titles belong in
+the separate manuscript captions.
+
 No setup is needed to inspect the results on GitHub. Open a notebook in the
 table below.
 

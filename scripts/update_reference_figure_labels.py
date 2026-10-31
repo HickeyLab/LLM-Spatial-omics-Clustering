@@ -30,6 +30,8 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
         x, y, width, height = label['rect']
         draw.rectangle((x, y, x + width - 1, y + height - 1), fill=label.get('background', 'white'))
         mask[y:y + height, x:x + width] = True
+        if label.get('kind') == 'erase':
+            continue
         if label.get('restore_strip'):
             repair = label['restore_strip']
             dx, dy, dw, dh = repair['destination']

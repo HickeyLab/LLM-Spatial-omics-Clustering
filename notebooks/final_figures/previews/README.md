@@ -72,10 +72,10 @@ No clustering, metric calculation, or model call is performed.
 | `figure_04.png` | `4e9892f2199cb820048bee54ff25a709899cc668a2b39743bbaa6ec63111934e` | `e28a65852072f7e397d0ecd08f58b36d5f16843424310c314bc0ece5939f3cd3` |
 | `figure_s01.png` | `5bff24b93d3610eaae5a83bd8303ed52ba56d60c9408235a0715e115ea10c8f4` | `d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75` |
 | `figure_s03.png` | `da81d026d78874653de65c50213fb653db54cd7a8229948a84f9d5359a8c1db5` | `737131b62959d8e5a061d8d68eb15f54980a84bce0f3ef082fa8a5333aba8eaa` |
-| `figure_s04.png` | `a278669227eea94741308c821b308d4023de3e22ed73e4699179a0e32086504a` | `a45b758a2a0453f2f1cecd78eac369abc6ba682ac97390d3157de6bad26515ad` |
+| `figure_s04.png` | `a278669227eea94741308c821b308d4023de3e22ed73e4699179a0e32086504a` | `994df7cee194c8bfaf116f83bf2722b31ab1e38963b763e4d8c27b7630032d6a` |
 | `figure_s05c.png` | `2ca554e61b4767320b768e34884012fc1ecd16391b38ab669ec7efb5be4d4418` | `888324f25bd14f7075e76292b15006212241f6b0f4da117fdf3423ee2e535bd4` |
-| `figure_s07.png` | `41190b2a5494d5591c52188e108011805b01baac0ec9fe49f4467a83dbcb507c` | `8a41cae90524aae07fef9a337ba95bc9814077a85b035a4058412a775cb032ce` |
-| `figure_s08.png` | `805d5d84b70c3d5c6d0b2c4f02a9a5f185e9b38f70a53a435a9f6747ac6b2168` | `2e122310bf5195939f257f5d255cbd82220e75d194f306b32fb342bddecb6622` |
+| `figure_s07.png` | `41190b2a5494d5591c52188e108011805b01baac0ec9fe49f4467a83dbcb507c` | `ffd6e1ce525c37ecde107c1a9d85f62c83a40bc3dd7981aae0dd9e4a6748452d` |
+| `figure_s08.png` | `805d5d84b70c3d5c6d0b2c4f02a9a5f185e9b38f70a53a435a9f6747ac6b2168` | `97c63d6c0a5f020b3eadab4379811cee8b13edd9b8e3827e430f3589c9c6b559` |
 | `table_s02.png` | `98074b1938e30fc0ed137e9b6ebe0d9c0c864a0b1abb3bde6e2ebbbcb7dde1aa` | `4a7df43e70a1c0a1bf4a03f469c810dc8a0644d07ac0fa7a77ef3d4f6fee9bd1` |
 
 Table S2 uses retrospective marker-name-list parameter selection, removes
@@ -105,3 +105,5 @@ from the current manuscript cells. See
 Table S2 uses the same IEEE-style convention across two readable, editable
 pages. All 135 cells and the provenance notes are preserved. See
 [the S2 presentation notes](../../../docs/table_s02_ieee.md).
+
+Figure-level titles have been removed from the S4, S7 and S8 previews. Panel headings and labels remain. The complete current manuscript set, using the reconciled S1–S10 numbering, is available in [`figures/manuscript/`](../../../figures/manuscript/README.md).
