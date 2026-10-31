@@ -1,0 +1,171 @@
+#!/usr/bin/env python3
+"""Check native figure typography, resolution, inputs and manuscript placement.
+
+Google Docs exports compressed previews. Their geometry and visual identity
+are checked separately from the original 600 dpi submission files.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+from io import BytesIO
+import json
+from pathlib import Path
+import re
+import xml.etree.ElementTree as ET
+import zipfile
+
+import fitz
+import numpy as np
+import pandas as pd
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parents[1]
+ORDER = ['5','1','2','3','4','S1','S2','S3A','S3B','S3C','S4','S5','S6','S7','S8','S9','S10']
+PANELS = {'1':'ABCDEF','2':'ABCDEFGHIJ','3':'ABCDEFGH','4':'ABCDE','5':'ABCD',
+          'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCDE',
+          'S5':'AB','S6':'AB','S7':'','S8':'AB','S9':'ABCD','S10':'ABCD'}
+NS = {'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
+      'a':'http://schemas.openxmlformats.org/drawingml/2006/main',
+      'wp':'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing',
+      'r':'http://schemas.openxmlformats.org/officeDocument/2006/relationships'}
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def verify_selected_e():
+    """Independently check the archived selection values against cell labels."""
+    selected = pd.read_csv(ROOT/'data/frozen/publication_design/figure3_celltype_selected.csv')
+    annotations = pd.read_csv(ROOT/'data/frozen/manuscript_replay/figure_03/annotations.csv.gz')
+    count = 0
+    for row in selected.itertuples():
+        group = annotations.loc[annotations.truth_normalized.eq(row.truth_label)]
+        correct = (group.phase7_prediction.eq(group.truth_normalized) |
+                   group['leiden__'+row.llm].eq(group.truth_normalized))
+        assert len(group) == row.n_cells
+        assert int(correct.sum()) == row.correct_cells
+        np.testing.assert_allclose(correct.mean(),row.exact_cell_accuracy,rtol=0,atol=1e-12)
+        count += 1
+    return count
+
+
+def verify_native(folder, render_qa=None):
+    data = ROOT/'data/frozen/publication_design'
+    manifest = json.loads((data/'manifest.json').read_text())
+    for name,entry in manifest['files'].items():
+        assert digest(data/name) == entry['sha256'], f'Frozen input changed: {name}'
+    results = []
+    for key in ORDER:
+        name = 'Figure_'+key
+        receipt = json.loads((folder/(name+'_verification.json')).read_text())
+        for filename,entry in receipt['files'].items():
+            assert digest(folder/filename) == entry['sha256'], filename
+        for source,sha in receipt['inputs'].items():
+            assert digest(ROOT/source) == sha, source
+        with Image.open(folder/(name+'.png')) as image:
+            pixels = np.asarray(image.convert('RGB'))
+            width,height = image.size
+            assert min(image.info['dpi']) >= 599.9
+        with Image.open(folder/(name+'.tiff')) as image:
+            assert image.size == (width,height)
+            assert min(image.info['dpi']) >= 600
+            assert image.mode == 'RGB'
+            np.testing.assert_array_equal(pixels,np.asarray(image))
+        # A one-pixel rounding allowance is appropriate for raster dimensions.
+        assert abs(width-receipt['width_mm']/25.4*600) <= 1.01
+        assert abs(height-receipt['height_mm']/25.4*600) <= 1.01
+        doc = fitz.open(folder/(name+'.pdf'))
+        assert len(doc) == 1
+        page = doc[0]
+        spans = [s for b in page.get_text('dict')['blocks'] if 'lines' in b
+                 for line in b['lines'] for s in line['spans'] if s['text'].strip()]
+        minimum = min(s['size'] for s in spans)
+        assert minimum >= 5.4999, (name,minimum)
+        assert abs(minimum-receipt['minimum_font_pt']) < .001
+        assert {s['font'] for s in spans}.issubset({'ArialMT','Arial-BoldMT','Arial-ItalicMT'})
+        letters = [s['text'] for s in spans if s['size'] >= 7.99 and 'Bold' in s['font']
+                   and re.fullmatch('[A-J]',s['text'])]
+        assert ''.join(sorted(letters)) == PANELS[key], (name,letters)
+        assert not any(re.fullmatch(r'\([A-J]\)',s['text']) for s in spans)
+        assert not re.search(r'\bFigure\s+(?:[1-5]|S\d)',page.get_text())
+        assert abs(page.rect.width-receipt['width_mm']/25.4*72) < .01
+        assert abs(page.rect.height-receipt['height_mm']/25.4*72) < .01
+        image_dpi = []
+        for layer in page.get_image_info():
+            box = fitz.Rect(layer['bbox'])
+            image_dpi.extend([72*layer['width']/box.width,72*layer['height']/box.height])
+        assert min(image_dpi,default=610) >= 600
+        svg = ET.parse(folder/(name+'.svg')).getroot()
+        text_nodes = svg.findall('.//{http://www.w3.org/2000/svg}text')
+        assert len(text_nodes) >= len(spans)*.7, f'Editable text missing: {name}'
+        if render_qa:
+            render_qa.mkdir(parents=True,exist_ok=True)
+            page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),alpha=False).save(render_qa/(name+'.png'))
+        results.append({'figure':name,'minimum_font_pt':minimum,'panel_letters':PANELS[key],
+                        'png_tiff_dpi':600,'minimum_pdf_image_dpi':min(image_dpi,default=None),
+                        'editable_svg_text_nodes':len(text_nodes)})
+    return results
+
+
+def verify_docx(path, folder):
+    results = []
+    with zipfile.ZipFile(path) as archive:
+        document = ET.fromstring(archive.read('word/document.xml'))
+        relationships = {x.attrib['Id']:x.attrib['Target'] for x in
+                         ET.fromstring(archive.read('word/_rels/document.xml.rels'))}
+        drawings = document.findall('.//w:drawing',NS)
+        assert len(drawings) == len(ORDER)
+        for key,drawing in zip(ORDER,drawings):
+            name = 'Figure_'+key
+            receipt = json.loads((folder/(name+'_verification.json')).read_text())
+            extent = drawing.find('.//wp:extent',NS)
+            x,y = [int(extent.attrib[k])/36000 for k in ['cx','cy']]
+            distortion = (x/y)/(receipt['width_mm']/receipt['height_mm'])-1
+            # Google Docs rounds image heights to hundredths of an inch.
+            assert abs(distortion) < .002, (name,distortion)
+            font = receipt['minimum_font_pt']*min(x/receipt['width_mm'],y/receipt['height_mm'])
+            assert font >= 5, (name,font)
+            crop = drawing.find('.//a:srcRect',NS)
+            assert crop is None or all(int(v)==0 for v in crop.attrib.values()), (name,'cropped')
+            blip = drawing.find('.//a:blip',NS)
+            target = relationships[blip.attrib['{'+NS['r']+'}embed']]
+            preview = Image.open(BytesIO(archive.read('word/'+target))).convert('RGB')
+            with Image.open(folder/(name+'.png')) as source:
+                expected = source.convert('RGB').resize(preview.size,Image.Resampling.LANCZOS)
+            error = float(np.abs(np.asarray(preview,dtype=float)-np.asarray(expected,dtype=float)).mean())
+            assert error < 5, (name,'wrong artwork or severe resampling',error)
+            results.append({'figure':name,'placed_width_mm':x,'placed_height_mm':y,
+                            'aspect_ratio_error_percent':100*distortion,'minimum_font_pt':font,
+                            'preview_mean_absolute_rgb_error':error,
+                            'google_docs_preview_dpi':min(preview.width*25.4/x,preview.height*25.4/y)})
+        text = '\n'.join(''.join(p.itertext()) for p in document.findall('.//w:p',NS))
+        caption = next(p for p in text.splitlines() if p.startswith('Figure 3.'))
+        assert '(E) Cell-type-specific reference agreement after post-hoc reference-informed selection' in caption
+        assert '(E) Cell-type-specific reference agreement as a percentage' not in caption
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--folder',type=Path,default=ROOT/'figures/publication')
+    parser.add_argument('--docx',type=Path)
+    parser.add_argument('--render-qa',type=Path)
+    parser.add_argument('--receipt',type=Path)
+    args = parser.parse_args()
+    result = {'status':'pass','native_figures':verify_native(args.folder,args.render_qa),
+              'independently_checked_figure_3e_rows':verify_selected_e(),
+              'new_model_calls':0,'new_fits':0}
+    if args.docx:
+        result['manuscript_export_sha256'] = digest(args.docx)
+        result['manuscript_placement'] = verify_docx(args.docx,args.folder)
+        result['submission_files'] = 'Use original 600 dpi PNG/TIFF or editable PDF/SVG, not Google Docs previews.'
+    if args.receipt:
+        args.receipt.parent.mkdir(parents=True,exist_ok=True)
+        args.receipt.write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps(result,indent=2))
+
+
+if __name__ == '__main__':
+    main()

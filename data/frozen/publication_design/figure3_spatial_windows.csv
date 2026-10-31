@@ -1,0 +1,3 @@
+region,file_id,n_cells,search_score,mean_direct_truth_agreement_fraction,n_truth_labels,fill_ratio,center_x,center_y,half_side,window_x_min,window_x_max,window_y_min,window_y_max
+low_agreement,8da8f27977d946b8c912d42c8827b55c,1003,0.7718467146540178,0.17397806580259223,11,0.9930555555555556,7166.0,8797.0,806.0,6360.0,7972.0,7991.0,9603.0
+high_agreement,76d3efd17b6fc83aaac13e961824c5ae,1000,0.7936495625024393,0.867,8,0.8055555555555556,1366.0,7870.0,1308.0,58.0,2674.0,6562.0,9178.0

@@ -1,0 +1,2 @@
+-r requirements-manuscript-replay.txt
+PyMuPDF==1.26.5

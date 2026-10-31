@@ -305,11 +305,12 @@
     },
     {
       "path": "data/frozen/manuscript_replay/captions.json",
-      "sha256": "9e72157dce8b8ee1a19ae32b66b060b6a1246b4cef7f49da4a561f2d1324a70a",
-      "bytes": 19835,
+      "sha256": "55759462028ce9eefd35bc49ab5499309452521d3bd53638fdf40ebf8c517f98",
+      "bytes": 20217,
       "release_path": null,
       "source_kind": "checked_manuscript_snapshot",
-      "snapshot_sha256": "6f3bff68c9e275f63e59b210ef883214170c53130bee8693d2c31502bc0e6f98"
+      "snapshot_sha256": "6f3bff68c9e275f63e59b210ef883214170c53130bee8693d2c31502bc0e6f98",
+      "source": "Current manuscript figure-caption formatting and approved Figure 3E metric wording, 2026-10-31."
     },
     {
       "path": "data/frozen/manuscript_replay/figure_s09/selective_risk.csv",

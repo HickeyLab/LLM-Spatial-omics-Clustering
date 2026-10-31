@@ -1,0 +1,42 @@
+{
+  "figure": "Figure_1",
+  "width_mm": 165.1,
+  "height_mm": 216,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5102
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": null,
+  "inputs": {
+    "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80",
+    "data/frozen/publication_design/figure1_pooled_f1_changes.csv": "524ca9c6851bc9461a2dae60dd3e0dd4849c973b162f33b24fb13fe71056aa27",
+    "data/frozen/figure_01_descriptive/regional_f1_changes.csv": "1cb68b8b1c8905a56a4a22a2f147ec8ceb1d69cba6579864f84b20a6116657bd"
+  },
+  "notes": [
+    "Panel B retains the precision archived in the executed notebook."
+  ],
+  "files": {
+    "Figure_1.svg": {
+      "sha256": "6e162971ac3668790b7c20a2cbcbc960beaa745ffe3042f3795fecb9bddc0855",
+      "bytes": 279638
+    },
+    "Figure_1.pdf": {
+      "sha256": "44f61c6a20b930d0ebd4041d0ca62a0dcad34d1cdcf5cf33bf424e8add7f5739",
+      "bytes": 102623
+    },
+    "Figure_1.png": {
+      "sha256": "b40eac7fa5e86b2fd95156e1bbc4a183f037bc848a298b9ef7fe11caaa362781",
+      "bytes": 933780
+    },
+    "Figure_1.tiff": {
+      "sha256": "7c815f8c61b067b1b62c4a9acf56110949454f957a839047464d8e032012704b",
+      "bytes": 1374978
+    }
+  }
+}

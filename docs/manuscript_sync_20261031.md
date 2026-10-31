@@ -1,5 +1,9 @@
 # Manuscript synchronization — October 31, 2026
 
+This records the earlier source-tree synchronization in PR #24. The subsequent
+[publication design pass](publication_figure_design.md) replaces the artwork
+and corrects the Figure 3E heading and caption while preserving its values.
+
 This source-tree synchronization aligns current notebook entry points, table display labels, plotting scripts, previews and documentation with the checked manuscript export. It leaves the manuscript and all 17 approved native figure images unchanged.
 
 | Audited discrepancy | Resolution |

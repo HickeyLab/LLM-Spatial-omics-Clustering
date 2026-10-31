@@ -1,40 +1,35 @@
-# Manuscript figure artwork
+# Current manuscript figure artwork
 
-This is the complete current manuscript artwork set, using the reconciled
-Figure 1–5 and S1–S10 numbering. S3 is supplied as three separate panel files,
-so the 15 figures occupy 17 PNG files. Sources were checked against the current
-manuscript export on 2026-10-31, including its newer Figure 4, S3C, S6 and S7
-artwork. This directory and the current notebook index use manuscript numbering.
-Earlier analytical notebook versions are preserved in
-`notebooks/historical_reconstructions/`.
+The 15 manuscript figures occupy 17 PNG files because Figure S3 has separate
+A, B and C images. These are byte-identical copies of the native 600 dpi
+[publication exports](../publication). Editable PDF/SVG and lossless RGB TIFF
+versions accompany every figure there.
 
-Figure numbers and figure-level titles belong in the separate manuscript
-captions. They are removed from 10 images here. Panel headings, panel letters,
-axis labels, legends, methodological notes and scientific values remain.
-Image dimensions are unchanged. Every pixel outside the declared title
-rectangles matches the corresponding source snapshot exactly. The seven
-images that already followed this convention are unchanged.
+Figure numbers and figure-level titles remain in manuscript captions. Panel
+headings, axes, legends and scientific values are retained. Panel letters are
+plain uppercase bold Arial, following the published EXO examples documented in
+the [design notes](../../docs/publication_figure_design.md).
 
-`manifest.json` records all source and output checksums, dimensions and title
-rectangles. The affected original snapshots are retained under
-`data/frozen/publication_artwork/title_cleanup/` for reproducibility.
-
-Reproduce or verify the image exports using the existing Matplotlib, NumPy
-and Pillow environment:
+The layout is rebuilt at a declared physical size. Every native text element
+is at least 5.5 pt, with Figure 2 at least 5.7 pt. The per-image manifest records
+minimum placement widths needed to keep all text at least 5 pt. Place images
+proportionally and use the original files for submission. Google Docs exports
+compressed previews that do not preserve the submission resolution.
 
 ```bash
-python scripts/render_manuscript_figures.py
+python scripts/render_publication_figures.py
+python scripts/verify_publication_figures.py
+python scripts/sync_publication_artwork.py
 python scripts/render_manuscript_figures.py --check
 ```
 
-The script does no analysis, clustering, scoring, fitting or model inference.
-Validation is recorded in `docs/figure_title_cleanup_verification.json`.
+These commands use frozen numerical inputs and stored coordinates. They make
+no model calls and perform no fits. Figure 3A follows the latest manuscript's
+Cluster Features → Optimization workflow. Figure 3E preserves its original
+reference-selected values, with its heading and caption corrected with author
+approval. The numerical replot uses that same selected metric.
 
-Current notebook previews are byte-identical copies of all 17 images here.
-Earlier preview overlays and numbering are preserved as historical records.
-See [the current preview policy](../../notebooks/final_figures/previews/README.md).
-
-Figure 3A additionally restores the manuscript's original Cluster Features ->
-Optimization artwork. The source snapshot and checksums were updated, while
-the title-removal layer and every pixel outside the input-workflow region were
-preserved. See [the restoration audit](../../docs/figure_03a_original_restoration_verification.json).
+The earlier title-cleanup snapshots and Figure 3A restoration audits remain
+historical provenance. Their former pixel-preservation claims describe those
+older operations, not this native publication redesign. Current notebook
+previews are exact copies of the files in this directory.

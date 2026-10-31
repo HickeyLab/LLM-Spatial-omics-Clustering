@@ -6,104 +6,173 @@
     {
       "file": "notebooks/final_figures/previews/figure_01.png",
       "source_file": "figures/manuscript/Figure_1.png",
-      "source_sha256": "d95c150c63b0d2dfd6dd3b9e07d05e1ebafd5f50a756405b90c42e45d9f4214b",
-      "labels": []
+      "source_sha256": "b40eac7fa5e86b2fd95156e1bbc4a183f037bc848a298b9ef7fe11caaa362781",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5102
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_02.png",
       "source_file": "figures/manuscript/Figure_2.png",
-      "source_sha256": "ed9a31839d6be5bc8f0549c11282f9188b1eaeb513f8bf7718ec434b02cd6676",
-      "labels": []
+      "source_sha256": "0049cf83122bf1420bb16f9ada6ab7085505dc6e585be1400a2bdd4af04c9cc8",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5905
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_03.png",
       "source_file": "figures/manuscript/Figure_3.png",
-      "source_sha256": "0cdda185f24ea1e2dd19842995d9208bdec38969a0f8e374b25de13db8ab0a67",
-      "labels": []
+      "source_sha256": "f13d442768399040dedcca28fee24e96d6909bc89f7638254268c712dbe00035",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5763
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_04.png",
       "source_file": "figures/manuscript/Figure_4.png",
-      "source_sha256": "ca15d39ee019c1866e7b3524083d6b4420b40a00739e9a0458db2447bf063f93",
-      "labels": []
+      "source_sha256": "4b4fcf3dcc147f1fac67aff68198b129c99ba8a66a6cc68cf1d484fbe7232ded",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3850
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_05.png",
       "source_file": "figures/manuscript/Figure_5.png",
-      "source_sha256": "8bbd8efee53a75b948414793b80c230c0fea90406583b9c1972e448257ec51c6",
-      "labels": []
+      "source_sha256": "073fbc2c454d845b02b98136cd8f59f87213b7cb3b89d9b391d9ba758166a889",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3921
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s01.png",
       "source_file": "figures/manuscript/Figure_S1.png",
-      "source_sha256": "d8ae34fff07fdbccf20c129355a7e48143877d3d34e4e8f3d677453dd7807b75",
-      "labels": []
+      "source_sha256": "4fe3688ba528c08a9e6d636618ba2625ca132bb26f69a2dd19cd6939919912bb",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3283
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s02.png",
       "source_file": "figures/manuscript/Figure_S2.png",
-      "source_sha256": "acf42e6a48c720c9ff22adef5b0e6d09f6f27be3ab06ae2b081ad72ed7dca095",
-      "labels": []
+      "source_sha256": "ac3be033727a4c662382f9bcb995f527aaea55c0dabe72b68f037aeaa65612bf",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3968
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s03_a.png",
       "source_file": "figures/manuscript/Figure_S3A.png",
-      "source_sha256": "49e08728c76f7ccdba4e971dd8e011d2709ab530f541280407a3eb8259027a21",
-      "labels": []
+      "source_sha256": "5a7e559913396e19f8babdbba2ceec4bee7b38c9691a50c1b55a669a2cb09fe0",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        1984
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s03_b.png",
       "source_file": "figures/manuscript/Figure_S3B.png",
-      "source_sha256": "df88022204ae84dcb9802b22eccc9b1a5d66011de5a0a702022dcccebf055099",
-      "labels": []
+      "source_sha256": "f7d702c7ca321da87fb7c7fc0e233e731e16128056b3a1e7a2e814c8f4df0129",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2078
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s03_c.png",
       "source_file": "figures/manuscript/Figure_S3C.png",
-      "source_sha256": "2149ddaa0035bd412c25855d7f45b9e48cdc6982c559b5e2076c77bef6c26f48",
-      "labels": []
+      "source_sha256": "dc8cb021e3d84d709a26b6dc6092155cb9136d7de2b28f29875abddb7bb139d2",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3307
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s04.png",
       "source_file": "figures/manuscript/Figure_S4.png",
-      "source_sha256": "fb70988257aadf43a20c1c5b8dc0838604961cf8aed07a2d2e8731fd59801015",
-      "labels": []
+      "source_sha256": "69255cd248ef7e35c3162a68a165b7ae030f74fdc304fe48cecdc9fa47fd6594",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5645
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s05.png",
       "source_file": "figures/manuscript/Figure_S5.png",
-      "source_sha256": "3631b6b5db3a9f5efb0313f4532ab8014373cb24aab0b522d4c79e32d88e9714",
-      "labels": []
+      "source_sha256": "ed5eb23e8c4149f4d6ea5bee470355e3ce8be9cd7ba9937bbb8775e549458491",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2055
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s06.png",
       "source_file": "figures/manuscript/Figure_S6.png",
-      "source_sha256": "3923c33df282202133ab1788386b77964af15f93e37560affdd939bd0ac0e550",
-      "labels": []
+      "source_sha256": "16f5addd423045e9f4fc6950dc71e63d5b829578e9edd26b352a8d8ec45365bb",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5267
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s07.png",
       "source_file": "figures/manuscript/Figure_S7.png",
-      "source_sha256": "5a187859f6ed9ad6d0a9619e57d2edfad0cd42faed90aa1da2c7c5ead7ba3c94",
-      "labels": []
+      "source_sha256": "69018796f01de64a707e4b320001cb8b4034103a72800af5bb4dd8b2ce007411",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        1582
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s08.png",
       "source_file": "figures/manuscript/Figure_S8.png",
-      "source_sha256": "a1f09e4cb4feca6670d37ab34732f48afb0ab0670be8dff03a6bfe2db1cc934b",
-      "labels": []
+      "source_sha256": "7ee900f96cc9e67f3fe9dae952c9d6565a61a7b6ca7cca828bc2507fcced4fe7",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2125
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s09.png",
       "source_file": "figures/manuscript/Figure_S9.png",
-      "source_sha256": "197ee116c98d286b3399987429af2489ce3b353f3926dde67d3ce94b4d51b18f",
-      "labels": []
+      "source_sha256": "83a6eb7a3c8e1bb6cdea5cfd03e9cece851422e210b2c1cdac991cc8f51a7b6d",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3000
+      ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s10.png",
       "source_file": "figures/manuscript/Figure_S10.png",
-      "source_sha256": "c1b165768a095289e367e4428ac71a7f2a0a088337c2f4b8e3171eafa7421c36",
-      "labels": []
+      "source_sha256": "b5506a2932e14e5a76ce064b7ffe9cae866a27fdaa27a768b5f3356784a6cde1",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2929
+      ]
     }
-  ]
+  ],
+  "policy": "Current previews copy the native publication exports with no overlays. Earlier label overlays remain historical."
 }

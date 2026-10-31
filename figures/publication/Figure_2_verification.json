@@ -1,0 +1,47 @@
+{
+  "figure": "Figure_2",
+  "width_mm": 165.1,
+  "height_mm": 250,
+  "minimum_font_pt": 5.7,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 144.825,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5905
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+    "data/frozen/publication_design/umap_coordinates.csv.gz": "54e0335d3e63dda86d11dd336eebed0460741301d58a055bd84497aff991c7d8",
+    "data/frozen/publication_design/figure2_regional_metrics.csv": "cacde7e3d53b5227ecb7178517231060acacf92d6d8cafdec1fdf1b4a8b46168",
+    "data/frozen/publication_design/figure2_f1.csv": "2ef0920234a3bfc0c9ffef3e5741d34a14fbb96661e2c7ef1720f2d0ec239476",
+    "data/frozen/publication_design/figure2_recall.csv": "50f090dfadd242f2cd0c7ffe95cad48370c2576138b06e01ac4121ccfbeec5b8",
+    "data/frozen/publication_design/figure2_marker_summaries.csv": "808bfefb1c4102894a08127d888d3b8f583973bc0526c923a90374191f44501d",
+    "data/frozen/publication_design/figure2_spatial_examples.csv": "be796a4c74928de582a33df8e0e39049016e6def7db0256fbba14525c0f48d66",
+    "data/frozen/publication_design/figure2_spatial_windows.csv": "b21837dd4cfd71339e6ab9d3adbbdf8a89618b7edacf7bcd7f8c4d43a3eb4003"
+  },
+  "notes": [
+    "Place at least 144.825 mm wide. Suggested manuscript width: 148.59 mm (5.85 in), height 225 mm."
+  ],
+  "files": {
+    "Figure_2.svg": {
+      "sha256": "76d4bceb1152c8af7cbd2d07dc4eeb0061f33871cece093be81a6db4867a22f0",
+      "bytes": 4924206
+    },
+    "Figure_2.pdf": {
+      "sha256": "82f74c55a04e1d132be4765338ba15a5251547e56e7d44ada06cae084a9a475f",
+      "bytes": 3265031
+    },
+    "Figure_2.png": {
+      "sha256": "0049cf83122bf1420bb16f9ada6ab7085505dc6e585be1400a2bdd4af04c9cc8",
+      "bytes": 4335210
+    },
+    "Figure_2.tiff": {
+      "sha256": "f16ef733e7c99d46cf72c48eeeeec28f4ffb9ee81d97ab274ba859d4a57ce7c2",
+      "bytes": 5676174
+    }
+  }
+}

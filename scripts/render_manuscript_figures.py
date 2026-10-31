@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
-"""Reproduce caption-free manuscript artwork from checksum-pinned snapshots.
+"""Replay verified publication PNGs at the current manuscript image paths.
 
-Only the declared figure-title rectangles are cleared. Every panel, label,
-legend and data pixel outside those rectangles must remain identical.
+Use render_publication_figures.py to rebuild native plots from frozen tables.
+This command copies exact artwork and does not alter scientific data.
 """
 from __future__ import annotations
 
 import argparse
-from io import BytesIO
 import hashlib
 import json
 from pathlib import Path
+import shutil
 
 from PIL import Image
-from update_reference_figure_labels import render
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "figures/manuscript/manifest.json"
@@ -25,24 +24,19 @@ def main():
     args = parser.parse_args()
     manifest = json.loads(MANIFEST.read_text())
     for spec in manifest["files"]:
-        source = (ROOT / spec["source_file"]).read_bytes()
-        if hashlib.sha256(source).hexdigest() != spec["source_sha256"]:
-            raise ValueError(f"Source checksum differs: {spec['file']}")
-        if spec["labels"]:
-            # Erase-only layers do not load a font or redraw any panel content.
-            result = render(source, spec, Path("unused-for-erase-only-layers.ttf"))
-        else:
-            result = Image.open(BytesIO(source)).convert("RGB")
+        source = ROOT / spec["source_file"]
+        if hashlib.sha256(source.read_bytes()).hexdigest() != spec["source_sha256"]:
+            raise ValueError(f"Publication source checksum differs: {source.name}")
         output = ROOT / spec["file"]
         if args.check:
-            actual = Image.open(output).convert("RGB")
-            if actual.size != result.size or actual.tobytes() != result.tobytes():
-                raise ValueError(f"Artwork differs from its declared title layers: {output}")
-        elif spec["labels"]:
-            result.save(output, compress_level=9)
-        if list(result.size) != spec["size_pixels"]:
-            raise ValueError(f"Figure dimensions changed: {output}")
-        print(f"{'Verified' if args.check else 'Rendered'} {output.relative_to(ROOT)}")
+            if hashlib.sha256(output.read_bytes()).hexdigest() != spec["output_sha256"]:
+                raise ValueError(f"Manuscript artwork checksum differs: {output.name}")
+        else:
+            shutil.copyfile(source, output)
+        with Image.open(output) as image:
+            if list(image.size) != spec["size_pixels"]:
+                raise ValueError(f"Manuscript dimensions differ: {output.name}")
+        print(f"{'Verified' if args.check else 'Copied'} {output.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
