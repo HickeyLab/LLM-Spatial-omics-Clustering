@@ -1,6 +1,6 @@
 {
   "source_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
-  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Nine publication previews with 54 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling. Table S2 distinguishes retrospective export selection from original numerical prompts and retains the unverified legacy PIXIE-style identity. Figure-level titles are removed from S4 and S8 without altering panel headings or labels.",
+  "scope": "Display terminology, verified metric labels, prompt provenance, diagnostic identities and imaged tissue-region units. Nine publication previews with 53 declared overlay regions. Numerical results and biological vocabularies are preserved. S3A and 2I state their separately verified stored-value cutoffs and color scaling. Table S2 distinguishes retrospective export selection from original numerical prompts and retains the unverified legacy PIXIE-style identity. Figure-level titles are removed from S4 and S8 without altering panel headings or labels.",
   "vocabulary_policy": "Original dataset labels and harmonized evaluation labels retain their separate meanings. No biological class names, normalization maps, or predictions are changed.",
   "font": "DejaVuSans.ttf",
   "figures": [
@@ -194,18 +194,6 @@
           "size": 38
         },
         {
-          "panel": "A prompt and export paths",
-          "kind": "prompt_workflow",
-          "old": "Cluster Features marker-name lists -> Optimization -> Annotation",
-          "new": "Original numerical prompt inputs feed annotation; retrospective marker-name-list exports have a separate branch",
-          "rect": [
-            1478,
-            54,
-            1735,
-            622
-          ]
-        },
-        {
           "panel": "H modal heading",
           "old": "Modal consensus",
           "new": "Modal predicted label",
@@ -220,7 +208,7 @@
           "size": 36.96
         }
       ],
-      "updated_sha256": "fc57a50fbb04388a3cbcc0e0d963c142506f15f457e6cac7c3fc44e912138aa0"
+      "updated_sha256": "8721c28b3950b8b7caf8feee3505fb4bf84e152760b64cbe0558e393c0ef60a2"
     },
     {
       "file": "notebooks/final_figures/previews/figure_04.png",

@@ -13,7 +13,6 @@ from pathlib import Path
 import subprocess
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from figure_03_workflow_artwork import draw_prompt_workflow
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / 'docs/reference_figure_label_changes.json'
@@ -37,9 +36,6 @@ def render(source: bytes, spec: dict, font_path: Path) -> Image.Image:
             dx, dy, dw, dh = repair['destination']
             tile = original.crop(tuple(repair['source'])).resize((dw, dh), Image.Resampling.NEAREST)
             result.paste(tile, (dx, dy))
-        if label.get('kind') == 'prompt_workflow':
-            draw_prompt_workflow(result, label['rect'], font_path)
-            continue
         label_font = font_path.with_name('DejaVuSans-Bold.ttf') if label.get('bold') else font_path
         font = ImageFont.truetype(str(label_font), round(label['size']))
         if label.get('kind') == 'component_legend':

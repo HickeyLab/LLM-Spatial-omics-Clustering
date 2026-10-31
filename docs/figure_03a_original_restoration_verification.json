@@ -1,0 +1,57 @@
+{
+  "scope": "Restore original Figure 3A artwork to match the accepted manuscript image",
+  "baseline_revision": "77100e2749902c61e3299b883040e9b10690a16d",
+  "historical_preview_revision": "c24ef05344a9fd008d2586d03b1707dbc29d4f77",
+  "manuscript": {
+    "file": "figures/manuscript/Figure_3.png",
+    "size_pixels": [
+      1932,
+      2048
+    ],
+    "restoration_rect_xyxy": [
+      680,
+      25,
+      1478,
+      311
+    ],
+    "changed_pixel_bbox": [
+      680,
+      33,
+      1478,
+      311
+    ],
+    "pixels_match_accepted_manuscript_image": true,
+    "pixels_outside_restoration_identical": true,
+    "source_sha256": "4084d7eb4861da9bd6c356b7c7f66375194e05fd657b966476f2448e11addf6b",
+    "output_sha256": "0cdda185f24ea1e2dd19842995d9208bdec38969a0f8e374b25de13db8ab0a67"
+  },
+  "notebook_preview": {
+    "file": "notebooks/final_figures/previews/figure_03.png",
+    "size_pixels": [
+      4200,
+      4452
+    ],
+    "restoration_rect_xyxy": [
+      1478,
+      54,
+      3213,
+      676
+    ],
+    "changed_pixel_bbox": [
+      1478,
+      71,
+      3213,
+      676
+    ],
+    "pixels_outside_restoration_identical": true,
+    "output_sha256": "8721c28b3950b8b7caf8feee3505fb4bf84e152760b64cbe0558e393c0ef60a2"
+  },
+  "analysis_or_model_execution": false,
+  "manuscript_text_edits": false,
+  "validation": {
+    "manuscript_artwork_check": "17 images passed scripts/render_manuscript_figures.py --check",
+    "publication_preview_check": "9 previews passed scripts/update_reference_figure_labels.py --check",
+    "notebook_check": "Only cells 0 and 12 changed. Code cells parse. Panel A rendered in isolation without data or model calls.",
+    "diff_check": "git diff --check passed"
+  }
+}
