@@ -47,6 +47,18 @@ class ManuscriptAlignmentTests(unittest.TestCase):
                 if cell['cell_type'] == 'code':
                     ast.parse(''.join(cell['source']))
 
+    def test_spatial_replots_preserve_each_figures_windows_and_geometry(self):
+        import matplotlib.pyplot as plt
+        for figure_id, counts in [(2,[1086,915]),(3,[1003,1000])]:
+            figure = manuscript.spatial_panel(figure_id)
+            try:
+                columns = len(figure.axes)//2
+                self.assertEqual([len(figure.axes[row*columns+1].collections[0].get_offsets())
+                                  for row in range(2)],counts)
+                self.assertTrue(all(float(axis.get_aspect()) == 1 for axis in figure.axes))
+            finally:
+                plt.close(figure)
+
     def test_companion_bytes_and_current_labels_are_unique(self):
         crosswalk = json.loads((ROOT / 'configs/supplementary_table_crosswalk.json').read_text())['tables']
         self.assertEqual(len({e['path'] for e in crosswalk}), len(crosswalk))

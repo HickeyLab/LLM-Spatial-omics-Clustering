@@ -1,0 +1,38 @@
+{
+  "figure": "Figure_S7",
+  "width_mm": 165.1,
+  "height_mm": 67,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    1582
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": null,
+  "inputs": {
+    "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+  },
+  "notes": [],
+  "files": {
+    "Figure_S7.svg": {
+      "sha256": "728e6ced8f94c476e2cb755d66774ac1f237e48f574bf45ee84aa79d80ab81f4",
+      "bytes": 11038
+    },
+    "Figure_S7.pdf": {
+      "sha256": "0d0a5941a31e1d1fce1aa66570d7f988e996852b0704924a0668f4fe3c82f30e",
+      "bytes": 27131
+    },
+    "Figure_S7.png": {
+      "sha256": "69018796f01de64a707e4b320001cb8b4034103a72800af5bb4dd8b2ce007411",
+      "bytes": 216726
+    },
+    "Figure_S7.tiff": {
+      "sha256": "dc6ae6c995ff132e7807cff291107325d2a2c14a3b4083990a4a7a3ee02d58b5",
+      "bytes": 361706
+    }
+  }
+}

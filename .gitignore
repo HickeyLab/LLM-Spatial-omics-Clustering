@@ -41,3 +41,8 @@ outputs/supplementary/*
 # final generated artifacts
 outputs/source_rebuilt/
 outputs/manuscript_replay/
+
+# Local publication figure layout and notebook checks.
+figures/publication/*_preview.png
+figures/publication/*_pdfcheck.png
+outputs/publication_design/

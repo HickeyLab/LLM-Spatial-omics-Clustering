@@ -1,0 +1,167 @@
+{
+  "schema": "publication-design.inputs.v1",
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "files": {
+    "figure1_pooled_f1_changes.csv": {
+      "sha256": "524ca9c6851bc9461a2dae60dd3e0dd4849c973b162f33b24fb13fe71056aa27",
+      "bytes": 15880
+    },
+    "figure2_f1.csv": {
+      "sha256": "2ef0920234a3bfc0c9ffef3e5741d34a14fbb96661e2c7ef1720f2d0ec239476",
+      "bytes": 1557
+    },
+    "figure2_marker_summaries.csv": {
+      "sha256": "808bfefb1c4102894a08127d888d3b8f583973bc0526c923a90374191f44501d",
+      "bytes": 13650
+    },
+    "figure2_recall.csv": {
+      "sha256": "50f090dfadd242f2cd0c7ffe95cad48370c2576138b06e01ac4121ccfbeec5b8",
+      "bytes": 1563
+    },
+    "figure2_regional_metrics.csv": {
+      "sha256": "cacde7e3d53b5227ecb7178517231060acacf92d6d8cafdec1fdf1b4a8b46168",
+      "bytes": 3187
+    },
+    "figure2_spatial_examples.csv": {
+      "sha256": "be796a4c74928de582a33df8e0e39049016e6def7db0256fbba14525c0f48d66",
+      "bytes": 231952
+    },
+    "figure2_spatial_windows.csv": {
+      "sha256": "b21837dd4cfd71339e6ab9d3adbbdf8a89618b7edacf7bcd7f8c4d43a3eb4003",
+      "bytes": 1402
+    },
+    "figure3_agreement.csv": {
+      "sha256": "ae095b5427a6d3e33c62f9f43fd2fb95349636765c30ed8c87cb49127f29dc83",
+      "bytes": 1195
+    },
+    "figure3_cell_weighted_selection.csv": {
+      "sha256": "8284ddedf3b8b8c5fc7d8ee51bddda723adae2c183b5fa2d3b9ce07c183c0a65",
+      "bytes": 5113
+    },
+    "figure3_celltype_agreement.csv": {
+      "sha256": "6052a73fa29cdd4bd1133ed952fce701b89f0c839470dc1950e18a63591c9ab1",
+      "bytes": 3257
+    },
+    "figure3_celltype_selected.csv": {
+      "sha256": "49df4eba3cc28bca04a92333ab5765f7112e38e9ede19343b888fa8864ba090f",
+      "bytes": 22415
+    },
+    "figure3_cluster_weighted_selection.csv": {
+      "sha256": "ef9ae22f42b5e1fc3cada644e0eccd6431c935c1270af92beff71c63905ff5ae",
+      "bytes": 6967
+    },
+    "figure3_spatial_examples.csv.gz": {
+      "sha256": "f94f18ac4871b8fee1267768ee67ea6d6567af5a409a4e6c2d5088a51e2a28d8",
+      "bytes": 25274
+    },
+    "figure3_spatial_windows.csv": {
+      "sha256": "37a9b70c1a9b9fb0eacde45d600635ba9fd5328830f6da15fca92e7859972cc5",
+      "bytes": 486
+    },
+    "figure4_confusion.csv": {
+      "sha256": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
+      "bytes": 1790
+    },
+    "figure4_f1.csv": {
+      "sha256": "9ac5042300121372e01a5f2c146877afa45f9bab832110a124775f8e0965138d",
+      "bytes": 16386
+    },
+    "figure5_donor_transfer.csv": {
+      "sha256": "7651791645c045dcdacd3ee622bf48616d36a8c2fb1b33f485238b8af9792ec4",
+      "bytes": 15212
+    },
+    "figureS10_paired_summary.csv": {
+      "sha256": "aea9731123c51850679f539e3576fa6f84def6793330c1cb0383b753ebfdb559",
+      "bytes": 6695
+    },
+    "figureS1_archived_metrics.csv": {
+      "sha256": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80",
+      "bytes": 4974
+    },
+    "figureS2_spatial_cells.csv.gz": {
+      "sha256": "f6d5ee8fc800f2de3905abe5819de5f488d08cf76e7d14b2aabf8d64009031fa",
+      "bytes": 1410802
+    },
+    "figureS3_intervals.csv": {
+      "sha256": "70091ad39c7a93f02eeb4746fae6e5c5d2b78784c006b5cda2b0277eb93982f9",
+      "bytes": 1073
+    },
+    "figureS3_matching.csv": {
+      "sha256": "d0e241b83f10cf75043f48a387816da1e180c79f6b89b820875b98f16ee805e6",
+      "bytes": 59299
+    },
+    "figureS3_population.csv": {
+      "sha256": "468231d1c8527250b395239fa130f24ad67f6c05d297e32dbd74049fa540de56",
+      "bytes": 13366
+    },
+    "figureS3_regional_changes.csv": {
+      "sha256": "6bc88dfb3fcf59500dd93ac239ca3f6d7190fbe49eafd9cfb8d5d31bdcae8126",
+      "bytes": 11660
+    },
+    "figureS4_celltype_metrics.csv": {
+      "sha256": "0e540b211c6bf95aaafca17389bce8a265ea404b549e376343589f5a2ed8224f",
+      "bytes": 5571
+    },
+    "figureS4_cluster_metrics.csv": {
+      "sha256": "079153dab6679784fe3fd8e621826dea5ca1b3a9556d354d508c729e838a994a",
+      "bytes": 72096
+    },
+    "figureS4_compositions.csv.gz": {
+      "sha256": "60900811ab9659f20f126dfae5a87d04e6701cc6bcd0c027b1dadf7dcd112b6c",
+      "bytes": 54650
+    },
+    "figureS4_marker_summaries.csv": {
+      "sha256": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f",
+      "bytes": 90547
+    },
+    "figureS5_controlled_metrics.csv": {
+      "sha256": "88388f106e5886faa011c27fab266faae5ed1dd77f8394c1ddae5562bf2eb043",
+      "bytes": 68533
+    },
+    "figureS5_fixed_metrics.csv": {
+      "sha256": "33be582395354543969e9d1f26a0d2742ca02a9a63dc76a8076f54cef9e8e9ef",
+      "bytes": 22729
+    },
+    "figureS9_calibration_metrics.csv": {
+      "sha256": "fb85a9988de3a3cd272f9a172d6554345770f050140e223e730c4fc6303d4ad4",
+      "bytes": 51016
+    },
+    "figureS9_reliability.csv": {
+      "sha256": "0b82bc651518e10aa237f1ebdcb8f54254dc9b9aa687cff5d5eecc35e3dd1619",
+      "bytes": 15783
+    },
+    "figureS9_selective_risk.csv": {
+      "sha256": "2a6d284c3b2a8e9d8ac997ec6d75678428c040fcddc279a67188c2ebc93659b1",
+      "bytes": 13727
+    },
+    "figureS9_spatial_differences.csv": {
+      "sha256": "96b05e2ff8ad827011e1f7e8b3d9c5c2c2cba7e9865bcba5692bd621f6074cef",
+      "bytes": 5871
+    },
+    "historical_annotation_maps.csv.gz": {
+      "sha256": "9cdbca3916e7324bcf3996c03e1f5530df783cee5d52d27d766da567038cb811",
+      "bytes": 1842932
+    },
+    "preparation_verification.json": {
+      "sha256": "3f4ecfdce820c2df3226919d074dd3b355b873fc6425a6bd9cc3242b96dca830",
+      "bytes": 5362
+    },
+    "reference_cells.csv.gz": {
+      "sha256": "ee1fb61110f37fbb5b160e5f3bbd1db5e4d9cc57058b6d6026e840a80dc1656b",
+      "bytes": 1804662
+    },
+    "reference_plot_cells.csv.gz": {
+      "sha256": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+      "bytes": 2832339
+    },
+    "source_manifest.json": {
+      "sha256": "22bd8239e0a62d054750e08f51db3fc55b3648bda01a6f0284ac5f23769ce502",
+      "bytes": 6951
+    },
+    "umap_coordinates.csv.gz": {
+      "sha256": "54e0335d3e63dda86d11dd336eebed0460741301d58a055bd84497aff991c7d8",
+      "bytes": 2783823
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "figure": "Figure_3",
+  "width_mm": 165.1,
+  "height_mm": 244,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5763
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/publication_design/figure3_agreement.csv": "ae095b5427a6d3e33c62f9f43fd2fb95349636765c30ed8c87cb49127f29dc83",
+    "data/frozen/publication_design/figure3_celltype_agreement.csv": "6052a73fa29cdd4bd1133ed952fce701b89f0c839470dc1950e18a63591c9ab1",
+    "data/frozen/publication_design/figure3_celltype_selected.csv": "49df4eba3cc28bca04a92333ab5765f7112e38e9ede19343b888fa8864ba090f",
+    "data/frozen/publication_design/figure3_cell_weighted_selection.csv": "8284ddedf3b8b8c5fc7d8ee51bddda723adae2c183b5fa2d3b9ce07c183c0a65",
+    "data/frozen/publication_design/figure3_cluster_weighted_selection.csv": "ef9ae22f42b5e1fc3cada644e0eccd6431c935c1270af92beff71c63905ff5ae",
+    "data/frozen/publication_design/figure3_spatial_examples.csv.gz": "f94f18ac4871b8fee1267768ee67ea6d6567af5a409a4e6c2d5088a51e2a28d8",
+    "data/frozen/publication_design/figure3_spatial_windows.csv": "37a9b70c1a9b9fb0eacde45d600635ba9fd5328830f6da15fca92e7859972cc5",
+    "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a"
+  },
+  "notes": [
+    "Figure 3A follows the live-document update exported on 2026-10-31.",
+    "Figure 3E heading corrected with author approval to describe its existing reference-selected values.",
+    "Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+  ],
+  "files": {
+    "Figure_3.svg": {
+      "sha256": "3ab3d4893c3290a03235cccfea6e23a5fff18b4995cd487aedad05d8186d042b",
+      "bytes": 1451292
+    },
+    "Figure_3.pdf": {
+      "sha256": "f8d948d1dddf1386cfdeb231ba985bfef41d020837966526870f1660bbd26d68",
+      "bytes": 914593
+    },
+    "Figure_3.png": {
+      "sha256": "f13d442768399040dedcca28fee24e96d6909bc89f7638254268c712dbe00035",
+      "bytes": 2090421
+    },
+    "Figure_3.tiff": {
+      "sha256": "00e262a1cacbbb92f4db5bf8b6d0923d4042fddca289d13c841052f609241ef5",
+      "bytes": 2921004
+    }
+  }
+}

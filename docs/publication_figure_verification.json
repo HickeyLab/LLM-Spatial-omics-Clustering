@@ -1,0 +1,337 @@
+{
+  "status": "pass",
+  "native_figures": [
+    {
+      "figure": "Figure_5",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.999741448406,
+      "editable_svg_text_nodes": 124
+    },
+    {
+      "figure": "Figure_1",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDEF",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 215
+    },
+    {
+      "figure": "Figure_2",
+      "minimum_font_pt": 5.699999809265137,
+      "panel_letters": "ABCDEFGHIJ",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9980812802352,
+      "editable_svg_text_nodes": 222
+    },
+    {
+      "figure": "Figure_3",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDEFGH",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.999432200709,
+      "editable_svg_text_nodes": 201
+    },
+    {
+      "figure": "Figure_4",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDE",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9999894761565,
+      "editable_svg_text_nodes": 135
+    },
+    {
+      "figure": "Figure_S1",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABC",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 45
+    },
+    {
+      "figure": "Figure_S2",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "AB",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9999480638544,
+      "editable_svg_text_nodes": 18
+    },
+    {
+      "figure": "Figure_S3A",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "A",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 23
+    },
+    {
+      "figure": "Figure_S3B",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "B",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 31
+    },
+    {
+      "figure": "Figure_S3C",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "C",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9999922659658,
+      "editable_svg_text_nodes": 391
+    },
+    {
+      "figure": "Figure_S4",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDE",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9998543718676,
+      "editable_svg_text_nodes": 159
+    },
+    {
+      "figure": "Figure_S5",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "AB",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 42
+    },
+    {
+      "figure": "Figure_S6",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "AB",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9984271478588,
+      "editable_svg_text_nodes": 225
+    },
+    {
+      "figure": "Figure_S7",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 23
+    },
+    {
+      "figure": "Figure_S8",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "AB",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.999741448406,
+      "editable_svg_text_nodes": 62
+    },
+    {
+      "figure": "Figure_S9",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 73
+    },
+    {
+      "figure": "Figure_S10",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 44
+    }
+  ],
+  "independently_checked_figure_3e_rows": 80,
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "manuscript_export_sha256": "16663d5c476cb0b26cfb45617f2cdb1414b60a9ed8e7f61dce8bdfc11c788622",
+  "manuscript_placement": [
+    {
+      "figure": "Figure_5",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 166.116,
+      "aspect_ratio_error_percent": -0.06983072070121388,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 0.5531821459253805,
+      "google_docs_preview_dpi": 313.1498470948012
+    },
+    {
+      "figure": "Figure_1",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 215.9,
+      "aspect_ratio_error_percent": 0.04631773969430153,
+      "minimum_font_pt": 5.497453703703704,
+      "preview_mean_absolute_rgb_error": 1.5162185662449446,
+      "google_docs_preview_dpi": 240.9230769230769
+    },
+    {
+      "figure": "Figure_2",
+      "placed_width_mm": 148.59,
+      "placed_height_mm": 224.9423888888889,
+      "aspect_ratio_error_percent": 0.02561149607935853,
+      "minimum_font_pt": 5.128686466666667,
+      "preview_mean_absolute_rgb_error": 2.5860178576927813,
+      "google_docs_preview_dpi": 231.25565731274895
+    },
+    {
+      "figure": "Figure_3",
+      "placed_width_mm": 152.4,
+      "placed_height_mm": 225.08308333333332,
+      "aspect_ratio_error_percent": 0.06561394808031196,
+      "minimum_font_pt": 5.073594091530055,
+      "preview_mean_absolute_rgb_error": 1.596288639745671,
+      "google_docs_preview_dpi": 231.0
+    },
+    {
+      "figure": "Figure_4",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 163.068,
+      "aspect_ratio_error_percent": -0.04170039492727984,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 0.9290312261735493,
+      "google_docs_preview_dpi": 314.9532710280373
+    },
+    {
+      "figure": "Figure_S1",
+      "placed_width_mm": 152.4,
+      "placed_height_mm": 128.27,
+      "aspect_ratio_error_percent": 0.029385131123649266,
+      "minimum_font_pt": 5.07543165467626,
+      "preview_mean_absolute_rgb_error": 0.508463636075261,
+      "google_docs_preview_dpi": 341.3333333333333
+    },
+    {
+      "figure": "Figure_S2",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 167.894,
+      "aspect_ratio_error_percent": 0.06313507332007529,
+      "minimum_font_pt": 5.496529761904762,
+      "preview_mean_absolute_rgb_error": 0.3244526625113843,
+      "google_docs_preview_dpi": 309.6923076923077
+    },
+    {
+      "figure": "Figure_S3A",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 84.074,
+      "aspect_ratio_error_percent": -0.08801769869399845,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 0.47124779445577414,
+      "google_docs_preview_dpi": 314.8036253776435
+    },
+    {
+      "figure": "Figure_S3B",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 87.884,
+      "aspect_ratio_error_percent": 0.13199217149879594,
+      "minimum_font_pt": 5.49275,
+      "preview_mean_absolute_rgb_error": 0.5609480324339291,
+      "google_docs_preview_dpi": 315.0769230769231
+    },
+    {
+      "figure": "Figure_S3C",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 139.954,
+      "aspect_ratio_error_percent": 0.03286794232391088,
+      "minimum_font_pt": 5.4981928571428575,
+      "preview_mean_absolute_rgb_error": 1.2166429225736424,
+      "google_docs_preview_dpi": 315.0769230769231
+    },
+    {
+      "figure": "Figure_S4",
+      "placed_width_mm": 152.4,
+      "placed_height_mm": 220.472,
+      "aspect_ratio_error_percent": 0.06503529490575755,
+      "minimum_font_pt": 5.073623430962344,
+      "preview_mean_absolute_rgb_error": 1.7126164053297999,
+      "google_docs_preview_dpi": 235.83333333333331
+    },
+    {
+      "figure": "Figure_S5",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 86.868,
+      "aspect_ratio_error_percent": 0.15195468987430072,
+      "minimum_font_pt": 5.491655172413792,
+      "preview_mean_absolute_rgb_error": 0.6962430551533055,
+      "google_docs_preview_dpi": 315.0769230769231
+    },
+    {
+      "figure": "Figure_S6",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 223.012,
+      "aspect_ratio_error_percent": -0.005380876365401743,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 2.6223543916969,
+      "google_docs_preview_dpi": 233.23076923076925
+    },
+    {
+      "figure": "Figure_S7",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 67.056,
+      "aspect_ratio_error_percent": -0.08351228823670898,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 0.7025068629663056,
+      "google_docs_preview_dpi": 314.77272727272725
+    },
+    {
+      "figure": "Figure_S8",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 89.916,
+      "aspect_ratio_error_percent": 0.0934205258241061,
+      "minimum_font_pt": 5.494866666666667,
+      "preview_mean_absolute_rgb_error": 0.48910176084602747,
+      "google_docs_preview_dpi": 315.0769230769231
+    },
+    {
+      "figure": "Figure_S9",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 127.0,
+      "aspect_ratio_error_percent": 0.0,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 0.7779317542989418,
+      "google_docs_preview_dpi": 315.0
+    },
+    {
+      "figure": "Figure_S10",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 123.952,
+      "aspect_ratio_error_percent": 0.038724667613276864,
+      "minimum_font_pt": 5.497870967741935,
+      "preview_mean_absolute_rgb_error": 0.41402482593736456,
+      "google_docs_preview_dpi": 315.0769230769231
+    }
+  ],
+  "submission_files": "Use original 600 dpi PNG/TIFF or editable PDF/SVG, not Google Docs previews.",
+  "repository_checks": {
+    "python": "3.12.14",
+    "unittest_total": 50,
+    "unittest_passed": 44,
+    "unittest_skipped": 6,
+    "skip_reason": "Six integration checks need separately acquired external H5AD caches.",
+    "executed_figure_notebooks": [
+      {
+        "figure": "2",
+        "notebook": "notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb",
+        "status": "pass"
+      },
+      {
+        "figure": "3",
+        "notebook": "notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb",
+        "status": "pass"
+      },
+      {
+        "figure": "5",
+        "notebook": "notebooks/final_figures/figure_05_donor_transfer.ipynb",
+        "status": "pass"
+      },
+      {
+        "figure": "S8",
+        "notebook": "notebooks/final_figures/figure_s08_controlled_b004_annotation.ipynb",
+        "status": "pass"
+      },
+      {
+        "figure": "S10",
+        "notebook": "notebooks/final_figures/figure_s10_paired_representations.ipynb",
+        "status": "pass"
+      }
+    ],
+    "canonical_artwork_checks": 17,
+    "current_notebook_preview_checks": 17
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "figure": "Figure_S3C",
+  "width_mm": 165.1,
+  "height_mm": 140,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    3307
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/figure_s05/celltype_mean_effects.csv": "ad08d229fbef84f0c175ba5c518685d340dd24deaa4a86a42407a7f7f6fb7f46"
+  },
+  "notes": [],
+  "files": {
+    "Figure_S3C.svg": {
+      "sha256": "b7189dd8bbd9bce6d4bf458cd0cd8f36702b50db36b73a60bf12770ef9456730",
+      "bytes": 161616
+    },
+    "Figure_S3C.pdf": {
+      "sha256": "62d3bb9cbe9ad67211e24d41bb936a083052cfe35283bf6eb9bfaa51a74abb89",
+      "bytes": 58231
+    },
+    "Figure_S3C.png": {
+      "sha256": "dc8cb021e3d84d709a26b6dc6092155cb9136d7de2b28f29875abddb7bb139d2",
+      "bytes": 687818
+    },
+    "Figure_S3C.tiff": {
+      "sha256": "e86ad82eea0e17b5373455f7e90161b4db1be75008bbbc8a1d6a0b8e9932afb3",
+      "bytes": 1776800
+    }
+  }
+}

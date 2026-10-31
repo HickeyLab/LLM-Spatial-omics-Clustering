@@ -1,0 +1,39 @@
+{
+  "figure": "Figure_S6",
+  "width_mm": 165.1,
+  "height_mm": 223,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5267
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
+    "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+  },
+  "notes": [],
+  "files": {
+    "Figure_S6.svg": {
+      "sha256": "50dd667375bc67a2ded1507cb996c093a0781a4454269370cc2fb06ac55002d3",
+      "bytes": 417178
+    },
+    "Figure_S6.pdf": {
+      "sha256": "b2e2baf35515c1449cbaa39be35e411522a7eb051104181c9f12a5e79ae7da49",
+      "bytes": 83965
+    },
+    "Figure_S6.png": {
+      "sha256": "16f5addd423045e9f4fc6950dc71e63d5b829578e9edd26b352a8d8ec45365bb",
+      "bytes": 801920
+    },
+    "Figure_S6.tiff": {
+      "sha256": "f6ad79c8f9f370201a4d5da0de54e65c8c1093409999e1525b2a77b7236b6d63",
+      "bytes": 1873348
+    }
+  }
+}

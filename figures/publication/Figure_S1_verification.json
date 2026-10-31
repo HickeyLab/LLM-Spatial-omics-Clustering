@@ -1,0 +1,40 @@
+{
+  "figure": "Figure_S1",
+  "width_mm": 165.1,
+  "height_mm": 139,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    3283
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": null,
+  "inputs": {
+    "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80"
+  },
+  "notes": [
+    "Metrics retain the four-decimal precision archived in the executed notebook stdout."
+  ],
+  "files": {
+    "Figure_S1.svg": {
+      "sha256": "819ef1e04e80c5801aaec6eb690094e375fd97cd9b3c70b20377a4bf57692349",
+      "bytes": 104054
+    },
+    "Figure_S1.pdf": {
+      "sha256": "5aa47335978c774cae55cdd26faeec056e07a67702e1b33912e2e7816b626bf2",
+      "bytes": 89738
+    },
+    "Figure_S1.png": {
+      "sha256": "4fe3688ba528c08a9e6d636618ba2625ca132bb26f69a2dd19cd6939919912bb",
+      "bytes": 566994
+    },
+    "Figure_S1.tiff": {
+      "sha256": "b34c3e312329fbb6b7dd122e3a5e620ca70b7763af1b7fcba8be9bbb013f18b2",
+      "bytes": 826694
+    }
+  }
+}

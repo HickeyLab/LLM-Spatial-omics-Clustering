@@ -1,2 +1,6 @@
 # Preserve deposited replay bytes, including CSVs with CRLF line endings.
 data/frozen/manuscript_replay/** -text whitespace=cr-at-eol
+data/frozen/publication_design/** -text whitespace=cr-at-eol
+
+# Matplotlib writes native SVG path lines with trailing separator spaces.
+figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol

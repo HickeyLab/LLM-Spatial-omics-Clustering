@@ -1,6 +1,6 @@
 # Current manuscript previews
 
-These 17 PNGs are byte-identical copies of the approved Figure 1–5 and S1–S10 artwork in `figures/manuscript/`. Figure S3 has three image parts. Figure 3A retains the restored original workflow. No manuscript image was changed in this synchronization.
+These 17 PNGs are byte-identical copies of the approved Figure 1–5 and S1–S10 artwork in `figures/manuscript/`. Figure S3 has three image parts. The publication design pass updates all 17 images. Figure 3A follows the latest manuscript workflow, and Figure 3E preserves its reference-selected values with the corrected metric heading. The [native exports](../../../figures/publication) include editable vectors and 600 dpi raster originals.
 
 ```bash
 python scripts/update_reference_figure_labels.py --check

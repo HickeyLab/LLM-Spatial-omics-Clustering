@@ -1,0 +1,46 @@
+{
+  "figure": "Figure_S4",
+  "width_mm": 165.1,
+  "height_mm": 239,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5645
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+    "data/frozen/publication_design/figureS4_marker_summaries.csv": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f",
+    "data/frozen/publication_design/figureS4_compositions.csv.gz": "60900811ab9659f20f126dfae5a87d04e6701cc6bcd0c027b1dadf7dcd112b6c",
+    "data/frozen/publication_design/figureS4_cluster_metrics.csv": "079153dab6679784fe3fd8e621826dea5ca1b3a9556d354d508c729e838a994a",
+    "data/frozen/publication_design/figureS4_celltype_metrics.csv": "0e540b211c6bf95aaafca17389bce8a265ea404b549e376343589f5a2ed8224f",
+    "data/frozen/publication_design/figureS5_fixed_metrics.csv": "33be582395354543969e9d1f26a0d2742ca02a9a63dc76a8076f54cef9e8e9ef",
+    "data/frozen/figure_s03/flowsom_k_sweep_purity.csv": "723dfd9508fc1a9bcb700ba77cf37f04de18016667e3768807f600549add0338"
+  },
+  "notes": [
+    "Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+  ],
+  "files": {
+    "Figure_S4.svg": {
+      "sha256": "8a8babe17aa7709ff354f43430c87afbc6461d598a9b754d33513accd3b62cf8",
+      "bytes": 6228738
+    },
+    "Figure_S4.pdf": {
+      "sha256": "7d731c5ad3e5f745b4c9c1e4c161efe0de45ed824e4c335accf2735cbb115331",
+      "bytes": 2746072
+    },
+    "Figure_S4.png": {
+      "sha256": "69255cd248ef7e35c3162a68a165b7ae030f74fdc304fe48cecdc9fa47fd6594",
+      "bytes": 3709223
+    },
+    "Figure_S4.tiff": {
+      "sha256": "30d41e686da11401c1a0f63fdb53128010d68b53ef3d57d34b625fa3a0278184",
+      "bytes": 4674326
+    }
+  }
+}

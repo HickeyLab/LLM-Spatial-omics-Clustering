@@ -1,0 +1,38 @@
+{
+  "figure": "Figure_S8",
+  "width_mm": 165.1,
+  "height_mm": 90,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    2125
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/figure_s07/condition_agreement.csv": "c00fb67f6aedb99270a5e1af524ad5fcc1367476a3fe3063e6723f1ff7400289"
+  },
+  "notes": [],
+  "files": {
+    "Figure_S8.svg": {
+      "sha256": "6ed59b7e98c19694a7fea7d4ed113efa9d87bed6688f6458e7f4a1dbb106035d",
+      "bytes": 27805
+    },
+    "Figure_S8.pdf": {
+      "sha256": "9ee5edcd7b5173ac902a739e4d1175ff82cef5845cb6b87e3d516ccd4e17ef93",
+      "bytes": 45908
+    },
+    "Figure_S8.png": {
+      "sha256": "7ee900f96cc9e67f3fe9dae952c9d6565a61a7b6ca7cca828bc2507fcced4fe7",
+      "bytes": 253308
+    },
+    "Figure_S8.tiff": {
+      "sha256": "659c0709e2f455487979437e78f1b0887cb1de855aecc16cbc8932fb97319b95",
+      "bytes": 952642
+    }
+  }
+}

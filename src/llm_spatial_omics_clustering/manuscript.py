@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import shutil
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,8 +18,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = ROOT / 'data/frozen/manuscript_replay'
-MODELS = ['gemini', 'gpt', 'claude', 'deepseek']
-METHODS = ['FlowSOM', 'Leiden', 'SpatialSort', 'PIXIE']
+MODELS = ['gpt', 'claude', 'gemini', 'deepseek']
+METHODS = ['Leiden', 'FlowSOM', 'SpatialSort', 'PIXIE']
 NAMES = {'gpt': 'GPT', 'claude': 'Claude', 'gemini': 'Gemini', 'deepseek': 'DeepSeek'}
 
 
@@ -44,6 +45,16 @@ def read_table(name):
     return pd.read_csv(path)
 
 
+def read_publication_table(name):
+    """Read a checksum-pinned input to the native publication renderer."""
+    folder = ROOT / 'data/frozen/publication_design'
+    manifest = json.loads((folder / 'manifest.json').read_text())
+    path = folder / name
+    if hashlib.sha256(path.read_bytes()).hexdigest() != manifest['files'][name]['sha256']:
+        raise ValueError(f'Frozen publication table changed: {name}')
+    return pd.read_csv(path)
+
+
 def artwork(figure_id, output_dir=None):
     """Return exact approved images, with optional lossless PNG export."""
     record = inventory()['figures'][str(figure_id)]
@@ -56,7 +67,8 @@ def artwork(figure_id, output_dir=None):
         if output_dir is not None:
             target = Path(output_dir)
             target.mkdir(parents=True, exist_ok=True)
-            image.save(target / path.name)
+            if (target/path.name).resolve() != path.resolve():
+                shutil.copyfile(path,target/path.name)
         images.append(image)
     return images
 
@@ -141,14 +153,20 @@ def figure_3_panel(panel):
         frame=data.pivot(index='model',columns='method',values=field).reindex(index=MODELS,columns=METHODS)
         frame.index=[NAMES[m] for m in frame.index]
         return _heatmap(frame*(100 if panel=='B' else 1), 'Cell-level reference agreement (%)' if panel=='B' else 'Reference agreement as % of cluster-majority upper bound',percent=panel=='B')
-    if panel in ['D','E']:
+    if panel == 'D':
         types=read_table('figure_03/celltype_metrics.csv')
         types=types.loc[types.method.eq('Leiden')]
-        field='agreement' if panel=='D' else 'percent_upper_bound'
-        frame=types.pivot(index='cell_type',columns='model',values=field).reindex(columns=MODELS)
+        frame=types.pivot(index='cell_type',columns='model',values='agreement').reindex(columns=MODELS)
         frame=frame.loc[frame.mean(axis=1).sort_values(ascending=False,kind='stable').index]
         frame.columns=[NAMES[m] for m in frame.columns]
-        return _heatmap(frame*(100 if panel=='D' else 1),'Cell-type reference agreement (%)' if panel=='D' else 'Cell-type agreement as % of cluster-majority upper bound',counts=types.groupby('cell_type').cells.first())
+        return _heatmap(frame*100,'Cell-type reference agreement (%)',counts=types.groupby('cell_type').cells.first())
+    if panel == 'E':
+        types=read_publication_table('figure3_celltype_selected.csv')
+        types=types.loc[types.truth_label.ne('Noise')]
+        frame=types.pivot(index='truth_label',columns='llm',values='exact_cell_accuracy').reindex(columns=MODELS)
+        frame=frame.loc[frame.mean(axis=1).sort_values(ascending=False,kind='stable').index]
+        frame.columns=[NAMES[m] for m in frame.columns]
+        return _heatmap(frame*100,'Reference-informed selection after prediction (%)',counts=types.groupby('truth_label').n_cells.first())
     if panel in ['F','G']:
         field='selected_cell_agreement' if panel=='F' else 'selected_cluster_agreement'
         order=['Leiden','FlowSOM','SpatialSort','PIXIE']
@@ -166,22 +184,26 @@ def figure_3_panel(panel):
 
 
 def spatial_panel(figure_id):
-    cells=read_table('figure_02/panel_J_zoom_cells.csv')
-    columns=['truth_label','Leiden','FlowSOM','SpatialSort','PIXIE']
     if figure_id==3:
-        raw=read_table('figure_03/annotations.csv.gz')
-        # Explicit string keys avoid dtype-dependent cell joins.
-        for frame in [cells,raw]:
-            frame['File_ID']=frame.File_ID.astype(str);frame['ID']=frame.ID.astype(str)
-        cells=cells.merge(raw,on=['File_ID','ID'],validate='one_to_one')
-        columns=['truth_label']+['leiden__'+m for m in ['gpt','gemini','claude','deepseek']]
+        cells=read_publication_table('figure3_spatial_examples.csv.gz').rename(columns={'truth_normalized':'truth_label'})
+        windows=read_publication_table('figure3_spatial_windows.csv').rename(columns={
+            'region':'example','window_x_min':'x0','window_x_max':'x1',
+            'window_y_min':'y0','window_y_max':'y1'})
+        examples={'low_agreement':'Low reference agreement','high_agreement':'High reference agreement'}
+        cells['example']=cells.example.replace(examples)
+        windows['example']=windows.example.replace(examples)
+        locators=read_publication_table('reference_plot_cells.csv.gz').rename(columns={'cell_type_update':'truth_label'})
+        columns=['truth_label']+['leiden__'+m for m in MODELS]
         votes=cells[['leiden__'+m for m in ['gpt','claude','gemini','deepseek']]]
         cells['Modal label']=[next(v for v in row if list(row).count(v)==max(list(row).count(x) for x in row)) for row in votes.itertuples(index=False,name=None)]
         columns.append('Modal label')
+    else:
+        cells=read_table('figure_02/panel_J_zoom_cells.csv')
+        columns=['truth_label','Leiden','FlowSOM','SpatialSort','PIXIE']
+        locators=read_table('figure_02/panel_J_all_cells.csv.gz')
+        windows=read_table('figure_02/panel_J_window_agreement.csv')
     color_data=pd.read_csv(ROOT/'configs/cell_type_colors.csv').set_index('cell_type_update').color_hex.to_dict()
     aliases={'CD4+ T cell':'CD4+ T','CD66+ Enterocyte':'CD66+ Epithelial','CD7+ Immune':'NK','Endothelial':'CD36 high Endothelial','Enterocyte':'Epithelial','Lymphatic':'PDPN+ Stromal','MUC1+ Enterocyte':'MUC1+ Epithelial','Stroma':'Stromal'}
-    locators=read_table('figure_02/panel_J_all_cells.csv.gz')
-    windows=read_table('figure_02/panel_J_window_agreement.csv')
     fig,axes=plt.subplots(2,len(columns)+1,figsize=(3*(len(columns)+1),6),squeeze=False)
     for i,example in enumerate(['Low reference agreement','High reference agreement']):
         group=cells.loc[cells.example.eq(example)]
@@ -190,11 +212,12 @@ def spatial_panel(figure_id):
         axes[i,0].scatter(whole.x,whole.y,c=[color_data.get(aliases.get(v,v),'#999999') for v in whole.truth_label],s=.3,linewidths=0)
         from matplotlib.patches import Rectangle
         axes[i,0].add_patch(Rectangle((window.x0,window.y0),window.x1-window.x0,window.y1-window.y0,fill=False,color='black',lw=.7))
-        axes[i,0].invert_yaxis();axes[i,0].set_xticks([]);axes[i,0].set_yticks([])
+        axes[i,0].invert_yaxis();axes[i,0].set_aspect('equal');axes[i,0].set_xticks([]);axes[i,0].set_yticks([])
         if i==0:axes[i,0].set_title('Tissue region')
         for ax,column in zip(axes[i,1:],columns):
             colors=[color_data.get(aliases.get(v,v),'#999999') for v in group[column]]
             ax.scatter(group.x,group.y,c=colors,s=3,linewidths=0)
+            ax.set(xlim=(window.x0,window.x1),ylim=(window.y0,window.y1))
             ax.invert_yaxis();ax.set_aspect('equal');ax.set_xticks([]);ax.set_yticks([])
             if i==0:ax.set_title('Reference annotations' if column=='truth_label' else NAMES.get(column.removeprefix('leiden__'),column))
         axes[i,0].set_ylabel(example+f' (n={len(group):,})')
