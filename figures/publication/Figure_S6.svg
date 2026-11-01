@@ -13873,9 +13873,6 @@ L 456.377953 600.944882
   <g id="text_172">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="258.009715" transform="rotate(-0 8.503937 258.009715)">B</text>
   </g>
-  <g id="text_173">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="258.007387" transform="rotate(-0 31.181102 258.007387)">Cluster-majority comparison</text>
-  </g>
   <g id="legend_1">
    <g id="patch_924">
     <path d="M 108.656289 283.914458 
@@ -13885,7 +13882,7 @@ L 108.656289 280.064458
 z
 " style="fill: #2a6f5b; stroke: #2a6f5b; stroke-linejoin: miter"/>
    </g>
-   <g id="text_174">
+   <g id="text_173">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="117.456289" y="283.914458" transform="rotate(-0 117.456289 283.914458)">Reference agreement</text>
    </g>
    <g id="patch_925">
@@ -13896,7 +13893,7 @@ L 177.799883 280.064458
 z
 " style="fill: #d9852b; stroke: #d9852b; stroke-linejoin: miter"/>
    </g>
-   <g id="text_175">
+   <g id="text_174">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="186.599883" y="283.914458" transform="rotate(-0 186.599883 283.914458)">Gap to maximum agreement</text>
    </g>
    <g id="patch_926">
@@ -13907,7 +13904,7 @@ L 263.440039 280.064458
 z
 " style="fill: #d9d9d9; stroke: #d9d9d9; stroke-linejoin: miter"/>
    </g>
-   <g id="text_176">
+   <g id="text_175">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="272.240039" y="283.914458" transform="rotate(-0 272.240039 283.914458)">Within-cluster minority-label fraction</text>
    </g>
   </g>

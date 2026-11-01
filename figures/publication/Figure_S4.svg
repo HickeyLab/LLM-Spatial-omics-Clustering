@@ -70646,93 +70646,78 @@ z
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">A</text>
   </g>
   <g id="text_120">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="11.393214" transform="rotate(-0 31.181102 11.393214)">Reference marker expression</text>
-  </g>
-  <g id="text_121">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(204.094488 208.031285)">Cells with stored</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(204.094488 213.929004)">marker value &gt; 0 (%)</text>
   </g>
-  <g id="text_122">
+  <g id="text_121">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="246.614173" y="11.395541" transform="rotate(-0 246.614173 11.395541)">B</text>
   </g>
-  <g id="text_123">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="269.291339" y="11.393214" transform="rotate(-0 269.291339 11.393214)">Reference maps</text>
-  </g>
-  <g id="text_124">
+  <g id="text_122">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="270.708661" y="37.952545" transform="rotate(-0 270.708661 37.952545)">Ileum</text>
   </g>
-  <g id="text_125">
+  <g id="text_123">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(315.288041 37.952545)">Proximal</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(316.354525 43.769826)">jejunum</text>
   </g>
-  <g id="text_126">
+  <g id="text_124">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(371.325038 38.019576)">Sigmoid</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(374.686053 43.901311)">colon</text>
   </g>
-  <g id="text_127">
+  <g id="text_125">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(422.88555 37.952545)">Transverse</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(429.961644 43.769826)">colon</text>
   </g>
-  <g id="text_128">
+  <g id="text_126">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(257.867021 125.826561)">Ascending</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(264.134872 131.708295)">colon</text>
   </g>
-  <g id="text_129">
+  <g id="text_127">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="325.984252" y="125.826561" transform="rotate(-0 325.984252 125.826561)">Mid-jejunum</text>
   </g>
-  <g id="text_130">
+  <g id="text_128">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(366.737264 125.826561)">Descending</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(374.686053 131.708295)">colon</text>
   </g>
-  <g id="text_131">
+  <g id="text_129">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="436.535433" y="125.826561" transform="rotate(-0 436.535433 125.826561)">Duodenum</text>
   </g>
-  <g id="text_132">
+  <g id="text_130">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="255.175069" transform="rotate(-0 8.503937 255.175069)">C</text>
   </g>
-  <g id="text_133">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="255.172742" transform="rotate(-0 31.181102 255.172742)">Cluster composition</text>
-  </g>
-  <g id="text_134">
+  <g id="text_131">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="133.228346" y="271.109271" transform="rotate(-0 133.228346 271.109271)">Leiden</text>
   </g>
-  <g id="text_135">
+  <g id="text_132">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="368.503937" y="271.109271" transform="rotate(-0 368.503937 271.109271)">FlowSOM</text>
   </g>
-  <g id="text_136">
+  <g id="text_133">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="133.228346" y="347.723923" transform="rotate(-0 133.228346 347.723923)">SpatialSort</text>
   </g>
-  <g id="text_137">
+  <g id="text_134">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="368.503937" y="347.644704" transform="rotate(-0 368.503937 347.644704)">PIXIE</text>
   </g>
-  <g id="text_138">
+  <g id="text_135">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="445.096329" transform="rotate(-0 8.503937 445.096329)">D</text>
   </g>
-  <g id="text_139">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="445.094002" transform="rotate(-0 31.181102 445.094002)">FlowSOM sweep</text>
-  </g>
-  <g id="text_140">
+  <g id="text_136">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="150.23622" y="445.096329" transform="rotate(-0 150.23622 445.096329)">E</text>
   </g>
-  <g id="text_141">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="172.913386" y="445.094002" transform="rotate(-0 172.913386 445.094002)">Clustering metrics</text>
-  </g>
-  <g id="text_142">
+  <g id="text_137">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="214.015748" y="474.487978" transform="rotate(-0 214.015748 474.487978)">ARI</text>
   </g>
-  <g id="text_143">
+  <g id="text_138">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="316.062992" y="474.487978" transform="rotate(-0 316.062992 474.487978)">AMI</text>
   </g>
-  <g id="text_144">
+  <g id="text_139">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="418.110236" y="474.487978" transform="rotate(-0 418.110236 474.487978)">Shannon index</text>
   </g>
-  <g id="text_145">
+  <g id="text_140">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="214.015748" y="582.204513" transform="rotate(-0 214.015748 582.204513)">F1 score</text>
   </g>
-  <g id="text_146">
+  <g id="text_141">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="316.062992" y="582.204513" transform="rotate(-0 316.062992 582.204513)">Recall</text>
   </g>
-  <g id="text_147">
+  <g id="text_142">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="418.110236" y="582.271545" transform="rotate(-0 418.110236 582.271545)">Cluster purity (%)</text>
   </g>
  </g>

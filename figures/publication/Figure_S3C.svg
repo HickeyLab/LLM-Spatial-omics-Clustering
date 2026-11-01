@@ -3556,12 +3556,9 @@ z
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">C</text>
   </g>
   <g id="text_386">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="11.393214" transform="rotate(-0 31.181102 11.393214)">Cell-type F1 change</text>
-  </g>
-  <g id="text_387">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="192.755906" y="32.999035" transform="rotate(-0 192.755906 32.999035)">Leiden</text>
   </g>
-  <g id="text_388">
+  <g id="text_387">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360" y="32.999035" transform="rotate(-0 360 32.999035)">FlowSOM</text>
   </g>
  </g>

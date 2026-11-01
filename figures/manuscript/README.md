@@ -6,8 +6,9 @@ A, B and C images. These are byte-identical copies of the native 600 dpi
 versions accompany every figure there.
 
 Figure numbers, figure-level titles and explanatory notes remain in manuscript
-captions. Concise panel headings, axes, keys, units and scientific values are
-retained. Panel letters are
+captions. Descriptive subfigure titles are omitted. Distinguishing condition,
+model, method, population and metric labels, axes, keys, units and scientific
+values are retained. Panel letters are
 plain uppercase bold Arial, following the published EXO examples documented in
 the [design notes](../../docs/publication_figure_design.md).
 

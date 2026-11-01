@@ -21,20 +21,20 @@
   "notes": [],
   "files": {
     "Figure_S3B.svg": {
-      "sha256": "e4432da2cc43131ce4d11ed82fb22f0cc2e59baaea8a71d039d53fd2d3ef9406",
-      "bytes": 37467
+      "sha256": "dacf210085e77d1064b0fbaba9216257dbb29c22a13d48eb3c63a8018a56fb92",
+      "bytes": 37203
     },
     "Figure_S3B.pdf": {
-      "sha256": "9bfbba939e6ad30a3f19e36c0f6de6bd1fa599e9d27035a9d6baa60d42cf6a4d",
-      "bytes": 41537
+      "sha256": "eb4788bceb83a350c492888c4812cd993a62caecc9f7a65340bb8932ba2963ab",
+      "bytes": 38666
     },
     "Figure_S3B.png": {
-      "sha256": "4848c0736190ebc3d0de19bfbf51fe8525e3e8918c22077f266390c11ea31adc",
-      "bytes": 283301
+      "sha256": "ac0e6c464a66673b9aea6a2e4c158a4e0d3474b7e75424cf8447c800874da464",
+      "bytes": 272630
     },
     "Figure_S3B.tiff": {
-      "sha256": "9504d060cbf0e8f2161e0cac304c246aff5cc0e62cfc7db9dab7f3d374bb128b",
-      "bytes": 400582
+      "sha256": "dabd27f783f2af4718a271588f1799fe4cc0cefba23996b0f48a19733b9e4589",
+      "bytes": 392256
     }
   }
 }

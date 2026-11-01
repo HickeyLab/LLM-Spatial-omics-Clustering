@@ -4564,30 +4564,24 @@ L 456.377953 547.086614
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="93.600266" transform="rotate(-0 8.503937 93.600266)">B</text>
   </g>
   <g id="text_170">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="93.597939" transform="rotate(-0 31.181102 93.597939)">Silhouette change</text>
-  </g>
-  <g id="text_171">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="93.600266" transform="rotate(-0 240.944882 93.600266)">C</text>
   </g>
-  <g id="text_172">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="263.622047" y="93.597939" transform="rotate(-0 263.622047 93.597939)">Cell-type F1 change</text>
-  </g>
-  <g id="text_173">
+  <g id="text_171">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="314.702628" transform="rotate(-0 8.503937 314.702628)">D</text>
   </g>
-  <g id="text_174">
+  <g id="text_172">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="136.062992" y="314.621082" transform="rotate(-0 136.062992 314.621082)">Mesmer</text>
   </g>
-  <g id="text_175">
+  <g id="text_173">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="226.771654" y="314.702628" transform="rotate(-0 226.771654 314.702628)">E</text>
   </g>
-  <g id="text_176">
+  <g id="text_174">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="260.787402" y="314.700301" transform="rotate(-0 260.787402 314.700301)">CellposeSAM</text>
   </g>
-  <g id="text_177">
+  <g id="text_175">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="351.496063" y="314.702628" transform="rotate(-0 351.496063 314.702628)">F</text>
   </g>
-  <g id="text_178">
+  <g id="text_176">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="385.511811" y="314.700301" transform="rotate(-0 385.511811 314.700301)">CellposeCyto3</text>
   </g>
   <g id="legend_1">
@@ -4609,7 +4603,7 @@ z
      <use xlink:href="#mfcba33627e" x="13.62" y="242.757962" style="fill: #1f77b4; stroke: #1f77b4"/>
     </g>
    </g>
-   <g id="text_179">
+   <g id="text_177">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="244.682962" transform="rotate(-0 17.47 244.682962)">Epithelial</text>
    </g>
    <g id="line2d_272">
@@ -4630,7 +4624,7 @@ z
      <use xlink:href="#me19f1d0c8b" x="13.62" y="249.437884" style="fill: #aec7e8; stroke: #aec7e8"/>
     </g>
    </g>
-   <g id="text_180">
+   <g id="text_178">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="251.362884" transform="rotate(-0 17.47 251.362884)">Stromal</text>
    </g>
    <g id="line2d_273">
@@ -4651,7 +4645,7 @@ z
      <use xlink:href="#m1b0f590956" x="13.62" y="256.117806" style="fill: #ff7f0e; stroke: #ff7f0e"/>
     </g>
    </g>
-   <g id="text_181">
+   <g id="text_179">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="258.042806" transform="rotate(-0 17.47 258.042806)">Smooth muscle</text>
    </g>
    <g id="line2d_274">
@@ -4672,7 +4666,7 @@ z
      <use xlink:href="#m50e81b9385" x="13.62" y="262.797728" style="fill: #ffbb78; stroke: #ffbb78"/>
     </g>
    </g>
-   <g id="text_182">
+   <g id="text_180">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="264.722728" transform="rotate(-0 17.47 264.722728)">Plasma</text>
    </g>
    <g id="line2d_275">
@@ -4693,7 +4687,7 @@ z
      <use xlink:href="#m527efd2a8c" x="13.62" y="269.493978" style="fill: #2ca02c; stroke: #2ca02c"/>
     </g>
    </g>
-   <g id="text_183">
+   <g id="text_181">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="271.418978" transform="rotate(-0 17.47 271.418978)">M2 Macrophage</text>
    </g>
    <g id="line2d_276">
@@ -4714,7 +4708,7 @@ z
      <use xlink:href="#mb803c3bde4" x="13.62" y="276.238353" style="fill: #98df8a; stroke: #98df8a"/>
     </g>
    </g>
-   <g id="text_184">
+   <g id="text_182">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="278.163353" transform="rotate(-0 17.47 278.163353)">CD8+ T</text>
    </g>
    <g id="line2d_277">
@@ -4735,7 +4729,7 @@ z
      <use xlink:href="#m6f7b07ddc9" x="13.62" y="282.918274" style="fill: #d62728; stroke: #d62728"/>
     </g>
    </g>
-   <g id="text_185">
+   <g id="text_183">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="17.47" y="284.843274" transform="rotate(-0 17.47 284.843274)">Nerve</text>
    </g>
    <g id="line2d_278">
@@ -4756,7 +4750,7 @@ z
      <use xlink:href="#m1ad07993ef" x="68.760078" y="242.757962" style="fill: #ff9896; stroke: #ff9896"/>
     </g>
    </g>
-   <g id="text_186">
+   <g id="text_184">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="244.682962" transform="rotate(-0 72.610078 244.682962)">Noise</text>
    </g>
    <g id="line2d_279">
@@ -4777,7 +4771,7 @@ z
      <use xlink:href="#md60920f264" x="68.760078" y="249.437884" style="fill: #9467bd; stroke: #9467bd"/>
     </g>
    </g>
-   <g id="text_187">
+   <g id="text_185">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="251.362884" transform="rotate(-0 72.610078 251.362884)">CD49a+ Smooth muscle</text>
    </g>
    <g id="line2d_280">
@@ -4798,7 +4792,7 @@ z
      <use xlink:href="#m5c8662f698" x="68.760078" y="256.184837" style="fill: #c5b0d5; stroke: #c5b0d5"/>
     </g>
    </g>
-   <g id="text_188">
+   <g id="text_186">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="258.109837" transform="rotate(-0 72.610078 258.109837)">CD66+ Epithelial</text>
    </g>
    <g id="line2d_281">
@@ -4819,7 +4813,7 @@ z
      <use xlink:href="#md96ac8df16" x="68.760078" y="262.864759" style="fill: #8c564b; stroke: #8c564b"/>
     </g>
    </g>
-   <g id="text_189">
+   <g id="text_187">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="264.789759" transform="rotate(-0 72.610078 264.789759)">TA</text>
    </g>
    <g id="line2d_282">
@@ -4840,7 +4834,7 @@ z
      <use xlink:href="#m7ccbb15d89" x="68.760078" y="269.544681" style="fill: #c49c94; stroke: #c49c94"/>
     </g>
    </g>
-   <g id="text_190">
+   <g id="text_188">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="271.469681" transform="rotate(-0 72.610078 271.469681)">CD4+ T</text>
    </g>
    <g id="line2d_283">
@@ -4861,7 +4855,7 @@ z
      <use xlink:href="#m79aaeca374" x="68.760078" y="276.224603" style="fill: #e377c2; stroke: #e377c2"/>
     </g>
    </g>
-   <g id="text_191">
+   <g id="text_189">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="278.149603" transform="rotate(-0 72.610078 278.149603)">CD36 low Endothelial</text>
    </g>
    <g id="line2d_284">
@@ -4882,7 +4876,7 @@ z
      <use xlink:href="#m76c3a47548" x="68.760078" y="282.904524" style="fill: #f7b6d2; stroke: #f7b6d2"/>
     </g>
    </g>
-   <g id="text_192">
+   <g id="text_190">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="72.610078" y="284.829524" transform="rotate(-0 72.610078 284.829524)">Goblet</text>
    </g>
    <g id="line2d_285">
@@ -4903,7 +4897,7 @@ z
      <use xlink:href="#m8304c32d6a" x="143.921875" y="242.757962" style="fill: #7f7f7f; stroke: #7f7f7f"/>
     </g>
    </g>
-   <g id="text_193">
+   <g id="text_191">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="244.682962" transform="rotate(-0 147.771875 244.682962)">CD36 high Endothelial</text>
    </g>
    <g id="line2d_286">
@@ -4924,7 +4918,7 @@ z
      <use xlink:href="#m15769b74d9" x="143.921875" y="249.569368" style="fill: #c7c7c7; stroke: #c7c7c7"/>
     </g>
    </g>
-   <g id="text_194">
+   <g id="text_192">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="251.494368" transform="rotate(-0 147.771875 251.494368)">MUC1+ Epithelial</text>
    </g>
    <g id="line2d_287">
@@ -4945,7 +4939,7 @@ z
      <use xlink:href="#m132a72d0d5" x="143.921875" y="256.24929" style="fill: #bcbd22; stroke: #bcbd22"/>
     </g>
    </g>
-   <g id="text_195">
+   <g id="text_193">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="258.17429" transform="rotate(-0 147.771875 258.17429)">ITLN+ Epithelial</text>
    </g>
    <g id="line2d_288">
@@ -4966,7 +4960,7 @@ z
      <use xlink:href="#m30cf57a65b" x="143.921875" y="262.929212" style="fill: #dbdb8d; stroke: #dbdb8d"/>
     </g>
    </g>
-   <g id="text_196">
+   <g id="text_194">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="264.854212" transform="rotate(-0 147.771875 264.854212)">DC</text>
    </g>
    <g id="line2d_289">
@@ -4987,7 +4981,7 @@ z
      <use xlink:href="#m3242ec87d2" x="143.921875" y="269.609134" style="fill: #17becf; stroke: #17becf"/>
     </g>
    </g>
-   <g id="text_197">
+   <g id="text_195">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="271.534134" transform="rotate(-0 147.771875 271.534134)">PDPN+ Stromal</text>
    </g>
    <g id="line2d_290">
@@ -5008,7 +5002,7 @@ z
      <use xlink:href="#m027d731850" x="143.921875" y="276.289056" style="fill: #9edae5; stroke: #9edae5"/>
     </g>
    </g>
-   <g id="text_198">
+   <g id="text_196">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="278.214056" transform="rotate(-0 147.771875 278.214056)">B</text>
    </g>
    <g id="line2d_291">
@@ -5029,7 +5023,7 @@ z
      <use xlink:href="#md27802558e" x="143.921875" y="283.036009" style="fill: #e65c5c; stroke: #e65c5c"/>
     </g>
    </g>
-   <g id="text_199">
+   <g id="text_197">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.771875" y="284.961009" transform="rotate(-0 147.771875 284.961009)">Cycling TA</text>
    </g>
    <g id="line2d_292">
@@ -5050,7 +5044,7 @@ z
      <use xlink:href="#mbb08c213bd" x="214.050313" y="242.757962" style="fill: #e6c35c; stroke: #e6c35c"/>
     </g>
    </g>
-   <g id="text_200">
+   <g id="text_198">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="244.682962" transform="rotate(-0 217.900313 244.682962)">M1 Macrophage</text>
    </g>
    <g id="line2d_293">
@@ -5071,7 +5065,7 @@ z
      <use xlink:href="#m7a9477791e" x="214.050313" y="249.502337" style="fill: #a1e65c; stroke: #a1e65c"/>
     </g>
    </g>
-   <g id="text_201">
+   <g id="text_199">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="251.427337" transform="rotate(-0 217.900313 251.427337)">Paneth</text>
    </g>
    <g id="line2d_294">
@@ -5092,7 +5086,7 @@ z
      <use xlink:href="#m56a3a92004" x="214.050313" y="256.182259" style="fill: #5ce67e; stroke: #5ce67e"/>
     </g>
    </g>
-   <g id="text_202">
+   <g id="text_200">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="258.107259" transform="rotate(-0 217.900313 258.107259)">Neuroendocrine</text>
    </g>
    <g id="line2d_295">
@@ -5113,7 +5107,7 @@ z
      <use xlink:href="#ma36ccaae0b" x="214.050313" y="262.862181" style="fill: #5ce6e6; stroke: #5ce6e6"/>
     </g>
    </g>
-   <g id="text_203">
+   <g id="text_201">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="264.787181" transform="rotate(-0 217.900313 264.787181)">Neutrophil</text>
    </g>
    <g id="line2d_296">
@@ -5134,7 +5128,7 @@ z
      <use xlink:href="#maa97de05a0" x="214.050313" y="269.542103" style="fill: #5c7ee6; stroke: #5c7ee6"/>
     </g>
    </g>
-   <g id="text_204">
+   <g id="text_202">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="271.467103" transform="rotate(-0 217.900313 271.467103)">ICC</text>
    </g>
    <g id="line2d_297">
@@ -5155,7 +5149,7 @@ z
      <use xlink:href="#m1a580c5dc1" x="214.050313" y="276.289056" style="fill: #a15ce6; stroke: #a15ce6"/>
     </g>
    </g>
-   <g id="text_205">
+   <g id="text_203">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="278.214056" transform="rotate(-0 217.900313 278.214056)">CD57+ Epithelial</text>
    </g>
    <g id="line2d_298">
@@ -5176,7 +5170,7 @@ z
      <use xlink:href="#mff85e5387e" x="214.050313" y="282.968978" style="fill: #e65cc3; stroke: #e65cc3"/>
     </g>
    </g>
-   <g id="text_206">
+   <g id="text_204">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="217.900313" y="284.893978" transform="rotate(-0 217.900313 284.893978)">NK</text>
    </g>
   </g>
@@ -5199,7 +5193,7 @@ z
      <use xlink:href="#m1b999e58b5" x="167.288477" y="579.630691" style="fill: #bbbbbb; stroke: #bbbbbb"/>
     </g>
    </g>
-   <g id="text_207">
+   <g id="text_205">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="174.713477" y="581.555691" transform="rotate(-0 174.713477 581.555691)">Individual tissue region</text>
    </g>
    <g id="line2d_300">
@@ -5215,7 +5209,7 @@ z
      <use xlink:href="#me46aaea48a" x="239.735508" y="579.630691" style="stroke: #000000; stroke-linejoin: miter"/>
     </g>
    </g>
-   <g id="text_208">
+   <g id="text_206">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="247.160508" y="581.555691" transform="rotate(-0 247.160508 581.555691)">Mean regional change</text>
    </g>
    <g id="line2d_301">
@@ -5224,7 +5218,7 @@ L 310.658867 579.630691
 L 313.683867 579.630691 
 " style="fill: none; stroke: #888888; stroke-width: 0.7; stroke-linecap: square"/>
    </g>
-   <g id="text_209">
+   <g id="text_207">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="318.083867" y="581.555691" transform="rotate(-0 318.083867 581.555691)">Observed regional range</text>
    </g>
   </g>
