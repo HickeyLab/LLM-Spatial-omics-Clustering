@@ -193,6 +193,9 @@ def finish(f, name, output, inputs=None, notes=None):
              "dense_point_layers_native_dpi":610 if any(getattr(a,"get_rasterized",lambda:False)() for a in f.findobj()) else None,
              "inputs":inputs or {},"notes":notes or [],
              "files":{p.name:{"sha256":sha(p),"bytes":p.stat().st_size} for p in paths}}
+    if hasattr(f,"_original_raster_workflow"):
+        receipt["original_raster_workflow"] = f._original_raster_workflow
+        receipt["minimum_font_scope"] = "Native text only; original Figure 1A raster labels are preserved."
     (output/(name+"_verification.json")).write_text(json.dumps(receipt,indent=2)+"\n")
     plt.close(f)
     print(name, pixel_size, "minimum font", min_size, "pt",flush=True)

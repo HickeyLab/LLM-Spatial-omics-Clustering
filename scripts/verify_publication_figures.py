@@ -93,15 +93,39 @@ def verify_native(folder, render_qa=None):
         assert abs(page.rect.width-receipt['width_mm']/25.4*72) < .01
         assert abs(page.rect.height-receipt['height_mm']/25.4*72) < .01
         image_dpi = []
-        for layer in page.get_image_info():
+        original_workflow = receipt.get('original_raster_workflow')
+        original_workflow_count = 0
+        for layer in page.get_image_info(xrefs=True):
             box = fitz.Rect(layer['bbox'])
             # MuPDF can report a zero-size placeholder for a redacted source
             # object. It has no pixels, footprint or printed resolution.
             if not box.width or not box.height:
                 assert layer['width'] == layer['height'] == 0
                 continue
-            image_dpi.extend([72*layer['width']/box.width,72*layer['height']/box.height])
-        assert min(image_dpi,default=610) >= 600
+            layer_dpi = [72*layer['width']/box.width,72*layer['height']/box.height]
+            image_dpi.extend(layer_dpi)
+            if original_workflow and [layer['width'],layer['height']] == original_workflow['native_size_pixels']:
+                # Verify the original bitmap's actual pixels and placement;
+                # its source detail is independent of the output container dpi.
+                assert key == '1'
+                spec = json.loads((ROOT/'configs/figure_01_original_workflow.json').read_text())
+                assert all(original_workflow[k] == v for k,v in spec.items())
+                assert digest(ROOT/spec['source_file']) == spec['source_sha256']
+                with Image.open(ROOT/spec['source_file']) as source:
+                    expected = np.asarray(source.convert('RGB').crop(spec['crop_pixels']))
+                assert hashlib.sha256(expected.tobytes()).hexdigest() == spec['crop_rgb_sha256']
+                embedded = fitz.Pixmap(doc,layer['xref'])
+                actual = np.frombuffer(embedded.samples,dtype=np.uint8).reshape(layer['height'],layer['width'],3)
+                if layer['transform'][3] < 0:
+                    actual = actual[::-1]
+                np.testing.assert_array_equal(actual,expected)
+                x,y,w,h = spec['rect_mm']
+                np.testing.assert_allclose(list(box),np.array([x,y,x+w,y+h])*72/25.4,atol=.001,rtol=0)
+                np.testing.assert_allclose(layer_dpi,original_workflow['effective_source_dpi'],atol=.001,rtol=0)
+                original_workflow_count += 1
+            else:
+                assert min(layer_dpi) >= 600
+        assert original_workflow_count == int(bool(original_workflow))
         svg = ET.parse(folder/(name+'.svg')).getroot()
         text_nodes = svg.findall('.//{http://www.w3.org/2000/svg}text')
         assert len(text_nodes) >= len(spans)*.7, f'Editable text missing: {name}'

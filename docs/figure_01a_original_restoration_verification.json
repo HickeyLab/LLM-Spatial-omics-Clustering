@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "date": "2026-11-01",
+  "baseline_commit": "dc5b6a9c4caf2e85e6190f5be17913daa07c958b",
+  "figure_1a": "Original frozen illustrated artwork and raster labels restored proportionally. Current native panel letter retained.",
+  "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+  "native_output_sha256": "aa9ad81c4346840fb75d2a15e52d126275829be1be1fcffae974b6eea375bcd5",
+  "changed_pixel_bbox_xyxy": [
+    71,
+    165,
+    3829,
+    629
+  ],
+  "unchanged_pixels_below_y": 630,
+  "unchanged_b_f_pixel_sha256": "2f684262e22c2bc3758c7dfb87dbe58c3c4b087092dcdc58358e4a620639e5cf",
+  "figure_1_caption_unchanged": true,
+  "other_document_images_byte_identical": 16,
+  "document_image_count": 17,
+  "other_document_image_dimensions_unchanged": true,
+  "figure_1_width_mm": 165.1,
+  "figure_1_height_change_mm_after_removing_automatic_crop": 0.01622222222222222,
+  "figure_1_crop_zero": true,
+  "manuscript_placements_verified": 17,
+  "source_resolution_note": "Original 1765 x 218 pixel crop embedded without resampling in PDF/SVG; approximately 282 dpi at the declared physical size. Native font checks exclude original bitmap labels.",
+  "native_figure_checks_passed": 17,
+  "manuscript_alignment_tests_passed": 6,
+  "new_model_calls": 0,
+  "new_fits": 0
+}

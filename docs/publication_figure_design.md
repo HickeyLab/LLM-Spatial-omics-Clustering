@@ -9,7 +9,9 @@ in the artwork.
 ## Typography and panel letters
 
 The nominal artwork width is 165.1 mm (6.5 inches). Arial is used throughout,
-with 8 pt bold panel letters, 6.5 pt panel headings, and no text below 5.5 pt.
+with 8 pt bold panel letters, 6.5 pt panel headings, and no native text below 5.5 pt.
+Figure 1A preserves the original illustrated workflow, including its bitmap
+labels. Those original labels are outside the native font-size/editability check.
 Figure 2 uses a 6.6 pt minimum and 10.3 pt panel letters at native size to
 allow its taller composition and narrower manuscript placement. At the
 recommended placement, its panel letters are approximately 8 pt.
@@ -35,16 +37,25 @@ published uppercase examples.
 
 Every PNG is rendered from the final native composition at 600 dpi. TIFF is a
 lossless RGB conversion of those exact pixels with 600 dpi metadata and LZW
-compression. Every figure also has PDF and SVG exports. Graph lines, diagrams,
+compression. Every figure also has PDF and SVG exports. Graph lines, native diagrams,
 heatmap cells and text are vectors. Dense point layers and color gradients
 are drawn natively at approximately 610 dpi in the vector containers. Figures 2A, 3A and 4A reuse the author's native BioRender PDF export, preserving
 its original vectors and microscopy/logo pixels. Small imported text tables
 and lists are replaced by editable Arial. Generic template phase captions
 and the unused color-key label are removed. There is no artificial
-upsampling or refitting.
+upsampling or refitting in those three workflows. Figure 1A instead reuses the
+original raster artwork in `data/frozen/publication_artwork/figure_01_original.png`.
+Its checksum-pinned crop and proportional placement are recorded in
+`configs/figure_01_original_workflow.json`. PDF and SVG embed its original
+1,765 × 218 pixels, with an effective source resolution of approximately
+282 dpi. The 600 dpi PNG/TIFF container does not add source detail. The
+verifier checks the embedded pixels against the original crop, and its
+native text checks continue to cover the current A letter and panels B–F.
 
-These exports meet EXO's minimum 300 dpi requirement and its 600 dpi or
-editable-vector requirement for graphs and diagrams. The small microscopy images in the restored BioRender workflows retain
+The native plots and BioRender PDF workflows meet EXO's minimum 300 dpi
+requirement and its 600 dpi or editable-vector requirement for graphs and
+diagrams. The restored original Figure 1A bitmap is a documented source-resolution
+exception. The small microscopy images in the restored BioRender workflows retain
 their original pixels at an effective resolution above 600 dpi.
 
 Use proportional resizing with the aspect ratio locked. Spatial plots and
@@ -54,7 +65,8 @@ orientations and fixed zoom windows are retained.
 
 The manuscript placement widths are 128.27 mm for Figure 2, 152.4 mm for
 Figure 3, S1 and S4, and 165.1 mm for the remaining images. At these widths the
-smallest placed font is above 5 pt. Exact minimum placement widths and native
+smallest placed native font is above 5 pt. Original Figure 1A bitmap labels
+are preserved at their source size. Exact minimum placement widths and native
 dimensions are recorded in each `Figure_*_verification.json`. Do not reduce
 the width below that recorded minimum without rebuilding with larger text.
 
@@ -76,7 +88,8 @@ model inference, new matching or new statistical experiment is performed.
 
 Figure 3A follows the latest live-manuscript workflow, including Cluster
 Features and the five marker-selection settings under Optimization. All
-three main workflow panels now use the original BioRender illustrations.
+workflow panels in Figures 2–4 now use the original BioRender illustrations.
+Figure 1A separately restores its original illustrated raster artwork.
 Figure 2 is reflowed to give its workflow the full figure width; the other
 numerical panels retain their frozen data and definitions. Its
 caption preserves the distinction between retrospective marker-name-list

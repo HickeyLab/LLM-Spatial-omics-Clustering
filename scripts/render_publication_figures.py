@@ -26,6 +26,7 @@ from publication_figure_design import (
 )
 
 from biorender_workflows import add_workflow
+from original_compensation_workflow import add_original_compensation_workflow
 
 DATA = ROOT / "data/frozen/publication_design"
 SEG = ["Mesmer", "CellposeCyto3", "CellposeSAM", "CellSAM", "InstanSeg", "MicroSAM"]
@@ -316,9 +317,7 @@ def figure_1(out):
     m=csv(names[0]);c=csv(names[1]);p=ROOT/"data/frozen/figure_01_descriptive/regional_f1_changes.csv";reg=pd.read_csv(p)
     f=figure(216)
     panel(f,"A",3,2)
-    flow(f,["Multiplexed tissue images\nTIF mask files\nMarker channel list", "REDSEA\ncompensation",
-            "Merge regions\nBefore / after REDSEA", "Data\npreprocessing", "Leiden clustering\nResolution 1.5",
-            "Paired clustered\nH5AD files"],8,17,gap=2,size=5.5)
+    workflow_inputs=add_original_compensation_workflow(f)
     panel(f,"B",3,31,"Change in silhouette score\nafter compensation")
     a=axes(f,16,42,63,27)
     vals=[]
@@ -371,7 +370,7 @@ def figure_1(out):
                       Line2D([],[],color="#888888",lw=.7,label="Observed regional range")],
              loc="upper center",bbox_to_anchor=(.58,1-202/216),ncol=3,fontsize=5.5,columnspacing=1.1,handlelength=1.1)
     text(f,3,212,"After minus before compensation. B004 tissue regions are subsamples of one donor.",size=5.5)
-    return finish(f,"Figure_1",out,{**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel B retains the precision archived in the executed notebook."])
+    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A restores the original illustrated workflow and its raster labels. Native font checks apply to the current panel letters and B-F.","Panel B retains the precision archived in the executed notebook."])
 
 
 def figure_s2(out):
