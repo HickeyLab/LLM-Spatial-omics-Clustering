@@ -12,6 +12,7 @@
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "biorender_workflow": null,
   "dense_point_layers_native_dpi": 610,
   "inputs": {
     "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
@@ -20,20 +21,20 @@
   "notes": [],
   "files": {
     "Figure_S6.svg": {
-      "sha256": "50dd667375bc67a2ded1507cb996c093a0781a4454269370cc2fb06ac55002d3",
-      "bytes": 417178
+      "sha256": "6556cb130627803de8129be87b0234fa5cdc853c63421e191538820eb4fffe69",
+      "bytes": 421175
     },
     "Figure_S6.pdf": {
-      "sha256": "b2e2baf35515c1449cbaa39be35e411522a7eb051104181c9f12a5e79ae7da49",
-      "bytes": 83965
+      "sha256": "0e6b68a1be505c8edde46062a228233d9bba64308604cb66c69d802b85567a69",
+      "bytes": 82531
     },
     "Figure_S6.png": {
-      "sha256": "16f5addd423045e9f4fc6950dc71e63d5b829578e9edd26b352a8d8ec45365bb",
-      "bytes": 801920
+      "sha256": "ea842c0bd1f59a6b3511832c49b31b31e001d13d7ed5fcf2a3c360b533e1cc8c",
+      "bytes": 770714
     },
     "Figure_S6.tiff": {
-      "sha256": "f6ad79c8f9f370201a4d5da0de54e65c8c1093409999e1525b2a77b7236b6d63",
-      "bytes": 1873348
+      "sha256": "e0580d763ef701442a9cb4e0e895faa7d4a275c34e88061f282d68404dc7eeae",
+      "bytes": 1836514
     }
   }
 }

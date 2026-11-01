@@ -55,7 +55,8 @@ def build_figure(config, values):
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 13,
                          "pdf.fonttype": 42, "ps.fonttype": 42})
     figure = plt.figure(figsize=(12.76875, 12.8), facecolor="white")
-    figure.text(0.5, 0.994, config["title"], ha="center", va="top", fontsize=17)
+    # Current S3C: the title and explanatory notes belong in its caption.
+    figure.text(0.009, 0.994, "C", ha="left", va="top", fontsize=17, weight="bold")
     norm = TwoSlopeNorm(vmin=config["color_limits"][0],
                         vcenter=config["color_center"], vmax=config["color_limits"][1])
     cmap = plt.get_cmap(config["color_map"])
@@ -78,8 +79,6 @@ def build_figure(config, values):
     colorbar = figure.colorbar(image, cax=color_axis, ticks=config["colorbar_ticks"])
     colorbar.set_label(config["colorbar_label"], fontsize=12.5, labelpad=8)
     colorbar.ax.tick_params(labelsize=12)
-    for index, line in enumerate(config["footnotes"]):
-        figure.text(0.009, 0.034 - index * 0.014, line, fontsize=9.5, ha="left", va="bottom")
     return figure
 
 

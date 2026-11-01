@@ -12,6 +12,7 @@
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "biorender_workflow": null,
   "dense_point_layers_native_dpi": 610,
   "inputs": {
     "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
@@ -27,20 +28,20 @@
   ],
   "files": {
     "Figure_S4.svg": {
-      "sha256": "8a8babe17aa7709ff354f43430c87afbc6461d598a9b754d33513accd3b62cf8",
-      "bytes": 6228738
+      "sha256": "cfdc65fb20857aa4102053eb58056136e84a53c8d54dcbe3b34fb1fd00aa71ae",
+      "bytes": 6231071
     },
     "Figure_S4.pdf": {
-      "sha256": "7d731c5ad3e5f745b4c9c1e4c161efe0de45ed824e4c335accf2735cbb115331",
-      "bytes": 2746072
+      "sha256": "2be6fc27219d82bd85d4ac8d3fe300843bc8838396367ed978d13fb6e69eba0a",
+      "bytes": 2744343
     },
     "Figure_S4.png": {
-      "sha256": "69255cd248ef7e35c3162a68a165b7ae030f74fdc304fe48cecdc9fa47fd6594",
-      "bytes": 3709223
+      "sha256": "c0d04303d4ca1c15f49dd14255ae00202478887f766de3d9cbbfba6f02321468",
+      "bytes": 3629840
     },
     "Figure_S4.tiff": {
-      "sha256": "30d41e686da11401c1a0f63fdb53128010d68b53ef3d57d34b625fa3a0278184",
-      "bytes": 4674326
+      "sha256": "4230f5b69e06974b42fb21dac5c8a48aba9f7ab7e9286ecbc61fde21c5ba74b8",
+      "bytes": 4600176
     }
   }
 }

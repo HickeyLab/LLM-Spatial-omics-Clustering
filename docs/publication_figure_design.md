@@ -3,8 +3,11 @@
 All five main and ten supplementary figures are supplied as 17 native image
 sets because S3A, S3B and S3C are separate. The manuscript and current notebook
 previews use the same compositions. Whole-figure numbers and titles belong in
-captions, while panel headings, axes, legends and methodological notes remain
-in the artwork.
+captions. Artwork retains concise identifying headings, panel letters, axes,
+keys, units and values. Explanatory notes and methodological qualifications
+are preserved in captions rather than repeated below the plots. The
+[November 1 cleanup](figure_text_cleanup_20261101.md) records the caption
+coverage and suggested manuscript updates.
 
 ## Typography and panel letters
 

@@ -239,7 +239,9 @@ def figure_5():
         matrices.append(eq.pivot(index='method',columns='model',values=field).reindex(index=methods,columns=models)*100)
     limit=max(abs(m.to_numpy()).max() for m in matrices[:2])
     fig,axes=plt.subplots(2,2,figsize=(12,9),constrained_layout=True)
-    titles=['B005: change after adding labeled reference profiles\nPercentage points','B006: change after adding labeled reference profiles\nPercentage points','Mean reference agreement across B005 and B006 (%)\nEqual donor weights, with labeled reference profiles','Mean 23-class macro-F1 across B005 and B006 (%)\nEqual donor weights, with labeled reference profiles']
+    titles=['B005: agreement change (percentage points)',
+            'B006: agreement change (percentage points)',
+            'Reference agreement (%)','Macro-F1 (%)']
     for i,(ax,matrix,title) in enumerate(zip(axes.flat,matrices,titles)):
         values=matrix.to_numpy();im=ax.imshow(values,cmap='RdYlGn',vmin=-limit if i<2 else 0,vmax=limit if i<2 else 100)
         ax.set_xticks(range(4),[NAMES[m] for m in models],rotation=35,ha='right')

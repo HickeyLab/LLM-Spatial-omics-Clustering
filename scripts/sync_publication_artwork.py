@@ -45,7 +45,7 @@ def main():
                           'minimum_placement_width_mm':receipt['minimum_placement_width_mm'],
                           'dpi':600,'vector_files':[str(source.with_suffix('.'+ext).relative_to(ROOT)) for ext in ['pdf','svg']]})
     manifest = {'schema':'manuscript.artwork.v2','figure_count':15,'image_count':17,
-                'policy':'Figure numbers and figure-level titles stay in captions. Plain uppercase bold panel letters, physical-size typography and proportional placement follow the publication design configuration.',
+                'policy':'Figure numbers, figure-level titles and explanatory notes stay in captions. Artwork retains concise identifying headings, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.',
                 'native_renderer':'scripts/render_publication_figures.py',
                 'style_file':'configs/publication_figure_style.json',
                 'style_sha256':digest(ROOT/'configs/publication_figure_style.json'),

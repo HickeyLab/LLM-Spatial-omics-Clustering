@@ -156,7 +156,7 @@ def verify_native(folder, render_qa=None):
     return results
 
 
-def verify_docx(path, folder):
+def verify_docx(path, folder, image_suggestions_pending=False):
     results = []
     with zipfile.ZipFile(path) as archive:
         document = ET.fromstring(archive.read('word/document.xml'))
@@ -182,10 +182,16 @@ def verify_docx(path, folder):
             with Image.open(folder/(name+'.png')) as source:
                 expected = source.convert('RGB').resize(preview.size,Image.Resampling.LANCZOS)
             error = float(np.abs(np.asarray(preview,dtype=float)-np.asarray(expected,dtype=float)).mean())
-            assert error < 5, (name,'wrong artwork or severe resampling',error)
+            # Google Docs exports the original image while a replacement is
+            # pending, even though the live editor shows the proposed image.
+            # A low whole-image error cannot prove a text-only replacement.
+            if not image_suggestions_pending:
+                assert error < 5, (name,'wrong artwork or severe resampling',error)
             results.append({'figure':name,'placed_width_mm':x,'placed_height_mm':y,
                             'aspect_ratio_error_percent':100*distortion,'minimum_font_pt':font,
                             'preview_mean_absolute_rgb_error':error,
+                            'image_replacement_identity_verified':False if image_suggestions_pending else None,
+                            'image_suggestions_pending':image_suggestions_pending,
                             'google_docs_preview_dpi':min(preview.width*25.4/x,preview.height*25.4/y)})
         text = '\n'.join(''.join(p.itertext()) for p in document.findall('.//w:p',NS))
         caption = next(p for p in text.splitlines() if p.startswith('Figure 3.'))
@@ -198,6 +204,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--folder',type=Path,default=ROOT/'figures/publication')
     parser.add_argument('--docx',type=Path)
+    parser.add_argument('--image-suggestions-pending',action='store_true',
+                        help='Check exported placement without asserting that pending image replacements are exported.')
     parser.add_argument('--render-qa',type=Path)
     parser.add_argument('--receipt',type=Path)
     args = parser.parse_args()
@@ -206,7 +214,7 @@ def main():
               'new_model_calls':0,'new_fits':0}
     if args.docx:
         result['manuscript_export_sha256'] = digest(args.docx)
-        result['manuscript_placement'] = verify_docx(args.docx,args.folder)
+        result['manuscript_placement'] = verify_docx(args.docx,args.folder,args.image_suggestions_pending)
         result['submission_files'] = 'Use original 600 dpi PNG/TIFF or editable PDF/SVG, not Google Docs previews.'
     if args.receipt:
         args.receipt.parent.mkdir(parents=True,exist_ok=True)
