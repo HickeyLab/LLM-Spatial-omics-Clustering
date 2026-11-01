@@ -13,33 +13,64 @@
     ],
     "vector_text_editable": true,
     "panel_letter_format": "A",
+    "biorender_workflow": null,
     "dense_point_layers_native_dpi": null,
     "inputs": {
+      "data/frozen/publication_artwork/figure_01_original.png": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "configs/figure_01_original_workflow.json": "622da251a1b31a3688871d3ccba2f2726fe037b0b6b12332c96cbaa6a174a815",
       "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80",
       "data/frozen/publication_design/figure1_pooled_f1_changes.csv": "524ca9c6851bc9461a2dae60dd3e0dd4849c973b162f33b24fb13fe71056aa27",
       "data/frozen/figure_01_descriptive/regional_f1_changes.csv": "1cb68b8b1c8905a56a4a22a2f147ec8ceb1d69cba6579864f84b20a6116657bd"
     },
     "notes": [
+      "Panel A restores the original illustrated workflow and its raster labels. Native font checks apply to the current panel letters and B-F.",
       "Panel B retains the precision archived in the executed notebook."
     ],
     "files": {
       "Figure_1.svg": {
-        "sha256": "6e162971ac3668790b7c20a2cbcbc960beaa745ffe3042f3795fecb9bddc0855",
-        "bytes": 279638
+        "sha256": "46a5c8457ce9b7cb055e395eaa9b7b7db4d68dcb6d58ad5c3253df876ebd83a2",
+        "bytes": 549412
       },
       "Figure_1.pdf": {
-        "sha256": "44f61c6a20b930d0ebd4041d0ca62a0dcad34d1cdcf5cf33bf424e8add7f5739",
-        "bytes": 102623
+        "sha256": "cf858e3065fef55421dcaba97b31c48974a6a1d6a57a97b7fa1bc4db422d5ea0",
+        "bytes": 291166
       },
       "Figure_1.png": {
-        "sha256": "b40eac7fa5e86b2fd95156e1bbc4a183f037bc848a298b9ef7fe11caaa362781",
-        "bytes": 933780
+        "sha256": "aa9ad81c4346840fb75d2a15e52d126275829be1be1fcffae974b6eea375bcd5",
+        "bytes": 1126192
       },
       "Figure_1.tiff": {
-        "sha256": "7c815f8c61b067b1b62c4a9acf56110949454f957a839047464d8e032012704b",
-        "bytes": 1374978
+        "sha256": "7cd596a8324d16e281fdc2ab1830993a543d788ea96011279a807f94a4ef380b",
+        "bytes": 2413574
       }
-    }
+    },
+    "original_raster_workflow": {
+      "schema": "figure01.original_workflow.v1",
+      "source_file": "data/frozen/publication_artwork/figure_01_original.png",
+      "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "crop_pixels": [
+        45,
+        126,
+        1810,
+        344
+      ],
+      "crop_rgb_sha256": "f28106f3e6e6580d837e319c8e2d13a817d6205b9ee851862b9eace6829b2a66",
+      "rect_mm": [
+        3,
+        7,
+        159,
+        19.6385269121813
+      ],
+      "policy": "Restore the original illustrated Figure 1A workflow, including its original labels. Exclude the historical panel letter and retain the current native A. Preserve aspect ratio and source pixels. Panels B-F retain their current renderer and frozen inputs.",
+      "source_type": "original raster artwork",
+      "native_text_policy": "Original workflow labels remain raster text. The native 5.5 pt typography check covers panel letters and panels B-F, not the source bitmap labels.",
+      "native_size_pixels": [
+        1765,
+        218
+      ],
+      "effective_source_dpi": 281.95597484276726
+    },
+    "minimum_font_scope": "Native text only; original Figure 1A raster labels are preserved."
   },
   {
     "figure": "Figure_2",

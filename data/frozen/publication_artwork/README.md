@@ -11,6 +11,10 @@ is in `docs/leiden_claude_diagnostic_identity_audit.json`.
 `figure_01_original.png` is the exact current-manuscript Figure 1 exported
 before the analysis-unit wording change. The revised preview preserves the
 original A visual and all C–F pixels.
+The current publication renderer also uses its original illustrated panel A,
+including the original raster labels, via the checksum-pinned crop in
+`configs/figure_01_original_workflow.json`. The current native A letter and
+panels B–F are retained.
 
 `figure_s01_original.png` stacks three existing cached notebook outputs
 (cells 16–18) with A–C panel letters. It restores the image missing from the

@@ -1,0 +1,11 @@
+{
+  "schema": "figure01.original_workflow.v1",
+  "source_file": "data/frozen/publication_artwork/figure_01_original.png",
+  "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+  "crop_pixels": [45, 126, 1810, 344],
+  "crop_rgb_sha256": "f28106f3e6e6580d837e319c8e2d13a817d6205b9ee851862b9eace6829b2a66",
+  "rect_mm": [3, 7, 159, 19.6385269121813],
+  "policy": "Restore the original illustrated Figure 1A workflow, including its original labels. Exclude the historical panel letter and retain the current native A. Preserve aspect ratio and source pixels. Panels B-F retain their current renderer and frozen inputs.",
+  "source_type": "original raster artwork",
+  "native_text_policy": "Original workflow labels remain raster text. The native 5.5 pt typography check covers panel letters and panels B-F, not the source bitmap labels."
+}
