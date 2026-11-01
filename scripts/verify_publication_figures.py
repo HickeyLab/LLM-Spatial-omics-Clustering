@@ -195,7 +195,10 @@ def verify_docx(path, folder, image_suggestions_pending=False):
                             'google_docs_preview_dpi':min(preview.width*25.4/x,preview.height*25.4/y)})
         text = '\n'.join(''.join(p.itertext()) for p in document.findall('.//w:p',NS))
         caption = next(p for p in text.splitlines() if p.startswith('Figure 3.'))
-        assert '(E) Cell-type-specific reference agreement after post-hoc reference-informed selection' in caption
+        # The live manuscript has a pending wording suggestion that adds
+        # "output". Both readings retain the same reference-selected metric.
+        assert re.search(r'\(E\) Cell-type-specific reference agreement after '
+                         r'post-hoc reference-informed (?:output )?selection',caption)
         assert '(E) Cell-type-specific reference agreement as a percentage' not in caption
     return results
 

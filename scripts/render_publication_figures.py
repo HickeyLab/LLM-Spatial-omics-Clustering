@@ -457,7 +457,7 @@ def figure_s7(out):
     p=ROOT/"data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv"
     d=pd.read_csv(p);n=d.n_cells.sum();assert n==220082
     f=figure(67)
-    a=axes(f,61,5,100,34)
+    a=axes(f,31,5,130,34)
     labels=["21-label benchmark","28-label reference"]
     for i,vocab in enumerate(["historical_21","original_28"]):
         direct=d[vocab+"_direct_matches"].sum()

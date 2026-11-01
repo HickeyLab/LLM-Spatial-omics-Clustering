@@ -1,18 +1,44 @@
 {
   "figure": "Figure_S4",
   "width_mm": 165.1,
-  "height_mm": 239,
+  "height_mm": 217.93875,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    5645
+    5148
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 239,
+    "height_mm": 217.93875,
+    "height_reduction_percent": 8.81223849372385,
+    "vacant_bands_removed_mm": [
+      [
+        6.040000000000008,
+        10.500000000000016
+      ],
+      [
+        81.95280555555557,
+        86.50000000000001
+      ],
+      [
+        146.90594444444446,
+        153.5
+      ],
+      [
+        159.04,
+        164.5
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
     "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
@@ -28,20 +54,20 @@
   ],
   "files": {
     "Figure_S4.svg": {
-      "sha256": "3c853eda171a54960e26922e3b30c079ee7b317afdc51d955c2687a85c25890d",
-      "bytes": 6229740
+      "sha256": "81ce3a7d743ebc7ffafc06fe808d504a2d4e96fd0005f7f8e415a3ad16ab2822",
+      "bytes": 6227399
     },
     "Figure_S4.pdf": {
-      "sha256": "120452eab62b95e6e187a04f2f32693a162132adf1a01cfc3bf080e1c3577e3c",
-      "bytes": 2741193
+      "sha256": "115c58aebcf6b19345bb41ab0b42860ca6cd35dbc57bdedae92ccaccdcbb10ce",
+      "bytes": 2739985
     },
     "Figure_S4.png": {
-      "sha256": "b33e49f480d5d7eb733c5140913dfe0a55dbdb75604f94a226e8c1c5b5841b14",
-      "bytes": 3592402
+      "sha256": "a1b82d021b37414fb0ece6174b14ccf0f8312e1f8e296eb18b89073601ed4447",
+      "bytes": 3584252
     },
     "Figure_S4.tiff": {
-      "sha256": "645e1fb6710493eab50da138f42588dee335c985c2fa1f9546160c05e2a385a8",
-      "bytes": 4564244
+      "sha256": "be261d9e1c585ee5f635f45636bd1b67f0cad29837ca3609ad6a843434c70f85",
+      "bytes": 4524266
     }
   }
 }

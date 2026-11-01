@@ -147,10 +147,109 @@ def flow(f, boxes, y, height=16, gap=3, x=3, widths=None, size=5.5):
         x+=w+gap
 
 
+def compact_vertical_layout(f):
+    """Close vacant bands without scaling plots, labels or source artwork.
+
+    Work in physical millimetres after aspect-ratio adjustment. Tight artist
+    bounds include tick labels, axis labels and legends, so a removed band
+    cannot cross any of those objects. Each complete object is translated;
+    its physical size and internal geometry remain unchanged.
+    """
+    f.canvas.draw()
+    renderer = f.canvas.get_renderer()
+    fw, fh = f._physical_mm
+    pixels_per_mm = f.bbox.height / fh
+    gap = STYLE["layout_gap_mm"]
+    margin = STYLE["layout_bottom_margin_mm"]
+
+    def interval(box):
+        return ((f.bbox.height-box.y1)/pixels_per_mm,
+                (f.bbox.height-box.y0)/pixels_per_mm)
+
+    objects = []
+    occupied = []
+    for ax in f.axes:
+        bounds = interval(ax.get_tightbbox(renderer))
+        pos = ax.get_position().frozen()
+        objects.append(("axes", ax, bounds, pos))
+        occupied.append(bounds)
+    for artist in [*f.texts, *f.legends]:
+        if artist.get_visible():
+            bounds = interval(artist.get_window_extent(renderer))
+            if artist in f.texts:
+                pos = artist.get_position()
+                kind = "text"
+            else:
+                pos = artist.get_bbox_to_anchor().transformed(f.transFigure.inverted()).frozen()
+                kind = "legend"
+            objects.append((kind, artist, bounds, pos))
+            occupied.append(bounds)
+    overlays = getattr(f, "_biorender_overlays", [])
+    for overlay in overlays:
+        x,y,w,h = overlay["rect_mm"]
+        occupied.append((y,y+h))
+    if hasattr(f, "_original_raster_workflow"):
+        # Figure 1A's checksum-pinned source placement is deliberately fixed.
+        occupied.append((0,30))
+
+    merged = []
+    for start,end in sorted(occupied):
+        if merged and start <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1],end)
+        else:
+            merged.append([start,end])
+    cuts = [(left[1]+gap/2, right[0]-gap/2)
+            for left,right in zip(merged,merged[1:])
+            if right[0]-left[1] > gap+1]
+    bottom = min(fh,merged[-1][1]+margin)
+
+    def removed_before(y):
+        return sum(max(0,min(y,end)-start) for start,end in cuts)
+
+    new_height = bottom-removed_before(bottom)
+    f.set_size_inches(fw*MM,new_height*MM,forward=False)
+    f._physical_mm = (fw,new_height)
+    for kind,artist,bounds,pos in objects:
+        delta = removed_before(sum(bounds)/2)
+        if kind == "axes":
+            top = (1-pos.y1)*fh-delta
+            artist.set_position([pos.x0,1-(top+pos.height*fh)/new_height,
+                                 pos.width,pos.height*fh/new_height])
+        elif kind == "text":
+            artist.set_position((pos[0],1-((1-pos[1])*fh-delta)/new_height))
+        else:
+            top = (1-pos.y1)*fh-delta
+            artist.set_bbox_to_anchor((pos.x0,1-(top+pos.height*fh)/new_height,
+                                       pos.width,pos.height*fh/new_height),
+                                      transform=f.transFigure)
+    for overlay in overlays:
+        x,y,w,h = overlay["rect_mm"]
+        overlay["rect_mm"] = [x,y-removed_before(y+h/2),w,h]
+    f._layout_compaction = {
+        "original_height_mm": fh, "height_mm": new_height,
+        "height_reduction_percent": 100*(fh-new_height)/fh,
+        "vacant_bands_removed_mm": [[start,end] for start,end in cuts],
+        "minimum_gap_mm": gap, "bottom_margin_mm": margin,
+        "plot_sizes_and_font_sizes_preserved": True,
+    }
+
+
 def finish(f, name, output, inputs=None, notes=None):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
+    compact_vertical_layout(f)
     f.canvas.draw()
-    visible=[t for t in f.findobj(Text) if t.get_visible() and t.get_text().strip()]
+    # Matplotlib retains cached tick labels from earlier draws, including
+    # ticks beyond the current limits. Match Axis.draw's actual tick set.
+    cached_ticks = set()
+    drawn_ticks = set()
+    for ax in f.axes:
+        for axis in (ax.xaxis,ax.yaxis):
+            cached_ticks.update(label for tick in [*axis.majorTicks,*axis.minorTicks]
+                                for label in (tick.label1,tick.label2))
+            drawn_ticks.update(label for tick in axis._update_ticks()
+                               for label in (tick.label1,tick.label2))
+    visible=[t for t in f.findobj(Text) if t.get_visible() and t.get_text().strip()
+             and (t not in cached_ticks or t in drawn_ticks)]
     min_size=min(t.get_fontsize() for t in visible)
     if min_size < STYLE["minimum_font_pt"]-1e-5:
         bad=[(t.get_text(),t.get_fontsize()) for t in visible if t.get_fontsize()<5.5-1e-5]
@@ -190,6 +289,7 @@ def finish(f, name, output, inputs=None, notes=None):
              "raster_dpi":600,"raster_size_pixels":pixel_size,
              "vector_text_editable":True,"panel_letter_format":"A",
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
+             "layout_compaction":f._layout_compaction,
              "dense_point_layers_native_dpi":610 if any(getattr(a,"get_rasterized",lambda:False)() for a in f.findobj()) else None,
              "inputs":inputs or {},"notes":notes or [],
              "files":{p.name:{"sha256":sha(p),"bytes":p.stat().st_size} for p in paths}}

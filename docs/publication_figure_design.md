@@ -11,6 +11,8 @@ are preserved in captions rather than repeated below the plots. The
 coverage and suggested manuscript updates.
 The subsequent [panel-title pass](figure_panel_titles_20261101.md) applies
 this rule across all figures and updates the manuscript in Editing mode.
+The [layout pass](figure_layout_compaction_20261101.md) closes the resulting
+vacant bands and bottom margins while preserving native type and plot sizes.
 
 ## Typography and panel letters
 

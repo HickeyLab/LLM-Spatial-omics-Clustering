@@ -1,18 +1,44 @@
 {
   "figure": "Figure_1",
   "width_mm": 165.1,
-  "height_mm": 216,
+  "height_mm": 192.19465277850452,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    5102
+    4540
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 216,
+    "height_mm": 192.19465277850452,
+    "height_reduction_percent": 11.020994084025686,
+    "vacant_bands_removed_mm": [
+      [
+        35.04,
+        40.499999999999986
+      ],
+      [
+        78.71546875072676,
+        82.63013888888891
+      ],
+      [
+        101.9694826388889,
+        107.5
+      ],
+      [
+        199.93233680555554,
+        201.4701388888889
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
   "dense_point_layers_native_dpi": null,
   "inputs": {
     "data/frozen/publication_artwork/figure_01_original.png": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
@@ -27,20 +53,20 @@
   ],
   "files": {
     "Figure_1.svg": {
-      "sha256": "6e2ffeb518d3b12720eac12129f767353de6d623312c800632d014af3583d071",
-      "bytes": 494223
+      "sha256": "58f147247fa5d9cd90ed589bbafbccd30848863104e797d9dddf4dbd2da3de48",
+      "bytes": 494302
     },
     "Figure_1.pdf": {
-      "sha256": "d13901ae3d48d8a0dccf521d3001ef9cd2503acbe70753062e797fc3511e96c9",
-      "bytes": 239858
+      "sha256": "88a0fc87de364f74d44fc9f69b6476b47bde05d3b4eaf79490df32d4dcdb4c9b",
+      "bytes": 239992
     },
     "Figure_1.png": {
-      "sha256": "3d71d055385e308c63c333799e47961ec3d61fd7eeb41ccceb1b794fcebb6879",
-      "bytes": 1097638
+      "sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
+      "bytes": 1086598
     },
     "Figure_1.tiff": {
-      "sha256": "09345884ac5dd31ae8a30cd7c3da140fc9401d9ce150d1265b7e6ae3fe4fd079",
-      "bytes": 2255806
+      "sha256": "c748048d7b0315c414c7d7843a23d87d7e0ff40cc94833544e949581f7b04e5d",
+      "bytes": 2210020
     }
   },
   "original_raster_workflow": {

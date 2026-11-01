@@ -29,5 +29,7 @@
   "design_reference": "https://www.nature.com/articles/s41586-023-05915-x",
   "nature_typography_guidance": "https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/",
   "explanatory_notes_in_artwork": false,
-  "descriptive_panel_titles_in_artwork": false
+  "descriptive_panel_titles_in_artwork": false,
+  "layout_gap_mm": 3.0,
+  "layout_bottom_margin_mm": 2.5
 }

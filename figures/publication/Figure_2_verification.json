@@ -1,14 +1,14 @@
 {
   "figure": "Figure_2",
   "width_mm": 165.1,
-  "height_mm": 290,
+  "height_mm": 285.54760359972164,
   "minimum_font_pt": 6.6,
   "font_family": "Arial",
   "minimum_placement_width_mm": 125.076,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    6851
+    6746
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -28,6 +28,24 @@
       ]
     }
   ],
+  "layout_compaction": {
+    "original_height_mm": 290,
+    "height_mm": 285.54760359972164,
+    "height_reduction_percent": 1.535309103544262,
+    "vacant_bands_removed_mm": [
+      [
+        116.66794444444443,
+        119.50000000000003
+      ],
+      [
+        214.87965915527724,
+        216.5
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
     "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
@@ -46,20 +64,20 @@
   ],
   "files": {
     "Figure_2.svg": {
-      "sha256": "5fccebcbfb1935f63250c8942e8e2429a1ca6330e9f1b73dd8c9d46bc395c8ae",
-      "bytes": 6522405
+      "sha256": "4e5c46610daa10400443995bf19074600b8cc9ddbc554c713c0fe2f5dafa62ba",
+      "bytes": 6521973
     },
     "Figure_2.pdf": {
-      "sha256": "83eef2d463a4e62a485fed3e3dc95fa5c56e858bddf21e864bfbebd781293eec",
-      "bytes": 3947139
+      "sha256": "9f8bd9c0f8f54cc4a9026270841364441ab2f36416cd96bd1df1fad76edefc40",
+      "bytes": 3947837
     },
     "Figure_2.png": {
-      "sha256": "d4e3f320f4470573bb1661052c2ac41392ba41d4794bfced98065b578b8e977c",
-      "bytes": 3761648
+      "sha256": "39c276aa71bf6db19686ef1a8fe3746cbe2ac5e34787f7b45e5e908486a54ab3",
+      "bytes": 3764704
     },
     "Figure_2.tiff": {
-      "sha256": "af5984ad7a6f87f0fb798acd55b23c46818ba4f93dc9ab2ed1c7e37246979880",
-      "bytes": 5785140
+      "sha256": "3151fcc7788e793089da7dce91b77f659076b94962191b5b5d7091572c8f616f",
+      "bytes": 5799030
     }
   }
 }

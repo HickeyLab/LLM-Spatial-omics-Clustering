@@ -1,18 +1,52 @@
 {
   "figure": "Figure_S1",
   "width_mm": 165.1,
-  "height_mm": 139,
+  "height_mm": 117.53095582527263,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    3283
+    2776
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 139,
+    "height_mm": 117.53095582527263,
+    "height_reduction_percent": 15.445355521386599,
+    "vacant_bands_removed_mm": [
+      [
+        6.682333333333309,
+        9.499999999999995
+      ],
+      [
+        15.039999999999996,
+        17.350554591394022
+      ],
+      [
+        48.526392361111114,
+        50.49999999999999
+      ],
+      [
+        56.03999999999999,
+        58.49999999999999
+      ],
+      [
+        89.5263923611111,
+        91.5
+      ],
+      [
+        97.03999999999999,
+        99.49999999999999
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
   "dense_point_layers_native_dpi": null,
   "inputs": {
     "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80"
@@ -22,20 +56,20 @@
   ],
   "files": {
     "Figure_S1.svg": {
-      "sha256": "bbd481f585fefafd935b5bdf1947576dab3261ef6aa5177a1687c3be072692c6",
-      "bytes": 103888
+      "sha256": "e460444e0afee7065a1d37f2567fa6644d3628485a238a969414a19b48e30482",
+      "bytes": 103900
     },
     "Figure_S1.pdf": {
-      "sha256": "bf7399a96b4c39209a77ec325ba6ebb671fa92e31baa40ed8d02066038af2876",
-      "bytes": 81953
+      "sha256": "dd4dcfad463126ae288c5759b71f29a9f31c8c5fade01b84867545e9cd0d5ef1",
+      "bytes": 81914
     },
     "Figure_S1.png": {
-      "sha256": "1ab435234e76d620dbb0cf159886903d771d79ebfe9bf5ee3a13f77beba2e781",
-      "bytes": 515842
+      "sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
+      "bytes": 510312
     },
     "Figure_S1.tiff": {
-      "sha256": "eef9b73c8757361599649bab366f198596b91b11ccae51d6c84e2885a2d0bd23",
-      "bytes": 781128
+      "sha256": "f7640f084a4bcc2fd5c9c5fb4dbb69cb994c1c5b11f86ed2ce902287e4d2c3a2",
+      "bytes": 739438
     }
   }
 }
