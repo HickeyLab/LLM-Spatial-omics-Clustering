@@ -16,31 +16,31 @@
     {
       "file": "notebooks/final_figures/previews/figure_02.png",
       "source_file": "figures/manuscript/Figure_2.png",
-      "source_sha256": "0049cf83122bf1420bb16f9ada6ab7085505dc6e585be1400a2bdd4af04c9cc8",
+      "source_sha256": "924603d3381eace6710ded797d852703911924e6050a104513b86d2daba93729",
       "labels": [],
       "size_pixels": [
         3900,
-        5905
+        6851
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_03.png",
       "source_file": "figures/manuscript/Figure_3.png",
-      "source_sha256": "f13d442768399040dedcca28fee24e96d6909bc89f7638254268c712dbe00035",
+      "source_sha256": "158cafe7f132bd91c924446ebfce787dcb65c56d1647a41e7cba53776a5c59d2",
       "labels": [],
       "size_pixels": [
         3900,
-        5763
+        5764
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_04.png",
       "source_file": "figures/manuscript/Figure_4.png",
-      "source_sha256": "4b4fcf3dcc147f1fac67aff68198b129c99ba8a66a6cc68cf1d484fbe7232ded",
+      "source_sha256": "24af432396f61f53362e4c5650b2e61011e5121dc27dcacf54909012bb3f8849",
       "labels": [],
       "size_pixels": [
         3900,
-        3850
+        3993
       ]
     },
     {

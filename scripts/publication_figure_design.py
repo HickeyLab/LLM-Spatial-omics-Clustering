@@ -168,8 +168,12 @@ def finish(f, name, output, inputs=None, notes=None):
     for ext in ("svg","pdf","png"):
         p=output/(name+"."+ext)
         metadata = {"CreationDate":None,"ModDate":None} if ext=="pdf" else {"Date":None} if ext=="svg" else {}
-        f.savefig(p,dpi=610 if ext in ("svg","pdf") else 600,metadata=metadata)
+        f.savefig(p,dpi=610 if ext in ("svg","pdf") else 600,metadata=metadata,
+                  transparent=bool(getattr(f,"_biorender_overlays",None)))
         paths.append(p)
+    if getattr(f,"_biorender_overlays",None):
+        from biorender_workflows import compose
+        compose(f,output,name)
     p=output/(name+".tiff")
     # Lossless container conversion, with no resizing or interpolation.
     with Image.open(output/(name+".png")) as im:
@@ -177,13 +181,15 @@ def finish(f, name, output, inputs=None, notes=None):
         pixel_size=list(im.size)
     paths.append(p)
     preview=output/(name+"_preview.png")
-    f.savefig(preview,dpi=160)
+    if not getattr(f,"_biorender_overlays",None):
+        f.savefig(preview,dpi=160)
     fw,fh=f._physical_mm
     receipt={"figure":name,"width_mm":fw,"height_mm":fh,
              "minimum_font_pt":min_size,"font_family":"Arial",
              "minimum_placement_width_mm":round(fw*5/min_size,3),
              "raster_dpi":600,"raster_size_pixels":pixel_size,
              "vector_text_editable":True,"panel_letter_format":"A",
+             "biorender_workflow":getattr(f,"_biorender_overlays",None),
              "dense_point_layers_native_dpi":610 if any(getattr(a,"get_rasterized",lambda:False)() for a in f.findobj()) else None,
              "inputs":inputs or {},"notes":notes or [],
              "files":{p.name:{"sha256":sha(p),"bytes":p.stat().st_size} for p in paths}}

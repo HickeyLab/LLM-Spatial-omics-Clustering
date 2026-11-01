@@ -1,0 +1,136 @@
+{
+  "status": "pass",
+  "source": {
+    "schema": "biorender.workflows.v1",
+    "source_url": "https://app.biorender.com/illustrations/69a8866b418c74cd641a8cfc",
+    "source_file": "data/frozen/biorender_workflows/source_canvas.pdf",
+    "source_sha256": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "export_dpi": 600,
+    "source_page_points": [
+      720,
+      504
+    ],
+    "panels": {
+      "2A": {
+        "clip_points": [
+          13,
+          60,
+          672,
+          168
+        ],
+        "rect_mm": [
+          3,
+          11,
+          159,
+          26.057663125948405
+        ]
+      },
+      "3A": {
+        "clip_points": [
+          13,
+          207,
+          708,
+          316
+        ],
+        "rect_mm": [
+          6,
+          9,
+          155,
+          24.309352517985612
+        ]
+      },
+      "4A": {
+        "clip_points": [
+          27,
+          386,
+          556,
+          454
+        ],
+        "rect_mm": [
+          6,
+          9,
+          154,
+          19.795841209829867
+        ]
+      }
+    },
+    "edits": "Original BioRender artwork retained. Imported text tables and lists retyped in editable Arial. Sub-print-size generic template phase captions and color-key labels removed. No scientific values changed.",
+    "publication_license_status": "Open-access publication-license form was left unsubmitted at the author's request. No CC-BY license or public BioRender link is asserted by this repository."
+  },
+  "changed_workflow_panels": [
+    "2A",
+    "3A",
+    "4A"
+  ],
+  "manuscript_scope": {
+    "status": "pass",
+    "changed_captions": [
+      "2",
+      "3",
+      "4"
+    ],
+    "only_prose_change": "BioRender attribution added to each workflow caption",
+    "other_paragraph_text_unchanged": true,
+    "baseline_sha256": "a6bd2cf3cb4c3a478d17aac57d085e81c82f66aaeeb5aabf9015d8b10df853ec",
+    "updated_sha256": "3039b4aae7c4c92369fd5b92ae77636d5b17a0cd0b25a18d8bbbd8147715f823"
+  },
+  "manuscript_placement": [
+    {
+      "figure": "Figure_2",
+      "placed_width_mm": 128.27,
+      "placed_height_mm": 225.29755555555556,
+      "aspect_ratio_error_percent": 0.004499273022195993,
+      "minimum_font_pt": 5.127461609195402,
+      "preview_mean_absolute_rgb_error": 2.473308687553602,
+      "google_docs_preview_dpi": 230.89108910891085
+    },
+    {
+      "figure": "Figure_3",
+      "placed_width_mm": 152.4,
+      "placed_height_mm": 225.19133333333335,
+      "aspect_ratio_error_percent": 0.01751217369343472,
+      "minimum_font_pt": 5.076034153005464,
+      "preview_mean_absolute_rgb_error": 1.8211703389926046,
+      "google_docs_preview_dpi": 231.0
+    },
+    {
+      "figure": "Figure_4",
+      "placed_width_mm": 165.1,
+      "placed_height_mm": 169.06238888888888,
+      "aspect_ratio_error_percent": -0.03690287904891676,
+      "minimum_font_pt": 5.5,
+      "preview_mean_absolute_rgb_error": 1.0879599609375,
+      "google_docs_preview_dpi": 307.6923076923077
+    }
+  ],
+  "all_17_figures_checked": true,
+  "pdf_and_svg_visually_inspected": true,
+  "validation": {
+    "unit_tests_passed": 44,
+    "external_h5ad_checks_skipped": 6,
+    "executed_current_notebooks": [
+      "figure_02_clustering_method_benchmark",
+      "figure_03_llm_annotation_benchmark"
+    ],
+    "frozen_replay": {
+      "status": "pass",
+      "frozen_input_files": 79,
+      "approved_images": 17,
+      "figure_2_regional_values": 64,
+      "figure_2_celltype_values": 160,
+      "figure_3_method_model_maps": 16,
+      "spatial_window_cells": [
+        1086,
+        915
+      ],
+      "paired_representation_comparisons": 16,
+      "new_model_calls": 0,
+      "new_fits": 0,
+      "network_access": false
+    },
+    "canonical_artwork_checks": 17,
+    "current_notebook_preview_checks": 17
+  },
+  "new_model_calls": 0,
+  "new_fits": 0
+}

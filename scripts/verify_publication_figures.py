@@ -95,6 +95,11 @@ def verify_native(folder, render_qa=None):
         image_dpi = []
         for layer in page.get_image_info():
             box = fitz.Rect(layer['bbox'])
+            # MuPDF can report a zero-size placeholder for a redacted source
+            # object. It has no pixels, footprint or printed resolution.
+            if not box.width or not box.height:
+                assert layer['width'] == layer['height'] == 0
+                continue
             image_dpi.extend([72*layer['width']/box.width,72*layer['height']/box.height])
         assert min(image_dpi,default=610) >= 600
         svg = ET.parse(folder/(name+'.svg')).getroot()
