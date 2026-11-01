@@ -10,8 +10,10 @@ in the artwork.
 
 The nominal artwork width is 165.1 mm (6.5 inches). Arial is used throughout,
 with 8 pt bold panel letters, 6.5 pt panel headings, and no native text below 5.5 pt.
-Figure 1A preserves the original illustrated workflow, including its bitmap
-labels. Those original labels are outside the native font-size/editability check.
+Figure 1A preserves the original illustrations and arrows, with its small
+bitmap labels replaced by larger editable Arial text. Step captions and
+H5AD use 6.5 pt, input descriptions use 6 pt, and the small TIF icon uses
+5.5 pt. All of these labels are included in the native typography checks.
 Figure 2 uses a 6.6 pt minimum and 10.3 pt panel letters at native size to
 allow its taller composition and narrower manuscript placement. At the
 recommended placement, its panel letters are approximately 8 pt.
@@ -47,10 +49,12 @@ upsampling or refitting in those three workflows. Figure 1A instead reuses the
 original raster artwork in `data/frozen/publication_artwork/figure_01_original.png`.
 Its checksum-pinned crop and proportional placement are recorded in
 `configs/figure_01_original_workflow.json`. PDF and SVG embed its original
-1,765 × 218 pixels, with an effective source resolution of approximately
+1,765 × 218 pixel illustration layer, with an effective source resolution of approximately
 282 dpi. The 600 dpi PNG/TIFF container does not add source detail. The
-verifier checks the embedded pixels against the original crop, and its
-native text checks continue to cover the current A letter and panels B–F.
+verifier checks the embedded pixels against the original crop after only the
+declared text rectangles are cleared. Every other source pixel is preserved,
+and the larger labels are checked in the PDF's native text layer. The current
+A letter and panels B–F retain their original native renderer.
 
 The native plots and BioRender PDF workflows meet EXO's minimum 300 dpi
 requirement and its 600 dpi or editable-vector requirement for graphs and
@@ -65,8 +69,8 @@ orientations and fixed zoom windows are retained.
 
 The manuscript placement widths are 128.27 mm for Figure 2, 152.4 mm for
 Figure 3, S1 and S4, and 165.1 mm for the remaining images. At these widths the
-smallest placed native font is above 5 pt. Original Figure 1A bitmap labels
-are preserved at their source size. Exact minimum placement widths and native
+smallest placed native font is above 5 pt. Figure 1A labels are native text
+at the sizes given above. Exact minimum placement widths and native
 dimensions are recorded in each `Figure_*_verification.json`. Do not reduce
 the width below that recorded minimum without rebuilding with larger text.
 

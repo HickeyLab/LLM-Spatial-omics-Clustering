@@ -1,11 +1,238 @@
 {
-  "schema": "figure01.original_workflow.v1",
+  "schema": "figure01.original_workflow.v2",
   "source_file": "data/frozen/publication_artwork/figure_01_original.png",
   "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
-  "crop_pixels": [45, 126, 1810, 344],
+  "crop_pixels": [
+    45,
+    126,
+    1810,
+    344
+  ],
   "crop_rgb_sha256": "f28106f3e6e6580d837e319c8e2d13a817d6205b9ee851862b9eace6829b2a66",
-  "rect_mm": [3, 7, 159, 19.6385269121813],
-  "policy": "Restore the original illustrated Figure 1A workflow, including its original labels. Exclude the historical panel letter and retain the current native A. Preserve aspect ratio and source pixels. Panels B-F retain their current renderer and frozen inputs.",
+  "rect_mm": [
+    3,
+    7,
+    159,
+    19.6385269121813
+  ],
+  "policy": "Preserve the original Figure 1A illustrations and arrows. Erase only declared raster text rectangles and replace their labels with larger editable Arial. Keep the current native A letter and panels B-F unchanged.",
   "source_type": "original raster artwork",
-  "native_text_policy": "Original workflow labels remain raster text. The native 5.5 pt typography check covers panel letters and panels B-F, not the source bitmap labels."
+  "native_text_policy": "All workflow labels are native editable Arial, 6.5 pt for step captions and H5AD, 6 pt for input descriptions and 5.5 pt for the small TIF icon. Source illustrations retain their original pixels outside declared text rectangles.",
+  "erase_regions": [
+    {
+      "rect_pixels": [
+        45,
+        143,
+        220,
+        191
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        45,
+        220,
+        219,
+        248
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        45,
+        289,
+        220,
+        322
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        409,
+        290,
+        600,
+        323
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        675,
+        289,
+        921,
+        337
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        1020,
+        291,
+        1220,
+        326
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        1302,
+        291,
+        1515,
+        326
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        1610,
+        289,
+        1810,
+        337
+      ],
+      "fill_rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "rect_pixels": [
+        233,
+        222,
+        263,
+        248
+      ],
+      "fill_rgb": [
+        228,
+        234,
+        251
+      ]
+    },
+    {
+      "rect_pixels": [
+        1668,
+        202,
+        1751,
+        227
+      ],
+      "fill_rgb": [
+        244,
+        223,
+        251
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "text": "Multiplexed\nfluorescence\ntissue",
+      "position_mm": [
+        10.6,
+        7.1
+      ],
+      "font_pt": 6.0
+    },
+    {
+      "text": "TIF Mask\nFiles",
+      "position_mm": [
+        10.6,
+        15.2
+      ],
+      "font_pt": 6.0
+    },
+    {
+      "text": "Marker\nChannel List",
+      "position_mm": [
+        10.6,
+        22.0
+      ],
+      "font_pt": 6.0
+    },
+    {
+      "text": "REDSEA\nCompensation",
+      "position_mm": [
+        44.4,
+        22.1
+      ],
+      "font_pt": 6.5
+    },
+    {
+      "text": "Merge Regions for\nBefore and After\nREDSEA",
+      "position_mm": [
+        71.0,
+        22.1
+      ],
+      "font_pt": 6.5
+    },
+    {
+      "text": "Data\nPreprocessing",
+      "position_mm": [
+        99.2,
+        22.1
+      ],
+      "font_pt": 6.5
+    },
+    {
+      "text": "Cell Clustering\nLeiden 1.5",
+      "position_mm": [
+        126.5,
+        22.1
+      ],
+      "font_pt": 6.5
+    },
+    {
+      "text": "Two Clustered\nH5AD Files\nBefore + After REDSEA",
+      "position_mm": [
+        151.4,
+        22.1
+      ],
+      "font_pt": 6.5
+    },
+    {
+      "text": "TIF",
+      "position_mm": [
+        21.1,
+        16.64
+      ],
+      "font_pt": 5.5,
+      "va": "center"
+    },
+    {
+      "text": "H5AD",
+      "position_mm": [
+        153.1,
+        15.1
+      ],
+      "font_pt": 6.5,
+      "va": "center"
+    }
+  ],
+  "cleaned_crop_rgb_sha256": "13f416077fce135500f7aa2ce860787e528c9eb4b7ea2ac98ac6bc4edc84233a"
 }

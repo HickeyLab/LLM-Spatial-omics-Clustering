@@ -7,6 +7,7 @@ are checked separately from the original 600 dpi submission files.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import hashlib
 from io import BytesIO
 import json
@@ -114,11 +115,28 @@ def verify_native(folder, render_qa=None):
                 with Image.open(ROOT/spec['source_file']) as source:
                     expected = np.asarray(source.convert('RGB').crop(spec['crop_pixels']))
                 assert hashlib.sha256(expected.tobytes()).hexdigest() == spec['crop_rgb_sha256']
+                original = expected.copy()
+                expected = expected.copy()
+                allowed = np.zeros(expected.shape[:2],dtype=bool)
+                left,top,_,_ = spec['crop_pixels']
+                for region in spec['erase_regions']:
+                    x0,y0,x1,y1 = region['rect_pixels']
+                    expected[y0-top:y1-top,x0-left:x1-left] = region['fill_rgb']
+                    allowed[y0-top:y1-top,x0-left:x1-left] = True
+                assert hashlib.sha256(expected.tobytes()).hexdigest() == spec['cleaned_crop_rgb_sha256']
                 embedded = fitz.Pixmap(doc,layer['xref'])
                 actual = np.frombuffer(embedded.samples,dtype=np.uint8).reshape(layer['height'],layer['width'],3)
                 if layer['transform'][3] < 0:
                     actual = actual[::-1]
                 np.testing.assert_array_equal(actual,expected)
+                np.testing.assert_array_equal(actual[~allowed],original[~allowed])
+                # Check the replacement labels independently in the PDF's
+                # native text layer, including their declared font sizes.
+                workflow_text = Counter((s['text'],round(s['size'],2)) for s in spans
+                                        if s['bbox'][1] < 31*72/25.4)
+                required = Counter((line,label['font_pt']) for label in spec['labels']
+                                   for line in label['text'].splitlines())
+                assert not (required-workflow_text), required-workflow_text
                 x,y,w,h = spec['rect_mm']
                 np.testing.assert_allclose(list(box),np.array([x,y,x+w,y+h])*72/25.4,atol=.001,rtol=0)
                 np.testing.assert_allclose(layer_dpi,original_workflow['effective_source_dpi'],atol=.001,rtol=0)
