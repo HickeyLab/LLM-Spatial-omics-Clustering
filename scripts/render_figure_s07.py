@@ -16,7 +16,6 @@ from matplotlib.colors import Normalize
 import numpy as np
 from PIL import Image
 import yaml
-from update_reference_figure_labels import render
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -70,8 +69,6 @@ def build_figure(config, values):
         center = left + 0.155
         figure.text(center, 0.855, config["condition_labels"][column],
                     ha="center", va="center", fontsize=16)
-        figure.text(center, 0.795, config["condition_subtitles"][column],
-                    ha="center", va="center", fontsize=11)
         for row in range(4):
             for col in range(4):
                 value = matrix[row, col]
@@ -96,12 +93,8 @@ def main():
     buffer = BytesIO()
     figure.savefig(buffer, format="png", dpi=160, facecolor="white")
     rendered = Image.open(buffer).convert("RGB")
-    if args.output is None and config.get("caption_free_snapshot"):
-        # Preserve the validated publication raster across Matplotlib versions.
-        # build_figure still provides a title-free frozen-data reconstruction.
-        snapshot = config["caption_free_snapshot"]
-        rendered = render((ROOT / snapshot["source_file"]).read_bytes(), snapshot,
-                          Path("unused-for-erase-only-layers.ttf"))
+    # The archived bitmap contains the former explanatory subtitles. Rebuild
+    # from the frozen values so those words remain only in the caption.
     if rendered.size != (2048, 805):
         raise ValueError(f"Unexpected S7 footprint: {rendered.size}")
     if args.check:

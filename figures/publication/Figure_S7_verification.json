@@ -12,6 +12,7 @@
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "biorender_workflow": null,
   "dense_point_layers_native_dpi": null,
   "inputs": {
     "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
@@ -19,20 +20,20 @@
   "notes": [],
   "files": {
     "Figure_S7.svg": {
-      "sha256": "728e6ced8f94c476e2cb755d66774ac1f237e48f574bf45ee84aa79d80ab81f4",
-      "bytes": 11038
+      "sha256": "8cbbd71200afb19e5d76f87cd11542d96127293bed9c5081581b99ff07f59d1e",
+      "bytes": 10278
     },
     "Figure_S7.pdf": {
-      "sha256": "0d0a5941a31e1d1fce1aa66570d7f988e996852b0704924a0668f4fe3c82f30e",
-      "bytes": 27131
+      "sha256": "09705d07f470ada89ceb8bd3f5ec18c9ed5565026c8ec8976c2c1a45c3b3676f",
+      "bytes": 22290
     },
     "Figure_S7.png": {
-      "sha256": "69018796f01de64a707e4b320001cb8b4034103a72800af5bb4dd8b2ce007411",
-      "bytes": 216726
+      "sha256": "69e4c743e3c22a4cbc9efe30891f6a9cefcccab02aeddc48b5aa12c0f214571d",
+      "bytes": 118495
     },
     "Figure_S7.tiff": {
-      "sha256": "dc6ae6c995ff132e7807cff291107325d2a2c14a3b4083990a4a7a3ee02d58b5",
-      "bytes": 361706
+      "sha256": "e8541d0e857ca89a218a325a3a0cf792c8496fb7a18b2a6fe2e173a61e142794",
+      "bytes": 265708
     }
   }
 }

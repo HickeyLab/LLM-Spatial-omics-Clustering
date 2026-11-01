@@ -12,6 +12,7 @@
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "biorender_workflow": null,
   "dense_point_layers_native_dpi": null,
   "inputs": {
     "data/frozen/publication_design/figureS9_calibration_metrics.csv": "fb85a9988de3a3cd272f9a172d6554345770f050140e223e730c4fc6303d4ad4",
@@ -22,20 +23,20 @@
   "notes": [],
   "files": {
     "Figure_S9.svg": {
-      "sha256": "2c8db8dc330e762f5c06ed7a45d7d279847e0a4274d35c9880621498de19c268",
-      "bytes": 56805
+      "sha256": "ff6d6a1a0ed686632ef5f4199b397a53737927066d0e2ffe558f29a5310c78b9",
+      "bytes": 57905
     },
     "Figure_S9.pdf": {
-      "sha256": "e09087dd7b820ef258143570504714ca9440094bd8beb5bbf15714993d100932",
-      "bytes": 49470
+      "sha256": "b0d0c2fac61afbf42e735d0b83a7825fa36e353b331b5f1c028fe437475a0476",
+      "bytes": 49140
     },
     "Figure_S9.png": {
-      "sha256": "83a6eb7a3c8e1bb6cdea5cfd03e9cece851422e210b2c1cdac991cc8f51a7b6d",
-      "bytes": 463512
+      "sha256": "58bb056dce2d0055c509d2fdf51c9f7150f2641478d40aab67305ef45e26560d",
+      "bytes": 431789
     },
     "Figure_S9.tiff": {
-      "sha256": "6c036442c855f51fc9d46177165014790372ee3bba1c51f61cc2db032030e69c",
-      "bytes": 621146
+      "sha256": "26615896f9b30e5b03d79a0f0d1a6119e36346b0c5043d15095525b8e4e1e09e",
+      "bytes": 594566
     }
   }
 }

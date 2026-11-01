@@ -60,12 +60,12 @@
     40,
     60
   ],
-  "colorbar_label": "Mean regional \u0394F1 (percentage points)",
+  "colorbar_label": "Mean regional ΔF1 (percentage points)",
   "palette_reference": "configs/figure_02.yaml:panel_h.style",
-  "footnotes": [
+  "original_artwork_sha256": "2ca554e61b4767320b768e34884012fc1ecd16391b38ab669ec7efb5be4d4418",
+  "caption_notes": [
     "Values are mean paired regional changes in B004. Positive values indicate higher F1 after compensation.",
     "Red: decrease. Yellow: zero change. Green: increase. Both panels share the same symmetric scale.",
     "Regional counts and variation are reported separately. Regions are subsamples of one donor."
-  ],
-  "original_artwork_sha256": "2ca554e61b4767320b768e34884012fc1ecd16391b38ab669ec7efb5be4d4418"
+  ]
 }

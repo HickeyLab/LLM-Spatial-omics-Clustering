@@ -2,16 +2,16 @@
   "schema": "manuscript.artwork.v2",
   "figure_count": 15,
   "image_count": 17,
-  "policy": "Figure numbers and figure-level titles stay in captions. Plain uppercase bold panel letters, physical-size typography and proportional placement follow the publication design configuration.",
+  "policy": "Figure numbers, figure-level titles and explanatory notes stay in captions. Artwork retains concise identifying headings, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
   "native_renderer": "scripts/render_publication_figures.py",
   "style_file": "configs/publication_figure_style.json",
-  "style_sha256": "2d2c194944ffb7f44fa6122d6a101858c9b13412467e5514813ea236c65635e9",
+  "style_sha256": "31b6672962b82607dee5f8bda2aec69d4db6697f552fc3b8340eaa72134a1067",
   "files": [
     {
       "file": "figures/manuscript/Figure_1.png",
       "source_file": "figures/publication/Figure_1.png",
-      "source_sha256": "d891a182aa0e75a2b6deb769fde15667774f3df57195d833ee29e19d4aebd685",
-      "output_sha256": "d891a182aa0e75a2b6deb769fde15667774f3df57195d833ee29e19d4aebd685",
+      "source_sha256": "38bf6e47ae6b8ee106940450dd89a8ab7018ef57de7b3354374e190a3b7b2130",
+      "output_sha256": "38bf6e47ae6b8ee106940450dd89a8ab7018ef57de7b3354374e190a3b7b2130",
       "size_pixels": [
         3900,
         5102
@@ -29,8 +29,8 @@
     {
       "file": "figures/manuscript/Figure_2.png",
       "source_file": "figures/publication/Figure_2.png",
-      "source_sha256": "924603d3381eace6710ded797d852703911924e6050a104513b86d2daba93729",
-      "output_sha256": "924603d3381eace6710ded797d852703911924e6050a104513b86d2daba93729",
+      "source_sha256": "b922e630e35f628ea964bed443b5dcb47446f04708a2ba9b0e351bf48cc8d5bc",
+      "output_sha256": "b922e630e35f628ea964bed443b5dcb47446f04708a2ba9b0e351bf48cc8d5bc",
       "size_pixels": [
         3900,
         6851
@@ -48,8 +48,8 @@
     {
       "file": "figures/manuscript/Figure_3.png",
       "source_file": "figures/publication/Figure_3.png",
-      "source_sha256": "158cafe7f132bd91c924446ebfce787dcb65c56d1647a41e7cba53776a5c59d2",
-      "output_sha256": "158cafe7f132bd91c924446ebfce787dcb65c56d1647a41e7cba53776a5c59d2",
+      "source_sha256": "a2a78476c8e90bd80594a28ccb776b699b26fc5c2521cd5b0a2ef46c5db1170b",
+      "output_sha256": "a2a78476c8e90bd80594a28ccb776b699b26fc5c2521cd5b0a2ef46c5db1170b",
       "size_pixels": [
         3900,
         5764
@@ -67,8 +67,8 @@
     {
       "file": "figures/manuscript/Figure_4.png",
       "source_file": "figures/publication/Figure_4.png",
-      "source_sha256": "24af432396f61f53362e4c5650b2e61011e5121dc27dcacf54909012bb3f8849",
-      "output_sha256": "24af432396f61f53362e4c5650b2e61011e5121dc27dcacf54909012bb3f8849",
+      "source_sha256": "d9b3c553813ad64431e76775d8b06bdc30f5be0dacb941c55bcc815e723192d9",
+      "output_sha256": "d9b3c553813ad64431e76775d8b06bdc30f5be0dacb941c55bcc815e723192d9",
       "size_pixels": [
         3900,
         3993
@@ -86,8 +86,8 @@
     {
       "file": "figures/manuscript/Figure_5.png",
       "source_file": "figures/publication/Figure_5.png",
-      "source_sha256": "073fbc2c454d845b02b98136cd8f59f87213b7cb3b89d9b391d9ba758166a889",
-      "output_sha256": "073fbc2c454d845b02b98136cd8f59f87213b7cb3b89d9b391d9ba758166a889",
+      "source_sha256": "881fac16480f0133d93fdda064ff2473af55c1f654f00970626e512be60fe7d8",
+      "output_sha256": "881fac16480f0133d93fdda064ff2473af55c1f654f00970626e512be60fe7d8",
       "size_pixels": [
         3900,
         3921
@@ -105,8 +105,8 @@
     {
       "file": "figures/manuscript/Figure_S1.png",
       "source_file": "figures/publication/Figure_S1.png",
-      "source_sha256": "4fe3688ba528c08a9e6d636618ba2625ca132bb26f69a2dd19cd6939919912bb",
-      "output_sha256": "4fe3688ba528c08a9e6d636618ba2625ca132bb26f69a2dd19cd6939919912bb",
+      "source_sha256": "1ab435234e76d620dbb0cf159886903d771d79ebfe9bf5ee3a13f77beba2e781",
+      "output_sha256": "1ab435234e76d620dbb0cf159886903d771d79ebfe9bf5ee3a13f77beba2e781",
       "size_pixels": [
         3900,
         3283
@@ -124,8 +124,8 @@
     {
       "file": "figures/manuscript/Figure_S2.png",
       "source_file": "figures/publication/Figure_S2.png",
-      "source_sha256": "ac3be033727a4c662382f9bcb995f527aaea55c0dabe72b68f037aeaa65612bf",
-      "output_sha256": "ac3be033727a4c662382f9bcb995f527aaea55c0dabe72b68f037aeaa65612bf",
+      "source_sha256": "57a46730790bb3e3d17b240b0726e7b2fd110c79c00b6e947f6d3e5971818433",
+      "output_sha256": "57a46730790bb3e3d17b240b0726e7b2fd110c79c00b6e947f6d3e5971818433",
       "size_pixels": [
         3900,
         3968
@@ -143,8 +143,8 @@
     {
       "file": "figures/manuscript/Figure_S3A.png",
       "source_file": "figures/publication/Figure_S3A.png",
-      "source_sha256": "5a7e559913396e19f8babdbba2ceec4bee7b38c9691a50c1b55a669a2cb09fe0",
-      "output_sha256": "5a7e559913396e19f8babdbba2ceec4bee7b38c9691a50c1b55a669a2cb09fe0",
+      "source_sha256": "6b8e76bf39a235bfb41a83614f63896014de669e4d61926d83e815c924f04dc9",
+      "output_sha256": "6b8e76bf39a235bfb41a83614f63896014de669e4d61926d83e815c924f04dc9",
       "size_pixels": [
         3900,
         1984
@@ -162,8 +162,8 @@
     {
       "file": "figures/manuscript/Figure_S3B.png",
       "source_file": "figures/publication/Figure_S3B.png",
-      "source_sha256": "f7d702c7ca321da87fb7c7fc0e233e731e16128056b3a1e7a2e814c8f4df0129",
-      "output_sha256": "f7d702c7ca321da87fb7c7fc0e233e731e16128056b3a1e7a2e814c8f4df0129",
+      "source_sha256": "4848c0736190ebc3d0de19bfbf51fe8525e3e8918c22077f266390c11ea31adc",
+      "output_sha256": "4848c0736190ebc3d0de19bfbf51fe8525e3e8918c22077f266390c11ea31adc",
       "size_pixels": [
         3900,
         2078
@@ -181,8 +181,8 @@
     {
       "file": "figures/manuscript/Figure_S3C.png",
       "source_file": "figures/publication/Figure_S3C.png",
-      "source_sha256": "dc8cb021e3d84d709a26b6dc6092155cb9136d7de2b28f29875abddb7bb139d2",
-      "output_sha256": "dc8cb021e3d84d709a26b6dc6092155cb9136d7de2b28f29875abddb7bb139d2",
+      "source_sha256": "c296de9dbc2cec1230727256a9e62d486c3f05a19adf187580878272cdf6b496",
+      "output_sha256": "c296de9dbc2cec1230727256a9e62d486c3f05a19adf187580878272cdf6b496",
       "size_pixels": [
         3900,
         3307
@@ -200,8 +200,8 @@
     {
       "file": "figures/manuscript/Figure_S4.png",
       "source_file": "figures/publication/Figure_S4.png",
-      "source_sha256": "69255cd248ef7e35c3162a68a165b7ae030f74fdc304fe48cecdc9fa47fd6594",
-      "output_sha256": "69255cd248ef7e35c3162a68a165b7ae030f74fdc304fe48cecdc9fa47fd6594",
+      "source_sha256": "c0d04303d4ca1c15f49dd14255ae00202478887f766de3d9cbbfba6f02321468",
+      "output_sha256": "c0d04303d4ca1c15f49dd14255ae00202478887f766de3d9cbbfba6f02321468",
       "size_pixels": [
         3900,
         5645
@@ -219,8 +219,8 @@
     {
       "file": "figures/manuscript/Figure_S5.png",
       "source_file": "figures/publication/Figure_S5.png",
-      "source_sha256": "ed5eb23e8c4149f4d6ea5bee470355e3ce8be9cd7ba9937bbb8775e549458491",
-      "output_sha256": "ed5eb23e8c4149f4d6ea5bee470355e3ce8be9cd7ba9937bbb8775e549458491",
+      "source_sha256": "bcd56551d0811574d4f69dca44e1ca1f8196046b4458f866bf69bb82f6e56033",
+      "output_sha256": "bcd56551d0811574d4f69dca44e1ca1f8196046b4458f866bf69bb82f6e56033",
       "size_pixels": [
         3900,
         2055
@@ -238,8 +238,8 @@
     {
       "file": "figures/manuscript/Figure_S6.png",
       "source_file": "figures/publication/Figure_S6.png",
-      "source_sha256": "16f5addd423045e9f4fc6950dc71e63d5b829578e9edd26b352a8d8ec45365bb",
-      "output_sha256": "16f5addd423045e9f4fc6950dc71e63d5b829578e9edd26b352a8d8ec45365bb",
+      "source_sha256": "ea842c0bd1f59a6b3511832c49b31b31e001d13d7ed5fcf2a3c360b533e1cc8c",
+      "output_sha256": "ea842c0bd1f59a6b3511832c49b31b31e001d13d7ed5fcf2a3c360b533e1cc8c",
       "size_pixels": [
         3900,
         5267
@@ -257,8 +257,8 @@
     {
       "file": "figures/manuscript/Figure_S7.png",
       "source_file": "figures/publication/Figure_S7.png",
-      "source_sha256": "69018796f01de64a707e4b320001cb8b4034103a72800af5bb4dd8b2ce007411",
-      "output_sha256": "69018796f01de64a707e4b320001cb8b4034103a72800af5bb4dd8b2ce007411",
+      "source_sha256": "69e4c743e3c22a4cbc9efe30891f6a9cefcccab02aeddc48b5aa12c0f214571d",
+      "output_sha256": "69e4c743e3c22a4cbc9efe30891f6a9cefcccab02aeddc48b5aa12c0f214571d",
       "size_pixels": [
         3900,
         1582
@@ -276,8 +276,8 @@
     {
       "file": "figures/manuscript/Figure_S8.png",
       "source_file": "figures/publication/Figure_S8.png",
-      "source_sha256": "7ee900f96cc9e67f3fe9dae952c9d6565a61a7b6ca7cca828bc2507fcced4fe7",
-      "output_sha256": "7ee900f96cc9e67f3fe9dae952c9d6565a61a7b6ca7cca828bc2507fcced4fe7",
+      "source_sha256": "7c9b7ee8e6eccfa87f97701fb460db83dd4d868ed5e07ce6d3657780aab75e99",
+      "output_sha256": "7c9b7ee8e6eccfa87f97701fb460db83dd4d868ed5e07ce6d3657780aab75e99",
       "size_pixels": [
         3900,
         2125
@@ -295,8 +295,8 @@
     {
       "file": "figures/manuscript/Figure_S9.png",
       "source_file": "figures/publication/Figure_S9.png",
-      "source_sha256": "83a6eb7a3c8e1bb6cdea5cfd03e9cece851422e210b2c1cdac991cc8f51a7b6d",
-      "output_sha256": "83a6eb7a3c8e1bb6cdea5cfd03e9cece851422e210b2c1cdac991cc8f51a7b6d",
+      "source_sha256": "58bb056dce2d0055c509d2fdf51c9f7150f2641478d40aab67305ef45e26560d",
+      "output_sha256": "58bb056dce2d0055c509d2fdf51c9f7150f2641478d40aab67305ef45e26560d",
       "size_pixels": [
         3900,
         3000
@@ -314,8 +314,8 @@
     {
       "file": "figures/manuscript/Figure_S10.png",
       "source_file": "figures/publication/Figure_S10.png",
-      "source_sha256": "b5506a2932e14e5a76ce064b7ffe9cae866a27fdaa27a768b5f3356784a6cde1",
-      "output_sha256": "b5506a2932e14e5a76ce064b7ffe9cae866a27fdaa27a768b5f3356784a6cde1",
+      "source_sha256": "9c416215f63b8070d3158058c5818adb15b9ac917b90ca5c34f16ddf7e609046",
+      "output_sha256": "9c416215f63b8070d3158058c5818adb15b9ac917b90ca5c34f16ddf7e609046",
       "size_pixels": [
         3900,
         2929

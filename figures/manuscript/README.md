@@ -5,8 +5,9 @@ A, B and C images. These are byte-identical copies of the native 600 dpi
 [publication exports](../publication). Editable PDF/SVG and lossless RGB TIFF
 versions accompany every figure there.
 
-Figure numbers and figure-level titles remain in manuscript captions. Panel
-headings, axes, legends and scientific values are retained. Panel letters are
+Figure numbers, figure-level titles and explanatory notes remain in manuscript
+captions. Concise panel headings, axes, keys, units and scientific values are
+retained. Panel letters are
 plain uppercase bold Arial, following the published EXO examples documented in
 the [design notes](../../docs/publication_figure_design.md).
 
