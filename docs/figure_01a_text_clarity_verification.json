@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "date": "2026-11-01",
+  "baseline_commit": "e5a89edf65990b5b27249e260af5a421c3018686",
+  "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+  "original_illustrations_and_arrows_preserved_outside_text_regions": true,
+  "declared_text_regions": 10,
+  "native_label_groups": 10,
+  "step_caption_font_pt": 6.5,
+  "input_label_font_pt": 6.0,
+  "tif_icon_font_pt": 5.5,
+  "labels_editable_in_pdf_and_svg": true,
+  "native_pdf_label_content_and_sizes_verified": true,
+  "native_pdf_artwork_pixels_verified": true,
+  "changed_pixel_bbox_xyxy": [
+    92,
+    168,
+    3862,
+    666
+  ],
+  "unchanged_pixels_below_y": 700,
+  "unchanged_b_f_pixel_sha256": "e10c2e6e78c78c3d5fa2c0f374f2e0cacbaaa45e4c96bd99f51ba5778a22b770",
+  "native_output_sha256": "d891a182aa0e75a2b6deb769fde15667774f3df57195d833ee29e19d4aebd685",
+  "native_figure_checks_passed": 17,
+  "manuscript_alignment_tests_passed": 6,
+  "manuscript_image_placements_verified": 17,
+  "other_document_images_byte_identical": 16,
+  "figure_1_caption_unchanged": true,
+  "all_document_image_dimensions_unchanged": true,
+  "manuscript_pdf_page_visually_verified": 37,
+  "new_model_calls": 0,
+  "new_fits": 0
+}

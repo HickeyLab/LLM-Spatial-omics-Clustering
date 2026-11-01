@@ -370,7 +370,7 @@ def figure_1(out):
                       Line2D([],[],color="#888888",lw=.7,label="Observed regional range")],
              loc="upper center",bbox_to_anchor=(.58,1-202/216),ncol=3,fontsize=5.5,columnspacing=1.1,handlelength=1.1)
     text(f,3,212,"After minus before compensation. B004 tissue regions are subsamples of one donor.",size=5.5)
-    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A restores the original illustrated workflow and its raster labels. Native font checks apply to the current panel letters and B-F.","Panel B retains the precision archived in the executed notebook."])
+    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.","Panel B retains the precision archived in the executed notebook."])
 
 
 def figure_s2(out):
