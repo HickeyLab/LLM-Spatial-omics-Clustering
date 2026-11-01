@@ -2942,59 +2942,51 @@
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="334.545148" transform="rotate(-0 8.503937 334.545148)">E</text>
   </g>
   <g id="text_156">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="334.463602" transform="rotate(-0 31.181102 334.463602)">Reference-informed selection</text>
-  </g>
-  <g id="text_157">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="85.03937" y="355.499891" transform="rotate(-0 85.03937 355.499891)">Cell-type reference agreement (%)</text>
   </g>
-  <g id="text_158">
+  <g id="text_157">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="192.755906" y="334.545148" transform="rotate(-0 192.755906 334.545148)">F</text>
   </g>
-  <g id="text_159">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(215.433071 334.463602)">Reference-informed selection</text>
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(215.433071 341.424492)">Cell-weighted</text>
+  <g id="text_158">
+   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="215.433071" y="334.54282" transform="rotate(-0 215.433071 334.54282)">Cell-weighted</text>
   </g>
-  <g id="text_160">
+  <g id="text_159">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="192.755906" y="459.269557" transform="rotate(-0 192.755906 459.269557)">G</text>
   </g>
-  <g id="text_161">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(215.433071 459.188011)">Reference-informed selection</text>
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(215.433071 466.148902)">Cluster-weighted</text>
+  <g id="text_160">
+   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="215.433071" y="459.26723" transform="rotate(-0 215.433071 459.26723)">Cluster-weighted</text>
   </g>
-  <g id="text_162">
+  <g id="text_161">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="581.159321" transform="rotate(-0 8.503937 581.159321)">H</text>
   </g>
-  <g id="text_163">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="581.156994" transform="rotate(-0 31.181102 581.156994)">Spatial maps</text>
-  </g>
-  <g id="text_164">
+  <g id="text_162">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="56.692913" y="593.543096" transform="rotate(-0 56.692913 593.543096)">Tissue region</text>
   </g>
-  <g id="text_165">
+  <g id="text_163">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(106.368165 593.543096)">Reference</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(104.836329 599.360377)">annotations</text>
   </g>
-  <g id="text_166">
+  <g id="text_164">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="181.417323" y="593.543096" transform="rotate(-0 181.417323 593.543096)">GPT</text>
   </g>
-  <g id="text_167">
+  <g id="text_165">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="243.779528" y="593.543096" transform="rotate(-0 243.779528 593.543096)">Claude</text>
   </g>
-  <g id="text_168">
+  <g id="text_166">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="306.141732" y="593.543096" transform="rotate(-0 306.141732 593.543096)">Gemini</text>
   </g>
-  <g id="text_169">
+  <g id="text_167">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="368.503937" y="593.610127" transform="rotate(-0 368.503937 593.610127)">DeepSeek</text>
   </g>
-  <g id="text_170">
+  <g id="text_168">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(414.053329 593.610127)">Most frequent</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(425.056337 599.427409)">label</text>
   </g>
-  <g id="text_171">
+  <g id="text_169">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(6.984906 641.047164) rotate(-90)">Low reference</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(12.802187 636.767907) rotate(-90)">agreement</text>
   </g>
-  <g id="text_172">
+  <g id="text_170">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(6.986195 679.925897) rotate(-90)">High reference</text>
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(12.867929 675.035623) rotate(-90)">agreement</text>
   </g>
@@ -3002,25 +2994,25 @@
    <g id="patch_214">
     <path d="M 274.091133 360.449891  L 279.041133 360.449891  L 279.041133 356.599891  L 274.091133 356.599891  z " style="fill: #e39835; stroke: #e39835; stroke-linejoin: miter" />
    </g>
-   <g id="text_173">
+   <g id="text_171">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="283.441133" y="360.449891" transform="rotate(-0 283.441133 360.449891)">GPT</text>
    </g>
    <g id="patch_215">
     <path d="M 300.24707 360.449891  L 305.19707 360.449891  L 305.19707 356.599891  L 300.24707 356.599891  z " style="fill: #53a055; stroke: #53a055; stroke-linejoin: miter" />
    </g>
-   <g id="text_174">
+   <g id="text_172">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="309.59707" y="360.449891" transform="rotate(-0 309.59707 360.449891)">Claude</text>
    </g>
    <g id="patch_216">
     <path d="M 332.525195 360.449891  L 337.475195 360.449891  L 337.475195 356.599891  L 332.525195 356.599891  z " style="fill: #4d7da7; stroke: #4d7da7; stroke-linejoin: miter" />
    </g>
-   <g id="text_175">
+   <g id="text_173">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="341.875195" y="360.449891" transform="rotate(-0 341.875195 360.449891)">Gemini</text>
    </g>
    <g id="patch_217">
     <path d="M 364.795586 360.449891  L 369.745586 360.449891  L 369.745586 356.599891  L 364.795586 356.599891  z " style="fill: #ac77a2; stroke: #ac77a2; stroke-linejoin: miter" />
    </g>
-   <g id="text_176">
+   <g id="text_174">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="374.145586" y="360.449891" transform="rotate(-0 374.145586 360.449891)">DeepSeek</text>
    </g>
   </g>

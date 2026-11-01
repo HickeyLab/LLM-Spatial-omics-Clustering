@@ -2,16 +2,16 @@
   "schema": "manuscript.artwork.v2",
   "figure_count": 15,
   "image_count": 17,
-  "policy": "Figure numbers, figure-level titles and explanatory notes stay in captions. Artwork retains concise identifying headings, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
+  "policy": "Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
   "native_renderer": "scripts/render_publication_figures.py",
   "style_file": "configs/publication_figure_style.json",
-  "style_sha256": "31b6672962b82607dee5f8bda2aec69d4db6697f552fc3b8340eaa72134a1067",
+  "style_sha256": "86adfe4746b97e991b866f9fd6b15b3c45333ddb8ad606ebeef6859e9babe978",
   "files": [
     {
       "file": "figures/manuscript/Figure_1.png",
       "source_file": "figures/publication/Figure_1.png",
-      "source_sha256": "38bf6e47ae6b8ee106940450dd89a8ab7018ef57de7b3354374e190a3b7b2130",
-      "output_sha256": "38bf6e47ae6b8ee106940450dd89a8ab7018ef57de7b3354374e190a3b7b2130",
+      "source_sha256": "3d71d055385e308c63c333799e47961ec3d61fd7eeb41ccceb1b794fcebb6879",
+      "output_sha256": "3d71d055385e308c63c333799e47961ec3d61fd7eeb41ccceb1b794fcebb6879",
       "size_pixels": [
         3900,
         5102
@@ -29,8 +29,8 @@
     {
       "file": "figures/manuscript/Figure_2.png",
       "source_file": "figures/publication/Figure_2.png",
-      "source_sha256": "b922e630e35f628ea964bed443b5dcb47446f04708a2ba9b0e351bf48cc8d5bc",
-      "output_sha256": "b922e630e35f628ea964bed443b5dcb47446f04708a2ba9b0e351bf48cc8d5bc",
+      "source_sha256": "d4e3f320f4470573bb1661052c2ac41392ba41d4794bfced98065b578b8e977c",
+      "output_sha256": "d4e3f320f4470573bb1661052c2ac41392ba41d4794bfced98065b578b8e977c",
       "size_pixels": [
         3900,
         6851
@@ -48,8 +48,8 @@
     {
       "file": "figures/manuscript/Figure_3.png",
       "source_file": "figures/publication/Figure_3.png",
-      "source_sha256": "a2a78476c8e90bd80594a28ccb776b699b26fc5c2521cd5b0a2ef46c5db1170b",
-      "output_sha256": "a2a78476c8e90bd80594a28ccb776b699b26fc5c2521cd5b0a2ef46c5db1170b",
+      "source_sha256": "210587abe60d9dd01147d83b494f06fd17d7cd30579ab3921bc31835d2c2331b",
+      "output_sha256": "210587abe60d9dd01147d83b494f06fd17d7cd30579ab3921bc31835d2c2331b",
       "size_pixels": [
         3900,
         5764
@@ -67,8 +67,8 @@
     {
       "file": "figures/manuscript/Figure_4.png",
       "source_file": "figures/publication/Figure_4.png",
-      "source_sha256": "d9b3c553813ad64431e76775d8b06bdc30f5be0dacb941c55bcc815e723192d9",
-      "output_sha256": "d9b3c553813ad64431e76775d8b06bdc30f5be0dacb941c55bcc815e723192d9",
+      "source_sha256": "945c077151ff052d5bfb1cf98ed2ed41fcbf19e1aef7adbc4a17372cbcbc3bc5",
+      "output_sha256": "945c077151ff052d5bfb1cf98ed2ed41fcbf19e1aef7adbc4a17372cbcbc3bc5",
       "size_pixels": [
         3900,
         3993
@@ -143,8 +143,8 @@
     {
       "file": "figures/manuscript/Figure_S3A.png",
       "source_file": "figures/publication/Figure_S3A.png",
-      "source_sha256": "6b8e76bf39a235bfb41a83614f63896014de669e4d61926d83e815c924f04dc9",
-      "output_sha256": "6b8e76bf39a235bfb41a83614f63896014de669e4d61926d83e815c924f04dc9",
+      "source_sha256": "b8c85c7fabf7f832e8e6538ea02c76a866d4d3f7a5ab12c7adf217ae7238d96a",
+      "output_sha256": "b8c85c7fabf7f832e8e6538ea02c76a866d4d3f7a5ab12c7adf217ae7238d96a",
       "size_pixels": [
         3900,
         1984
@@ -162,8 +162,8 @@
     {
       "file": "figures/manuscript/Figure_S3B.png",
       "source_file": "figures/publication/Figure_S3B.png",
-      "source_sha256": "4848c0736190ebc3d0de19bfbf51fe8525e3e8918c22077f266390c11ea31adc",
-      "output_sha256": "4848c0736190ebc3d0de19bfbf51fe8525e3e8918c22077f266390c11ea31adc",
+      "source_sha256": "ac0e6c464a66673b9aea6a2e4c158a4e0d3474b7e75424cf8447c800874da464",
+      "output_sha256": "ac0e6c464a66673b9aea6a2e4c158a4e0d3474b7e75424cf8447c800874da464",
       "size_pixels": [
         3900,
         2078
@@ -181,8 +181,8 @@
     {
       "file": "figures/manuscript/Figure_S3C.png",
       "source_file": "figures/publication/Figure_S3C.png",
-      "source_sha256": "c296de9dbc2cec1230727256a9e62d486c3f05a19adf187580878272cdf6b496",
-      "output_sha256": "c296de9dbc2cec1230727256a9e62d486c3f05a19adf187580878272cdf6b496",
+      "source_sha256": "605191ec32f81cab215a99e86655df3fc00a522ba33a3ed46cc44f11965869a8",
+      "output_sha256": "605191ec32f81cab215a99e86655df3fc00a522ba33a3ed46cc44f11965869a8",
       "size_pixels": [
         3900,
         3307
@@ -200,8 +200,8 @@
     {
       "file": "figures/manuscript/Figure_S4.png",
       "source_file": "figures/publication/Figure_S4.png",
-      "source_sha256": "c0d04303d4ca1c15f49dd14255ae00202478887f766de3d9cbbfba6f02321468",
-      "output_sha256": "c0d04303d4ca1c15f49dd14255ae00202478887f766de3d9cbbfba6f02321468",
+      "source_sha256": "b33e49f480d5d7eb733c5140913dfe0a55dbdb75604f94a226e8c1c5b5841b14",
+      "output_sha256": "b33e49f480d5d7eb733c5140913dfe0a55dbdb75604f94a226e8c1c5b5841b14",
       "size_pixels": [
         3900,
         5645
@@ -238,8 +238,8 @@
     {
       "file": "figures/manuscript/Figure_S6.png",
       "source_file": "figures/publication/Figure_S6.png",
-      "source_sha256": "ea842c0bd1f59a6b3511832c49b31b31e001d13d7ed5fcf2a3c360b533e1cc8c",
-      "output_sha256": "ea842c0bd1f59a6b3511832c49b31b31e001d13d7ed5fcf2a3c360b533e1cc8c",
+      "source_sha256": "30c06f269d2b9bec3b1e548e84183961595de23061a251287a18d45133dd8987",
+      "output_sha256": "30c06f269d2b9bec3b1e548e84183961595de23061a251287a18d45133dd8987",
       "size_pixels": [
         3900,
         5267
@@ -295,8 +295,8 @@
     {
       "file": "figures/manuscript/Figure_S9.png",
       "source_file": "figures/publication/Figure_S9.png",
-      "source_sha256": "58bb056dce2d0055c509d2fdf51c9f7150f2641478d40aab67305ef45e26560d",
-      "output_sha256": "58bb056dce2d0055c509d2fdf51c9f7150f2641478d40aab67305ef45e26560d",
+      "source_sha256": "64019f6abbe1f99c52096c083529f104b95654278490b0a1a5142ed544007dbd",
+      "output_sha256": "64019f6abbe1f99c52096c083529f104b95654278490b0a1a5142ed544007dbd",
       "size_pixels": [
         3900,
         3000

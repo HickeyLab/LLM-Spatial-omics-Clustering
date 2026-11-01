@@ -709,9 +709,6 @@ z
   <g id="text_14">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">A</text>
   </g>
-  <g id="text_15">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="11.313995" transform="rotate(-0 31.181102 11.313995)">Matching sensitivity</text>
-  </g>
   <g id="legend_1">
    <g id="line2d_19">
     <defs>
@@ -731,7 +728,7 @@ z
      <use xlink:href="#mf79130a2f7" x="139.680977" y="202.212191" style="fill: #0072b2; stroke: #0072b2"/>
     </g>
    </g>
-   <g id="text_16">
+   <g id="text_15">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="147.380977" y="204.137191" transform="rotate(-0 147.380977 204.137191)">directed 5</text>
    </g>
    <g id="line2d_20">
@@ -752,7 +749,7 @@ z
      <use xlink:href="#m97f448f175" x="182.532852" y="202.212191" style="fill: #009e73; stroke: #009e73"/>
     </g>
    </g>
-   <g id="text_17">
+   <g id="text_16">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="190.232852" y="204.137191" transform="rotate(-0 190.232852 204.137191)">directed 10</text>
    </g>
    <g id="line2d_21">
@@ -773,7 +770,7 @@ z
      <use xlink:href="#m84f7b1ccad" x="228.443242" y="202.212191" style="fill: #e69f00; stroke: #e69f00"/>
     </g>
    </g>
-   <g id="text_18">
+   <g id="text_17">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="236.143242" y="204.137191" transform="rotate(-0 236.143242 204.137191)">directed 15</text>
    </g>
    <g id="line2d_22">
@@ -794,7 +791,7 @@ z
      <use xlink:href="#m34377d13dc" x="274.353633" y="202.212191" style="fill: #cc79a7; stroke: #cc79a7"/>
     </g>
    </g>
-   <g id="text_19">
+   <g id="text_18">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="282.053633" y="204.137191" transform="rotate(-0 282.053633 204.137191)">mutual 10</text>
    </g>
    <g id="line2d_23">
@@ -810,7 +807,7 @@ z
      <use xlink:href="#me46aaea48a" x="317.205508" y="202.212191" style="stroke: #000000; stroke-linejoin: miter"/>
     </g>
    </g>
-   <g id="text_20">
+   <g id="text_19">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="324.905508" y="204.137191" transform="rotate(-0 324.905508 204.137191)">Regional mean</text>
    </g>
   </g>

@@ -2808,19 +2808,13 @@
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="337.379793" transform="rotate(-0 8.503937 337.379793)">D</text>
   </g>
   <g id="text_119">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="337.377466" transform="rotate(-0 31.181102 337.377466)">Cluster-majority comparison</text>
-  </g>
-  <g id="text_120">
    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="252.283465" y="337.379793" transform="rotate(-0 252.283465 337.379793)">E</text>
-  </g>
-  <g id="text_121">
-   <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="274.96063" y="337.377466" transform="rotate(-0 274.96063 337.377466)">Cluster-majority comparison</text>
   </g>
   <g id="legend_1">
    <g id="patch_81">
     <path d="M 305.744141 122.339655  L 310.144141 122.339655  L 310.144141 118.489655  L 305.744141 118.489655  z " style="fill: #e7e8ec; stroke: #9ca3af; stroke-linejoin: miter" />
    </g>
-   <g id="text_122">
+   <g id="text_120">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="311.794141" y="122.339655" transform="rotate(-0 311.794141 122.339655)">Pooled F1</text>
    </g>
    <g id="PathCollection_9">
@@ -2828,7 +2822,7 @@
      <use xlink:href="#mbb7279cad3" x="307.944141" y="128.675827" style="fill: #003f5c; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_123">
+   <g id="text_121">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="311.794141" y="130.119577" transform="rotate(-0 311.794141 130.119577)">Ileum</text>
    </g>
    <g id="PathCollection_10">
@@ -2836,7 +2830,7 @@
      <use xlink:href="#m930b2b7652" x="307.944141" y="136.455749" style="fill: #2f4b7c; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_124">
+   <g id="text_122">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="311.794141" y="137.899499" transform="rotate(-0 311.794141 137.899499)">Proximal jejunum</text>
    </g>
    <g id="PathCollection_11">
@@ -2844,7 +2838,7 @@
      <use xlink:href="#ma7c0a9773d" x="359.473984" y="120.895905" style="fill: #665191; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_125">
+   <g id="text_123">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="363.323984" y="122.339655" transform="rotate(-0 363.323984 122.339655)">Sigmoid colon</text>
    </g>
    <g id="PathCollection_12">
@@ -2852,7 +2846,7 @@
      <use xlink:href="#m5bf60e101e" x="359.473984" y="128.74028" style="fill: #a05195; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_126">
+   <g id="text_124">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="363.323984" y="130.18403" transform="rotate(-0 363.323984 130.18403)">Transverse colon</text>
    </g>
    <g id="PathCollection_13">
@@ -2860,7 +2854,7 @@
      <use xlink:href="#mcbcd028866" x="359.473984" y="136.520202" style="fill: #d45087; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_127">
+   <g id="text_125">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="363.323984" y="137.963952" transform="rotate(-0 363.323984 137.963952)">Ascending colon</text>
    </g>
    <g id="PathCollection_14">
@@ -2868,7 +2862,7 @@
      <use xlink:href="#mbb9fea02a2" x="410.799297" y="120.895905" style="fill: #f95d6a; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_128">
+   <g id="text_126">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="414.649297" y="122.339655" transform="rotate(-0 414.649297 122.339655)">Mid-jejunum</text>
    </g>
    <g id="PathCollection_15">
@@ -2876,7 +2870,7 @@
      <use xlink:href="#md5fefa18a7" x="410.799297" y="128.74028" style="fill: #ff7c43; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_129">
+   <g id="text_127">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="414.649297" y="130.18403" transform="rotate(-0 414.649297 130.18403)">Descending colon</text>
    </g>
    <g id="PathCollection_16">
@@ -2884,7 +2878,7 @@
      <use xlink:href="#mf9de80467d" x="410.799297" y="136.584655" style="fill: #ffa600; stroke: #ffffff; stroke-width: 0.15" />
     </g>
    </g>
-   <g id="text_130">
+   <g id="text_128">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="414.649297" y="138.028405" transform="rotate(-0 414.649297 138.028405)">Duodenum</text>
    </g>
   </g>
@@ -2892,19 +2886,19 @@
    <g id="patch_82">
     <path d="M 107.556289 456.180611  L 111.956289 456.180611  L 111.956289 452.330611  L 107.556289 452.330611  z " style="fill: #2a6f5b; stroke: #2a6f5b; stroke-linejoin: miter" />
    </g>
-   <g id="text_131">
+   <g id="text_129">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="116.356289" y="456.180611" transform="rotate(-0 116.356289 456.180611)">Reference agreement</text>
    </g>
    <g id="patch_83">
     <path d="M 177.799883 456.180611  L 182.199883 456.180611  L 182.199883 452.330611  L 177.799883 452.330611  z " style="fill: #d9852b; stroke: #d9852b; stroke-linejoin: miter" />
    </g>
-   <g id="text_132">
+   <g id="text_130">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="186.599883" y="456.180611" transform="rotate(-0 186.599883 456.180611)">Gap to maximum agreement</text>
    </g>
    <g id="patch_84">
     <path d="M 264.540039 456.180611  L 268.940039 456.180611  L 268.940039 452.330611  L 264.540039 452.330611  z " style="fill: #d9d9d9; stroke: #d9d9d9; stroke-linejoin: miter" />
    </g>
-   <g id="text_133">
+   <g id="text_131">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="273.340039" y="456.180611" transform="rotate(-0 273.340039 456.180611)">Within-cluster minority-label fraction</text>
    </g>
   </g>

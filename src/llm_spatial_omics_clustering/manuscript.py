@@ -82,7 +82,6 @@ def _heatmap(frame, title, *, vmax=100, percent=False, counts=None):
     im = ax.imshow(frame.to_numpy(), aspect='auto', cmap='RdYlGn', vmin=0, vmax=vmax)
     ax.set_xticks(range(len(frame.columns)), frame.columns)
     ax.set_yticks(range(len(frame)), frame.index)
-    ax.set_title(title)
     fig.colorbar(im, ax=ax, label='Reference agreement (%)' if percent else title)
     if len(frame) <= 4:
         for i in range(len(frame)):
@@ -112,7 +111,7 @@ def figure_2_panel(panel):
             jitter = np.random.default_rng(7).uniform(-.15,.15,len(group))
             ax.scatter(i+jitter, group[value], c=[palette(j) for j in range(len(group))], s=30)
         ax.set_xticks(range(4), METHODS)
-        ax.set(title=title, ylabel='Weighted F1' if panel=='E' else 'Cluster purity', ylim=(.3,.9))
+        ax.set(ylabel='Weighted F1' if panel=='E' else 'Cluster purity', ylim=(.3,.9))
         fig.tight_layout()
         return fig
     if panel in ['F', 'H']:
@@ -133,7 +132,7 @@ def figure_2_panel(panel):
         groups = data.groupby('method').n_selected_cells.first()
         ax.set_yticks(range(4),[f'{m} (n={groups[m]:,})' for m in ['Leiden','FlowSOM','SpatialSort','PIXIE']])
         ax.invert_yaxis()
-        ax.set_title('CD8+ T groups from four-model modal annotations')
+        ax.set_title('CD8+ T')
         colorbar = fig.colorbar(plt.cm.ScalarMappable(cmap='Reds',norm=plt.Normalize(0,1)),ax=ax)
         colorbar.set_label('Mean stored expression\n(min-max scaled per marker)', fontsize=9)
         ax.set_xlabel('Marker. Dot area encodes the fraction of processed values above zero.')
@@ -166,7 +165,7 @@ def figure_3_panel(panel):
         frame=types.pivot(index='truth_label',columns='llm',values='exact_cell_accuracy').reindex(columns=MODELS)
         frame=frame.loc[frame.mean(axis=1).sort_values(ascending=False,kind='stable').index]
         frame.columns=[NAMES[m] for m in frame.columns]
-        return _heatmap(frame*100,'Reference-informed selection after prediction (%)',counts=types.groupby('truth_label').n_cells.first())
+        return _heatmap(frame*100,'Reference agreement (%)',percent=True,counts=types.groupby('truth_label').n_cells.first())
     if panel in ['F','G']:
         field='selected_cell_agreement' if panel=='F' else 'selected_cluster_agreement'
         order=['Leiden','FlowSOM','SpatialSort','PIXIE']
@@ -175,7 +174,7 @@ def figure_3_panel(panel):
             values=data.loc[data.model.eq(model)].set_index('method').reindex(order)[field]*100
             ax.bar(np.arange(4)+(i-1.5)*.18,values,width=.18,label=NAMES[model])
         ax.set_xticks(range(4),order)
-        ax.set(ylim=(0,100),ylabel='Reference agreement (%)',title='Reference-informed selection after prediction\n'+('Cells weighted equally' if panel=='F' else 'Clusters weighted equally'))
+        ax.set(ylim=(0,100),ylabel='Reference agreement (%)',title='Cell-weighted' if panel=='F' else 'Cluster-weighted')
         ax.legend(ncols=4,frameon=False)
         fig.tight_layout()
         return fig
@@ -277,17 +276,19 @@ def figure_s9():
     risk=read_table('figure_s09/selective_risk.csv')
     paired=read_table('figure_s09/spatial_paired_differences.csv').query("split=='test'")
     fig,axes=plt.subplots(2,2,figsize=(11,8.5),constrained_layout=True)
-    ax=axes[0,0];ax.scatter(wide.raw_vote,wide.recalibrated);ax.plot([0,1],[0,1],'--',color='gray');ax.set(xlim=(0,1),ylim=(0,1),xlabel='Raw vote Brier score',ylabel='Recalibrated Brier score',title='A  Probability assessment across 32 conditions')
+    ax=axes[0,0];ax.scatter(wide.raw_vote,wide.recalibrated);ax.plot([0,1],[0,1],'--',color='gray');ax.set(xlim=(0,1),ylim=(0,1),xlabel='Raw vote Brier score',ylabel='Recalibrated Brier score')
     r=reliability.query("method=='leiden' and model=='gpt' and arm=='marker_only' and probability=='raw_vote'")
-    ax=axes[0,1];ax.scatter(r.mean_probability,r.observed_reference_agreement,s=25+150*r.n_cells/r.n_cells.max());ax.plot([0,1],[0,1],'--',color='gray');ax.set(xlim=(0,1),ylim=(0,1),xlabel='Raw modal vote fraction',ylabel='Observed reference agreement',title='B  GPT and Leiden marker-only reliability')
+    ax=axes[0,1];ax.scatter(r.mean_probability,r.observed_reference_agreement,s=25+150*r.n_cells/r.n_cells.max());ax.plot([0,1],[0,1],'--',color='gray');ax.set(xlim=(0,1),ylim=(0,1),xlabel='Raw modal vote fraction',ylabel='Observed reference agreement')
     ax=axes[1,0]
     for arm,title in [('marker_only','Markers'),('retrieval','Reference-assisted')]:
         r=risk.loc[risk.method.eq('leiden')&risk.model.eq('gpt')&risk.arm.eq(arm)].sort_values('threshold')
         ax.plot(r.coverage*100,r.selective_reference_error*100,'o-',label=title)
-    ax.set(xlim=(0,100),ylim=(0,100),xlabel='Retained cell coverage (%)',ylabel='Reference disagreement (%)',title='C  GPT and Leiden selective risk');ax.legend(frameon=False)
+    ax.set(xlim=(0,100),ylim=(0,100),xlabel='Retained cell coverage (%)',ylabel='Reference disagreement (%)');ax.legend(frameon=False)
     ax=axes[1,1]
     for i,(_,r) in enumerate(paired.groupby('region')):ax.scatter(i+np.linspace(-.1,.1,len(r)),r.agreement_delta_pp)
-    ax.scatter([2],[paired.agreement_delta_pp.mean()],marker='D');ax.axhline(0,color='gray',ls='--');ax.set_xticks([0,1,2],['Test region 1','Test region 2','Mean']);ax.set(ylabel='Neighborhood minus markers (percentage points)',title='D  Paired neighborhood-input comparison')
+    ax.scatter([2],[paired.agreement_delta_pp.mean()],marker='D');ax.axhline(0,color='gray',ls='--');ax.set_xticks([0,1,2],['Test region 1','Test region 2','Mean']);ax.set(ylabel='Neighborhood minus markers (percentage points)')
+    for letter, ax in zip('ABCD', axes.flat):
+        ax.set_title(letter,loc='left',fontweight='bold')
     return fig
 
 

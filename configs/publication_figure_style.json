@@ -19,7 +19,7 @@
     "tiff"
   ],
   "figure_titles_in_artwork": false,
-  "caption_policy": "Keep figure numbers, figure-level titles, explanatory notes, methodological details and qualifications in the manuscript captions. Artwork retains panel letters, concise identifying headings, axes, keys, units and values.",
+  "caption_policy": "Keep figure numbers, figure-level titles, descriptive panel titles, explanatory notes, methodological details and qualifications in manuscript captions. Artwork retains panel letters, distinguishing condition, model, method, population and metric labels, axes, keys, units and values.",
   "placement_policy": "Typography is specified at 165.1 mm width. Do not reduce below the minimum width recorded for each export.",
   "journal_guidance": "https://sciexplor.com/exo/author_instructions",
   "panel_letter_examples": [
@@ -28,5 +28,6 @@
   ],
   "design_reference": "https://www.nature.com/articles/s41586-023-05915-x",
   "nature_typography_guidance": "https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/",
-  "explanatory_notes_in_artwork": false
+  "explanatory_notes_in_artwork": false,
+  "descriptive_panel_titles_in_artwork": false
 }

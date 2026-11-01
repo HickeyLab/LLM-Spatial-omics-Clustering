@@ -4047,89 +4047,82 @@
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="325.984252" y="117.923728" transform="rotate(-0 325.984252 117.923728)">C</text>
   </g>
   <g id="text_195">
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(348.661417 116.267463)">Reference</text>
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(348.661417 123.23892)">annotations</text>
-  </g>
-  <g id="text_196">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="239.813492" transform="rotate(-0 8.503937 239.813492)">D</text>
   </g>
-  <g id="text_197">
+  <g id="text_196">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(48.555184 237.165101)">Reference</text>
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(46.716981 244.145839)">annotations</text>
   </g>
-  <g id="text_198">
+  <g id="text_197">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.653543" y="237.165101" transform="rotate(-0 151.653543 237.165101)">Leiden</text>
   </g>
-  <g id="text_199">
+  <g id="text_198">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="239.527559" y="237.165101" transform="rotate(-0 239.527559 237.165101)">FlowSOM</text>
   </g>
-  <g id="text_200">
+  <g id="text_199">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="327.401575" y="237.245539" transform="rotate(-0 327.401575 237.245539)">SpatialSort</text>
   </g>
-  <g id="text_201">
+  <g id="text_200">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="415.275591" y="237.165101" transform="rotate(-0 415.275591 237.165101)">PIXIE</text>
   </g>
-  <g id="text_202">
+  <g id="text_201">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="350.364673" transform="rotate(-0 8.503937 350.364673)">E</text>
   </g>
-  <g id="text_203">
+  <g id="text_202">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="243.779528" y="350.364673" transform="rotate(-0 243.779528 350.364673)">G</text>
   </g>
-  <g id="text_204">
+  <g id="text_203">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="432.569397" transform="rotate(-0 8.503937 432.569397)">F</text>
   </g>
-  <g id="text_205">
+  <g id="text_204">
    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="430.913133" transform="rotate(-0 31.181102 430.913133)">F1</text>
   </g>
-  <g id="text_206">
+  <g id="text_205">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="243.779528" y="432.569397" transform="rotate(-0 243.779528 432.569397)">H</text>
   </g>
-  <g id="text_207">
+  <g id="text_206">
    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="266.456693" y="430.99357" transform="rotate(-0 266.456693 430.99357)">Recall (%)</text>
   </g>
-  <g id="text_208">
+  <g id="text_207">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="625.325303" transform="rotate(-0 8.503937 625.325303)">I</text>
   </g>
-  <g id="text_209">
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="623.749476" transform="rotate(-0 31.181102 623.749476)">CD8+ T groups</text>
+  <g id="text_208">
+   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="623.669038" transform="rotate(-0 31.181102 623.669038)">CD8+ T</text>
   </g>
-  <g id="text_210">
+  <g id="text_209">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="79.370079" y="639.765224" transform="rotate(-0 79.370079 639.765224)">Stored value &gt; 0 (%)</text>
   </g>
-  <g id="text_211">
+  <g id="text_210">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(331.653543 628.346203)">Mean expression</text>
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(331.653543 635.326941)">Scaled 0–1</text>
   </g>
-  <g id="text_212">
+  <g id="text_211">
    <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="727.372547" transform="rotate(-0 8.503937 727.372547)">J</text>
   </g>
-  <g id="text_213">
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="725.79672" transform="rotate(-0 31.181102 725.79672)">Spatial examples</text>
-  </g>
-  <g id="text_214">
+  <g id="text_212">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="53.858268" y="738.897385" transform="rotate(-0 53.858268 738.897385)">Tissue region</text>
   </g>
-  <g id="text_215">
+  <g id="text_213">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(109.500066 738.897385)">Reference</text>
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(107.661863 745.878122)">annotations</text>
   </g>
-  <g id="text_216">
+  <g id="text_214">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="195.590551" y="738.897385" transform="rotate(-0 195.590551 738.897385)">Leiden</text>
   </g>
-  <g id="text_217">
+  <g id="text_215">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="266.456693" y="738.897385" transform="rotate(-0 266.456693 738.897385)">FlowSOM</text>
   </g>
-  <g id="text_218">
+  <g id="text_216">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="337.322835" y="738.977822" transform="rotate(-0 337.322835 738.977822)">SpatialSort</text>
   </g>
-  <g id="text_219">
+  <g id="text_217">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="408.188976" y="738.897385" transform="rotate(-0 408.188976 738.897385)">PIXIE</text>
   </g>
-  <g id="text_220">
+  <g id="text_218">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(10.121346 774.242414) rotate(-90)">Low</text>
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(17.102084 782.042273) rotate(-90)">n = 1,086</text>
   </g>
-  <g id="text_221">
+  <g id="text_219">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(10.082674 808.991381) rotate(-90)">High</text>
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(17.140756 813.306131) rotate(-90)">n = 915</text>
   </g>
