@@ -1,19 +1,37 @@
 {
   "figure": "Figure_4",
   "width_mm": 165.1,
-  "height_mm": 163,
+  "height_mm": 169,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    3850
+    3993
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "biorender_workflow": [
+    {
+      "clip_points": [
+        27,
+        386,
+        556,
+        454
+      ],
+      "rect_mm": [
+        6,
+        9,
+        154,
+        19.795841209829867
+      ]
+    }
+  ],
   "dense_point_layers_native_dpi": 610,
   "inputs": {
+    "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee",
     "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
     "data/frozen/publication_design/figure4_f1.csv": "9ac5042300121372e01a5f2c146877afa45f9bab832110a124775f8e0965138d",
     "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
@@ -21,20 +39,20 @@
   "notes": [],
   "files": {
     "Figure_4.svg": {
-      "sha256": "4a9d0e54f15e5e9cfdaae1be72413c8a3147f6368d843a320a0dcb0907b68e8e",
-      "bytes": 175647
+      "sha256": "4348a41ef600ab13c0fa3fe85dffd9df807d1ce3a60ad0e54afad75bceb74bd3",
+      "bytes": 2587620
     },
     "Figure_4.pdf": {
-      "sha256": "e727038668a288e49fdb4bd5b5755505f93beaa14c3ddf62bb715cb7062528bd",
-      "bytes": 63732
+      "sha256": "2118ca501886fee56e56290b120c7069142c67dc0e3a33497555262fceef62c2",
+      "bytes": 1313485
     },
     "Figure_4.png": {
-      "sha256": "4b4fcf3dcc147f1fac67aff68198b129c99ba8a66a6cc68cf1d484fbe7232ded",
-      "bytes": 806042
+      "sha256": "24af432396f61f53362e4c5650b2e61011e5121dc27dcacf54909012bb3f8849",
+      "bytes": 1254898
     },
     "Figure_4.tiff": {
-      "sha256": "e900a0593935d78cda39503f38b84b428c1e643e1f9a1f71d7ff7df98c3adcea",
-      "bytes": 1364278
+      "sha256": "401edd55a7c7c944effcb185f00f254e310ed2250b32da7a64af73b85b44c674",
+      "bytes": 2205630
     }
   }
 }

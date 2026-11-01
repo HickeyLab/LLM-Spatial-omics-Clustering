@@ -19,11 +19,11 @@
     },
     {
       "figure": "Figure_2",
-      "minimum_font_pt": 5.699999809265137,
+      "minimum_font_pt": 6.59999942779541,
       "panel_letters": "ABCDEFGHIJ",
       "png_tiff_dpi": 600,
       "minimum_pdf_image_dpi": 609.9980812802352,
-      "editable_svg_text_nodes": 222
+      "editable_svg_text_nodes": 230
     },
     {
       "figure": "Figure_3",
@@ -31,7 +31,7 @@
       "panel_letters": "ABCDEFGH",
       "png_tiff_dpi": 600,
       "minimum_pdf_image_dpi": 609.999432200709,
-      "editable_svg_text_nodes": 201
+      "editable_svg_text_nodes": 197
     },
     {
       "figure": "Figure_4",
@@ -39,7 +39,7 @@
       "panel_letters": "ABCDE",
       "png_tiff_dpi": 600,
       "minimum_pdf_image_dpi": 609.9999894761565,
-      "editable_svg_text_nodes": 135
+      "editable_svg_text_nodes": 140
     },
     {
       "figure": "Figure_S1",
@@ -141,7 +141,7 @@
   "independently_checked_figure_3e_rows": 80,
   "new_model_calls": 0,
   "new_fits": 0,
-  "manuscript_export_sha256": "16663d5c476cb0b26cfb45617f2cdb1414b60a9ed8e7f61dce8bdfc11c788622",
+  "manuscript_export_sha256": "3039b4aae7c4c92369fd5b92ae77636d5b17a0cd0b25a18d8bbbd8147715f823",
   "manuscript_placement": [
     {
       "figure": "Figure_5",
@@ -163,30 +163,30 @@
     },
     {
       "figure": "Figure_2",
-      "placed_width_mm": 148.59,
-      "placed_height_mm": 224.9423888888889,
-      "aspect_ratio_error_percent": 0.02561149607935853,
-      "minimum_font_pt": 5.128686466666667,
-      "preview_mean_absolute_rgb_error": 2.5860178576927813,
-      "google_docs_preview_dpi": 231.25565731274895
+      "placed_width_mm": 128.27,
+      "placed_height_mm": 225.29755555555556,
+      "aspect_ratio_error_percent": 0.004499273022195993,
+      "minimum_font_pt": 5.127461609195402,
+      "preview_mean_absolute_rgb_error": 2.473308687553602,
+      "google_docs_preview_dpi": 230.89108910891085
     },
     {
       "figure": "Figure_3",
       "placed_width_mm": 152.4,
-      "placed_height_mm": 225.08308333333332,
-      "aspect_ratio_error_percent": 0.06561394808031196,
-      "minimum_font_pt": 5.073594091530055,
-      "preview_mean_absolute_rgb_error": 1.596288639745671,
+      "placed_height_mm": 225.19133333333335,
+      "aspect_ratio_error_percent": 0.01751217369343472,
+      "minimum_font_pt": 5.076034153005464,
+      "preview_mean_absolute_rgb_error": 1.8211703389926046,
       "google_docs_preview_dpi": 231.0
     },
     {
       "figure": "Figure_4",
       "placed_width_mm": 165.1,
-      "placed_height_mm": 163.068,
-      "aspect_ratio_error_percent": -0.04170039492727984,
+      "placed_height_mm": 169.06238888888888,
+      "aspect_ratio_error_percent": -0.03690287904891676,
       "minimum_font_pt": 5.5,
-      "preview_mean_absolute_rgb_error": 0.9290312261735493,
-      "google_docs_preview_dpi": 314.9532710280373
+      "preview_mean_absolute_rgb_error": 1.0879599609375,
+      "google_docs_preview_dpi": 307.6923076923077
     },
     {
       "figure": "Figure_S1",
@@ -298,39 +298,41 @@
     }
   ],
   "submission_files": "Use original 600 dpi PNG/TIFF or editable PDF/SVG, not Google Docs previews.",
-  "repository_checks": {
-    "python": "3.12.14",
-    "unittest_total": 50,
-    "unittest_passed": 44,
-    "unittest_skipped": 6,
-    "skip_reason": "Six integration checks need separately acquired external H5AD caches.",
-    "executed_figure_notebooks": [
-      {
-        "figure": "2",
-        "notebook": "notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb",
-        "status": "pass"
-      },
-      {
-        "figure": "3",
-        "notebook": "notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb",
-        "status": "pass"
-      },
-      {
-        "figure": "5",
-        "notebook": "notebooks/final_figures/figure_05_donor_transfer.ipynb",
-        "status": "pass"
-      },
-      {
-        "figure": "S8",
-        "notebook": "notebooks/final_figures/figure_s08_controlled_b004_annotation.ipynb",
-        "status": "pass"
-      },
-      {
-        "figure": "S10",
-        "notebook": "notebooks/final_figures/figure_s10_paired_representations.ipynb",
-        "status": "pass"
-      }
+  "manuscript_scope": {
+    "status": "pass",
+    "changed_captions": [
+      "2",
+      "3",
+      "4"
     ],
+    "only_prose_change": "BioRender attribution added to each workflow caption",
+    "other_paragraph_text_unchanged": true,
+    "baseline_sha256": "a6bd2cf3cb4c3a478d17aac57d085e81c82f66aaeeb5aabf9015d8b10df853ec",
+    "updated_sha256": "3039b4aae7c4c92369fd5b92ae77636d5b17a0cd0b25a18d8bbbd8147715f823"
+  },
+  "validation": {
+    "unit_tests_passed": 44,
+    "external_h5ad_checks_skipped": 6,
+    "executed_current_notebooks": [
+      "figure_02_clustering_method_benchmark",
+      "figure_03_llm_annotation_benchmark"
+    ],
+    "frozen_replay": {
+      "status": "pass",
+      "frozen_input_files": 79,
+      "approved_images": 17,
+      "figure_2_regional_values": 64,
+      "figure_2_celltype_values": 160,
+      "figure_3_method_model_maps": 16,
+      "spatial_window_cells": [
+        1086,
+        915
+      ],
+      "paired_representation_comparisons": 16,
+      "new_model_calls": 0,
+      "new_fits": 0,
+      "network_access": false
+    },
     "canonical_artwork_checks": 17,
     "current_notebook_preview_checks": 17
   }

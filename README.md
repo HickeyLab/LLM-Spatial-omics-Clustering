@@ -1,6 +1,6 @@
 # Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
 
-The notebook index, plotting entry points and table labels follow the manuscript inventory checked on October 31, 2026. Current artwork is in [figures/manuscript](figures/manuscript/README.md). The [publication exports](figures/publication) provide 600 dpi PNG/TIFF and editable PDF/SVG files, with [design and placement guidance](docs/publication_figure_design.md). Figure 3A follows the latest manuscript workflow and Figure 3E describes its existing reference-selected values accurately.
+The notebook index, plotting entry points and table labels follow the manuscript inventory checked on October 31, 2026. Current artwork is in [figures/manuscript](figures/manuscript/README.md). The [publication exports](figures/publication) provide 600 dpi PNG/TIFF and editable PDF/SVG files, with [design and placement guidance](docs/publication_figure_design.md). Figures 2A, 3A and 4A use the author's original BioRender workflows with editable print-size labels. Figure 3A retains the latest optimization steps, and Figure 3E describes its existing reference-selected values accurately.
 
 ## Current figure notebooks
 

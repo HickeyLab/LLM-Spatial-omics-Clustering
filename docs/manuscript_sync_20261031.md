@@ -3,6 +3,9 @@
 This records the earlier source-tree synchronization in PR #24. The subsequent
 [publication design pass](publication_figure_design.md) replaces the artwork
 and corrects the Figure 3E heading and caption while preserving its values.
+The later BioRender workflow restoration updates Figures 2A, 3A and 4A, their
+current previews and caption credits. See `biorender_workflow_verification.json`
+for the live-document comparison and checks.
 
 This source-tree synchronization aligns current notebook entry points, table display labels, plotting scripts, previews and documentation with the checked manuscript export. It leaves the manuscript and all 17 approved native figure images unchanged.
 

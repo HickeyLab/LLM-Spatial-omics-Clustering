@@ -305,12 +305,12 @@
     },
     {
       "path": "data/frozen/manuscript_replay/captions.json",
-      "sha256": "55759462028ce9eefd35bc49ab5499309452521d3bd53638fdf40ebf8c517f98",
-      "bytes": 20217,
+      "sha256": "bb54e5250f5c4a374b95eb9f5bd14157654f65858fe68a44a1d74c3ee2f8abbe",
+      "bytes": 20406,
       "release_path": null,
       "source_kind": "checked_manuscript_snapshot",
-      "snapshot_sha256": "6f3bff68c9e275f63e59b210ef883214170c53130bee8693d2c31502bc0e6f98",
-      "source": "Current manuscript figure-caption formatting and approved Figure 3E metric wording, 2026-10-31."
+      "snapshot_sha256": "3039b4aae7c4c92369fd5b92ae77636d5b17a0cd0b25a18d8bbbd8147715f823",
+      "source": "Checked live manuscript export with BioRender workflow credits and approved Figure 3E metric wording, 2026-10-31."
     },
     {
       "path": "data/frozen/manuscript_replay/figure_s09/selective_risk.csv",

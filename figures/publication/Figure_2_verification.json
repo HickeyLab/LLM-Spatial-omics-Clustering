@@ -1,17 +1,33 @@
 {
   "figure": "Figure_2",
   "width_mm": 165.1,
-  "height_mm": 250,
-  "minimum_font_pt": 5.7,
+  "height_mm": 290,
+  "minimum_font_pt": 6.6,
   "font_family": "Arial",
-  "minimum_placement_width_mm": 144.825,
+  "minimum_placement_width_mm": 125.076,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    5905
+    6851
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "biorender_workflow": [
+    {
+      "clip_points": [
+        13,
+        60,
+        672,
+        168
+      ],
+      "rect_mm": [
+        3,
+        11,
+        159,
+        26.057663125948405
+      ]
+    }
+  ],
   "dense_point_layers_native_dpi": 610,
   "inputs": {
     "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
@@ -21,27 +37,29 @@
     "data/frozen/publication_design/figure2_recall.csv": "50f090dfadd242f2cd0c7ffe95cad48370c2576138b06e01ac4121ccfbeec5b8",
     "data/frozen/publication_design/figure2_marker_summaries.csv": "808bfefb1c4102894a08127d888d3b8f583973bc0526c923a90374191f44501d",
     "data/frozen/publication_design/figure2_spatial_examples.csv": "be796a4c74928de582a33df8e0e39049016e6def7db0256fbba14525c0f48d66",
-    "data/frozen/publication_design/figure2_spatial_windows.csv": "b21837dd4cfd71339e6ab9d3adbbdf8a89618b7edacf7bcd7f8c4d43a3eb4003"
+    "data/frozen/publication_design/figure2_spatial_windows.csv": "b21837dd4cfd71339e6ab9d3adbbdf8a89618b7edacf7bcd7f8c4d43a3eb4003",
+    "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
-    "Place at least 144.825 mm wide. Suggested manuscript width: 148.59 mm (5.85 in), height 225 mm."
+    "Original BioRender workflow restored with editable text. Place at least 125.076 mm wide. Suggested manuscript width: 128.27 mm (5.05 in)."
   ],
   "files": {
     "Figure_2.svg": {
-      "sha256": "76d4bceb1152c8af7cbd2d07dc4eeb0061f33871cece093be81a6db4867a22f0",
-      "bytes": 4924206
+      "sha256": "fee52acb181bfae2fa9e65d673db6cc7fc0dd6b738e6c08718d8a130b474866c",
+      "bytes": 6519110
     },
     "Figure_2.pdf": {
-      "sha256": "82f74c55a04e1d132be4765338ba15a5251547e56e7d44ada06cae084a9a475f",
-      "bytes": 3265031
+      "sha256": "048851a77ba3671a914b9a555eafdaf571a3bd6e7c6e37be0d6b8848d7e7fa3f",
+      "bytes": 3952145
     },
     "Figure_2.png": {
-      "sha256": "0049cf83122bf1420bb16f9ada6ab7085505dc6e585be1400a2bdd4af04c9cc8",
-      "bytes": 4335210
+      "sha256": "924603d3381eace6710ded797d852703911924e6050a104513b86d2daba93729",
+      "bytes": 3814269
     },
     "Figure_2.tiff": {
-      "sha256": "f16ef733e7c99d46cf72c48eeeeec28f4ffb9ee81d97ab274ba859d4a57ce7c2",
-      "bytes": 5676174
+      "sha256": "b93b77f313a1e448c34bfcce999af9c137a61f8f5020f9929aad56270e878ae9",
+      "bytes": 5862518
     }
   }
 }
