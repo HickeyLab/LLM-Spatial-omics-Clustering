@@ -1,18 +1,36 @@
 {
   "figure": "Figure_S3A",
   "width_mm": 165.1,
-  "height_mm": 84,
+  "height_mm": 66.23080902777778,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    1984
+    1564
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 84,
+    "height_mm": 66.23080902777778,
+    "height_reduction_percent": 21.153798776455023,
+    "vacant_bands_removed_mm": [
+      [
+        6.040000000000007,
+        10.5
+      ],
+      [
+        63.52639236111111,
+        68.35013888888889
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
   "dense_point_layers_native_dpi": null,
   "inputs": {
     "data/frozen/publication_design/figureS3_population.csv": "468231d1c8527250b395239fa130f24ad67f6c05d297e32dbd74049fa540de56"
@@ -20,20 +38,20 @@
   "notes": [],
   "files": {
     "Figure_S3A.svg": {
-      "sha256": "6f0e2081b28f73a21f1875613566541296ab8ef396b8fb1912162f7ba9cf4f6e",
-      "bytes": 51516
+      "sha256": "d4d7184077750b2b1b7db8de90f14d7961339a6c1a9d711938f76f47c0cf9983",
+      "bytes": 51495
     },
     "Figure_S3A.pdf": {
-      "sha256": "095c93cfae981150fedb6360c488e8d0227447c5f8af8f8d2ea2756c50ff467e",
-      "bytes": 42948
+      "sha256": "e3dd36355ef530595ce9035da8d0be4e608c6c8f8b2539728575a2d5e9ececbe",
+      "bytes": 42958
     },
     "Figure_S3A.png": {
-      "sha256": "b8c85c7fabf7f832e8e6538ea02c76a866d4d3f7a5ab12c7adf217ae7238d96a",
-      "bytes": 244424
+      "sha256": "192024de7e5632f5e1cc4751f67b0115d1d2848e4a260b5e8d002463351fb57b",
+      "bytes": 237753
     },
     "Figure_S3A.tiff": {
-      "sha256": "31d144190e258463dd5fc1b1f126f0c551a4a6b34f5d3aea9a1615f288aac3ce",
-      "bytes": 357386
+      "sha256": "cbcf4a2d0a65671a8ddbeed060338a6267fd6194697c39aa0bb30c38a54dc826",
+      "bytes": 322358
     }
   }
 }

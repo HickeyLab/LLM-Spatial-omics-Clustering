@@ -1,18 +1,36 @@
 {
   "figure": "Figure_S3B",
   "width_mm": 165.1,
-  "height_mm": 88,
+  "height_mm": 61.94327068710028,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    2078
+    1463
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 88,
+    "height_mm": 61.94327068710028,
+    "height_reduction_percent": 29.609919673749683,
+    "vacant_bands_removed_mm": [
+      [
+        6.039999999999993,
+        13.499999999999996
+      ],
+      [
+        18.785999999999998,
+        21.86499999999999
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
   "dense_point_layers_native_dpi": null,
   "inputs": {
     "data/frozen/publication_design/figureS3_regional_changes.csv": "6bc88dfb3fcf59500dd93ac239ca3f6d7190fbe49eafd9cfb8d5d31bdcae8126",
@@ -21,20 +39,20 @@
   "notes": [],
   "files": {
     "Figure_S3B.svg": {
-      "sha256": "dacf210085e77d1064b0fbaba9216257dbb29c22a13d48eb3c63a8018a56fb92",
-      "bytes": 37203
+      "sha256": "5e1e60701c71700516fb5e201787eea5dca25dd30b5e43b01a3a2c51b01dec53",
+      "bytes": 37170
     },
     "Figure_S3B.pdf": {
-      "sha256": "eb4788bceb83a350c492888c4812cd993a62caecc9f7a65340bb8932ba2963ab",
-      "bytes": 38666
+      "sha256": "5fd0a5173e6086d9bea2e69701d451430680ef4469a1b9fb979322b1223f4528",
+      "bytes": 38658
     },
     "Figure_S3B.png": {
-      "sha256": "ac0e6c464a66673b9aea6a2e4c158a4e0d3474b7e75424cf8447c800874da464",
-      "bytes": 272630
+      "sha256": "12f8c3d4fa680257d0d0a22b4d45ba5795dec8997eff740d2284e41b87278a51",
+      "bytes": 260472
     },
     "Figure_S3B.tiff": {
-      "sha256": "dabd27f783f2af4718a271588f1799fe4cc0cefba23996b0f48a19733b9e4589",
-      "bytes": 392256
+      "sha256": "44e4194e1e5a03e7790d598398c26f164db9e2e63c42ec91b8912f86334a92e4",
+      "bytes": 341244
     }
   }
 }
