@@ -217,12 +217,6 @@ def figure_s4(out):
         a.yaxis.set_major_locator(MaxNLocator(2, integer=True))
         a.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v/1000:g}k" if v >= 1000 else f"{v:g}"))
     panel(f,"D",3,155)
-    a=axes(f,14,168,32,44)
-    p=ROOT/"data/frozen/figure_s03/flowsom_k_sweep_purity.csv";s=pd.read_csv(p)
-    # The pinned historical table carries the original exploratory sweep.
-    a.plot(s.iloc[:,0],s.iloc[:,2]*100,"o-",color="black",ms=2.5,lw=.7)
-    a.set(xlabel="FlowSOM cluster count",ylabel="Purity (%)",xticks=[0,100,200,300]);grid(a)
-    panel(f,"E",53,155)
     raw=csv("figureS5_fixed_metrics.csv");raw=raw[raw.noise_policy.eq("exclude")&raw.region.ne("ALL")]
     cm=csv("figureS4_cluster_metrics.csv");ct=csv("figureS4_celltype_metrics.csv")
     specs=[("ari","ARI",raw,"#222222"),
@@ -231,9 +225,9 @@ def figure_s4(out):
            ("f1","F1 score",ct,None),("recall","Recall",ct,None),
            ("purity_percent","Cluster purity (%)",cm,None)]
     for i,(metric,title,frame,color) in enumerate(specs):
-        x=63+(i%3)*36;y=174+(i//3)*38
-        text(f,x+12.5,y-8,title,size=5.5,ha="center")
-        a=axes(f,x,y,25,16)
+        x=15+(i%3)*53;y=174+(i//3)*38
+        text(f,x+19,y-8,title,size=5.5,ha="center")
+        a=axes(f,x,y,38,16)
         vals=[frame[frame.method.eq(m)][metric].to_numpy() for m in ["leiden","flowsom","spatialsort","pixie"]]
         a.boxplot(vals,positions=range(4),widths=.6,showfliers=False,patch_artist=True,
                   boxprops={"facecolor":"white","linewidth":.5},medianprops={"color":"black","linewidth":.6},whiskerprops={"linewidth":.5},capprops={"linewidth":.5})
@@ -244,7 +238,7 @@ def figure_s4(out):
         a.set(xticks=range(4),xticklabels=METHODS,xlim=(-.5,3.5))
         plt.setp(a.get_xticklabels(),rotation=50,ha="right",rotation_mode="anchor")
     names=["reference_plot_cells.csv.gz","figureS4_marker_summaries.csv","figureS4_compositions.csv.gz","figureS4_cluster_metrics.csv","figureS4_celltype_metrics.csv","figureS5_fixed_metrics.csv"]
-    return finish(f,"Figure_S4",out,{**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."])
+    return finish(f,"Figure_S4",out,inputs(*names),notes=["Historical FlowSOM cluster-count sweep archived; former metric panel E is now D. Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."])
 
 
 def figure_3(out):

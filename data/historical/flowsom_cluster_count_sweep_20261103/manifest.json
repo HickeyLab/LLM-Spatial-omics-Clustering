@@ -1,0 +1,77 @@
+{
+  "schema": "manuscript.historical_experiment.v1",
+  "experiment_id": 4,
+  "status": "archived",
+  "retired_from_active_manuscript": "2026-11-03",
+  "source_commit": "52385e24056ed2d127ca3094d6e095d43faf9ab9",
+  "reason": "Author-approved removal of the historical FlowSOM cluster-count sweep from Figure S4; it used a different preprocessing/SOM protocol from the primary partition.",
+  "release_unchanged": "revision-2026-10-30-v1",
+  "files": [
+    {
+      "source_path": "data/frozen/figure_s03/flowsom_k_sweep_purity.csv",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/data/frozen/figure_s03/flowsom_k_sweep_purity.csv",
+      "sha256": "723dfd9508fc1a9bcb700ba77cf37f04de18016667e3768807f600549add0338",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/data/frozen/figure_s03/flowsom_k_sweep_purity.csv"
+    },
+    {
+      "source_path": "configs/figure_s03.yaml",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/configs/figure_s03.yaml",
+      "sha256": "62c245075190d96f4ca6ec03adda67300b7813660487a6c603c9978d1611abac",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/configs/figure_s03.yaml"
+    },
+    {
+      "source_path": "configs/manuscript_inventory.json",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/configs/manuscript_inventory.json",
+      "sha256": "173f29a9d547dd2ca07676206b780752785b03a4a1a00e948dc68dd06f2e1cb4",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/configs/manuscript_inventory.json"
+    },
+    {
+      "source_path": "scripts/render_publication_figures.py",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/scripts/render_publication_figures.py",
+      "sha256": "6bc198ee2c3b0b05d03ace16ccba25769f24473006f5c72f3f92b8b311c6f58f",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/scripts/render_publication_figures.py"
+    },
+    {
+      "source_path": "scripts/publication_figure_design.py",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/scripts/publication_figure_design.py",
+      "sha256": "1f58c57c13692cf5d2eb87b5a1168b8ab514fcfda97d80f839880155ee329f41",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/scripts/publication_figure_design.py"
+    },
+    {
+      "source_path": "docs/figure_s03.md",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/docs/figure_s03.md",
+      "sha256": "fc07044322048c51c90cc1bc126b692cbab8369cf9f55ccecf4b44f0ab6a1a51",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/docs/figure_s03.md"
+    },
+    {
+      "source_path": "figures/publication/Figure_S4.png",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/Figure_S4.png",
+      "sha256": "a1b82d021b37414fb0ece6174b14ccf0f8312e1f8e296eb18b89073601ed4447",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/figures/publication/Figure_S4.png"
+    },
+    {
+      "source_path": "figures/publication/Figure_S4.tiff",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/Figure_S4.tiff",
+      "sha256": "be261d9e1c585ee5f635f45636bd1b67f0cad29837ca3609ad6a843434c70f85",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/figures/publication/Figure_S4.tiff"
+    },
+    {
+      "source_path": "figures/publication/Figure_S4.pdf",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/Figure_S4.pdf",
+      "sha256": "115c58aebcf6b19345bb41ab0b42860ca6cd35dbc57bdedae92ccaccdcbb10ce",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/figures/publication/Figure_S4.pdf"
+    },
+    {
+      "source_path": "figures/publication/Figure_S4.svg",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/Figure_S4.svg",
+      "sha256": "81ce3a7d743ebc7ffafc06fe808d504a2d4e96fd0005f7f8e415a3ad16ab2822",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/figures/publication/Figure_S4.svg"
+    },
+    {
+      "source_path": "figures/publication/Figure_S4_verification.json",
+      "archive_path": "data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/Figure_S4_verification.json",
+      "sha256": "6c651e48b90d626e3be7778b4e8731a3b6f6afb9f2296464ab251ee3e6fd538f",
+      "source_url": "https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/52385e24056ed2d127ca3094d6e095d43faf9ab9/figures/publication/Figure_S4_verification.json"
+    }
+  ]
+}

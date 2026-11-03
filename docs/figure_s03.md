@@ -1,5 +1,7 @@
 > Current manuscript figure: S4. Legacy `figure_s03` module/config paths remain import-compatible. Use `notebooks/supplementary/figure_s04_reference_and_clustering_diagnostics.ipynb` for the supporting runner.
 
+> Historical experiment 4 was retired from the active manuscript on November 3, 2026. The current Figure S4 has panels A–D; its former E is now D. This reconstruction retains the original sweep and old labels for historical replay only. See the [checksum-indexed archive](../data/historical/flowsom_cluster_count_sweep_20261103/README.md).
+
 # Supplementary Figure S4 panel-level reproducibility contract
 
 This contract supports the current Supplementary Figure S4 panel set. The

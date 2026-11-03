@@ -10,7 +10,7 @@
 | Figure S1 | A–C | [`figure_s01_clustering_metrics.ipynb`](figure_s01_clustering_metrics.ipynb) |
 | Figure S2 | A–B | [`figure_s02_spatial_celltypes.ipynb`](figure_s02_spatial_celltypes.ipynb) |
 | Figure S3 | A–C | [`figure_s03_matching_and_compensation.ipynb`](figure_s03_matching_and_compensation.ipynb) |
-| Figure S4 | A–E | [`figure_s04_reference_and_clustering_diagnostics.ipynb`](figure_s04_reference_and_clustering_diagnostics.ipynb) |
+| Figure S4 | A–D | [`figure_s04_reference_and_clustering_diagnostics.ipynb`](figure_s04_reference_and_clustering_diagnostics.ipynb) |
 | Figure S5 | A–B | [`figure_s05_common_marker_sensitivity.ipynb`](figure_s05_common_marker_sensitivity.ipynb) |
 | Figure S6 | A–B | [`figure_s06_annotation_diagnostics.ipynb`](figure_s06_annotation_diagnostics.ipynb) |
 | Figure S7 | Unlettered | [`figure_s07_agreement_decomposition.ipynb`](figure_s07_agreement_decomposition.ipynb) |
