@@ -41,6 +41,7 @@ class ManuscriptAlignmentTests(unittest.TestCase):
         inventory = manuscript.inventory()['figures']
         self.assertEqual(inventory['3']['panels'], list('ABCDEFGH'))
         self.assertEqual(inventory['4']['panels'], list('ABCDE'))
+        self.assertEqual(inventory['S4']['panels'], list('ABCD'))
         for record in inventory.values():
             notebook = json.loads((ROOT / record['notebook']).read_text())
             for cell in notebook['cells']:

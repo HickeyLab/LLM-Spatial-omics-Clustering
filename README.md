@@ -14,7 +14,7 @@ The notebook index, plotting entry points and table labels follow the manuscript
 | Figure S1 | A–C | [`figure_s01_clustering_metrics.ipynb`](notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
 | Figure S2 | A–B | [`figure_s02_spatial_celltypes.ipynb`](notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
 | Figure S3 | A–C | [`figure_s03_matching_and_compensation.ipynb`](notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
-| Figure S4 | A–E | [`figure_s04_reference_and_clustering_diagnostics.ipynb`](notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
+| Figure S4 | A–D | [`figure_s04_reference_and_clustering_diagnostics.ipynb`](notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
 | Figure S5 | A–B | [`figure_s05_common_marker_sensitivity.ipynb`](notebooks/final_figures/figure_s05_common_marker_sensitivity.ipynb) |
 | Figure S6 | A–B | [`figure_s06_annotation_diagnostics.ipynb`](notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb) |
 | Figure S7 | Unlettered | [`figure_s07_agreement_decomposition.ipynb`](notebooks/final_figures/figure_s07_agreement_decomposition.ipynb) |
@@ -56,6 +56,8 @@ Figures 4, S1 and S2 retain their existing analytical notebooks and input requir
 Earlier analytical reconstructions are preserved under [notebooks/historical_reconstructions](notebooks/historical_reconstructions/README.md). Their panel arrangements or metrics can differ from the current manuscript. They are not invoked by the current offline replay.
 
 ## Frozen revision release
+
+The [historical FlowSOM sweep retirement](docs/flowsom_sweep_retirement_20261103.md) removes its panel from active Figure S4 while preserving checksum-indexed historical evidence. The [combined experiments 7/9/14 protocol](docs/revision/combined_annotation47_protocol.md) is planned and execution-disabled; it has made no annotation calls and will not start automatically when SpatialSort finishes.
 
 The [October 30 revision release](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/releases/tag/revision-2026-10-30-v1) contains frozen predictions, available request and failure records, settings, analysis source and supporting tables in seven hash-manifested archives. The [release guide](docs/revision_public_deposition_20261030.md) describes retrieval and protocol boundaries. The immutable release retains its original filenames. This source-tree update supplies current navigation, numbering and omitted plotting entry points without rewriting that release.
 

@@ -1,0 +1,282 @@
+{
+  "schema": "manuscript.combined_annotation47.v1",
+  "protocol_id": "B004-combined-7-9-14-20261103-v1",
+  "status": "planned_not_executed",
+  "prepared_date": "2026-11-03",
+  "authorization": "Prepare only. No annotation calls, pilots, job submissions or automatic launch. A separate launch instruction is required after SpatialSort completion.",
+  "experiment_ids": [
+    7,
+    9,
+    14
+  ],
+  "n_cells": 220082,
+  "n_markers": 47,
+  "markers": [
+    "CD45RO",
+    "CD56",
+    "CD15",
+    "CD163",
+    "MUC2",
+    "CD34",
+    "CD36",
+    "aDefensin5",
+    "CD49a",
+    "HLA-DR",
+    "CD38",
+    "CollagenIV",
+    "CD4",
+    "CD138",
+    "CD44",
+    "Vimentin",
+    "CD66",
+    "Podoplanin",
+    "CHGA",
+    "CD3",
+    "SOX9",
+    "CD161",
+    "Synaptophysin",
+    "CD57",
+    "ITLN1",
+    "CD127",
+    "CD45",
+    "CD49f",
+    "aSMA",
+    "Cytokeratin",
+    "CD8",
+    "CD19",
+    "BCL2",
+    "CD90",
+    "CD21",
+    "CD7",
+    "CD11c",
+    "Ki67",
+    "CD68",
+    "MUC1",
+    "CD206",
+    "CD16",
+    "CD117",
+    "CD69",
+    "CD31",
+    "CD123",
+    "CDX2"
+  ],
+  "ontology": [
+    "B",
+    "CD36 high Endothelial",
+    "CD36 low Endothelial",
+    "CD4+ T",
+    "CD49a+ Smooth muscle",
+    "CD57+ Epithelial",
+    "CD66+ Epithelial",
+    "CD8+ T",
+    "Cycling TA",
+    "DC",
+    "Epithelial",
+    "Goblet",
+    "ICC",
+    "ITLN+ Epithelial",
+    "M1 Macrophage",
+    "M2 Macrophage",
+    "MUC1+ Epithelial",
+    "NK",
+    "Nerve",
+    "Neuroendocrine",
+    "Neutrophil",
+    "Noise",
+    "PDPN+ Stromal",
+    "Paneth",
+    "Plasma",
+    "Smooth muscle",
+    "Stromal",
+    "TA"
+  ],
+  "methods": [
+    "leiden",
+    "flowsom",
+    "spatialsort",
+    "pixie_tiff"
+  ],
+  "model_families": [
+    "openai",
+    "anthropic",
+    "google",
+    "deepseek"
+  ],
+  "model_policy": "Updated frontier versions from these four families. Verify and freeze exact model IDs, provider routes, supported high-reasoning setting, token budgets and current prices before any separate launch. High effort is model-specific, not equal compute across providers.",
+  "model_bindings": {
+    "openai": {
+      "model_id": null,
+      "provider": null,
+      "reasoning_setting": null,
+      "max_output_tokens": null,
+      "reasoning_token_budget": null,
+      "prices": null,
+      "verified_at": null,
+      "status": "unbound"
+    },
+    "anthropic": {
+      "model_id": null,
+      "provider": null,
+      "reasoning_setting": null,
+      "max_output_tokens": null,
+      "reasoning_token_budget": null,
+      "prices": null,
+      "verified_at": null,
+      "status": "unbound"
+    },
+    "google": {
+      "model_id": null,
+      "provider": null,
+      "reasoning_setting": null,
+      "max_output_tokens": null,
+      "reasoning_token_budget": null,
+      "prices": null,
+      "verified_at": null,
+      "status": "unbound"
+    },
+    "deepseek": {
+      "model_id": null,
+      "provider": null,
+      "reasoning_setting": null,
+      "max_output_tokens": null,
+      "reasoning_token_budget": null,
+      "prices": null,
+      "verified_at": null,
+      "status": "unbound"
+    }
+  },
+  "partitions": {
+    "flowsom": {
+      "identity": "B004_flowsom47_fullpass3_seed42_20261102_v1",
+      "manifest_sha256": "f8b8a11357aa14a595002737598a40cd06555f2510ca4351b31258b6087db901",
+      "assignments_sha256": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+      "seed": 42,
+      "full_passes": 3,
+      "occupied_clusters": 299,
+      "binding_status": "frozen_local_bundle; requires exact admission before launch"
+    },
+    "spatialsort": {
+      "identity": "B004-marker47-spatialsort-dmh5-longer-chain-20261102-v1",
+      "primary_seed": 42,
+      "point_estimate_sweep": 100,
+      "dmh_iter": 5,
+      "sensitivity_seed": 43,
+      "require_both_chains_complete": true,
+      "assignments_sha256": null,
+      "manifest_sha256": null,
+      "occupied_clusters": null,
+      "binding_status": "awaiting_final_outputs"
+    },
+    "leiden": {
+      "identity": "unchanged frozen main B004 Leiden assignments",
+      "binding_status": "frozen_existing",
+      "source_manifest": "data/frozen/v3_k300_assignments/manifest.json",
+      "assignments_path": "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz",
+      "assignments_sha256": "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18",
+      "gzip_sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+      "occupied_clusters": 300
+    },
+    "pixie_tiff": {
+      "identity": "unchanged frozen main B004 PIXIE assignments",
+      "binding_status": "frozen_existing",
+      "source_manifest": "data/frozen/v3_k300_assignments/manifest.json",
+      "assignments_path": "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz",
+      "assignments_sha256": "7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6",
+      "gzip_sha256": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805",
+      "occupied_clusters": 300
+    }
+  },
+  "key_columns": [
+    "File_ID",
+    "ID"
+  ],
+  "expected_cell_key_sha256": "7fced5df4b9ff6814059e1786a32154a1b871fe5d2bb4d90d63f2c87fd2b351a",
+  "arms": [
+    "all_means",
+    "all_means_fractions"
+  ],
+  "repeats": 5,
+  "repeat_seeds_where_supported": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "batch_size": 75,
+  "logical_annotation_sets": 160,
+  "evidence": {
+    "source": "Deposited processed 45-marker H5AD X plus CD123 and CDX2 observation measurements, in the frozen 47-marker order. Do not substitute the RobustScaler SOM feature matrix.",
+    "means": "Within-cluster mean of arcsinh(processed expression/5), standardized with marker center and SD fitted using only cells in the four existing B004 training regions.",
+    "fractions": "Within-cluster fraction of deposited processed marker values strictly greater than zero, computed before transformation/standardization; not validated biological positivity.",
+    "encoding": "Round standardized means and fractions to integer thousandths; divide by 1000. Preserve identical mean values within each pair.",
+    "controls": "Same cell memberships, marker order, cluster order, prompt, ontology, batch boundaries, model/provider, decoding settings and parser within pairs. Only the fractions matrix is added.",
+    "excluded_inputs": [
+      "reference labels",
+      "reference-assisted retrieval",
+      "method names",
+      "neighborhood summaries",
+      "tools",
+      "web"
+    ],
+    "preprocessing_selection": "No new outcome-driven marker, model, cluster, repeat or checkpoint selection."
+  },
+  "split": {
+    "2e65eeef2dd18bee2a0baf1cec6d35a1": "train",
+    "5318485b16983482401c3be24b6c42ad": "calibration",
+    "63d000170e475af142f6e8673de5eb0f": "train",
+    "768b7adb649959b6a4e354867595032d": "test",
+    "76d3efd17b6fc83aaac13e961824c5ae": "train",
+    "8da8f27977d946b8c912d42c8827b55c": "test",
+    "ae422532f260b3d6fc662aae69b05d33": "train",
+    "dceadbb36871071f30c308ca091fbdc8": "calibration"
+  },
+  "primary_population": "The two existing B004 test regions; query every occupied cluster in each full-cohort partition. Preserve all reference-Noise cells.",
+  "primary_endpoint": "Equal-weighted mean of the two test-region cell-level reference-agreement values, retaining missing/invalid assignments as errors in each full planned denominator.",
+  "contrast": "all_means_fractions minus all_means, paired by method, model, repeat, batch, cluster and region.",
+  "reporting": {
+    "metrics": [
+      "reference agreement",
+      "fixed-28-label macro-F1 with absent classes scored zero",
+      "cell and cluster delivery coverage",
+      "label changes on valid pairs",
+      "missing-prediction agreement bounds",
+      "repeat consistency",
+      "tokens and observed cost"
+    ],
+    "repeats": "Retain every planned repetition; report mean and sample SD. A failed response is never replaced by a favorable resample.",
+    "consistency": "Modal valid-label count divided by all five requested repetitions. Missing labels contribute no vote; no valid votes means abstention. Ties follow the frozen ontology order. Noise remains a cell-type output, not abstention.",
+    "noise_sensitivity": "Secondary exclusion removes only reference-Noise cells from scoring; do not filter them before fitting or summaries. Keep predicted Noise errors on retained cells.",
+    "interpretation": "Previously examined B004 data, one donor, transductive frozen clusters/profiles. Repetitions measure computational variation; no donor-generalization or calibrated-probability claim."
+  },
+  "run_order": "Five complete repeat blocks; keep each model-method-batch pair adjacent and choose first arm by SHA256(protocol_id|repeat|method|model|batch) parity.",
+  "sharing": {
+    "7": "The fractions arm supplies the updated full-marker benchmark.",
+    "9": "Use fresh repeated predictions from the two marker-only arms for consistency. Historical reference-assisted repeatability remains separate.",
+    "14": "Use matched arm pairs to estimate the fractions contrast.",
+    "accounting": "One physical call record and charge per unique request; reuse predictions only for analyses declared here. Never alias independent repetitions or biological conditions."
+  },
+  "response_policy": {
+    "format": "Exact JSON query-ID to allowed-label assignments; retain raw requests, responses, provider metadata and every attempt.",
+    "validation": "Every requested cluster exactly once, no extra IDs, duplicate IDs or labels outside the frozen ontology. Invalid or incomplete batches remain unresolved.",
+    "technical_retries": 2,
+    "retry_scope": "Only definitely pre-generation transport failures; never regenerate invalid annotation/format output. Ambiguous outcomes retain cost reservation and require reconciliation."
+  },
+  "execution": {
+    "enabled": false,
+    "state": "planned_not_executed",
+    "executor_entrypoint": null,
+    "automatic_launch": false,
+    "jobs_submitted": 0,
+    "annotation_calls": 0,
+    "spend_cap_usd": null,
+    "launch_authorization": null,
+    "required_before_launch": [
+      "Both SpatialSort chains verified at sweep 100 with expected outputs and hashes",
+      "All four frozen partition bundles, cell keys and 47-marker evidence admitted",
+      "Exact model/provider/reasoning/token/price bindings verified and frozen",
+      "Timestamped request-count and cost preflight with an explicitly approved total spending cap",
+      "Separate explicit user launch instruction after SpatialSort completion"
+    ]
+  }
+}

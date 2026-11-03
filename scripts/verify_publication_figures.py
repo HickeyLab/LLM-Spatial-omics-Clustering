@@ -24,7 +24,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 ORDER = ['5','1','2','3','4','S1','S2','S3A','S3B','S3C','S4','S5','S6','S7','S8','S9','S10']
 PANELS = {'1':'ABCDEF','2':'ABCDEFGHIJ','3':'ABCDEFGH','4':'ABCDE','5':'ABCD',
-          'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCDE',
+          'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCD',
           'S5':'AB','S6':'AB','S7':'','S8':'AB','S9':'ABCD','S10':'ABCD'}
 NS = {'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
       'a':'http://schemas.openxmlformats.org/drawingml/2006/main',

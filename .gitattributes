@@ -4,3 +4,7 @@ data/frozen/publication_design/** -text whitespace=cr-at-eol
 
 # Matplotlib writes native SVG path lines with trailing separator spaces.
 figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol
+
+# Historical copies retain the exact deposited/source bytes and SVG separators.
+data/historical/flowsom_cluster_count_sweep_20261103/** -text
+data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/*.svg linguist-generated=true whitespace=-blank-at-eol
