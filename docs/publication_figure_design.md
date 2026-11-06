@@ -1,5 +1,11 @@
 # Publication figure design
 
+This design record describes the retained artwork from before the November 6
+manuscript panel reductions. It is historical provenance where its panel
+references differ from the current [figure map](figure_map.md). The retained
+image files, native designs and frozen inputs are unchanged by the
+current documentation synchronization.
+
 All five main and ten supplementary figures are supplied as 17 native image
 sets because S3A, S3B and S3C are separate. The manuscript and current notebook
 previews use the same compositions. Whole-figure numbers and titles belong in

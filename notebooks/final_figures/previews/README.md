@@ -1,11 +1,25 @@
-# Current manuscript previews
+# Retained manuscript previews
 
-These 17 PNGs are byte-identical copies of the approved Figure 1–5 and S1–S10 artwork in `figures/manuscript/`. Figure S3 has three image parts. The publication design pass updates all 17 images. Figure 3A follows the latest manuscript workflow, and Figure 3E preserves its reference-selected values with the corrected metric heading. The [native exports](../../../figures/publication) include editable vectors and 600 dpi raster originals.
+These 17 PNGs are byte-identical copies of the retained Figure 1–5 and
+S1–S10 artwork in `figures/manuscript/`. Figure S3 has three image parts.
+They predate the current manuscript panel reductions. Use the
+[figure map](../../../docs/figure_map.md) and
+[table crosswalk](../../../docs/supplementary_table_numbering.md) for the
+November 6 display inventory, including Figure S11A and Table S9.
 
-```bash
-python scripts/update_reference_figure_labels.py --check
-```
+The retained Figure 3 artwork includes earlier reference-informed selection
+panels. Current Figure 3E is the spatial comparison formerly labeled H and
+uses each cluster's most frequent model label, with GPT, Claude, Gemini and
+DeepSeek tie order without reference labels. Retained Figure 2I marker
+profiles now support S11A, while the selected spatial windows are archived.
 
-The [manifest](../../../docs/reference_figure_label_changes.json) pins each source and target. Its current entries have no overlays. Previous screenshots, old table-number previews and their overlay coordinates are retained under `notebooks/historical_reconstructions/previews/` and `docs/archive/` for provenance. They do not define the current manuscript.
+The [native exports](../../../figures/publication) retain editable vectors
+and 600 dpi raster originals. The
+[manifest](../../../docs/reference_figure_label_changes.json) pins those
+source and target files. This documentation update changes no image bytes.
 
-Current Table S1–S8 notebooks display native manuscript cells and complete frozen companion data with current headings. Use `python scripts/render_current_tables.py` to export HTML previews. Tables S2A and S3 also have editable table renderers documented in the [table crosswalk](../../../docs/supplementary_table_numbering.md).
+`python scripts/update_reference_figure_labels.py --check` verifies the
+retained preview snapshot. `python scripts/render_current_tables.py` exports
+the earlier frozen native-cell table snapshot, whose labels can differ from
+the current manuscript crosswalk. Earlier screenshots and overlay coordinates
+remain under `notebooks/historical_reconstructions/previews/` and `docs/archive/`.

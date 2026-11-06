@@ -1,7 +1,24 @@
-# Figure 2 I/J source boundaries
+# Figure S11 marker profiles and archived spatial examples
 
-I uses stored processed marker summaries for modal-annotation CD8+ T groups, including reference-Noise cells. Dot size encodes the fraction of numerical marker values strictly above zero, and color is the group mean scaled per marker. The four-model modal tie order is GPT, Claude, Gemini, DeepSeek.
+Current Figure S11A retains the former Figure 2I marker profiles for CD8+ T
+groups assigned by each cluster's most frequent prediction across four LLMs.
+The tie order is GPT, Claude, Gemini and DeepSeek, without reference labels.
+Reference-Noise cells are included. Dot size encodes the fraction of stored
+processed values strictly above zero, and color shows group means scaled
+per marker across methods. These numerical fractions are not validated
+biological positivity, and the profiles do not independently validate labels.
 
-J uses the fixed descriptive low/high-agreement windows with 1,086 and 915 non-Noise cells. All zoom columns share cells and coordinates. These post-hoc examples were chosen using reference agreement, composition and density. They are not independent validation. They use the annotation-scoring vocabulary, including Paneth to Neuroendocrine, and retain predicted Noise.
+Verified sources are [marker summaries](../data/frozen/manuscript_replay/figure_02/panel_I_marker_summaries.csv)
+and [group counts](../data/frozen/manuscript_replay/figure_02/panel_I_selected_groups.csv).
+The original filenames remain unchanged.
 
-Marker rows, selected groups, all-cell locators, exact zoom membership, window counts and the calculation receipt are pinned under `data/frozen/manuscript_replay/figure_02/`. Run `scripts/verify_manuscript_replay.py` for numerical and modal-label checks, and `scripts/render_figure_02_ij_verified.py` for the portable rendering. It verifies pixels outside I/J are preserved in a separate exported Figure 2 copy.
+The former Figure 2J and S11B selected spatial windows are archived. Their
+1,086-cell and 915-cell examples used reference agreement, composition and
+density for selection and do not provide independent validation. Their
+membership, coordinates and calculation receipt remain under
+`data/frozen/manuscript_replay/figure_02/`.
+
+`scripts/render_figure_02_ij_verified.py` retains the earlier I/J layout for
+historical numerical verification. It does not regenerate the current
+Figure 2 A–H or a standalone public S11 image. The current
+[figure map](figure_map.md) identifies manuscript display labels.

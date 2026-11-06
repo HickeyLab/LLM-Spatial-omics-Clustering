@@ -1,19 +1,24 @@
 # Current supplementary table numbering
 
-Display labels follow the October 31 manuscript snapshot. Original companion filenames and bytes are preserved, including names that contain an earlier table number. The machine-readable mapping is [supplementary_table_crosswalk.json](../configs/supplementary_table_crosswalk.json).
+Display labels follow the manuscript checked on November 6, 2026. Original companion filenames and bytes are preserved, including names with earlier table numbers. The pinned [companion crosswalk](../configs/supplementary_table_crosswalk.json) records the retained released files. The current display map below also identifies the relocated Table S9.
 
 | Earlier identifier | Current manuscript label | Content |
 | --- | --- | --- |
 | S8 matching | S1 | REDSEA shared-object matching and retention |
 | S1 | S2A/B | Clustering settings and channel membership |
-| S2 | S3A–D | Retrospective marker-name-list parameter selection |
+| S2 | S3 archival entry | Retrospective marker-name export records, with the earlier numerical grids archived |
 | S3a–f | S4a–f | Controlled annotation and donor transfer |
 | S4a–j | S5a–j | Repeats, prompt controls, calibration, neighborhood and historical settings |
 | S6a–d | S6a–d | Paired marker representations |
 | S5 conditional comparisons | S7 | Conditional paired regional comparisons |
 | S7a–b | S8a–b | Label-mapping sensitivity |
+| Main Table 2 | S9 | Paired absolute B005/B006 agreement without and with labeled reference profiles, plus the equal-donor average |
 
-Native manuscript table cells and notes are frozen in `data/frozen/manuscript_replay/tables/current_tables.json`. The display notebooks show those cells before the complete companion records where both exist. Missing native tables are supplied as their released companions. Main Tables I and II are also retained in the native-cell snapshot, with no changes to their values.
+The current numerical supplementary tables are S1, S2A, S2B, S5i, S5j, S6a, S6c, S6d, S8a and S9. Other entries point to complete companion records or archived data. S6a and S6c remain in the manuscript, and their full CSVs are preserved.
+
+The retained [native-cell snapshot](../data/frozen/manuscript_replay/tables/current_tables.json) uses earlier display labels and includes grids no longer printed in the current manuscript. Its entry with label `2` contains the unchanged values now displayed as Table S9. Those values are also supported by [donor metrics](../data/frozen/manuscript_replay/tables/companions/S3b_donor_metrics.csv) and [equal-donor metrics](../data/frozen/manuscript_replay/tables/companions/S3c_equal_donor_metrics.csv), using `external_common5px`, `marker_only` and `retrieval` records. Main Table 1 retains the conventional classifier comparison.
+
+Table S7 retains all 60 conditional regional comparisons and their assumptions. Eight regional pairs cannot establish equivalence or general method superiority. These descriptive and conditional records remain available alongside the matching audit, label-mapping sensitivity and inference settings.
 
 ```bash
 python scripts/render_current_tables.py

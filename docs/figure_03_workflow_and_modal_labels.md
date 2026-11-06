@@ -1,25 +1,24 @@
-# Figure 3 workflow artwork and modal-label terminology
+# Figure 3 workflow and most-frequent-label summary
 
-Publication panel A uses the author's original BioRender illustrations:
-CODEX Features -> Clustering -> Cluster Features -> Optimization -> Annotation
--> Evaluation. The cluster-feature block contains the original JSON-style
-marker-name-list example, and the optimization block lists the original five
-threshold and marker-count parameters. Small raster text is replaced by
-editable Arial at a minimum of 5 pt at the recommended manuscript placement.
-See `publication_figure_design.md` and `configs/biorender_workflows.json` for
-the source export, crop geometry and reproduction instructions.
+The current manuscript has panels A–E. B reports cell-level reference agreement,
+C reports agreement relative to the fixed-cluster majority upper bound, and D
+reports cell-type agreement for the four LLMs applied to Leiden clusters.
+Current E is the spatial comparison previously labeled H. It shows reference
+labels, individual predictions and each cluster's most frequent model label.
+Ties use GPT, Claude, Gemini and DeepSeek order without reference labels.
 
-Panels B–H retain their frozen numerical values and definitions, including
-the approved Figure 3E post-hoc reference-selected agreement correction.
-The caption credits BioRender. The archived numerical marker-expression
-profiles and task context remain distinct from the retrospective
-marker-name-list exports in the source records. Restoring the original
-explanatory schematic does not alter those records or establish how the
-historical benchmark inputs were constructed.
+The earlier reference-informed selection panels are archived analyses. They
+remain in the frozen replay and retained artwork, but do not define current
+Figure 3E or performance on unlabeled data. Internal `modal_consensus` keys
+remain for compatibility and describe the most-frequent-label summary.
 
-Panel H retains descriptive modal predicted-label terminology. Underlying
-labels, deterministic tie rule and spatial windows are unchanged. Internal
-`modal_consensus` keys remain for compatibility.
+Panel A retains the author's BioRender schematic with its historical
+Cluster Features → Optimization steps. Those retrospective marker-name
+settings are distinct from the numerical marker-expression profiles and task
+context documented in the archived 21-label benchmark requests. Restoring
+the schematic did not establish the construction of those numerical inputs.
 
-`figure_03a_original_restoration_verification.json` documents an earlier
-pixel-preserving restoration and is historical, not a check of this redesign.
+The [figure map](figure_map.md) defines current display labels. The
+[reproduction guide](manuscript_reproduction.md) identifies retained earlier
+artwork and numerical replay boundaries. Earlier restoration and design
+verification files remain historical records.

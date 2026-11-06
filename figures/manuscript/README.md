@@ -1,9 +1,11 @@
-# Current manuscript figure artwork
+# Retained manuscript figure artwork
 
-The 15 manuscript figures occupy 17 PNG files because Figure S3 has separate
-A, B and C images. These are byte-identical copies of the native 600 dpi
-[publication exports](../publication). Editable PDF/SVG and lossless RGB TIFF
-versions accompany every figure there.
+These 17 PNG files retain the artwork from before the November 6 manuscript
+panel reductions. Figure S3 has separate A, B and C images. They are
+byte-identical copies of the retained 600 dpi [publication exports](../publication),
+with editable PDF/SVG and lossless RGB TIFF versions. Use the current
+[figure map](../../docs/figure_map.md) for manuscript display labels.
+This documentation update does not regenerate those image files.
 
 Figure numbers, figure-level titles and explanatory notes remain in manuscript
 captions. Descriptive subfigure titles are omitted. Distinguishing condition,
@@ -30,12 +32,16 @@ python scripts/render_manuscript_figures.py --check
 ```
 
 These commands use frozen numerical inputs and stored coordinates. They make
-no model calls and perform no fits. Figure 3A follows the latest manuscript's
-Cluster Features → Optimization workflow. Figure 3E preserves its original
-reference-selected values, with its heading and caption corrected with author
-approval. The numerical replot uses that same selected metric.
+no model calls and perform no fits. Retained Figure 3 artwork includes the
+earlier optimization schematic and reference-informed selection panels.
+Current Figure 3 has A–E, with its E corresponding to the former H spatial
+comparison. Each cluster's most frequent label uses GPT, Claude, Gemini and
+DeepSeek order for ties without reference labels. The former Figure 2I marker
+profiles are now S11A, with [numerical source](../../data/frozen/manuscript_replay/figure_02/panel_I_marker_summaries.csv)
+available. Earlier selected spatial windows are archived.
 
 The earlier title-cleanup snapshots and Figure 3A restoration audits remain
 historical provenance. Their former pixel-preservation claims describe those
-older operations, not this native publication redesign. Current notebook
-previews are exact copies of the files in this directory.
+older operations, not this native publication redesign. Retained notebook
+previews are exact copies of the files in this directory and do not define
+the current manuscript panel inventory.
