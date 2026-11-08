@@ -53,32 +53,32 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+    "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
     "data/frozen/publication_design/figureS4_marker_summaries.csv": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f",
-    "data/frozen/publication_design/figureS4_compositions.csv.gz": "60900811ab9659f20f126dfae5a87d04e6701cc6bcd0c027b1dadf7dcd112b6c",
-    "data/frozen/publication_design/figureS4_cluster_metrics.csv": "079153dab6679784fe3fd8e621826dea5ca1b3a9556d354d508c729e838a994a",
-    "data/frozen/publication_design/figureS4_celltype_metrics.csv": "0e540b211c6bf95aaafca17389bce8a265ea404b549e376343589f5a2ed8224f",
-    "data/frozen/publication_design/figureS5_fixed_metrics.csv": "33be582395354543969e9d1f26a0d2742ca02a9a63dc76a8076f54cef9e8e9ef"
+    "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
+    "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
+    "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
+    "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b"
   },
   "notes": [
     "Historical FlowSOM cluster-count sweep archived; former metric panel E is now D. Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
   ],
   "files": {
     "Figure_S4.svg": {
-      "sha256": "f2c7600f63ef7ff3e416ef8e58ca7b86c2af94fa13d82ad9a1d5ddb0f82bebf4",
-      "bytes": 6218973
+      "sha256": "914117bec9ed97a5dfc2bc39f29b71e29a81a05abe20ceac8e4964c86ddb4e9d",
+      "bytes": 6213436
     },
     "Figure_S4.pdf": {
-      "sha256": "c6ca1856255272951f58e4697fd87b6b1ee6afd3ed3af1f2b1b4aa5ae9688a9b",
-      "bytes": 2740751
+      "sha256": "1114f577bf15e5e36d748dc213d4ab3f2c23c3c31658779522a34bde3db88533",
+      "bytes": 2738589
     },
     "Figure_S4.png": {
-      "sha256": "772d1d05f93c869bf5ebaf4791dac8ecd474ffbf27acd41e75d509b5ac15ec64",
-      "bytes": 3589125
+      "sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+      "bytes": 3579825
     },
     "Figure_S4.tiff": {
-      "sha256": "3052e766af6bd707d712b85f49f495f1fdbf41215a03320a99c94d8daac82c8f",
-      "bytes": 4546690
+      "sha256": "6a1322efe84b1c03d043ed5faadee1760c5dc2574a29adc3be761567eca41faf",
+      "bytes": 4540816
     }
   }
 }

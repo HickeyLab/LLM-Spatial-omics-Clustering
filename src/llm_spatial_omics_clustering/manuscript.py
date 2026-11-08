@@ -16,6 +16,8 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
+from .clustering_publication import override_path, verify_current_inputs
+
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = ROOT / 'data/frozen/manuscript_replay'
 MODELS = ['gpt', 'claude', 'gemini', 'deepseek']
@@ -33,10 +35,13 @@ def verify_inputs():
         path = ROOT / entry['path']
         if hashlib.sha256(path.read_bytes()).hexdigest() != entry['sha256']:
             raise ValueError(f"Frozen manuscript input changed: {entry['path']}")
-    return len(manifest['files'])
+    return len(manifest['files']) + verify_current_inputs(ROOT)
 
 
 def read_table(name):
+    current = override_path(name, 'replay_table_overrides', root=ROOT)
+    if current is not None:
+        return pd.read_csv(current)
     manifest = json.loads((INPUTS / 'manifest.json').read_text())
     path = INPUTS / name
     entry = next(e for e in manifest['files'] if e['path'] == str(path.relative_to(ROOT)))
@@ -47,6 +52,9 @@ def read_table(name):
 
 def read_publication_table(name):
     """Read a checksum-pinned input to the native publication renderer."""
+    current = override_path(name, root=ROOT)
+    if current is not None:
+        return pd.read_csv(current)
     folder = ROOT / 'data/frozen/publication_design'
     manifest = json.loads((folder / 'manifest.json').read_text())
     path = folder / name
@@ -97,7 +105,7 @@ def _heatmap(frame, title, *, vmax=100, percent=False, counts=None):
 
 
 def figure_2_panel(panel):
-    """Replot the current E/G, F/H, I and J metrics from frozen evidence."""
+    """Replot current clustering-only E/G and F/H from frozen evidence."""
     panel = panel.upper()
     if panel in ['E', 'G']:
         data = read_table('figure_02/regional_metrics.csv')
@@ -121,6 +129,14 @@ def figure_2_panel(panel):
         matrix = values.pivot(index='cell_type',columns='method',values=field).reindex(index=order,columns=METHODS)
         counts = values.groupby('cell_type').n_cells.first()
         return _heatmap(matrix * (1 if panel=='F' else 100), 'Cell-type F1' if panel=='F' else 'Cell-type recall (%)', vmax=1 if panel=='F' else 100, counts=counts)
+    if panel in ['I', 'J']:
+        raise ValueError('Current Figure2 ends atH. Use historical_figure_2_annotation_panel for archived annotation panels.')
+    raise ValueError(f'Figure 2{panel} is retained approved artwork, not a numerical replot.')
+
+
+def historical_figure_2_annotation_panel(panel):
+    """Archived pre-rerun annotation panels, never the updated primary clusters."""
+    panel = panel.upper()
     if panel == 'I':
         data = read_table('figure_02/panel_I_marker_summaries.csv')
         markers = data.marker.drop_duplicates().tolist()
@@ -140,7 +156,7 @@ def figure_2_panel(panel):
         return fig
     if panel == 'J':
         return spatial_panel(2)
-    raise ValueError(f'Figure 2{panel} is retained approved artwork, not a numerical replot.')
+    raise ValueError(f'Archived Figure2 annotation panel must be I or J, got {panel}.')
 
 
 def figure_3_panel(panel):

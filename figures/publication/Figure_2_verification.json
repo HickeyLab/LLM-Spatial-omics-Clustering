@@ -1,14 +1,14 @@
 {
   "figure": "Figure_2",
   "width_mm": 165.1,
-  "height_mm": 285.54760359972164,
+  "height_mm": 213.0476035997217,
   "minimum_font_pt": 6.6,
   "font_family": "Arial",
   "minimum_placement_width_mm": 125.076,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    6746
+    5033
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -29,17 +29,13 @@
     }
   ],
   "layout_compaction": {
-    "original_height_mm": 290,
-    "height_mm": 285.54760359972164,
-    "height_reduction_percent": 1.535309103544262,
+    "original_height_mm": 224,
+    "height_mm": 213.0476035997217,
+    "height_reduction_percent": 4.889462678695671,
     "vacant_bands_removed_mm": [
       [
-        116.66794444444443,
-        119.50000000000003
-      ],
-      [
-        214.87965915527724,
-        216.5
+        116.66794444444444,
+        119.49999999999999
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -48,36 +44,33 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+    "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
     "data/frozen/publication_design/umap_coordinates.csv.gz": "54e0335d3e63dda86d11dd336eebed0460741301d58a055bd84497aff991c7d8",
-    "data/frozen/publication_design/figure2_regional_metrics.csv": "cacde7e3d53b5227ecb7178517231060acacf92d6d8cafdec1fdf1b4a8b46168",
-    "data/frozen/publication_design/figure2_f1.csv": "2ef0920234a3bfc0c9ffef3e5741d34a14fbb96661e2c7ef1720f2d0ec239476",
-    "data/frozen/publication_design/figure2_recall.csv": "50f090dfadd242f2cd0c7ffe95cad48370c2576138b06e01ac4121ccfbeec5b8",
-    "data/frozen/publication_design/figure2_marker_summaries.csv": "808bfefb1c4102894a08127d888d3b8f583973bc0526c923a90374191f44501d",
-    "data/frozen/publication_design/figure2_spatial_examples.csv": "be796a4c74928de582a33df8e0e39049016e6def7db0256fbba14525c0f48d66",
-    "data/frozen/publication_design/figure2_spatial_windows.csv": "b21837dd4cfd71339e6ab9d3adbbdf8a89618b7edacf7bcd7f8c4d43a3eb4003",
+    "data/frozen/clustering47_primary_20261108/regional_metrics.csv": "88f416abc19dc2f13edfc0a089267f5f407bc2fd45b144d8759eece7ee75e55b",
+    "data/frozen/clustering47_primary_20261108/panel_F_values.csv": "91d9edd92a6f0692a1a4a2ee5e7a47cb40dd36856aa7ba3091d5489a8128843e",
+    "data/frozen/clustering47_primary_20261108/panel_H_values.csv": "0e2d8ee3534ab590f1e24026c860736e396b4a91b932df13144a73c9b1879bd1",
     "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
     "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
-    "Original BioRender workflow restored with editable text. Place at least 125.076 mm wide. Suggested manuscript width: 128.27 mm (5.05 in)."
+    "Current A\u2013H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. FigureS11A retains the historical annotation profiles pending a separate rerun. Suggested manuscript width: 128.27 mm (5.05 in)."
   ],
   "files": {
     "Figure_2.svg": {
-      "sha256": "4e5c46610daa10400443995bf19074600b8cc9ddbc554c713c0fe2f5dafa62ba",
-      "bytes": 6521973
+      "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
+      "bytes": 5446481
     },
     "Figure_2.pdf": {
-      "sha256": "9f8bd9c0f8f54cc4a9026270841364441ab2f36416cd96bd1df1fad76edefc40",
-      "bytes": 3947837
+      "sha256": "be7c9c56c5d26767b81f2760145d0f64ae8bff7a2d97d47c37a4fe02e5ca69b2",
+      "bytes": 3299170
     },
     "Figure_2.png": {
-      "sha256": "39c276aa71bf6db19686ef1a8fe3746cbe2ac5e34787f7b45e5e908486a54ab3",
-      "bytes": 3764704
+      "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "bytes": 2824858
     },
     "Figure_2.tiff": {
-      "sha256": "3151fcc7788e793089da7dce91b77f659076b94962191b5b5d7091572c8f616f",
-      "bytes": 5799030
+      "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
+      "bytes": 4483584
     }
   }
 }

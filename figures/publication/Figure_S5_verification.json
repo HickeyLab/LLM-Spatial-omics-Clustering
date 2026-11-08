@@ -29,26 +29,26 @@
   },
   "dense_point_layers_native_dpi": null,
   "inputs": {
-    "data/frozen/publication_design/figureS5_fixed_metrics.csv": "33be582395354543969e9d1f26a0d2742ca02a9a63dc76a8076f54cef9e8e9ef",
+    "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b",
     "data/frozen/publication_design/figureS5_controlled_metrics.csv": "88388f106e5886faa011c27fab266faae5ed1dd77f8394c1ddae5562bf2eb043"
   },
   "notes": [],
   "files": {
     "Figure_S5.svg": {
-      "sha256": "0cf7ca8d0c8372e3d8999ad4d1eb6fcc4b093f41d5db92cba5406c38fa96dbf0",
+      "sha256": "5adadf11bd0b1fd1e371a5a5983d559392dc8a3610e7e8cac4e3f95fbcb3b6c6",
       "bytes": 30387
     },
     "Figure_S5.pdf": {
-      "sha256": "fcc4afcaf9169c74029442dc5f2601f1ec9ae38a80dff9bc0fd0eef95cdd7904",
-      "bytes": 44707
+      "sha256": "600a35b5438654e7e862395e3095176a33e12bf4520589b9b740a25e45f792df",
+      "bytes": 44701
     },
     "Figure_S5.png": {
-      "sha256": "b0e07780d4aea45ffcc668a7dfc98d24b364c0b76f53804af818dbfdbfa9317c",
-      "bytes": 206120
+      "sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+      "bytes": 202680
     },
     "Figure_S5.tiff": {
-      "sha256": "4b85da513f43dbcd51fb148ed8e23a4709a696fb1f64909da2313309d1ad5ee4",
-      "bytes": 388412
+      "sha256": "eb52f98a61f57b25bd65d1b9e43a942c490c5b6004bc1e4c464b88ca95e0f7b3",
+      "bytes": 384576
     }
   }
 }

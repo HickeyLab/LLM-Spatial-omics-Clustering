@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import sys
 
 import numpy as np
 import pandas as pd
@@ -28,6 +29,9 @@ from publication_figure_design import (
 from biorender_workflows import add_workflow
 from original_compensation_workflow import add_original_compensation_workflow
 
+sys.path.insert(0, str(ROOT / 'src'))
+from llm_spatial_omics_clustering.clustering_publication import override_path
+
 DATA = ROOT / "data/frozen/publication_design"
 SEG = ["Mesmer", "CellposeCyto3", "CellposeSAM", "CellSAM", "InstanSeg", "MicroSAM"]
 COMPONENT_NAMES = ["Reference agreement", "Gap to maximum agreement",
@@ -36,6 +40,9 @@ COMPONENT_COLORS = ["#2A6F5B", "#D9852B", "#D9D9D9"]
 
 
 def csv(name, **kw):
+    current = override_path(name, root=ROOT)
+    if current is not None:
+        return pd.read_csv(current, **kw)
     manifest = json.loads((DATA / "manifest.json").read_text())
     expected = manifest["files"][name]["sha256"]
     if sha(DATA / name) != expected:
@@ -44,7 +51,8 @@ def csv(name, **kw):
 
 
 def inputs(*names):
-    return {str((DATA/n).relative_to(ROOT)):sha(DATA/n) for n in names}
+    paths = [override_path(n, root=ROOT) or DATA/n for n in names]
+    return {str(path.relative_to(ROOT)):sha(path) for path in paths}
 
 
 def cell_colors():
@@ -82,7 +90,9 @@ def figure_2(out):
     cfg=yaml.safe_load((ROOT/"configs/figure_02.yaml").read_text())
     ref=csv("reference_plot_cells.csv.gz");u=csv("umap_coordinates.csv.gz")
     d=ref.merge(u,on=["File_ID","ID"],validate="one_to_one")
-    f=figure(290)
+    # Current manuscript Figure2 ends atH. Historical annotation profiles were
+    # moved toS11A and the reference-selected spatial examples were removed.
+    f=figure(224)
     panel(f,"A",3,2)
     workflow_inputs=add_workflow(f,"2A")
     panel(f,"B",3,39)
@@ -101,7 +111,7 @@ def figure_2(out):
         text(f,x+11.5,82,title,size=5.5,ha="center")
         if key=="cell_type_update":labels=d.cell_type_update
         else:
-            mapping=d.groupby(key,sort=True).cell_type_update.agg(lambda s:s.value_counts(sort=True).index[0])
+            mapping=d.groupby(key,sort=True).cell_type_update.agg(lambda s:s.value_counts().sort_index().idxmax())
             labels=d[key].map(mapping)
         colors=labels.map(cell_colors()).fillna("#d0d0d0")
         big=axes(f,x,99,23,13);big.scatter(d.UMAP1,d.UMAP2,c=colors,s=.09,alpha=.6,linewidths=0,rasterized=True)
@@ -125,54 +135,19 @@ def figure_2(out):
             z=region[region.method.eq(m)].sort_values("region")
             a.scatter(j+np.linspace(-.08,.08,8),z[key],s=7,c=z.region.map({k:v["color"] for k,v in rcfg.items()}),zorder=3)
         a.set(xticks=range(4),xticklabels=METHODS,ylim=(.3,.9),yticks=[.3,.5,.7,.9],ylabel=ylab);grid(a)
-    norm=cfg["four_llm_consensus"]["truth_normalization_map"]
-    nref=ref.cell_type_update.replace(norm).value_counts().to_dict()
+    norm=cfg['panel_e']['evaluation']['harmonization_map']
+    nref=ref.loc[ref.cell_type_update.ne('Noise'),'cell_type_update'].replace(norm).value_counts().to_dict()
     rows=csv("figure2_f1.csv").cell_type.tolist()
     for i,(letter,filename,title,scale) in enumerate([("F","figure2_f1.csv","F1",1),("H","figure2_recall.csv","Recall (%)",100)]):
         x=3+i*83;panel(f,letter,x,150,title)
         matrix=csv(filename).set_index("cell_type").reindex(rows)[METHODS].to_numpy()*scale
         count_heatmap(f,matrix,rows,METHODS,x+27,163,38,39,nref,limits=(0,scale),rotation=55)
-    panel(f,"I",3,218,"CD8+ T")
-    d=csv("figure2_marker_summaries.csv");markers=cfg["panel_i"]["marker_order"]
-    a=axes(f,27,231,134,8)
-    for i,m in enumerate(METHODS):
-        z=d[d.method.eq(m)].set_index("marker").reindex(markers)
-        dots=a.scatter(np.arange(45),np.repeat(i,45),s=.03+8*z.fraction_cells_pct/100,c=z.scaled_mean_expression,cmap="Reds",vmin=0,vmax=1,edgecolors="black",linewidths=.2)
-    a.set(xticks=range(45),xticklabels=markers,yticks=range(4),yticklabels=[f"{m} (n={int(d[d.method.eq(m)].n_selected_cells.iloc[0]):,})" for m in METHODS],xlim=(-.7,44.7),ylim=(3.5,-.5))
-    plt.setp(a.get_xticklabels(),rotation=45,ha="right",rotation_mode="anchor")
-    for edge in a.spines.values():edge.set_visible(True);edge.set_linewidth(.4)
-    a.tick_params(length=0)
-    text(f,28,224,"Stored value > 0 (%)",size=5.5)
-    leg=axes(f,73,223,29,3);leg.set_axis_off()
-    for x,v in zip([.1,.45,.8],[0,50,100]):
-        leg.scatter([x],[.6],s=.03+8*v/100,color="#999999",edgecolors="black",linewidths=.2)
-        leg.text(x,.05,str(v),fontsize=5.5,ha="center",va="top",transform=leg.transAxes)
-    leg.set(xlim=(0,1),ylim=(0,1))
-    text(f,117,220,"Mean expression\nScaled 0–1",size=5.5)
-    colorbar(f,dots,(121,225,34,1.3),None,ticks=[0,1])
-    panel(f,"J",3,254)
-    examples=csv("figure2_spatial_examples.csv");windows=csv("figure2_spatial_windows.csv")
-    titles=["Tissue region","Reference\nannotations"]+METHODS
-    for j,title in enumerate(titles):text(f,19+j*25,259,title,size=5.5,ha="center")
-    for row,example in enumerate(["Low reference agreement","High reference agreement"]):
-        z=examples[examples.example.eq(example)];w=windows[windows.example.eq(example)].iloc[0]
-        text(f,4.2,271+row*12,f"{'Low' if row==0 else 'High'}\nn = {len(z):,}",size=5.5,ha="center",va="center",rotation=90)
-        for j,label in enumerate([None,"truth_label"]+METHODS):
-            a=axes(f,9+j*25,266+row*12,21,10.5)
-            if j==0:
-                whole=ref[ref.File_ID.eq(w.file_id)].copy();whole["truth_label"]=whole.cell_type_update.replace(norm)
-                spatial(a,whole,label="truth_label",size=.09,normalize=True)
-                a.add_patch(Rectangle((w.x0,w.y0),w.x1-w.x0,w.y1-w.y0,fill=False,ec="black",lw=.4))
-            else:
-                spatial(a,z,label=label,size=.4,normalize=True);a.set(xlim=(w.x0,w.x1),ylim=(w.y0,w.y1))
-            a.invert_yaxis()
-            for edge in a.spines.values():edge.set_visible(True);edge.set_color("#9ca3af");edge.set_linewidth(.35)
     # This dense figure has a small placement margin when fitted to one page.
     for t in f.findobj(Text):
         if t.get_fontsize()<6.6:t.set_fontsize(6.6)
-        if t.get_text() in list("ABCDEFGHIJ") and t.get_weight()=="bold":t.set_fontsize(10.3)
-    names=["reference_plot_cells.csv.gz","umap_coordinates.csv.gz","figure2_regional_metrics.csv","figure2_f1.csv","figure2_recall.csv","figure2_marker_summaries.csv","figure2_spatial_examples.csv","figure2_spatial_windows.csv"]
-    return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Original BioRender workflow restored with editable text. Place at least 125.076 mm wide. Suggested manuscript width: 128.27 mm (5.05 in)."])
+        if t.get_text() in list("ABCDEFGH") and t.get_weight()=="bold":t.set_fontsize(10.3)
+    names=["reference_plot_cells.csv.gz","umap_coordinates.csv.gz","figure2_regional_metrics.csv","figure2_f1.csv","figure2_recall.csv"]
+    return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. FigureS11A retains the historical annotation profiles pending a separate rerun. Suggested manuscript width: 128.27 mm (5.05 in)."])
 
 
 def figure_s4(out):

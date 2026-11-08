@@ -22,7 +22,7 @@ class SweepRetirementTests(unittest.TestCase):
         record = json.loads((ROOT / 'configs/manuscript_inventory.json').read_text())['figures']['S4']
         self.assertEqual(record['panels'], list('ABCD'))
         self.assertNotIn('cluster-count sweep', record['caption'])
-        self.assertIn('(D) Adjusted Rand index', record['caption'])
+        self.assertRegex(record['caption'], r'\(D\) (?:Regional )?[Aa]djusted Rand index')
         receipt = json.loads((ROOT / 'figures/publication/Figure_S4_verification.json').read_text())
         self.assertFalse(any('flowsom_k_sweep' in name for name in receipt['inputs']))
         svg = (ROOT / 'figures/publication/Figure_S4.svg').read_text()

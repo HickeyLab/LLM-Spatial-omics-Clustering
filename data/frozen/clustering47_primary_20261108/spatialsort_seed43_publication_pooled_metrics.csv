@@ -1,0 +1,2 @@
+method,method_key,n_cells,n_reference_labels,n_clusters,purity,ari,ami,majority_macro_f1,majority_weighted_f1,min_cluster_cells,median_cluster_cells,max_cluster_cells,tied_majority_clusters
+SpatialSort,spatialsort,209587,20,231,0.5386641347030111,0.04050514220417332,0.3377586663802271,0.34345282788510556,0.5132003745839778,7,849.0,3281,0

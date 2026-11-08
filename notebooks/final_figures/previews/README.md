@@ -1,25 +1,7 @@
-# Retained manuscript previews
+# Current manuscript previews
 
-These 17 PNGs are byte-identical copies of the retained Figure 1–5 and
-S1–S10 artwork in `figures/manuscript/`. Figure S3 has three image parts.
-They predate the current manuscript panel reductions. Use the
-[figure map](../../../docs/figure_map.md) and
-[table crosswalk](../../../docs/supplementary_table_numbering.md) for the
-November 6 display inventory, including Figure S11A and Table S9.
+These 18 PNGs are byte-identical copies of the pinned artwork in `figures/manuscript/`. Figure S3 has three image parts. Figure 2A–H, S4A–D and S5A–B reflect the frozen primary clustering update. S11A is a byte-preserved historical annotation profile, available as native PNG/SVG only. Other annotation exports retain their historical predictions and memberships pending a separate rerun.
 
-The retained Figure 3 artwork includes earlier reference-informed selection
-panels. Current Figure 3E is the spatial comparison formerly labeled H and
-uses each cluster's most frequent model label, with GPT, Claude, Gemini and
-DeepSeek tie order without reference labels. Retained Figure 2I marker
-profiles now support S11A, while the selected spatial windows are archived.
+The [native exports](../../../figures/publication) for2,S4 and S5 contain editable PDF/SVG and 600 dpi PNG/TIFF originals. The [manifest](../../../docs/reference_figure_label_changes.json) pins source/target files. `python scripts/update_reference_figure_labels.py --check` verifies the preview pixels.
 
-The [native exports](../../../figures/publication) retain editable vectors
-and 600 dpi raster originals. The
-[manifest](../../../docs/reference_figure_label_changes.json) pins those
-source and target files. This documentation update changes no image bytes.
-
-`python scripts/update_reference_figure_labels.py --check` verifies the
-retained preview snapshot. `python scripts/render_current_tables.py` exports
-the earlier frozen native-cell table snapshot, whose labels can differ from
-the current manuscript crosswalk. Earlier screenshots and overlay coordinates
-remain under `notebooks/historical_reconstructions/previews/` and `docs/archive/`.
+Use the [figure map](../../../docs/figure_map.md), [current contract](../../../data/frozen/clustering47_primary_20261108/README.md) and [table crosswalk](../../../docs/supplementary_table_numbering.md) for scientific scope. Retained Figure 3 artwork has A–H while its native caption has A–E, with current E corresponding to stored H. The count of 18 PNGs is an image-file count, not a claim that this historical layout agrees with the native caption. Earlier screenshots and overlay coordinates remain in the historical reconstruction and documentation archives.

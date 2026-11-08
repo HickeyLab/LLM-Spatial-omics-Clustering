@@ -1,0 +1,385 @@
+{
+  "status": "complete",
+  "created_utc": "2026-11-08T16:06:03.497855+00:00",
+  "repo_base": "aa632f695a97f48b72ee6c048464881872488870",
+  "input_rows": 220082,
+  "evaluation_rows": 209587,
+  "excluded_reference_noise": 10495,
+  "regions": 8,
+  "donors": 1,
+  "publication_classes": 20,
+  "publication_mapping": {
+    "Epithelial": "Enterocyte",
+    "CD66+ Epithelial": "CD66+ Enterocyte",
+    "MUC1+ Epithelial": "MUC1+ Enterocyte",
+    "CD57+ Epithelial": "Enterocyte",
+    "ITLN+ Epithelial": "Goblet",
+    "TA": "Cycling TA",
+    "CD4+ T": "CD4+ T cell",
+    "Stromal": "Stroma",
+    "PDPN+ Stromal": "Lymphatic",
+    "CD36 high Endothelial": "Endothelial",
+    "CD36 low Endothelial": "Endothelial",
+    "CD49a+ Smooth muscle": "Smooth muscle",
+    "Paneth": "Goblet",
+    "M1 Macrophage": "M2 Macrophage",
+    "NK": "CD7+ Immune"
+  },
+  "majority_tie_break": "alphabetical",
+  "regional_mapping": "within each region",
+  "celltype_mapping": "globally over all eight regions",
+  "updated_methods": {
+    "flowsom": {
+      "path": "/Users/zacharydeutsch/Desktop/cell_masks/revision_20261021/data/frozen/flowsom47_primary_20261102/assignments.csv.gz",
+      "sha256": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+      "assignment_column": "flowsom_cluster",
+      "rows": 220082,
+      "occupied_clusters": 299,
+      "exact_keys": true
+    },
+    "spatialsort": {
+      "path": "/Users/zacharydeutsch/.codex/analysis_artifacts/spatialsort47_results_20261108/inputs/spatialsort_seed42_sweep100.csv.gz",
+      "sha256": "9a0e07852d3b4b4b3768bfa3b1a5dfd3985c1795e4a7e193af5eaacf0d4449a4",
+      "assignment_column": "spatialsort_cluster",
+      "rows": 220082,
+      "occupied_clusters": 229,
+      "exact_keys": true
+    }
+  },
+  "unchanged_methods": [
+    "leiden",
+    "pixie"
+  ],
+  "all_unchanged_columns_preserved": true,
+  "baseline_regional_values_reproduced": true,
+  "unchanged_method_raw_values_reproduced": true,
+  "independent_checks": [
+    "weightedF1 versus independent confusion counts",
+    "purity versus dictionary majorities",
+    "ARI versus integer pair counts",
+    "exact sign flip versus independent enumeration and scipy paired-samples exact permutation"
+  ],
+  "conditional_tests": 12,
+  "paired_region_rows": 96,
+  "holm_family": "Figure2_EG_12",
+  "holm_below_0_05": 0,
+  "other_test_rows_preserved": 48,
+  "other_paired_rows_preserved": 384,
+  "cluster_counts": {
+    "leiden": 300,
+    "flowsom": 299,
+    "spatialsort": 229,
+    "pixie": 300
+  },
+  "primary_spatialsort_seed": 42,
+  "spatialsort_sensitivity_seed": 43,
+  "spatialsort_sensitivity_clusters": 231,
+  "spatialsort_seed_partition_ari": 0.45805289968662627,
+  "regional_summary": [
+    {
+      "method": "Leiden",
+      "method_key": "leiden",
+      "weighted_f1_mean": 0.7390881548997928,
+      "weighted_f1_min": 0.692543788769065,
+      "weighted_f1_max": 0.7882877453362434,
+      "cluster_purity_mean": 0.7463917073851646,
+      "cluster_purity_min": 0.7011547344110854,
+      "cluster_purity_max": 0.7923477308008401
+    },
+    {
+      "method": "FlowSOM",
+      "method_key": "flowsom",
+      "weighted_f1_mean": 0.5323345330023315,
+      "weighted_f1_min": 0.4783251856158513,
+      "weighted_f1_max": 0.5844597676692496,
+      "cluster_purity_mean": 0.5746793884572381,
+      "cluster_purity_min": 0.5453383252670989,
+      "cluster_purity_max": 0.6292517006802721
+    },
+    {
+      "method": "SpatialSort",
+      "method_key": "spatialsort",
+      "weighted_f1_mean": 0.5278020336586234,
+      "weighted_f1_min": 0.4369133155825919,
+      "weighted_f1_max": 0.5891713611857017,
+      "cluster_purity_mean": 0.5582599970750921,
+      "cluster_purity_min": 0.486078431372549,
+      "cluster_purity_max": 0.6082086167800453
+    },
+    {
+      "method": "PIXIE",
+      "method_key": "pixie",
+      "weighted_f1_mean": 0.6154287118189095,
+      "weighted_f1_min": 0.5044194249177529,
+      "weighted_f1_max": 0.6903257065537686,
+      "cluster_purity_mean": 0.6446048765883592,
+      "cluster_purity_min": 0.5394117647058824,
+      "cluster_purity_max": 0.7109013288437256
+    }
+  ],
+  "pooled_metrics": [
+    {
+      "method": "Leiden",
+      "method_key": "leiden",
+      "n_cells": 209587,
+      "n_reference_labels": 20,
+      "n_clusters": 300,
+      "purity": 0.7273924432335975,
+      "ari": 0.09318110024739777,
+      "ami": 0.4513173967218749,
+      "majority_macro_f1": 0.6350967585182696,
+      "majority_weighted_f1": 0.7226364772583055,
+      "min_cluster_cells": 1,
+      "median_cluster_cells": 462.5,
+      "max_cluster_cells": 7297,
+      "tied_majority_clusters": 1
+    },
+    {
+      "method": "FlowSOM",
+      "method_key": "flowsom",
+      "n_cells": 209587,
+      "n_reference_labels": 20,
+      "n_clusters": 299,
+      "purity": 0.5071163764928168,
+      "ari": 0.11949314327423541,
+      "ami": 0.33274013218518494,
+      "majority_macro_f1": 0.4435503288281354,
+      "majority_weighted_f1": 0.49411235679293647,
+      "min_cluster_cells": 1,
+      "median_cluster_cells": 104.0,
+      "max_cluster_cells": 45558,
+      "tied_majority_clusters": 8
+    },
+    {
+      "method": "SpatialSort",
+      "method_key": "spatialsort",
+      "n_cells": 209587,
+      "n_reference_labels": 20,
+      "n_clusters": 229,
+      "purity": 0.5355484834460152,
+      "ari": 0.0396343843083004,
+      "ami": 0.33622906032756883,
+      "majority_macro_f1": 0.3463571201117219,
+      "majority_weighted_f1": 0.5078518858518218,
+      "min_cluster_cells": 87,
+      "median_cluster_cells": 883.0,
+      "max_cluster_cells": 3053,
+      "tied_majority_clusters": 0
+    },
+    {
+      "method": "PIXIE",
+      "method_key": "pixie",
+      "n_cells": 209587,
+      "n_reference_labels": 20,
+      "n_clusters": 300,
+      "purity": 0.6065118542657703,
+      "ari": 0.22929584467725989,
+      "ami": 0.37971164644304284,
+      "majority_macro_f1": 0.35138519879296026,
+      "majority_weighted_f1": 0.5759114943928056,
+      "min_cluster_cells": 1,
+      "median_cluster_cells": 255.5,
+      "max_cluster_cells": 22208,
+      "tied_majority_clusters": 4
+    }
+  ],
+  "publication_baseline_changes": [
+    {
+      "method": "Leiden",
+      "weighted_f1_mean": 0.7390881548997928,
+      "cluster_purity_mean": 0.7463917073851646,
+      "weighted_f1": 0.7390881548997928,
+      "cluster_purity": 0.7463917073851646,
+      "weighted_f1_delta_pp": 0.0,
+      "cluster_purity_delta_pp": 0.0
+    },
+    {
+      "method": "FlowSOM",
+      "weighted_f1_mean": 0.5323345330023315,
+      "cluster_purity_mean": 0.5746793884572381,
+      "weighted_f1": 0.6330004871848836,
+      "cluster_purity": 0.6525861466743027,
+      "weighted_f1_delta_pp": -10.066595418255208,
+      "cluster_purity_delta_pp": -7.790675821706461
+    },
+    {
+      "method": "SpatialSort",
+      "weighted_f1_mean": 0.5278020336586234,
+      "cluster_purity_mean": 0.5582599970750921,
+      "weighted_f1": 0.49435981076257357,
+      "cluster_purity": 0.5323645994555971,
+      "weighted_f1_delta_pp": 3.3442222896049865,
+      "cluster_purity_delta_pp": 2.5895397619494998
+    },
+    {
+      "method": "PIXIE",
+      "weighted_f1_mean": 0.6154287118189095,
+      "cluster_purity_mean": 0.6446048765883592,
+      "weighted_f1": 0.6154287118189095,
+      "cluster_purity": 0.6446048765883592,
+      "weighted_f1_delta_pp": 0.0,
+      "cluster_purity_delta_pp": 0.0
+    }
+  ],
+  "new_fits": 0,
+  "new_annotations": 0,
+  "Ward_sweep": false,
+  "shared_archived_UMAP": "unchanged, to be used by figure integrator",
+  "versions": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.7.2"
+  },
+  "source_hashes": {
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/configs/figure_02.yaml": "a052df01c012f01707e6d43ee38919b1e486b2e1eefacafd90dd22fb25bb30bc",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/publication_design/figure2_regional_metrics.csv": "cacde7e3d53b5227ecb7178517231060acacf92d6d8cafdec1fdf1b4a8b46168",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/spatialsort47_hubmap_20261102/completion_receipt.json": "64345d6455b3f65a29c1b99be8f2a304206bd374f372255ee2e7fa064ba4eedb",
+    "/Users/zacharydeutsch/Desktop/cell_masks/revision_20261021/data/frozen/flowsom47_primary_20261102/manifest.json": "f8b8a11357aa14a595002737598a40cd06555f2510ca4351b31258b6087db901",
+    "/Users/zacharydeutsch/Desktop/cell_masks/revision_20261021/data/frozen/flowsom47_primary_20261102/assignments.csv.gz": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/spatialsort47_results_20261108/inputs/spatialsort_seed42_sweep100.csv.gz": "9a0e07852d3b4b4b3768bfa3b1a5dfd3985c1795e4a7e193af5eaacf0d4449a4",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/manuscript_replay/figure_02/panel_F_values.csv": "2ef0920234a3bfc0c9ffef3e5741d34a14fbb96661e2c7ef1720f2d0ec239476",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/manuscript_replay/figure_02/panel_H_values.csv": "50f090dfadd242f2cd0c7ffe95cad48370c2576138b06e01ac4121ccfbeec5b8",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/publication_design/figureS5_fixed_metrics.csv": "33be582395354543969e9d1f26a0d2742ca02a9a63dc76a8076f54cef9e8e9ef",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/manuscript_replay/tables/companions/conditional_comparisons.csv": "aeed35a2da36ab65eddfd3a6ccbf5c9033d3be942d91a8ce7a91e22f39130e1c",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/manuscript_replay/tables/companions/paired_regional_observations.csv": "2ebc29a41d56c769afdfa3915ddfae0b0269f7795539958b7a14c9cf786f1200",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/spatialsort47_results_20261108/inputs/spatialsort_seed43_sweep100.csv.gz": "3cecda192d048a1f24ed94b1c572b5827d9a037a3d6341ff6b7dda7211f1c5d2",
+    "/Users/zacharydeutsch/.codex/analysis_artifacts/cell_masks_marker47_20261101/scoring_policy.json": "72c0e658ec8eab40ed608c980b538843ad8e91525411455b56e04641e801685c"
+  },
+  "source_policy_difference": "Do not substitute historical21/Noise or raw28 metrics into publication20/nonNoise panels. Paneth mapping also differs.",
+  "limits": [
+    "Descriptive single-donor reference-informed diagnostics.",
+    "Regional sign-exchangeability is unestablished.",
+    "No annotation inference or convergence claim."
+  ],
+  "outputs": {
+    "publication_regional_summary.csv": {
+      "sha256": "c605d3c92e417761311ad177a493cee99009af44fbbce3c0769924ab4753bc1d",
+      "bytes": 645
+    },
+    "spatialsort_seed43_publication_pooled_metrics.csv": {
+      "sha256": "d4f942866dbcb4e727c94f54a4571917938862669eece137822a58e849daaf41",
+      "bytes": 340
+    },
+    "spatialsort_seed_sensitivity.csv": {
+      "sha256": "c3d24e5a6731f271e2813ca4db9c539394bbefcfcffd9b243bbbad51f881b4f0",
+      "bytes": 608
+    },
+    "panel_H_values.csv": {
+      "sha256": "0e2d8ee3534ab590f1e24026c860736e396b4a91b932df13144a73c9b1879bd1",
+      "bytes": 1492
+    },
+    "publication_scoring_policy.json": {
+      "sha256": "c0ea8eb68660c4cda8b3f4f05aefb1a782c147d6a8e8b87bf4da02264f79b865",
+      "bytes": 706
+    },
+    "figureS4_cluster_metrics.csv": {
+      "sha256": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
+      "bytes": 70031
+    },
+    "recompute_publication_metrics.py": {
+      "sha256": "cd235843e16c77723a13ac2c3b3b2570f611c6d267a5e414fe051557dd592e62",
+      "bytes": 21573
+    },
+    "baseline_regional_metrics.csv": {
+      "sha256": "cacde7e3d53b5227ecb7178517231060acacf92d6d8cafdec1fdf1b4a8b46168",
+      "bytes": 3187
+    },
+    "global_majority_maps.csv": {
+      "sha256": "f38ffb7735e649f8216399f937331fac96a92e6758a2efb428fdc43cbcb6bcb4",
+      "bytes": 24842
+    },
+    "publication_pooled_metrics.csv": {
+      "sha256": "f2568b39b4761ce837ee3559f2fd886391a01300baf985b6a6d4e8e03c4a4b19",
+      "bytes": 763
+    },
+    "majority_ties.csv": {
+      "sha256": "b4ef041eb93b80cc6c92b1acd92275037c6a40ae1b14ed76c936c140594bb8c2",
+      "bytes": 1825
+    },
+    "paired_regional_observations.csv": {
+      "sha256": "b32487d19c49a8a88de82d5a1cc19b7d40647f4d3c623d3e9fb816d66a70f9eb",
+      "bytes": 14661
+    },
+    "paired_regional_observations_all_families.csv": {
+      "sha256": "44fa65f515faaa161a48f549bf5830d1b4d93d51c0270a8d7eb54c32432f87f5",
+      "bytes": 79282
+    },
+    "conditional_comparisons.csv": {
+      "sha256": "7e28740f387be750897dbd2b95fc36c634a9c7b0973a4825fab26fa7937e285b",
+      "bytes": 7216
+    },
+    "figureS4_compositions.csv.gz": {
+      "sha256": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
+      "bytes": 49839
+    },
+    "regional_majority_maps.csv": {
+      "sha256": "9f382b5d1b418c9d389d74b37efa884a45cdc47fda99e4eb91b65b4803ab37ca",
+      "bytes": 408952
+    },
+    "environment_freeze.txt": {
+      "sha256": "39764c05572ccb7c5302414577aa748327e1fd9e0363566d6b409bd55bd289ea",
+      "bytes": 332
+    },
+    "scoring_policy_comparison.csv": {
+      "sha256": "a0acfb862c142802172651a72387ec5348d2e6349f4ab27d94f5151a0055b3bc",
+      "bytes": 2104
+    },
+    "reference_plot_cells.csv.gz": {
+      "sha256": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+      "bytes": 2796238
+    },
+    "fixed_raw_metrics.csv": {
+      "sha256": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b",
+      "bytes": 22720
+    },
+    "panel_F_values.csv": {
+      "sha256": "91d9edd92a6f0692a1a4a2ee5e7a47cb40dd36856aa7ba3091d5489a8128843e",
+      "bytes": 1495
+    },
+    "spatialsort_seed43_fixed_raw_metrics.csv": {
+      "sha256": "364ec49c59c50834d8ff05bffd4377e7f72d6a0c079670a6c27bbb24544610fd",
+      "bytes": 5916
+    },
+    "figureS4_celltype_metrics.csv": {
+      "sha256": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
+      "bytes": 5354
+    },
+    "regional_metrics.csv": {
+      "sha256": "88f416abc19dc2f13edfc0a089267f5f407bc2fd45b144d8759eece7ee75e55b",
+      "bytes": 3187
+    },
+    "spatialsort_seed43_regional_metrics.csv": {
+      "sha256": "575b565d3d324f81cc4e2714f8587fa4e37cadf8d5e837c66c3a0432ce4e9c7d",
+      "bytes": 912
+    },
+    "conditional_comparisons_all_families.csv": {
+      "sha256": "e54a26811999ce1d8cd302a2d047a3003edbff9db21e016afbb9985b50e5116b",
+      "bytes": 35352
+    },
+    "publication_baseline_changes.csv": {
+      "sha256": "c64010dd79d321929bd84c57b0154a3adde0326f665b2da76ce037678c9bf89e",
+      "bytes": 547
+    },
+    "celltype_metrics.csv": {
+      "sha256": "6a7ca27097ae0901f478a9236b9bf6910d3785f74856f9ec250c34177641bca6",
+      "bytes": 5686
+    },
+    "spatialsort_seed43_celltype_metrics.csv": {
+      "sha256": "2a0082440d4ebecde63daf6da1fc7749b82a0838b7fa5cda8ee32a342edf2ff5",
+      "bytes": 1469
+    },
+    "independent_verification.json": {
+      "sha256": "0fdf49ce95e65513eb9bf7578a5018bfced6e9962cb14a587f6df5a1a228b4e4",
+      "bytes": 910
+    },
+    "per_panel_scoring.json": {
+      "sha256": "9dc5a53a3889eddca86f6c44ea24c2dd8791099c50477e0e589da240cc4586a0",
+      "bytes": 2388
+    }
+  },
+  "independent_verification": "independent_verification.json",
+  "per_panel_scoring": "per_panel_scoring.json"
+}

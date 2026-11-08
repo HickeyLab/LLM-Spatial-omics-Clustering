@@ -23,7 +23,7 @@ class ManuscriptAlignmentTests(unittest.TestCase):
         self.assertEqual(receipt['figure_2_regional_values'], 64)
         self.assertEqual(receipt['figure_2_celltype_values'], 160)
         self.assertEqual(receipt['figure_3_method_model_maps'], 16)
-        self.assertEqual(receipt['approved_images'], 17)
+        self.assertEqual(receipt['approved_images'], 18)
 
     def test_corrupted_input_is_rejected_before_plotting(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -39,7 +39,12 @@ class ManuscriptAlignmentTests(unittest.TestCase):
 
     def test_current_panel_arrangement_and_notebook_python(self):
         inventory = manuscript.inventory()['figures']
+        self.assertEqual(inventory['2']['panels'], list('ABCDEFGH'))
+        self.assertEqual(inventory['S11']['panels'], ['A'])
         self.assertEqual(inventory['3']['panels'], list('ABCDEFGH'))
+        self.assertEqual(inventory['3']['stored_artwork_panels'], list('ABCDEFGH'))
+        self.assertEqual(inventory['3']['native_manuscript_panels'], list('ABCDE'))
+        self.assertEqual(inventory['3']['native_panel_mapping']['E'], 'stored H')
         self.assertEqual(inventory['4']['panels'], list('ABCDE'))
         self.assertEqual(inventory['S4']['panels'], list('ABCD'))
         for record in inventory.values():
@@ -75,6 +80,16 @@ class ManuscriptAlignmentTests(unittest.TestCase):
         native = {x['label']: x for x in json.loads((manuscript.INPUTS / 'tables/current_tables.json').read_text())['tables']}
         clustering = json.loads((ROOT / 'data/frozen/table_s01/manuscript_table.json').read_text())
         self.assertEqual([clustering['headers'], *clustering['rows']], native['S2A']['rows'])
+        current={x['label']:x for x in json.loads(manuscript.override_path('tables/current_tables.json', 'replay_table_overrides', root=ROOT).read_text())['tables']}
+        rows={row[0]:row for row in current['S2A']['rows'][1:]}
+        self.assertEqual(rows['Inputs'][2:4], ['47 markers', '47 markers'])
+        self.assertEqual(rows['Configured and occupied clusters'][2:4], ['300 requested and 299 occupied', '300 requested. 229 occupied in the primary chain and 231 in the sensitivity chain'])
+        self.assertEqual(rows['Iterations'][2:4], ['3 whole-cohort passes, giving 660,246 updates', '100 actual sweeps per chain with dmh_iter=5'])
+        self.assertEqual(rows['Seed'][3], 'Sampling seed 42 primary and 43 sensitivity')
+        membership={row[0]:row for row in current['S2B']['rows'][1:]}
+        self.assertEqual(membership['CD123'][2:4], ['Included','Included'])
+        self.assertEqual(membership['CDX2'][2:4], ['Included','Included'])
+        self.assertEqual(membership['Total selected inputs'][2:4], ['47','47'])
         marker = json.loads((ROOT / 'data/frozen/table_s02/manuscript_tables.json').read_text())
         for part in marker['panels']:
             label = 'S3' + part['letter']

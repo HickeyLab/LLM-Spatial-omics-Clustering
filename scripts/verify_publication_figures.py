@@ -15,6 +15,7 @@ from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 import zipfile
+import sys
 
 import fitz
 import numpy as np
@@ -22,10 +23,13 @@ import pandas as pd
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-ORDER = ['5','1','2','3','4','S1','S2','S3A','S3B','S3C','S4','S5','S6','S7','S8','S9','S10']
-PANELS = {'1':'ABCDEF','2':'ABCDEFGHIJ','3':'ABCDEFGH','4':'ABCDE','5':'ABCD',
+sys.path.insert(0,str(ROOT/'src'))
+from llm_spatial_omics_clustering.clustering_publication import verify_current_inputs
+
+ORDER = ['5','1','2','3','4','S1','S2','S3A','S3B','S3C','S4','S5','S6','S7','S8','S9','S10','S11']
+PANELS = {'1':'ABCDEF','2':'ABCDEFGH','3':'ABCDEFGH','4':'ABCDE','5':'ABCD',
           'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCD',
-          'S5':'AB','S6':'AB','S7':'','S8':'AB','S9':'ABCD','S10':'ABCD'}
+          'S5':'AB','S6':'AB','S7':'','S8':'AB','S9':'ABCD','S10':'ABCD','S11':'A'}
 NS = {'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
       'a':'http://schemas.openxmlformats.org/drawingml/2006/main',
       'wp':'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing',
@@ -52,14 +56,40 @@ def verify_selected_e():
     return count
 
 
-def verify_native(folder, render_qa=None):
+def archived_artwork():
+    path=ROOT/'configs/historical_annotation_artwork.json'
+    return json.loads(path.read_text())['figures'] if path.exists() else {}
+
+
+def figure_receipt(key, folder):
+    archived=archived_artwork()
+    if key in archived:
+        return archived[key]
+    return json.loads((folder/('Figure_'+key+'_verification.json')).read_text())
+
+
+def verify_native(folder, render_qa=None, figure_ids=None):
     data = ROOT/'data/frozen/publication_design'
     manifest = json.loads((data/'manifest.json').read_text())
     for name,entry in manifest['files'].items():
         assert digest(data/name) == entry['sha256'], f'Frozen input changed: {name}'
+    verify_current_inputs(ROOT)
     results = []
-    for key in ORDER:
+    selected=set(figure_ids or ORDER)
+    assert selected.issubset(ORDER), selected-set(ORDER)
+    archived=archived_artwork()
+    for key in [key for key in ORDER if key in selected]:
         name = 'Figure_'+key
+        if key in archived:
+            record=archived[key]
+            for kind,entry in record['files'].items():
+                assert digest(ROOT/entry['path'])==entry['sha256']
+                assert digest(ROOT/'figures/manuscript'/f'{name}.{kind}')==entry['sha256']
+            results.append({'figure':name,'status':'byte_preserved_historical_annotation',
+                            'available_native_formats':record['native_formats'],
+                            'panel_letters':''.join(record['panels']),
+                            'scientific_rerender_performed':False})
+            continue
         receipt = json.loads((folder/(name+'_verification.json')).read_text())
         for filename,entry in receipt['files'].items():
             assert digest(folder/filename) == entry['sha256'], filename
@@ -156,7 +186,7 @@ def verify_native(folder, render_qa=None):
     return results
 
 
-def verify_docx(path, folder, image_suggestions_pending=False):
+def verify_docx(path, folder, image_suggestions_pending=False, figure_ids=None):
     results = []
     with zipfile.ZipFile(path) as archive:
         document = ET.fromstring(archive.read('word/document.xml'))
@@ -165,8 +195,10 @@ def verify_docx(path, folder, image_suggestions_pending=False):
         drawings = document.findall('.//w:drawing',NS)
         assert len(drawings) == len(ORDER)
         for key,drawing in zip(ORDER,drawings):
+            if figure_ids and key not in figure_ids:
+                continue
             name = 'Figure_'+key
-            receipt = json.loads((folder/(name+'_verification.json')).read_text())
+            receipt = figure_receipt(key,folder)
             extent = drawing.find('.//wp:extent',NS)
             x,y = [int(extent.attrib[k])/36000 for k in ['cx','cy']]
             distortion = (x/y)/(receipt['width_mm']/receipt['height_mm'])-1
@@ -179,7 +211,8 @@ def verify_docx(path, folder, image_suggestions_pending=False):
             blip = drawing.find('.//a:blip',NS)
             target = relationships[blip.attrib['{'+NS['r']+'}embed']]
             preview = Image.open(BytesIO(archive.read('word/'+target))).convert('RGB')
-            with Image.open(folder/(name+'.png')) as source:
+            source_path=ROOT/receipt['files']['png']['path'] if key in archived_artwork() else folder/(name+'.png')
+            with Image.open(source_path) as source:
                 expected = source.convert('RGB').resize(preview.size,Image.Resampling.LANCZOS)
             error = float(np.abs(np.asarray(preview,dtype=float)-np.asarray(expected,dtype=float)).mean())
             # Google Docs exports the original image while a replacement is
@@ -211,13 +244,14 @@ def main():
                         help='Check exported placement without asserting that pending image replacements are exported.')
     parser.add_argument('--render-qa',type=Path)
     parser.add_argument('--receipt',type=Path)
+    parser.add_argument('--figures',nargs='+',choices=ORDER,help='Verify changed native figures without regenerating unrelated historical annotation exports.')
     args = parser.parse_args()
-    result = {'status':'pass','native_figures':verify_native(args.folder,args.render_qa),
+    result = {'status':'pass','native_figures':verify_native(args.folder,args.render_qa,args.figures),
               'independently_checked_figure_3e_rows':verify_selected_e(),
               'new_model_calls':0,'new_fits':0}
     if args.docx:
         result['manuscript_export_sha256'] = digest(args.docx)
-        result['manuscript_placement'] = verify_docx(args.docx,args.folder,args.image_suggestions_pending)
+        result['manuscript_placement'] = verify_docx(args.docx,args.folder,args.image_suggestions_pending,args.figures)
         result['submission_files'] = 'Use original 600 dpi PNG/TIFF or editable PDF/SVG, not Google Docs previews.'
     if args.receipt:
         args.receipt.parent.mkdir(parents=True,exist_ok=True)

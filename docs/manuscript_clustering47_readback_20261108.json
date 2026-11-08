@@ -1,0 +1,21 @@
+{
+  "docx_sha256": "d5e8a839dd79132d7770ea3d3b89650bceef7e2482f776e73b6724e640d7d54a",
+  "expected_sequential_steps": 46,
+  "sequential_anchor_checks_passed": true,
+  "proposed_text_exactly_equals_sequential_plans_and_expected_table_edits": true,
+  "original_text_exactly_equals_native_baseline": true,
+  "baseline_body_elements": 617,
+  "current_body_elements": 617,
+  "tables": 11,
+  "drawings": 18,
+  "math": 5,
+  "revision_counts": {
+    "ins": 58,
+    "del": 59
+  },
+  "new_text_contains_semicolons": false,
+  "scope": "Native Word text and table readback only. Pending image replacements require live Google Docs review.",
+  "state": "prose_table_suggestions_verified_pending",
+  "native_export_media": "All 18 accepted/current image payloads match baseline. Pending image replacements are omitted by native exports.",
+  "new_annotation_calls": 0
+}

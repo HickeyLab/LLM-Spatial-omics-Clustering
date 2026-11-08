@@ -1,0 +1,25 @@
+{
+  "map": {
+    "Epithelial": "Enterocyte",
+    "CD66+ Epithelial": "CD66+ Enterocyte",
+    "MUC1+ Epithelial": "MUC1+ Enterocyte",
+    "CD57+ Epithelial": "Enterocyte",
+    "ITLN+ Epithelial": "Goblet",
+    "TA": "Cycling TA",
+    "CD4+ T": "CD4+ T cell",
+    "Stromal": "Stroma",
+    "PDPN+ Stromal": "Lymphatic",
+    "CD36 high Endothelial": "Endothelial",
+    "CD36 low Endothelial": "Endothelial",
+    "CD49a+ Smooth muscle": "Smooth muscle",
+    "Paneth": "Goblet",
+    "M1 Macrophage": "M2 Macrophage",
+    "NK": "CD7+ Immune"
+  },
+  "excluded_label": "Noise",
+  "classes": 20,
+  "n_cells": 209587,
+  "tie_rule": "alphabetical",
+  "regional_mapping": "per region",
+  "celltype_mapping": "global"
+}
