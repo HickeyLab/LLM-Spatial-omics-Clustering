@@ -14,6 +14,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from llm_spatial_omics_clustering.manuscript import INPUTS, verify_inputs
+from llm_spatial_omics_clustering.clustering_publication import override_path
 
 
 def _belongs(label, group):
@@ -22,7 +23,8 @@ def _belongs(label, group):
 
 def current_tables(label):
     verify_inputs()
-    records = json.loads((INPUTS / 'tables/current_tables.json').read_text())['tables']
+    path = override_path('tables/current_tables.json', 'replay_table_overrides', root=ROOT) or INPUTS / 'tables/current_tables.json'
+    records = json.loads(path.read_text())['tables']
     return [record for record in records if _belongs(record['label'], label)]
 
 
@@ -37,6 +39,13 @@ def companion_tables(label):
         if hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
             raise ValueError(f'Companion checksum changed: {path.name}')
         item = dict(record)
+        current = override_path(record['filename'], 'companion_table_overrides', root=ROOT)
+        if current is not None:
+            item['archival_path'] = record['path']
+            item['archival_sha256'] = record['sha256']
+            item['path'] = str(current.relative_to(ROOT))
+            item['sha256'] = hashlib.sha256(current.read_bytes()).hexdigest()
+            path = current
         if path.suffix == '.csv':
             item['data'] = pd.read_csv(path)
         elif path.suffix == '.json':
@@ -55,7 +64,7 @@ def table_html(label):
                           f'<p>{escape(record.get("notes", ""))}</p>'])
     for record in companion_tables(label):
         fragments.append(f'<h2>Table {escape(record["current_label"])}: {escape(record["filename"])}</h2>')
-        fragments.append('<p>Deposited filename retained for provenance. The heading uses the current manuscript number.</p>')
+        fragments.append('<p>Updated frozen primary clustering inputs or diagnostics. The archived release companion remains unchanged.</p>' if 'archival_path' in record else '<p>Deposited filename retained for provenance. The heading uses the current manuscript number.</p>')
         if isinstance(record.get('data'), pd.DataFrame):
             # Native table cells above take precedence when the manuscript has
             # an edited display table. Complete companion data remain below.

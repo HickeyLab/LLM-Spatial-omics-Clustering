@@ -1,0 +1,91 @@
+{
+  "schema": "cell_masks.flowsom47_primary.v1",
+  "identity": "B004_flowsom47_fullpass3_seed42_20261102_v1",
+  "status": "frozen",
+  "frozen_utc": "2026-11-03T01:38:18.365697+00:00",
+  "authorization": "User: ok freeze the primary clustering budget; then continue.",
+  "scope": "Primary B004 FlowSOM partition for subsequent updated analyses; other clustering methods have independent primary contracts.",
+  "cohort": "B004",
+  "n_cells": 220082,
+  "n_regions": 8,
+  "n_markers": 47,
+  "full_passes": 3,
+  "training_updates": 660246,
+  "sampling_seed": 42,
+  "sampling": "Seeded shuffled whole-cohort passes; every cell exactly once per pass.",
+  "preprocessing": "Original float32 arcsinh(x/5), full-cohort RobustScaler, float32 output",
+  "cell_key_sha256": "7fced5df4b9ff6814059e1786a32154a1b871fe5d2bb4d90d63f2c87fd2b351a",
+  "implementation": "MiniSom 2.3.5 followed by Ward, the historical topology fallback",
+  "som": {
+    "side": 32,
+    "sigma": 1.0,
+    "learning_rate": 0.3,
+    "neighborhood": "gaussian",
+    "decay": "Native MiniSom asymptotic decay over each fit total update count"
+  },
+  "ward_target_clusters": 300,
+  "occupied_clusters": 299,
+  "cluster_ids_preserved_without_renumbering": true,
+  "source_condition": "passes_3",
+  "source_run": "outputs/revision_20261102/flowsom47_sampling/runs/passes_3__seed_42",
+  "source_training_protocol_sha256": "c9d0f8356632dd401454c919b4bd343812f48e5777dde1e91e696bc24a91c97f",
+  "source_run_status_sha256": "8cf4f0df0753d034c4984008bd8530b4f263301619f0e71895bed60c5eb867e8",
+  "selection": {
+    "budget_rationale": "Earlier training-only recommendation; modest fit improvement beyond three passes and mixed stability changes.",
+    "seed_rationale": "Historical fixed-seed convention; no search for favorable reference scores.",
+    "decision_after_fit_diagnostics": true,
+    "decision_after_reference_scores_available": true,
+    "prospectively_preregistered_primary": false,
+    "budget_recommendation_predated_reference_evaluation": true
+  },
+  "fit_diagnostics": {
+    "quantization_error": 7.487569137449248,
+    "largest_cluster_fraction": 0.24472696540380404
+  },
+  "reference_diagnostics_primary_policy": {
+    "label_policy": "historical harmonized21 including Noise",
+    "selected_purity": 0.48282458356430785,
+    "selected_ARI": 0.11001950357153091,
+    "historical47_prefix_purity": 0.5910024445433975,
+    "historical47_prefix_ARI": 0.09562813695698036,
+    "reference_labels_used_during_fitting": false
+  },
+  "downstream_use": {
+    "assignment_file": "assignments.csv.gz",
+    "assignment_column": "flowsom_cluster",
+    "key_columns": [
+      "File_ID",
+      "ID"
+    ],
+    "marker_file": "features47.npy",
+    "marker_names_file": "marker_columns.json",
+    "reuse_same_partition_for_all_annotation_vocabularies": true,
+    "rebuild_cluster_summaries_and_run_fresh_annotation_for_changed_memberships": true,
+    "exclude_reference_diagnostics_from_model_prompts": true
+  },
+  "sensitivities": "sensitivity_registry.json",
+  "limits": [
+    "one B004 donor; regions and seeds are not independent donor replicates",
+    "seed and budget dependence remain material",
+    "no convergence or biological-performance advantage is asserted"
+  ],
+  "files": {
+    "assignments.csv.gz": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+    "cell_keys.csv": "fd47602f0b9d40d7d0c099fce31e49ce53526cef1df32a2224a3e66214a97bbb",
+    "cluster_ids.json": "f5239f85ed8444d86746be1eeb8746ed6a6cb3615537f5137797b6bfb93e9ce9",
+    "cluster_sizes.csv": "8ae74b2279d4b241574dce4fa1dee2b86145e03fef50b0e225cf557d63b7b060",
+    "environment_freeze.txt": "2b1bea1af688946137f92e67c379852ae76a06265cc6b5efb338d5f3754d2b40",
+    "features47.npy": "b7092e9f0dfdb20417dada86dc104aa95619f3e1db1518b3702edeae47484b0d",
+    "fit_only_recommendation_before_reference.txt": "9823cb85f2636446c13915befe117b0fdcbc1f9b2fba246a256e736f52935e01",
+    "marker_columns.json": "cc4adcc48820dac0e58ee1bb78963efe197697aa88ea86b23b51fce591c68efa",
+    "minisom_source.py": "8d5d41d8411cc84c4f69dcb3db245f127469310538a4a99fe5c4a7fc8cb785ea",
+    "model.npz": "db96c7b754d021d452a5d2ff64c93a84058897fd8901133d7ac4bb54f94b35a8",
+    "requirements.txt": "80ff0a678965a22d59e9acf56567178397f93f7681b6f7b291c8fbfca6a85a02",
+    "selection_rationale.txt": "6cc59fdf72585d731d081c525d2a1871dda99ddcda9138bb12cf115dac38ba01",
+    "sensitivity_registry.json": "0cc516d5a5eaf87a43d2a50e6af40b6b471d7cd9118d179303bff9d567c49b1e",
+    "source_run_status.json": "8cf4f0df0753d034c4984008bd8530b4f263301619f0e71895bed60c5eb867e8",
+    "training_indices.npy": "b07e8214a1fa2c3a9df2e3350fb88c3391eb96d077eb05dbdaf9f3f3f4a5fccc",
+    "training_protocol.json": "c9d0f8356632dd401454c919b4bd343812f48e5777dde1e91e696bc24a91c97f",
+    "training_runner_provenance.py": "ce2239b7534ec049db35e3612a758a9fc5165aa957133d65b38f12fe83cbf4fd"
+  }
+}

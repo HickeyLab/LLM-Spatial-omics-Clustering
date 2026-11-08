@@ -1,0 +1,85 @@
+{
+  "Figure2E": {
+    "ontology": "publication20",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "8regions per method",
+    "majority_mapping": "within region",
+    "metric": "cell-count-weightedF1",
+    "Paneth": "Goblet"
+  },
+  "Figure2F": {
+    "ontology": "publication20",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "20celltypes per method",
+    "majority_mapping": "global over8regions",
+    "metric": "perclassF1",
+    "Paneth": "Goblet"
+  },
+  "Figure2G": {
+    "ontology": "publication20",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "8regions per method",
+    "majority_mapping": "within region",
+    "metric": "cell-count-weightedclusterpurity",
+    "Paneth": "Goblet"
+  },
+  "Figure2H": {
+    "ontology": "publication20",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "20celltypes per method",
+    "majority_mapping": "global over8regions",
+    "metric": "perclassrecall",
+    "Paneth": "Goblet"
+  },
+  "FigureS4C": {
+    "ontology": "raw28",
+    "Noise": "included",
+    "n_cells": 220082,
+    "grain": "clustercomposition",
+    "majority_mapping": "not used"
+  },
+  "FigureS4D_ARI_AMI": {
+    "ontology": "raw27",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "8regions per method",
+    "majority_mapping": "not used",
+    "filter": "fixed_raw_metrics.noise_policy==exclude and region!=ALL"
+  },
+  "FigureS4D_Shannon_purity": {
+    "ontology": "raw27",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "cluster",
+    "majority_mapping": "globalraw27forcoloronly"
+  },
+  "FigureS4D_F1_recall": {
+    "ontology": "raw27",
+    "Noise": "excluded",
+    "n_cells": 209587,
+    "grain": "27celltypes per method",
+    "majority_mapping": "globalraw27over8regions"
+  },
+  "FigureS5A": {
+    "ontology": "raw28",
+    "Noise": "included",
+    "n_cells": 220082,
+    "grain": "pooledbar plus8regionaldots per method",
+    "majority_mapping": "separatelywithin each evaluated population",
+    "metric": "reference-majorityupperboundpurity"
+  },
+  "FigureS5B": {
+    "ontology": "existinghistoricalshared45control",
+    "status": "unchanged; separate experiment"
+  },
+  "SupplementaryTableS7_Figure2_EG_12": {
+    "ontology": "publication20",
+    "Noise": "excluded",
+    "grain": "12pairedcomparisons,8regions each",
+    "multiplicity": "Holm across these12 only; other48 tests untouched"
+  }
+}

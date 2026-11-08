@@ -16,11 +16,11 @@
     {
       "file": "notebooks/final_figures/previews/figure_02.png",
       "source_file": "figures/manuscript/Figure_2.png",
-      "source_sha256": "39c276aa71bf6db19686ef1a8fe3746cbe2ac5e34787f7b45e5e908486a54ab3",
+      "source_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
       "labels": [],
       "size_pixels": [
         3900,
-        6746
+        5033
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s04.png",
       "source_file": "figures/manuscript/Figure_S4.png",
-      "source_sha256": "772d1d05f93c869bf5ebaf4791dac8ecd474ffbf27acd41e75d509b5ac15ec64",
+      "source_sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
       "labels": [],
       "size_pixels": [
         3900,
@@ -116,7 +116,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s05.png",
       "source_file": "figures/manuscript/Figure_S5.png",
-      "source_sha256": "b0e07780d4aea45ffcc668a7dfc98d24b364c0b76f53804af818dbfdbfa9317c",
+      "source_sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
       "labels": [],
       "size_pixels": [
         3900,
@@ -171,6 +171,16 @@
       "size_pixels": [
         3900,
         2261
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s11.png",
+      "source_file": "figures/manuscript/Figure_S11.png",
+      "source_sha256": "3c8ab469cb44ecebbfa04081f21b8d586857fb65e68fe60e1f749f4275425f2f",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        858
       ]
     }
   ],

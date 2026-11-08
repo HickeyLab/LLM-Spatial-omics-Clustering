@@ -1,0 +1,320 @@
+{
+  "schema": "clustering.publication.primary47.v1",
+  "frozen_date": "2026-11-08",
+  "status": "clustering_complete_annotation_pending",
+  "cohort": {
+    "name": "B004",
+    "cells": 220082,
+    "fields_of_view": 8,
+    "key_columns": [
+      "File_ID",
+      "ID"
+    ],
+    "key_sha256": "7fced5df4b9ff6814059e1786a32154a1b871fe5d2bb4d90d63f2c87fd2b351a"
+  },
+  "primary_spatialsort_seed": 42,
+  "spatialsort_sensitivity_seed": 43,
+  "methods": {
+    "leiden": {
+      "path": "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz",
+      "source_csv_sha256": "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18",
+      "gzip_sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+      "assignment_column": "leiden_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 300,
+      "contract": {
+        "features": "47 markers excluding Hoechst1",
+        "transform": "arcsinh(x / 5)",
+        "scaling": "StandardScaler fit independently within each File_ID",
+        "base_partition": "local Leiden hierarchy with K=320",
+        "base_settings": {
+          "pca_components": 24,
+          "n_neighbors": 24,
+          "resolution": 1.1,
+          "minimum_child_size": 100,
+          "maximum_children": 7,
+          "seed": 42,
+          "harmony": false
+        },
+        "coarsening": "20 deterministic, within-parent Ward-style centroid merges to K=300"
+      }
+    },
+    "flowsom": {
+      "path": "data/frozen/clustering47_primary_20261108/flowsom_assignments.csv.gz",
+      "gzip_sha256": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+      "assignment_column": "flowsom_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 299,
+      "contract": {
+        "features": "47 protein markers including CD123 and CDX2",
+        "transform": "arcsinh(x / 5)",
+        "scaling": "RobustScaler fit on the full B004 cohort",
+        "som_shape": [
+          32,
+          32
+        ],
+        "som_sigma": 1.0,
+        "som_learning_rate": 0.3,
+        "som_iterations": 660246,
+        "metaclustering": "Ward, K=300",
+        "seed": 42,
+        "full_cohort_passes": 3,
+        "sampling": "three full independently shuffled passes over all 220082 cells"
+      },
+      "historical_contract": "data/frozen/v3_k300_assignments/manifest.json#methods.flowsom"
+    },
+    "spatialsort": {
+      "path": "data/frozen/clustering47_primary_20261108/spatialsort_assignments.csv.gz",
+      "gzip_sha256": "9a0e07852d3b4b4b3768bfa3b1a5dfd3985c1795e4a7e193af5eaacf0d4449a4",
+      "assignment_column": "spatialsort_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 229,
+      "contract": {
+        "features": "47 protein markers including CD123 and CDX2",
+        "transform": "arcsinh(x / 5)",
+        "scaling": "RobustScaler fit on the full B004 cohort",
+        "n_neighbors": 24,
+        "precision_scale": 0.65,
+        "actual_mcmc_sweeps": 100,
+        "double_metropolis_hastings_iterations": 5,
+        "point_estimate": "prescribed sweep 100, primary seed 42",
+        "seed": 42,
+        "native_prior_note": "The argument is 0.65. Native TWO_K retains its actual 0.1/100 NormalGamma branch, as preserved in spatialsort_protocol.json."
+      },
+      "historical_contract": "data/frozen/v3_k300_assignments/manifest.json#methods.spatialsort"
+    },
+    "pixie": {
+      "path": "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz",
+      "source_csv_sha256": "7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6",
+      "gzip_sha256": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805",
+      "assignment_column": "pixie_cell_cluster",
+      "configured_clusters": 300,
+      "observed_clusters": 300,
+      "contract": {
+        "input": "paired 48-channel OME-TIFF expression images and integer cell masks",
+        "include_hoechst": true,
+        "gaussian_sigma_pixels": 2.0,
+        "pixel_som_shape": [
+          10,
+          10
+        ],
+        "pixel_som_sigma": 5.0,
+        "pixel_som_learning_rate": 0.05,
+        "pixel_som_initialization": "data",
+        "pixel_som_decay": "linear",
+        "pixel_som_passes": 1,
+        "pixel_metaclusters": 20,
+        "cell_som_shape": [
+          24,
+          24
+        ],
+        "cell_som_sigma": 2.0,
+        "cell_som_learning_rate": 0.3,
+        "cell_som_iterations": 5000,
+        "cell_metaclusters": 300,
+        "seed": 42
+      }
+    }
+  },
+  "sensitivity": {
+    "spatialsort_seed43": {
+      "path": "data/frozen/clustering47_primary_20261108/spatialsort_seed43_assignments.csv.gz",
+      "assignment_column": "spatialsort_cluster",
+      "observed_clusters": 231
+    }
+  },
+  "panel_policies": {
+    "Figure2D": "Retained archived shared UMAP coordinates, recolored with raw28 reference-majority labels of current fixed partitions. No embedding refit.",
+    "Figure2E_G": "20-class harmonization, nonNoise, within-region majorities, alphabetical ties.",
+    "Figure2F_H": "Same20class nonNoise evaluation, one global majority mapping per method.",
+    "FigureS4A": "Historical45-marker reference profile matrix preserved.",
+    "FigureS4C": "Raw28reference labels includingNoise.",
+    "FigureS4D": "Raw27nonNoise labels. ARI and AMI use eight within-region observations, other plots use global cluster or cell-type summaries.",
+    "FigureS5A": "Raw28includingNoise, pooled and within-region majority mappings.",
+    "FigureS5B": "Historical common45marker controls unchanged.",
+    "FigureS11A": "Historical45marker annotation output and old memberships unchanged."
+  },
+  "files": {
+    "data/frozen/clustering47_primary_20261108/Table_S1_channel_membership.csv": {
+      "sha256": "ca988f22648f2854a5504e2bb802a9c4eac198a0fa74b0ff95978d3212b4476a",
+      "bytes": 15737
+    },
+    "data/frozen/clustering47_primary_20261108/celltype_metrics.csv": {
+      "sha256": "6a7ca27097ae0901f478a9236b9bf6910d3785f74856f9ec250c34177641bca6",
+      "bytes": 5686
+    },
+    "data/frozen/clustering47_primary_20261108/conditional_comparisons.csv": {
+      "sha256": "7e28740f387be750897dbd2b95fc36c634a9c7b0973a4825fab26fa7937e285b",
+      "bytes": 7216
+    },
+    "data/frozen/clustering47_primary_20261108/conditional_comparisons_all_families.csv": {
+      "sha256": "e54a26811999ce1d8cd302a2d047a3003edbff9db21e016afbb9985b50e5116b",
+      "bytes": 35352
+    },
+    "data/frozen/clustering47_primary_20261108/current_tables.json": {
+      "sha256": "0ab49e1663ffcea8a73c80a0b8ea488b775b0f77ccdddf0e8bcfbb64272eb750",
+      "bytes": 38878
+    },
+    "data/frozen/clustering47_primary_20261108/environment_freeze.txt": {
+      "sha256": "39764c05572ccb7c5302414577aa748327e1fd9e0363566d6b409bd55bd289ea",
+      "bytes": 332
+    },
+    "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv": {
+      "sha256": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
+      "bytes": 5354
+    },
+    "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv": {
+      "sha256": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
+      "bytes": 70031
+    },
+    "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz": {
+      "sha256": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
+      "bytes": 49839
+    },
+    "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": {
+      "sha256": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b",
+      "bytes": 22720
+    },
+    "data/frozen/clustering47_primary_20261108/flowsom_assignments.csv.gz": {
+      "sha256": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+      "bytes": 742366
+    },
+    "data/frozen/clustering47_primary_20261108/flowsom_manifest.json": {
+      "sha256": "f8b8a11357aa14a595002737598a40cd06555f2510ca4351b31258b6087db901",
+      "bytes": 4884
+    },
+    "data/frozen/clustering47_primary_20261108/flowsom_primary_config.json": {
+      "sha256": "8d27dd902b89eaa7bbfb198c908cd6ab194141974e396cb6a96eeea127e77d1c",
+      "bytes": 1403
+    },
+    "data/frozen/clustering47_primary_20261108/global_majority_maps.csv": {
+      "sha256": "f38ffb7735e649f8216399f937331fac96a92e6758a2efb428fdc43cbcb6bcb4",
+      "bytes": 24842
+    },
+    "data/frozen/clustering47_primary_20261108/independent_verification.json": {
+      "sha256": "0fdf49ce95e65513eb9bf7578a5018bfced6e9962cb14a587f6df5a1a228b4e4",
+      "bytes": 910
+    },
+    "data/frozen/clustering47_primary_20261108/majority_ties.csv": {
+      "sha256": "b4ef041eb93b80cc6c92b1acd92275037c6a40ae1b14ed76c936c140594bb8c2",
+      "bytes": 1825
+    },
+    "data/frozen/clustering47_primary_20261108/marker_columns.json": {
+      "sha256": "cc4adcc48820dac0e58ee1bb78963efe197697aa88ea86b23b51fce591c68efa",
+      "bytes": 522
+    },
+    "data/frozen/clustering47_primary_20261108/metrics_receipt.json": {
+      "sha256": "3ee71fa511e3e2e630569011a2308173efcb081cb07c234646671d03ea3fdcc6",
+      "bytes": 15751
+    },
+    "data/frozen/clustering47_primary_20261108/paired_regional_observations.csv": {
+      "sha256": "b32487d19c49a8a88de82d5a1cc19b7d40647f4d3c623d3e9fb816d66a70f9eb",
+      "bytes": 14661
+    },
+    "data/frozen/clustering47_primary_20261108/paired_regional_observations_all_families.csv": {
+      "sha256": "44fa65f515faaa161a48f549bf5830d1b4d93d51c0270a8d7eb54c32432f87f5",
+      "bytes": 79282
+    },
+    "data/frozen/clustering47_primary_20261108/panel_F_values.csv": {
+      "sha256": "91d9edd92a6f0692a1a4a2ee5e7a47cb40dd36856aa7ba3091d5489a8128843e",
+      "bytes": 1495
+    },
+    "data/frozen/clustering47_primary_20261108/panel_H_values.csv": {
+      "sha256": "0e2d8ee3534ab590f1e24026c860736e396b4a91b932df13144a73c9b1879bd1",
+      "bytes": 1492
+    },
+    "data/frozen/clustering47_primary_20261108/per_panel_scoring.json": {
+      "sha256": "9dc5a53a3889eddca86f6c44ea24c2dd8791099c50477e0e589da240cc4586a0",
+      "bytes": 2388
+    },
+    "data/frozen/clustering47_primary_20261108/publication_baseline_changes.csv": {
+      "sha256": "c64010dd79d321929bd84c57b0154a3adde0326f665b2da76ce037678c9bf89e",
+      "bytes": 547
+    },
+    "data/frozen/clustering47_primary_20261108/publication_pooled_metrics.csv": {
+      "sha256": "f2568b39b4761ce837ee3559f2fd886391a01300baf985b6a6d4e8e03c4a4b19",
+      "bytes": 763
+    },
+    "data/frozen/clustering47_primary_20261108/publication_regional_summary.csv": {
+      "sha256": "c605d3c92e417761311ad177a493cee99009af44fbbce3c0769924ab4753bc1d",
+      "bytes": 645
+    },
+    "data/frozen/clustering47_primary_20261108/publication_scoring_policy.json": {
+      "sha256": "c0ea8eb68660c4cda8b3f4f05aefb1a782c147d6a8e8b87bf4da02264f79b865",
+      "bytes": 706
+    },
+    "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": {
+      "sha256": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+      "bytes": 2796238
+    },
+    "data/frozen/clustering47_primary_20261108/regional_majority_maps.csv": {
+      "sha256": "9f382b5d1b418c9d389d74b37efa884a45cdc47fda99e4eb91b65b4803ab37ca",
+      "bytes": 408952
+    },
+    "data/frozen/clustering47_primary_20261108/regional_metrics.csv": {
+      "sha256": "88f416abc19dc2f13edfc0a089267f5f407bc2fd45b144d8759eece7ee75e55b",
+      "bytes": 3187
+    },
+    "data/frozen/clustering47_primary_20261108/scoring_policy_comparison.csv": {
+      "sha256": "a0acfb862c142802172651a72387ec5348d2e6349f4ab27d94f5151a0055b3bc",
+      "bytes": 2104
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_assignments.csv.gz": {
+      "sha256": "9a0e07852d3b4b4b3768bfa3b1a5dfd3985c1795e4a7e193af5eaacf0d4449a4",
+      "bytes": 787210
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_completion_receipt.json": {
+      "sha256": "64345d6455b3f65a29c1b99be8f2a304206bd374f372255ee2e7fa064ba4eedb",
+      "bytes": 9165
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_seed43_assignments.csv.gz": {
+      "sha256": "3cecda192d048a1f24ed94b1c572b5827d9a037a3d6341ff6b7dda7211f1c5d2",
+      "bytes": 780417
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_seed43_celltype_metrics.csv": {
+      "sha256": "2a0082440d4ebecde63daf6da1fc7749b82a0838b7fa5cda8ee32a342edf2ff5",
+      "bytes": 1469
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_seed43_fixed_raw_metrics.csv": {
+      "sha256": "364ec49c59c50834d8ff05bffd4377e7f72d6a0c079670a6c27bbb24544610fd",
+      "bytes": 5916
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_seed43_publication_pooled_metrics.csv": {
+      "sha256": "d4f942866dbcb4e727c94f54a4571917938862669eece137822a58e849daaf41",
+      "bytes": 340
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_seed43_regional_metrics.csv": {
+      "sha256": "575b565d3d324f81cc4e2714f8587fa4e37cadf8d5e837c66c3a0432ce4e9c7d",
+      "bytes": 912
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_seed_sensitivity.csv": {
+      "sha256": "c3d24e5a6731f271e2813ca4db9c539394bbefcfcffd9b243bbbad51f881b4f0",
+      "bytes": 608
+    },
+    "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz": {
+      "sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+      "bytes": 867763
+    },
+    "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz": {
+      "sha256": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805",
+      "bytes": 2986706
+    },
+    "data/frozen/clustering47_primary_20261108/README.md": {
+      "sha256": "39c36f9cd759c4a1285403b6f286fdb2b0a46b0b5a2940b893434f31b94aac7a",
+      "bytes": 2897
+    },
+    "data/frozen/clustering47_primary_20261108/spatialsort_protocol.json": {
+      "sha256": "b2dbd0d85774aaf0e553672da6b2cf98a3fb4f52661db6082a46ab791dfda06e",
+      "bytes": 3283
+    }
+  },
+  "new_fits": 0,
+  "new_annotations": 0,
+  "annotation_execution_disabled": true,
+  "notes": [
+    "Primary settings were frozen before this manuscript update, not prospectively preregistered.",
+    "Seed43 is a clustering sensitivity check, never selected in place of primary seed42.",
+    "No convergence or biological improvement claim follows from longer computation."
+  ],
+  "marker_order_path": "data/frozen/clustering47_primary_20261108/marker_columns.json"
+}

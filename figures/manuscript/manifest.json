@@ -1,7 +1,7 @@
 {
   "schema": "manuscript.artwork.v2",
-  "figure_count": 15,
-  "image_count": 17,
+  "figure_count": 16,
+  "image_count": 18,
   "policy": "Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
   "native_renderer": "scripts/render_publication_figures.py",
   "style_file": "configs/publication_figure_style.json",
@@ -29,14 +29,14 @@
     {
       "file": "figures/manuscript/Figure_2.png",
       "source_file": "figures/publication/Figure_2.png",
-      "source_sha256": "39c276aa71bf6db19686ef1a8fe3746cbe2ac5e34787f7b45e5e908486a54ab3",
-      "output_sha256": "39c276aa71bf6db19686ef1a8fe3746cbe2ac5e34787f7b45e5e908486a54ab3",
+      "source_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "output_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
       "size_pixels": [
         3900,
-        6746
+        5033
       ],
       "width_mm": 165.1,
-      "height_mm": 285.54760359972164,
+      "height_mm": 213.0476035997217,
       "minimum_font_pt": 6.6,
       "minimum_placement_width_mm": 125.076,
       "dpi": 600,
@@ -200,8 +200,8 @@
     {
       "file": "figures/manuscript/Figure_S4.png",
       "source_file": "figures/publication/Figure_S4.png",
-      "source_sha256": "772d1d05f93c869bf5ebaf4791dac8ecd474ffbf27acd41e75d509b5ac15ec64",
-      "output_sha256": "772d1d05f93c869bf5ebaf4791dac8ecd474ffbf27acd41e75d509b5ac15ec64",
+      "source_sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+      "output_sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
       "size_pixels": [
         3900,
         4955
@@ -219,8 +219,8 @@
     {
       "file": "figures/manuscript/Figure_S5.png",
       "source_file": "figures/publication/Figure_S5.png",
-      "source_sha256": "b0e07780d4aea45ffcc668a7dfc98d24b364c0b76f53804af818dbfdbfa9317c",
-      "output_sha256": "b0e07780d4aea45ffcc668a7dfc98d24b364c0b76f53804af818dbfdbfa9317c",
+      "source_sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+      "output_sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
       "size_pixels": [
         3900,
         1383
@@ -328,6 +328,29 @@
       "vector_files": [
         "figures/publication/Figure_S10.pdf",
         "figures/publication/Figure_S10.svg"
+      ]
+    },
+    {
+      "file": "figures/manuscript/Figure_S11.png",
+      "source_file": "data/frozen/historical_annotation_artwork_20261106/Figure_S11.png",
+      "source_sha256": "3c8ab469cb44ecebbfa04081f21b8d586857fb65e68fe60e1f749f4275425f2f",
+      "output_sha256": "3c8ab469cb44ecebbfa04081f21b8d586857fb65e68fe60e1f749f4275425f2f",
+      "size_pixels": [
+        3900,
+        858
+      ],
+      "width_mm": 165.1,
+      "height_mm": 36.33611111111111,
+      "minimum_font_pt": 5.7,
+      "minimum_placement_width_mm": 144.82456140350877,
+      "dpi": 600,
+      "vector_files": [
+        "data/frozen/historical_annotation_artwork_20261106/Figure_S11.svg"
+      ],
+      "status": "historical_annotation_pending_separate_rerun",
+      "available_native_formats": [
+        "png",
+        "svg"
       ]
     }
   ]

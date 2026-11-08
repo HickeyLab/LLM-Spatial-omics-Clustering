@@ -1,0 +1,202 @@
+{
+  "schema": "clustering.publication.figure_update.v1",
+  "status": "clustering_artifacts_prepared_and_verified",
+  "base_commit": "aa632f695a97f48b72ee6c048464881872488870",
+  "updated_native_figures": [
+    "2",
+    "S4",
+    "S5"
+  ],
+  "current_figure2_panels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "sweep_experiment_4": "archived_unchanged",
+  "spatialsort_primary_seed": 42,
+  "spatialsort_sensitivity_seed": 43,
+  "occupied_clusters": {
+    "leiden": 300,
+    "flowsom": 299,
+    "spatialsort": 229,
+    "pixie": 300
+  },
+  "native_verification": {
+    "status": "pass",
+    "native_figures": [
+      {
+        "figure": "Figure_2",
+        "minimum_font_pt": 6.599999904632568,
+        "panel_letters": "ABCDEFGH",
+        "png_tiff_dpi": 600,
+        "minimum_pdf_image_dpi": 609.9980812802352,
+        "editable_svg_text_nodes": 154
+      },
+      {
+        "figure": "Figure_S4",
+        "minimum_font_pt": 5.5,
+        "panel_letters": "ABCD",
+        "png_tiff_dpi": 600,
+        "minimum_pdf_image_dpi": 609.9998543718676,
+        "editable_svg_text_nodes": 136
+      },
+      {
+        "figure": "Figure_S5",
+        "minimum_font_pt": 5.5,
+        "panel_letters": "AB",
+        "png_tiff_dpi": 600,
+        "minimum_pdf_image_dpi": null,
+        "editable_svg_text_nodes": 38
+      },
+      {
+        "figure": "Figure_S11",
+        "status": "byte_preserved_historical_annotation",
+        "available_native_formats": [
+          "png",
+          "svg"
+        ],
+        "panel_letters": "A",
+        "scientific_rerender_performed": false
+      }
+    ],
+    "independently_checked_figure_3e_rows": 80,
+    "new_model_calls": 0,
+    "new_fits": 0
+  },
+  "independent_replay": {
+    "status": "pass",
+    "frozen_input_files": 122,
+    "approved_images": 18,
+    "figure_2_regional_values": 64,
+    "figure_2_celltype_values": 160,
+    "figure_3_method_model_maps": 16,
+    "spatial_window_cells": [
+      1086,
+      915
+    ],
+    "paired_representation_comparisons": 16,
+    "current_clustering_and_historical_annotation_partitions_checked_separately": true,
+    "new_model_calls": 0,
+    "new_fits": 0,
+    "network_access": false
+  },
+  "retained_regions": {
+    "S4": {
+      "crop_pixels": [
+        0,
+        0,
+        3900,
+        1800
+      ],
+      "old_new_exact_pixels": true,
+      "different_pixels": 0,
+      "new_rgb_sha256": "2678334921416e6692abaa1f37afc2d285666f8fed22cc8fb6e176db0b2c8f49"
+    },
+    "S5": {
+      "crop_pixels": [
+        1950,
+        0,
+        3900,
+        1383
+      ],
+      "old_new_exact_pixels": true,
+      "different_pixels": 0,
+      "new_rgb_sha256": "fd037cf1b340f14b3f9a52147ea126ad12c0ab56c26609cbaf40438f8c401dc6"
+    },
+    "2": {
+      "crop_pixels": [
+        0,
+        0,
+        3900,
+        1850
+      ],
+      "old_new_exact_pixels": false,
+      "different_pixels": 220514,
+      "new_rgb_sha256": "c2f6a4bdd2c836899b961752f6c9c18e85600a5d002a4d0b303d5dd0b5bdea74"
+    }
+  },
+  "tests": {
+    "current_contract_and_manuscript_alignment": {
+      "run": 10,
+      "passed": 10
+    },
+    "historical_contract_runtime_retirement_and_disabled_protocol": {
+      "run": 38,
+      "passed": 32,
+      "skipped_external_H5AD_integration": 6
+    },
+    "all18_preview_pixel_checks": "pass",
+    "diff_whitespace": "pass"
+  },
+  "annotation_outputs": "historical_memberships_and_predictions_preserved_pending_separate_rerun",
+  "historical_S11_native_formats": [
+    "png",
+    "svg"
+  ],
+  "new_scientific_fits": 0,
+  "new_annotation_calls": 0,
+  "live_GoogleDoc_verification": "handled_separately_by_parent_agent_not_claimed_here",
+  "files": {
+    "figures/publication/Figure_2.png": {
+      "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "bytes": 2824858
+    },
+    "figures/publication/Figure_2.tiff": {
+      "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
+      "bytes": 4483584
+    },
+    "figures/publication/Figure_2.pdf": {
+      "sha256": "be7c9c56c5d26767b81f2760145d0f64ae8bff7a2d97d47c37a4fe02e5ca69b2",
+      "bytes": 3299170
+    },
+    "figures/publication/Figure_2.svg": {
+      "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
+      "bytes": 5446481
+    },
+    "figures/publication/Figure_S4.png": {
+      "sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+      "bytes": 3579825
+    },
+    "figures/publication/Figure_S4.tiff": {
+      "sha256": "6a1322efe84b1c03d043ed5faadee1760c5dc2574a29adc3be761567eca41faf",
+      "bytes": 4540816
+    },
+    "figures/publication/Figure_S4.pdf": {
+      "sha256": "1114f577bf15e5e36d748dc213d4ab3f2c23c3c31658779522a34bde3db88533",
+      "bytes": 2738589
+    },
+    "figures/publication/Figure_S4.svg": {
+      "sha256": "914117bec9ed97a5dfc2bc39f29b71e29a81a05abe20ceac8e4964c86ddb4e9d",
+      "bytes": 6213436
+    },
+    "figures/publication/Figure_S5.png": {
+      "sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+      "bytes": 202680
+    },
+    "figures/publication/Figure_S5.tiff": {
+      "sha256": "eb52f98a61f57b25bd65d1b9e43a942c490c5b6004bc1e4c464b88ca95e0f7b3",
+      "bytes": 384576
+    },
+    "figures/publication/Figure_S5.pdf": {
+      "sha256": "600a35b5438654e7e862395e3095176a33e12bf4520589b9b740a25e45f792df",
+      "bytes": 44701
+    },
+    "figures/publication/Figure_S5.svg": {
+      "sha256": "5adadf11bd0b1fd1e371a5a5983d559392dc8a3610e7e8cac4e3f95fbcb3b6c6",
+      "bytes": 30387
+    },
+    "figures/manuscript/Figure_S11.png": {
+      "sha256": "3c8ab469cb44ecebbfa04081f21b8d586857fb65e68fe60e1f749f4275425f2f",
+      "bytes": 271005
+    },
+    "figures/manuscript/Figure_S11.svg": {
+      "sha256": "88c955825328fbfd05122aec4078fa101a2ac79d3cde94db001e6e672545e818",
+      "bytes": 147083
+    }
+  }
+}

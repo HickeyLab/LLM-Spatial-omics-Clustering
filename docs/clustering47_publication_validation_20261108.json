@@ -1,0 +1,63 @@
+{
+  "schema": "clustering47.publication_update.validation.v1",
+  "date": "2026-11-08",
+  "base_commit": "aa632f695a97f48b72ee6c048464881872488870",
+  "scope": [
+    "Figure 2A-H",
+    "Figure S4C-D",
+    "Figure S5A",
+    "native S2A/B cells",
+    "12 clustering-only Table S7 comparisons",
+    "reviewable manuscript suggestions"
+  ],
+  "latest_focused_tests": {
+    "run": 18,
+    "passed": 18,
+    "modules": [
+      "test_clustering47_publication",
+      "test_clustering47_recomputation",
+      "test_manuscript_alignment",
+      "test_sweep_retirement"
+    ]
+  },
+  "native_figure_verification": {
+    "passed": true,
+    "figures": [
+      "2",
+      "S4",
+      "S5",
+      "S11"
+    ],
+    "dpi": 600,
+    "s11_byte_preserved_historical": true
+  },
+  "portable_metric_replay": {
+    "passed": true,
+    "pinned_outputs_compared": 26,
+    "byte_identical": 26
+  },
+  "manuscript": {
+    "prose_replacements": 46,
+    "table_cells": 13,
+    "pending_image_replacements": 3,
+    "mode": "Suggesting",
+    "saved_to_drive": true,
+    "prose_and_tables_export_readback": "pass",
+    "live_pending_image_comparison": "pass",
+    "pending_media_omitted_from_docx_pdf_export": true,
+    "accepted_suggestions": 0
+  },
+  "annotation_protocol": {
+    "execution_enabled": false,
+    "automatic_launch": false,
+    "new_annotation_calls": 0
+  },
+  "new_clustering_fits": 0,
+  "historical_release_modified": false,
+  "evidence": [
+    "clustering47_figure_update_20261108.json",
+    "clustering47_recomputation_validation_20261108.json",
+    "manuscript_clustering47_readback_20261108.json",
+    "manuscript_clustering47_live_image_proof_20261108.json"
+  ]
+}

@@ -19,7 +19,7 @@ Current display labels were checked on November 6, 2026. Some retained notebooks
 | Figure S8 | A–B | [`figure_s08_controlled_b004_annotation.ipynb`](figure_s08_controlled_b004_annotation.ipynb) |
 | Figure S9 | A–D | [`figure_s09_calibration_and_neighborhood.ipynb`](figure_s09_calibration_and_neighborhood.ipynb) |
 | Figure S10 | A–D | [`figure_s10_paired_representations.ipynb`](figure_s10_paired_representations.ipynb) |
-| Figure S11 | A | [Marker-profile source](../../data/frozen/manuscript_replay/figure_02/panel_I_marker_summaries.csv), formerly Figure 2I |
+| Figure S11 | A | [`figure_s11_historical_cd8_profiles.ipynb`](figure_s11_historical_cd8_profiles.ipynb), formerly Figure 2I |
 
 | Current item | Entry point or source |
 | --- | --- |
@@ -33,10 +33,10 @@ Current display labels were checked on November 6, 2026. Some retained notebooks
 | Table S8 | [`table_s8_label_mapping_sensitivity.ipynb`](table_s8_label_mapping_sensitivity.ipynb) |
 | Table S9 | [Unchanged paired values](../../data/frozen/manuscript_replay/tables/current_tables.json), retained as label `2`, with [donor](../../data/frozen/manuscript_replay/tables/companions/S3b_donor_metrics.csv) and [equal-donor](../../data/frozen/manuscript_replay/tables/companions/S3c_equal_donor_metrics.csv) records |
 
-Figure 2 and 3 code retains the earlier full replay. Current Figure 2 ends at H. Current Figure 3 ends at E, whose spatial comparison was previously H. Earlier reference-informed selection panels and selected Figure 2 windows are archived analyses. Figures 5, S9 and S10 replot frozen numerical results. Other new supplementary entry points verify and display the approved artwork and link to the released scientific source. Figures 4, S1 and S2 retain their original analytical workflows and data requirements. Figure 1 provides the approved composite and numerical descriptive D–F replot, with the earlier H5AD notebook archived. See [reproduction instructions](../../docs/manuscript_reproduction.md).
+Figure 2 uses the updated 47-marker primary clustering contract and ends at H. Its historical annotation I/J replay is explicit and archival. Figure 3 retains historical A–H artwork and replay pending a separate annotation rerun. Its native caption has A–E, recorded separately in inventory metadata. Current Figure 2 ends at H. Current Figure 3 ends at E, whose spatial comparison was previously H. Earlier reference-informed selection panels and selected Figure 2 windows are archived analyses. Figures 5, S9 and S10 replot frozen numerical results. Other new supplementary entry points verify and display the approved artwork and link to the released scientific source. Figures 4, S1 and S2 retain their original analytical workflows and data requirements. Figure 1 provides the approved composite and numerical descriptive D–F replot, with the earlier H5AD notebook archived. See [reproduction instructions](../../docs/manuscript_reproduction.md).
 
 The old S3 clustering filename forwards to current S4. The old S4 annotation filename forwards to current S6. The old Table S1 and S2 filenames forward to current S2 and S3. The GPT-named Figure 4 path forwards to Leiden–Claude. These compatibility paths are not additional manuscript figures or tables.
 
 [Supplementary Note 1](supplementary_note_01_llm_cluster_annotation.ipynb) displays a verified historical numerical-profile request and its archived parsed labels. Earlier representative diagrams and alternative analytical notebooks are [archived](../historical_reconstructions/README.md).
 
-Retained [previews](previews/README.md) are byte-identical copies of the pinned repository artwork, which predates the current panel reductions. Source notebooks keep new code outputs empty. Validation runs and generated outputs are recorded separately and do not overwrite the manuscript.
+The 18 [previews](previews/README.md) are byte-identical copies of the pinned repository artwork. Figure 2A–H, S4 and S5 use updated clustering diagnostics. S11A preserves its historical native bytes. Source notebooks keep new code outputs empty. Validation runs and generated outputs are recorded separately and do not overwrite the manuscript.
