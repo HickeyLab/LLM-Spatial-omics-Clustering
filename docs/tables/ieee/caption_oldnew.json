@@ -1,0 +1,72 @@
+[
+  {
+    "id": "S1",
+    "old": "Table S1. REDSEA matching and cell retention audit.",
+    "new": "TABLE S1\nREDSEA MATCHING AND CELL RETENTION AUDIT",
+    "label": "TABLE S1",
+    "title": "REDSEA MATCHING AND CELL RETENTION AUDIT",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  },
+  {
+    "id": "S2A",
+    "old": "Table S2A. Clustering configurations and hyperparameters.",
+    "new": "TABLE S2A\nCLUSTERING CONFIGURATIONS AND HYPERPARAMETERS",
+    "label": "TABLE S2A",
+    "title": "CLUSTERING CONFIGURATIONS AND HYPERPARAMETERS",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  },
+  {
+    "id": "S2B",
+    "old": "Table S2B. Channel membership.",
+    "new": "TABLE S2B\nCHANNEL MEMBERSHIP",
+    "label": "TABLE S2B",
+    "title": "CHANNEL MEMBERSHIP",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  },
+  {
+    "id": "S6a",
+    "old": "Table S6a. Paired reference agreement.",
+    "new": "TABLE S6a\nPAIRED REFERENCE AGREEMENT",
+    "label": "TABLE S6a",
+    "title": "PAIRED REFERENCE AGREEMENT",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  },
+  {
+    "id": "S6b",
+    "old": "Table S6b. Macro-F1 and prediction coverage (data file: Table_S6b.csv).",
+    "new": "TABLE S6b\nMACRO-F1 AND PREDICTION COVERAGE (DATA FILE: Table_S6b.csv)",
+    "label": "TABLE S6b",
+    "title": "MACRO-F1 AND PREDICTION COVERAGE (DATA FILE: Table_S6b.csv)",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  },
+  {
+    "id": "S6c",
+    "old": "Table S6c. Decomposition of paired agreement changes.",
+    "new": "TABLE S6c\nDECOMPOSITION OF PAIRED AGREEMENT CHANGES",
+    "label": "TABLE S6c",
+    "title": "DECOMPOSITION OF PAIRED AGREEMENT CHANGES",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  },
+  {
+    "id": "S6d",
+    "old": "Table S6d. Model routes and inference settings.",
+    "new": "TABLE S6d\nMODEL ROUTES AND INFERENCE SETTINGS",
+    "label": "TABLE S6d",
+    "title": "MODEL ROUTES AND INFERENCE SETTINGS",
+    "caption_font_points": 10,
+    "alignment": "center",
+    "terminal_period": false
+  }
+]

@@ -1,0 +1,559 @@
+{
+  "schema": "manuscript.heatmap_format_only_verification.v1",
+  "passed": true,
+  "figures": [
+    {
+      "figure": "4",
+      "all_data_arrays_identical": true,
+      "all_normalizations_identical": true,
+      "all_axes_and_figure_geometry_identical": true,
+      "all_text_fonts_sizes_positions_identical": true,
+      "changed_colormap_layers": [
+        {
+          "axes": 1,
+          "collection": 0,
+          "before": "Blues",
+          "after": "RdYlGn",
+          "values_sha256": "d295dc277d308f72e73627a0a323117062854fc50e6340bdf665979c72c0596d",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 2,
+          "collection": 1,
+          "before": "Blues",
+          "after": "RdYlGn",
+          "values_sha256": "7b30c4b3ad9c55a9274c9d1f30cfb5825ef74417de27557b4f0b71dc90cc8254",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "numeric_layer_count": 2,
+      "intentional_white_to_red_exception": false
+    },
+    {
+      "figure": "S6",
+      "all_data_arrays_identical": true,
+      "all_normalizations_identical": true,
+      "all_axes_and_figure_geometry_identical": true,
+      "all_text_fonts_sizes_positions_identical": true,
+      "changed_colormap_layers": [
+        {
+          "axes": 0,
+          "collection": 0,
+          "before": "Blues",
+          "after": "RdYlGn",
+          "values_sha256": "c4b4ceffd4b1393535c716f5387dff7496459a1d123af4178e76211e1dda8adc",
+          "clim": [
+            0.0,
+            5555.0
+          ]
+        },
+        {
+          "axes": 1,
+          "collection": 1,
+          "before": "Blues",
+          "after": "RdYlGn",
+          "values_sha256": "a9d011489f8c1c523810d8dfaecfe121d45c892d5219e80ef4232735d3815c8a",
+          "clim": [
+            0.0,
+            5555.0
+          ]
+        },
+        {
+          "axes": 2,
+          "collection": 0,
+          "before": "Blues",
+          "after": "RdYlGn",
+          "values_sha256": "d295dc277d308f72e73627a0a323117062854fc50e6340bdf665979c72c0596d",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 3,
+          "collection": 1,
+          "before": "Blues",
+          "after": "RdYlGn",
+          "values_sha256": "7b30c4b3ad9c55a9274c9d1f30cfb5825ef74417de27557b4f0b71dc90cc8254",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "numeric_layer_count": 4,
+      "intentional_white_to_red_exception": false
+    },
+    {
+      "figure": "S4",
+      "all_data_arrays_identical": true,
+      "all_normalizations_identical": true,
+      "all_axes_and_figure_geometry_identical": true,
+      "all_text_fonts_sizes_positions_identical": true,
+      "changed_colormap_layers": [
+        {
+          "axes": 0,
+          "collection": 0,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "e5b05816fec71afbedb44f1cfb5bdbb6fa6c3774db3a6eeb76318c07d42af5a0",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 1,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "c1150d972967b4af040b48b9230e6619606c25630acc98d084bcee482115fa6e",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 2,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "f2434e5696769214b8cc2edfdb28e9f68ebc1e08e1aaa60db0d4ec19edf90299",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 3,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "b12c558c043596e4b460510c455eebc94b7c80870f1659b2823cfaf42a66b3dc",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 4,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "2242aee4500b08985241cf919efdfc0a72a23737259f64f883b41295066f454e",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 5,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "e9dd4b8d0736237ae533ef368b958e6e2213c17f909ea6d0c64e178c600f50bd",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 6,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "77698145d8f31a196b02c0a3908ea2a2ca8bbc8ffdd870160af540aa97405c85",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 7,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "493f749bb83d69c43c072ecaa8c56b50ec73bcae35a57e91d10bda3d54b543ef",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 8,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "a22aaede1d3bc79949e89f9cde1179995e9c36e87bd4be24f8618373dde815cd",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 9,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "ef6adc77e64066edf5e744b631eaaa989df3b3acea9f8e063f340b72a31d2fbb",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 10,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "2118fc4f434ab7e28c028ab46c6b6b5c099d06d3b8baf9731fc8091f08c4338c",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 11,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "f16e0b2a87c24fce9d32739609e457cfe954ec12deec37cb5651523c62d19ab4",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 12,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "975d2e3c325356fd538514da64c9faa73cc3af5168a5936550bf23857e8c5044",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 13,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "5f5a5df79632f7fae467eebc2d02c75e5313985a6b210cbe690c419f81f8ab37",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 14,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "adb0d636ebf821d0c34a6b3c1c1933e35610f5e5b4789c9564a52841ffb6cc63",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 15,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "ee36022ce8ad91b499941fdbcf347a9447cb2e459ce7087d54bfd121bd3f6986",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 16,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "fa7d4d2a70745166b403e73f050587c8f70bbac3a9e34d09307aa22eb65d49d0",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 17,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "2a1a3e8a490e4cb28c25968c4586c5d4005b5718cdee560ca58fc587768acacc",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 18,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "e32a11ff4150d9377e6e83f1637f9acd69dc72f769353975c000efcec55f1b98",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 19,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "ae9583b2f01eed6d3889e79f15806dea75f40458a66eaa084d8e43f375187a58",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 20,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "d2bc0f595c5a6316d8dc707d9f62061cf12806f78a9237b914d79cde1d29cd3d",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 21,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "47e97efdc7b7f270eaaa01bf497bbc9b99693d5a1299ffccd7980078c1bd9632",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 22,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "056e9a5a29dc57e8115ce021e375cea108ea7ce896947525dbcb0f50b8826301",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 23,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "83b52bdb125adf8fd57bb7d5322e3f44c0567ca0c274a231230036a0ead6e901",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 24,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "0b41fa702d1abbda66682098b9e51fea5d53211a7d4a627e0a3a217f6e777166",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 25,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "83a83d60cc20ce0cd6123ad8f06392e0b2411a94798e6ea2bba26b94ccc05f91",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 0,
+          "collection": 26,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "d6393382194d7f0a8726ecef0a58a6ce8a1a433d27020784675eed0d47c9d243",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "axes": 1,
+          "collection": 1,
+          "before": "Reds",
+          "after": "RdYlGn",
+          "values_sha256": "7b30c4b3ad9c55a9274c9d1f30cfb5825ef74417de27557b4f0b71dc90cc8254",
+          "clim": [
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "numeric_layer_count": 28,
+      "intentional_white_to_red_exception": false
+    },
+    {
+      "figure": "S11",
+      "all_data_arrays_identical": true,
+      "all_normalizations_identical": true,
+      "all_axes_and_figure_geometry_identical": true,
+      "all_text_fonts_sizes_positions_identical": true,
+      "changed_colormap_layers": [],
+      "numeric_layer_count": 5,
+      "intentional_white_to_red_exception": true
+    }
+  ],
+  "scientific_source_files_unchanged": 76,
+  "new_calls": 0,
+  "new_fits": 0,
+  "new_scoring": 0,
+  "red_low_green_high_for_changed_figures": true,
+  "changed_figures": [
+    "4",
+    "S4",
+    "S6"
+  ],
+  "S11_exception": "Unchanged Reds white-to-red per explicit user request",
+  "caption_changes_required": false,
+  "checked_at": "2026-11-10T22:23:39.619803+00:00",
+  "colormap_for_changed_panels": "RdYlGn",
+  "changed_formats": 12,
+  "S11_white_to_red_exception": {
+    "colormap": "Reds",
+    "all_original_7_assets_preserved_exactly": true,
+    "paths": [
+      "figures/publication/Figure_S11.png",
+      "figures/publication/Figure_S11.tiff",
+      "figures/publication/Figure_S11.pdf",
+      "figures/publication/Figure_S11.svg",
+      "figures/publication/Figure_S11_verification.json",
+      "figures/manuscript/Figure_S11.png",
+      "notebooks/final_figures/previews/figure_s11.png"
+    ]
+  },
+  "exports": [
+    {
+      "figure": "Figure_4",
+      "sha256": {
+        "png": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+        "tiff": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
+        "pdf": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
+        "svg": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638"
+      },
+      "raster_dimensions": [
+        3900,
+        4038
+      ],
+      "panels": "ABCDE",
+      "minimum_native_font_pt": 5.5,
+      "png_tiff_pixels_identical": true
+    },
+    {
+      "figure": "Figure_S4",
+      "sha256": {
+        "png": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
+        "tiff": "1f3ba7756f5420f3a19951cb330c0ea9784986091b5a8deb51e30a673efb3764",
+        "pdf": "1d46e3adcafacbf0528bffba10e895da95e8a5c8c08d0bb4c689d2046c3e1a47",
+        "svg": "439ed6e2aa88fc867c0f412db2719720e4ac9273c7066f606c1c4ac2bd762a0b"
+      },
+      "raster_dimensions": [
+        3900,
+        4955
+      ],
+      "panels": "ABCD",
+      "minimum_native_font_pt": 5.5,
+      "png_tiff_pixels_identical": true
+    },
+    {
+      "figure": "Figure_S6",
+      "sha256": {
+        "png": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
+        "tiff": "1cff04dea14003db34996b7bf6cecff23bec19cba031cc0be373ca99b305545b",
+        "pdf": "6e8c81a4f0a50502128fe4135c830f8c06bc97c9511cdb6560ec6e900e19d57e",
+        "svg": "ac888158f037939146ce8e90e43e93341282229d71e557c9c63d0c3e0c5c9ba5"
+      },
+      "raster_dimensions": [
+        3900,
+        5234
+      ],
+      "panels": "AB",
+      "minimum_native_font_pt": 5.5,
+      "png_tiff_pixels_identical": true
+    }
+  ],
+  "native_export_checks": {
+    "status": "pass",
+    "native_figures": [
+      {
+        "figure": "Figure_4",
+        "minimum_font_pt": 5.5,
+        "panel_letters": "ABCDE",
+        "png_tiff_dpi": 600,
+        "minimum_pdf_image_dpi": 609.9999759710322,
+        "editable_svg_text_nodes": 150
+      },
+      {
+        "figure": "Figure_S4",
+        "minimum_font_pt": 5.5,
+        "panel_letters": "ABCD",
+        "png_tiff_dpi": 600,
+        "minimum_pdf_image_dpi": 609.9998543718676,
+        "editable_svg_text_nodes": 137
+      },
+      {
+        "figure": "Figure_S6",
+        "minimum_font_pt": 5.5,
+        "panel_letters": "AB",
+        "png_tiff_dpi": 600,
+        "minimum_pdf_image_dpi": 609.9999759710322,
+        "editable_svg_text_nodes": 180
+      }
+    ],
+    "independent_annotation_scoring_receipt": "data/frozen/annotation47_results_20261110/verification.json",
+    "new_model_calls": 0,
+    "new_fits": 0
+  },
+  "all_other_12_images_byte_identical": true,
+  "unaffected_images": [
+    "figures/manuscript/Figure_1.png",
+    "figures/manuscript/Figure_2.png",
+    "figures/manuscript/Figure_3.png",
+    "figures/manuscript/Figure_S1.png",
+    "figures/manuscript/Figure_S2.png",
+    "figures/manuscript/Figure_S3A.png",
+    "figures/manuscript/Figure_S3B.png",
+    "figures/manuscript/Figure_S3C.png",
+    "figures/manuscript/Figure_S5.png",
+    "figures/manuscript/Figure_S7.png",
+    "figures/manuscript/Figure_S10.png",
+    "figures/manuscript/Figure_S11.png"
+  ],
+  "prior_metadata_archive": "data/historical/heatmap_formatting_before_20261110/manifest.json",
+  "captions_unchanged": true,
+  "visual_review": "All three changed final figures inspected: scalar legends red at low endpoint and green at high endpoint. S11 was restored to exact original white-to-red artwork after explicit user clarification. No numerical arrays, limits, fonts, text positions or plot geometry changed.",
+  "existing_scientific_test_suite": "90 prior scientific tests unchanged; 7 manuscript-alignment tests additionally passed for this formatting update.",
+  "formatting_alignment_tests_passed": 7,
+  "independent_qa": {
+    "path": "docs/revision/red_green_heatmap_independent_qa_20261110.json",
+    "sha256": "cf28cf9e8692716f89e849855e2f0ef2424241a2a66526f40e284bf57e0d2978",
+    "schema": "heatmap.independent_format_qa.v2",
+    "passed": true
+  }
+}

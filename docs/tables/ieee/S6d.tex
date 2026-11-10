@@ -1,0 +1,22 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S6d\\
+MODEL ROUTES AND INFERENCE SETTINGS\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.85\hsize\raggedright\arraybackslash}X>{\hsize=1.2\hsize\raggedright\arraybackslash}X>{\hsize=0.9\hsize\raggedright\arraybackslash}X>{\hsize=0.6\hsize\raggedright\arraybackslash}X>{\hsize=1.45\hsize\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Model} & \textbf{Requested model ID} & \textbf{Pinned route} & \textbf{Reasoning} & \textbf{Decoding fields sent} \\
+\midrule
+GPT-6 Astra & openai/gpt-6-astra & openai & high & Batch; max\_tokens 32768; seed 42; temperature/top-p omitted \\
+Claude Opus 5.5 & anthropic/claude-opus-5.5 & anthropic & high & Batch; max\_tokens 32768; seed omitted; temperature/top-p omitted \\
+Gemini 4 Argon & google/gemini-4-argon & google-vertex/global & high & Standard streaming; max\_tokens 943718; provider continuation segments; seed 42; temperature/top-p omitted \\
+DeepSeek V4.1 Flash 1017 & deepseek/deepseek-v4.1-flash-1017 & OpenRouter routes recorded per request & high & Standard streaming; max\_tokens 943718; seed omitted; temperature/top-p omitted \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

@@ -1,0 +1,72 @@
+{
+  "schema": "heatmap.independent_format_qa.v2",
+  "passed": true,
+  "checked_at": "2026-11-10T22:23:51.386358+00:00",
+  "scope": "Three red-green figures; S11 is an explicit white-to-red exception preserved byte-for-byte.",
+  "changed_figures": [
+    "4",
+    "S4",
+    "S6"
+  ],
+  "exports_checked": 12,
+  "only_colormap_calls_changed_in_renderers": 3,
+  "scientific_source_files_unchanged": 76,
+  "unaffected_images_unchanged": 12,
+  "S11_explicit_exception": {
+    "colormap": "Reds",
+    "source_restored": true,
+    "all7_asset_paths_byte_identical_to_before": [
+      "figures/publication/Figure_S11.png",
+      "figures/publication/Figure_S11.tiff",
+      "figures/publication/Figure_S11.pdf",
+      "figures/publication/Figure_S11.svg",
+      "figures/publication/Figure_S11_verification.json",
+      "figures/manuscript/Figure_S11.png",
+      "notebooks/final_figures/previews/figure_s11.png"
+    ]
+  },
+  "results": [
+    {
+      "figure": "4",
+      "png_tiff_pixel_identical": true,
+      "dpi": 600,
+      "all_four_export_hashes_verified": true,
+      "pdf_text_fonts_sizes_bboxes_identical": true,
+      "page_dimensions_identical": true,
+      "red_pixels": 1064010,
+      "green_pixels": 70
+    },
+    {
+      "figure": "S4",
+      "png_tiff_pixel_identical": true,
+      "dpi": 600,
+      "all_four_export_hashes_verified": true,
+      "pdf_text_fonts_sizes_bboxes_identical": true,
+      "page_dimensions_identical": true,
+      "red_pixels": 22,
+      "green_pixels": 5073
+    },
+    {
+      "figure": "S6",
+      "png_tiff_pixel_identical": true,
+      "dpi": 600,
+      "all_four_export_hashes_verified": true,
+      "pdf_text_fonts_sizes_bboxes_identical": true,
+      "page_dimensions_identical": true,
+      "red_pixels": 2431534,
+      "green_pixels": 2345
+    }
+  ],
+  "matplotlib_low_rgb": [
+    0.6470588235294118,
+    0.0,
+    0.14901960784313725
+  ],
+  "matplotlib_high_rgb": [
+    0.0,
+    0.40784313725490196,
+    0.21568627450980393
+  ],
+  "new_calls": 0,
+  "new_fits": 0
+}

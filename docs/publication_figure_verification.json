@@ -76,5 +76,6 @@
   ],
   "independent_annotation_scoring_receipt": "data/frozen/annotation47_results_20261110/verification.json",
   "new_model_calls": 0,
-  "new_fits": 0
+  "new_fits": 0,
+  "heatmap_formatting_verification": "docs/revision/red_green_heatmap_formatting_20261110.json"
 }
