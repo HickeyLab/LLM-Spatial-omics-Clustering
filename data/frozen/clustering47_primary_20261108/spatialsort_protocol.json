@@ -1,0 +1,54 @@
+{
+  "identity": "B004-marker47-spatialsort-dmh5-longer-chain-20261102-v1",
+  "status": "frozen_before_new_sampling",
+  "created_utc": "2026-11-02T16:14:44.282606+00:00",
+  "authorization": "User requested HuBMAP setup and SpatialSort execution, then explicitly changed both runs from 75 to 100 actual sweeps with DMH=5 before new sampling.",
+  "n_cells": 220082,
+  "n_regions": 8,
+  "n_markers": 47,
+  "requested_clusters": 300,
+  "actual_sweeps": 100,
+  "dmh_iter": 5,
+  "beta_rounds_per_sweep": 5,
+  "region_workers_per_run": 8,
+  "sampling_seeds": [
+    42,
+    43
+  ],
+  "reported_checkpoints": [
+    6,
+    25,
+    50,
+    75,
+    100
+  ],
+  "feature_transform": "Frozen original float32 arcsinh(x/5) and full-cohort RobustScaler; exact CSV-decoded doubles retained.",
+  "initialization": "Same frozen 47-marker full-cohort GMM initialization for both sampling seeds. Native largest-group remapping retained.",
+  "reference_labels_supplied_to_fit": false,
+  "clustering_method_identity": "Native SpatialSort TWO_K unanchored, no supplied marker priors, precision-scale argument .65; source retains its actual .1/100 NormalGamma hyperparameter branch.",
+  "rng_policy": "Parent beta proposals and acceptance use NumPy RandomState seeded by sampling seed. Auxiliary and X streams are deterministic SeedSequence namespaces by seed, sweep, beta round, beta row and region. This is new Monte Carlo execution, not historical same-seed replay.",
+  "parallelism": "Independent region auxiliaries only. Beta-row acceptance remains sequential. Cell updates and shared collapsed expression caches remain sequential.",
+  "checkpoint_policy": "Atomic complete state after every beta round and region X update, with parent RNG, beta, x and all caches; all full-sweep partitions retained.",
+  "point_estimate": "Prespecified final sweep 100 per run, no outcome-driven checkpoint or seed selection. All checkpoints reported as descriptive sensitivity.",
+  "interpretation": [
+    "Same-donor retrospective numerical sensitivity",
+    "Shared GMM initialization did not converge at its historical cap",
+    "Neither MCMC convergence nor biological correctness is assumed",
+    "Repetitions assess sampling variability conditional on this initialization",
+    "No new LLM calls or annotation transfer"
+  ],
+  "inputs_sha256": {
+    "inputs.npz": "0dd9949a768df4e67e12388bb0770abfb63eb0f33e02ee25d8b0175b59efc02d",
+    "cell_keys.csv": "fd47602f0b9d40d7d0c099fce31e49ce53526cef1df32a2224a3e66214a97bbb"
+  },
+  "source_initialization_sha256": "78f271749e6e108b2e7a8fae80f33bd3ccda557112989366bcba19a670a57cf1",
+  "source_cell_order_sha256": "fd47602f0b9d40d7d0c099fce31e49ce53526cef1df32a2224a3e66214a97bbb",
+  "source_input_hashes": {
+    "cell_order.csv": "fd47602f0b9d40d7d0c099fce31e49ce53526cef1df32a2224a3e66214a97bbb",
+    "locations.csv": "8bcd38e32adcfe7bcf83e0a21a265a5a1f127401304c6402bdf01b7a2157aa01",
+    "relations.csv": "85fcc2af84f11d31c52831741719d0e0308dc5f2b360f0eb319bc8d5408842b4",
+    "expression.csv": "889494c33b6ab14e5d88bac74c632878cb1209f4f7b4106de964c82a26573c95"
+  },
+  "batch_allocation_hours": 96,
+  "allocation_authorization": "User explicitly approved slightly increasing the 72-hour allocation to accommodate the change from 75 to 100 sweeps; 96 hours chosen."
+}

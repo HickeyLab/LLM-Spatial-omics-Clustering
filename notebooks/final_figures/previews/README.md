@@ -1,25 +1,7 @@
-# Retained manuscript previews
+# Current manuscript previews
 
-These 17 PNGs are byte-identical copies of the retained Figure 1–5 and
-S1–S10 artwork in `figures/manuscript/`. Figure S3 has three image parts.
-They predate the current manuscript panel reductions. Use the
-[figure map](../../../docs/figure_map.md) and
-[table crosswalk](../../../docs/supplementary_table_numbering.md) for the
-November 6 display inventory, including Figure S11A and Table S9.
+These 15 PNG previews are byte-identical copies of the pinned artwork in `figures/manuscript/` for the 13 retained manuscript figures. Figure S3 has three image parts. The [current inventory](../../../configs/manuscript_inventory.json) controls figure numbering, panels and captions.
 
-The retained Figure 3 artwork includes earlier reference-informed selection
-panels. Current Figure 3E is the spatial comparison formerly labeled H and
-uses each cluster's most frequent model label, with GPT, Claude, Gemini and
-DeepSeek tie order without reference labels. Retained Figure 2I marker
-profiles now support S11A, while the selected spatial windows are archived.
+Figures 2, S4 and S5 use the primary 47-marker clustering outputs. Figures 3, 4, S6, S7, S10 and S11 use the completed single-annotation study. The source data and scoring checks are [frozen separately](../../../data/frozen/annotation47_results_20261110). No repeat SD, within-model repeat vote or repeatability claim is implied by these previews.
 
-The [native exports](../../../figures/publication) retain editable vectors
-and 600 dpi raster originals. The
-[manifest](../../../docs/reference_figure_label_changes.json) pins those
-source and target files. This documentation update changes no image bytes.
-
-`python scripts/update_reference_figure_labels.py --check` verifies the
-retained preview snapshot. `python scripts/render_current_tables.py` exports
-the earlier frozen native-cell table snapshot, whose labels can differ from
-the current manuscript crosswalk. Earlier screenshots and overlay coordinates
-remain under `notebooks/historical_reconstructions/previews/` and `docs/archive/`.
+All current [native exports](../../../figures/publication) include 600 dpi PNG/TIFF and editable PDF/SVG. The [preview manifest](../../../docs/reference_figure_label_changes.json) pins the source and target files. `python scripts/update_reference_figure_labels.py --check` verifies preview pixels. These previews are display copies, not analytical inputs.

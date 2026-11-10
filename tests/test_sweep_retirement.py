@@ -22,21 +22,24 @@ class SweepRetirementTests(unittest.TestCase):
         record = json.loads((ROOT / 'configs/manuscript_inventory.json').read_text())['figures']['S4']
         self.assertEqual(record['panels'], list('ABCD'))
         self.assertNotIn('cluster-count sweep', record['caption'])
-        self.assertIn('(D) Adjusted Rand index', record['caption'])
+        self.assertRegex(record['caption'], r'\(D\) (?:Regional )?[Aa]djusted Rand index')
         receipt = json.loads((ROOT / 'figures/publication/Figure_S4_verification.json').read_text())
         self.assertFalse(any('flowsom_k_sweep' in name for name in receipt['inputs']))
         svg = (ROOT / 'figures/publication/Figure_S4.svg').read_text()
         self.assertNotIn('FlowSOM cluster count', svg)
 
-    def test_stable_ids_and_existing_annotation_results_remain_reported(self):
+    def test_stable_ids_and_current_annotation_selection(self):
         registry = json.loads((ROOT / 'configs/experiment_registry.json').read_text())
         self.assertEqual([e['id'] for e in registry['experiments']], list(range(1, 15)))
         self.assertNotIn(4, registry['active_reported_ids'])
         for e in registry['experiments']:
             self.assertFalse(e['new_execution'])
-            if e['id'] in [7, 9, 14]:
-                self.assertEqual(e['status'], 'reported_existing')
-                self.assertTrue(e['existing_results_remain_reported'])
+            if e['id'] in [7, 14]:
+                self.assertEqual(e['status'], 'reported_completed')
+                self.assertFalse(e['prior_results_remain_reported'])
+            if e['id'] == 9:
+                self.assertEqual(e['status'], 'archived')
+                self.assertNotIn(9, registry['active_reported_ids'])
 
 
 if __name__ == '__main__':

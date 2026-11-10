@@ -1,0 +1,18 @@
+{
+  "schema": "annotation47.publication_tables.v1",
+  "primary_population": "Original28 labels includingNoise, allplannedtestcells",
+  "primary_weighting": "Equalmean of two prespecifiedtestregions",
+  "repetitions": 1,
+  "sample_sd": false,
+  "all_cells_delivered": true,
+  "table_notes": {
+    "S6a": "Single-run region-balanced referenceagreement; fractionsminusmeans in percentagepoints.",
+    "S6b": "Fixed28-vocabulary macro-F1, absentclasseszero; clusterandcelldelivery100%.",
+    "S6c": "Allrequestsdelivered; valid-label term equals totaldifference anddeliverytermzero. Descriptivenetdifference, notcausalmechanism.",
+    "S6d": "Actualacceptedexecution: Astra/OpusBatch, Gemini/DeepSeekstandard streaming. Gemini continuationreceiptsretained. Plannedrequestsbodies at32768donotdescribeacceptedGemini/DeepSeekwireceilings."
+  },
+  "recorded_total_cost_usd": "77.078729829",
+  "retained_holds_usd": "6.7679820",
+  "total_commitment_usd": "83.846711829",
+  "cost_scope": "Entirecampaignincludingfailedphysicalgenerations,recoveries andallmodels; never32or128logicalitemsasphysicalgenerationcount."
+}

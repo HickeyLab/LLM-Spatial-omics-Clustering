@@ -1,0 +1,357 @@
+{
+  "schema": "annotation47.independent_export_qa.v1",
+  "checked_at": "2026-11-10T21:42:51.483550+00:00",
+  "passed": true,
+  "exports_checked": 36,
+  "figures_checked": 9,
+  "visual_review": "All nine final PNGs inspected. Figure4/S6 confusion matrices enlarged after identified crowding and are readable; Figure4D fixed largest-cluster labels verified. FigureS4A was rebuilt with all47storedchannels and independently recomputed (see independent_reference47_profiles_v1.json).",
+  "results": [
+    {
+      "figure": "Figure_2",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+        "tiff": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
+        "pdf": "741077c375416e080ab92b5f42bceb2fd579f7b8bcf854768b4a2f650827fb3e",
+        "svg": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e"
+      },
+      "raster_dimensions": [
+        3900,
+        5033
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 6.6,
+      "native_font_counts": {
+        "6.6": 141,
+        "10.3": 8
+      },
+      "panels": "ABCDEFGH",
+      "editable_svg_text_nodes": 154,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": 609.9980812802352
+    },
+    {
+      "figure": "Figure_3",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
+        "tiff": "c128db2c8a270f8803ae4eead2a277d7169e2b15777036d8f556ed7aabf6c9f5",
+        "pdf": "e28fca59a6ac36321280a881bf920c6b583dc7be61b96bc4809d4ec978805257",
+        "svg": "cee6713d62e8b7483037b1acbf182884852a33bb12aee31f34c198adb79706dd"
+      },
+      "raster_dimensions": [
+        3900,
+        4007
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "6.0": 11,
+        "5.5": 59,
+        "6.3": 32,
+        "8.0": 5,
+        "6.5": 4
+      },
+      "panels": "ABCDE",
+      "editable_svg_text_nodes": 111,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": 609.9984271478589
+    },
+    {
+      "figure": "Figure_4",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "ed809fa0fd4b5e7814aa318630f4cdc77a186d103c67a2148cc6f9a469a11d84",
+        "tiff": "e74a56d007ba87777114bbac30fcead16ad837a73d7691703221df9627ebaa1b",
+        "pdf": "32853c24384e61528052a2b582b763b5cc7c6d5f5fbbf0ac13c51eb4ca9cc166",
+        "svg": "c0808c6b7e2f745886f2ad788957c0a9d4b11253669917784faa09d15698c07e"
+      },
+      "raster_dimensions": [
+        3900,
+        4038
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 131,
+        "6.0": 5,
+        "8.0": 5,
+        "6.5": 9
+      },
+      "panels": "ABCDE",
+      "editable_svg_text_nodes": 150,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": 609.9999759710323
+    },
+    {
+      "figure": "Figure_S4",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "bcc0a898d8a63d53bbf6fe1eabd99df9f24dc4bfd9d942eac9d17cb4472b317d",
+        "tiff": "6cb2996f7d1563ccb484f2f0023656e91bc209405f59c9ac1928c1dcef315e9c",
+        "pdf": "6e838a565f5ce9b95bccbd35cf0d7ee3f134b5ae785888e14a82e423cba4d44e",
+        "svg": "e6aac5bf2ee93b3800758cb1db69f6d7c1eddf84ac6cb053d69fadc4067808b3"
+      },
+      "raster_dimensions": [
+        3900,
+        4955
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 121,
+        "6.0": 8,
+        "8.0": 4,
+        "6.5": 4
+      },
+      "panels": "ABCD",
+      "editable_svg_text_nodes": 137,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": 609.9998543718676
+    },
+    {
+      "figure": "Figure_S5",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
+        "tiff": "3e7e7abbca3e88bd3483f3cbbfb53148dce5b9abcea1e272b15229e4a32a3c29",
+        "pdf": "b6e034e87e710405b382576de1ea2a12f2fe9f50701a872ad620b37d6c1a14e4",
+        "svg": "8bbe8f40f5e86ce944531016b09acd9ef4e7466892160a501451ae5c2b61b554"
+      },
+      "raster_dimensions": [
+        3900,
+        1324
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 12,
+        "6.0": 6,
+        "8.0": 1
+      },
+      "panels": "A",
+      "editable_svg_text_nodes": 19,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": null
+    },
+    {
+      "figure": "Figure_S6",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "a5fbc7c2883ea8905a875985a36dd30d74281ffedffd5c8056fac2cb2f6b3e46",
+        "tiff": "f908224b50d81272e9b9576cff74c57e303cea68bd362b2a2f8cc26ace46cd09",
+        "pdf": "3fea29206696905f5cbd627b52bd226d847e3a98cc2c084afd8833ca9b79d0bb",
+        "svg": "dd9b2c1b71c6234ff91454c70c35fb4b7d713da16932b562b57d0644a444ab83"
+      },
+      "raster_dimensions": [
+        3900,
+        5234
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 167,
+        "6.0": 8,
+        "8.0": 2,
+        "6.5": 3
+      },
+      "panels": "AB",
+      "editable_svg_text_nodes": 180,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": 609.9999759710323
+    },
+    {
+      "figure": "Figure_S7",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
+        "tiff": "cf3aced87cf8ef60fabe129c759929c72555c1e253984ef0f67f923546f1bb58",
+        "pdf": "46cba3c88a07517ac78f477cd39bca0b7a17c31433bec0c88260aac19a6197ac",
+        "svg": "04549249af1e3baf1517ee80505b0c99bbfff8d0a7243ef5cca3ebf02a61acb2"
+      },
+      "raster_dimensions": [
+        3900,
+        2837
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 73,
+        "6.0": 1
+      },
+      "panels": "",
+      "editable_svg_text_nodes": 74,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": null
+    },
+    {
+      "figure": "Figure_S10",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
+        "tiff": "0ca3c5e2c94fdb38ef66d8d5bc1cd462ee34e13fa0960f05205a33d10de60a9f",
+        "pdf": "25b8c1b54ccd7459d2aa6d84f7c67a7739d992d7ec0b4f1a4f94aee985cce2be",
+        "svg": "b28de1e773d3dab827b937d15d610c8e29952f939c70e8c98c7e75fbbd37d8a5"
+      },
+      "raster_dimensions": [
+        3900,
+        2214
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 36,
+        "6.0": 6,
+        "8.0": 4,
+        "6.5": 4
+      },
+      "panels": "ABCD",
+      "editable_svg_text_nodes": 50,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": null
+    },
+    {
+      "figure": "Figure_S11",
+      "formats": [
+        "png",
+        "tiff",
+        "pdf",
+        "svg"
+      ],
+      "sha256": {
+        "png": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
+        "tiff": "d69a40a0a6ed5d9f42415b6326319ce3eada1b3f95104bd60cbb5ca7b1e2edf0",
+        "pdf": "cb932e9160d732dc936acf8458e1edd6f9ceb53ba93fe5d2ee61184f18c239bb",
+        "svg": "4148710593e0c5a6360734b382f877257035c2c328e6fcd732749775660bfa7d"
+      },
+      "raster_dimensions": [
+        3900,
+        1010
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ],
+      "tiff_dpi": [
+        600.0,
+        600.0
+      ],
+      "png_tiff_pixels_identical": true,
+      "minimum_native_font_pt": 5.5,
+      "native_font_counts": {
+        "5.5": 59,
+        "8.0": 1,
+        "6.5": 1
+      },
+      "panels": "A",
+      "editable_svg_text_nodes": 61,
+      "native_text_in_page_bounds": true,
+      "minimum_effective_embedded_image_dpi": 610.0000299541622
+    }
+  ],
+  "annotation_calls": 0
+}

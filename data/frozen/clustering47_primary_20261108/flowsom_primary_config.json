@@ -1,0 +1,22 @@
+{
+  "schema": "cell_masks.flowsom47_primary_pointer.v1",
+  "identity": "B004_flowsom47_fullpass3_seed42_20261102_v1",
+  "status": "frozen",
+  "manifest": "data/frozen/flowsom47_primary_20261102/manifest.json",
+  "manifest_sha256": "f8b8a11357aa14a595002737598a40cd06555f2510ca4351b31258b6087db901",
+  "assignments": "data/frozen/flowsom47_primary_20261102/assignments.csv.gz",
+  "assignments_sha256": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+  "features": "data/frozen/flowsom47_primary_20261102/features47.npy",
+  "feature_sha256": "b7092e9f0dfdb20417dada86dc104aa95619f3e1db1518b3702edeae47484b0d",
+  "marker_columns": "data/frozen/flowsom47_primary_20261102/marker_columns.json",
+  "full_passes": 3,
+  "seed": 42,
+  "n_cells": 220082,
+  "n_markers": 47,
+  "occupied_clusters": 299,
+  "applies_to": "Updated B004 FlowSOM downstream experiments, including the28-name annotation vocabulary.",
+  "freeze_changes_inputs_only": "Downstream annotation, scoring and figure runs must explicitly consume this contract; they have not been rerun by this freeze.",
+  "feature_role": "clustering_representation",
+  "annotation_summaries_frozen": false,
+  "annotation_summary_contract": "Reuse these memberships, but explicitly declare the annotation measurement/transform space. The SOM RobustScaler matrix does not automatically define marker means or positive-expression fractions."
+}

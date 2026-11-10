@@ -1,0 +1,28 @@
+{
+  "schema": "clustering.publication.bindings.v1",
+  "manifest": "data/frozen/clustering47_primary_20261108/manifest.json",
+  "manifest_sha256": "1304ed16bc0ff858518a3a5ac18d662c4887f639d7084ee6df1dc8f013dc4618",
+  "publication_table_overrides": {
+    "reference_plot_cells.csv.gz": "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz",
+    "figure2_regional_metrics.csv": "data/frozen/clustering47_primary_20261108/regional_metrics.csv",
+    "figure2_f1.csv": "data/frozen/clustering47_primary_20261108/panel_F_values.csv",
+    "figure2_recall.csv": "data/frozen/clustering47_primary_20261108/panel_H_values.csv",
+    "figureS4_compositions.csv.gz": "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz",
+    "figureS4_cluster_metrics.csv": "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv",
+    "figureS4_celltype_metrics.csv": "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv",
+    "figureS5_fixed_metrics.csv": "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv"
+  },
+  "replay_table_overrides": {
+    "figure_02/regional_metrics.csv": "data/frozen/clustering47_primary_20261108/regional_metrics.csv",
+    "figure_02/celltype_metrics.csv": "data/frozen/clustering47_primary_20261108/celltype_metrics.csv",
+    "figure_02/panel_F_values.csv": "data/frozen/clustering47_primary_20261108/panel_F_values.csv",
+    "figure_02/panel_H_values.csv": "data/frozen/clustering47_primary_20261108/panel_H_values.csv",
+    "tables/current_tables.json": "data/frozen/clustering47_primary_20261108/current_tables.json"
+  },
+  "companion_table_overrides": {
+    "Table_S1_channel_membership.csv": "data/frozen/clustering47_primary_20261108/Table_S1_channel_membership.csv",
+    "conditional_comparisons.csv": "data/frozen/clustering47_primary_20261108/conditional_comparisons.csv",
+    "paired_regional_observations.csv": "data/frozen/clustering47_primary_20261108/paired_regional_observations.csv"
+  },
+  "annotation_execution_disabled": true
+}

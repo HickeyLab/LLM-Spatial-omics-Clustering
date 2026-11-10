@@ -117,6 +117,8 @@ panel_a:
     - SOX9
     - CD49f
     - Cytokeratin
+    - CD123
+    - CDX2
   expression_threshold: 0.0
   style:
     figure_size_inches: [18.0, 8.0]

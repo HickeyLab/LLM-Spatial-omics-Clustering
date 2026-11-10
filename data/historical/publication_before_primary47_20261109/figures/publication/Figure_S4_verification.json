@@ -1,0 +1,84 @@
+{
+  "figure": "Figure_S4",
+  "width_mm": 165.1,
+  "height_mm": 209.79967654440935,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    4955
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 239,
+    "height_mm": 209.79967654440935,
+    "height_reduction_percent": 12.21770855882454,
+    "vacant_bands_removed_mm": [
+      [
+        6.040000000000008,
+        10.500000000000016
+      ],
+      [
+        81.95280555555557,
+        86.50000000000001
+      ],
+      [
+        146.90594444444446,
+        153.5
+      ],
+      [
+        159.04,
+        164.5
+      ],
+      [
+        169.024,
+        172.49999999999997
+      ],
+      [
+        201.2216452944093,
+        202.5
+      ],
+      [
+        207.11528125,
+        210.5
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+    "data/frozen/publication_design/figureS4_marker_summaries.csv": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f",
+    "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
+    "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
+    "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
+    "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b"
+  },
+  "notes": [
+    "Historical FlowSOM cluster-count sweep archived; former metric panel E is now D. Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+  ],
+  "files": {
+    "Figure_S4.svg": {
+      "sha256": "914117bec9ed97a5dfc2bc39f29b71e29a81a05abe20ceac8e4964c86ddb4e9d",
+      "bytes": 6213436
+    },
+    "Figure_S4.pdf": {
+      "sha256": "1114f577bf15e5e36d748dc213d4ab3f2c23c3c31658779522a34bde3db88533",
+      "bytes": 2738589
+    },
+    "Figure_S4.png": {
+      "sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+      "bytes": 3579825
+    },
+    "Figure_S4.tiff": {
+      "sha256": "6a1322efe84b1c03d043ed5faadee1760c5dc2574a29adc3be761567eca41faf",
+      "bytes": 4540816
+    }
+  }
+}

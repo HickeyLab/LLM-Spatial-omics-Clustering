@@ -107,7 +107,7 @@ def add_workflow(f,key):
         text(f,94.4,15.2,'1. Expression threshold\n2. Fraction threshold\n3. Mean expression threshold\n4. Maximum number of markers\n5. Minimum number of markers',size=5.5,linespacing=1.2)
     elif key == '4A':
         for x,title in [(15,'CODEX images'),(54,'Cell-level features'),(98,'Leiden clustering'),
-                        (122,'Claude annotation'),(149,'Spatial visualization')]:
+                        (122,'Opus 5.5 annotation'),(149,'Spatial visualization')]:
             text(f,x,3,title,size=6.5,ha='center')
         feature_table(f,32.9,10.5,42.5,14.8)
     else:

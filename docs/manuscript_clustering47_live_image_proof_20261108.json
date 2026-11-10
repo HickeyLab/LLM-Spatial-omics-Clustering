@@ -1,0 +1,212 @@
+{
+  "schema": "manuscript.clustering47_live_image_proof.v1",
+  "date": "2026-11-08",
+  "status": "three_refreshed_pending_image_suggestions_verified_live",
+  "scope": [
+    "Figure 2",
+    "Figure S4",
+    "Figure S5"
+  ],
+  "verification_methods": [
+    "Editor inspected the live pending Replace image suggestions and image options.",
+    "Independent audit compared Docs clipboard renderings against resized new source PNGs and accepted old image payloads.",
+    "Image widths, displayed heights, aspect locks, 100 percent scales and zero rotation were read from live UI evidence."
+  ],
+  "figures": [
+    {
+      "figure": "Figure 2",
+      "state": "pending_replace_image_suggestion",
+      "source_png": "figures/publication/Figure_2.png",
+      "source_png_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "source_pixels": [
+        3900,
+        5033
+      ],
+      "live_clipboard_pixels": [
+        1587,
+        2048
+      ],
+      "live_clipboard_sha256": "34a0270a5331130c2769a5a8b646e4a1ef979f58049236edc68057a281b788b8",
+      "pixel_comparison": {
+        "new_repository_artwork": {
+          "source_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+          "source_pixels": [
+            3900,
+            5033
+          ],
+          "best_resize": {
+            "filter": "LANCZOS",
+            "mae_rgb": 1.3008230938878387,
+            "rmse_rgb": 5.594838596039622,
+            "mae_ink_union": 5.79857814003841,
+            "fraction_channels_within_5": 0.9383104176512287,
+            "exact_rgb_pixels": false
+          }
+        },
+        "accepted_old_artwork": {
+          "source_sha256": "31712a230da08ea622065c8e1ac95d76a321535bd78eec7f8942468ad6222e27",
+          "source_pixels": [
+            1600,
+            2048
+          ],
+          "best_resize": {
+            "filter": "BILINEAR",
+            "mae_rgb": 16.841268903591683,
+            "rmse_rgb": 52.54230409061244,
+            "mae_ink_union": 68.09968753753061,
+            "fraction_channels_within_5": 0.8159161226961248,
+            "exact_rgb_pixels": false
+          }
+        }
+      },
+      "old_to_new_rmse_ratio": 9.391209985540097,
+      "image_identity_assessment": "Independent resized-pixel comparison supports the refreshed repository artwork over accepted old artwork. Clipboard rendering is not byte-identical or pixel-identical to the native source.",
+      "ui_width_inches": 6.5,
+      "ui_height_inches": 8.39,
+      "expected_proportional_height_inches": 8.388333333333334,
+      "height_consistent_with_two_decimal_ui_rounding": true,
+      "ui_scale_percent": [
+        100.0,
+        100.0
+      ],
+      "ui_rotation_degrees": 0.0,
+      "aspect_ratio_lock_checked": true,
+      "original_width_preserved": true,
+      "crop_reset_evidence": "Editor performed Reset image and observed Image properties reset. Whole-image clipboard rendering corresponds to the refreshed source. Pending crop metadata is not serialized in the native export.",
+      "dimension_evidence_sha256": "3425362b575663eb35b7f1f88cd3ce2876be831aa9a4cdf6038d9c0f72d839ec"
+    },
+    {
+      "figure": "Figure S4",
+      "state": "pending_replace_image_suggestion",
+      "source_png": "figures/publication/Figure_S4.png",
+      "source_png_sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+      "source_pixels": [
+        3900,
+        4955
+      ],
+      "live_clipboard_pixels": [
+        1612,
+        2048
+      ],
+      "live_clipboard_sha256": "f40c793679360b4278bff7c2e27990f63b42b42dd934a88e1605834199f89208",
+      "pixel_comparison": {
+        "new_repository_artwork": {
+          "source_sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+          "source_pixels": [
+            3900,
+            4955
+          ],
+          "best_resize": {
+            "filter": "LANCZOS",
+            "mae_rgb": 1.421119860324907,
+            "rmse_rgb": 6.117365696253999,
+            "mae_ink_union": 11.577490651273576,
+            "fraction_channels_within_5": 0.9341411984982424,
+            "exact_rgb_pixels": false
+          }
+        },
+        "accepted_old_artwork": {
+          "source_sha256": "7f9bbb7b49e3e2faa893d81ae19d2cb1b85553f7a8000074ba2cd15ebedab8ae",
+          "source_pixels": [
+            1612,
+            2048
+          ],
+          "best_resize": {
+            "filter": "NEAREST",
+            "mae_rgb": 2.8304507978895264,
+            "rmse_rgb": 20.765758913677868,
+            "mae_ink_union": 24.703052420858093,
+            "fraction_channels_within_5": 0.9697891626602564,
+            "exact_rgb_pixels": false
+          }
+        }
+      },
+      "old_to_new_rmse_ratio": 3.39455902176878,
+      "image_identity_assessment": "Independent resized-pixel comparison supports the refreshed repository artwork over accepted old artwork. Clipboard rendering is not byte-identical or pixel-identical to the native source.",
+      "ui_width_inches": 6.0,
+      "ui_height_inches": 7.62,
+      "expected_proportional_height_inches": 7.623076923076923,
+      "height_consistent_with_two_decimal_ui_rounding": true,
+      "ui_scale_percent": [
+        100.0,
+        100.0
+      ],
+      "ui_rotation_degrees": 0.0,
+      "aspect_ratio_lock_checked": true,
+      "original_width_preserved": true,
+      "crop_reset_evidence": "Editor performed Reset image and observed Image properties reset. Whole-image clipboard rendering corresponds to the refreshed source. Pending crop metadata is not serialized in the native export.",
+      "dimension_evidence_sha256": "7c8c4c32543922b6d6f6a1757b5d7afbd1a960ee00e72b8086b74ded424392cd"
+    },
+    {
+      "figure": "Figure S5",
+      "state": "pending_replace_image_suggestion",
+      "source_png": "figures/publication/Figure_S5.png",
+      "source_png_sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+      "source_pixels": [
+        3900,
+        1383
+      ],
+      "live_clipboard_pixels": [
+        2048,
+        726
+      ],
+      "live_clipboard_sha256": "31214729ae0878d3e19fc1af6bae973a036493b84965483205245faeda697581",
+      "pixel_comparison": {
+        "new_repository_artwork": {
+          "source_sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+          "source_pixels": [
+            3900,
+            1383
+          ],
+          "best_resize": {
+            "filter": "LANCZOS",
+            "mae_rgb": 0.7417503335915978,
+            "rmse_rgb": 4.644393401620281,
+            "mae_ink_union": 4.8379697848523815,
+            "fraction_channels_within_5": 0.9689614091913453,
+            "exact_rgb_pixels": false
+          }
+        },
+        "accepted_old_artwork": {
+          "source_sha256": "5a931d824b6db865ae862fccf845fd4dd47ddf119ad488ea2560b8d9976600d7",
+          "source_pixels": [
+            2048,
+            726
+          ],
+          "best_resize": {
+            "filter": "NEAREST",
+            "mae_rgb": 0.8285388508666207,
+            "rmse_rgb": 10.862779149719135,
+            "mae_ink_union": 5.72968416023726,
+            "fraction_channels_within_5": 0.9923928561179982,
+            "exact_rgb_pixels": false
+          }
+        }
+      },
+      "old_to_new_rmse_ratio": 2.3389015981999837,
+      "image_identity_assessment": "Independent resized-pixel comparison supports the refreshed repository artwork over accepted old artwork. Clipboard rendering is not byte-identical or pixel-identical to the native source.",
+      "ui_width_inches": 6.5,
+      "ui_height_inches": 2.3,
+      "expected_proportional_height_inches": 2.305,
+      "height_consistent_with_two_decimal_ui_rounding": true,
+      "ui_scale_percent": [
+        100.0,
+        100.0
+      ],
+      "ui_rotation_degrees": 0.0,
+      "aspect_ratio_lock_checked": true,
+      "original_width_preserved": true,
+      "crop_reset_evidence": "Editor performed Reset image and observed Image properties reset. Whole-image clipboard rendering corresponds to the refreshed source. Pending crop metadata is not serialized in the native export.",
+      "dimension_evidence_sha256": "22640d995e0a8ce593a7eb56554a6a7a2fe8812f99ae548aca07d8b0aacd6e67"
+    }
+  ],
+  "independent_visual_checks": {
+    "Figure 2": "Panels A-H remain and updated FlowSOM/SpatialSort clustering metrics are present.",
+    "Figure S4": "Panels A-D remain. The retired sweep is absent. Updated cluster compositions and six metric plots are present.",
+    "Figure S5": "Updated pooled bars read 0.687, 0.471, 0.484 and 0.529. The historical shared-45-marker panel B remains."
+  },
+  "suggestion_state": "Pending. No suggestion was accepted. Prose and table suggestions also remain pending.",
+  "native_export_limitation": "Native Word/PDF media represent accepted/current images and omit pending replacements. All 18 image payloads in the checked native export still match baseline. The pending image identity is verified with live UI and clipboard evidence instead.",
+  "privacy": "Private manuscript exports, full document text and private UI screenshots are not included in this repository. Source evidence is retained separately by the editor.",
+  "new_annotation_calls": 0
+}

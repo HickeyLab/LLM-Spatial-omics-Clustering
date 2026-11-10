@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "retained_v3_memberships": {
+    "leiden": {
+      "v3_gzip_sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+      "rows": 220082,
+      "memberships_identical": true
+    },
+    "pixie": {
+      "v3_gzip_sha256": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805",
+      "rows": 220082,
+      "memberships_identical": true
+    }
+  },
+  "FlowSOM_primary_manifest_sha256": "f8b8a11357aa14a595002737598a40cd06555f2510ca4351b31258b6087db901",
+  "FlowSOM_manifest_matches_frozen_pointer": true,
+  "independent_fast_pass_matches_all_regional_and_celltype_values": true,
+  "regional_rows": 32,
+  "celltype_rows": 80,
+  "raw_diagnostic_rows": 72,
+  "raw_perclass_rows": 108,
+  "perclass_support_permethod": 209587,
+  "S4_regional_ARI_AMI_points_permethod": 8,
+  "S5A_regional_points_permethod": 8,
+  "per_panel_scoring": "per_panel_scoring.json"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "reference47.display_archive.v1",
+  "reason": "Preserve the45-marker reference-display configuration before addingCD123/CDX2 to matchthe47-marker caption. Original45-marker data remain unchanged at their versioned path.",
+  "files": {
+    "figure_s03.yaml": {
+      "sha256": "62c245075190d96f4ca6ec03adda67300b7813660487a6c603c9978d1611abac"
+    }
+  },
+  "retained_original_profile_csv": {
+    "path": "data/frozen/publication_design/figureS4_marker_summaries.csv",
+    "sha256": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f"
+  },
+  "original_artwork_archive": "data/historical/publication_before_primary47_20261109/index.json"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "manuscript.historical_annotation_artwork.v1",
+  "source_date": "2026-11-06",
+  "policy": "Byte-preserved current GoogleDoc annotation artwork. New primary47-marker annotation calls have not been run. No scientific re-rendering or raster upscaling.",
+  "figures": {},
+  "status": "archival_only",
+  "archive_index": "data/historical/publication_before_primary47_20261109/index.json"
+}

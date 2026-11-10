@@ -1,0 +1,19 @@
+{
+  "schema": "annotation47.prompt_example.v1",
+  "selection": "First request batch of prespecified Leiden\u2013Opus5.5 means-plus-fractions condition; no outcome-based selection.",
+  "request_id": "q1ad48fa1cb1c17f47e20166568b90175ac06ccc4a346215601bc874141dbcd75",
+  "model_id": "anthropic/claude-opus-5.5",
+  "canonical_slug_expected": "anthropic/claude-opus-5.5-20260921",
+  "clusters": 75,
+  "markers": 47,
+  "allowed_labels": 28,
+  "accepted_generation_id": "gen-batch-1794244563-24ffef76e68015713bec",
+  "prepared_body_sha256": "ea8964a924e72395f245323c4a41a284188200f00802253069f7427f83650601",
+  "accepted_bank_path": "data/frozen/annotation47_results_20261110/accepted_requests.json",
+  "accepted_bank_sha256": "42710f79865ad3f68ef69e50cb03fcb6a620c2dab2185011784add031021efed",
+  "canonical_result_source_sha256": "8d93bfc8f46e8eec97910bd875de2113ee5b9e95d40e2198faf1d538519fa7c8",
+  "assistant_content_only": true,
+  "hidden_reasoning_included": false,
+  "no_live_execution": true,
+  "final_labels_match_accepted_bank": true
+}

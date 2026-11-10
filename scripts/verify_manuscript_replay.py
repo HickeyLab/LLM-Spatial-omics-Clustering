@@ -16,7 +16,8 @@ import yaml
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
-from llm_spatial_omics_clustering.manuscript import INPUTS, artwork, inventory, verify_inputs
+from llm_spatial_omics_clustering.manuscript import INPUTS, artwork, inventory, verify_inputs, read_table
+from llm_spatial_omics_clustering.clustering_publication import clustering_assignment_specs
 
 KEYS=['File_ID','ID']
 METHODS={'leiden':'Leiden','flowsom':'FlowSOM','spatialsort':'SpatialSort','pixie':'PIXIE'}
@@ -33,17 +34,25 @@ def verify():
     config=yaml.safe_load((ROOT/'configs/figure_02.yaml').read_text())
     truth['label20']=truth.cell_type_update.replace(config['panel_e']['evaluation']['harmonization_map'])
     manifest=json.loads((ROOT/'data/frozen/v3_k300_assignments/manifest.json').read_text())
-    regional=pd.read_csv(INPUTS/'figure_02/regional_metrics.csv')
-    celltype=pd.read_csv(INPUTS/'figure_02/celltype_metrics.csv')
+    current_specs=clustering_assignment_specs(ROOT)
+    regional=read_table('figure_02/regional_metrics.csv')
+    celltype=read_table('figure_02/celltype_metrics.csv')
     score3=pd.read_csv(INPUTS/'figure_03/metrics.csv')
     celltype3=pd.read_csv(INPUTS/'figure_03/celltype_metrics.csv')
     selected=pd.read_csv(ROOT/'data/frozen/figure_02_publication_metrics/regional_selected_agreement.csv')
     regional_checks=0;pertype_checks=0;annotation_checks=0
     for method,title in METHODS.items():
-        spec=manifest['methods'][method]
-        path=ROOT/'data/frozen/v3_k300_assignments'/spec['path']
-        assert hashlib.sha256(path.read_bytes()).hexdigest()==spec['gzip_sha256']
-        partition=pd.read_csv(path,dtype=str)[KEYS+[spec['assignment_column']]].rename(columns={spec['assignment_column']:'cluster'})
+        # Annotation records remain tied to their historical memberships. Never
+        # recompute an old annotation bound from the updated primary clusters.
+        historical_spec=manifest['methods'][method]
+        historical_path=ROOT/'data/frozen/v3_k300_assignments'/historical_spec['path']
+        assert hashlib.sha256(historical_path.read_bytes()).hexdigest()==historical_spec['gzip_sha256']
+        historical_partition=pd.read_csv(historical_path,dtype=str)[KEYS+[historical_spec['assignment_column']]].rename(columns={historical_spec['assignment_column']:'cluster'})
+        spec=current_specs[method] if current_specs is not None else historical_spec
+        if current_specs is not None:
+            partition=pd.read_csv(spec['assignment_path'],dtype=str)[KEYS+[spec['assignment_column']]].rename(columns={spec['assignment_column']:'cluster'})
+        else:
+            partition=historical_partition
         frame=truth.merge(partition,on=KEYS,validate='one_to_one')
         assert len(frame)==220082 and frame.cluster.nunique()==spec['observed_clusters']
         frame=frame.loc[frame.cell_type_update.ne('Noise')]
@@ -64,7 +73,7 @@ def verify():
         np.testing.assert_allclose(rows.recall,recall,rtol=0,atol=1e-12)
         np.testing.assert_array_equal(rows.n_cells,support)
         pertype_checks+=len(labels)*2
-        raw=annotations.merge(partition,on=KEYS,validate='one_to_one')
+        raw=annotations.merge(historical_partition,on=KEYS,validate='one_to_one')
         ct=pd.crosstab(raw.cluster,raw.truth_normalized)
         bound=ct.max(axis=1).sum()
         nn=raw.loc[raw.truth_normalized.ne('Noise')].copy()
@@ -114,7 +123,9 @@ def verify():
     return {'status':'pass','frozen_input_files':files,'approved_images':image_count,
             'figure_2_regional_values':regional_checks,'figure_2_celltype_values':pertype_checks,
             'figure_3_method_model_maps':annotation_checks,'spatial_window_cells':[1086,915],
-            'paired_representation_comparisons':16,'new_model_calls':0,'new_fits':0,'network_access':False}
+            'paired_representation_comparisons':16,
+            'current_clustering_and_historical_annotation_partitions_checked_separately':True,
+            'new_model_calls':0,'new_fits':0,'network_access':False}
 
 
 if __name__=='__main__':

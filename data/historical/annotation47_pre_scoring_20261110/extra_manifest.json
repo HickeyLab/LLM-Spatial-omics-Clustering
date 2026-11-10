@@ -1,0 +1,41 @@
+{
+  "schema": "annotation47.pre_scoring_archive_extra.v1",
+  "files": [
+    {
+      "original_path": "docs/manuscript_reproduction.md",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/docs/manuscript_reproduction.md",
+      "sha256": "a1514b7d724f0a52da9acbd2f3383689d617bdb347e0436f487fea2080205ebb",
+      "bytes": 7611
+    },
+    {
+      "original_path": "configs/clustering47_publication.json",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/configs/clustering47_publication.json",
+      "sha256": "be4769381a6ee12173eb0e031c332fdb670c4e8a55a51f2d4c232dc5538a0856",
+      "bytes": 2060
+    },
+    {
+      "original_path": "tests/test_sweep_retirement.py",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/tests/test_sweep_retirement.py",
+      "sha256": "0c2acad392e96839d6616fda9738902dd17d1a5b6040b89d770641f49358713f",
+      "bytes": 2420
+    },
+    {
+      "original_path": "tests/test_clustering47_publication.py",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/tests/test_clustering47_publication.py",
+      "sha256": "01298ab286452062b2064fd6ddee721eeaa47baa29d88171a7e50ac0d694dcd3",
+      "bytes": 4326
+    },
+    {
+      "original_path": "configs/supplementary_table_crosswalk.json",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/configs/supplementary_table_crosswalk.json",
+      "sha256": "03a44c9469246ecd0f6966785a8475d590a694129c7ccf795febe56beddfa782",
+      "bytes": 9030
+    },
+    {
+      "original_path": "configs/historical_annotation_artwork.json",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/configs/historical_annotation_artwork.json",
+      "sha256": "960ae49feb776fae4935242f4858640cbc11dd880b92419c4e6fd7cc01669079",
+      "bytes": 399
+    }
+  ]
+}

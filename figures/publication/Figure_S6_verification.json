@@ -1,38 +1,42 @@
 {
   "figure": "Figure_S6",
   "width_mm": 165.1,
-  "height_mm": 200.15059027777778,
+  "height_mm": 221.6105625,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4727
+    5234
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
   "layout_compaction": {
-    "original_height_mm": 223,
-    "height_mm": 200.15059027777778,
-    "height_reduction_percent": 10.24637207274539,
+    "original_height_mm": 251,
+    "height_mm": 221.6105625,
+    "height_reduction_percent": 11.708939243027894,
     "vacant_bands_removed_mm": [
       [
-        11.786,
-        12.864999999999997
+        10.785999999999996,
+        12.499999999999993
       ],
       [
-        81.18103124999999,
-        87.5
+        19.958722222222196,
+        23.499999999999975
       ],
       [
-        93.04,
-        96.47013888888887
+        106.72128124999998,
+        111.5
       ],
       [
-        102.63764236111108,
-        111.49999999999999
+        117.13600000000001,
+        122.4701388888889
+      ],
+      [
+        128.63764236111112,
+        136.50000000000003
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -41,26 +45,29 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
-    "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+    "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
+    "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
+    "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
   },
-  "notes": [],
+  "notes": [
+    "A: held-out test-cell confusion. B: all220082cells across300Leidenclusters; sorted by decreasing majority-reference fraction, then clusterID."
+  ],
   "files": {
     "Figure_S6.svg": {
-      "sha256": "1f4d7bfa076174b4cec1d37e3aaa1cae943d9d94a0d1a7a12b10188b303e10db",
-      "bytes": 420851
+      "sha256": "dd9b2c1b71c6234ff91454c70c35fb4b7d713da16932b562b57d0644a444ab83",
+      "bytes": 543484
     },
     "Figure_S6.pdf": {
-      "sha256": "aaf390847162a649d5885a71ffb817a04e5d9a08f5f108735e532f1f07135dc3",
-      "bytes": 80882
+      "sha256": "3fea29206696905f5cbd627b52bd226d847e3a98cc2c084afd8833ca9b79d0bb",
+      "bytes": 91283
     },
     "Figure_S6.png": {
-      "sha256": "5c3acb1a2fc1acf3b4b2c0ca85596e21645c57d8a4d85ee543d7b9b1b4ca9ffd",
-      "bytes": 754174
+      "sha256": "a5fbc7c2883ea8905a875985a36dd30d74281ffedffd5c8056fac2cb2f6b3e46",
+      "bytes": 560041
     },
     "Figure_S6.tiff": {
-      "sha256": "fa05f1ac5de92265980afbf383d778c710cb1dd5bb2925dbd436abc8a78f4f1f",
-      "bytes": 1779598
+      "sha256": "f908224b50d81272e9b9576cff74c57e303cea68bd362b2a2f8cc26ace46cd09",
+      "bytes": 1841920
     }
   }
 }

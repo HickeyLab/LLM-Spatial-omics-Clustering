@@ -1,0 +1,124 @@
+{
+  "schema": "annotation47.independent_saved_doc_and_mirror_verification.v1",
+  "passed": true,
+  "input_docx": "/Users/zacharydeutsch/.codex/analysis_artifacts/annotation47_publication_20261110/manuscript/server_saved_final.docx",
+  "input_docx_sha256": "767b3ffa5fae774d3a19aeda87c48d3059f998cf01d3eb259e754b98d61b837a",
+  "source_docx_sha256": "a96b702870675c46f56ed77f483ecc2ba147a9226438a38abced2650da0365d3",
+  "tracked_suggestions_view": "Accepted text; w:del and w:moveFrom content skipped; table rows with w:trPr/w:del skipped.",
+  "ledger_items_verified": 145,
+  "all_expected_replacement_texts_present": true,
+  "all_obsolete_exact_anchors_absent": true,
+  "accepted_native_tables": 7,
+  "unchanged_native_tables": [
+    {
+      "table": "S1",
+      "exact_cell_texts_unchanged": true,
+      "rows": 7
+    },
+    {
+      "table": "S2A",
+      "exact_cell_texts_unchanged": true,
+      "rows": 9
+    },
+    {
+      "table": "S2B",
+      "exact_cell_texts_unchanged": true,
+      "rows": 6
+    }
+  ],
+  "new_tables_exact_csv": [
+    {
+      "table": "S6a",
+      "exact_csv_cell_match": true,
+      "rows": 17,
+      "source": "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/annotation47_results_20261110/Table_S6a.csv",
+      "sha256": "bd471bddc39249afae1a94b6ee7690f00238d787f678057ac448a7f8ee6f0994"
+    },
+    {
+      "table": "S6b",
+      "exact_csv_cell_match": true,
+      "rows": 17,
+      "source": "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/annotation47_results_20261110/Table_S6b.csv",
+      "sha256": "562fe41eee829a27c62e0ee8438f8e36b4573507c97ebb835f6f8e9dd34968b7"
+    },
+    {
+      "table": "S6c",
+      "exact_csv_cell_match": true,
+      "rows": 17,
+      "source": "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/annotation47_results_20261110/Table_S6c.csv",
+      "sha256": "79d8e87376e3badeab4824db2893fc330fc1045aa52871720d4488683a1bfd2b"
+    },
+    {
+      "table": "S6d",
+      "exact_csv_cell_match": true,
+      "rows": 5,
+      "source": "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/data/frozen/annotation47_results_20261110/Table_S6d.csv",
+      "sha256": "ce84487b0040baddf47a8c627d62b97a4354ca0fee4f10f6050c037546186115"
+    }
+  ],
+  "native_equations_preserved_exact_xml": 5,
+  "equation_sha256": [
+    "3df13230f3211d9d42cd49192773251a8f0123d5eb5563494637aa1df2a9b574",
+    "a7ea7e143b47ca520112561024dec9b88e84bfd895c9872b578111b178901dee",
+    "8f40696acd5af74b2c893b0f4eba4ca80f231732375101f8df180b38320132ea",
+    "2cae20454f32b3e5cdf54287586d52024755fd8fa94fb4b506bfc44367926314",
+    "0dc589c997805f68673bc11d23e9830ec4c87e80d037d81c2fed63201c3aa768"
+  ],
+  "bibliography_entries_unchanged": 36,
+  "accepted_inline_image_count": 15,
+  "retained_figure_count": 13,
+  "pending_image_replacement_byte_verification_performed": false,
+  "image_export_limit": "Pending image replacements can be omitted by Google Docs export. This check verifies accepted image counts and retained figure caption identities, not new-image content bytes.",
+  "all_thirteen_captions_match_inventory": true,
+  "six_new_annotation_captions_match_inventory": true,
+  "unedited_substantial_paragraphs_preserved": 144,
+  "restored_citation_superscripts": [
+    {
+      "prefix": "Agentic and human-in-the-loop systems extend direct LLM annotatio",
+      "superscript_text": [
+        "[29]",
+        "[30]"
+      ]
+    },
+    {
+      "prefix": "We performed a retrospective benchmark of clustering and LLM anno",
+      "superscript_text": [
+        "[3]"
+      ]
+    },
+    {
+      "prefix": "Raw CODEX images were processed with the published intestine work",
+      "superscript_text": [
+        "[3]"
+      ]
+    },
+    {
+      "prefix": "Our study evaluated direct numerical-profile annotation. We did n",
+      "superscript_text": [
+        "[29]",
+        "[30]"
+      ]
+    }
+  ],
+  "fresh_server_persistence_basis": {
+    "previous_final_docx_sha256": "1e47fa3837c591f466bf57b028cae6c0c5911bd9b48235b414b8e9b34c1850b1",
+    "fresh_server_docx_sha256": "767b3ffa5fae774d3a19aeda87c48d3059f998cf01d3eb259e754b98d61b837a",
+    "document_xml_identical_to_previous_verified_export": false,
+    "previous_xml_sha256": "1eef3d6253df221479c3c05f33f9d057c9cb0dbe5b6d5828afbb3acff6919f4c",
+    "fresh_server_xml_sha256": "3a6670ca3756bc627a50984ad0054bb0419ca0613a1ed0a555982c6ac1ce7357",
+    "fresh_tab_saved_to_drive_observed_by_parent": true,
+    "parent_verification_tab": "253727402",
+    "accepted_text_and_native_tables_identical_to_previous_verified_export": true,
+    "accepted_native_content_sha256": "4d3ef0449ec8f1bc58044c1d17692ed296f35742183f99ff806d4784037b547a",
+    "xml_byte_difference_not_used_as_content_failure": true
+  },
+  "markdown_mirror": "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/repo/docs/manuscript_primary47.md",
+  "markdown_sha256": "06b2aa3efa8a56faf37f88ad24c064cf7cc8c444946519957f66020ee6fa12e9",
+  "markdown_tables": 7,
+  "markdown_equations": 5,
+  "markdown_references": 36,
+  "markdown_figure_links": 15,
+  "mirror_note": "The full manuscript mirror uses the accepted text/table view and links current retained PNGs from the repository inventory. It is not a replacement Google Doc upload.",
+  "live_doc_edits_performed_by_verifier": false,
+  "new_annotation_calls": 0
+}

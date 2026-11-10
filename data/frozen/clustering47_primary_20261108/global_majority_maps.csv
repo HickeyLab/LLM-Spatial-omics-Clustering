@@ -1,0 +1,1129 @@
+method,cluster,majority_label
+Leiden,0::0,Enterocyte
+Leiden,0::1,Enterocyte
+Leiden,0::2,Enterocyte
+Leiden,0::3,Enterocyte
+Leiden,0::4,Enterocyte
+Leiden,0::5,Enterocyte
+Leiden,0::6,Enterocyte
+Leiden,10::0,M2 Macrophage
+Leiden,10::1,M2 Macrophage
+Leiden,10::2,M2 Macrophage
+Leiden,10::3,M2 Macrophage
+Leiden,10::4,M2 Macrophage
+Leiden,10::5,M2 Macrophage
+Leiden,10::6,M2 Macrophage
+Leiden,11::0,M2 Macrophage
+Leiden,11::1,Stroma
+Leiden,11::2,Stroma
+Leiden,11::3,Stroma
+Leiden,11::4,Stroma
+Leiden,11::5,Stroma
+Leiden,11::6,Stroma
+Leiden,12::0,Endothelial
+Leiden,12::1,Endothelial
+Leiden,12::2,Stroma
+Leiden,12::3,Endothelial
+Leiden,12::4,Endothelial
+Leiden,12::5,Endothelial
+Leiden,12::6,Endothelial
+Leiden,13::0,Goblet
+Leiden,13::1,Goblet
+Leiden,13::2,Goblet
+Leiden,13::3,Goblet
+Leiden,13::4,Goblet
+Leiden,13::5,Goblet
+Leiden,13::6,Goblet
+Leiden,14::0,CD8+ T
+Leiden,14::1,CD4+ T cell
+Leiden,14::2,Plasma
+Leiden,14::3,CD4+ T cell
+Leiden,14::4,CD4+ T cell
+Leiden,14::5,CD4+ T cell
+Leiden,14::6,CD4+ T cell
+Leiden,15::0,Nerve
+Leiden,15::1,Nerve
+Leiden,15::2,Nerve
+Leiden,15::3,Nerve
+Leiden,15::4,Plasma
+Leiden,15::5,Nerve
+Leiden,15::6,Nerve
+Leiden,16::0,Plasma
+Leiden,16::1,M2 Macrophage
+Leiden,16::2,M2 Macrophage
+Leiden,16::3,CD4+ T cell
+Leiden,16::4,M2 Macrophage
+Leiden,16::5,M2 Macrophage
+Leiden,16::6,M2 Macrophage
+Leiden,17::0,CD8+ T
+Leiden,17::1,CD4+ T cell
+Leiden,17::2,CD4+ T cell
+Leiden,17::3,CD4+ T cell
+Leiden,17::4,CD4+ T cell
+Leiden,17::5,Plasma
+Leiden,17::6,CD4+ T cell
+Leiden,18::0,CD8+ T
+Leiden,18::1,CD8+ T
+Leiden,18::2,CD8+ T
+Leiden,18::3,CD8+ T
+Leiden,18::4,CD8+ T
+Leiden,18::5,CD8+ T
+Leiden,18::6,CD8+ T
+Leiden,19::1,Smooth muscle
+Leiden,19::3,Smooth muscle
+Leiden,19::4,Smooth muscle
+Leiden,19::5,Smooth muscle
+Leiden,19::6,Smooth muscle
+Leiden,19::coarsened_012,Smooth muscle
+Leiden,1::0,Enterocyte
+Leiden,1::1,CD66+ Enterocyte
+Leiden,1::2,CD66+ Enterocyte
+Leiden,1::3,CD66+ Enterocyte
+Leiden,1::4,CD66+ Enterocyte
+Leiden,1::5,CD66+ Enterocyte
+Leiden,1::6,Enterocyte
+Leiden,20::0,M2 Macrophage
+Leiden,20::1,Stroma
+Leiden,20::2,Stroma
+Leiden,20::3,DC
+Leiden,20::4,M2 Macrophage
+Leiden,20::5,M2 Macrophage
+Leiden,20::6,M2 Macrophage
+Leiden,21::0,Nerve
+Leiden,21::1,Nerve
+Leiden,21::2,Nerve
+Leiden,21::3,Nerve
+Leiden,21::4,Nerve
+Leiden,21::5,Nerve
+Leiden,21::6,Nerve
+Leiden,22::0,Smooth muscle
+Leiden,22::1,Smooth muscle
+Leiden,22::2,Smooth muscle
+Leiden,22::5,Smooth muscle
+Leiden,22::coarsened_015,Smooth muscle
+Leiden,23::2,Stroma
+Leiden,23::3,Stroma
+Leiden,23::4,Enterocyte
+Leiden,23::5,Enterocyte
+Leiden,23::coarsened_016,Stroma
+Leiden,24::0,Plasma
+Leiden,24::1,Plasma
+Leiden,24::2,Plasma
+Leiden,24::3,Plasma
+Leiden,24::4,Plasma
+Leiden,24::5,Plasma
+Leiden,24::6,Plasma
+Leiden,25::0,CD66+ Enterocyte
+Leiden,25::1,CD66+ Enterocyte
+Leiden,25::2,CD66+ Enterocyte
+Leiden,25::3,Cycling TA
+Leiden,25::4,Cycling TA
+Leiden,25::5,CD66+ Enterocyte
+Leiden,25::6,CD66+ Enterocyte
+Leiden,26::0,Smooth muscle
+Leiden,26::1,Smooth muscle
+Leiden,26::2,Plasma
+Leiden,26::3,Smooth muscle
+Leiden,26::4,Smooth muscle
+Leiden,26::5,Smooth muscle
+Leiden,26::6,Smooth muscle
+Leiden,27::0,Lymphatic
+Leiden,27::1,Lymphatic
+Leiden,27::2,Lymphatic
+Leiden,27::3,Lymphatic
+Leiden,27::4,Stroma
+Leiden,27::5,Lymphatic
+Leiden,27::6,Lymphatic
+Leiden,28::2,Stroma
+Leiden,28::3,Stroma
+Leiden,28::5,Stroma
+Leiden,28::coarsened_011,Stroma
+Leiden,29::0,Stroma
+Leiden,29::1,ICC
+Leiden,29::2,Stroma
+Leiden,29::3,Stroma
+Leiden,29::4,Stroma
+Leiden,29::5,Nerve
+Leiden,29::6,Stroma
+Leiden,2::0,Plasma
+Leiden,2::1,Plasma
+Leiden,2::2,Plasma
+Leiden,2::3,Plasma
+Leiden,2::4,Plasma
+Leiden,2::5,Plasma
+Leiden,2::6,Plasma
+Leiden,30::0,Enterocyte
+Leiden,30::1,Enterocyte
+Leiden,30::2,Cycling TA
+Leiden,30::3,Cycling TA
+Leiden,30::4,Cycling TA
+Leiden,30::5,Cycling TA
+Leiden,30::6,Cycling TA
+Leiden,31::0,CD66+ Enterocyte
+Leiden,31::1,Stroma
+Leiden,31::4,Stroma
+Leiden,31::5,Enterocyte
+Leiden,31::coarsened_014,Enterocyte
+Leiden,32::coarsened_013,Stroma
+Leiden,32::coarsened_019,Stroma
+Leiden,33::0,M2 Macrophage
+Leiden,33::1,Neutrophil
+Leiden,33::2,Neutrophil
+Leiden,33::3,Stroma
+Leiden,33::4,CD66+ Enterocyte
+Leiden,33::5,Neutrophil
+Leiden,33::6,Neutrophil
+Leiden,34::0,B
+Leiden,34::1,Enterocyte
+Leiden,34::2,B
+Leiden,34::3,CD4+ T cell
+Leiden,34::4,B
+Leiden,34::5,B
+Leiden,34::6,B
+Leiden,35::0,Enterocyte
+Leiden,35::1,Stroma
+Leiden,35::2,Enterocyte
+Leiden,35::3,Enterocyte
+Leiden,35::4,CD8+ T
+Leiden,35::5,Enterocyte
+Leiden,36::0,Cycling TA
+Leiden,36::1,MUC1+ Enterocyte
+Leiden,36::2,Cycling TA
+Leiden,36::3,Cycling TA
+Leiden,36::4,MUC1+ Enterocyte
+Leiden,36::5,MUC1+ Enterocyte
+Leiden,37::0,Stroma
+Leiden,37::1,Smooth muscle
+Leiden,37::2,Smooth muscle
+Leiden,37::3,Smooth muscle
+Leiden,37::4,Smooth muscle
+Leiden,37::5,Smooth muscle
+Leiden,38::0,DC
+Leiden,38::1,DC
+Leiden,38::2,DC
+Leiden,38::3,DC
+Leiden,38::4,DC
+Leiden,38::5,DC
+Leiden,39::0,B
+Leiden,39::1,B
+Leiden,39::2,Plasma
+Leiden,39::3,B
+Leiden,39::4,Plasma
+Leiden,39::5,B
+Leiden,3::0,CD8+ T
+Leiden,3::1,CD8+ T
+Leiden,3::2,CD8+ T
+Leiden,3::3,CD8+ T
+Leiden,3::4,CD8+ T
+Leiden,3::5,CD8+ T
+Leiden,3::6,CD8+ T
+Leiden,40::coarsened_003,Stroma
+Leiden,40::coarsened_005,Stroma
+Leiden,40::coarsened_007,Stroma
+Leiden,41::1,Stroma
+Leiden,41::2,Cycling TA
+Leiden,41::3,Cycling TA
+Leiden,41::5,Stroma
+Leiden,41::coarsened_008,Stroma
+Leiden,42::0,Stroma
+Leiden,42::2,Smooth muscle
+Leiden,42::4,Smooth muscle
+Leiden,42::5,Smooth muscle
+Leiden,42::coarsened_006,Smooth muscle
+Leiden,43::0,Neuroendocrine
+Leiden,43::1,Neuroendocrine
+Leiden,43::2,Enterocyte
+Leiden,43::3,Neuroendocrine
+Leiden,43::4,Neuroendocrine
+Leiden,43::5,Neuroendocrine
+Leiden,44::0,M2 Macrophage
+Leiden,44::1,M2 Macrophage
+Leiden,44::4,M2 Macrophage
+Leiden,44::coarsened_018,M2 Macrophage
+Leiden,45::0,Goblet
+Leiden,45::1,Goblet
+Leiden,45::2,Goblet
+Leiden,45::3,Goblet
+Leiden,46::0,Plasma
+Leiden,46::1,Enterocyte
+Leiden,46::2,B
+Leiden,46::3,B
+Leiden,47::0,Enterocyte
+Leiden,47::1,Enterocyte
+Leiden,48::0,Smooth muscle
+Leiden,48::1,Goblet
+Leiden,49::0,Smooth muscle
+Leiden,49::1,Smooth muscle
+Leiden,4::0,Enterocyte
+Leiden,4::1,Cycling TA
+Leiden,4::2,Cycling TA
+Leiden,4::3,Cycling TA
+Leiden,4::4,Cycling TA
+Leiden,4::5,Enterocyte
+Leiden,4::6,Goblet
+Leiden,50::0,Smooth muscle
+Leiden,51::0,Cycling TA
+Leiden,52::0,Neutrophil
+Leiden,53::0,Enterocyte
+Leiden,54::0,Enterocyte
+Leiden,5::0,Enterocyte
+Leiden,5::1,Enterocyte
+Leiden,5::2,Enterocyte
+Leiden,5::3,Enterocyte
+Leiden,5::4,Enterocyte
+Leiden,5::5,Enterocyte
+Leiden,5::6,Enterocyte
+Leiden,6::0,Smooth muscle
+Leiden,6::1,Smooth muscle
+Leiden,6::2,Smooth muscle
+Leiden,6::3,Smooth muscle
+Leiden,6::4,Smooth muscle
+Leiden,6::5,Smooth muscle
+Leiden,6::6,Smooth muscle
+Leiden,7::0,Endothelial
+Leiden,7::1,Endothelial
+Leiden,7::2,Endothelial
+Leiden,7::3,Endothelial
+Leiden,7::4,Endothelial
+Leiden,7::5,Endothelial
+Leiden,7::6,Endothelial
+Leiden,8::1,Smooth muscle
+Leiden,8::4,Nerve
+Leiden,8::6,Smooth muscle
+Leiden,8::coarsened_017,Smooth muscle
+Leiden,8::coarsened_020,Smooth muscle
+Leiden,9::0,Stroma
+Leiden,9::1,Stroma
+Leiden,9::2,Stroma
+Leiden,9::3,Stroma
+Leiden,9::4,Stroma
+Leiden,9::5,Stroma
+Leiden,9::6,Stroma
+FlowSOM,1,Goblet
+FlowSOM,10,Smooth muscle
+FlowSOM,100,Goblet
+FlowSOM,101,Goblet
+FlowSOM,102,Enterocyte
+FlowSOM,103,CD8+ T
+FlowSOM,104,Goblet
+FlowSOM,105,Smooth muscle
+FlowSOM,106,Endothelial
+FlowSOM,107,Enterocyte
+FlowSOM,108,Plasma
+FlowSOM,109,Enterocyte
+FlowSOM,11,Plasma
+FlowSOM,110,Endothelial
+FlowSOM,111,Plasma
+FlowSOM,112,Cycling TA
+FlowSOM,113,Enterocyte
+FlowSOM,114,Goblet
+FlowSOM,115,Plasma
+FlowSOM,116,Goblet
+FlowSOM,117,Goblet
+FlowSOM,118,B
+FlowSOM,119,Goblet
+FlowSOM,12,Goblet
+FlowSOM,120,B
+FlowSOM,121,Neutrophil
+FlowSOM,122,Lymphatic
+FlowSOM,123,Goblet
+FlowSOM,124,Goblet
+FlowSOM,125,Goblet
+FlowSOM,126,Goblet
+FlowSOM,127,Goblet
+FlowSOM,128,M2 Macrophage
+FlowSOM,129,Plasma
+FlowSOM,13,CD4+ T cell
+FlowSOM,130,Goblet
+FlowSOM,131,Plasma
+FlowSOM,132,Neutrophil
+FlowSOM,133,Enterocyte
+FlowSOM,134,Goblet
+FlowSOM,135,Enterocyte
+FlowSOM,136,Cycling TA
+FlowSOM,137,Cycling TA
+FlowSOM,138,Endothelial
+FlowSOM,139,CD4+ T cell
+FlowSOM,14,Plasma
+FlowSOM,140,Endothelial
+FlowSOM,141,Enterocyte
+FlowSOM,142,M2 Macrophage
+FlowSOM,143,B
+FlowSOM,144,Plasma
+FlowSOM,145,Endothelial
+FlowSOM,146,Plasma
+FlowSOM,147,CD8+ T
+FlowSOM,148,Neuroendocrine
+FlowSOM,149,Goblet
+FlowSOM,15,Neutrophil
+FlowSOM,150,Enterocyte
+FlowSOM,151,Neutrophil
+FlowSOM,152,Neuroendocrine
+FlowSOM,153,Goblet
+FlowSOM,154,Neuroendocrine
+FlowSOM,155,Neuroendocrine
+FlowSOM,156,Enterocyte
+FlowSOM,157,B
+FlowSOM,158,Enterocyte
+FlowSOM,159,Goblet
+FlowSOM,16,Nerve
+FlowSOM,160,Neutrophil
+FlowSOM,161,Plasma
+FlowSOM,162,Neutrophil
+FlowSOM,163,Goblet
+FlowSOM,164,Neuroendocrine
+FlowSOM,165,Goblet
+FlowSOM,166,B
+FlowSOM,167,Neuroendocrine
+FlowSOM,168,B
+FlowSOM,169,Neuroendocrine
+FlowSOM,17,CD8+ T
+FlowSOM,170,Plasma
+FlowSOM,171,Enterocyte
+FlowSOM,172,B
+FlowSOM,173,Neuroendocrine
+FlowSOM,174,B
+FlowSOM,175,B
+FlowSOM,176,B
+FlowSOM,177,Neutrophil
+FlowSOM,178,Cycling TA
+FlowSOM,179,B
+FlowSOM,18,Endothelial
+FlowSOM,180,Plasma
+FlowSOM,181,Goblet
+FlowSOM,182,Endothelial
+FlowSOM,183,Goblet
+FlowSOM,184,B
+FlowSOM,185,Endothelial
+FlowSOM,186,Goblet
+FlowSOM,187,Goblet
+FlowSOM,188,Goblet
+FlowSOM,189,Goblet
+FlowSOM,19,Endothelial
+FlowSOM,190,Neuroendocrine
+FlowSOM,191,Nerve
+FlowSOM,192,Enterocyte
+FlowSOM,193,Goblet
+FlowSOM,194,Goblet
+FlowSOM,195,Plasma
+FlowSOM,196,B
+FlowSOM,197,Neuroendocrine
+FlowSOM,198,Goblet
+FlowSOM,199,Goblet
+FlowSOM,2,Endothelial
+FlowSOM,20,Enterocyte
+FlowSOM,200,B
+FlowSOM,201,Plasma
+FlowSOM,202,Neuroendocrine
+FlowSOM,203,Enterocyte
+FlowSOM,204,Goblet
+FlowSOM,205,Neutrophil
+FlowSOM,206,Neuroendocrine
+FlowSOM,207,Plasma
+FlowSOM,209,Goblet
+FlowSOM,21,Goblet
+FlowSOM,210,B
+FlowSOM,211,Lymphatic
+FlowSOM,212,Neuroendocrine
+FlowSOM,213,Goblet
+FlowSOM,214,Neuroendocrine
+FlowSOM,215,Neutrophil
+FlowSOM,216,Enterocyte
+FlowSOM,217,Neuroendocrine
+FlowSOM,218,Goblet
+FlowSOM,219,Plasma
+FlowSOM,22,Plasma
+FlowSOM,220,Plasma
+FlowSOM,221,Goblet
+FlowSOM,222,B
+FlowSOM,223,B
+FlowSOM,224,Endothelial
+FlowSOM,225,Neutrophil
+FlowSOM,226,B
+FlowSOM,227,Neuroendocrine
+FlowSOM,228,Plasma
+FlowSOM,229,Goblet
+FlowSOM,23,B
+FlowSOM,230,Neutrophil
+FlowSOM,231,Goblet
+FlowSOM,232,Goblet
+FlowSOM,233,Neuroendocrine
+FlowSOM,234,Neutrophil
+FlowSOM,235,Cycling TA
+FlowSOM,236,Plasma
+FlowSOM,237,B
+FlowSOM,238,B
+FlowSOM,239,Neuroendocrine
+FlowSOM,24,Smooth muscle
+FlowSOM,240,CD4+ T cell
+FlowSOM,241,Goblet
+FlowSOM,242,Enterocyte
+FlowSOM,243,Plasma
+FlowSOM,244,Neuroendocrine
+FlowSOM,245,Goblet
+FlowSOM,246,B
+FlowSOM,247,B
+FlowSOM,248,Plasma
+FlowSOM,249,B
+FlowSOM,25,Smooth muscle
+FlowSOM,250,Plasma
+FlowSOM,251,Neutrophil
+FlowSOM,252,Smooth muscle
+FlowSOM,253,Neuroendocrine
+FlowSOM,254,Neuroendocrine
+FlowSOM,255,B
+FlowSOM,256,Neuroendocrine
+FlowSOM,257,Goblet
+FlowSOM,258,Plasma
+FlowSOM,259,CD8+ T
+FlowSOM,26,M2 Macrophage
+FlowSOM,260,Goblet
+FlowSOM,261,Goblet
+FlowSOM,262,B
+FlowSOM,263,B
+FlowSOM,264,Plasma
+FlowSOM,265,Plasma
+FlowSOM,266,Plasma
+FlowSOM,267,Enterocyte
+FlowSOM,268,Neuroendocrine
+FlowSOM,269,Smooth muscle
+FlowSOM,27,CD66+ Enterocyte
+FlowSOM,270,Goblet
+FlowSOM,271,Lymphatic
+FlowSOM,272,B
+FlowSOM,273,Enterocyte
+FlowSOM,274,Neuroendocrine
+FlowSOM,275,B
+FlowSOM,276,Goblet
+FlowSOM,277,Endothelial
+FlowSOM,278,CD4+ T cell
+FlowSOM,279,Endothelial
+FlowSOM,28,Goblet
+FlowSOM,280,B
+FlowSOM,281,Goblet
+FlowSOM,282,Enterocyte
+FlowSOM,283,Plasma
+FlowSOM,284,Neutrophil
+FlowSOM,285,Plasma
+FlowSOM,286,Endothelial
+FlowSOM,287,Plasma
+FlowSOM,288,Goblet
+FlowSOM,289,Neuroendocrine
+FlowSOM,29,Endothelial
+FlowSOM,290,Plasma
+FlowSOM,291,B
+FlowSOM,292,B
+FlowSOM,293,Smooth muscle
+FlowSOM,294,CD4+ T cell
+FlowSOM,295,Goblet
+FlowSOM,296,Goblet
+FlowSOM,297,B
+FlowSOM,298,Goblet
+FlowSOM,299,Enterocyte
+FlowSOM,3,CD4+ T cell
+FlowSOM,30,Enterocyte
+FlowSOM,300,M2 Macrophage
+FlowSOM,31,Smooth muscle
+FlowSOM,32,Endothelial
+FlowSOM,33,Enterocyte
+FlowSOM,34,Enterocyte
+FlowSOM,35,ICC
+FlowSOM,36,CD66+ Enterocyte
+FlowSOM,37,Endothelial
+FlowSOM,38,Goblet
+FlowSOM,39,Enterocyte
+FlowSOM,4,Plasma
+FlowSOM,40,Goblet
+FlowSOM,41,Cycling TA
+FlowSOM,42,Plasma
+FlowSOM,43,Enterocyte
+FlowSOM,44,Endothelial
+FlowSOM,45,CD8+ T
+FlowSOM,46,Plasma
+FlowSOM,47,Plasma
+FlowSOM,48,Endothelial
+FlowSOM,49,Plasma
+FlowSOM,5,CD4+ T cell
+FlowSOM,50,CD4+ T cell
+FlowSOM,51,Endothelial
+FlowSOM,52,Nerve
+FlowSOM,53,Plasma
+FlowSOM,54,Plasma
+FlowSOM,55,Plasma
+FlowSOM,56,Goblet
+FlowSOM,57,CD4+ T cell
+FlowSOM,58,CD4+ T cell
+FlowSOM,59,CD8+ T
+FlowSOM,6,Enterocyte
+FlowSOM,60,Goblet
+FlowSOM,61,Enterocyte
+FlowSOM,62,Nerve
+FlowSOM,63,B
+FlowSOM,64,Goblet
+FlowSOM,65,Cycling TA
+FlowSOM,66,B
+FlowSOM,67,Smooth muscle
+FlowSOM,68,Endothelial
+FlowSOM,69,Enterocyte
+FlowSOM,7,CD4+ T cell
+FlowSOM,70,CD8+ T
+FlowSOM,71,Goblet
+FlowSOM,72,Lymphatic
+FlowSOM,73,Stroma
+FlowSOM,74,Smooth muscle
+FlowSOM,75,Plasma
+FlowSOM,76,Goblet
+FlowSOM,77,Goblet
+FlowSOM,78,Enterocyte
+FlowSOM,79,CD8+ T
+FlowSOM,8,Enterocyte
+FlowSOM,80,Neuroendocrine
+FlowSOM,81,Goblet
+FlowSOM,82,Plasma
+FlowSOM,83,Enterocyte
+FlowSOM,84,Goblet
+FlowSOM,85,B
+FlowSOM,86,Goblet
+FlowSOM,87,Cycling TA
+FlowSOM,88,CD4+ T cell
+FlowSOM,89,Smooth muscle
+FlowSOM,9,B
+FlowSOM,90,CD4+ T cell
+FlowSOM,91,CD8+ T
+FlowSOM,92,Goblet
+FlowSOM,93,Endothelial
+FlowSOM,94,Enterocyte
+FlowSOM,95,Cycling TA
+FlowSOM,96,Goblet
+FlowSOM,97,Plasma
+FlowSOM,98,Enterocyte
+FlowSOM,99,Goblet
+SpatialSort,0,Smooth muscle
+SpatialSort,1,Stroma
+SpatialSort,10,Smooth muscle
+SpatialSort,100,CD66+ Enterocyte
+SpatialSort,101,Plasma
+SpatialSort,102,Plasma
+SpatialSort,103,Plasma
+SpatialSort,104,M2 Macrophage
+SpatialSort,105,CD4+ T cell
+SpatialSort,106,Nerve
+SpatialSort,107,Endothelial
+SpatialSort,108,Goblet
+SpatialSort,109,CD8+ T
+SpatialSort,11,CD66+ Enterocyte
+SpatialSort,110,CD4+ T cell
+SpatialSort,111,Endothelial
+SpatialSort,112,Stroma
+SpatialSort,113,M2 Macrophage
+SpatialSort,114,Cycling TA
+SpatialSort,115,Stroma
+SpatialSort,117,Enterocyte
+SpatialSort,118,Endothelial
+SpatialSort,119,CD8+ T
+SpatialSort,12,Stroma
+SpatialSort,120,CD8+ T
+SpatialSort,121,Enterocyte
+SpatialSort,122,Enterocyte
+SpatialSort,123,Plasma
+SpatialSort,124,CD66+ Enterocyte
+SpatialSort,125,Plasma
+SpatialSort,126,M2 Macrophage
+SpatialSort,127,M2 Macrophage
+SpatialSort,128,Plasma
+SpatialSort,129,Plasma
+SpatialSort,13,CD66+ Enterocyte
+SpatialSort,130,Smooth muscle
+SpatialSort,131,Goblet
+SpatialSort,132,M2 Macrophage
+SpatialSort,133,Smooth muscle
+SpatialSort,134,Endothelial
+SpatialSort,135,Cycling TA
+SpatialSort,136,Plasma
+SpatialSort,137,Plasma
+SpatialSort,138,Enterocyte
+SpatialSort,139,Plasma
+SpatialSort,14,Plasma
+SpatialSort,140,M2 Macrophage
+SpatialSort,141,Endothelial
+SpatialSort,142,Enterocyte
+SpatialSort,143,Smooth muscle
+SpatialSort,144,CD8+ T
+SpatialSort,145,Plasma
+SpatialSort,146,CD4+ T cell
+SpatialSort,147,Plasma
+SpatialSort,148,B
+SpatialSort,149,Endothelial
+SpatialSort,15,Goblet
+SpatialSort,150,Plasma
+SpatialSort,151,CD4+ T cell
+SpatialSort,152,Stroma
+SpatialSort,153,M2 Macrophage
+SpatialSort,155,B
+SpatialSort,156,Nerve
+SpatialSort,157,CD4+ T cell
+SpatialSort,158,M2 Macrophage
+SpatialSort,159,Goblet
+SpatialSort,16,Nerve
+SpatialSort,160,Smooth muscle
+SpatialSort,161,Enterocyte
+SpatialSort,163,Enterocyte
+SpatialSort,164,Endothelial
+SpatialSort,165,CD8+ T
+SpatialSort,167,CD4+ T cell
+SpatialSort,169,Enterocyte
+SpatialSort,17,Enterocyte
+SpatialSort,170,Goblet
+SpatialSort,171,CD8+ T
+SpatialSort,172,Goblet
+SpatialSort,174,B
+SpatialSort,176,Goblet
+SpatialSort,177,Plasma
+SpatialSort,178,Plasma
+SpatialSort,179,CD4+ T cell
+SpatialSort,18,Smooth muscle
+SpatialSort,181,Plasma
+SpatialSort,184,M2 Macrophage
+SpatialSort,185,Cycling TA
+SpatialSort,186,Endothelial
+SpatialSort,187,M2 Macrophage
+SpatialSort,19,CD8+ T
+SpatialSort,190,Cycling TA
+SpatialSort,192,Endothelial
+SpatialSort,195,Endothelial
+SpatialSort,196,Enterocyte
+SpatialSort,197,Enterocyte
+SpatialSort,2,Smooth muscle
+SpatialSort,20,Endothelial
+SpatialSort,200,Enterocyte
+SpatialSort,202,Goblet
+SpatialSort,204,Nerve
+SpatialSort,205,Smooth muscle
+SpatialSort,208,Smooth muscle
+SpatialSort,209,Endothelial
+SpatialSort,21,Enterocyte
+SpatialSort,212,Stroma
+SpatialSort,217,Endothelial
+SpatialSort,219,Endothelial
+SpatialSort,22,Enterocyte
+SpatialSort,223,CD4+ T cell
+SpatialSort,224,CD66+ Enterocyte
+SpatialSort,229,B
+SpatialSort,23,CD66+ Enterocyte
+SpatialSort,232,Cycling TA
+SpatialSort,234,Enterocyte
+SpatialSort,237,Plasma
+SpatialSort,238,Plasma
+SpatialSort,24,Smooth muscle
+SpatialSort,240,Goblet
+SpatialSort,241,Plasma
+SpatialSort,242,Enterocyte
+SpatialSort,244,Goblet
+SpatialSort,245,B
+SpatialSort,246,Enterocyte
+SpatialSort,248,Endothelial
+SpatialSort,25,Stroma
+SpatialSort,250,CD8+ T
+SpatialSort,252,Stroma
+SpatialSort,253,Endothelial
+SpatialSort,254,Goblet
+SpatialSort,257,CD8+ T
+SpatialSort,258,Enterocyte
+SpatialSort,26,Enterocyte
+SpatialSort,260,Enterocyte
+SpatialSort,262,Enterocyte
+SpatialSort,265,Neutrophil
+SpatialSort,266,Plasma
+SpatialSort,267,M2 Macrophage
+SpatialSort,269,CD8+ T
+SpatialSort,27,Smooth muscle
+SpatialSort,270,Enterocyte
+SpatialSort,272,CD8+ T
+SpatialSort,273,M2 Macrophage
+SpatialSort,274,Stroma
+SpatialSort,275,CD66+ Enterocyte
+SpatialSort,278,B
+SpatialSort,279,Nerve
+SpatialSort,28,CD8+ T
+SpatialSort,283,Smooth muscle
+SpatialSort,284,Goblet
+SpatialSort,29,Enterocyte
+SpatialSort,292,Endothelial
+SpatialSort,298,CD8+ T
+SpatialSort,3,Stroma
+SpatialSort,30,Goblet
+SpatialSort,31,Cycling TA
+SpatialSort,32,Enterocyte
+SpatialSort,33,M2 Macrophage
+SpatialSort,34,Smooth muscle
+SpatialSort,35,Plasma
+SpatialSort,36,Smooth muscle
+SpatialSort,37,M2 Macrophage
+SpatialSort,38,Enterocyte
+SpatialSort,39,Cycling TA
+SpatialSort,4,M2 Macrophage
+SpatialSort,40,Plasma
+SpatialSort,41,CD66+ Enterocyte
+SpatialSort,42,Endothelial
+SpatialSort,43,Smooth muscle
+SpatialSort,44,Neutrophil
+SpatialSort,45,Cycling TA
+SpatialSort,46,Enterocyte
+SpatialSort,47,Enterocyte
+SpatialSort,48,Plasma
+SpatialSort,49,Plasma
+SpatialSort,5,Smooth muscle
+SpatialSort,50,Nerve
+SpatialSort,51,M2 Macrophage
+SpatialSort,52,Endothelial
+SpatialSort,53,Enterocyte
+SpatialSort,54,Enterocyte
+SpatialSort,55,CD8+ T
+SpatialSort,56,CD8+ T
+SpatialSort,57,M2 Macrophage
+SpatialSort,58,Plasma
+SpatialSort,59,CD8+ T
+SpatialSort,6,Smooth muscle
+SpatialSort,60,Stroma
+SpatialSort,61,Endothelial
+SpatialSort,62,Stroma
+SpatialSort,63,Smooth muscle
+SpatialSort,64,Enterocyte
+SpatialSort,65,Enterocyte
+SpatialSort,66,Goblet
+SpatialSort,67,Enterocyte
+SpatialSort,68,Endothelial
+SpatialSort,69,Enterocyte
+SpatialSort,7,Enterocyte
+SpatialSort,70,Enterocyte
+SpatialSort,71,M2 Macrophage
+SpatialSort,72,Cycling TA
+SpatialSort,73,CD4+ T cell
+SpatialSort,74,Smooth muscle
+SpatialSort,75,Plasma
+SpatialSort,76,CD8+ T
+SpatialSort,77,Endothelial
+SpatialSort,78,Endothelial
+SpatialSort,79,Nerve
+SpatialSort,8,Stroma
+SpatialSort,80,CD4+ T cell
+SpatialSort,81,Plasma
+SpatialSort,82,Goblet
+SpatialSort,83,Plasma
+SpatialSort,84,Enterocyte
+SpatialSort,85,Enterocyte
+SpatialSort,86,Enterocyte
+SpatialSort,87,Plasma
+SpatialSort,88,Nerve
+SpatialSort,89,Enterocyte
+SpatialSort,9,Plasma
+SpatialSort,90,CD8+ T
+SpatialSort,91,Stroma
+SpatialSort,92,CD66+ Enterocyte
+SpatialSort,93,Plasma
+SpatialSort,94,Enterocyte
+SpatialSort,95,Enterocyte
+SpatialSort,96,Plasma
+SpatialSort,97,Plasma
+SpatialSort,98,Nerve
+SpatialSort,99,Plasma
+PIXIE,1,Plasma
+PIXIE,10,M2 Macrophage
+PIXIE,100,Nerve
+PIXIE,101,Nerve
+PIXIE,102,M2 Macrophage
+PIXIE,103,Plasma
+PIXIE,104,Endothelial
+PIXIE,105,Stroma
+PIXIE,106,Stroma
+PIXIE,107,Stroma
+PIXIE,108,M2 Macrophage
+PIXIE,109,Endothelial
+PIXIE,11,Stroma
+PIXIE,110,Stroma
+PIXIE,111,Stroma
+PIXIE,112,Enterocyte
+PIXIE,113,M2 Macrophage
+PIXIE,114,Endothelial
+PIXIE,115,Stroma
+PIXIE,116,M2 Macrophage
+PIXIE,117,Plasma
+PIXIE,118,Stroma
+PIXIE,119,Stroma
+PIXIE,12,Plasma
+PIXIE,120,M2 Macrophage
+PIXIE,121,Enterocyte
+PIXIE,122,M2 Macrophage
+PIXIE,123,Stroma
+PIXIE,124,M2 Macrophage
+PIXIE,125,M2 Macrophage
+PIXIE,126,M2 Macrophage
+PIXIE,127,Stroma
+PIXIE,128,M2 Macrophage
+PIXIE,129,Stroma
+PIXIE,13,Nerve
+PIXIE,130,Endothelial
+PIXIE,131,Stroma
+PIXIE,132,Enterocyte
+PIXIE,133,Endothelial
+PIXIE,134,Endothelial
+PIXIE,135,Endothelial
+PIXIE,136,M2 Macrophage
+PIXIE,137,Stroma
+PIXIE,138,Plasma
+PIXIE,139,Stroma
+PIXIE,14,Plasma
+PIXIE,140,Plasma
+PIXIE,141,Plasma
+PIXIE,142,M2 Macrophage
+PIXIE,143,M2 Macrophage
+PIXIE,144,Endothelial
+PIXIE,145,Endothelial
+PIXIE,146,Stroma
+PIXIE,147,Stroma
+PIXIE,148,Endothelial
+PIXIE,149,Endothelial
+PIXIE,15,Endothelial
+PIXIE,150,Smooth muscle
+PIXIE,151,Plasma
+PIXIE,152,CD66+ Enterocyte
+PIXIE,153,Nerve
+PIXIE,154,M2 Macrophage
+PIXIE,155,Goblet
+PIXIE,156,CD4+ T cell
+PIXIE,157,Enterocyte
+PIXIE,158,Nerve
+PIXIE,159,Enterocyte
+PIXIE,16,M2 Macrophage
+PIXIE,160,Enterocyte
+PIXIE,161,Stroma
+PIXIE,162,Enterocyte
+PIXIE,163,CD8+ T
+PIXIE,164,Stroma
+PIXIE,165,Stroma
+PIXIE,166,M2 Macrophage
+PIXIE,167,CD4+ T cell
+PIXIE,168,Goblet
+PIXIE,169,Nerve
+PIXIE,17,Enterocyte
+PIXIE,170,CD4+ T cell
+PIXIE,171,Nerve
+PIXIE,172,M2 Macrophage
+PIXIE,173,Nerve
+PIXIE,174,Cycling TA
+PIXIE,175,Goblet
+PIXIE,176,Goblet
+PIXIE,177,Stroma
+PIXIE,178,M2 Macrophage
+PIXIE,179,Goblet
+PIXIE,18,Stroma
+PIXIE,180,Goblet
+PIXIE,181,CD4+ T cell
+PIXIE,182,M2 Macrophage
+PIXIE,183,Enterocyte
+PIXIE,184,Nerve
+PIXIE,185,Plasma
+PIXIE,186,Enterocyte
+PIXIE,187,Stroma
+PIXIE,188,M2 Macrophage
+PIXIE,189,M2 Macrophage
+PIXIE,19,Nerve
+PIXIE,190,CD4+ T cell
+PIXIE,191,M2 Macrophage
+PIXIE,192,Plasma
+PIXIE,193,Plasma
+PIXIE,194,Enterocyte
+PIXIE,195,Nerve
+PIXIE,196,Goblet
+PIXIE,197,Cycling TA
+PIXIE,198,Enterocyte
+PIXIE,199,Cycling TA
+PIXIE,2,M2 Macrophage
+PIXIE,20,Stroma
+PIXIE,200,Enterocyte
+PIXIE,201,CD8+ T
+PIXIE,202,Goblet
+PIXIE,203,Stroma
+PIXIE,204,Nerve
+PIXIE,205,CD4+ T cell
+PIXIE,206,Plasma
+PIXIE,207,CD8+ T
+PIXIE,208,Nerve
+PIXIE,209,Stroma
+PIXIE,21,Stroma
+PIXIE,210,M2 Macrophage
+PIXIE,211,Enterocyte
+PIXIE,212,Plasma
+PIXIE,213,Enterocyte
+PIXIE,214,CD4+ T cell
+PIXIE,215,Plasma
+PIXIE,216,Plasma
+PIXIE,217,CD8+ T
+PIXIE,218,Stroma
+PIXIE,219,Enterocyte
+PIXIE,22,Enterocyte
+PIXIE,220,Stroma
+PIXIE,221,CD66+ Enterocyte
+PIXIE,222,Stroma
+PIXIE,223,Plasma
+PIXIE,224,CD8+ T
+PIXIE,225,Plasma
+PIXIE,226,Nerve
+PIXIE,227,Nerve
+PIXIE,228,Stroma
+PIXIE,229,Stroma
+PIXIE,23,Stroma
+PIXIE,230,Enterocyte
+PIXIE,231,M2 Macrophage
+PIXIE,232,Nerve
+PIXIE,233,CD4+ T cell
+PIXIE,234,Plasma
+PIXIE,235,Plasma
+PIXIE,236,CD8+ T
+PIXIE,237,Plasma
+PIXIE,238,CD4+ T cell
+PIXIE,239,CD4+ T cell
+PIXIE,24,Stroma
+PIXIE,240,Enterocyte
+PIXIE,241,CD4+ T cell
+PIXIE,242,CD8+ T
+PIXIE,243,CD4+ T cell
+PIXIE,244,Stroma
+PIXIE,245,Stroma
+PIXIE,246,Endothelial
+PIXIE,247,Nerve
+PIXIE,248,Stroma
+PIXIE,249,Plasma
+PIXIE,25,Nerve
+PIXIE,250,Enterocyte
+PIXIE,251,Goblet
+PIXIE,252,M2 Macrophage
+PIXIE,253,CD66+ Enterocyte
+PIXIE,254,Stroma
+PIXIE,255,M2 Macrophage
+PIXIE,256,Plasma
+PIXIE,257,Goblet
+PIXIE,258,Cycling TA
+PIXIE,259,Stroma
+PIXIE,26,Smooth muscle
+PIXIE,260,Smooth muscle
+PIXIE,261,Nerve
+PIXIE,262,Enterocyte
+PIXIE,263,Plasma
+PIXIE,264,Nerve
+PIXIE,265,Plasma
+PIXIE,266,CD4+ T cell
+PIXIE,267,Cycling TA
+PIXIE,268,M2 Macrophage
+PIXIE,269,M2 Macrophage
+PIXIE,27,Enterocyte
+PIXIE,270,Enterocyte
+PIXIE,271,Stroma
+PIXIE,272,Nerve
+PIXIE,273,Plasma
+PIXIE,274,Nerve
+PIXIE,275,CD8+ T
+PIXIE,276,Stroma
+PIXIE,277,M2 Macrophage
+PIXIE,278,Enterocyte
+PIXIE,279,Enterocyte
+PIXIE,28,Plasma
+PIXIE,280,Enterocyte
+PIXIE,281,Plasma
+PIXIE,282,Cycling TA
+PIXIE,283,CD4+ T cell
+PIXIE,284,Goblet
+PIXIE,285,Nerve
+PIXIE,286,M2 Macrophage
+PIXIE,287,Endothelial
+PIXIE,288,Goblet
+PIXIE,289,Nerve
+PIXIE,29,Enterocyte
+PIXIE,290,Nerve
+PIXIE,291,Enterocyte
+PIXIE,292,Goblet
+PIXIE,293,Goblet
+PIXIE,294,Nerve
+PIXIE,295,Enterocyte
+PIXIE,296,Stroma
+PIXIE,297,Nerve
+PIXIE,298,Nerve
+PIXIE,299,Stroma
+PIXIE,3,Enterocyte
+PIXIE,30,Nerve
+PIXIE,300,M2 Macrophage
+PIXIE,31,Smooth muscle
+PIXIE,32,Endothelial
+PIXIE,33,M2 Macrophage
+PIXIE,34,Endothelial
+PIXIE,35,M2 Macrophage
+PIXIE,36,Stroma
+PIXIE,37,Stroma
+PIXIE,38,Cycling TA
+PIXIE,39,Cycling TA
+PIXIE,4,Stroma
+PIXIE,40,Smooth muscle
+PIXIE,41,Stroma
+PIXIE,42,Stroma
+PIXIE,43,Endothelial
+PIXIE,44,Smooth muscle
+PIXIE,45,Goblet
+PIXIE,46,Nerve
+PIXIE,47,Endothelial
+PIXIE,48,Smooth muscle
+PIXIE,49,Nerve
+PIXIE,5,Stroma
+PIXIE,50,M2 Macrophage
+PIXIE,51,Stroma
+PIXIE,52,Smooth muscle
+PIXIE,53,Smooth muscle
+PIXIE,54,Endothelial
+PIXIE,55,Smooth muscle
+PIXIE,56,Stroma
+PIXIE,57,Stroma
+PIXIE,58,M2 Macrophage
+PIXIE,59,M2 Macrophage
+PIXIE,6,Endothelial
+PIXIE,60,Endothelial
+PIXIE,61,Endothelial
+PIXIE,62,Endothelial
+PIXIE,63,M2 Macrophage
+PIXIE,64,Stroma
+PIXIE,65,Smooth muscle
+PIXIE,66,Smooth muscle
+PIXIE,67,CD8+ T
+PIXIE,68,Enterocyte
+PIXIE,69,Stroma
+PIXIE,7,Enterocyte
+PIXIE,70,Endothelial
+PIXIE,71,Nerve
+PIXIE,72,M2 Macrophage
+PIXIE,73,Endothelial
+PIXIE,74,Endothelial
+PIXIE,75,Plasma
+PIXIE,76,M2 Macrophage
+PIXIE,77,Stroma
+PIXIE,78,Endothelial
+PIXIE,79,M2 Macrophage
+PIXIE,8,CD4+ T cell
+PIXIE,80,Stroma
+PIXIE,81,Nerve
+PIXIE,82,CD4+ T cell
+PIXIE,83,Endothelial
+PIXIE,84,Smooth muscle
+PIXIE,85,Enterocyte
+PIXIE,86,Stroma
+PIXIE,87,M2 Macrophage
+PIXIE,88,Endothelial
+PIXIE,89,Stroma
+PIXIE,9,M2 Macrophage
+PIXIE,90,Smooth muscle
+PIXIE,91,M2 Macrophage
+PIXIE,92,M2 Macrophage
+PIXIE,93,M2 Macrophage
+PIXIE,94,Stroma
+PIXIE,95,Endothelial
+PIXIE,96,Stroma
+PIXIE,97,Smooth muscle
+PIXIE,98,CD66+ Enterocyte
+PIXIE,99,Stroma

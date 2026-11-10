@@ -1,0 +1,52 @@
+{
+  "schema": "annotation47.publication_validation.v1",
+  "status": "pass_within_offline_scoring_and_figure_documentation_scope",
+  "checked_at": "2026-11-10T21:47:29.826439+00:00",
+  "scope": "Scientific scoring, 9 changed native figure exports, retained inventory, documentation, source/archive integrity and 90 focused tests. Google Doc saved suggestions and placement are verified separately by the parent publication task.",
+  "accepted_request_items": 128,
+  "annotation_sets": 32,
+  "cluster_predictions": 9024,
+  "cells": 220082,
+  "markers": 47,
+  "ontology_labels": 28,
+  "independent_metric_recomputations": 352,
+  "primary_agreement_range_percent": [
+    23.06367549506344,
+    58.12001783991381
+  ],
+  "primary_macro_f1_range": [
+    0.15082467027270968,
+    0.44901687365347975
+  ],
+  "paired_agreement_increases": 9,
+  "paired_agreement_decreases": 7,
+  "retained_figures": 13,
+  "retained_images": 15,
+  "changed_figures": [
+    "2",
+    "3",
+    "4",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S10",
+    "S11"
+  ],
+  "native_exports_checked": 36,
+  "focused_tests": {
+    "passed": 90,
+    "failed": 0,
+    "junit_sha256": "7e9fb689308f15a6c4d8a421e6fe4a334cd8f66fb781ea0542388d9187f000d9"
+  },
+  "S4A_all47_reference_profiles_independently_verified": true,
+  "old45_reference_source_preserved": true,
+  "no_new_model_calls": true,
+  "no_new_fits": true,
+  "proofs": {
+    "docs/revision/annotation47_independent_scoring_20261110.json": "e485fb5632c6b6d06d708d0af036d6697777eed155231bcefda4bb6250bcdef0",
+    "docs/revision/annotation47_independent_exports_20261110.json": "395818e6d2229ee3367ef6b0bed87aa7d5a9e423cd6667f61702c67c2b347084",
+    "docs/revision/reference47_independent_verification_20261110.json": "37ecf6a317af0644425c032a33b6b93686c77b34374653433eb8c0d96a95300b",
+    "docs/revision/annotation47_documentation_verification_20261110.json": "3df735b4cb71fec9d7ae23a27585dc7f865dbe6499881c16feb88a64923c061a"
+  }
+}

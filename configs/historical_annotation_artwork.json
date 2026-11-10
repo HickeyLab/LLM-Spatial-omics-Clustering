@@ -1,0 +1,9 @@
+{
+  "schema": "manuscript.historical_annotation_artwork.v1",
+  "source_date": "2026-11-06",
+  "policy": "Archival provenance only. Superseded annotation artwork is preserved through the archive index and is excluded from the active inventory. Current annotation figures are rebuilt from the completed, scored primary47 campaign recorded in configs/annotation47_active_study.json.",
+  "figures": {},
+  "status": "archival_only",
+  "archive_index": "data/historical/publication_before_primary47_20261109/index.json",
+  "updated_date": "2026-11-10"
+}

@@ -1,0 +1,215 @@
+{
+  "schema": "clustering.publication.recomputation_validation.v1",
+  "created_utc": "2026-11-08T16:28:48.387942+00:00",
+  "status": "passed",
+  "portable_script": "scripts/recompute_clustering47_publication.py",
+  "portable_script_sha256": "fe4023fd4547991ddcd0e2e5572c50139d756fc80c5f8090ae64d30ba1af1bf9",
+  "original_archive": "scripts/archive/recompute_publication_metrics_20261108_original.py",
+  "original_archive_sha256": "cd235843e16c77723a13ac2c3b3b2570f611c6d267a5e414fe051557dd592e62",
+  "original_archive_byte_identical": true,
+  "scientific_functions_ast_identical_to_original": [
+    "majority",
+    "class_metrics",
+    "independent_ari",
+    "subset_metrics",
+    "publication_metrics",
+    "raw_metrics",
+    "conditional_tests"
+  ],
+  "verified_input_files_before_and_after": 53,
+  "manifest_sha256": "06874f8bd28d2762edf13ea99b4476f070740af509353d730e327f37bb96bb87",
+  "offline_test_command": "python -m unittest discover -s tests -p 'test_clustering47_recomputation.py'",
+  "offline_tests_passed": 5,
+  "input_only_preflight_passed": true,
+  "full_recompute_command": "python scripts/recompute_clustering47_publication.py --output-dir /absolute/path/to/new/output",
+  "full_recompute_exit_code": 0,
+  "generated_scientific_or_policy_outputs": 27,
+  "published_output_checks": [
+    {
+      "file": "celltype_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "conditional_comparisons.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "conditional_comparisons_all_families.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "figureS4_celltype_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "figureS4_cluster_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "figureS4_compositions.csv.gz",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "fixed_raw_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "global_majority_maps.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "majority_ties.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "paired_regional_observations.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "paired_regional_observations_all_families.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "panel_F_values.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "panel_H_values.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "publication_baseline_changes.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "publication_pooled_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "publication_regional_summary.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "publication_scoring_policy.json",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "reference_plot_cells.csv.gz",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "regional_majority_maps.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "regional_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "scoring_policy_comparison.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "spatialsort_seed43_celltype_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "spatialsort_seed43_fixed_raw_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "spatialsort_seed43_publication_pooled_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "spatialsort_seed43_regional_metrics.csv",
+      "values_match": true,
+      "byte_identical": true
+    },
+    {
+      "file": "spatialsort_seed_sensitivity.csv",
+      "values_match": true,
+      "byte_identical": true
+    }
+  ],
+  "all_26_published_outputs_byte_identical": true,
+  "cell_key_checks": [
+    {
+      "assignment": "leiden",
+      "rows": 220082,
+      "exact_unique_keys": true
+    },
+    {
+      "assignment": "flowsom",
+      "rows": 220082,
+      "exact_unique_keys": true
+    },
+    {
+      "assignment": "spatialsort",
+      "rows": 220082,
+      "exact_unique_keys": true
+    },
+    {
+      "assignment": "pixie",
+      "rows": 220082,
+      "exact_unique_keys": true
+    },
+    {
+      "assignment": "spatialsort_seed43",
+      "rows": 220082,
+      "exact_unique_keys": true
+    }
+  ],
+  "publication_rows": 209587,
+  "input_rows": 220082,
+  "versions": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.7.2"
+  },
+  "primary_spatialsort_seed": 42,
+  "sensitivity_spatialsort_seed": 43,
+  "cluster_counts": {
+    "leiden": 300,
+    "flowsom": 299,
+    "spatialsort": 229,
+    "pixie": 300
+  },
+  "retained_historical_test_rows": 48,
+  "retained_historical_paired_rows": 384,
+  "new_fits": 0,
+  "new_annotations": 0,
+  "existing_scientific_outputs_modified": false,
+  "local_full_recompute_receipt": "/Users/zacharydeutsch/.codex/analysis_artifacts/clustering47_publication_update_20261108/metrics/portable_recompute/metrics_receipt.json",
+  "local_full_recompute_receipt_sha256": "260efe4d5595f551f9af86b481a921ce8da38abf68cb208602a006f0155c4877",
+  "limitations": [
+    "Fixed-partition, single-donor descriptive diagnostics only.",
+    "No scientific convergence or annotation improvement is inferred."
+  ]
+}

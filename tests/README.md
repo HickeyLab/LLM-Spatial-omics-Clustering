@@ -5,7 +5,7 @@ and current Supplementary Figure S4 configurations (legacy `figure_s03` imports)
 shared final-figure runtime, HuBMAP TIFF acquisition, current supplementary labels,
 and manuscript replay integrity. The replay test independently recomputes current
 Figure 2/3 metrics from frozen cell labels and assignments, verifies paired-repeat
-summaries and checks all 17 approved image hashes. Other tests use bounded
+summaries and checks all 18 approved image hashes. The current 47-marker contract additionally verifies exact full-cohort joins, primary/sensitivity seed selection, per-panel ontologies and preserved annotation families. Other tests use bounded
 fixtures. Data-dependent tests skip when their external inputs are unavailable.
 
 Run the full suite from the repository root with:
