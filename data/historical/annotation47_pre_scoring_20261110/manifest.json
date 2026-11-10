@@ -1,0 +1,47 @@
+{
+  "schema": "annotation47.pre_scoring_archive.v1",
+  "files": [
+    {
+      "original_path": "README.md",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/README.md",
+      "sha256": "db2bb3f87778c986729c433216c1406b45e89f95d3f18e49272be502ddd29037",
+      "bytes": 9526
+    },
+    {
+      "original_path": "configs/annotation47_active_study.json",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/configs/annotation47_active_study.json",
+      "sha256": "75e313ccb237a1cf99b1024dcc424487548774a6e0df628e659919634c6884c9",
+      "bytes": 6702
+    },
+    {
+      "original_path": "configs/experiment_registry.json",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/configs/experiment_registry.json",
+      "sha256": "9653e014edeb5aa7f1f2b9b7cf49042b16b78827b054f864750a8bbc4303603a",
+      "bytes": 3995
+    },
+    {
+      "original_path": "docs/revision/primary_annotation47_one_repeat_protocol.md",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/docs/revision/primary_annotation47_one_repeat_protocol.md",
+      "sha256": "b21c5ef1dbf110ba1c27c6282ceb7a7426df60d877055ed330f59856b8b2681a",
+      "bytes": 12677
+    },
+    {
+      "original_path": "tests/test_annotation47_active_study.py",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/tests/test_annotation47_active_study.py",
+      "sha256": "8eda53b8b4cbcc3a0640163fc9f73c228e3e6872c98221d8d5f1922c86049654",
+      "bytes": 7793
+    },
+    {
+      "original_path": "docs/figure_map.md",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/docs/figure_map.md",
+      "sha256": "b033a1e64956c42213f7cc61d0ab9b8e0145179e041fe276041d262626789c68",
+      "bytes": 4287
+    },
+    {
+      "original_path": "docs/supplementary_table_numbering.md",
+      "archive_path": "data/historical/annotation47_pre_scoring_20261110/docs/supplementary_table_numbering.md",
+      "sha256": "3b565117253aedb5ca9454c37f0d0d97b4812cc731693b94e23e311380be2fe2",
+      "bytes": 2910
+    }
+  ]
+}

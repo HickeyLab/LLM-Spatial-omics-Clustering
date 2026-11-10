@@ -1,0 +1,76 @@
+{
+  "figure": "Figure_2",
+  "width_mm": 165.1,
+  "height_mm": 213.0476035997217,
+  "minimum_font_pt": 6.6,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 125.076,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5033
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": [
+    {
+      "clip_points": [
+        13,
+        60,
+        672,
+        168
+      ],
+      "rect_mm": [
+        3,
+        11,
+        159,
+        26.057663125948405
+      ]
+    }
+  ],
+  "layout_compaction": {
+    "original_height_mm": 224,
+    "height_mm": 213.0476035997217,
+    "height_reduction_percent": 4.889462678695671,
+    "vacant_bands_removed_mm": [
+      [
+        116.66794444444444,
+        119.49999999999999
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+    "data/frozen/publication_design/umap_coordinates.csv.gz": "54e0335d3e63dda86d11dd336eebed0460741301d58a055bd84497aff991c7d8",
+    "data/frozen/clustering47_primary_20261108/regional_metrics.csv": "88f416abc19dc2f13edfc0a089267f5f407bc2fd45b144d8759eece7ee75e55b",
+    "data/frozen/clustering47_primary_20261108/panel_F_values.csv": "91d9edd92a6f0692a1a4a2ee5e7a47cb40dd36856aa7ba3091d5489a8128843e",
+    "data/frozen/clustering47_primary_20261108/panel_H_values.csv": "0e2d8ee3534ab590f1e24026c860736e396b4a91b932df13144a73c9b1879bd1",
+    "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+  },
+  "notes": [
+    "Current A\u2013H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. FigureS11A retains the historical annotation profiles pending a separate rerun. Suggested manuscript width: 128.27 mm (5.05 in)."
+  ],
+  "files": {
+    "Figure_2.svg": {
+      "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
+      "bytes": 5446481
+    },
+    "Figure_2.pdf": {
+      "sha256": "be7c9c56c5d26767b81f2760145d0f64ae8bff7a2d97d47c37a4fe02e5ca69b2",
+      "bytes": 3299170
+    },
+    "Figure_2.png": {
+      "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "bytes": 2824858
+    },
+    "Figure_2.tiff": {
+      "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
+      "bytes": 4483584
+    }
+  }
+}

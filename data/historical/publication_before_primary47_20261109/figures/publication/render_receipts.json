@@ -1,0 +1,1404 @@
+[
+  {
+    "figure": "Figure_1",
+    "width_mm": 165.1,
+    "height_mm": 192.19465277850452,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4540
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 216,
+      "height_mm": 192.19465277850452,
+      "height_reduction_percent": 11.020994084025686,
+      "vacant_bands_removed_mm": [
+        [
+          35.04,
+          40.499999999999986
+        ],
+        [
+          78.71546875072676,
+          82.63013888888891
+        ],
+        [
+          101.9694826388889,
+          107.5
+        ],
+        [
+          199.93233680555554,
+          201.4701388888889
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_artwork/figure_01_original.png": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "configs/figure_01_original_workflow.json": "71529330c3e78f45744f6440c8b829dcf5c4b71df7bfb257fdcf4b5397dac5f2",
+      "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80",
+      "data/frozen/publication_design/figure1_pooled_f1_changes.csv": "524ca9c6851bc9461a2dae60dd3e0dd4849c973b162f33b24fb13fe71056aa27",
+      "data/frozen/figure_01_descriptive/regional_f1_changes.csv": "1cb68b8b1c8905a56a4a22a2f147ec8ceb1d69cba6579864f84b20a6116657bd"
+    },
+    "notes": [
+      "Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.",
+      "Panel B retains the precision archived in the executed notebook."
+    ],
+    "files": {
+      "Figure_1.svg": {
+        "sha256": "58f147247fa5d9cd90ed589bbafbccd30848863104e797d9dddf4dbd2da3de48",
+        "bytes": 494302
+      },
+      "Figure_1.pdf": {
+        "sha256": "88a0fc87de364f74d44fc9f69b6476b47bde05d3b4eaf79490df32d4dcdb4c9b",
+        "bytes": 239992
+      },
+      "Figure_1.png": {
+        "sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
+        "bytes": 1086598
+      },
+      "Figure_1.tiff": {
+        "sha256": "c748048d7b0315c414c7d7843a23d87d7e0ff40cc94833544e949581f7b04e5d",
+        "bytes": 2210020
+      }
+    },
+    "original_raster_workflow": {
+      "schema": "figure01.original_workflow.v2",
+      "source_file": "data/frozen/publication_artwork/figure_01_original.png",
+      "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "crop_pixels": [
+        45,
+        126,
+        1810,
+        344
+      ],
+      "crop_rgb_sha256": "f28106f3e6e6580d837e319c8e2d13a817d6205b9ee851862b9eace6829b2a66",
+      "rect_mm": [
+        3,
+        7,
+        159,
+        19.6385269121813
+      ],
+      "policy": "Preserve the original Figure 1A illustrations and arrows. Erase only declared raster text rectangles and replace their labels with larger editable Arial. Keep the current native A letter and panels B-F unchanged.",
+      "source_type": "original raster artwork",
+      "native_text_policy": "All workflow labels are native editable Arial, 6.5 pt for step captions and H5AD, 6 pt for input descriptions and 5.5 pt for the small TIF icon. Source illustrations retain their original pixels outside declared text rectangles.",
+      "erase_regions": [
+        {
+          "rect_pixels": [
+            45,
+            143,
+            220,
+            191
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            45,
+            220,
+            219,
+            248
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            45,
+            289,
+            220,
+            322
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            409,
+            290,
+            600,
+            323
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            675,
+            289,
+            921,
+            337
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            1020,
+            291,
+            1220,
+            326
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            1302,
+            291,
+            1515,
+            326
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            1610,
+            289,
+            1810,
+            337
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            233,
+            222,
+            263,
+            248
+          ],
+          "fill_rgb": [
+            228,
+            234,
+            251
+          ]
+        },
+        {
+          "rect_pixels": [
+            1668,
+            202,
+            1751,
+            227
+          ],
+          "fill_rgb": [
+            244,
+            223,
+            251
+          ]
+        }
+      ],
+      "labels": [
+        {
+          "text": "Multiplexed\nfluorescence\ntissue",
+          "position_mm": [
+            10.6,
+            7.1
+          ],
+          "font_pt": 6.0
+        },
+        {
+          "text": "TIF Mask\nFiles",
+          "position_mm": [
+            10.6,
+            15.2
+          ],
+          "font_pt": 6.0
+        },
+        {
+          "text": "Marker\nChannel List",
+          "position_mm": [
+            10.6,
+            22.0
+          ],
+          "font_pt": 6.0
+        },
+        {
+          "text": "REDSEA\nCompensation",
+          "position_mm": [
+            44.4,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Merge Regions for\nBefore and After\nREDSEA",
+          "position_mm": [
+            71.0,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Data\nPreprocessing",
+          "position_mm": [
+            99.2,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Cell Clustering\nLeiden 1.5",
+          "position_mm": [
+            126.5,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Two Clustered\nH5AD Files\nBefore + After REDSEA",
+          "position_mm": [
+            151.4,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "TIF",
+          "position_mm": [
+            21.1,
+            16.64
+          ],
+          "font_pt": 5.5,
+          "va": "center"
+        },
+        {
+          "text": "H5AD",
+          "position_mm": [
+            153.1,
+            15.1
+          ],
+          "font_pt": 6.5,
+          "va": "center"
+        }
+      ],
+      "cleaned_crop_rgb_sha256": "13f416077fce135500f7aa2ce860787e528c9eb4b7ea2ac98ac6bc4edc84233a",
+      "native_size_pixels": [
+        1765,
+        218
+      ],
+      "effective_source_dpi": 281.95597484276726
+    },
+    "minimum_font_scope": "All text, including the retyped Figure 1A labels. Original illustration pixels remain raster."
+  },
+  {
+    "figure": "Figure_2",
+    "width_mm": 165.1,
+    "height_mm": 213.0476035997217,
+    "minimum_font_pt": 6.6,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 125.076,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      5033
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": [
+      {
+        "clip_points": [
+          13,
+          60,
+          672,
+          168
+        ],
+        "rect_mm": [
+          3,
+          11,
+          159,
+          26.057663125948405
+        ]
+      }
+    ],
+    "layout_compaction": {
+      "original_height_mm": 224,
+      "height_mm": 213.0476035997217,
+      "height_reduction_percent": 4.889462678695671,
+      "vacant_bands_removed_mm": [
+        [
+          116.66794444444444,
+          119.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+      "data/frozen/publication_design/umap_coordinates.csv.gz": "54e0335d3e63dda86d11dd336eebed0460741301d58a055bd84497aff991c7d8",
+      "data/frozen/clustering47_primary_20261108/regional_metrics.csv": "88f416abc19dc2f13edfc0a089267f5f407bc2fd45b144d8759eece7ee75e55b",
+      "data/frozen/clustering47_primary_20261108/panel_F_values.csv": "91d9edd92a6f0692a1a4a2ee5e7a47cb40dd36856aa7ba3091d5489a8128843e",
+      "data/frozen/clustering47_primary_20261108/panel_H_values.csv": "0e2d8ee3534ab590f1e24026c860736e396b4a91b932df13144a73c9b1879bd1",
+      "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+      "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+    },
+    "notes": [
+      "Current A\u2013H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. FigureS11A retains the historical annotation profiles pending a separate rerun. Suggested manuscript width: 128.27 mm (5.05 in)."
+    ],
+    "files": {
+      "Figure_2.svg": {
+        "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
+        "bytes": 5446481
+      },
+      "Figure_2.pdf": {
+        "sha256": "be7c9c56c5d26767b81f2760145d0f64ae8bff7a2d97d47c37a4fe02e5ca69b2",
+        "bytes": 3299170
+      },
+      "Figure_2.png": {
+        "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+        "bytes": 2824858
+      },
+      "Figure_2.tiff": {
+        "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
+        "bytes": 4483584
+      }
+    }
+  },
+  {
+    "figure": "Figure_3",
+    "width_mm": 165.1,
+    "height_mm": 220.44432325349308,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      5208
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": [
+      {
+        "clip_points": [
+          13,
+          207,
+          708,
+          316
+        ],
+        "rect_mm": [
+          6,
+          7.7860000000000085,
+          155,
+          24.309352517985612
+        ]
+      }
+    ],
+    "layout_compaction": {
+      "original_height_mm": 244,
+      "height_mm": 220.44432325349308,
+      "height_reduction_percent": 9.653965879715951,
+      "vacant_bands_removed_mm": [
+        [
+          6.2860000000000085,
+          7.5
+        ],
+        [
+          34.809352517985616,
+          39.5
+        ],
+        [
+          45.136,
+          49.49999999999998
+        ],
+        [
+          106.05057837439631,
+          114.49999999999999
+        ],
+        [
+          120.13599999999998,
+          122.5
+        ],
+        [
+          199.52639236111114,
+          201.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/publication_design/figure3_agreement.csv": "ae095b5427a6d3e33c62f9f43fd2fb95349636765c30ed8c87cb49127f29dc83",
+      "data/frozen/publication_design/figure3_celltype_agreement.csv": "6052a73fa29cdd4bd1133ed952fce701b89f0c839470dc1950e18a63591c9ab1",
+      "data/frozen/publication_design/figure3_celltype_selected.csv": "49df4eba3cc28bca04a92333ab5765f7112e38e9ede19343b888fa8864ba090f",
+      "data/frozen/publication_design/figure3_cell_weighted_selection.csv": "8284ddedf3b8b8c5fc7d8ee51bddda723adae2c183b5fa2d3b9ce07c183c0a65",
+      "data/frozen/publication_design/figure3_cluster_weighted_selection.csv": "ef9ae22f42b5e1fc3cada644e0eccd6431c935c1270af92beff71c63905ff5ae",
+      "data/frozen/publication_design/figure3_spatial_examples.csv.gz": "f94f18ac4871b8fee1267768ee67ea6d6567af5a409a4e6c2d5088a51e2a28d8",
+      "data/frozen/publication_design/figure3_spatial_windows.csv": "37a9b70c1a9b9fb0eacde45d600635ba9fd5328830f6da15fca92e7859972cc5",
+      "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+      "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+      "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+    },
+    "notes": [
+      "Figure 3A follows the live-document update exported on 2026-10-31.",
+      "Figure 3E heading corrected with author approval to describe its existing reference-selected values.",
+      "Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+    ],
+    "files": {
+      "Figure_3.svg": {
+        "sha256": "c5f0283a492d5d6149538b8df2eb636c55c7d51785b776c26d3cb5eb20f719c4",
+        "bytes": 3863254
+      },
+      "Figure_3.pdf": {
+        "sha256": "77ba689806cb7848fa6a4b4e20ffca5ddabf32927ddeeafe64d813a180546fc9",
+        "bytes": 2165875
+      },
+      "Figure_3.png": {
+        "sha256": "f43c43c0b8588657a0f48bfa2d29cc8d1fe6907e8be72b833a65f5f231ac9167",
+        "bytes": 1825484
+      },
+      "Figure_3.tiff": {
+        "sha256": "cdcb214f21e754c20d2248028a34e0143e980d4b0db6b88c0da04e62da7d2b5d",
+        "bytes": 3132006
+      }
+    }
+  },
+  {
+    "figure": "Figure_4",
+    "width_mm": 165.1,
+    "height_mm": 145.02543148760765,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      3426
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": [
+      {
+        "clip_points": [
+          27,
+          386,
+          556,
+          454
+        ],
+        "rect_mm": [
+          6,
+          9,
+          154,
+          19.795841209829867
+        ]
+      }
+    ],
+    "layout_compaction": {
+      "original_height_mm": 169,
+      "height_mm": 145.02543148760765,
+      "height_reduction_percent": 14.186135214433344,
+      "vacant_bands_removed_mm": [
+        [
+          30.295841209829867,
+          31.500000000000007
+        ],
+        [
+          105.18103125,
+          115.5
+        ],
+        [
+          121.04,
+          125.5
+        ],
+        [
+          153.84105555555553,
+          157.44735763888886
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+      "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee",
+      "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
+      "data/frozen/publication_design/figure4_f1.csv": "9ac5042300121372e01a5f2c146877afa45f9bab832110a124775f8e0965138d",
+      "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+    },
+    "notes": [],
+    "files": {
+      "Figure_4.svg": {
+        "sha256": "5b6c25bcac55e06596aefc6a6d5a43532c13c23aea178f6077d96a1b96727f89",
+        "bytes": 2589473
+      },
+      "Figure_4.pdf": {
+        "sha256": "a82515cf9983cae50797a638a1234e518e43bd33cbd37a2709a4431907bd8ce5",
+        "bytes": 1308450
+      },
+      "Figure_4.png": {
+        "sha256": "581a1b5643182c543840e2aff34a9192de8db723929300777f22d60f3a578ad2",
+        "bytes": 1220554
+      },
+      "Figure_4.tiff": {
+        "sha256": "a9cb9ba8d1ca97e4da731d7218920d9a7e3e14e90c0c2fbcc7f11f1f567db9d9",
+        "bytes": 2121606
+      }
+    }
+  },
+  {
+    "figure": "Figure_5",
+    "width_mm": 165.1,
+    "height_mm": 130.29894791666666,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      3077
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 166,
+      "height_mm": 130.29894791666666,
+      "height_reduction_percent": 21.506657881526106,
+      "vacant_bands_removed_mm": [
+        [
+          6.136000000000014,
+          15.500000000000004
+        ],
+        [
+          63.72955555555556,
+          65.5
+        ],
+        [
+          76.07955902777776,
+          80.49999999999997
+        ],
+        [
+          86.13599999999998,
+          97.5
+        ],
+        [
+          145.72955555555552,
+          147.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/publication_design/figure5_donor_transfer.csv": "7651791645c045dcdacd3ee622bf48616d36a8c2fb1b33f485238b8af9792ec4"
+    },
+    "notes": [],
+    "files": {
+      "Figure_5.svg": {
+        "sha256": "bb5571e3dd35faba2c4559fd0f8fe2e8d29964e0843f883c39a897b017112c06",
+        "bytes": 53230
+      },
+      "Figure_5.pdf": {
+        "sha256": "3051e00f922b5d499224272c1ee7913bd154ba5c1cb23171e573c31a368b6040",
+        "bytes": 48870
+      },
+      "Figure_5.png": {
+        "sha256": "93764101ec642905d76292520d2159a6b3992d208db6e5b717bb2c301c106595",
+        "bytes": 390744
+      },
+      "Figure_5.tiff": {
+        "sha256": "946557739a2ce7bd3121a6274c8fade7c5fbcfdb9ba62d569cd1dbe00f692a0d",
+        "bytes": 1472736
+      }
+    }
+  },
+  {
+    "figure": "Figure_S10",
+    "width_mm": 165.1,
+    "height_mm": 95.74400694444445,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2261
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 124,
+      "height_mm": 95.74400694444445,
+      "height_reduction_percent": 22.787091173835123,
+      "vacant_bands_removed_mm": [
+        [
+          6.607333333333341,
+          11.500000000000004
+        ],
+        [
+          17.135999999999996,
+          19.500000000000004
+        ],
+        [
+          57.932336805555565,
+          59.50000000000001
+        ],
+        [
+          65.136,
+          67.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS10_paired_summary.csv": "aea9731123c51850679f539e3576fa6f84def6793330c1cb0383b753ebfdb559"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S10.svg": {
+        "sha256": "7a7817307fef792755f425dd3f50f417af26455e48235bd63fca482b9e724923",
+        "bytes": 45671
+      },
+      "Figure_S10.pdf": {
+        "sha256": "4f08c023cbc260431242de515e62bc2dd996f626d02bf840be607b020b42e0fb",
+        "bytes": 40725
+      },
+      "Figure_S10.png": {
+        "sha256": "453739733af2cab492ed07dcad17f164799d07841b0b3a870b07189a2feb8136",
+        "bytes": 161774
+      },
+      "Figure_S10.tiff": {
+        "sha256": "498fd3f06403c85ef66226befd7439948437bde9debbc601d7504e589fac5999",
+        "bytes": 373424
+      }
+    }
+  },
+  {
+    "figure": "Figure_S1",
+    "width_mm": 165.1,
+    "height_mm": 117.53095582527263,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2776
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 139,
+      "height_mm": 117.53095582527263,
+      "height_reduction_percent": 15.445355521386599,
+      "vacant_bands_removed_mm": [
+        [
+          6.682333333333309,
+          9.499999999999995
+        ],
+        [
+          15.039999999999996,
+          17.350554591394022
+        ],
+        [
+          48.526392361111114,
+          50.49999999999999
+        ],
+        [
+          56.03999999999999,
+          58.49999999999999
+        ],
+        [
+          89.5263923611111,
+          91.5
+        ],
+        [
+          97.03999999999999,
+          99.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80"
+    },
+    "notes": [
+      "Metrics retain the four-decimal precision archived in the executed notebook stdout."
+    ],
+    "files": {
+      "Figure_S1.svg": {
+        "sha256": "e460444e0afee7065a1d37f2567fa6644d3628485a238a969414a19b48e30482",
+        "bytes": 103900
+      },
+      "Figure_S1.pdf": {
+        "sha256": "dd4dcfad463126ae288c5759b71f29a9f31c8c5fade01b84867545e9cd0d5ef1",
+        "bytes": 81914
+      },
+      "Figure_S1.png": {
+        "sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
+        "bytes": 510312
+      },
+      "Figure_S1.tiff": {
+        "sha256": "f7640f084a4bcc2fd5c9c5fb4dbb69cb994c1c5b11f86ed2ce902287e4d2c3a2",
+        "bytes": 739438
+      }
+    }
+  },
+  {
+    "figure": "Figure_S2",
+    "width_mm": 165.1,
+    "height_mm": 152.0105,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      3590
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 168,
+      "height_mm": 152.0105,
+      "height_reduction_percent": 9.51755952380952,
+      "vacant_bands_removed_mm": [
+        [
+          6.135999999999985,
+          8.500000000000007
+        ],
+        [
+          13.119250000000006,
+          14.5
+        ],
+        [
+          79.50000000000001,
+          83.5
+        ],
+        [
+          89.136,
+          91.5
+        ],
+        [
+          96.11925000000001,
+          97.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/publication_design/figureS2_spatial_cells.csv.gz": "f6d5ee8fc800f2de3905abe5819de5f488d08cf76e7d14b2aabf8d64009031fa",
+      "data/frozen/publication_design/reference_cells.csv.gz": "ee1fb61110f37fbb5b160e5f3bbd1db5e4d9cc57058b6d6026e840a80dc1656b"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S2.svg": {
+        "sha256": "9f84ce9ed317704bb47c02382b22133d43e14744d71d694ff0d461bbd13e958a",
+        "bytes": 2858571
+      },
+      "Figure_S2.pdf": {
+        "sha256": "109750ad2a25a1470b0a2d9b084901dfef95453e36ab8541d3cfae74ed4bfe83",
+        "bytes": 1978621
+      },
+      "Figure_S2.png": {
+        "sha256": "51c0561a46b087915a656fa886ab3eaa63cfc5f0485317002fc0cb15df2190cf",
+        "bytes": 2105716
+      },
+      "Figure_S2.tiff": {
+        "sha256": "177cb807d96633404ada79b4a9f70b1fee769ac9a9716d2429285fa95b5ea929",
+        "bytes": 2013386
+      }
+    }
+  },
+  {
+    "figure": "Figure_S3A",
+    "width_mm": 165.1,
+    "height_mm": 66.23080902777778,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1564
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 84,
+      "height_mm": 66.23080902777778,
+      "height_reduction_percent": 21.153798776455023,
+      "vacant_bands_removed_mm": [
+        [
+          6.040000000000007,
+          10.5
+        ],
+        [
+          63.52639236111111,
+          68.35013888888889
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS3_population.csv": "468231d1c8527250b395239fa130f24ad67f6c05d297e32dbd74049fa540de56"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S3A.svg": {
+        "sha256": "d4d7184077750b2b1b7db8de90f14d7961339a6c1a9d711938f76f47c0cf9983",
+        "bytes": 51495
+      },
+      "Figure_S3A.pdf": {
+        "sha256": "e3dd36355ef530595ce9035da8d0be4e608c6c8f8b2539728575a2d5e9ececbe",
+        "bytes": 42958
+      },
+      "Figure_S3A.png": {
+        "sha256": "192024de7e5632f5e1cc4751f67b0115d1d2848e4a260b5e8d002463351fb57b",
+        "bytes": 237753
+      },
+      "Figure_S3A.tiff": {
+        "sha256": "cbcf4a2d0a65671a8ddbeed060338a6267fd6194697c39aa0bb30c38a54dc826",
+        "bytes": 322358
+      }
+    }
+  },
+  {
+    "figure": "Figure_S3B",
+    "width_mm": 165.1,
+    "height_mm": 61.94327068710028,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1463
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 88,
+      "height_mm": 61.94327068710028,
+      "height_reduction_percent": 29.609919673749683,
+      "vacant_bands_removed_mm": [
+        [
+          6.039999999999993,
+          13.499999999999996
+        ],
+        [
+          18.785999999999998,
+          21.86499999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS3_regional_changes.csv": "6bc88dfb3fcf59500dd93ac239ca3f6d7190fbe49eafd9cfb8d5d31bdcae8126",
+      "data/frozen/publication_design/figureS3_intervals.csv": "70091ad39c7a93f02eeb4746fae6e5c5d2b78784c006b5cda2b0277eb93982f9"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S3B.svg": {
+        "sha256": "5e1e60701c71700516fb5e201787eea5dca25dd30b5e43b01a3a2c51b01dec53",
+        "bytes": 37170
+      },
+      "Figure_S3B.pdf": {
+        "sha256": "5fd0a5173e6086d9bea2e69701d451430680ef4469a1b9fb979322b1223f4528",
+        "bytes": 38658
+      },
+      "Figure_S3B.png": {
+        "sha256": "12f8c3d4fa680257d0d0a22b4d45ba5795dec8997eff740d2284e41b87278a51",
+        "bytes": 260472
+      },
+      "Figure_S3B.tiff": {
+        "sha256": "44e4194e1e5a03e7790d598398c26f164db9e2e63c42ec91b8912f86334a92e4",
+        "bytes": 341244
+      }
+    }
+  },
+  {
+    "figure": "Figure_S3C",
+    "width_mm": 165.1,
+    "height_mm": 120.41955902777775,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2844
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 140,
+      "height_mm": 120.41955902777775,
+      "height_reduction_percent": 13.986029265873036,
+      "vacant_bands_removed_mm": [
+        [
+          6.039999999999979,
+          8.499999999999995
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/figure_s05/celltype_mean_effects.csv": "ad08d229fbef84f0c175ba5c518685d340dd24deaa4a86a42407a7f7f6fb7f46"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S3C.svg": {
+        "sha256": "1ecdc8062efcf927a5c4d5a7d58ea86e972f99a3e252c1a0f4f2b53b03e6131a",
+        "bytes": 167818
+      },
+      "Figure_S3C.pdf": {
+        "sha256": "6277afb436b0753f04303bdc764b6b0122ce94e240cef02030f85445423c57c7",
+        "bytes": 52304
+      },
+      "Figure_S3C.png": {
+        "sha256": "1e0db1ac622ec09fae48d77b005d9e4d27f858f9e6ef47b10ade28e531c3799d",
+        "bytes": 579370
+      },
+      "Figure_S3C.tiff": {
+        "sha256": "65d465fac73d454995a5d34d7413e2c00851c415c676e0b66dd2185363fb3fc8",
+        "bytes": 1632404
+      }
+    }
+  },
+  {
+    "figure": "Figure_S4",
+    "width_mm": 165.1,
+    "height_mm": 209.79967654440935,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4955
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 239,
+      "height_mm": 209.79967654440935,
+      "height_reduction_percent": 12.21770855882454,
+      "vacant_bands_removed_mm": [
+        [
+          6.040000000000008,
+          10.500000000000016
+        ],
+        [
+          81.95280555555557,
+          86.50000000000001
+        ],
+        [
+          146.90594444444446,
+          153.5
+        ],
+        [
+          159.04,
+          164.5
+        ],
+        [
+          169.024,
+          172.49999999999997
+        ],
+        [
+          201.2216452944093,
+          202.5
+        ],
+        [
+          207.11528125,
+          210.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+      "data/frozen/publication_design/figureS4_marker_summaries.csv": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f",
+      "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
+      "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
+      "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
+      "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b"
+    },
+    "notes": [
+      "Historical FlowSOM cluster-count sweep archived; former metric panel E is now D. Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+    ],
+    "files": {
+      "Figure_S4.svg": {
+        "sha256": "914117bec9ed97a5dfc2bc39f29b71e29a81a05abe20ceac8e4964c86ddb4e9d",
+        "bytes": 6213436
+      },
+      "Figure_S4.pdf": {
+        "sha256": "1114f577bf15e5e36d748dc213d4ab3f2c23c3c31658779522a34bde3db88533",
+        "bytes": 2738589
+      },
+      "Figure_S4.png": {
+        "sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+        "bytes": 3579825
+      },
+      "Figure_S4.tiff": {
+        "sha256": "6a1322efe84b1c03d043ed5faadee1760c5dc2574a29adc3be761567eca41faf",
+        "bytes": 4540816
+      }
+    }
+  },
+  {
+    "figure": "Figure_S5",
+    "width_mm": 165.1,
+    "height_mm": 58.56833680555556,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1383
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 87,
+      "height_mm": 58.56833680555556,
+      "height_reduction_percent": 32.68007263729246,
+      "vacant_bands_removed_mm": [
+        [
+          6.136,
+          11.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b",
+      "data/frozen/publication_design/figureS5_controlled_metrics.csv": "88388f106e5886faa011c27fab266faae5ed1dd77f8394c1ddae5562bf2eb043"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S5.svg": {
+        "sha256": "5adadf11bd0b1fd1e371a5a5983d559392dc8a3610e7e8cac4e3f95fbcb3b6c6",
+        "bytes": 30387
+      },
+      "Figure_S5.pdf": {
+        "sha256": "600a35b5438654e7e862395e3095176a33e12bf4520589b9b740a25e45f792df",
+        "bytes": 44701
+      },
+      "Figure_S5.png": {
+        "sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+        "bytes": 202680
+      },
+      "Figure_S5.tiff": {
+        "sha256": "eb52f98a61f57b25bd65d1b9e43a942c490c5b6004bc1e4c464b88ca95e0f7b3",
+        "bytes": 384576
+      }
+    }
+  },
+  {
+    "figure": "Figure_S6",
+    "width_mm": 165.1,
+    "height_mm": 200.15059027777778,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4727
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 223,
+      "height_mm": 200.15059027777778,
+      "height_reduction_percent": 10.24637207274539,
+      "vacant_bands_removed_mm": [
+        [
+          11.786,
+          12.864999999999997
+        ],
+        [
+          81.18103124999999,
+          87.5
+        ],
+        [
+          93.04,
+          96.47013888888887
+        ],
+        [
+          102.63764236111108,
+          111.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
+      "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S6.svg": {
+        "sha256": "1f4d7bfa076174b4cec1d37e3aaa1cae943d9d94a0d1a7a12b10188b303e10db",
+        "bytes": 420851
+      },
+      "Figure_S6.pdf": {
+        "sha256": "aaf390847162a649d5885a71ffb817a04e5d9a08f5f108735e532f1f07135dc3",
+        "bytes": 80882
+      },
+      "Figure_S6.png": {
+        "sha256": "5c3acb1a2fc1acf3b4b2c0ca85596e21645c57d8a4d85ee543d7b9b1b4ca9ffd",
+        "bytes": 754174
+      },
+      "Figure_S6.tiff": {
+        "sha256": "fa05f1ac5de92265980afbf383d778c710cb1dd5bb2925dbd436abc8a78f4f1f",
+        "bytes": 1779598
+      }
+    }
+  },
+  {
+    "figure": "Figure_S7",
+    "width_mm": 165.1,
+    "height_mm": 53.00855902777779,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1252
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 67,
+      "height_mm": 53.00855902777779,
+      "height_reduction_percent": 20.88274771973464,
+      "vacant_bands_removed_mm": [
+        [
+          45.841055555555556,
+          47.71013888888888
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S7.svg": {
+        "sha256": "158f93b69f77065bc237233dac27fe90ff0a0f4a9af41ee3161c3184d5121617",
+        "bytes": 10267
+      },
+      "Figure_S7.pdf": {
+        "sha256": "d4eb5722e46dc2bdaff70dfc0f377a91de4c7f55eccf39f4c479e67b9d66f246",
+        "bytes": 22285
+      },
+      "Figure_S7.png": {
+        "sha256": "3098898365ad6c910623bc3b82e239a961785f5acdecb62389c6739860479edf",
+        "bytes": 112842
+      },
+      "Figure_S7.tiff": {
+        "sha256": "b84aa552262edce662f9484fb86f6a80e7fb95bb3b19ca6660565161d6c6d003",
+        "bytes": 243430
+      }
+    }
+  },
+  {
+    "figure": "Figure_S8",
+    "width_mm": 165.1,
+    "height_mm": 72.94511458333335,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1723
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 90,
+      "height_mm": 72.94511458333335,
+      "height_reduction_percent": 18.949872685185166,
+      "vacant_bands_removed_mm": [
+        [
+          6.136,
+          13.499999999999998
+        ],
+        [
+          68.72955555555555,
+          73.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/figure_s07/condition_agreement.csv": "c00fb67f6aedb99270a5e1af524ad5fcc1367476a3fe3063e6723f1ff7400289"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S8.svg": {
+        "sha256": "2872c31f7f2d6cc5df3e786abf662777b177db0d2e20fc107a0c689ce557c8c4",
+        "bytes": 28189
+      },
+      "Figure_S8.pdf": {
+        "sha256": "ff06ec1f15266801f0a555740956da5fbee687cb2a4e810e274d7fb38fb4c4f8",
+        "bytes": 43292
+      },
+      "Figure_S8.png": {
+        "sha256": "cb71b4f908941e51fbe96f100e8d91caac4c13009ea32e7d1a3644ab0bcbebba",
+        "bytes": 202263
+      },
+      "Figure_S8.tiff": {
+        "sha256": "41efbfeb2c8e2323ff9fe8a9d8ed4f5ea3aeafa7edb93f1c743f9e235cec8b60",
+        "bytes": 879012
+      }
+    }
+  },
+  {
+    "figure": "Figure_S9",
+    "width_mm": 165.1,
+    "height_mm": 108.62339236111107,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2565
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 127,
+      "height_mm": 108.62339236111107,
+      "height_reduction_percent": 14.46976979440073,
+      "vacant_bands_removed_mm": [
+        [
+          6.039999999999993,
+          11.864999999999993
+        ],
+        [
+          59.84105555555554,
+          65.49999999999999
+        ],
+        [
+          71.03999999999998,
+          75.86500000000001
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS9_calibration_metrics.csv": "fb85a9988de3a3cd272f9a172d6554345770f050140e223e730c4fc6303d4ad4",
+      "data/frozen/publication_design/figureS9_reliability.csv": "0b82bc651518e10aa237f1ebdcb8f54254dc9b9aa687cff5d5eecc35e3dd1619",
+      "data/frozen/publication_design/figureS9_selective_risk.csv": "2a6d284c3b2a8e9d8ac997ec6d75678428c040fcddc279a67188c2ebc93659b1",
+      "data/frozen/publication_design/figureS9_spatial_differences.csv": "96b05e2ff8ad827011e1f7e8b3d9c5c2c2cba7e9865bcba5692bd621f6074cef"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S9.svg": {
+        "sha256": "fc45ff44364d7944a5f1ab62930053aa329753196009f78a03afb58a6cadc0ae",
+        "bytes": 56930
+      },
+      "Figure_S9.pdf": {
+        "sha256": "073bd768a1c7bed695edf38c188e17897fdaf644c26d4872e441ab438dba2ccd",
+        "bytes": 41784
+      },
+      "Figure_S9.png": {
+        "sha256": "eb5a04b1ad0c5e96db8a0a9b84a25fb836a676872885d4b1d293ca870cdb08ff",
+        "bytes": 393104
+      },
+      "Figure_S9.tiff": {
+        "sha256": "563868fe684abe39a910204860a33ed568599aa0f22090577c5de55eebd85d13",
+        "bytes": 530924
+      }
+    }
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-11-10T21:27:14.725673+00:00",
+  "schema": "annotation47.independent_publication_qa.v1",
+  "passed": true,
+  "annotation_calls": 0,
+  "source_file_hashes_verified": 50,
+  "unique_requests": 128,
+  "complete_sets": 32,
+  "predictions": 9024,
+  "cells": 220082,
+  "test_regions": [
+    "768b7adb649959b6a4e354867595032d",
+    "8da8f27977d946b8c912d42c8827b55c"
+  ],
+  "split_cells": {
+    "train": 90296,
+    "test": 69576,
+    "calibration": 60210
+  },
+  "unique_key_joins_verified": true,
+  "all_method_memberships_exact": true,
+  "fixed_ontology_labels": 28,
+  "metrics_independently_recomputed": 352,
+  "implementation": "Python csv and collections.Counter; no import of scoring code or numpy/scikit-learn metric helpers",
+  "max_agreement_abs_delta": 0.0,
+  "max_macro_f1_abs_delta": 1.1102230246251565e-16,
+  "max_bound_abs_delta": 0.0,
+  "primary_agreement_range": [
+    0.2306367549506344,
+    0.5812001783991381
+  ],
+  "primary_macro_f1_range": [
+    0.15082467027270968,
+    0.44901687365347975
+  ],
+  "best": {
+    "family": "openai",
+    "method": "leiden",
+    "agreement": 0.5812001783991381,
+    "macro_f1": 0.44901687365347975
+  },
+  "paired_increases": 9,
+  "paired_decreases": 7,
+  "paired_range": [
+    -0.08750458242378367,
+    0.06497691070639722
+  ],
+  "leiden_opus_full_cohort": {
+    "agreement": 0.4827382521060332,
+    "macro_f1": 0.42977498556287663,
+    "reference_bound": 0.6868530820330604
+  },
+  "input_hashes": {
+    "accepted_requests.json": "1fdcb37c1a21546c6a100538aa38cfbc7f59495a1ecef445050424433b9280bf",
+    "reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
+    "memberships.csv.gz": "6c707e5f8f5ade7918895ae5cac848fcaafb813cbedba4c1f47b5f4d6eed0ffa",
+    "cluster_map.csv": "de9c8008919a8b7bafe6e576a55dbd59e5e3d4b49444c98a8bb86808625298ed",
+    "protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
+    "metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
+    "paired_contrasts.csv": "99e0741e612c3cb6eb76850acd72f70a3ded7b74de693fcfa985c84e8d1051ee"
+  },
+  "cd8_modal_counts": {
+    "leiden": 15427,
+    "flowsom": 11266,
+    "spatialsort": 12466,
+    "pixie_tiff": 12042
+  },
+  "cd8_fixed_model_order_ties_verified": true,
+  "cd8_profile_max_abs_delta": 4.933553565678039e-15
+}

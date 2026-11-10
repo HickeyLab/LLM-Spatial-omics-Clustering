@@ -1,0 +1,58 @@
+{
+  "schema": "annotation47.publication_integration.v1",
+  "checked_at": "2026-11-10T21:47:29.189914+00:00",
+  "google_doc": "https://docs.google.com/document/d/1aqZgv5aFS-fgXT2KnZw3CXcxD_W3X1HgjRz_KXf1L18/edit",
+  "google_doc_mode": "Suggesting",
+  "saved_to_drive_verified_on_fresh_tab": true,
+  "prose_changes": 145,
+  "updated_figure_ids": [
+    "2",
+    "3",
+    "4",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S10",
+    "S11"
+  ],
+  "retained_figure_identifiers": 13,
+  "retained_manuscript_images": 15,
+  "updated_native_tables": [
+    "S6a",
+    "S6b",
+    "S6c",
+    "S6d"
+  ],
+  "preserved_native_tables": [
+    "S1",
+    "S2A",
+    "S2B"
+  ],
+  "removed_active_figures": [
+    "5",
+    "S8",
+    "S9"
+  ],
+  "unrelated_substantial_paragraphs_preserved": 144,
+  "equations_preserved": 5,
+  "bibliography_entries_preserved": 36,
+  "restored_superscript_citations": 6,
+  "image_crop_reset": true,
+  "image_placement_width_inches": 6.5,
+  "new_reference47_profile_rows": 1269,
+  "new_annotation_calls_by_scoring_and_publication": 0,
+  "new_fits": 0,
+  "tests_passed": 90,
+  "publication_mode": "scoped_pull_request",
+  "google_docs_export_pending_image_limitation": "Text, tables, equations and accepted image count were verified in the fresh server export. Pending replacement-image pixel identity is not inferred from that export; actual images, crop reset and proportional dimensions were checked live.",
+  "scientific_sources": [
+    "data/frozen/clustering47_primary_20261108/manifest.json",
+    "data/frozen/annotation47_results_20261110/manifest.json",
+    "data/frozen/reference47_profiles_20261110/manifest.json"
+  ],
+  "main_manuscript_mirror": "docs/manuscript_primary47.md",
+  "validation": "docs/revision/annotation47_validation_20261110.json",
+  "saved_document_verification": "docs/revision/manuscript_primary47_saved_verification_20261110.json",
+  "no_automatic_generation_or_launch_hooks": true
+}

@@ -39,8 +39,20 @@ COMPONENT_NAMES = ["Reference agreement", "Gap to maximum agreement",
 COMPONENT_COLORS = ["#2A6F5B", "#D9852B", "#D9D9D9"]
 
 
+def current_path(name):
+    if name == "figureS4_marker_summaries.csv":
+        folder=ROOT/"data/frozen/reference47_profiles_20261110"
+        manifest=json.loads((folder/"manifest.json").read_text())
+        entry=manifest["files"][name]
+        path=folder/name
+        if sha(path) != entry["sha256"]:
+            raise ValueError("Frozen47-marker reference profiles changed")
+        return path
+    return override_path(name, root=ROOT)
+
+
 def csv(name, **kw):
-    current = override_path(name, root=ROOT)
+    current = current_path(name)
     if current is not None:
         return pd.read_csv(current, **kw)
     manifest = json.loads((DATA / "manifest.json").read_text())
@@ -51,7 +63,7 @@ def csv(name, **kw):
 
 
 def inputs(*names):
-    paths = [override_path(n, root=ROOT) or DATA/n for n in names]
+    paths = [current_path(n) or DATA/n for n in names]
     return {str(path.relative_to(ROOT)):sha(path) for path in paths}
 
 
@@ -147,7 +159,7 @@ def figure_2(out):
         if t.get_fontsize()<6.6:t.set_fontsize(6.6)
         if t.get_text() in list("ABCDEFGH") and t.get_weight()=="bold":t.set_fontsize(10.3)
     names=["reference_plot_cells.csv.gz","umap_coordinates.csv.gz","figure2_regional_metrics.csv","figure2_f1.csv","figure2_recall.csv"]
-    return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. FigureS11A retains the historical annotation profiles pending a separate rerun. Suggested manuscript width: 128.27 mm (5.05 in)."])
+    return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."])
 
 
 def figure_s4(out):
@@ -157,11 +169,14 @@ def figure_s4(out):
     f=figure(239)
     panel(f,"A",3,2)
     labs=cfg["panel_a"]["cell_type_order"];markers=cfg["panel_a"]["marker_order"]
+    assert len(markers)==47 and len(set(markers))==47 and {"CD123","CDX2"}.issubset(markers)
+    assert len(d)==27*47 and set(d.marker)==set(markers) and set(d.cell_type)==set(labs)
+    assert d.groupby("cell_type").marker.nunique().eq(47).all()
     a=axes(f,29,12,40,58)
     for i,lab in enumerate(labs):
         z=d[d.cell_type.eq(lab)].set_index("marker").reindex(markers)
-        dots=a.scatter(range(45),[i]*45,s=.02+3*z.fraction_cells_pct/100,c=z.scaled_mean_expression,cmap="Reds",vmin=0,vmax=1,linewidths=.1,edgecolors="#8c8c8c")
-    a.set(yticks=range(27),yticklabels=labs,xticks=range(0,45,3),xticklabels=markers[::3],xlim=(-1,45),ylim=(26.5,-.5))
+        dots=a.scatter(range(len(markers)),[i]*len(markers),s=.02+3*z.fraction_cells_pct/100,c=z.scaled_mean_expression,cmap="Reds",vmin=0,vmax=1,linewidths=.1,edgecolors="#8c8c8c")
+    a.set(yticks=range(27),yticklabels=labs,xticks=list(range(0,len(markers)-2,3))+[len(markers)-1],xticklabels=[markers[j] for j in list(range(0,len(markers)-2,3))+[len(markers)-1]],xlim=(-1,len(markers)),ylim=(26.5,-.5))
     plt.setp(a.get_xticklabels(),rotation=90)
     a.tick_params(length=0)
     for edge in a.spines.values():edge.set_visible(False)
@@ -213,71 +228,9 @@ def figure_s4(out):
         a.set(xticks=range(4),xticklabels=METHODS,xlim=(-.5,3.5))
         plt.setp(a.get_xticklabels(),rotation=50,ha="right",rotation_mode="anchor")
     names=["reference_plot_cells.csv.gz","figureS4_marker_summaries.csv","figureS4_compositions.csv.gz","figureS4_cluster_metrics.csv","figureS4_celltype_metrics.csv","figureS5_fixed_metrics.csv"]
-    return finish(f,"Figure_S4",out,inputs(*names),notes=["Historical FlowSOM cluster-count sweep archived; former metric panel E is now D. Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."])
+    return finish(f,"Figure_S4",out,{**inputs(*names),"configs/figure_s03.yaml":sha(ROOT/"configs/figure_s03.yaml"),"data/frozen/reference47_profiles_20261110/manifest.json":sha(ROOT/"data/frozen/reference47_profiles_20261110/manifest.json")},notes=["Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B–D preserve the same frozen reference/primary-clustering data and geometry. Suggested manuscript width: 152.4 mm (6 in)."])
 
 
-def figure_3(out):
-    d=csv("figure3_agreement.csv");ct=csv("figure3_celltype_agreement.csv")
-    selected=csv("figure3_celltype_selected.csv").query("truth_label!='Noise'")
-    ref=csv("reference_plot_cells.csv.gz")
-    f=figure(244)
-    panel(f,"A",3,2)
-    workflow_inputs=add_workflow(f,"3A")
-    # Figure 3A follows the updated live-document version, not the earlier
-    # branch diagram that distinguished original prompts from later exports.
-    for i,(letter,value,title,limits) in enumerate([
-        ("B","agreement_percent","Reference agreement (%)",(20,65)),
-        ("C","percent_of_upper_bound","Agreement / upper bound (%)",(40,100))]):
-        px=3+i*54;panel(f,letter,px,41,title)
-        a=axes(f,px+13,57,29,31)
-        mat=d.pivot(index="model",columns="method",values=value).reindex(index=MODEL_KEYS,columns=METHOD_KEYS).to_numpy()
-        h=heatmap(a,mat,MODELS,METHODS,*limits,annotate=True,fmt=".1f",size=6)
-        plt.setp(a.get_xticklabels(),rotation=55,ha="right",rotation_mode="anchor")
-        colorbar(f,h,(px+44,57,1.7,31),None,ticks=[limits[0],sum(limits)/2,limits[1]],orientation="vertical")
-    panel(f,"D",112,41,"Cell-type agreement (%)")
-    matrix=ct.pivot(index="cell_type",columns="model",values="agreement_percent").reindex(columns=MODEL_KEYS)
-    rows=matrix.mean(axis=1).sort_values(ascending=False,kind="stable").index.tolist()
-    nref=ct.groupby("cell_type").reference_cells.first().to_dict()
-    count_heatmap(f,matrix.reindex(rows).to_numpy(),rows,MODELS,137,58,20,37,nref,rotation=65)
-    panel(f,"E",3,116)
-    emat=selected.pivot(index="truth_label",columns="llm",values="exact_cell_accuracy").reindex(columns=MODEL_KEYS)*100
-    erows=emat.mean(axis=1).sort_values(ascending=False,kind="stable").index.tolist()
-    text(f,30,124,"Cell-type reference agreement (%)",size=5.5)
-    count_heatmap(f,emat.reindex(erows).to_numpy(),erows,MODELS,30,135,23,37,nref,rotation=65)
-    for i,(letter,name,value,y,subtitle) in enumerate([
-        ("F","figure3_cell_weighted_selection.csv","exact_cell_accuracy",116,"Cell-weighted"),
-        ("G","figure3_cluster_weighted_selection.csv","cluster_balanced_exact_cell_accuracy",160,"Cluster-weighted")]):
-        panel(f,letter,68,y,subtitle)
-        a=axes(f,82,y+17,79,18);z=csv(name)
-        for j,(model,color,label) in enumerate(zip(MODEL_KEYS,MODEL_COLORS,MODELS)):
-            vals=z[z.llm.eq(model)].set_index("clustering_method").reindex(METHOD_KEYS)[value]*100
-            a.bar(np.arange(4)+(j-1.5)*.18,vals,width=.18,color=color,edgecolor="black",linewidth=.35,label=label)
-        a.set(xticks=range(4),xticklabels=METHODS,ylim=(0,90),yticks=[0,40,80],ylabel="Reference agreement (%)")
-        grid(a)
-    f.legend(handles=[Patch(color=c,label=l) for c,l in zip(MODEL_COLORS,MODELS)],loc="upper center",bbox_to_anchor=(.72,1-124/244),ncol=4,fontsize=5.5,handlelength=.9,columnspacing=1)
-    panel(f,"H",3,203)
-    examples=csv("figure3_spatial_examples.csv.gz");windows=csv("figure3_spatial_windows.csv")
-    con=pd.read_csv(ROOT/"data/frozen/v3_k300_assignments/panel_i_j_four_llm_consensus.csv.gz")
-    examples=examples.merge(con[["File_ID","ID","leiden_consensus"]],on=["File_ID","ID"],validate="one_to_one")
-    titles=["Tissue region","Reference\nannotations"]+MODELS+["Most frequent\nlabel"]
-    for j,title in enumerate(titles):text(f,20+j*22,208,title,size=5.5,ha="center")
-    normal={"Epithelial":"Enterocyte","CD66+ Epithelial":"CD66+ Enterocyte","MUC1+ Epithelial":"MUC1+ Enterocyte","CD57+ Epithelial":"Enterocyte","ITLN+ Epithelial":"Goblet","TA":"Cycling TA","CD4+ T":"CD4+ T cell","Stromal":"Stroma","PDPN+ Stromal":"Lymphatic","CD36 high Endothelial":"Endothelial","CD36 low Endothelial":"Endothelial","CD49a+ Smooth muscle":"Smooth muscle","Paneth":"Neuroendocrine","M1 Macrophage":"M2 Macrophage","NK":"CD7+ Immune"}
-    for row,example in enumerate(["low_agreement","high_agreement"]):
-        z=examples[examples.example.eq(example)];w=windows[windows.region.eq(example)].iloc[0]
-        text(f,3,220+row*13.5,"Low reference\nagreement" if row==0 else "High reference\nagreement",size=5.5,ha="center",va="center",rotation=90)
-        for j,label in enumerate([None,"truth_normalized"]+["leiden__"+m for m in MODEL_KEYS]+["leiden_consensus"]):
-            a=axes(f,10+j*22,216+row*13.5,20,11.5)
-            if j==0:
-                whole=ref[ref.File_ID.eq(w.file_id)].copy();whole["truth_normalized"]=whole.cell_type_update.replace(normal)
-                spatial(a,whole,label="truth_normalized",size=.09,normalize=True)
-                a.add_patch(Rectangle((w.window_x_min,w.window_y_min),w.window_x_max-w.window_x_min,w.window_y_max-w.window_y_min,fill=False,ec="black",lw=.4))
-            else:
-                spatial(a,z,label=label,size=.4,normalize=True)
-                a.set(xlim=(w.window_x_min,w.window_x_max),ylim=(w.window_y_min,w.window_y_max))
-            a.invert_yaxis()
-            for edge in a.spines.values():edge.set_visible(True);edge.set_color("#9ca3af");edge.set_linewidth(.35)
-    names=["figure3_agreement.csv","figure3_celltype_agreement.csv","figure3_celltype_selected.csv","figure3_cell_weighted_selection.csv","figure3_cluster_weighted_selection.csv","figure3_spatial_examples.csv.gz","figure3_spatial_windows.csv","reference_plot_cells.csv.gz"]
-    return finish(f,"Figure_3",out,{**inputs(*names),**workflow_inputs},notes=["Figure 3A follows the live-document update exported on 2026-10-31.","Figure 3E heading corrected with author approval to describe its existing reference-selected values.","Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."])
 
 
 def figure_1(out):
@@ -364,41 +317,6 @@ def figure_s2(out):
     return finish(f,"Figure_S2",out,inputs(name,"reference_cells.csv.gz"))
 
 
-def figure_s6(out):
-    name="figure4_confusion.csv";counts=csv(name,index_col=0)
-    path=ROOT/"data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv";d=pd.read_csv(path)
-    f=figure(223)
-    panel(f,"A",3,2)
-    for i,title in enumerate(["Counts","Row fraction"]):
-        x=3+i*80;text(f,x+44,8,title,size=6.5,weight="bold",ha="center")
-        a=axes(f,x+24,15,45,45)
-        mat=counts.to_numpy().astype(float)
-        if i:mat=mat/mat.sum(axis=1,keepdims=True)
-        h=heatmap(a,mat,counts.index,counts.columns,0,float(mat.max()) if i==0 else 1)
-        plt.setp(a.get_xticklabels(),rotation=90)
-        a.set_xlabel("Predicted cell type")
-        a.set_ylabel("Reference cell type")
-        colorbar(f,h,(x+71,15,2,45),"Cells" if i==0 else "Fraction",orientation="vertical")
-    panel(f,"B",3,89)
-    f.legend(handles=[Patch(color=c,label=l) for c,l in zip(COMPONENT_COLORS,COMPONENT_NAMES)],loc="upper center",bbox_to_anchor=(.5,1-97/223),ncol=3,fontsize=5.5,columnspacing=1.3,handlelength=.8)
-    d["bound_fraction"]=d.historical_21_bound_cells/d.n_cells
-    d=d.sort_values("bound_fraction",ascending=False,kind="stable").reset_index(drop=True)
-    assert len(d)==300
-    for i in range(4):
-        z=d.iloc[i*75:(i+1)*75];a=axes(f,22+i*41,113,16,99)
-        vals=np.stack([z.historical_21_direct_matches,z.historical_21_bound_cells-z.historical_21_direct_matches,z.n_cells-z.historical_21_bound_cells],axis=1)/z.n_cells.to_numpy()[:,None]
-        left=np.zeros(75)
-        for k,c in enumerate(COMPONENT_COLORS):
-            a.barh(range(75),vals[:,k],left=left,color=c,height=.86,linewidth=0);left+=vals[:,k]
-        ticks=sorted(set(list(range(0,75,7))+[74]))
-        if i==0:
-            # Preserve the annotated pure-cluster example in the manuscript.
-            ticks=[int(np.flatnonzero(z.cluster.eq("49::0"))[0]) if j==7 else j for j in ticks]
-        labels=[f"Cluster {z.iloc[j].cluster.replace('::','-')}\n- {z.iloc[j].historical_21_majority_label}" for j in ticks]
-        a.set(yticks=ticks,yticklabels=labels,ylim=(75.5,-1.5),xlim=(0,1),xticks=[0,.5,1],xlabel="Fraction")
-        a.tick_params(axis="y",length=0,pad=1.5)
-        a.spines["left"].set_visible(False);a.xaxis.set_major_formatter(PercentFormatter(1,decimals=0))
-    return finish(f,"Figure_S6",out,{**inputs(name),str(path.relative_to(ROOT)):sha(path)})
 
 
 def figure_s3c(out):
@@ -422,139 +340,14 @@ def figure_s3c(out):
     return finish(f,"Figure_S3C",out,{str(source.relative_to(ROOT)):sha(source)})
 
 
-def figure_s7(out):
-    p=ROOT/"data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv"
-    d=pd.read_csv(p);n=d.n_cells.sum();assert n==220082
-    f=figure(67)
-    a=axes(f,31,5,130,34)
-    labels=["21-label benchmark","28-label reference"]
-    for i,vocab in enumerate(["historical_21","original_28"]):
-        direct=d[vocab+"_direct_matches"].sum()
-        bound=d[vocab+"_bound_cells"].sum()
-        counts=[direct,n-bound,bound-direct]
-        left=0.
-        for count,color in zip(counts,[COMPONENT_COLORS[j] for j in [0,2,1]]):
-            v=count/n
-            a.barh(i,v,left=left,height=.52,color=color,edgecolor="white",linewidth=.6)
-            a.text(left+v/2,i,f"{v:.2%}",ha="center",va="center",fontsize=6,
-                   color="white" if color==COMPONENT_COLORS[0] else "black")
-            left+=v
-    a.set(yticks=[0,1],yticklabels=labels,xlim=(0,1),ylim=(1.65,-.65),
-          xlabel="Fraction of cells")
-    a.set_xticks(np.arange(0,1.01,.2))
-    f.legend(handles=[Patch(color=COMPONENT_COLORS[j],label=COMPONENT_NAMES[j]) for j in [0,2,1]],
-             loc="upper center",bbox_to_anchor=(.5,.28),ncol=3,fontsize=5.5,
-             handlelength=1,handletextpad=.5,columnspacing=1.4)
-    return finish(f,"Figure_S7",out,{str(p.relative_to(ROOT)):sha(p)})
 
 
-def figure_s8(out):
-    cfg=json.loads((ROOT/"configs/figure_s07.json").read_text());p=ROOT/cfg["data"]
-    assert sha(p)==cfg["data_sha256"]
-    d=pd.read_csv(p);f=figure(90)
-    for i,(arm,title) in enumerate(zip(cfg["arms"],cfg["condition_labels"])):
-        x=3+i*81
-        panel(f,chr(65+i),x,2,title)
-        a=axes(f,x+19,15,56,50)
-        mat=d[d.arm.eq(arm)].pivot(index="method",columns="model",values="agreement").reindex(index=METHOD_KEYS,columns=MODEL_KEYS).to_numpy()*100
-        assert mat.shape==(4,4)
-        h=heatmap(a,mat,METHODS,MODELS,annotate=True,fmt=".1f",size=7)
-    colorbar(f,h,(38,75,90,2.5),"Reference agreement (%)",ticks=[0,20,40,60,80,100])
-    return finish(f,"Figure_S8",out,{str(p.relative_to(ROOT)):sha(p)})
 
 
-def figure_s9(out):
-    names=["figureS9_calibration_metrics.csv","figureS9_reliability.csv",
-           "figureS9_selective_risk.csv","figureS9_spatial_differences.csv"]
-    m=csv(names[0]);pool=m[m.region.eq("POOLED")]
-    wide=pool.pivot(index=["method","model","arm"],columns="probability",values="brier")
-    assert len(wide)==32
-    f=figure(127)
-    panel(f,"A",3,2)
-    a=axes(f,14,14,64,39)
-    for k,c,label in zip(METHOD_KEYS,METHOD_COLORS,METHODS):
-        z=wide.loc[k];a.scatter(z.raw_vote,z.recalibrated,s=9,color=c,label=label,alpha=.85)
-    a.plot([0,1],[0,1],ls="--",color="#888888",lw=.5)
-    a.set(xlim=(0,1),ylim=(0,1),xlabel="Raw vote Brier score",ylabel="Recalibrated Brier score")
-    a.legend(loc="upper left",markerscale=.8)
-    grid(a,axis="both")
-    panel(f,"B",87,2)
-    a=axes(f,100,14,61,39)
-    r=csv(names[1]).query("method=='leiden' and model=='gpt' and arm=='marker_only' and probability=='raw_vote'")
-    a.plot([0,1],[0,1],ls="--",color="#888888",lw=.5)
-    a.scatter(r.mean_probability,r.observed_reference_agreement,
-              s=8+40*r.n_cells/r.n_cells.max(),color="#2166ac")
-    a.set(xlim=(0,1.02),ylim=(0,1.02),xlabel="Raw modal vote fraction",ylabel="Observed reference agreement")
-    a.set_xticks(np.arange(0,1.01,.2));a.set_yticks(np.arange(0,1.01,.2))
-    grid(a,axis="both")
-    panel(f,"C",3,67)
-    a=axes(f,14,78,64,39);r=csv(names[2])
-    for arm,c,label in [("marker_only","#2166ac","Markers"),("retrieval","#b35806","Reference-assisted")]:
-        z=r[r.method.eq("leiden")&r.model.eq("gpt")&r.arm.eq(arm)].sort_values("threshold")
-        a.plot(z.coverage*100,z.selective_reference_error*100,"o-",ms=2.5,lw=.7,color=c,label=label)
-    a.set(xlim=(0,100),ylim=(0,100),xlabel="Retained cell coverage (%)",ylabel="Reference disagreement (%)")
-    a.legend(loc="upper left");grid(a,axis="both")
-    panel(f,"D",87,67)
-    a=axes(f,100,78,61,39);d=csv(names[3]).query("split=='test'")
-    regions=sorted(d.region.unique());assert len(d)==6
-    for i,reg in enumerate(regions):
-        z=d[d.region.eq(reg)].sort_values("repeat")
-        a.scatter(np.arange(3)*.1-.1+i,z.agreement_delta_pp,s=14,color="#2166ac",zorder=3)
-    delta=d.groupby("region").agreement_delta_pp.mean().mean()
-    a.scatter([2],[delta],marker="D",s=22,color="#b35806",zorder=3)
-    a.text(2,delta-.45,f"{delta:+.2f}",ha="center",va="top",fontsize=5.5)
-    a.axhline(0,ls="--",lw=.5,color="#888888")
-    a.set(xticks=[0,1,2],xticklabels=["Test region 1","Test region 2","Mean"],
-          ylabel="Neighborhood minus markers\n(percentage points)",xlim=(-.3,2.3))
-    grid(a)
-    return finish(f,"Figure_S9",out,inputs(*names))
 
 
-def figure_s10(out):
-    name="figureS10_paired_summary.csv";d=csv(name);assert len(d)==16
-    full=MODELS
-    f=figure(124);handles=None
-    for i,(model,title) in enumerate(zip(MODEL_KEYS,full)):
-        x=3+(i%2)*82;y=13+(i//2)*48
-        panel(f,chr(65+i),x,y,title)
-        a=axes(f,x+19,y+8,59,30)
-        z=d[d.model.eq(model)].set_index("method").reindex(METHOD_KEYS)
-        p=z.means_agreement_mean.to_numpy()*100;q=z.fractions_agreement_mean.to_numpy()*100
-        for j in range(4):a.plot([p[j],q[j]],[j,j],color="#c9d2da",lw=.7,zorder=1)
-        h0=a.errorbar(p,np.arange(4)-.06,xerr=z.means_agreement_sd.to_numpy()*100,
-                      fmt="o",color="#2864a5",capsize=1.5,markersize=2.6,lw=.7)
-        h1=a.errorbar(q,np.arange(4)+.06,xerr=z.fractions_agreement_sd.to_numpy()*100,
-                      fmt="s",color="#b55224",capsize=1.5,markersize=2.6,lw=.7)
-        if handles is None:handles=[h0,h1]
-        a.set(yticks=np.arange(4),yticklabels=METHODS,ylim=(3.5,-.5),xlim=(0,50),xticks=[0,20,40])
-        a.set_xlabel("Reference agreement (%)")
-        grid(a,axis="x")
-    f.legend(handles,["All-marker means","Means plus fractions"],loc="upper center",bbox_to_anchor=(.5,.995),
-             ncol=2,fontsize=6,handlelength=1.5)
-    return finish(f,"Figure_S10",out,inputs(name))
 
 
-def figure_5(out):
-    name="figure5_donor_transfer.csv";d=csv(name)
-    f=figure(166)
-    lim=max(10,float(d[d.donor.isin(["B005","B006"])].retrieval_minus_marker_pp.abs().max()))
-    method_labels=METHODS
-    # Preserve the symmetric change scale of the current four-panel figure.
-    for i,donor in enumerate(["B005","B006"]):
-        x=3+81*i
-        panel(f,chr(65+i),x,2,donor)
-        a=axes(f,x+18,17,53,43)
-        mat=d[d.donor.eq(donor)].pivot(index="method",columns="model",values="retrieval_minus_marker_pp").reindex(index=METHOD_KEYS,columns=MODEL_KEYS)
-        h=heatmap(a,mat,method_labels,MODELS,-lim,lim,annotate=True,fmt="+.1f",size=7)
-    colorbar(f,h,(51,67,64,2.5),"Change in reference agreement (percentage points)",ticks=[-lim,0,lim])
-    for i,(metric,title) in enumerate([("retrieval_agreement","Reference agreement (%)"),("retrieval_macro_f1","Macro-F1 (%)")]):
-        x=3+81*i;panel(f,chr(67+i),x,82,title)
-        a=axes(f,x+18,99,53,43)
-        mat=d[d.donor.eq("Equal-donor mean")].pivot(index="method",columns="model",values=metric).reindex(index=METHOD_KEYS,columns=MODEL_KEYS).to_numpy()*100
-        assert mat.shape==(4,4) and np.isfinite(mat).all()
-        h=heatmap(a,mat,method_labels,MODELS,0,100,annotate=True,size=7)
-    colorbar(f,h,(51,149,64,2.5),"Percent",ticks=[0,20,40,60,80,100])
-    return finish(f,"Figure_5",out,inputs(name))
 
 
 def figure_s1(out):
@@ -627,12 +420,13 @@ def figure_s3b(out):
 
 
 def figure_s5(out):
-    names=["figureS5_fixed_metrics.csv","figureS5_controlled_metrics.csv"]
-    fixed=csv(names[0]);controlled=csv(names[1]);f=figure(87)
-    panel(f,"A",3,2,"Fixed partitions")
-    a=axes(f,17,13,61,43)
-    for i,(m,c) in enumerate(zip(["leiden","flowsom","spatialsort","pixie"],METHOD_COLORS)):
-        z=fixed[fixed.method.eq(m)&fixed.noise_policy.eq("include")]
+    name="figureS5_fixed_metrics.csv"
+    fixed=csv(name);f=figure(78)
+    panel(f,"A",3,2)
+    a=axes(f,23,13,126,43)
+    for i,(m,c) in enumerate(zip(METHOD_KEYS,METHOD_COLORS)):
+        key="pixie" if m=="pixie_tiff" else m
+        z=fixed[fixed.method.eq(key)&fixed.noise_policy.eq("include")]
         val=z[z.region.eq("ALL")].purity.iloc[0]
         reg=z[~z.region.eq("ALL")].sort_values("region").purity
         assert len(reg)==8
@@ -642,77 +436,42 @@ def figure_s5(out):
     a.set(xticks=range(4),xticklabels=METHODS,ylim=(0,1.1),yticks=[0,.2,.4,.6,.8,1],ylabel="Cluster-majority upper bound\non reference agreement")
     grid(a)
     a.legend(handles=[Patch(color="#8ba0b1",label="Pooled"),Line2D([],[],color="#333333",marker="o",linestyle="",markersize=3,label="Regional")],loc="upper left",fontsize=5.5)
-    panel(f,"B",86,2,"Shared 45 markers")
-    a=axes(f,101,13,60,43)
-    z=controlled[controlled.region.eq("ALL")&controlled.noise_policy.eq("include")]
-    for m,c,label in zip(["leiden","flowsom","spatialsort","pixie"],METHOD_COLORS,METHODS):
-        vals=[z[z.method.eq(f"{m}_k{k}")].purity.iloc[0] for k in [100,200,300]]
-        a.plot([100,200,300],vals,"o-",lw=.8,ms=3,color=c,label=label)
-    a.set(xlim=(90,310),ylim=(0,1.1),xticks=[100,200,300],yticks=[0,.2,.4,.6,.8,1],xlabel="Requested cluster count K",ylabel="Cluster-majority upper bound\non reference agreement")
-    a.legend(ncol=2,loc="upper left",fontsize=5.5,columnspacing=.7,handlelength=1.4);grid(a)
-    return finish(f,"Figure_S5",out,inputs(*names))
+    return finish(f,"Figure_S5",out,inputs(name),notes=["Single-panel primary fixed-partition reference upper bounds. Original 28 labels including Noise. No shared-marker or cluster-count refitting."])
 
 
-def figure_4(out):
-    cn="figure4_confusion.csv";fn="figure4_f1.csv"
-    counts=csv(cn,index_col=0);d=csv(fn)
-    assert counts.shape==(21,21)
-    n=counts.sum(axis=1).to_numpy();mat=np.divide(counts.to_numpy(),n[:,None],where=n[:,None]>0)
-    cfg=json.loads((ROOT/"configs/figure_04_historical_claude.json").read_text())
-    cp=ROOT/cfg["frozen_inputs"]["cluster_counts"]["path"];clusters=pd.read_csv(cp).set_index("cluster")
-    f=figure(169)
-    panel(f,"A",3,2)
-    workflow_inputs=add_workflow(f,"4A")
-    panel(f,"B",3,33)
-    a=axes(f,29,39,45,45)
-    h=heatmap(a,mat,counts.index,counts.columns,0,1)
-    plt.setp(a.get_xticklabels(),rotation=90)
-    a.set_xlabel("Predicted cell type");a.set_ylabel("Reference cell type")
-    colorbar(f,h,(77,39,2,45),"Fraction",ticks=[0,.2,.4,.6,.8,1],orientation="vertical")
-    panel(f,"C",89,33)
-    pooled=d[d.File_ID.eq("pooled")].set_index("label").sort_values("f1",ascending=False)
-    labs=pooled.index.tolist();a=axes(f,117,52,44,42)
-    a.barh(np.arange(21),pooled.f1,color="#e7e8ec",edgecolor="#9ca3af",linewidth=.4,label="Pooled F1")
-    handles=[Patch(facecolor="#e7e8ec",edgecolor="#9ca3af",label="Pooled F1")]
-    for fid,v in cfg["regions"].items():
-        vals=d[d.File_ID.eq(fid)].set_index("label").reindex(labs).f1
-        sc=a.scatter(vals,np.arange(21),s=7,color=v["color"],edgecolors="white",linewidths=.15,zorder=3,label=v["name"])
-        handles.append(sc)
-    a.set(yticks=np.arange(21),yticklabels=labs,ylim=(20.7,-.7),xlim=(0,1.02),xlabel="F1 score")
-    a.set_xticks([0,.2,.4,.6,.8,1]);grid(a,axis="x")
-    f.legend(handles=handles,loc="upper right",bbox_to_anchor=(.99,1-40/169),
-             ncol=3,fontsize=5.5,columnspacing=.6,handletextpad=.3,handlelength=.8)
-    panel(f,"D",3,117)
-    a=axes(f,43,127,39,20);left=np.zeros(3)
-    ex=clusters.loc[cfg["example_clusters"]]
-    values=np.stack([ex.historical_21_direct_matches,
-                     ex.historical_21_bound_cells-ex.historical_21_direct_matches,
-                     ex.n_cells-ex.historical_21_bound_cells],axis=1)/ex.n_cells.to_numpy()[:,None]
-    for k,c in enumerate(COMPONENT_COLORS):
-        a.barh(range(3),values[:,k],left=left,color=c,height=.6,edgecolor="white",linewidth=.35)
-        for j,v in enumerate(values[:,k]):
-            if v>.08:a.text(left[j]+v/2,j,f"{v:.0%}",fontsize=5.5,va="center",ha="center",color="white" if k==0 else "black")
-        left+=values[:,k]
-    labs=[f"Example {i+1}\nMajority: {r.historical_21_majority_label}\nPredicted: {r.predicted_label}" for i,(_,r) in enumerate(ex.iterrows())]
-    a.set(yticks=range(3),yticklabels=labs,ylim=(2.5,-.5),xlim=(0,1),xlabel="Fraction of cells in cluster")
-    a.xaxis.set_major_formatter(PercentFormatter(1,decimals=0));a.set_xticks([0,.5,1])
-    panel(f,"E",89,117)
-    a=axes(f,116,130,45,12)
-    n=clusters.n_cells.sum();direct=clusters.historical_21_direct_matches.sum();bound=clusters.historical_21_bound_cells.sum()
-    left=0
-    for k,(v,c) in enumerate(zip(np.array([direct,bound-direct,n-bound])/n,COMPONENT_COLORS)):
-        a.barh([0],[v],left=[left],color=c,edgecolor="white",linewidth=.5,height=.5)
-        a.text(left+v/2,0,f"{v:.0%}",ha="center",va="center",fontsize=5.5,color="white" if k==0 else "black");left+=v
-    a.set(yticks=[0],yticklabels=["Leiden and Claude"],xlim=(0,1),ylim=(-.5,.5),xlabel="Fraction of cells")
-    a.xaxis.set_major_formatter(PercentFormatter(1,decimals=0));a.set_xticks([0,.5,1])
-    f.legend(handles=[Patch(color=c,label=l) for c,l in zip(COMPONENT_COLORS,COMPONENT_NAMES)],
-             loc="lower center",bbox_to_anchor=(.5,.035),ncol=3,fontsize=5.5,handlelength=.8,columnspacing=1.5)
-    return finish(f,"Figure_4",out,{**workflow_inputs,**inputs(cn,fn),str(cp.relative_to(ROOT)):sha(cp)})
 
 
-RENDERERS={"1":figure_1,"2":figure_2,"3":figure_3,"4":figure_4,"5":figure_5,"S1":figure_s1,"S2":figure_s2,"S4":figure_s4,"S6":figure_s6,
-           "S3A":figure_s3a,"S3B":figure_s3b,"S3C":figure_s3c,"S5":figure_s5,
-           "S7":figure_s7,"S8":figure_s8,"S9":figure_s9,"S10":figure_s10}
+def figure_slot(out, key):
+    """Create a plain pending-result slot; never read annotation tables."""
+    out.mkdir(parents=True,exist_ok=True)
+    f=figure(48)
+    text(f,82.55,10,"Figure "+key,size=11,weight="bold",ha="center")
+    text(f,82.55,25,"[[annotation results pending]]",size=12,ha="center")
+    text(f,82.55,38,"47-marker primary clustering · annotation outputs required",size=8,ha="center")
+    name="Figure_"+key
+    paths=[]
+    for ext in ("png","svg","pdf"):
+        path=out/(name+"."+ext)
+        metadata={"CreationDate":None,"ModDate":None} if ext=="pdf" else {"Date":None} if ext=="svg" else {}
+        f.savefig(path,dpi=600,facecolor="white",metadata=metadata)
+        paths.append(path)
+    receipt={"figure":name,"artifact_type":"figure_slot_placeholder","scientific_output":False,
+             "status":"annotation_results_pending","annotation_calls":0,"width_mm":165.1,"height_mm":48,
+             "minimum_font_pt":8,"minimum_placement_width_mm":103.188,"raster_size_pixels":[3900,1133],
+             "inputs":{},"files":{p.name:{"sha256":sha(p),"bytes":p.stat().st_size} for p in paths},
+             "notes":["Plain manuscript figure slot. No annotation results, plots or scientific validation are represented."]}
+    from PIL import Image
+    with Image.open(out/(name+".png")) as im:receipt["raster_size_pixels"]=list(im.size)
+    (out/(name+"_verification.json")).write_text(json.dumps(receipt,indent=2)+"\n")
+    plt.close(f)
+    return receipt
+
+
+RENDERERS={"1":figure_1,"2":figure_2,"S1":figure_s1,"S2":figure_s2,"S4":figure_s4,
+           "S3A":figure_s3a,"S3B":figure_s3b,"S3C":figure_s3c,"S5":figure_s5}
+from render_annotation47_figures import RENDERERS as ANNOTATION47_RENDERERS
+RENDERERS.update(ANNOTATION47_RENDERERS)
+
 
 
 def main():

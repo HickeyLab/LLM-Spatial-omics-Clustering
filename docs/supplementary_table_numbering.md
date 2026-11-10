@@ -1,29 +1,19 @@
-# Current supplementary table numbering
+# Current supplementary tables
 
-Display labels follow the manuscript checked on November 6, 2026. Original companion filenames and bytes are preserved, including names with earlier table numbers. The pinned [companion crosswalk](../configs/supplementary_table_crosswalk.json) records the retained released files. The current display map below also identifies the relocated Table S9.
+The retained manuscript uses the following table identifiers without renumbering the excluded studies. The [current companion crosswalk](../configs/supplementary_table_crosswalk.json) pins their source paths and hashes. Current annotation tables come from the completed 47-marker, original-28-label single-annotation campaign.
 
-| Earlier identifier | Current manuscript label | Content |
+| Display label | Content | Current source |
 | --- | --- | --- |
-| S8 matching | S1 | REDSEA shared-object matching and retention |
-| S1 | S2A/B | Clustering settings and channel membership |
-| S2 | S3 archival entry | Retrospective marker-name export records, with the earlier numerical grids archived |
-| S3a–f | S4a–f | Controlled annotation and donor transfer |
-| S4a–j | S5a–j | Repeats, prompt controls, calibration, neighborhood and historical settings |
-| S6a–d | S6a–d | Paired marker representations |
-| S5 conditional comparisons | S7 | Conditional paired regional comparisons |
-| S7a–b | S8a–b | Label-mapping sensitivity |
-| Main Table 2 | S9 | Paired absolute B005/B006 agreement without and with labeled reference profiles, plus the equal-donor average |
+| S1 | REDSEA matching and cell retention | [Matching audit notebook](../notebooks/final_figures/table_s1_matching_and_retention.ipynb) |
+| S2A/B | Frozen clustering configurations and channel membership | [Clustering/channel notebook](../notebooks/final_figures/table_s2_clustering_and_channels.ipynb), [47-marker clustering manifest](../data/frozen/clustering47_primary_20261108/manifest.json) |
+| S6a | Equal-test-region agreement for both input arms and paired change | [Table_S6a.csv](../data/frozen/annotation47_results_20261110/Table_S6a.csv) |
+| S6b | Fixed-28-label macro-F1 and prediction coverage | [Table_S6b.csv](../data/frozen/annotation47_results_20261110/Table_S6b.csv) |
+| S6c | Paired agreement change and delivery terms | [Table_S6c.csv](../data/frozen/annotation47_results_20261110/Table_S6c.csv) |
+| S6d | Actual accepted model settings and transport | [Table_S6d.csv](../data/frozen/annotation47_results_20261110/Table_S6d.csv), [execution summary](../data/frozen/annotation47_results_20261110/actual_execution_summary.json) |
+| S7 | Twelve conditional clustering comparisons | [conditional_comparisons.csv](../data/frozen/clustering47_primary_20261108/conditional_comparisons.csv), [96 regional observations](../data/frozen/clustering47_primary_20261108/paired_regional_observations.csv) |
 
-The current numerical supplementary tables are S1, S2A, S2B, S5i, S5j, S6a, S6c, S6d, S8a and S9. Other entries point to complete companion records or archived data. S6a and S6c remain in the manuscript, and their full CSVs are preserved.
+S6 reports one accepted prediction per condition and no across-repetition SD. The original 28-label vocabulary includes Noise, and absent-class F1 is zero within each test region before equal region averaging. Complete final delivery makes the S6c delivery term zero; the valid-label term equals the observed total change and is a descriptive arithmetic decomposition. [Table notes](../data/frozen/annotation47_results_20261110/table_notes.json) record units, denominators and confirmed cost scope.
 
-The retained [native-cell snapshot](../data/frozen/manuscript_replay/tables/current_tables.json) uses earlier display labels and includes grids no longer printed in the current manuscript. Its entry with label `2` contains the unchanged values now displayed as Table S9. Those values are also supported by [donor metrics](../data/frozen/manuscript_replay/tables/companions/S3b_donor_metrics.csv) and [equal-donor metrics](../data/frozen/manuscript_replay/tables/companions/S3c_equal_donor_metrics.csv), using `external_common5px`, `marker_only` and `retrieval` records. Main Table 1 retains the conventional classifier comparison.
+S7 contains all six method pairs for weighted F1 and cluster purity, with Holm correction across those 12 comparisons. It does not contain the excluded annotation comparison family. Its regional sign-exchangeability assumptions and within-donor limitations remain explicit.
 
-Table S7 retains all 60 conditional regional comparisons and their assumptions. Eight regional pairs cannot establish equivalence or general method superiority. These descriptive and conditional records remain available alongside the matching audit, label-mapping sensitivity and inference settings.
-
-```bash
-python scripts/render_current_tables.py
-python scripts/render_table_s01.py  # legacy filename, current Table S2A
-python scripts/render_table_s02.py  # legacy filename, current Table S3
-```
-
-The latter two commands create separate editable DOCX/HTML outputs under `outputs/manuscript_replay/`. They do not modify the manuscript. Their configuration and frozen data paths retain legacy identifiers for compatibility. Historical presentation audits under `docs/archive/` describe earlier numbering and are not current table inventories.
+Main Table 1 and Tables S3, S4, S5, S8 and S9 are excluded from the active manuscript. Their prior table grids, companion filenames and reconstruction entry points remain in the [checksum archive](../data/historical/publication_before_primary47_20261109/index.json) and immutable release. `scripts/render_current_tables.py`, `scripts/render_table_s01.py`, `scripts/render_table_s02.py` describe archival snapshots and earlier display labels; they must not be used as current annotation table sources.

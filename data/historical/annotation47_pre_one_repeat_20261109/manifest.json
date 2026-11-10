@@ -1,0 +1,23 @@
+{
+  "schema": "annotation47.registry_archive.v1",
+  "status": "archival_only_not_active_study",
+  "prepared_date": "2026-11-09",
+  "reason": "Preserve the experiment registry before selecting the one-annotation Opus5.5 preparation and retiring active experiment9.",
+  "files": [
+    {
+      "original_path": "configs/experiment_registry.json",
+      "archive_path": "data/historical/annotation47_pre_one_repeat_20261109/experiment_registry.json",
+      "sha256": "ad31a568209f0444d7050601b226de799b03737fd739a70d6ca07c7f13e17d21",
+      "bytes": 3198
+    }
+  ],
+  "preserved_preparation_hashes": {
+    "configs/primary_annotation47_3repeat_v1.json": "d22155c550654327d72f3c3014c7847d8ace7ee020d7889a374a3da3d4258da6",
+    "configs/combined_annotation47_7_9_14_v1.json": "480d9fd4191346ba8cd3b2a4a541698a6e8c7806bc5eaedf427e7e9ce9d3e99a"
+  },
+  "experiment9_evidence_archive": {
+    "index": "data/historical/publication_before_primary47_20261109/index.json",
+    "sha256": "7363960dbbf8136ce3395aa7f50bd62a519768e1d5468c2f1fb76625f98d2887",
+    "member_count": 175
+  }
+}

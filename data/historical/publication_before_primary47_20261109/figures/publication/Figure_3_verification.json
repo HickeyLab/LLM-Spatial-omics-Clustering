@@ -1,0 +1,101 @@
+{
+  "figure": "Figure_3",
+  "width_mm": 165.1,
+  "height_mm": 220.44432325349308,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    5208
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": [
+    {
+      "clip_points": [
+        13,
+        207,
+        708,
+        316
+      ],
+      "rect_mm": [
+        6,
+        7.7860000000000085,
+        155,
+        24.309352517985612
+      ]
+    }
+  ],
+  "layout_compaction": {
+    "original_height_mm": 244,
+    "height_mm": 220.44432325349308,
+    "height_reduction_percent": 9.653965879715951,
+    "vacant_bands_removed_mm": [
+      [
+        6.2860000000000085,
+        7.5
+      ],
+      [
+        34.809352517985616,
+        39.5
+      ],
+      [
+        45.136,
+        49.49999999999998
+      ],
+      [
+        106.05057837439631,
+        114.49999999999999
+      ],
+      [
+        120.13599999999998,
+        122.5
+      ],
+      [
+        199.52639236111114,
+        201.5
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/publication_design/figure3_agreement.csv": "ae095b5427a6d3e33c62f9f43fd2fb95349636765c30ed8c87cb49127f29dc83",
+    "data/frozen/publication_design/figure3_celltype_agreement.csv": "6052a73fa29cdd4bd1133ed952fce701b89f0c839470dc1950e18a63591c9ab1",
+    "data/frozen/publication_design/figure3_celltype_selected.csv": "49df4eba3cc28bca04a92333ab5765f7112e38e9ede19343b888fa8864ba090f",
+    "data/frozen/publication_design/figure3_cell_weighted_selection.csv": "8284ddedf3b8b8c5fc7d8ee51bddda723adae2c183b5fa2d3b9ce07c183c0a65",
+    "data/frozen/publication_design/figure3_cluster_weighted_selection.csv": "ef9ae22f42b5e1fc3cada644e0eccd6431c935c1270af92beff71c63905ff5ae",
+    "data/frozen/publication_design/figure3_spatial_examples.csv.gz": "f94f18ac4871b8fee1267768ee67ea6d6567af5a409a4e6c2d5088a51e2a28d8",
+    "data/frozen/publication_design/figure3_spatial_windows.csv": "37a9b70c1a9b9fb0eacde45d600635ba9fd5328830f6da15fca92e7859972cc5",
+    "data/frozen/publication_design/reference_plot_cells.csv.gz": "f47805fdce441c199cb3cef25bfc0b8a51fa6f0c39ea61ddff196fc2d0a2b66a",
+    "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+  },
+  "notes": [
+    "Figure 3A follows the live-document update exported on 2026-10-31.",
+    "Figure 3E heading corrected with author approval to describe its existing reference-selected values.",
+    "Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+  ],
+  "files": {
+    "Figure_3.svg": {
+      "sha256": "c5f0283a492d5d6149538b8df2eb636c55c7d51785b776c26d3cb5eb20f719c4",
+      "bytes": 3863254
+    },
+    "Figure_3.pdf": {
+      "sha256": "77ba689806cb7848fa6a4b4e20ffca5ddabf32927ddeeafe64d813a180546fc9",
+      "bytes": 2165875
+    },
+    "Figure_3.png": {
+      "sha256": "f43c43c0b8588657a0f48bfa2d29cc8d1fe6907e8be72b833a65f5f231ac9167",
+      "bytes": 1825484
+    },
+    "Figure_3.tiff": {
+      "sha256": "cdcb214f21e754c20d2248028a34e0143e980d4b0db6b88c0da04e62da7d2b5d",
+      "bytes": 3132006
+    }
+  }
+}

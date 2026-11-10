@@ -21,8 +21,8 @@
   },
   "companion_table_overrides": {
     "Table_S1_channel_membership.csv": "data/frozen/clustering47_primary_20261108/Table_S1_channel_membership.csv",
-    "conditional_comparisons.csv": "data/frozen/clustering47_primary_20261108/conditional_comparisons_all_families.csv",
-    "paired_regional_observations.csv": "data/frozen/clustering47_primary_20261108/paired_regional_observations_all_families.csv"
+    "conditional_comparisons.csv": "data/frozen/clustering47_primary_20261108/conditional_comparisons.csv",
+    "paired_regional_observations.csv": "data/frozen/clustering47_primary_20261108/paired_regional_observations.csv"
   },
   "annotation_execution_disabled": true
 }

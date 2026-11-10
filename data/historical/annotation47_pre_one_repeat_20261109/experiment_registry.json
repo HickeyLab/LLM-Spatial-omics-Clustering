@@ -1,0 +1,114 @@
+{
+  "schema": "manuscript.experiment_registry.v1",
+  "updated_date": "2026-11-03",
+  "stable_ids": true,
+  "active_reported_ids": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "experiments": [
+    {
+      "id": 1,
+      "experiment": "REDSEA compensation across six segmentation workflows",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 2,
+      "experiment": "Compensation sensitivity using fixed FlowSOM workflow",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 3,
+      "experiment": "Main four-method B004 clustering benchmark",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 4,
+      "experiment": "Historical FlowSOM cluster-count sweep",
+      "status": "archived",
+      "new_execution": false,
+      "archive": "data/historical/flowsom_cluster_count_sweep_20261103/manifest.json"
+    },
+    {
+      "id": 5,
+      "experiment": "Common-45-marker by requested-K clustering study",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 6,
+      "experiment": "Historical 21-label four-LLM annotation benchmark",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 7,
+      "experiment": "Separate full-marker means-plus-fractions benchmark",
+      "status": "reported_existing",
+      "new_execution": false,
+      "planned_successor": "B004-combined-7-9-14-20261103-v1",
+      "existing_results_remain_reported": true
+    },
+    {
+      "id": 8,
+      "experiment": "Controlled marker-only versus reference-assisted annotation and donor transfer with conventional baselines",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 9,
+      "experiment": "Five-call annotation repeatability on 75-cluster subsets",
+      "status": "reported_existing",
+      "new_execution": false,
+      "planned_successor": "B004-combined-7-9-14-20261103-v1",
+      "existing_results_remain_reported": true
+    },
+    {
+      "id": 10,
+      "experiment": "Compact marker names versus selected names-plus-means, with validation-only selection",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 11,
+      "experiment": "Clustering-method identity prompt ablation",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 12,
+      "experiment": "Calibration and selective annotation assessment",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 13,
+      "experiment": "GPT-Leiden marker-only versus neighborhood-augmented input",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 14,
+      "experiment": "Paired all-marker means versus means-plus-fractions, 28-label study",
+      "status": "reported_existing",
+      "new_execution": false,
+      "planned_successor": "B004-combined-7-9-14-20261103-v1",
+      "existing_results_remain_reported": true
+    }
+  ],
+  "planned_combined_protocol": "configs/combined_annotation47_7_9_14_v1.json"
+}

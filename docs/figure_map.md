@@ -1,32 +1,25 @@
 # Current manuscript figure map
 
-Display labels were checked against the November 6, 2026 manuscript. This page defines the current figure inventory. The pinned [replay inventory](../configs/manuscript_inventory.json) retains the earlier panel layout and image checksums for reproducibility.
+The [inventory](../configs/manuscript_inventory.json) records the retained 47-marker study and the checked manuscript artwork. Display identifiers are retained even where intervening archived figures have been removed.
 
-| Item | Panels | Notebook or source |
+| Figure | Panels | Notebook |
 | --- | --- | --- |
-| Figure 1 | A–F | [`figure_01_spillover_compensation.ipynb`](../notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
-| Figure 2 | A–H | [`figure_02_clustering_method_benchmark.ipynb`](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
-| Figure 3 | A–E | [`figure_03_llm_annotation_benchmark.ipynb`](../notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
-| Figure 4 | A–E | [`figure_04_leiden_claude_end_to_end.ipynb`](../notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb) |
-| Figure 5 | A–D | [`figure_05_donor_transfer.ipynb`](../notebooks/final_figures/figure_05_donor_transfer.ipynb) |
-| Figure S1 | A–C | [`figure_s01_clustering_metrics.ipynb`](../notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
-| Figure S2 | A–B | [`figure_s02_spatial_celltypes.ipynb`](../notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
-| Figure S3 | A–C | [`figure_s03_matching_and_compensation.ipynb`](../notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
-| Figure S4 | A–D | [`figure_s04_reference_and_clustering_diagnostics.ipynb`](../notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
-| Figure S5 | A–B | [`figure_s05_common_marker_sensitivity.ipynb`](../notebooks/final_figures/figure_s05_common_marker_sensitivity.ipynb) |
-| Figure S6 | A–B | [`figure_s06_annotation_diagnostics.ipynb`](../notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb) |
-| Figure S7 | Unlettered | [`figure_s07_agreement_decomposition.ipynb`](../notebooks/final_figures/figure_s07_agreement_decomposition.ipynb) |
-| Figure S8 | A–B | [`figure_s08_controlled_b004_annotation.ipynb`](../notebooks/final_figures/figure_s08_controlled_b004_annotation.ipynb) |
-| Figure S9 | A–D | [`figure_s09_calibration_and_neighborhood.ipynb`](../notebooks/final_figures/figure_s09_calibration_and_neighborhood.ipynb) |
-| Figure S10 | A–D | [`figure_s10_paired_representations.ipynb`](../notebooks/final_figures/figure_s10_paired_representations.ipynb) |
-| Figure S11 | A | [Historical profile replay](../notebooks/final_figures/figure_s11_historical_cd8_profiles.ipynb), formerly Figure 2I |
+| 1 | A–F | [figure_01_spillover_compensation.ipynb](../notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
+| 2 | A–H | [figure_02_clustering_method_benchmark.ipynb](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
+| 3 | A–E | [figure_03_llm_annotation_benchmark.ipynb](../notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
+| 4 | A–E | [figure_04_leiden_claude_end_to_end.ipynb](../notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb) |
+| S1 | A–C | [figure_s01_clustering_metrics.ipynb](../notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
+| S2 | A–B | [figure_s02_spatial_celltypes.ipynb](../notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
+| S3 | A–C | [figure_s03_matching_and_compensation.ipynb](../notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
+| S4 | A–D | [figure_s04_reference_and_clustering_diagnostics.ipynb](../notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
+| S5 | A | [figure_s05_reference_bounds.ipynb](../notebooks/final_figures/figure_s05_reference_bounds.ipynb) |
+| S6 | A–B | [figure_s06_annotation_diagnostics.ipynb](../notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb) |
+| S7 | Unlettered | [figure_s07_agreement_decomposition.ipynb](../notebooks/final_figures/figure_s07_agreement_decomposition.ipynb) |
+| S10 | A–D | [figure_s10_paired_representations.ipynb](../notebooks/final_figures/figure_s10_paired_representations.ipynb) |
+| S11 | A | [figure_s11_cd8_profiles.ipynb](../notebooks/final_figures/figure_s11_cd8_profiles.ipynb) |
 
-Figure 2 has panels A–H. Its former marker-profile panel I is now Figure S11A, and the former selected-window panel J is archived. Figure 3 has panels A–E. Its current E is the spatial comparison previously labeled H. Earlier reference-informed selection panels are archived and do not define current Figure 3E. Figure 4 has panels A–E and uses Leiden–Claude.
+Figures 1, S1, S2 and S3 retain the independent spillover-compensation and matching analyses. Figure 2A–H uses the frozen primary clustering partitions; E–H score 209,587 non-Noise cells with the stated 20-class mapping. S4 uses [all-47-channel reference profiles](../data/frozen/reference47_profiles_20261110/manifest.json) and clustering diagnostics, and S5A reports fixed-partition upper bounds with the original 28 labels including Noise. S5 has no shared-45-marker cluster-count sensitivity panel.
 
-In Figure 3E and S11, each cluster's most frequent label across GPT, Claude, Gemini and DeepSeek is used, with ties resolved in that order without reference labels. These summaries do not provide independent validation.
+Figures 3, 4, S6, S7, S10 and S11 are numerically rebuilt from the [completed annotation results](../data/frozen/annotation47_results_20261110/manifest.json). Figure 3B/C report equal-test-region agreement and fixed-28-label macro-F1; D uses pooled Leiden test cells, and E shows the fixed Figure 2C mid-jejunum region. Figure 4 uses the prespecified Leiden–Opus 5.5 pipeline: B/C use test cells and D/E use all cells. Figure S6 uses the corresponding test confusion and full-cohort cluster diagnostics. S7 decomposes the 16 primary test-region outcomes; S10 compares the two input arms without repeated-generation SD. S11 displays raw processed marker profiles of four model-consensus CD8+ T groups, with ties in Astra, Opus, Argon and DeepSeek order and no reference-label selection.
 
-Figure S3 is matching/compensation, S4 is reference/clustering diagnostics, and S6 is annotation diagnostics. Former S3/S4 notebook paths remain compatibility links. Retained notebooks and image files can include earlier panels. They are historical replay sources where they differ from this display map. Figure S11A has byte-preserved PNG/SVG artwork and a dedicated replay notebook. Figure 2A–H, S4C–D and S5A use the frozen 47-marker primary clustering update. Other annotation artwork remains historical pending the separate annotation rerun.
-
-[Reproduction modes and source boundaries](manuscript_reproduction.md) distinguish exact artwork replay from numerical reconstruction.
-
-The stored Figure 3 PNG and numerical replay still have historical panels A–H. Its native manuscript caption has A–E, with current E corresponding to stored H. The replay inventory records `stored_artwork_panels` and `native_manuscript_panels` separately. The 18 retained PNGs count image files, not agreement between every stored panel layout and the native captions. Figure 3 artwork was not regenerated by the clustering-only update.
+Thirteen figure identifiers correspond to 15 PNG images because S3 has three image parts. The PNG/TIFF/PDF/SVG exports, notebook previews and image hashes are synchronized. Figure 5, S8, S9 and superseded panel arrangements are preserved only in the [archive](../data/historical/publication_before_primary47_20261109/index.json). They are not current manuscript figures. [Reproduction instructions](manuscript_reproduction.md) identify the current renderers and clearly separate archival reconstruction commands.

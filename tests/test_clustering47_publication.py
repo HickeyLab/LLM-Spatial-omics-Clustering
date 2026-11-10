@@ -56,9 +56,36 @@ class CurrentClusteringContractTests(unittest.TestCase):
         self.assertTrue(global_.n_reference_labels.eq(28).all())
         conditional=pd.read_csv(current.override_path('conditional_comparisons.csv','companion_table_overrides',root=ROOT))
         original=pd.read_csv(ROOT/'data/frozen/manuscript_replay/tables/companions/conditional_comparisons.csv')
-        self.assertEqual(len(conditional),60)
+        self.assertEqual(len(conditional),12)
+        self.assertTrue(conditional.family.eq('Figure2_EG_12').all())
+        observations=pd.read_csv(current.override_path('paired_regional_observations.csv','companion_table_overrides',root=ROOT))
+        self.assertEqual(len(observations),96)
+        self.assertTrue(observations.family.eq('Figure2_EG_12').all())
+        archival=pd.read_csv(ROOT/'data/frozen/clustering47_primary_20261108/conditional_comparisons_all_families.csv')
         other=original.loc[original.family.ne('Figure2_EG_12')].reset_index(drop=True)
-        pd.testing.assert_frame_equal(other,conditional.loc[conditional.family.ne('Figure2_EG_12')].reset_index(drop=True))
+        pd.testing.assert_frame_equal(other,archival.loc[archival.family.ne('Figure2_EG_12')].reset_index(drop=True))
+
+    def test_s4_reference_display_uses_all_47_channels(self):
+        import yaml
+        cfg=yaml.safe_load((ROOT/'configs/figure_s03.yaml').read_text())
+        markers=cfg['panel_a']['marker_order']
+        self.assertEqual(len(markers),47)
+        self.assertEqual(len(set(markers)),47)
+        self.assertEqual(markers[-2:],['CD123','CDX2'])
+        folder=ROOT/'data/frozen/reference47_profiles_20261110'
+        manifest=json.loads((folder/'manifest.json').read_text())
+        for name,entry in manifest['files'].items():
+            self.assertEqual(hashlib.sha256((folder/name).read_bytes()).hexdigest(),entry['sha256'])
+        data=pd.read_csv(folder/'figureS4_marker_summaries.csv')
+        receipt=json.loads((ROOT/'figures/publication/Figure_S4_verification.json').read_text())
+        source='data/frozen/reference47_profiles_20261110/figureS4_marker_summaries.csv'
+        self.assertEqual(receipt['inputs'][source],manifest['files']['figureS4_marker_summaries.csv']['sha256'])
+        self.assertEqual(len(data),27*47)
+        self.assertEqual(set(data.marker),set(markers))
+        self.assertEqual(data.cell_type.nunique(),27)
+        self.assertFalse(data.duplicated(['cell_type','marker']).any())
+        self.assertEqual(int(data.groupby('cell_type').n_cells.first().sum()),209587)
+        self.assertNotIn('Noise',set(data.cell_type))
 
     def test_bad_manifest_or_primary_seed_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

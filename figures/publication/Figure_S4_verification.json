@@ -54,31 +54,33 @@
   "dense_point_layers_native_dpi": 610,
   "inputs": {
     "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
-    "data/frozen/publication_design/figureS4_marker_summaries.csv": "a30f3f7bbf44da69756989fe1f54170669635089fd22a0862c62282bb295403f",
+    "data/frozen/reference47_profiles_20261110/figureS4_marker_summaries.csv": "b9ffeb1e93ab1bc2060600355466b87bddd5d5be32c837953d119d15627ff2da",
     "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
     "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
     "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
-    "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b"
+    "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b",
+    "configs/figure_s03.yaml": "fb03de469fd1a5b286c4668b87536fa282d4d9b68eb7e3fd2433763c916fd78f",
+    "data/frozen/reference47_profiles_20261110/manifest.json": "1bb2e6380cf36968584121d0e9cf7d384ee9d52985dd10bdee625bfabbffadf1"
   },
   "notes": [
-    "Historical FlowSOM cluster-count sweep archived; former metric panel E is now D. Suggested manuscript width: 152.4 mm (6 in), preserving a minimum of 5.077 pt."
+    "Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B\u2013D preserve the same frozen reference/primary-clustering data and geometry. Suggested manuscript width: 152.4 mm (6 in)."
   ],
   "files": {
     "Figure_S4.svg": {
-      "sha256": "914117bec9ed97a5dfc2bc39f29b71e29a81a05abe20ceac8e4964c86ddb4e9d",
-      "bytes": 6213436
+      "sha256": "e6aac5bf2ee93b3800758cb1db69f6d7c1eddf84ac6cb053d69fadc4067808b3",
+      "bytes": 6249090
     },
     "Figure_S4.pdf": {
-      "sha256": "1114f577bf15e5e36d748dc213d4ab3f2c23c3c31658779522a34bde3db88533",
-      "bytes": 2738589
+      "sha256": "6e838a565f5ce9b95bccbd35cf0d7ee3f134b5ae785888e14a82e423cba4d44e",
+      "bytes": 2747511
     },
     "Figure_S4.png": {
-      "sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
-      "bytes": 3579825
+      "sha256": "bcc0a898d8a63d53bbf6fe1eabd99df9f24dc4bfd9d942eac9d17cb4472b317d",
+      "bytes": 3594122
     },
     "Figure_S4.tiff": {
-      "sha256": "6a1322efe84b1c03d043ed5faadee1760c5dc2574a29adc3be761567eca41faf",
-      "bytes": 4540816
+      "sha256": "6cb2996f7d1563ccb484f2f0023656e91bc209405f59c9ac1928c1dcef315e9c",
+      "bytes": 4556126
     }
   }
 }

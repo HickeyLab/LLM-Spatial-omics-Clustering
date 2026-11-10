@@ -1,17 +1,9 @@
 # Submission figure files
 
-All 17 images for Figures 1–5 and S1–S10 are provided as 600 dpi PNG and
-lossless RGB TIFF, with editable PDF/SVG versions. Figure S3 has separate
-A, B and C files. Use these originals for submission, since Google Docs
-exports compressed previews.
+The 13 retained figures comprise 15 image files: Figures 1–4, S1–S7, S10 and S11. Figure S3 has separate A, B and C files. Every current image has a native 600 dpi PNG, lossless RGB TIFF and editable PDF/SVG export. Use these originals for submission; Google Docs exports compressed previews.
 
-Panel letters are plain bold uppercase, following the published EXO examples.
-Typography is at least 5.5 pt at the declared native width, or 5.7 pt for
-Figure 2. Each verification JSON records dimensions, minimum placement width,
-source hashes and export hashes. Resize proportionally and keep text at
-least 5 pt at final placement.
+Typography is at least 5.5 pt at native width (6.6 pt in Figure 2). Each verification JSON records dimensions, minimum proportional placement width, source hashes and export hashes. Keep text at least 5 pt at final placement and reset image cropping.
 
-See the [design, source and placement notes](../../docs/publication_figure_design.md)
-and [verification receipt](../../docs/publication_figure_verification.json).
-Rebuild with `python scripts/render_publication_figures.py` and verify with
-`python scripts/verify_publication_figures.py`. No model calls or fits occur.
+Figures 2, S4 and S5 use the frozen 47-marker primary clustering assignments. Figures 3, 4, S6, S7, S10 and S11 use the completed one-annotation campaign and checksum-pinned [scoring outputs](../../data/frozen/annotation47_results_20261110). The [inventory](../../configs/manuscript_inventory.json) contains the matching captions and panel identities. Removed studies and original artwork remain in the checksum-linked archive.
+
+Rebuild with `python scripts/render_publication_figures.py` and verify with `python scripts/verify_publication_figures.py`. These commands make no model calls and perform no fitting. Native export checks and rendered visual review are recorded in [the verification receipt](../../docs/publication_figure_verification.json).

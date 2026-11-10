@@ -26,31 +26,21 @@
     {
       "file": "notebooks/final_figures/previews/figure_03.png",
       "source_file": "figures/manuscript/Figure_3.png",
-      "source_sha256": "f43c43c0b8588657a0f48bfa2d29cc8d1fe6907e8be72b833a65f5f231ac9167",
+      "source_sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
       "labels": [],
       "size_pixels": [
         3900,
-        5208
+        4007
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_04.png",
       "source_file": "figures/manuscript/Figure_4.png",
-      "source_sha256": "581a1b5643182c543840e2aff34a9192de8db723929300777f22d60f3a578ad2",
+      "source_sha256": "ed809fa0fd4b5e7814aa318630f4cdc77a186d103c67a2148cc6f9a469a11d84",
       "labels": [],
       "size_pixels": [
         3900,
-        3426
-      ]
-    },
-    {
-      "file": "notebooks/final_figures/previews/figure_05.png",
-      "source_file": "figures/manuscript/Figure_5.png",
-      "source_sha256": "93764101ec642905d76292520d2159a6b3992d208db6e5b717bb2c301c106595",
-      "labels": [],
-      "size_pixels": [
-        3900,
-        3077
+        4038
       ]
     },
     {
@@ -106,7 +96,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s04.png",
       "source_file": "figures/manuscript/Figure_S4.png",
-      "source_sha256": "0ffa6235dd38dcaa2b285a442e4aa3535343243d40043d69cc09fd3d2c4d3561",
+      "source_sha256": "bcc0a898d8a63d53bbf6fe1eabd99df9f24dc4bfd9d942eac9d17cb4472b317d",
       "labels": [],
       "size_pixels": [
         3900,
@@ -116,71 +106,51 @@
     {
       "file": "notebooks/final_figures/previews/figure_s05.png",
       "source_file": "figures/manuscript/Figure_S5.png",
-      "source_sha256": "b8a41cc2afd224254db88aa173666962334a184c3339c3a549cc0f78366e3054",
+      "source_sha256": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
       "labels": [],
       "size_pixels": [
         3900,
-        1383
+        1324
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s06.png",
       "source_file": "figures/manuscript/Figure_S6.png",
-      "source_sha256": "5c3acb1a2fc1acf3b4b2c0ca85596e21645c57d8a4d85ee543d7b9b1b4ca9ffd",
+      "source_sha256": "a5fbc7c2883ea8905a875985a36dd30d74281ffedffd5c8056fac2cb2f6b3e46",
       "labels": [],
       "size_pixels": [
         3900,
-        4727
+        5234
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s07.png",
       "source_file": "figures/manuscript/Figure_S7.png",
-      "source_sha256": "3098898365ad6c910623bc3b82e239a961785f5acdecb62389c6739860479edf",
+      "source_sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
       "labels": [],
       "size_pixels": [
         3900,
-        1252
-      ]
-    },
-    {
-      "file": "notebooks/final_figures/previews/figure_s08.png",
-      "source_file": "figures/manuscript/Figure_S8.png",
-      "source_sha256": "cb71b4f908941e51fbe96f100e8d91caac4c13009ea32e7d1a3644ab0bcbebba",
-      "labels": [],
-      "size_pixels": [
-        3900,
-        1723
-      ]
-    },
-    {
-      "file": "notebooks/final_figures/previews/figure_s09.png",
-      "source_file": "figures/manuscript/Figure_S9.png",
-      "source_sha256": "eb5a04b1ad0c5e96db8a0a9b84a25fb836a676872885d4b1d293ca870cdb08ff",
-      "labels": [],
-      "size_pixels": [
-        3900,
-        2565
+        2837
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s10.png",
       "source_file": "figures/manuscript/Figure_S10.png",
-      "source_sha256": "453739733af2cab492ed07dcad17f164799d07841b0b3a870b07189a2feb8136",
+      "source_sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
       "labels": [],
       "size_pixels": [
         3900,
-        2261
+        2214
       ]
     },
     {
       "file": "notebooks/final_figures/previews/figure_s11.png",
       "source_file": "figures/manuscript/Figure_S11.png",
-      "source_sha256": "3c8ab469cb44ecebbfa04081f21b8d586857fb65e68fe60e1f749f4275425f2f",
+      "source_sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
       "labels": [],
       "size_pixels": [
         3900,
-        858
+        1010
       ]
     }
   ],

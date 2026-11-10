@@ -1,0 +1,49 @@
+{
+  "schema": "annotation47.documentation_publication_qa.v2",
+  "passed": true,
+  "checked_at": "2026-11-10T21:47:29.824374+00:00",
+  "local_markdown_links_verified": true,
+  "retained_figures": 13,
+  "retained_images": 15,
+  "active_experiment_ids": [
+    1,
+    2,
+    3,
+    7,
+    14
+  ],
+  "active_table_scope": [
+    "S1",
+    "S2A/B",
+    "S6a-d",
+    "S7 clustering-only12"
+  ],
+  "focused_tests": 90,
+  "test_failures": 0,
+  "preparation_hashes_preserved": true,
+  "old_registry_stable_ids_preserved": true,
+  "new_calls": 0,
+  "files": {
+    "README.md": "68c056e786cf2500df43caaf8a66671f6d73a1a54b1ec21e03cccd52f3d914b3",
+    "docs/figure_map.md": "0c66d0225cad1229ec13d84640721525ca39fccec27c8ee4bec744ace8cdc3c0",
+    "docs/supplementary_table_numbering.md": "e287285c7e396244ef82d452ff573e116f47a6b75a7b3bb62549267636aef2fb",
+    "docs/manuscript_reproduction.md": "2a9eb9c047139111739a04c2b7cf9a6ec20982ee439abf84a57db0566f68b2c3",
+    "configs/annotation47_active_study.json": "440a956f4eb50ddb37ce876bb495eb2ca9fe334b37a477c86730a0926586ca53",
+    "configs/experiment_registry.json": "2c1c66820c05278f94ce27c8d379c8c575b1d635f0c0e3b74fcaf8a31ff8f495",
+    "configs/clustering47_publication.json": "6b7cc07d90f8da138895f7964294802f81318874abf391018e9e4ca8ff79fa23",
+    "configs/historical_annotation_artwork.json": "d657c5a64755e63fd659b4695f4118f556c3c7ee5aef620e30efc96cecdc61d5",
+    "configs/supplementary_table_crosswalk.json": "ec4e4261427da34e68522672ba62f319d71dc1f2abcecf29f3cb01378082f0cc",
+    "tests/test_annotation47_active_study.py": "ad021e9e24ea742d94100ad9cc5ead4459b10ce846038cbdce327de6a49828c6",
+    "tests/test_sweep_retirement.py": "105b91834923c709366ab27f93c58b210485aec762e512c04f20bd737a57b35e",
+    "tests/test_clustering47_publication.py": "7a6fc06b7d4bfcd9de1f1e3bab65963c18fbbe1c5ed7c2667b65195903823577",
+    "tests/test_manuscript_alignment.py": "201f3998c7e402106fef10663fb9e33ae3c9aa1fded471840d5887483d01ab60"
+  },
+  "source_manifest_hashes": {
+    "data/frozen/clustering47_primary_20261108/manifest.json": "1304ed16bc0ff858518a3a5ac18d662c4887f639d7084ee6df1dc8f013dc4618",
+    "data/frozen/annotation47_results_20261110/manifest.json": "c7edd3c1611ae31b7cb08e845003437c4ef49273cdced8860362e3d1a5052f6c",
+    "data/frozen/reference47_profiles_20261110/manifest.json": "1bb2e6380cf36968584121d0e9cf7d384ee9d52985dd10bdee625bfabbffadf1",
+    "data/historical/annotation47_pre_scoring_20261110/manifest.json": "7a1c4c770305a28d9c4842cf35a12c31d3345952b6675c6b778202152df6871a",
+    "data/historical/annotation47_pre_scoring_20261110/extra_manifest.json": "7fc21bd7f864747d98bee868e9fd16b3a32aa872664bc5b6edcd1f20e8a8a6d8",
+    "data/historical/publication_before_primary47_20261109/index.json": "7363960dbbf8136ce3395aa7f50bd62a519768e1d5468c2f1fb76625f98d2887"
+  }
+}

@@ -97,6 +97,8 @@ def main():
                 'files':files}
     manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')
     inventory_path.write_text(json.dumps(inventory,indent=2,ensure_ascii=False)+'\n')
+    active_images={e['path'] for r in inventory['figures'].values() for e in r['images']}
+    preview_manifest['figures']=[e for e in preview_manifest['figures'] if e['source_file'] in active_images]
     for entry in preview_manifest['figures']:
         source = ROOT/entry['source_file']
         entry['source_sha256'] = digest(source)
@@ -104,7 +106,7 @@ def main():
         entry['labels'] = []
     preview_manifest['policy'] = 'Current previews copy the native publication exports with no overlays. Earlier label overlays remain historical.'
     preview_manifest_path.write_text(json.dumps(preview_manifest,indent=2,ensure_ascii=False)+'\n')
-    print(f'Synced selected figures {sorted(selected)} and preserved {len(files)} current images. Historical S11A bytes retained.')
+    print(f'Synced selected figures {sorted(selected)} and preserved {len(files)} current images.')
 
 
 if __name__ == '__main__':

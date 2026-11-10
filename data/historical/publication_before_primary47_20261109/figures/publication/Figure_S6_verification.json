@@ -1,0 +1,66 @@
+{
+  "figure": "Figure_S6",
+  "width_mm": 165.1,
+  "height_mm": 200.15059027777778,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    4727
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 223,
+    "height_mm": 200.15059027777778,
+    "height_reduction_percent": 10.24637207274539,
+    "vacant_bands_removed_mm": [
+      [
+        11.786,
+        12.864999999999997
+      ],
+      [
+        81.18103124999999,
+        87.5
+      ],
+      [
+        93.04,
+        96.47013888888887
+      ],
+      [
+        102.63764236111108,
+        111.49999999999999
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
+    "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+  },
+  "notes": [],
+  "files": {
+    "Figure_S6.svg": {
+      "sha256": "1f4d7bfa076174b4cec1d37e3aaa1cae943d9d94a0d1a7a12b10188b303e10db",
+      "bytes": 420851
+    },
+    "Figure_S6.pdf": {
+      "sha256": "aaf390847162a649d5885a71ffb817a04e5d9a08f5f108735e532f1f07135dc3",
+      "bytes": 80882
+    },
+    "Figure_S6.png": {
+      "sha256": "5c3acb1a2fc1acf3b4b2c0ca85596e21645c57d8a4d85ee543d7b9b1b4ca9ffd",
+      "bytes": 754174
+    },
+    "Figure_S6.tiff": {
+      "sha256": "fa05f1ac5de92265980afbf383d778c710cb1dd5bb2925dbd436abc8a78f4f1f",
+      "bytes": 1779598
+    }
+  }
+}

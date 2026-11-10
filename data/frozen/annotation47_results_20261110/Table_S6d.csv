@@ -1,0 +1,5 @@
+Model,Requested model ID,Pinned route,Reasoning,Decoding fields sent
+GPT-6 Astra,openai/gpt-6-astra,openai,high,Batch; max_tokens 32768; seed 42; temperature/top-p omitted
+Claude Opus 5.5,anthropic/claude-opus-5.5,anthropic,high,Batch; max_tokens 32768; seed omitted; temperature/top-p omitted
+Gemini 4 Argon,google/gemini-4-argon,google-vertex/global,high,Standard streaming; max_tokens 943718; provider continuation segments; seed 42; temperature/top-p omitted
+DeepSeek V4.1 Flash 1017,deepseek/deepseek-v4.1-flash-1017,OpenRouter routes recorded per request,high,Standard streaming; max_tokens 943718; seed omitted; temperature/top-p omitted

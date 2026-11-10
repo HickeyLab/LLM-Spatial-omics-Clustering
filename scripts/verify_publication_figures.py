@@ -26,10 +26,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from llm_spatial_omics_clustering.clustering_publication import verify_current_inputs
 
-ORDER = ['5','1','2','3','4','S1','S2','S3A','S3B','S3C','S4','S5','S6','S7','S8','S9','S10','S11']
-PANELS = {'1':'ABCDEF','2':'ABCDEFGH','3':'ABCDEFGH','4':'ABCDE','5':'ABCD',
+# Current inventory controls active numbering; archived figures are not admitted.
+_inventory = json.loads((ROOT/'configs/manuscript_inventory.json').read_text())['figures']
+ORDER = [Path(e['path']).stem.removeprefix('Figure_') for r in _inventory.values() for e in r['images']]
+PANELS = {'1':'ABCDEF','2':'ABCDEFGH','3':'ABCDE','4':'ABCDE',
           'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCD',
-          'S5':'AB','S6':'AB','S7':'','S8':'AB','S9':'ABCD','S10':'ABCD','S11':'A'}
+          'S5':'A','S6':'AB','S7':'','S10':'ABCD','S11':'A'}
+
 NS = {'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
       'a':'http://schemas.openxmlformats.org/drawingml/2006/main',
       'wp':'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing',
@@ -228,11 +231,9 @@ def verify_docx(path, folder, image_suggestions_pending=False, figure_ids=None):
                             'google_docs_preview_dpi':min(preview.width*25.4/x,preview.height*25.4/y)})
         text = '\n'.join(''.join(p.itertext()) for p in document.findall('.//w:p',NS))
         caption = next(p for p in text.splitlines() if p.startswith('Figure 3.'))
-        # The live manuscript has a pending wording suggestion that adds
-        # "output". Both readings retain the same reference-selected metric.
-        assert re.search(r'\(E\) Cell-type-specific reference agreement after '
-                         r'post-hoc reference-informed (?:output )?selection',caption)
-        assert '(E) Cell-type-specific reference agreement as a percentage' not in caption
+        assert 'Annotation benchmark using 47-marker cluster profiles' in caption
+        assert 'post-hoc reference-informed' not in caption
+
     return results
 
 
@@ -244,10 +245,10 @@ def main():
                         help='Check exported placement without asserting that pending image replacements are exported.')
     parser.add_argument('--render-qa',type=Path)
     parser.add_argument('--receipt',type=Path)
-    parser.add_argument('--figures',nargs='+',choices=ORDER,help='Verify changed native figures without regenerating unrelated historical annotation exports.')
+    parser.add_argument('--figures',nargs='+',choices=ORDER,help='Verify selected current native figures without regenerating other exports.')
     args = parser.parse_args()
     result = {'status':'pass','native_figures':verify_native(args.folder,args.render_qa,args.figures),
-              'independently_checked_figure_3e_rows':verify_selected_e(),
+              'independent_annotation_scoring_receipt':'data/frozen/annotation47_results_20261110/verification.json',
               'new_model_calls':0,'new_fits':0}
     if args.docx:
         result['manuscript_export_sha256'] = digest(args.docx)

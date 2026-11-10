@@ -1,34 +1,9 @@
 {
   "schema": "manuscript.historical_annotation_artwork.v1",
   "source_date": "2026-11-06",
-  "policy": "Byte-preserved current GoogleDoc annotation artwork. New primary47-marker annotation calls have not been run. No scientific re-rendering or raster upscaling.",
-  "figures": {
-    "S11": {
-      "files": {
-        "png": {
-          "path": "data/frozen/historical_annotation_artwork_20261106/Figure_S11.png",
-          "sha256": "3c8ab469cb44ecebbfa04081f21b8d586857fb65e68fe60e1f749f4275425f2f"
-        },
-        "svg": {
-          "path": "data/frozen/historical_annotation_artwork_20261106/Figure_S11.svg",
-          "sha256": "88c955825328fbfd05122aec4078fa101a2ac79d3cde94db001e6e672545e818"
-        }
-      },
-      "width_mm": 165.1,
-      "height_mm": 36.33611111111111,
-      "minimum_font_pt": 5.7,
-      "minimum_placement_width_mm": 144.82456140350877,
-      "native_formats": [
-        "png",
-        "svg"
-      ],
-      "status": "historical_annotation_pending_separate_rerun",
-      "n_markers": 45,
-      "panels": [
-        "A"
-      ],
-      "marker_summary_source": "data/frozen/manuscript_replay/figure_02/panel_I_marker_summaries.csv",
-      "historical_partition_manifest": "data/frozen/v3_k300_assignments/manifest.json"
-    }
-  }
+  "policy": "Archival provenance only. Superseded annotation artwork is preserved through the archive index and is excluded from the active inventory. Current annotation figures are rebuilt from the completed, scored primary47 campaign recorded in configs/annotation47_active_study.json.",
+  "figures": {},
+  "status": "archival_only",
+  "archive_index": "data/historical/publication_before_primary47_20261109/index.json",
+  "updated_date": "2026-11-10"
 }

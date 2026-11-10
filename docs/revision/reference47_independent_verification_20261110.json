@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "rows": 1269,
+  "markers": 47,
+  "reference_classes": 27,
+  "non_noise_cells": 209587,
+  "all_profiles_independently_recomputed": true,
+  "CD123_CDX2_present": true,
+  "max_abs_delta": 2.842170943040401e-14,
+  "source_sha256": "8e884bc4ff05339e8ba8f2a7325d8b3027dc5c6e02353729baaa7cda1f9fee8e",
+  "csv_sha256": "b9ffeb1e93ab1bc2060600355466b87bddd5d5be32c837953d119d15627ff2da",
+  "annotation_calls": 0,
+  "visual_review": "Final new47 panel includes47 columns; readable whole S4; no sweep panel."
+}

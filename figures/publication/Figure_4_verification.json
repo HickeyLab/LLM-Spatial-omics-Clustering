@@ -1,14 +1,14 @@
 {
   "figure": "Figure_4",
   "width_mm": 165.1,
-  "height_mm": 145.02543148760765,
+  "height_mm": 170.92676482094097,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    3426
+    4038
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -29,25 +29,25 @@
     }
   ],
   "layout_compaction": {
-    "original_height_mm": 169,
-    "height_mm": 145.02543148760765,
-    "height_reduction_percent": 14.186135214433344,
+    "original_height_mm": 191,
+    "height_mm": 170.92676482094097,
+    "height_reduction_percent": 10.509547214167029,
     "vacant_bands_removed_mm": [
       [
         30.295841209829867,
-        31.500000000000007
+        33.500000000000014
       ],
       [
-        105.18103125,
-        115.5
+        39.13599999999999,
+        41.49999999999998
       ],
       [
-        121.04,
-        125.5
+        135.72128125,
+        143.5
       ],
       [
-        153.84105555555553,
-        157.44735763888886
+        149.136,
+        152.49999999999997
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -56,29 +56,33 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
+    "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
+    "data/frozen/annotation47_results_20261110/per_type_metrics.csv": "d6fb0bfa30687aa15e82fe5d43049c2ea02807d8c626fdffcc73b9dd096c0e4b",
+    "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
+    "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
     "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
-    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee",
-    "data/frozen/publication_design/figure4_confusion.csv": "f403f2f1f972f951ff82407d44c033fd29188efea764a1fceafa65ad48450e80",
-    "data/frozen/publication_design/figure4_f1.csv": "9ac5042300121372e01a5f2c146877afa45f9bab832110a124775f8e0965138d",
-    "data/frozen/leiden_claude_diagnostic_identity/cluster_counts.csv": "51914f1423fb1a5936bc4debe1b206706e8e18a59a3202f0bc6b11c09f17cbbf"
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
-  "notes": [],
+  "notes": [
+    "Prespecified Leiden\u2013Opus5.5 means-plus-fractions pipeline. B/C use test cells. D/E use all220082 cells and original28 labels.",
+    "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
+  ],
   "files": {
     "Figure_4.svg": {
-      "sha256": "5b6c25bcac55e06596aefc6a6d5a43532c13c23aea178f6077d96a1b96727f89",
-      "bytes": 2589473
+      "sha256": "c0808c6b7e2f745886f2ad788957c0a9d4b11253669917784faa09d15698c07e",
+      "bytes": 2640530
     },
     "Figure_4.pdf": {
-      "sha256": "a82515cf9983cae50797a638a1234e518e43bd33cbd37a2709a4431907bd8ce5",
-      "bytes": 1308450
+      "sha256": "32853c24384e61528052a2b582b763b5cc7c6d5f5fbbf0ac13c51eb4ca9cc166",
+      "bytes": 1319821
     },
     "Figure_4.png": {
-      "sha256": "581a1b5643182c543840e2aff34a9192de8db723929300777f22d60f3a578ad2",
-      "bytes": 1220554
+      "sha256": "ed809fa0fd4b5e7814aa318630f4cdc77a186d103c67a2148cc6f9a469a11d84",
+      "bytes": 1301835
     },
     "Figure_4.tiff": {
-      "sha256": "a9cb9ba8d1ca97e4da731d7218920d9a7e3e14e90c0c2fbcc7f11f1f567db9d9",
-      "bytes": 2121606
+      "sha256": "e74a56d007ba87777114bbac30fcead16ad837a73d7691703221df9627ebaa1b",
+      "bytes": 2334638
     }
   }
 }

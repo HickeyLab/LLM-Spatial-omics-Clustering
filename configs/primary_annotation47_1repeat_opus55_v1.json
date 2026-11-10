@@ -1,0 +1,427 @@
+{
+  "schema": "annotation47.primary.one_repeat_opus55.v1",
+  "protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
+  "status": "planned_not_executed",
+  "prepared_date": "2026-11-09",
+  "authorization": "Offline preparation and validation only. No inference, pilot, paid API call, job submission or automatic launch. Separate explicit launch instruction required.",
+  "experiment_ids": [
+    7,
+    14
+  ],
+  "n_cells": 220082,
+  "n_markers": 47,
+  "markers": [
+    "CD45RO",
+    "CD56",
+    "CD15",
+    "CD163",
+    "MUC2",
+    "CD34",
+    "CD36",
+    "aDefensin5",
+    "CD49a",
+    "HLA-DR",
+    "CD38",
+    "CollagenIV",
+    "CD4",
+    "CD138",
+    "CD44",
+    "Vimentin",
+    "CD66",
+    "Podoplanin",
+    "CHGA",
+    "CD3",
+    "SOX9",
+    "CD161",
+    "Synaptophysin",
+    "CD57",
+    "ITLN1",
+    "CD127",
+    "CD45",
+    "CD49f",
+    "aSMA",
+    "Cytokeratin",
+    "CD8",
+    "CD19",
+    "BCL2",
+    "CD90",
+    "CD21",
+    "CD7",
+    "CD11c",
+    "Ki67",
+    "CD68",
+    "MUC1",
+    "CD206",
+    "CD16",
+    "CD117",
+    "CD69",
+    "CD31",
+    "CD123",
+    "CDX2"
+  ],
+  "ontology": [
+    "B",
+    "CD36 high Endothelial",
+    "CD36 low Endothelial",
+    "CD4+ T",
+    "CD49a+ Smooth muscle",
+    "CD57+ Epithelial",
+    "CD66+ Epithelial",
+    "CD8+ T",
+    "Cycling TA",
+    "DC",
+    "Epithelial",
+    "Goblet",
+    "ICC",
+    "ITLN+ Epithelial",
+    "M1 Macrophage",
+    "M2 Macrophage",
+    "MUC1+ Epithelial",
+    "NK",
+    "Nerve",
+    "Neuroendocrine",
+    "Neutrophil",
+    "Noise",
+    "PDPN+ Stromal",
+    "Paneth",
+    "Plasma",
+    "Smooth muscle",
+    "Stromal",
+    "TA"
+  ],
+  "methods": [
+    "leiden",
+    "flowsom",
+    "spatialsort",
+    "pixie_tiff"
+  ],
+  "model_families": [
+    "openai",
+    "anthropic",
+    "google",
+    "deepseek"
+  ],
+  "model_policy": "Use exactly the four specified model IDs. No automatic model, provider or service-tier substitutions. Public metadata is not account-level admission. Freeze the literal requests and verified total-billable-output ceilings before launch.",
+  "model_bindings": {
+    "openai": {
+      "model_id": "openai/gpt-6-astra",
+      "provider": "openrouter",
+      "provider_route": "openai",
+      "canonical_slug_expected": "openai/gpt-6-astra-20260903",
+      "transport": "batch",
+      "reasoning_setting": {
+        "effort": "high"
+      },
+      "requested_total_output_ceiling": 32768,
+      "prices": {
+        "input_per_million_usd": "5.0",
+        "output_per_million_usd": "25.0"
+      },
+      "verified_at": "2026-11-09T15:26:17.669516+00:00",
+      "status": "public_metadata_verified_account_unadmitted",
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "seed_supported": true,
+      "reservation_output_tokens": 32768,
+      "metadata_sha256": "514143fd0becbdf4e8cdafe47cf5c9a435723b87cb83c00f3b35c94c242048d0",
+      "metadata_path": "/Users/zacharydeutsch/.codex/analysis_artifacts/annotation47_one_repeat_20261109/provider_metadata/openai_endpoints.json",
+      "canonical_catalog_sha256": "5c15a2daa5dc4c11a733db37770054e15f23fea7e565c4850c4c63cf9ef6c9f7",
+      "output_budget_evidence": "32768 requested total output. Public API budget semantics, not an inference-tested guarantee.",
+      "short_prompt_threshold": 272000
+    },
+    "anthropic": {
+      "model_id": "anthropic/claude-opus-5.5",
+      "provider": "openrouter",
+      "provider_route": "anthropic",
+      "canonical_slug_expected": "anthropic/claude-opus-5.5-20260921",
+      "transport": "batch",
+      "reasoning_setting": {
+        "effort": "high"
+      },
+      "requested_total_output_ceiling": 32768,
+      "prices": {
+        "input_per_million_usd": "2.0",
+        "output_per_million_usd": "10.0"
+      },
+      "verified_at": "2026-11-09T15:26:17.669516+00:00",
+      "status": "public_metadata_verified_account_unadmitted",
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "seed_supported": false,
+      "reservation_output_tokens": 32768,
+      "metadata_sha256": "c4fca1585bc57a0bd64b18ed3e8a221c7c0051deed8eeef955b8c6445e2dec64",
+      "metadata_path": "/Users/zacharydeutsch/.codex/analysis_artifacts/annotation47_one_repeat_20261109/provider_metadata/anthropic_endpoints.json",
+      "canonical_catalog_sha256": "5c15a2daa5dc4c11a733db37770054e15f23fea7e565c4850c4c63cf9ef6c9f7",
+      "output_budget_evidence": "32768 requested total output. Public API budget semantics, not an inference-tested guarantee."
+    },
+    "google": {
+      "model_id": "google/gemini-4-argon",
+      "provider": "openrouter",
+      "provider_route": "google-vertex/global",
+      "canonical_slug_expected": "google/gemini-4-argon-20261013",
+      "transport": "batch",
+      "reasoning_setting": {
+        "effort": "high"
+      },
+      "requested_total_output_ceiling": 32768,
+      "prices": {
+        "input_per_million_usd": "1.0",
+        "output_per_million_usd": "5.0"
+      },
+      "verified_at": "2026-11-09T15:26:17.669516+00:00",
+      "status": "public_metadata_verified_account_unadmitted",
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "stop",
+        "structured_outputs",
+        "reasoning_effort"
+      ],
+      "seed_supported": true,
+      "reservation_output_tokens": 32768,
+      "metadata_sha256": "e01741be1977cfbcf6f7a9350107bef95c03745faa83681a642448409cb2cbcb",
+      "metadata_path": "/Users/zacharydeutsch/.codex/analysis_artifacts/annotation47_one_repeat_20261109/provider_metadata/google_endpoints.json",
+      "canonical_catalog_sha256": "5c15a2daa5dc4c11a733db37770054e15f23fea7e565c4850c4c63cf9ef6c9f7",
+      "output_budget_evidence": "32768 requested total output. Public API budget semantics, not an inference-tested guarantee."
+    },
+    "deepseek": {
+      "model_id": "deepseek/deepseek-v4.1-flash-1017",
+      "provider": "openrouter",
+      "provider_route": "deepseek",
+      "canonical_slug_expected": "deepseek/deepseek-v4.1-flash-20261017",
+      "transport": "standard",
+      "reasoning_setting": {
+        "effort": "high"
+      },
+      "requested_total_output_ceiling": 32768,
+      "prices": {
+        "input_per_million_usd": "0.3",
+        "output_per_million_usd": "1.2"
+      },
+      "verified_at": "2026-11-09T15:26:17.669516+00:00",
+      "status": "public_metadata_verified_account_unadmitted",
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "logprobs",
+        "top_logprobs",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "reasoning_effort"
+      ],
+      "seed_supported": false,
+      "reservation_output_tokens": 393216,
+      "metadata_sha256": "123f87c9a081e17955485752118c1573a4d517ae9b118020d64b1a5745c77bca",
+      "metadata_path": "/Users/zacharydeutsch/.codex/analysis_artifacts/annotation47_one_repeat_20261109/provider_metadata/deepseek_endpoints.json",
+      "canonical_catalog_sha256": "5c15a2daa5dc4c11a733db37770054e15f23fea7e565c4850c4c63cf9ef6c9f7",
+      "output_budget_evidence": "Published route maximum is reserved financially. Requested max_tokens remains32768. Combined output enforcement unverified."
+    }
+  },
+  "partitions": {
+    "flowsom": {
+      "identity": "B004_flowsom47_fullpass3_seed42_20261102_v1",
+      "manifest_sha256": "f8b8a11357aa14a595002737598a40cd06555f2510ca4351b31258b6087db901",
+      "assignments_sha256": "99ff4e4dead6a0a5a718ace13393c99c848c1c893c63144120376a42c94c4bb4",
+      "seed": 42,
+      "full_passes": 3,
+      "occupied_clusters": 299,
+      "binding_status": "frozen_local_bundle; requires exact admission before launch"
+    },
+    "spatialsort": {
+      "identity": "B004-marker47-spatialsort-dmh5-longer-chain-20261102-v1",
+      "primary_seed": 42,
+      "point_estimate_sweep": 100,
+      "dmh_iter": 5,
+      "sensitivity_seed": 43,
+      "require_both_chains_complete": true,
+      "assignments_sha256": "9a0e07852d3b4b4b3768bfa3b1a5dfd3985c1795e4a7e193af5eaacf0d4449a4",
+      "manifest_sha256": "1304ed16bc0ff858518a3a5ac18d662c4887f639d7084ee6df1dc8f013dc4618",
+      "occupied_clusters": 229,
+      "binding_status": "completed_outputs_frozen; exact request admission pending",
+      "source_manifest": "data/frozen/clustering47_primary_20261108/manifest.json"
+    },
+    "leiden": {
+      "identity": "unchanged frozen main B004 Leiden assignments",
+      "binding_status": "frozen_existing",
+      "source_manifest": "data/frozen/v3_k300_assignments/manifest.json",
+      "assignments_path": "data/frozen/v3_k300_assignments/leiden/assignments.csv.gz",
+      "assignments_sha256": "1e9be030ebdbadb60ae3785786ea0621decd931289b2902c72ec08a6b5c39e18",
+      "gzip_sha256": "cf4111db3b1f0636103784a2c4bd621d120a0d448171fc42a4c3101c854fc387",
+      "occupied_clusters": 300
+    },
+    "pixie_tiff": {
+      "identity": "unchanged frozen main B004 PIXIE assignments",
+      "binding_status": "frozen_existing",
+      "source_manifest": "data/frozen/v3_k300_assignments/manifest.json",
+      "assignments_path": "data/frozen/v3_k300_assignments/pixie/master_pixie_clusters.csv.gz",
+      "assignments_sha256": "7d017a95e0a816612ea29c3d8aab9a02e4a8b5cc10d6c8056f5fbce9aa4dfbd6",
+      "gzip_sha256": "53a447473ac4d5ae5b85e4617d1b3760ae0aa67336ab003060b9a0b9b5844805",
+      "occupied_clusters": 300
+    }
+  },
+  "key_columns": [
+    "File_ID",
+    "ID"
+  ],
+  "expected_cell_key_sha256": "7fced5df4b9ff6814059e1786a32154a1b871fe5d2bb4d90d63f2c87fd2b351a",
+  "arms": [
+    "all_means",
+    "all_means_fractions"
+  ],
+  "repeats": 1,
+  "repeat_seeds_where_supported": [
+    42
+  ],
+  "batch_size": 75,
+  "logical_annotation_sets": 32,
+  "evidence": {
+    "source": "Deposited processed 45-marker H5AD X plus CD123 and CDX2 observation measurements, in the frozen 47-marker order. Do not substitute the RobustScaler SOM feature matrix.",
+    "means": "Within-cluster mean of arcsinh(processed expression/5), standardized with marker center and population SD (ddof=0) fitted using only cells in the four existing B004 training regions. Scale 1 only for an exactly constant marker.",
+    "fractions": "Within-cluster fraction of deposited processed marker values strictly greater than zero, computed before transformation/standardization; not validated biological positivity.",
+    "encoding": "Compute full-precision float64 statistics, then use numpy.rint to encode integer thousandths. Divide by 1000. Reuse identical mean integers within pairs.",
+    "controls": "Same cell memberships, marker order, cluster order, prompt, ontology, batch boundaries, model/provider, decoding settings and parser within pairs. Only the fractions matrix is added.",
+    "excluded_inputs": [
+      "reference labels",
+      "reference-assisted retrieval",
+      "method names",
+      "neighborhood summaries",
+      "tools",
+      "web"
+    ],
+    "preprocessing_selection": "No new outcome-driven marker, model, cluster, repeat or checkpoint selection."
+  },
+  "split": {
+    "2e65eeef2dd18bee2a0baf1cec6d35a1": "train",
+    "5318485b16983482401c3be24b6c42ad": "calibration",
+    "63d000170e475af142f6e8673de5eb0f": "train",
+    "768b7adb649959b6a4e354867595032d": "test",
+    "76d3efd17b6fc83aaac13e961824c5ae": "train",
+    "8da8f27977d946b8c912d42c8827b55c": "test",
+    "ae422532f260b3d6fc662aae69b05d33": "train",
+    "dceadbb36871071f30c308ca091fbdc8": "calibration"
+  },
+  "primary_population": "The two existing B004 test regions; query every occupied cluster in each full-cohort partition. Preserve all reference-Noise cells.",
+  "primary_endpoint": "Equal-weighted mean of the two test-region cell-level reference-agreement values, retaining missing/invalid assignments as errors in each full planned denominator.",
+  "contrast": "all_means_fractions minus all_means, paired by method, model, repeat, batch, cluster and region.",
+  "reporting": {
+    "metrics": [
+      "reference agreement",
+      "fixed-28-label macro-F1 with absent classes scored zero",
+      "cell and cluster delivery coverage",
+      "label changes on valid pairs",
+      "missing-prediction agreement bounds",
+      "tokens and observed cost"
+    ],
+    "repeats": "One requested generation per condition. Report single-run values. Computational repeatability and repeat SD are not estimated.",
+    "noise_sensitivity": "Secondary exclusion removes only reference-Noise cells from scoring; do not filter them before fitting or summaries. Keep predicted Noise errors on retained cells.",
+    "interpretation": "Previously examined B004 data, one donor, transductive frozen clusters/profiles. No donor-generalization, run-to-run repeatability or calibrated-probability claim.",
+    "macro_f1": "Compute fixed-28-label macro-F1 in each test region with absent classes zero, then average the two regions equally. Missing predictions add false negatives to their true classes and never become Noise."
+  },
+  "run_order": "One repeat block. Pair arms adjacently in submission order. Choose first arm by parity of SHA256(canonical JSON list [protocol_id,0,method,model_family,batch]); compact JSON, sorted keys, UTF-8. Provider execution order is uncontrolled.",
+  "sharing": {
+    "7": "The fractions arm supplies the full-marker benchmark, sixteen method/model annotation sets.",
+    "14": "Sixteen method/model pairs estimate the fractions-minus-means single-run contrast.",
+    "accounting": "Count every physical generation and charge once across #7 and #14. No reused old responses or additional repetitions."
+  },
+  "response_policy": {
+    "format": "JSON object with exactly a: [{i: anonymous integer query ID, l: integer label code 0..27}]. The label dictionary is the frozen original28 order.",
+    "validation": "Strict atomic whole-batch acceptance. Reject duplicate JSON keys,extra fields,extra/missing/duplicate IDs,wrong types,numeric strings,out-of-range label codes,nonterminal/refused/truncated output. All cases in a rejected batch remain missing.",
+    "technical_retries": 2,
+    "retry_scope": "Only definitely pre-generation transport failures; never regenerate invalid annotation/format output. Ambiguous outcomes retain cost reservation and require reconciliation.",
+    "automatic_continuation": false
+  },
+  "execution": {
+    "enabled": false,
+    "state": "planned_not_executed",
+    "executor_entrypoint": null,
+    "automatic_launch": false,
+    "jobs_submitted": 0,
+    "annotation_calls": 0,
+    "spend_cap_usd": null,
+    "launch_authorization": null,
+    "required_before_launch": [
+      "Admit all raw measurement and completed frozen clustering hashes",
+      "Build and independently verify exact47-marker evidence and paired payloads",
+      "Pass strict evidence,parser,Batch-envelope and request-identity tests",
+      "Verify exact provider/high-reasoning/total-billable-output contracts and price reservations",
+      "Seal all128 literal request bodies and their hashes",
+      "Obtain an approved spending cap and separate explicit launch instruction"
+    ],
+    "request_manifest_status": "sealed_by_external_manifest",
+    "request_manifest_sha256": null,
+    "request_manifest_binding": "The active-study record pins the separate bundle manifest, avoiding a circular protocol/manifest hash."
+  },
+  "initial_request_items": 128,
+  "planned_cluster_predictions": 9024,
+  "measurement_source": {
+    "authoritative": "processed H5AD float64 X plus CD123/CDX2 obs",
+    "sha256": "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a",
+    "label_values_excluded_from_annotation_input": true,
+    "training_cell_count": 90296,
+    "test_cell_count": 69576,
+    "calibration_cell_count": 60210
+  },
+  "display_conventions": {
+    "within_model": "Use the sole valid prediction. Missing output has no displayed prediction. No within-model majority vote.",
+    "across_models": "At most one vote per model. Ties use OpenAI,Anthropic,Google,DeepSeek family order. Descriptive display only, not computational consistency or calibrated confidence.",
+    "figure4_case": "Leiden-Opus5.5 illustrative pipeline prespecified before annotation results, not selected by agreement.",
+    "figure4_cluster_examples": "Three largest occupied Leiden clusters by cell count, ties by cluster ID.",
+    "spatial_examples": "Use the same fixed tissue-region view as Figure 2C. No low/high-agreement window selection."
+  },
+  "publication_scope": {
+    "fresh_study_ids": [
+      7,
+      14
+    ],
+    "other_annotation_studies": "archive_only_not_active_manuscript",
+    "prior_scientific_inputs_preserved": true,
+    "chronological_comparisons_in_manuscript": false,
+    "archived_experiment_ids": [
+      9
+    ],
+    "figure_replacements_paused": true
+  },
+  "budget": {
+    "proposed_inference_ceiling_usd": "65.00",
+    "spending_authorized": false,
+    "approved_cap_usd": null,
+    "fee_and_tax_excluded": true,
+    "credit_purchase_authorized": false,
+    "auto_top_up_authorized": false,
+    "reservation_policy": "Reserve every initial request before launch. DeepSeek uses published route maximum until a tighter combined billed-output contract is established. Unknown or ambiguous attempts retain reservation."
+  }
+}

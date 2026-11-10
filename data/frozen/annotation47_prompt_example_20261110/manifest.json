@@ -1,0 +1,18 @@
+{
+  "schema": "annotation47.prompt_example_manifest.v1",
+  "files": {
+    "assistant_final.json": {
+      "sha256": "cb442e8944bddbf731ef533bbb4134349cb2a6599519363edbd6b67aae1d918a",
+      "bytes": 1163
+    },
+    "metadata.json": {
+      "sha256": "ddb9c85eb6546895870beb6abd1ab27daf538498d0ca442d546e4b87054c4cc5",
+      "bytes": 1039
+    },
+    "request_body.json": {
+      "sha256": "ea8964a924e72395f245323c4a41a284188200f00802253069f7427f83650601",
+      "bytes": 31388
+    }
+  },
+  "model_calls": 0
+}
