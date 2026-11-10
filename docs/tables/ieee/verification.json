@@ -1,0 +1,174 @@
+{
+  "schema": "manuscript.ieee_table_format_verification.v1",
+  "passed": true,
+  "format_only": true,
+  "source_docx_sha256": "fdca26a40f2d480a10fc63a1e2d1c7fb19c97d4d835258671c4dff7f166bd9a6",
+  "tables": 7,
+  "total_cells_unchanged": 414,
+  "offline_tests_passed": 3,
+  "native_table_paste_html_contains_caption": false,
+  "stable_supplementary_identifiers_preserved": true,
+  "new_scientific_calls_or_fits": 0,
+  "previews": [
+    {
+      "table": "S1",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        1766
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    },
+    {
+      "table": "S2A",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        3300
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    },
+    {
+      "table": "S2B",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        1400
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    },
+    {
+      "table": "S6a",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        3733
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    },
+    {
+      "table": "S6b",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        3733
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    },
+    {
+      "table": "S6c",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        3733
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    },
+    {
+      "table": "S6d",
+      "pdf_pages": 1,
+      "font_points": 10,
+      "Times_New_Roman": true,
+      "all_text_within_page": true,
+      "horizontal_rules": 3,
+      "vertical_rules": 0,
+      "interior_body_rules": 0,
+      "png_dimensions_px": [
+        3900,
+        2133
+      ],
+      "png_dpi": 600,
+      "visual_inspection_passed": true,
+      "exact_cells_and_order_preserved": true
+    }
+  ],
+  "google_doc_borders_verified": true,
+  "google_doc_note": "Verified from the fresh saved native Google Doc export, accepting suggested insertions and excluding suggested deletions. All table cells use normal paragraph styles; headers are bold and body text is normal. Unrelated pending revisions are preserved by author/date/content/format fingerprints because DOCX export revision IDs and image filenames are regenerated.",
+  "google_doc_native_verification": {
+    "passed": true,
+    "before_export_sha256": "fdca26a40f2d480a10fc63a1e2d1c7fb19c97d4d835258671c4dff7f166bd9a6",
+    "after_export_sha256": "d00a13f35129801afc66cbc9c844a4078fd8f2ae91eb359d45f3815390e7baf0",
+    "native_tables": 7,
+    "exact_cell_values_and_order_preserved": 414,
+    "captions_centered_two_line_Times_10": 7,
+    "all_cell_fonts": "Times New Roman 10 pt",
+    "header_weight": "bold",
+    "body_weight": "normal",
+    "body_heading_styles": 0,
+    "white_cells": 414,
+    "visible_vertical_rules": 0,
+    "interior_body_row_rules": 0,
+    "horizontal_rules": "top, header-bottom, final-bottom",
+    "numeric_and_text_alignment": "right numeric; left text",
+    "unrelated_accepted_text_preserved": true,
+    "equations_xml_exact": true,
+    "equations": 5,
+    "references_text_exact": true,
+    "references": 36,
+    "images_bytes_exact": true,
+    "images": 15,
+    "prior_deleted_text_strings_preserved": true,
+    "prior_deleted_text_string_count": 1064,
+    "unrelated_revision_fingerprints_preserved": true,
+    "prior_unrelated_revision_count": 529
+  },
+  "explicit_body_font_weight": "normal at table, td and span levels; bold spans in header",
+  "server_saved_verification": {
+    "passed": true,
+    "export_sha256": "2395573fd2171028f19b38eafbc4600eb89fa74c27558cc9619d9cdabc4242ca",
+    "table_cells_exact": 414,
+    "table_styles_verified": true,
+    "captions_verified": 7,
+    "all_revision_fingerprints_exact_after_export_id_normalization": true,
+    "revision_count": 3550,
+    "accepted_text_images_equations_references_exact": true
+  }
+}

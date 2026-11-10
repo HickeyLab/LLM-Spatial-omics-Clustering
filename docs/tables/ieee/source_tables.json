@@ -1,0 +1,619 @@
+{
+  "schema": "manuscript.table_format_source.v1",
+  "source_docx_sha256": "fdca26a40f2d480a10fc63a1e2d1c7fb19c97d4d835258671c4dff7f166bd9a6",
+  "accepted_view": "Skip deleted/move-from text and deleted table rows",
+  "tables": {
+    "S1": {
+      "caption_old": "Table S1. REDSEA matching and cell retention audit.",
+      "rows": [
+        [
+          "Segmentation method",
+          "Processed before / after",
+          "Matched before / after",
+          "Shared IDs, fixed coordinates",
+          "Before-only IDs",
+          "After-only IDs"
+        ],
+        [
+          "Mesmer",
+          "162,439 / 161,867",
+          "133,665 / 133,266",
+          "161,656",
+          "783",
+          "211"
+        ],
+        [
+          "CellposeCyto3",
+          "145,925 / 145,270",
+          "118,668 / 118,104",
+          "145,011",
+          "914",
+          "259"
+        ],
+        [
+          "CellposeSAM",
+          "173,783 / 172,465",
+          "137,808 / 136,927",
+          "172,169",
+          "1,614",
+          "296"
+        ],
+        [
+          "CellSAM",
+          "195,752 / 194,832",
+          "154,163 / 153,385",
+          "194,071",
+          "1,681",
+          "761"
+        ],
+        [
+          "InstanSeg",
+          "198,959 / 196,717",
+          "146,477 / 144,996",
+          "195,459",
+          "3,500",
+          "1,258"
+        ],
+        [
+          "MicroSAM",
+          "197,314 / 197,400",
+          "149,626 / 149,080",
+          "196,124",
+          "1,190",
+          "1,276"
+        ]
+      ],
+      "cell_order_sha256": "4275ec628067f81164f828339b11bd18b9006f01ad4b3865ad26d5c64b8264e0"
+    },
+    "S2A": {
+      "caption_old": "Table S2A. Clustering configurations and hyperparameters.",
+      "rows": [
+        [
+          "Field",
+          "Leiden",
+          "FlowSOM",
+          "SpatialSort",
+          "PIXIE"
+        ],
+        [
+          "Inputs",
+          "47 markers",
+          "47 markers",
+          "47 markers",
+          "48 image channels"
+        ],
+        [
+          "Transform",
+          "arcsinh(x/5)",
+          "arcsinh(x/5)",
+          "arcsinh(x/5)",
+          "Pixel and cell composition pipeline"
+        ],
+        [
+          "Scaling",
+          "StandardScaler within each region",
+          "RobustScaler on all B004 cells",
+          "RobustScaler on all B004 cells",
+          "Channel and composition normalization"
+        ],
+        [
+          "Configured and occupied clusters",
+          "300 and 300",
+          "300 requested and 299 occupied",
+          "300 requested. 229 occupied in the primary chain and 231 in the sensitivity chain",
+          "300 and 300"
+        ],
+        [
+          "Implementation",
+          "K320 local Leiden with 20 within-parent merges",
+          "32×32 self-organizing map followed by Ward clustering",
+          "24 neighbors and precision 0.65",
+          "10×10 pixel map and 24×24 cell map"
+        ],
+        [
+          "Sigma and learning rate",
+          "See Leiden procedure in Section 2.7",
+          "1.0 and 0.3",
+          "Not applicable",
+          "Pixel 5.0 and 0.05. Cell 2.0 and 0.3"
+        ],
+        [
+          "Iterations",
+          "See Leiden procedure in Section 2.7",
+          "3 whole-cohort passes, giving 660,246 updates",
+          "100 actual sweeps per chain with dmh_iter=5",
+          "One pixel pass and 5,000 cell iterations"
+        ],
+        [
+          "Seed",
+          "42",
+          "42",
+          "Sampling seed 42 primary and 43 sensitivity",
+          "42"
+        ]
+      ],
+      "cell_order_sha256": "263b8b5ccc53ae35f8f4cf0bfbf04aa2b49ccf245e6f5fb1d87f83d58a0e2a0b"
+    },
+    "S2B": {
+      "caption_old": "Table S2B. Channel membership.",
+      "rows": [
+        [
+          "Channel group",
+          "Leiden",
+          "FlowSOM",
+          "SpatialSort",
+          "PIXIE"
+        ],
+        [
+          "Shared 45 protein markers",
+          "Included",
+          "Included",
+          "Included",
+          "Included"
+        ],
+        [
+          "CD123",
+          "Included",
+          "Included",
+          "Included",
+          "Included"
+        ],
+        [
+          "CDX2",
+          "Included",
+          "Included",
+          "Included",
+          "Included"
+        ],
+        [
+          "Hoechst1",
+          "Excluded",
+          "Excluded",
+          "Excluded",
+          "Included"
+        ],
+        [
+          "Total selected inputs",
+          "47",
+          "47",
+          "47",
+          "48"
+        ]
+      ],
+      "cell_order_sha256": "2ceaf4ada59ce9b0b566a2fb15f3ef8383c0b93f18de5fc3783d7bb6177a028e"
+    },
+    "S6a": {
+      "caption_old": "Table S6a. Paired reference agreement.",
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Means (%)",
+          "Means + fractions (%)",
+          "Paired change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "52.86",
+          "58.12",
+          "+5.26"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "36.66",
+          "36.05",
+          "-0.61"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "36.13",
+          "32.38",
+          "-3.75"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "41.32",
+          "35.64",
+          "-5.68"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "46.78",
+          "50.27",
+          "+3.49"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "37.48",
+          "36.82",
+          "-0.66"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "33.11",
+          "36.17",
+          "+3.06"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "36.04",
+          "42.54",
+          "+6.50"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "46.16",
+          "47.51",
+          "+1.35"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "39.57",
+          "41.84",
+          "+2.27"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "33.31",
+          "33.80",
+          "+0.49"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "38.70",
+          "36.40",
+          "-2.30"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "42.58",
+          "44.96",
+          "+2.38"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "28.38",
+          "27.50",
+          "-0.88"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "22.62",
+          "23.06",
+          "+0.45"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "35.31",
+          "26.56",
+          "-8.75"
+        ]
+      ],
+      "cell_order_sha256": "640c9399b8cc566f5ed0e13c7c7a81f51832e7991a42c174959f06baef50a4e0"
+    },
+    "S6b": {
+      "caption_old": "Table S6b. Macro-F1 and prediction coverage (data file: Table_S6b.csv).",
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Means macro-F1",
+          "Fractions macro-F1",
+          "Means coverage (%)",
+          "Fractions coverage (%)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "0.4582",
+          "0.4490",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "0.3028",
+          "0.2713",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "0.2152",
+          "0.2074",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "0.2777",
+          "0.2553",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "0.3842",
+          "0.4165",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "0.2884",
+          "0.2999",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "0.1966",
+          "0.2226",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "0.2527",
+          "0.2751",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "0.4073",
+          "0.4133",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "0.3189",
+          "0.2917",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "0.2090",
+          "0.2154",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "0.2689",
+          "0.2619",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "0.3556",
+          "0.3804",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "0.2435",
+          "0.2262",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "0.1327",
+          "0.1508",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "0.2268",
+          "0.1731",
+          "100.00",
+          "100.00"
+        ]
+      ],
+      "cell_order_sha256": "42990b3ebc74f517234a23be14b06dada4368afd699f5adc4f1981b64c437576"
+    },
+    "S6c": {
+      "caption_old": "Table S6c. Decomposition of paired agreement changes.",
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Valid-label term (pp)",
+          "Delivery term (pp)",
+          "Total change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "+5.26",
+          "0.00",
+          "+5.26"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "-0.61",
+          "0.00",
+          "-0.61"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "-3.75",
+          "0.00",
+          "-3.75"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "-5.68",
+          "0.00",
+          "-5.68"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "+3.49",
+          "0.00",
+          "+3.49"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "-0.66",
+          "0.00",
+          "-0.66"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "+3.06",
+          "0.00",
+          "+3.06"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "+6.50",
+          "0.00",
+          "+6.50"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "+1.35",
+          "0.00",
+          "+1.35"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "+2.27",
+          "0.00",
+          "+2.27"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "+0.49",
+          "0.00",
+          "+0.49"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "-2.30",
+          "0.00",
+          "-2.30"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "+2.38",
+          "0.00",
+          "+2.38"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "-0.88",
+          "0.00",
+          "-0.88"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "+0.45",
+          "0.00",
+          "+0.45"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "-8.75",
+          "0.00",
+          "-8.75"
+        ]
+      ],
+      "cell_order_sha256": "877604d9a79d010a890d6f634757a0572dda3398d10c3dd6c1c0cfb1ca0ce287"
+    },
+    "S6d": {
+      "caption_old": "Table S6d. Model routes and inference settings.",
+      "rows": [
+        [
+          "Model",
+          "Requested model ID",
+          "Pinned route",
+          "Reasoning",
+          "Decoding fields sent"
+        ],
+        [
+          "GPT-6 Astra",
+          "openai/gpt-6-astra",
+          "openai",
+          "high",
+          "Batch; max_tokens 32768; seed 42; temperature/top-p omitted"
+        ],
+        [
+          "Claude Opus 5.5",
+          "anthropic/claude-opus-5.5",
+          "anthropic",
+          "high",
+          "Batch; max_tokens 32768; seed omitted; temperature/top-p omitted"
+        ],
+        [
+          "Gemini 4 Argon",
+          "google/gemini-4-argon",
+          "google-vertex/global",
+          "high",
+          "Standard streaming; max_tokens 943718; provider continuation segments; seed 42; temperature/top-p omitted"
+        ],
+        [
+          "DeepSeek V4.1 Flash 1017",
+          "deepseek/deepseek-v4.1-flash-1017",
+          "OpenRouter routes recorded per request",
+          "high",
+          "Standard streaming; max_tokens 943718; seed omitted; temperature/top-p omitted"
+        ]
+      ],
+      "cell_order_sha256": "39108f076b37e056e9a1e42e3404938aaec8f42862e998f058e58977b3a93a92"
+    }
+  }
+}

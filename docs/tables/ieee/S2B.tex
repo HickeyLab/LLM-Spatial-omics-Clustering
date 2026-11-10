@@ -1,0 +1,23 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S2B\\
+CHANNEL MEMBERSHIP\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1.5\hsize\raggedright\arraybackslash}X>{\hsize=0.875\hsize\raggedright\arraybackslash}X>{\hsize=0.875\hsize\raggedright\arraybackslash}X>{\hsize=0.875\hsize\raggedright\arraybackslash}X>{\hsize=0.875\hsize\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Channel group} & \textbf{Leiden} & \textbf{FlowSOM} & \textbf{SpatialSort} & \textbf{PIXIE} \\
+\midrule
+Shared 45 protein markers & Included & Included & Included & Included \\
+CD123 & Included & Included & Included & Included \\
+CDX2 & Included & Included & Included & Included \\
+Hoechst1 & Excluded & Excluded & Excluded & Included \\
+Total selected inputs & 47 & 47 & 47 & 48 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

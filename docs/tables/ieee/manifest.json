@@ -1,0 +1,331 @@
+{
+  "schema": "manuscript.ieee_style_table_format.v1",
+  "format_only": true,
+  "style_source": "https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE-Editorial-Style-Manual-for-Authors.pdf",
+  "stable_supplementary_ids_preserved": true,
+  "roman_numeral_renumbering_applied": false,
+  "new_scientific_calls_or_fits": 0,
+  "source_tables_sha256": "57a61733dc57146d68dee23c39e66bded219c2b0d82ebbd828c04f34139f8f53",
+  "tables": {
+    "S1": {
+      "row_count_including_header": 7,
+      "column_count": 6,
+      "cell_order_sha256": "4275ec628067f81164f828339b11bd18b9006f01ad4b3865ad26d5c64b8264e0",
+      "numeric_columns_zero_based": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "caption_label": "TABLE S1",
+      "caption_title": "REDSEA MATCHING AND CELL RETENTION AUDIT",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 2.9444444444444446,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "7b811a67355f3cef4fdc7738fc7c7d90adaee9e93572aa707c7a96ad0ae0bebb",
+          "bytes": 15673
+        },
+        ".standalone.html": {
+          "sha256": "1b2a95233cab658461c5c7e9fcc427c1380bc777e3332ce74f747ae6b809cbf1",
+          "bytes": 15982
+        },
+        ".tsv": {
+          "sha256": "cfba8be686efb4e14139fca8d4cb8fff746a5752f076ecc12c080d1bff6372c6",
+          "bytes": 513
+        },
+        ".tex": {
+          "sha256": "2abc62397cb061a713f5577474f6eb429bf7e3c8a925f86756bac4eb8ecaf9c9",
+          "bytes": 1373
+        },
+        ".pdf": {
+          "sha256": "38643460dd5ea1a2eb6be53baf88722d257775318467298c64494e0f6fa016f4",
+          "bytes": 49463
+        },
+        ".png": {
+          "sha256": "d12611c1ccbd09159d34882198216c65732332185c2dc9c0b7a23490b1a8dde9",
+          "bytes": 367332
+        }
+      }
+    },
+    "S2A": {
+      "row_count_including_header": 9,
+      "column_count": 5,
+      "cell_order_sha256": "263b8b5ccc53ae35f8f4cf0bfbf04aa2b49ccf245e6f5fb1d87f83d58a0e2a0b",
+      "numeric_columns_zero_based": [],
+      "caption_label": "TABLE S2A",
+      "caption_title": "CLUSTERING CONFIGURATIONS AND HYPERPARAMETERS",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.5,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "a74e371121499e09b0ac0b32319a571895eb2b0efb0028b36406b2d05f94dc0f",
+          "bytes": 17194
+        },
+        ".standalone.html": {
+          "sha256": "3beb3cc067a98dd73e5101d65a91c2360388c5060376fff0921d360f8f3098b1",
+          "bytes": 17510
+        },
+        ".tsv": {
+          "sha256": "a1a2f4ab8e94af85dd734cc2ec9765378307b9c741bd23336bd057b45850f440",
+          "bytes": 1040
+        },
+        ".tex": {
+          "sha256": "ffd95fc3b6e7053e0a5340cb1e17fb625e6330a6935865adee172e8e1954ea95",
+          "bytes": 1871
+        },
+        ".pdf": {
+          "sha256": "d802a7460da9de794b4fc8aa72c9bee338c549a28d36013aca890f2c4fdb2457",
+          "bytes": 56808
+        },
+        ".png": {
+          "sha256": "6090a6d8c4f6330e9dd7808ce4e59f2ca1d4927d1005d1d0325df1a2af1c7d8a",
+          "bytes": 685506
+        }
+      }
+    },
+    "S2B": {
+      "row_count_including_header": 6,
+      "column_count": 5,
+      "cell_order_sha256": "2ceaf4ada59ce9b0b566a2fb15f3ef8383c0b93f18de5fc3783d7bb6177a028e",
+      "numeric_columns_zero_based": [],
+      "caption_label": "TABLE S2B",
+      "caption_title": "CHANNEL MEMBERSHIP",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 2.3333333333333335,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "ce94d27f17a3581cee6c20ac6fee9b378f8f0ed2e48644a64b31a1fc2c61c56c",
+          "bytes": 11292
+        },
+        ".standalone.html": {
+          "sha256": "fb83a4756bfd61ef2f88dca5bba844b8df7aab638d0bd33809bfab9f9073fef2",
+          "bytes": 11581
+        },
+        ".tsv": {
+          "sha256": "47d5109a090fa01427e54e6183e5734b130f2c57faff7410908bae3efa49046b",
+          "bytes": 271
+        },
+        ".tex": {
+          "sha256": "23fca71012e55dc173c1596c1f9905dce68a230f3fc5a36cfb3230a9d6d40d96",
+          "bytes": 1036
+        },
+        ".pdf": {
+          "sha256": "4b7b9c933d14806decc430040e862c2968c3d8e2fac2d93ef29ce9ecfc2b3229",
+          "bytes": 48592
+        },
+        ".png": {
+          "sha256": "35674d0dfe379b725c91d94ae13a0cf5f8e37b327400867765588677be3845b5",
+          "bytes": 177685
+        }
+      }
+    },
+    "S6a": {
+      "row_count_including_header": 17,
+      "column_count": 5,
+      "cell_order_sha256": "640c9399b8cc566f5ed0e13c7c7a81f51832e7991a42c174959f06baef50a4e0",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "caption_label": "TABLE S6a",
+      "caption_title": "PAIRED REFERENCE AGREEMENT",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.222222222222222,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "34571ce807a8bb74e3fb6784332aedbd71cb9d59ee6b689b058a5fb254cf0d30",
+          "bytes": 30385
+        },
+        ".standalone.html": {
+          "sha256": "6d6cce985a92f3f2cce25c41897db267c9a5514b22d8766d85ab46280b9ebffa",
+          "bytes": 30682
+        },
+        ".tsv": {
+          "sha256": "8c65c58cd65140b0eac1fa1f49f7f0ef3bbff7e6e6f4c3e106b20d21c1f816ff",
+          "bytes": 760
+        },
+        ".tex": {
+          "sha256": "71d4e92b3f8746a725972f299f6aa69b27c365a982ee7ec849a2df4604ab7c3e",
+          "bytes": 1641
+        },
+        ".pdf": {
+          "sha256": "3f3ad8dc80dd189cbd4d17b52b3bc7fb6edfd995a4de468139f2f308e3827a87",
+          "bytes": 51036
+        },
+        ".png": {
+          "sha256": "f016c04c1d70c2a9dd6088bce219ff4d0cd9a3e477fe4ee3cc7a4edb46a22067",
+          "bytes": 629919
+        }
+      }
+    },
+    "S6b": {
+      "row_count_including_header": 17,
+      "column_count": 6,
+      "cell_order_sha256": "42990b3ebc74f517234a23be14b06dada4368afd699f5adc4f1981b64c437576",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "caption_label": "TABLE S6b",
+      "caption_title": "MACRO-F1 AND PREDICTION COVERAGE (DATA FILE: Table_S6b.csv)",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.222222222222222,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "2ed523710f28c127d9af982242d9dc8337a8d350ce041bfc8de6f909d8088553",
+          "bytes": 36409
+        },
+        ".standalone.html": {
+          "sha256": "35bb2262f3e454876691ebfcda570981d299c5da8e1b62f7ccf912f2b14f3f7f",
+          "bytes": 36739
+        },
+        ".tsv": {
+          "sha256": "3c02ac8f2e51302ac5f25ab241205457d5761ff3a8aea650d6aacd8e64935653",
+          "bytes": 945
+        },
+        ".tex": {
+          "sha256": "8e0b6cc148e797d5798b0e93d8aad11035dc779c01412618c2bded902f36a028",
+          "bytes": 1953
+        },
+        ".pdf": {
+          "sha256": "589d348b2d5d91e1e670686ed6d2a26d5a60723642e258e9a8aad96a4f9eaa89",
+          "bytes": 52813
+        },
+        ".png": {
+          "sha256": "0e7a476adb9d185f0a4047ee327e1361fc479529849f3137682c514ee502a466",
+          "bytes": 679119
+        }
+      }
+    },
+    "S6c": {
+      "row_count_including_header": 17,
+      "column_count": 5,
+      "cell_order_sha256": "877604d9a79d010a890d6f634757a0572dda3398d10c3dd6c1c0cfb1ca0ce287",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "caption_label": "TABLE S6c",
+      "caption_title": "DECOMPOSITION OF PAIRED AGREEMENT CHANGES",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.222222222222222,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "993b6476c4612dcc75edf8591de8b6c43eb46b5827d667b12cb3344869e63fd1",
+          "bytes": 30377
+        },
+        ".standalone.html": {
+          "sha256": "f4bb6e55f973cb1ffe930bb9a25db6a7ab85babb33687d639cbce08e28f6c0ef",
+          "bytes": 30689
+        },
+        ".tsv": {
+          "sha256": "ecf389a58615a02ed6e62244319dad275f5ccb9fa5a5e2fe2f4714664cce52ed",
+          "bytes": 752
+        },
+        ".tex": {
+          "sha256": "2cdac2ff570da8652ea7c6bfa741aebf9a298c32301c2cf96d2fa895cdd63467",
+          "bytes": 1646
+        },
+        ".pdf": {
+          "sha256": "1a15126776d1a3f2460ecaa86b898d70dd8b997edc7f4f2e1345d4e3d1503be6",
+          "bytes": 53209
+        },
+        ".png": {
+          "sha256": "5ced29e9ffaed93141f992f803b793e9a41975adb6502f6920945ee1cf020897",
+          "bytes": 594451
+        }
+      }
+    },
+    "S6d": {
+      "row_count_including_header": 5,
+      "column_count": 5,
+      "cell_order_sha256": "39108f076b37e056e9a1e42e3404938aaec8f42862e998f058e58977b3a93a92",
+      "numeric_columns_zero_based": [],
+      "caption_label": "TABLE S6d",
+      "caption_title": "MODEL ROUTES AND INFERENCE SETTINGS",
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 3.5555555555555554,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "files": {
+        ".html": {
+          "sha256": "0570eb007cd1e8d93774dfd2dc8ccbbcac0dbd6aa7cb5d2a09b47b309cc9c682",
+          "bytes": 9927
+        },
+        ".standalone.html": {
+          "sha256": "44e0bd7146e06cb24dcecad13436c65b9979aa14ff6017fc3cd938145d4b210a",
+          "bytes": 10233
+        },
+        ".tsv": {
+          "sha256": "0542c8142254277ca9cb0ac9ec5e4b13630f41412899339c2c1cbf47ce849452",
+          "bytes": 645
+        },
+        ".tex": {
+          "sha256": "0d275993bc298b8d3a0f2b44d23cc85bd0e2ef4eb3e594cbb2a21a89ce719a8c",
+          "bytes": 1414
+        },
+        ".pdf": {
+          "sha256": "1c7d20eb340db03b0be939fbd962edb270672ccea1e19c8858ecbb814088d700",
+          "bytes": 52829
+        },
+        ".png": {
+          "sha256": "7aac34a8d7e1ea07e8654f8a5112e5b7992a3d6afffda6ece17a8f5411e7fcf0",
+          "bytes": 460399
+        }
+      }
+    }
+  }
+}

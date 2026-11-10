@@ -1,0 +1,9 @@
+Field	Leiden	FlowSOM	SpatialSort	PIXIE
+Inputs	47 markers	47 markers	47 markers	48 image channels
+Transform	arcsinh(x/5)	arcsinh(x/5)	arcsinh(x/5)	Pixel and cell composition pipeline
+Scaling	StandardScaler within each region	RobustScaler on all B004 cells	RobustScaler on all B004 cells	Channel and composition normalization
+Configured and occupied clusters	300 and 300	300 requested and 299 occupied	300 requested. 229 occupied in the primary chain and 231 in the sensitivity chain	300 and 300
+Implementation	K320 local Leiden with 20 within-parent merges	32×32 self-organizing map followed by Ward clustering	24 neighbors and precision 0.65	10×10 pixel map and 24×24 cell map
+Sigma and learning rate	See Leiden procedure in Section 2.7	1.0 and 0.3	Not applicable	Pixel 5.0 and 0.05. Cell 2.0 and 0.3
+Iterations	See Leiden procedure in Section 2.7	3 whole-cohort passes, giving 660,246 updates	100 actual sweeps per chain with dmh_iter=5	One pixel pass and 5,000 cell iterations
+Seed	42	42	Sampling seed 42 primary and 43 sensitivity	42

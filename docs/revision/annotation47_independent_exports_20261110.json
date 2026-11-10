@@ -1,6 +1,6 @@
 {
   "schema": "annotation47.independent_export_qa.v1",
-  "checked_at": "2026-11-10T21:42:51.483550+00:00",
+  "checked_at": "2026-11-10T22:23:39.618796+00:00",
   "passed": true,
   "exports_checked": 36,
   "figures_checked": 9,
@@ -92,10 +92,10 @@
         "svg"
       ],
       "sha256": {
-        "png": "ed809fa0fd4b5e7814aa318630f4cdc77a186d103c67a2148cc6f9a469a11d84",
-        "tiff": "e74a56d007ba87777114bbac30fcead16ad837a73d7691703221df9627ebaa1b",
-        "pdf": "32853c24384e61528052a2b582b763b5cc7c6d5f5fbbf0ac13c51eb4ca9cc166",
-        "svg": "c0808c6b7e2f745886f2ad788957c0a9d4b11253669917784faa09d15698c07e"
+        "png": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+        "tiff": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
+        "pdf": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
+        "svg": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638"
       },
       "raster_dimensions": [
         3900,
@@ -120,7 +120,8 @@
       "panels": "ABCDE",
       "editable_svg_text_nodes": 150,
       "native_text_in_page_bounds": true,
-      "minimum_effective_embedded_image_dpi": 609.9999759710323
+      "minimum_effective_embedded_image_dpi": 609.9999759710323,
+      "format_only_update": "Color encoding only: RdYlGn red low, green high; numerical arrays, limits, text and geometry unchanged."
     },
     {
       "figure": "Figure_S4",
@@ -131,10 +132,10 @@
         "svg"
       ],
       "sha256": {
-        "png": "bcc0a898d8a63d53bbf6fe1eabd99df9f24dc4bfd9d942eac9d17cb4472b317d",
-        "tiff": "6cb2996f7d1563ccb484f2f0023656e91bc209405f59c9ac1928c1dcef315e9c",
-        "pdf": "6e838a565f5ce9b95bccbd35cf0d7ee3f134b5ae785888e14a82e423cba4d44e",
-        "svg": "e6aac5bf2ee93b3800758cb1db69f6d7c1eddf84ac6cb053d69fadc4067808b3"
+        "png": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
+        "tiff": "1f3ba7756f5420f3a19951cb330c0ea9784986091b5a8deb51e30a673efb3764",
+        "pdf": "1d46e3adcafacbf0528bffba10e895da95e8a5c8c08d0bb4c689d2046c3e1a47",
+        "svg": "439ed6e2aa88fc867c0f412db2719720e4ac9273c7066f606c1c4ac2bd762a0b"
       },
       "raster_dimensions": [
         3900,
@@ -159,7 +160,8 @@
       "panels": "ABCD",
       "editable_svg_text_nodes": 137,
       "native_text_in_page_bounds": true,
-      "minimum_effective_embedded_image_dpi": 609.9998543718676
+      "minimum_effective_embedded_image_dpi": 609.9998543718676,
+      "format_only_update": "Color encoding only: RdYlGn red low, green high; numerical arrays, limits, text and geometry unchanged."
     },
     {
       "figure": "Figure_S5",
@@ -208,10 +210,10 @@
         "svg"
       ],
       "sha256": {
-        "png": "a5fbc7c2883ea8905a875985a36dd30d74281ffedffd5c8056fac2cb2f6b3e46",
-        "tiff": "f908224b50d81272e9b9576cff74c57e303cea68bd362b2a2f8cc26ace46cd09",
-        "pdf": "3fea29206696905f5cbd627b52bd226d847e3a98cc2c084afd8833ca9b79d0bb",
-        "svg": "dd9b2c1b71c6234ff91454c70c35fb4b7d713da16932b562b57d0644a444ab83"
+        "png": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
+        "tiff": "1cff04dea14003db34996b7bf6cecff23bec19cba031cc0be373ca99b305545b",
+        "pdf": "6e8c81a4f0a50502128fe4135c830f8c06bc97c9511cdb6560ec6e900e19d57e",
+        "svg": "ac888158f037939146ce8e90e43e93341282229d71e557c9c63d0c3e0c5c9ba5"
       },
       "raster_dimensions": [
         3900,
@@ -236,7 +238,8 @@
       "panels": "AB",
       "editable_svg_text_nodes": 180,
       "native_text_in_page_bounds": true,
-      "minimum_effective_embedded_image_dpi": 609.9999759710323
+      "minimum_effective_embedded_image_dpi": 609.9999759710323,
+      "format_only_update": "Color encoding only: RdYlGn red low, green high; numerical arrays, limits, text and geometry unchanged."
     },
     {
       "figure": "Figure_S7",
@@ -353,5 +356,7 @@
       "minimum_effective_embedded_image_dpi": 610.0000299541622
     }
   ],
-  "annotation_calls": 0
+  "annotation_calls": 0,
+  "format_only_supersession": "Three heatmap-containing figures recolored red-to-green; S11 intentionally retains exact original white-to-red Reds artwork per user instruction. All other export records retain verified identities. Original QA record is checksum-archived.",
+  "format_only_verification": "docs/revision/red_green_heatmap_formatting_20261110.json"
 }

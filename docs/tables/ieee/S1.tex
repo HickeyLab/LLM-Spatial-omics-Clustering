@@ -1,0 +1,24 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S1\\
+REDSEA MATCHING AND CELL RETENTION AUDIT\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1.14\hsize\raggedright\arraybackslash}X>{\hsize=1.14\hsize\raggedleft\arraybackslash}X>{\hsize=1.14\hsize\raggedleft\arraybackslash}X>{\hsize=1.02\hsize\raggedleft\arraybackslash}X>{\hsize=0.78\hsize\raggedleft\arraybackslash}X>{\hsize=0.78\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Segmentation method} & \textbf{Processed before / after} & \textbf{Matched before / after} & \textbf{Shared IDs, fixed coordinates} & \textbf{Before-only IDs} & \textbf{After-only IDs} \\
+\midrule
+Mesmer & 162,439 / 161,867 & 133,665 / 133,266 & 161,656 & 783 & 211 \\
+CellposeCyto3 & 145,925 / 145,270 & 118,668 / 118,104 & 145,011 & 914 & 259 \\
+CellposeSAM & 173,783 / 172,465 & 137,808 / 136,927 & 172,169 & 1,614 & 296 \\
+CellSAM & 195,752 / 194,832 & 154,163 / 153,385 & 194,071 & 1,681 & 761 \\
+InstanSeg & 198,959 / 196,717 & 146,477 / 144,996 & 195,459 & 3,500 & 1,258 \\
+MicroSAM & 197,314 / 197,400 & 149,626 / 149,080 & 196,124 & 1,190 & 1,276 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

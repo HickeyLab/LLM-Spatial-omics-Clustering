@@ -175,7 +175,7 @@ def figure_s4(out):
     a=axes(f,29,12,40,58)
     for i,lab in enumerate(labs):
         z=d[d.cell_type.eq(lab)].set_index("marker").reindex(markers)
-        dots=a.scatter(range(len(markers)),[i]*len(markers),s=.02+3*z.fraction_cells_pct/100,c=z.scaled_mean_expression,cmap="Reds",vmin=0,vmax=1,linewidths=.1,edgecolors="#8c8c8c")
+        dots=a.scatter(range(len(markers)),[i]*len(markers),s=.02+3*z.fraction_cells_pct/100,c=z.scaled_mean_expression,cmap="RdYlGn",vmin=0,vmax=1,linewidths=.1,edgecolors="#8c8c8c")
     a.set(yticks=range(27),yticklabels=labs,xticks=list(range(0,len(markers)-2,3))+[len(markers)-1],xticklabels=[markers[j] for j in list(range(0,len(markers)-2,3))+[len(markers)-1]],xlim=(-1,len(markers)),ylim=(26.5,-.5))
     plt.setp(a.get_xticklabels(),rotation=90)
     a.tick_params(length=0)

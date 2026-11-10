@@ -1,7 +1,7 @@
 {
   "schema": "annotation47.publication_validation.v1",
   "status": "pass_within_offline_scoring_and_figure_documentation_scope",
-  "checked_at": "2026-11-10T21:47:29.826439+00:00",
+  "checked_at": "2026-11-10T22:23:39.620458+00:00",
   "scope": "Scientific scoring, 9 changed native figure exports, retained inventory, documentation, source/archive integrity and 90 focused tests. Google Doc saved suggestions and placement are verified separately by the parent publication task.",
   "accepted_request_items": 128,
   "annotation_sets": 32,
@@ -45,8 +45,11 @@
   "no_new_fits": true,
   "proofs": {
     "docs/revision/annotation47_independent_scoring_20261110.json": "e485fb5632c6b6d06d708d0af036d6697777eed155231bcefda4bb6250bcdef0",
-    "docs/revision/annotation47_independent_exports_20261110.json": "395818e6d2229ee3367ef6b0bed87aa7d5a9e423cd6667f61702c67c2b347084",
+    "docs/revision/annotation47_independent_exports_20261110.json": "0036f46b5b4dbb4b05385be6778cfe9a96c04ca119782bbce854ee514f6ae516",
     "docs/revision/reference47_independent_verification_20261110.json": "37ecf6a317af0644425c032a33b6b93686c77b34374653433eb8c0d96a95300b",
-    "docs/revision/annotation47_documentation_verification_20261110.json": "3df735b4cb71fec9d7ae23a27585dc7f865dbe6499881c16feb88a64923c061a"
-  }
+    "docs/revision/annotation47_documentation_verification_20261110.json": "3df735b4cb71fec9d7ae23a27585dc7f865dbe6499881c16feb88a64923c061a",
+    "docs/revision/red_green_heatmap_formatting_20261110.json": "e75204e4d118e844ec333ff812544ce805dd43345f81f8a4ed176cd06a32ca6f",
+    "docs/revision/red_green_heatmap_independent_qa_20261110.json": "cf28cf9e8692716f89e849855e2f0ef2424241a2a66526f40e284bf57e0d2978"
+  },
+  "format_only_update": "User-selected red/green heatmaps in Figures4/S4/S6 only; S11 explicitly remains exact original white-to-red Reds artwork. Numerical results and prior scientific validation unchanged; 7 alignment tests passed."
 }

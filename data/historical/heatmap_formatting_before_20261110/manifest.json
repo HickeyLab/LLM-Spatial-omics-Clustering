@@ -1,0 +1,25 @@
+{
+  "schema": "heatmap_formatting.metadata_archive.v1",
+  "base_commit": "582066b07f8eae341d753d7c8d1a33c5fce2f104",
+  "files": [
+    {
+      "original_path": "docs/publication_figure_verification.json",
+      "archive_path": "data/historical/heatmap_formatting_before_20261110/docs/publication_figure_verification.json",
+      "sha256": "dfebf8fd8b08dca6d4d1e2e8b0547e26bf10c20eaef0efd69c032e4679b90a48",
+      "bytes": 2114
+    },
+    {
+      "original_path": "docs/revision/annotation47_independent_exports_20261110.json",
+      "archive_path": "data/historical/heatmap_formatting_before_20261110/docs/revision/annotation47_independent_exports_20261110.json",
+      "sha256": "395818e6d2229ee3367ef6b0bed87aa7d5a9e423cd6667f61702c67c2b347084",
+      "bytes": 9682
+    },
+    {
+      "original_path": "docs/revision/annotation47_validation_20261110.json",
+      "archive_path": "data/historical/heatmap_formatting_before_20261110/docs/revision/annotation47_validation_20261110.json",
+      "sha256": "0da3be073f6a2e817dd58fcdb8ea693e64be3da0ca9f6dbdd68ec98870c809b1",
+      "bytes": 1948
+    }
+  ],
+  "original_artwork_before_formatting": "Exact bytes remain in the base Git commit and the task before_snapshot; no existing archival images changed."
+}

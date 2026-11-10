@@ -429,7 +429,9 @@ Figure S5. Reference agreement upper bounds for the primary clustering assignmen
 
 Figure S6. Leiden–Opus 5.5 annotation diagnostics for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.
 
-### Table S1. REDSEA matching and cell retention audit.
+### TABLE S1
+
+REDSEA MATCHING AND CELL RETENTION AUDIT
 
 | Segmentation method | Processed before / after | Matched before / after | Shared IDs, fixed coordinates | Before-only IDs | After-only IDs |
 | --- | --- | --- | --- | --- | --- |
@@ -442,7 +444,9 @@ Figure S6. Leiden–Opus 5.5 annotation diagnostics for the means-plus-fractions
 
 Counts are pooled across eight B004 regions. Processed counts refer to objects in the processed H5ADs after preprocessing. Matched counts include all objects accepted by directed nearest-neighbor matching at a maximum distance of 10 source-coordinate units after interchanging the reference x and y coordinates. Multiple segmented objects could match the same reference cell. Shared segmentation objects had the same CellID within a region and unchanged coordinates. Before-only and after-only counts use CellID, not saved row indices. The before–after comparison of shared segmentation objects further required an accepted match to the same reference cell and label in both conditions, so the shared-ID column is not its final scoring denominator. These counts describe retention and correspondence, not segmentation-boundary accuracy.
 
-### Table S2A. Clustering configurations and hyperparameters.
+### TABLE S2A
+
+CLUSTERING CONFIGURATIONS AND HYPERPARAMETERS
 
 | Field | Leiden | FlowSOM | SpatialSort | PIXIE |
 | --- | --- | --- | --- | --- |
@@ -457,7 +461,9 @@ Counts are pooled across eight B004 regions. Processed counts refer to objects i
 
 Table S2A reports the clustering configurations and hyperparameters. Occupied clusters are those containing at least one cell. Additional procedure details are given in Section 2.7. Leiden, FlowSOM and SpatialSort used 47 protein markers. PIXIE selected 47 protein channels and the Hoechst1 DNA channel from the 59 available image channels, then converted pixel-cluster assignments into vectors of pixel-metacluster fractions. Pixel-level and cell-level settings are reported separately for PIXIE. Table S2B identifies channel membership.
 
-### Table S2B. Channel membership.
+### TABLE S2B
+
+CHANNEL MEMBERSHIP
 
 | Channel group | Leiden | FlowSOM | SpatialSort | PIXIE |
 | --- | --- | --- | --- | --- |
@@ -515,7 +521,9 @@ Scoring and reporting. The primary endpoint is the equal-weighted mean of refere
 
 Figure S7. Reference-agreement decomposition for the 16 clustering-method/model combinations in the means-plus-fractions arm. For each test region, the fraction of correctly labeled cells, the gap to the cluster-majority upper bound, and the within-cluster minority-reference-label fraction sum to one. The two test-region fractions are averaged equally. The original 28-label vocabulary includes Noise. Values inside bars are percentages. The components describe arithmetic reference disagreement and do not identify independent biological error mechanisms. Each condition uses one accepted annotation per cluster.
 
-### Table S6a. Paired reference agreement.
+### TABLE S6a
+
+PAIRED REFERENCE AGREEMENT
 
 | Clustering | Model | Means (%) | Means + fractions (%) | Paired change (pp) |
 | --- | --- | --- | --- | --- |
@@ -538,7 +546,9 @@ Figure S7. Reference-agreement decomposition for the 16 clustering-method/model 
 
 Values are single-run outcomes after equally averaging the same two test regions. Paired changes are means-plus-fractions minus means in percentage points (pp). Missing or invalid predictions remain errors in the full planned denominator.
 
-### Table S6b. Macro-F1 and prediction coverage (data file: Table_S6b.csv).
+### TABLE S6b
+
+MACRO-F1 AND PREDICTION COVERAGE (DATA FILE: Table_S6b.csv)
 
 | Clustering | Model | Means macro-F1 | Fractions macro-F1 | Means coverage (%) | Fractions coverage (%) |
 | --- | --- | --- | --- | --- | --- |
@@ -561,7 +571,9 @@ Values are single-run outcomes after equally averaging the same two test regions
 
 Macro-F1 uses all 28 labels, with absent-class F1 set to zero in each test region. Prediction coverage is the proportion of cells with a valid prediction. Values equally average the two test-region outcomes and have no across-repetition standard deviation.
 
-### Table S6c. Decomposition of paired agreement changes.
+### TABLE S6c
+
+DECOMPOSITION OF PAIRED AGREEMENT CHANGES
 
 | Clustering | Model | Valid-label term (pp) | Delivery term (pp) | Total change (pp) |
 | --- | --- | --- | --- | --- |
@@ -584,7 +596,9 @@ Macro-F1 uses all 28 labels, with absent-class F1 set to zero in each test regio
 
 Both terms use the full region denominator and sum to the means-plus-fractions minus means agreement change. The label term counts net reference matches gained or lost when both arms returned valid labels. The delivery term counts matches gained or lost when only one arm returned a valid label. Neither term estimates labels for failed calls. All final predictions were delivered, so delivery terms are zero and observed agreement changes arise from label changes. Changes are percentage points (pp).
 
-### Table S6d. Model routes and inference settings.
+### TABLE S6d
+
+MODEL ROUTES AND INFERENCE SETTINGS
 
 | Model | Requested model ID | Pinned route | Reasoning | Decoding fields sent |
 | --- | --- | --- | --- | --- |
@@ -600,6 +614,8 @@ All requests used OpenRouter with supported high reasoning, no tools or retrieva
 Figure S10. Descriptive comparison of all-marker means with means plus fractions for (A) GPT-6 Astra, (B) Claude Opus 5.5, (C) Gemini 4 Argon and (D) DeepSeek V4.1 Flash 1017. Points show reference agreement averaged equally across the two test regions, using the fixed 28-label vocabulary including Noise. Lines connect the two input arms for the same frozen clustering method. Each arm uses one accepted annotation per cluster; no across-repetition SD or repeatability estimate is shown. Means, marker order, anonymous query IDs, label vocabulary and request batch boundaries are identical within each input pair; only the fractions matrix is added.
 
 ## Supplementary table file index
+
+[IEEE-style table assets](tables/ieee/README.md) provide native-paste HTML, LaTeX, PDF and PNG versions of Tables S1, S2A, S2B and S6a–d with unchanged cell contents.
 
 Complete numerical sources, accepted prediction mappings, execution receipts and reproducible scoring and figure scripts are provided with the GitHub revision. Tables S1–S2 and S7 document compensation and clustering; Tables S6a–S6d report the paired annotation outcomes, delivery and execution settings. Companion benchmark tables provide regional, cell-type, cluster and confusion-matrix values. Existing versioned releases and original source evidence remain preserved separately from the active analysis.
 

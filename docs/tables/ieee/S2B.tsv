@@ -1,0 +1,6 @@
+Channel group	Leiden	FlowSOM	SpatialSort	PIXIE
+Shared 45 protein markers	Included	Included	Included	Included
+CD123	Included	Included	Included	Included
+CDX2	Included	Included	Included	Included
+Hoechst1	Excluded	Excluded	Excluded	Included
+Total selected inputs	47	47	47	48

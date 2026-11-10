@@ -74,7 +74,7 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_4.png",
-          "sha256": "ed809fa0fd4b5e7814aa318630f4cdc77a186d103c67a2148cc6f9a469a11d84"
+          "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d"
         }
       ],
       "caption": "Figure 4. Prespecified Leiden–Opus 5.5 annotation pipeline using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Opus annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected before the annotation outcomes.",
@@ -146,7 +146,7 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_S4.png",
-          "sha256": "bcc0a898d8a63d53bbf6fe1eabd99df9f24dc4bfd9d942eac9d17cb4472b317d"
+          "sha256": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f"
         }
       ],
       "caption": "Figure S4. Reference cell types and comparative clustering evaluation. (A) Stored marker means and fractions above 0.0 across 27 original non-Noise reference types (209,587 cells), using all 47 stored protein markers (45 H5AD X channels plus CD123 and CDX2 observation columns) without another transformation. Dot size shows above-cutoff fractions, which are not validated marker-positive fractions. Color shows mean expression min–max scaled to 0–1 independently by marker across the displayed types. (B) Reference-label maps across eight regions. (C) Reference-type composition of the 50 largest clusters per method (60 for FlowSOM), ordered by decreasing cell count, with colored segments indicating reference types. (D) Regional adjusted Rand index (ARI) and adjusted mutual information (AMI) (black dots, n = 8), cluster-level reference-label Shannon diversity and purity, and cell-type F1 and recall after majority labeling. Panel D uses 27 original non-Noise reference labels, distinct from the 20-class mapping in Figure 2. Lower Shannon diversity indicates less heterogeneous clusters. Colored points denote cluster-majority reference labels for diversity and purity, and reference types for F1 and recall. Boxes show interquartile ranges, center lines medians and whiskers 1.5 times the interquartile range.",
@@ -175,7 +175,7 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_S6.png",
-          "sha256": "a5fbc7c2883ea8905a875985a36dd30d74281ffedffd5c8056fac2cb2f6b3e46"
+          "sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d"
         }
       ],
       "caption": "Figure S6. Leiden–Opus 5.5 annotation diagnostics for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.",
