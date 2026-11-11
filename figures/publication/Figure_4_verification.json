@@ -64,25 +64,25 @@
     "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
-    "Prespecified Leiden\u2013Opus5.5 means-plus-fractions pipeline. B/C use test cells. D/E use all220082 cells and original28 labels.",
+    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells. D/E use all220082 cells and original28 labels.",
     "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
   ],
   "files": {
     "Figure_4.svg": {
-      "sha256": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638",
-      "bytes": 2640618
+      "sha256": "cda2db842b7054e19852a4b6c371a341dac7708a69404afb1a8fee0521366d1a",
+      "bytes": 2641505
     },
     "Figure_4.pdf": {
-      "sha256": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
-      "bytes": 1319807
+      "sha256": "a8915406e16c2db625cd53df383ff4a238506b8708b0bf4cd10026240277cd48",
+      "bytes": 1320563
     },
     "Figure_4.png": {
-      "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
-      "bytes": 1294375
+      "sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6",
+      "bytes": 1209221
     },
     "Figure_4.tiff": {
-      "sha256": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
-      "bytes": 2359476
+      "sha256": "4c6d3aebe79909dae708fe8801dbd3baf8d68a12fcad7acd8e01620097bff532",
+      "bytes": 2258628
     }
   }
 }

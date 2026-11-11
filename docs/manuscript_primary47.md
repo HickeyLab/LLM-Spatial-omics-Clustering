@@ -151,9 +151,9 @@ The gap to maximum agreement subtracts minority-label matches from majority-labe
 
 For displays summarizing predictions across the four LLMs, we used one accepted prediction per model and each cluster’s most frequent label, resolving ties in Astra, Opus, Argon and DeepSeek order without using reference labels. This display summary does not measure repeated-call consistency.
 
-### 2.14 End-to-end Leiden–Opus analysis
+### 2.14 End-to-end Leiden–Astra analysis
 
-The Leiden–Claude Opus 5.5 pairing was prespecified for the end-to-end illustration before annotation outcomes were inspected. Its three example clusters were the largest occupied Leiden clusters by cell count, with cluster-ID tie-breaking. The pipeline was not selected by reference agreement. Spatial displays used the fixed Figure 2C region.
+The Leiden–GPT-6 Astra pipeline was selected for the end-to-end illustration from the B004 benchmark results. Its three example clusters remained the largest occupied Leiden clusters by cell count, with cluster-ID tie-breaking; this cluster-selection rule was fixed before annotation outcomes were inspected. Spatial displays used the fixed Figure 2C region. Leiden–Opus 5.5 diagnostics are retained as a supplementary comparison (Figure S6).
 
 ### 2.15 Study partitions and annotation evaluation
 
@@ -229,17 +229,17 @@ Spatial maps compare reference labels with the four models’ Leiden predictions
 
 The primary benchmark and paired marker-representation comparison used the same frozen partitions, original 28-label vocabulary and accepted predictions. The paired comparison is reported in Section 3.5, Tables S6a–S6d and Figure S10.
 
-### 3.4 End-to-end evaluation of the Leiden–Opus annotation pipeline
+### 3.4 End-to-end evaluation of the Leiden–Astra annotation pipeline
 
-We characterized the prespecified Leiden–Opus 5.5 pipeline using confusion matrices, cell-type F1 and fixed-cluster reference-majority bounds (Figure 4). The pairing and example-cluster selection were fixed before annotation outcomes were inspected.
+We characterized the Leiden–GPT-6 Astra pipeline using confusion matrices, cell-type F1 and fixed-cluster reference-majority bounds (Figure 4). The pipeline was selected from the B004 benchmark results, where its means-plus-fractions test-region agreement was 58.12%, compared with 50.27% for Leiden–Opus 5.5. This descriptive selection does not provide an independent model-selection evaluation.
 
-The pooled test-region confusion matrix and cell-type F1 scores show how reference agreement varied across cell types and the two test regions (Figures 4B–C and S6A). Pooled test-region summaries weight cells equally and therefore differ from the equal-region primary endpoint.
+We characterized end-to-end Leiden–GPT-6 Astra performance using a pooled test-region confusion matrix and cell-type-specific F1 scores (Figures 4B–C). Performance varied across cell types and the two test regions. Pooled test-region summaries weight cells equally and therefore differ from the equal-region primary endpoint.
 
 Figures 4D–E and S6B compare full-cohort reference agreement with the maximum agreement achievable by assigning one label to each fixed cluster. The displayed components are reference agreement, the gap to maximum agreement and the within-cluster minority-label fraction. Reference agreement includes minority-reference cells whose label matches the assigned model label. These arithmetic components do not identify mutually exclusive groups of misclassified cells or causally attribute errors to pipeline stages. Figure 4E weights clusters by cell count; Figure S7 separately reports the primary equal-test-region decomposition.
 
 The three largest Leiden clusters are shown in Figure 4D with their model-assigned and reference-majority labels. Their selection depended only on cluster size, with cluster-ID tie-breaking, rather than agreement or marker appearance.
 
-Across all 220,082 cells, Leiden–Opus 5.5 achieved 48.27% reference agreement against a fixed-cluster upper bound of 68.69%, leaving a 20.41-percentage-point gap (Figure 4E). These full-cohort components are descriptive and are not the held-out test-region endpoint.
+Across all 220,082 cells, Leiden–GPT-6 Astra achieved 53.88% reference agreement, compared with a cluster-majority upper bound of 68.69%, leaving a 14.80-percentage-point gap (Figure 4E). These full-cohort components are descriptive and are not the held-out test-region endpoint.
 
 ### 3.5 Paired marker-representation comparison
 
@@ -399,7 +399,7 @@ Figure 3. Annotation benchmark using 47-marker cluster profiles. (A) Workflow fr
 
 ![Figure 4](../figures/manuscript/Figure_4.png)
 
-Figure 4. Prespecified Leiden–Opus 5.5 annotation pipeline using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Opus annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected before the annotation outcomes.
+Figure 4. End-to-end evaluation of Leiden clustering and GPT-6 Astra annotation using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Astra annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected from the B004 benchmark results; the cluster-size rule and spatial region were unchanged.
 
 ![Figure S1](../figures/manuscript/Figure_S1.png)
 
@@ -427,7 +427,7 @@ Figure S5. Reference agreement upper bounds for the primary clustering assignmen
 
 ![Figure S6](../figures/manuscript/Figure_S6.png)
 
-Figure S6. Leiden–Opus 5.5 annotation diagnostics for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.
+Figure S6. Leiden–Opus 5.5 annotation diagnostics retained as a supplementary comparison for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.
 
 ### TABLE S1
 

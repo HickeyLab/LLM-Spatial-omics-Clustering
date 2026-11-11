@@ -1,0 +1,49 @@
+{
+  "schema": "b004.astra_presentation.suggestions.v1",
+  "source_doc": "https://docs.google.com/document/d/1aqZgv5aFS-fgXT2KnZw3CXcxD_W3X1HgjRz_KXf1L18/edit?tab=t.epoyu1tdr39l",
+  "mode": "Suggesting",
+  "B005_B006_changes": 0,
+  "paid_calls": 0,
+  "replacements": [
+    {
+      "paragraph_index": 138,
+      "old": "2.14 End-to-end Leiden\u2013Opus analysis",
+      "new": "2.14 End-to-end Leiden\u2013Astra analysis"
+    },
+    {
+      "paragraph_index": 140,
+      "old": "Leiden clustering with Claude Opus 5.5 annotation was prespecified for the end-to-end analysis before annotation outcomes were inspected. Its three example clusters were the largest occupied Leiden clusters by cell count, with cluster-ID tie-breaking. The pipeline was not selected by reference agreement. Spatial displays used the fixed Figure 2C region.",
+      "new": "The Leiden\u2013GPT-6 Astra pipeline was selected for the end-to-end illustration from the B004 benchmark results. Its three example clusters remained the largest occupied Leiden clusters by cell count, with cluster-ID tie-breaking; this cluster-selection rule was fixed before annotation outcomes were inspected. Spatial displays used the fixed Figure 2C region. Leiden\u2013Opus 5.5 diagnostics are retained as a supplementary comparison (Figure S6)."
+    },
+    {
+      "paragraph_index": 226,
+      "old": "3.4 End-to-end evaluation of the Leiden\u2013Opus annotation pipeline",
+      "new": "3.4 End-to-end evaluation of the Leiden\u2013Astra annotation pipeline"
+    },
+    {
+      "paragraph_index": 228,
+      "old": "We characterized the prespecified Leiden\u2013Opus 5.5 pipeline using confusion matrices, cell-type F1 and fixed-cluster reference-majority bounds (Figure 4). The pairing and example-cluster selection were fixed before annotation outcomes were inspected.",
+      "new": "We characterized the Leiden\u2013GPT-6 Astra pipeline using confusion matrices, cell-type F1 and fixed-cluster reference-majority bounds (Figure 4). The pipeline was selected from the B004 benchmark results, where its means-plus-fractions test-region agreement was 58.12%, compared with 50.27% for Leiden\u2013Opus 5.5. This descriptive selection does not provide an independent model-selection evaluation."
+    },
+    {
+      "paragraph_index": 230,
+      "old": "We characterized end-to-end Leiden\u2013Opus 5.5 performance using a pooled test-region confusion matrix and cell-type-specific F1 scores (Figures 4B\u2013C and S6A). Performance varied across cell types and the two test regions. Pooled test-region summaries weight cells equally and therefore differ from the equal-region primary endpoint.",
+      "new": "We characterized end-to-end Leiden\u2013GPT-6 Astra performance using a pooled test-region confusion matrix and cell-type-specific F1 scores (Figures 4B\u2013C). Performance varied across cell types and the two test regions. Pooled test-region summaries weight cells equally and therefore differ from the equal-region primary endpoint."
+    },
+    {
+      "paragraph_index": 236,
+      "old": "Across all 220,082 cells, Leiden\u2013Opus 5.5 achieved 48.27% reference agreement, compared with a cluster-majority upper bound of 68.69%, leaving a 20.41-percentage-point gap (Figure 4E). These full-cohort components are descriptive and are not the held-out test-region endpoint.",
+      "new": "Across all 220,082 cells, Leiden\u2013GPT-6 Astra achieved 53.88% reference agreement, compared with a cluster-majority upper bound of 68.69%, leaving a 14.80-percentage-point gap (Figure 4E). These full-cohort components are descriptive and are not the held-out test-region endpoint."
+    },
+    {
+      "paragraph_index": 411,
+      "old": "Figure 4. End-to-end evaluation of Leiden clustering and Opus 5.5 annotation using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Opus annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected before the annotation outcomes.",
+      "new": "Figure 4. End-to-end evaluation of Leiden clustering and GPT-6 Astra annotation using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Astra annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected from the B004 benchmark results; the cluster-size rule and spatial region were unchanged."
+    },
+    {
+      "paragraph_index": 432,
+      "old": "Figure S6. Leiden\u2013Opus 5.5 annotation diagnostics for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.",
+      "new": "Figure S6. Leiden\u2013Opus 5.5 annotation diagnostics retained as a supplementary comparison for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction."
+    }
+  ]
+}

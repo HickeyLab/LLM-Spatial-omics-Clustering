@@ -92,9 +92,9 @@ def matrix_panel(f, x, y, metric, title, limits=(0, 100), fmt=".1f"):
     return a
 
 
-def focal_clusters():
+def focal_clusters(model_family="anthropic"):
     d = table("cluster_predictions.csv", dtype={"cluster_id": str})
-    d = d[d.model_family.eq("anthropic") & d.method.eq("leiden") & d.arm.eq(ARM)].copy()
+    d = d[d.model_family.eq(model_family) & d.method.eq("leiden") & d.arm.eq(ARM)].copy()
     if len(d) != 300 or d.n_cells.sum() != 220082:
         raise ValueError("Focal cluster denominator changed")
     return d
@@ -113,9 +113,9 @@ def legend_components(f, y, ncol=3):
              ncol=ncol, fontsize=5.5, handlelength=.85, columnspacing=1)
 
 
-def confusion_matrix(scope="pooled_test"):
+def confusion_matrix(scope="pooled_test", model_family="anthropic"):
     d = table("confusion.csv.gz")
-    d = d[d.model_family.eq("anthropic") & d.method.eq("leiden") & d.arm.eq(ARM)
+    d = d[d.model_family.eq(model_family) & d.method.eq("leiden") & d.arm.eq(ARM)
           & d.scope.eq(scope) & d.population.eq("all_labels")]
     cfg = policy()
     labels = cfg["labels"]
@@ -173,9 +173,9 @@ def figure_3(out):
 def figure_4(out):
     f = figure(191)
     panel(f, "A", 3, 2)
-    workflow_inputs = add_workflow(f, "4A")
+    workflow_inputs = add_workflow(f, "4A", annotation_model="Astra")
     panel(f, "B", 3, 35, "Test-cell confusion")
-    counts, mat = confusion_matrix()
+    counts, mat = confusion_matrix(model_family="openai")
     a = axes(f, 29, 54, 56, 56)
     h = heatmap(a, mat, counts.index, counts.columns, 0, 1, cmap="RdYlGn")
     plt.setp(a.get_xticklabels(), rotation=90)
@@ -183,7 +183,7 @@ def figure_4(out):
     colorbar(f, h, (29,43,56,1.7), None, ticks=[0,.5,1])
     panel(f, "C", 87, 35, "Cell-type F1")
     d = table("per_type_metrics.csv")
-    d = d[d.model_family.eq("anthropic") & d.method.eq("leiden") & d.arm.eq(ARM) & d.population.eq("all_labels")]
+    d = d[d.model_family.eq("openai") & d.method.eq("leiden") & d.arm.eq(ARM) & d.population.eq("all_labels")]
     labels = counts.index.tolist()
     pooled = d[d.scope.eq("pooled_test")].set_index("label").reindex(labels)
     a = axes(f, 119, 47, 42, 73)
@@ -199,7 +199,7 @@ def figure_4(out):
     a.set(yticks=range(28), yticklabels=labels, ylim=(27.7,-.7), xlim=(0,1), xticks=[0,.5,1], xlabel="F1 score")
     grid(a,"x")
     f.legend(handles=handles, loc="upper center", bbox_to_anchor=(.77,1-123/191), ncol=1, fontsize=5.5)
-    d = focal_clusters()
+    d = focal_clusters(model_family="openai")
     ex = d.sort_values(["n_cells", "cluster_id"], ascending=[False, True], kind="stable").head(3)
     panel(f, "D", 3, 145, "Three largest Leiden clusters")
     a = axes(f, 47, 154, 36, 22); left=np.zeros(3)
@@ -220,11 +220,11 @@ def figure_4(out):
         a.barh([0],[v],left=[left],height=.6,color=c,edgecolor="white",linewidth=.4)
         if v>.07:a.text(left+v/2,0,f"{v:.1%}",ha="center",va="center",fontsize=5.5,color="white" if k==0 else "black")
         left += v
-    a.set(yticks=[0],yticklabels=["Leiden–\nOpus 5.5"],xlim=(0,1),ylim=(-.6,.6),xticks=[0,.5,1],xlabel="Fraction of all cells")
+    a.set(yticks=[0],yticklabels=["Leiden–\nAstra"],xlim=(0,1),ylim=(-.6,.6),xticks=[0,.5,1],xlabel="Fraction of all cells")
     a.xaxis.set_major_formatter(PercentFormatter(1,decimals=0))
     legend_components(f,181)
     return finish(f,"Figure_4",out,{**input_hashes("confusion.csv.gz","per_type_metrics.csv","cluster_predictions.csv","protocol.json"),**workflow_inputs},
-                  notes=["Prespecified Leiden–Opus5.5 means-plus-fractions pipeline. B/C use test cells. D/E use all220082 cells and original28 labels.","Examples chosen by descending cell count, then clusterID; no reference-agreement selection."])
+                  notes=["Leiden–Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells. D/E use all220082 cells and original28 labels.","Examples chosen by descending cell count, then clusterID; no reference-agreement selection."])
 
 
 def figure_s6(out):

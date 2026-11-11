@@ -85,7 +85,7 @@ def feature_table(f,x,y,w,h,size=5.5):
                        transform=a.transAxes,ha='center',va='center',color='white',fontsize=size)
 
 
-def add_workflow(f,key):
+def add_workflow(f,key,annotation_model="Opus 5.5"):
     d = config()
     spec = deepcopy(d['panels'][key])
     if not hasattr(f,'_biorender_overlays'):
@@ -107,9 +107,20 @@ def add_workflow(f,key):
         text(f,94.4,15.2,'1. Expression threshold\n2. Fraction threshold\n3. Mean expression threshold\n4. Maximum number of markers\n5. Minimum number of markers',size=5.5,linespacing=1.2)
     elif key == '4A':
         for x,title in [(15,'CODEX images'),(54,'Cell-level features'),(98,'Leiden clustering'),
-                        (122,'Opus 5.5 annotation'),(149,'Spatial visualization')]:
+                        (122,f'{annotation_model} annotation'),(149,'Spatial visualization')]:
             text(f,x,3,title,size=6.5,ha='center')
         feature_table(f,32.9,10.5,42.5,14.8)
+        if annotation_model == "Astra":
+            # The source artwork's provider-specific Opus icon is covered only
+            # in this amended pipeline; the archived artwork is unchanged.
+            a = axes(f,114,11,16,16)
+            a.add_patch(Rectangle((0,0),1,1,transform=a.transAxes,
+                                  facecolor="white",edgecolor="none"))
+            a.add_patch(Rectangle((.04,.04),.92,.92,transform=a.transAxes,
+                                  facecolor="#f6f8fa",edgecolor="#7a858e",lw=.6))
+            a.text(.5,.5,"LLM",transform=a.transAxes,ha="center",va="center",
+                   fontsize=8,color="#334155",weight="bold")
+            a.set_axis_off()
     else:
         raise ValueError(key)
     return {d['source_file']:d['source_sha256'],str(CONFIG.relative_to(ROOT)):hashlib.sha256(CONFIG.read_bytes()).hexdigest()}

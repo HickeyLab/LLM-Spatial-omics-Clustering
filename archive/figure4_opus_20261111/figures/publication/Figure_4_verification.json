@@ -1,0 +1,88 @@
+{
+  "figure": "Figure_4",
+  "width_mm": 165.1,
+  "height_mm": 170.92676482094097,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    4038
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": [
+    {
+      "clip_points": [
+        27,
+        386,
+        556,
+        454
+      ],
+      "rect_mm": [
+        6,
+        9,
+        154,
+        19.795841209829867
+      ]
+    }
+  ],
+  "layout_compaction": {
+    "original_height_mm": 191,
+    "height_mm": 170.92676482094097,
+    "height_reduction_percent": 10.509547214167029,
+    "vacant_bands_removed_mm": [
+      [
+        30.295841209829867,
+        33.500000000000014
+      ],
+      [
+        39.13599999999999,
+        41.49999999999998
+      ],
+      [
+        135.72128125,
+        143.5
+      ],
+      [
+        149.136,
+        152.49999999999997
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
+    "data/frozen/annotation47_results_20261110/per_type_metrics.csv": "d6fb0bfa30687aa15e82fe5d43049c2ea02807d8c626fdffcc73b9dd096c0e4b",
+    "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
+    "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
+    "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+  },
+  "notes": [
+    "Prespecified Leiden\u2013Opus5.5 means-plus-fractions pipeline. B/C use test cells. D/E use all220082 cells and original28 labels.",
+    "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
+  ],
+  "files": {
+    "Figure_4.svg": {
+      "sha256": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638",
+      "bytes": 2640618
+    },
+    "Figure_4.pdf": {
+      "sha256": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
+      "bytes": 1319807
+    },
+    "Figure_4.png": {
+      "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+      "bytes": 1294375
+    },
+    "Figure_4.tiff": {
+      "sha256": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
+      "bytes": 2359476
+    }
+  }
+}

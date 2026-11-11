@@ -1,6 +1,6 @@
 {
   "schema": "manuscript.inventory.v1",
-  "source_date": "2026-11-10",
+  "source_date": "2026-11-11",
   "figures": {
     "1": {
       "notebook": "notebooks/final_figures/figure_01_spillover_compensation.ipynb",
@@ -63,7 +63,7 @@
       "scored_inputs": "data/frozen/annotation47_results_20261110/manifest.json"
     },
     "4": {
-      "notebook": "notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb",
+      "notebook": "notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb",
       "panels": [
         "A",
         "B",
@@ -74,14 +74,16 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_4.png",
-          "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d"
+          "sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6"
         }
       ],
-      "caption": "Figure 4. Prespecified Leiden–Opus 5.5 annotation pipeline using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Opus annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected before the annotation outcomes.",
+      "caption": "Figure 4. End-to-end evaluation of Leiden clustering and GPT-6 Astra annotation using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Astra annotation to spatial visualization. The workflow illustration was created with BioRender.com. (B) Row-normalized confusion matrix for pooled test cells. (C) Cell-type F1 for pooled test cells (bars) and each of the two test regions (points). All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected from the B004 benchmark results; the cluster-size rule and spatial region were unchanged.",
       "scientific_status": "annotation47_scored_single_run",
       "artifact_type": "scored_scientific_figure",
       "execution_enabled": false,
-      "scored_inputs": "data/frozen/annotation47_results_20261110/manifest.json"
+      "scored_inputs": "data/frozen/annotation47_results_20261110/manifest.json",
+      "presentation_model_family": "openai",
+      "selection": "descriptive_selection_from_b004_benchmark"
     },
     "S1": {
       "notebook": "notebooks/final_figures/figure_s01_clustering_metrics.ipynb",
@@ -178,11 +180,12 @@
           "sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d"
         }
       ],
-      "caption": "Figure S6. Leiden–Opus 5.5 annotation diagnostics for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.",
+      "caption": "Figure S6. Leiden–Opus 5.5 annotation diagnostics retained as a supplementary comparison for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.",
       "scientific_status": "annotation47_scored_single_run",
       "artifact_type": "scored_scientific_figure",
       "execution_enabled": false,
-      "scored_inputs": "data/frozen/annotation47_results_20261110/manifest.json"
+      "scored_inputs": "data/frozen/annotation47_results_20261110/manifest.json",
+      "presentation_model_family": "anthropic"
     },
     "S7": {
       "notebook": "notebooks/final_figures/figure_s07_agreement_decomposition.ipynb",
