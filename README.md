@@ -36,6 +36,8 @@ The [B004 presentation amendment](docs/revision/b004_astra_presentation_amendmen
 
 The [execution summary](data/frozen/annotation47_results_20261110/actual_execution_summary.json) records actual accepted settings: Astra/Opus Batch at 32,768 requested output tokens; Gemini/DeepSeek standard streaming at 943,718, with Gemini continuation segments recorded separately. The original disabled preparation remains unchanged. Rejected/interrupted attempts, authorized recoveries, request hashes and per-request route metadata remain in the source records. There is one accepted output per logical condition; this does not imply one physical generation. Confirmed campaign charges are **$77.078729829**, with **$6.767982** in retained uncertain holds and **$83.846711829** in total commitment under the approved $90 cap. Offline scoring and plotting make no paid calls.
 
+The [reviewer refresh protocol](docs/revision/reviewer47_credit_batch_protocol.md) prepares Batch-only, one-generation follow-up controls and native Astra funding from the selected account's existing API balance. Its new offline classifiers, coarsening and current-bank calibration are [indexed separately](data/frozen/reviewer47_offline_20261110/index.json). Inference is disabled; donor annotation waits for the other chat's verified 50-sweep B005/B006 outputs and matched cohort admission. This preparation does not replace the current publication results.
+
 ## Tables and offline reproduction
 
 Active supplementary tables are **S1, S2A/B, S6a–d and S7**. The [table map](docs/supplementary_table_numbering.md) links their exact inputs. S7 contains only the 12 clustering-diagnostic comparisons and their 96 paired regional observations.
