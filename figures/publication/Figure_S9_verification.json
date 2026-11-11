@@ -1,0 +1,69 @@
+{
+  "figure": "Figure_S9",
+  "width_mm": 165.1,
+  "height_mm": 133.19822916666666,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    3146
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 171,
+    "height_mm": 133.19822916666666,
+    "height_reduction_percent": 22.106298732943472,
+    "vacant_bands_removed_mm": [
+      [
+        59.93233680555555,
+        77.5
+      ],
+      [
+        83.04,
+        87.86500000000001
+      ],
+      [
+        145.84105555555556,
+        149.47013888888887
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": null,
+  "inputs": {
+    "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441",
+    "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846",
+    "data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
+  },
+  "notes": [
+    "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
+    "C: each line/dot is one of16method/model conditions; diamonds are arithmetic means of equal-region Brier scores. Lower is better.",
+    "D: illustrative Astra-Leiden selective-risk curves by test region, on hash-held-out evaluation clusters. All tied scores are retained together; undefined zero-retention risk is omitted.",
+    "Calibration development/evaluation use disjoint clusters and disjoint regions. It estimates within-donor reference agreement, not native confidence, repeatability or biological correctness.",
+    "Eight separately submitted Astra named/neighborhood requests remain pending and do not supply plotted results."
+  ],
+  "files": {
+    "Figure_S9.svg": {
+      "sha256": "00423eb31a9abebc259e9953a2bf6dca4383fee65c38934719244c9cc7d22c27",
+      "bytes": 49413
+    },
+    "Figure_S9.pdf": {
+      "sha256": "8d5ca44c1d78c6104a150f368c49580f9d3df200fd9ca789ba6478ec3897adb3",
+      "bytes": 41460
+    },
+    "Figure_S9.png": {
+      "sha256": "5bdb4701c79c0669e3b5d47727a6e8632aff803f114c0e2da62a9a8178664a43",
+      "bytes": 413427
+    },
+    "Figure_S9.tiff": {
+      "sha256": "79dce8771d29ecbebec1d91822759fd9e636d80310f2018ec567d2279c435c41",
+      "bytes": 597948
+    }
+  }
+}

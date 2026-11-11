@@ -1,0 +1,17 @@
+method,arm,classifier,reference_agreement,macro_f1,delivery_coverage
+flowsom,all_means,logistic_regression,0.45690610422843486,0.3078365024186697,1.0
+flowsom,all_means,nearest_centroid,0.35628068620484243,0.27447003441579626,1.0
+flowsom,all_means_fractions,logistic_regression,0.45722148378087013,0.3059079696303303,1.0
+flowsom,all_means_fractions,nearest_centroid,0.35193946249785724,0.27868693935033334,1.0
+leiden,all_means,logistic_regression,0.6704920750571861,0.49805677800041154,1.0
+leiden,all_means,nearest_centroid,0.5820055844347494,0.43410407659800887,1.0
+leiden,all_means_fractions,logistic_regression,0.6819947604794387,0.5030059177850218,1.0
+leiden,all_means_fractions,nearest_centroid,0.5574067777572701,0.43702088503649383,1.0
+pixie_tiff,all_means,logistic_regression,0.4995302319909685,0.26843870748690424,1.0
+pixie_tiff,all_means,nearest_centroid,0.4675533652270736,0.25512145969716343,1.0
+pixie_tiff,all_means_fractions,logistic_regression,0.5192062758321221,0.2727921413360192,1.0
+pixie_tiff,all_means_fractions,nearest_centroid,0.46961414732834356,0.25774368247384816,1.0
+spatialsort,all_means,logistic_regression,0.44118546534685793,0.2164546394478504,1.0
+spatialsort,all_means,nearest_centroid,0.36104026479571616,0.17983015540995545,1.0
+spatialsort,all_means_fractions,logistic_regression,0.44094037259531416,0.21704351065958588,1.0
+spatialsort,all_means_fractions,nearest_centroid,0.3525657789839497,0.17775966127120957,1.0

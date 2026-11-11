@@ -1,0 +1,17 @@
+Clustering	Input	Agreement (%)	Macro-F1	Clusters delivered
+Leiden	Selected names	42.16	0.3437	300/300
+Leiden	Selected means	43.23	0.3654	300/300
+Leiden	All means	46.78	0.3842	300/300
+Leiden	Means + fractions	50.27	0.4165	300/300
+FlowSOM	Selected names	27.91	0.2414	299/299
+FlowSOM	Selected means	33.42	0.2739	299/299
+FlowSOM	All means	37.48	0.2884	299/299
+FlowSOM	Means + fractions	36.82	0.2999	299/299
+SpatialSort	Selected names	29.36	0.1915	229/229
+SpatialSort	Selected means	28.40	0.1897	229/229
+SpatialSort	All means	33.11	0.1966	229/229
+SpatialSort	Means + fractions	36.17	0.2226	229/229
+PIXIE	Selected names	35.41	0.2458	300/300
+PIXIE	Selected means	38.61	0.2610	300/300
+PIXIE	All means	36.04	0.2527	300/300
+PIXIE	Means + fractions	42.54	0.2751	300/300

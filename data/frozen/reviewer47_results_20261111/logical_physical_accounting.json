@@ -1,0 +1,22 @@
+{
+  "schema": "reviewer47.physical_logical_accounting.v1",
+  "base_logical_request_items": 276,
+  "base_accepted_logical_items": 275,
+  "base_pending_logical_items": 1,
+  "exact_reused_logical_items": 109,
+  "new_accepted_logical_items": 166,
+  "new_stage1_batch_generation_results": 84,
+  "new_stream_post_intents": 103,
+  "new_stream_known_generation_ids": 100,
+  "new_stream_missing_receipt_post_intents": 3,
+  "new_stream_final_accepted_logical_items": 82,
+  "separate_initial_batch_validation_results": {
+    "google_failed_validation": 1,
+    "deepseek_pending_scientific_request": 1
+  },
+  "extra_astra_batch_request_items_pending": 8,
+  "pricing_rule": "Provider Batch aggregate and each unique stream generation are accounted once. Unknown billing remains unknown; no zero-cost assumption. Reused scientific responses are not newcharges.",
+  "observed_stream_reported_cost_sum_usd": "20.981257260",
+  "settled_total_campaign_cost_usd": null,
+  "all_attempts_and_unknown_holds_preserved": true
+}

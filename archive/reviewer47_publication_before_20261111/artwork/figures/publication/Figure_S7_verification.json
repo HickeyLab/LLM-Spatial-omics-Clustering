@@ -1,0 +1,55 @@
+{
+  "figure": "Figure_S7",
+  "width_mm": 165.1,
+  "height_mm": 120.0998402777778,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    2837
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "layout_compaction": {
+    "original_height_mm": 133,
+    "height_mm": 120.0998402777778,
+    "height_reduction_percent": 9.699368212197143,
+    "vacant_bands_removed_mm": [
+      [
+        112.93233680555556,
+        118.47013888888888
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": null,
+  "inputs": {
+    "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e"
+  },
+  "notes": [
+    "All16means-plus-fractions conditions. Components computed within each test region before equal weighting. The arithmetic components are not causal or independent biological error classes."
+  ],
+  "files": {
+    "Figure_S7.svg": {
+      "sha256": "04549249af1e3baf1517ee80505b0c99bbfff8d0a7243ef5cca3ebf02a61acb2",
+      "bytes": 35728
+    },
+    "Figure_S7.pdf": {
+      "sha256": "46cba3c88a07517ac78f477cd39bca0b7a17c31433bec0c88260aac19a6197ac",
+      "bytes": 28931
+    },
+    "Figure_S7.png": {
+      "sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
+      "bytes": 365711
+    },
+    "Figure_S7.tiff": {
+      "sha256": "cf3aced87cf8ef60fabe129c759929c72555c1e253984ef0f67f923546f1bb58",
+      "bytes": 751356
+    }
+  }
+}

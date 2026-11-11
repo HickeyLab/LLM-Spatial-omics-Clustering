@@ -1,0 +1,848 @@
+{
+  "schema": "reviewer47.ieee_tables.v1",
+  "new_scientific_calls_or_fits": 0,
+  "stable_supplementary_ids_preserved": true,
+  "tables": {
+    "S6a": {
+      "caption_label": "TABLE S6a",
+      "caption_title": "PAIRED REFERENCE AGREEMENT",
+      "caption": "Table S6a. Paired reference agreement.",
+      "note": "Completed full-arm bank; equal weighting of two test regions; fixed 28-label vocabulary including Noise. One accepted annotation per cluster and condition; no repeated-call SD.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "83f40e29480c03d5ff934b924a355c3e0c6b97a8207482a40c5590eefd1c34d8",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.694444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      },
+      "files": {
+        ".html": {
+          "sha256": "dfe322ae5160aaf68f8196b220a2bb64371948cc28fa6929ffe36347e3f4a03b",
+          "bytes": 30819
+        },
+        ".standalone.html": {
+          "sha256": "13d343513e0c8450507f32312ba58a0834184e058988d10cdc7640c13e627db9",
+          "bytes": 30881
+        },
+        ".tsv": {
+          "sha256": "fae6aaff88d8151fd809802e654815bf039b9d6b4db37a1166ad8103394a11f9",
+          "bytes": 761
+        },
+        ".tex": {
+          "sha256": "a042a03fb5b8b9e5036a90da8cd743316ff1f20ebf708ae80acd6f65cd7563f1",
+          "bytes": 1642
+        },
+        ".pdf": {
+          "sha256": "269942ff33306efbc496f4db9d5ac238b24ab423276d473de6527d84302c5969",
+          "bytes": 55164
+        },
+        ".png": {
+          "sha256": "d8331b9666b2df5b65035ee978646d824cf8c9193a468c88832341f50d701c6f",
+          "bytes": 850257
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S6a.csv",
+        "sha256": "df17af9fa7172a31fe26029fbe1ad394159a575e6b63d2e56f404e79155877e3"
+      }
+    },
+    "S6b": {
+      "caption_label": "TABLE S6b",
+      "caption_title": "MACRO-F1 AND PREDICTION COVERAGE",
+      "caption": "Table S6b. Macro-F1 and prediction coverage.",
+      "note": "Completed full-arm bank; equal weighting of two test regions; fixed 28-label vocabulary including Noise. One accepted annotation per cluster and condition; no repeated-call SD.",
+      "rows_including_header": 17,
+      "columns": 6,
+      "cell_order_sha256": "b0318a91665ad964daf995ce254275aee8e3577cc9af713f73a8a953a401d4bd",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.861111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      },
+      "files": {
+        ".html": {
+          "sha256": "941db48175c4e06c3563d5437d19f501480f762dd74b0083a37f2093e3f002ba",
+          "bytes": 36864
+        },
+        ".standalone.html": {
+          "sha256": "09193a3413cafe38487e2c3bc9b4ddd39fc8f9eeb5a4965847aa0eedc8623d56",
+          "bytes": 36926
+        },
+        ".tsv": {
+          "sha256": "3b3942e29762505f37c80bfe0e1abfd381b36965a1c862ffb4820eb8858d2930",
+          "bytes": 961
+        },
+        ".tex": {
+          "sha256": "8c1a85e64b504f1095ea26311240e035ca68089ebf1068e688a11ab0ddc3ec8e",
+          "bytes": 1941
+        },
+        ".pdf": {
+          "sha256": "3a8d7207e7765d26b103c8a741b2fec5ba8f12a8a7b60dcfb1c553f6dbb1beaa",
+          "bytes": 55510
+        },
+        ".png": {
+          "sha256": "4f409074c37bb432dd207b274e21eb8223f8367761ad815e260e0d969bcf3ac3",
+          "bytes": 912566
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S6b.csv",
+        "sha256": "5c74000ed0dc1c962b3763045eec124ae8fe890f321672046847d391d4973152"
+      }
+    },
+    "S6c": {
+      "caption_label": "TABLE S6c",
+      "caption_title": "DECOMPOSITION OF PAIRED AGREEMENT CHANGES",
+      "caption": "Table S6c. Decomposition of paired agreement changes.",
+      "note": "Completed full-arm bank; equal weighting of two test regions; fixed 28-label vocabulary including Noise. One accepted annotation per cluster and condition; no repeated-call SD.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "82f1ffef0973a31d9a130b4a6b2a791aa7a8febb54b8b9194f3b1fc9fdbda058",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.694444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      },
+      "files": {
+        ".html": {
+          "sha256": "b019171a9f780832f0a5e28e54367e80fdfe2669e62057b412eaf049ba886c34",
+          "bytes": 30827
+        },
+        ".standalone.html": {
+          "sha256": "0a539f3754aacb2b2bd7cd9ba1f55cee8463d2fabc42e23086f6c6c21ef259ef",
+          "bytes": 30889
+        },
+        ".tsv": {
+          "sha256": "83a5aece83b7938e55bff8e36ba2492e5f41019be119f896c4de5c34ca873e72",
+          "bytes": 754
+        },
+        ".tex": {
+          "sha256": "1ec69e0ac89343dd198cb925e04f04fd4ec1df4e7887d7a39af87dde34ac4814",
+          "bytes": 1648
+        },
+        ".pdf": {
+          "sha256": "3159b86d5a54ee83b568a198ea08b0f5245ac6d6891816f109c951e24c0d514d",
+          "bytes": 56843
+        },
+        ".png": {
+          "sha256": "154f93ea2cad5f493d219ef003ef2866de3a753aec5a4ab48566de91720c8853",
+          "bytes": 803572
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S6c.csv",
+        "sha256": "a7d4bdd55a86583dbed5511ec2cf619838e7fec42affc20a37f3762bd3172f41"
+      }
+    },
+    "S6d": {
+      "caption_label": "TABLE S6d",
+      "caption_title": "MODEL IDENTITIES AND INFERENCE SETTINGS",
+      "caption": "Table S6d. Model identities and inference settings.",
+      "note": "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. One selected-means request and the separate eight-item Astra extension remain pending.",
+      "rows_including_header": 5,
+      "columns": 5,
+      "cell_order_sha256": "d53dce38f60e7e7ce5def05ad2d8d5ea9026a9cdec0b60144d2865062884abc7",
+      "numeric_columns_zero_based": [],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 4.027777777777778,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/model_settings.json": "855de6d8fbb8d5e214ad4add09dfe6f04712b7c9944da38b9e83cc34dfe081e4"
+      },
+      "files": {
+        ".html": {
+          "sha256": "e043f96cfccc10787823d2eebf989cc2067bb13261d82266042983cf15360807",
+          "bytes": 10480
+        },
+        ".standalone.html": {
+          "sha256": "0dbf39de1c2068fc27e7d5adc1f5430d2d2d67e9baa8f78314a8b2d303a5da0f",
+          "bytes": 10542
+        },
+        ".tsv": {
+          "sha256": "9f6ce0b5e39cd31193e58d6b41bbe63d3ddd7d0385f305b39069ed7fd00fae90",
+          "bytes": 598
+        },
+        ".tex": {
+          "sha256": "ffc8420a47f90722ec6ae26d6903d3718a1da839c11439c631b28874fa804b31",
+          "bytes": 1367
+        },
+        ".pdf": {
+          "sha256": "61f5c57743d4e4e74f66e3cc6dad77730217d5bf3e199b5845599a04d762d232",
+          "bytes": 54680
+        },
+        ".png": {
+          "sha256": "d29c841d990d183d3ab5fd8ab25f03a805b446b3e3d6d283e4ed544e49dbb66a",
+          "bytes": 707693
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S6d.csv",
+        "sha256": "85493e1edba04b6a7ea4c4fc04e73ee27f3aa1723873c72fd361933423628624"
+      }
+    },
+    "S8a": {
+      "caption_label": "TABLE S8a",
+      "caption_title": "GPT-6 ASTRA MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8a. GPT-6 Astra marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "1c8b6545063671770be9cbb6c961430a11402351ea935546ade58bc8017f0e23",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.861111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      },
+      "files": {
+        ".html": {
+          "sha256": "20c2508a7281cbebc9242e4b6d36516954c3803a96606cbec42ed93a120e7154",
+          "bytes": 30849
+        },
+        ".standalone.html": {
+          "sha256": "938e2f254e0fc9fe19ac75a8c6309688bcc448cba0f6881681936dab271cc513",
+          "bytes": 30911
+        },
+        ".tsv": {
+          "sha256": "bdc047685d0f3d339f495b01e710ca18b7bb1ddb35b6297a408732349cfd435b",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "29436246c13d111e3bdd80e8a7a843cb1520c590f7cd115f9424d2787f49f104",
+          "bytes": 1663
+        },
+        ".pdf": {
+          "sha256": "ff75e88ca8e561bbcfd223c3990a42b9c5019159eb008e10981200d0b5211859",
+          "bytes": 54980
+        },
+        ".png": {
+          "sha256": "357ab908037bb684a7f6071587039fc4afe64e8d2c7082111bfc9865ce01f1ba",
+          "bytes": 922447
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8a.csv",
+        "sha256": "579cea2275a50f9d64884c9a8b2ae7a404500f4d5ab01af5b3b8c46fc522e04c"
+      }
+    },
+    "S8b": {
+      "caption_label": "TABLE S8b",
+      "caption_title": "CLAUDE OPUS 5.5 MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8b. Claude Opus 5.5 marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "bed484d3281dc17392aea90f2561eda94c5c17e2ab555fdeb7dea2a5389ea2e6",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.861111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      },
+      "files": {
+        ".html": {
+          "sha256": "44fd54c1a82d592e9917f2c0b42a44195f3095809376dc056f20068f43193cc1",
+          "bytes": 30853
+        },
+        ".standalone.html": {
+          "sha256": "8d698d9472b6646709c5a692769d88bdc61ada4a723db95f1551eb1656584001",
+          "bytes": 30915
+        },
+        ".tsv": {
+          "sha256": "424cbf1af774752770f35a9c9745fb673f4ceb7cf89f3d867a360efaf737e107",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "11009fbb41bb920047d924eb4795ac00cd719d5ce204bfb9c1f833fc64000b4c",
+          "bytes": 1667
+        },
+        ".pdf": {
+          "sha256": "172092cce6a6e6f73bb5085a9184d7f09568805d6fad9d6527ee937e3df15b5c",
+          "bytes": 55232
+        },
+        ".png": {
+          "sha256": "d13d2e345ca5f36b95b7f42ee3511acee88f362e3a7669c201fdf66ff4bec847",
+          "bytes": 921559
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8b.csv",
+        "sha256": "50929396ae4264118a6eacae7b54d3a6d5eede87cdaf0976dbc587f832faa77c"
+      }
+    },
+    "S8c": {
+      "caption_label": "TABLE S8c",
+      "caption_title": "GEMINI 4 ARGON MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8c. Gemini 4 Argon marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "4c75eef5589c98dc27e33b19da18700d3d46f26c3a2a5d94713d2c9a118df5a0",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.861111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      },
+      "files": {
+        ".html": {
+          "sha256": "561a18b8fb9f04c4fb0c3e34978d9cf4f4c93a43be60341b39bc4366175102a9",
+          "bytes": 30852
+        },
+        ".standalone.html": {
+          "sha256": "228395e7a41a5509b0157fad57290f736b379ed10af5febc4c86b884646c808d",
+          "bytes": 30914
+        },
+        ".tsv": {
+          "sha256": "b46ed41c733fead349a837a7be9d074b63c3767b5ce86455849f0886f1e7a2e6",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "a46601db4f24a3be8b8160ca636e2020655044e7be1904f7a9cec466489e6dc8",
+          "bytes": 1666
+        },
+        ".pdf": {
+          "sha256": "65554febca269e4a309a70ec12bc7853b7b26144a62459af86803cee2356e443",
+          "bytes": 54945
+        },
+        ".png": {
+          "sha256": "7b77f5eb101ce1d83e7d1ea5d8de8dbb3dae9f917fb7d28f1ac77c2419d0dca7",
+          "bytes": 919241
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8c.csv",
+        "sha256": "e25880feaba68b167d20488e092a35386bdf43fe33f93850e0428ea90e1303ac"
+      }
+    },
+    "S8d": {
+      "caption_label": "TABLE S8d",
+      "caption_title": "DEEPSEEK V4.1 FLASH 1017 MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8d. DeepSeek V4.1 Flash 1017 marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "1708af758938d90dc71f12dabd64c259088bc777079750318c4afa41ac2fdb49",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.861111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      },
+      "files": {
+        ".html": {
+          "sha256": "1ad53dc84c7c1ceced472f7783bd87c1c6ef46e36be6028e37c6d2de8f8d2daa",
+          "bytes": 30865
+        },
+        ".standalone.html": {
+          "sha256": "118d86027a9d5f80ec8262fc99e0e185b3c432f067faacde57899586a3868112",
+          "bytes": 30927
+        },
+        ".tsv": {
+          "sha256": "cffe19341c34d84e741789ca2e039fb86c2f4df131f1c2e4e4581ec0208ba375",
+          "bytes": 762
+        },
+        ".tex": {
+          "sha256": "b6e87a1a7dacd7dd3cc3b86ca58227b26cdcb8bc9e0356776dbc3ab72dd868eb",
+          "bytes": 1679
+        },
+        ".pdf": {
+          "sha256": "d66673c499b8139191aa02d827dd4fc75482be649896f222770826a98da0dd8d",
+          "bytes": 55710
+        },
+        ".png": {
+          "sha256": "045b7c8e902c40fedd751f49c931eb193f5b35ea5682bd34a488e717b32b026f",
+          "bytes": 908267
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8d.csv",
+        "sha256": "19eefd8e99fbf079de777fde82d6dd5f2ab085c289c1bb2fff7ed6b415b815f1"
+      }
+    },
+    "S9": {
+      "caption_label": "TABLE S9",
+      "caption_title": "OPUS 5.5 MATCHED PROMPT CONTROLS",
+      "caption": "Table S9. Opus 5.5 matched prompt controls.",
+      "note": "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages two test regions equally. Changed-cluster counts retain all planned clusters. The separately submitted Astra extension is pending.",
+      "rows_including_header": 6,
+      "columns": 6,
+      "cell_order_sha256": "30d911c5e05116446a0b8ecfe6d926b9059dd51b556e041d15fc789789d8d1f8",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 2.9722222222222223,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/control_contrasts.csv": "e61f5d147cf3098de49bf0c5a548fbf4fb7a60dbcc07eaf23da485f0d9ad241e"
+      },
+      "files": {
+        ".html": {
+          "sha256": "fba3f70493344a887f2e55b28cacd099a828879e7cc51b15fe8775fc5b612259",
+          "bytes": 13877
+        },
+        ".standalone.html": {
+          "sha256": "f82155018ec8c3b537dcb977a0c274d0a669f10028d1b34dcd3aee9e2796cb75",
+          "bytes": 13939
+        },
+        ".tsv": {
+          "sha256": "cdfeccc1d38a3ec91828de96378deab439e3d777ae14add7eb3b9870e38f3cf6",
+          "bytes": 278
+        },
+        ".tex": {
+          "sha256": "4ad16511cc11cebf2b72552249d176ac5ceceb7485adb0c0d8eaa0817d9eda68",
+          "bytes": 1119
+        },
+        ".pdf": {
+          "sha256": "3b898a35b862ade67a96845d747d6b7b0d70823eeec16a2bcbc1c0cb3d557b33",
+          "bytes": 52497
+        },
+        ".png": {
+          "sha256": "4696182d6ef54d8d82cffd0395648e22f338ea4f83f12747077ebb990c4012b8",
+          "bytes": 408504
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S9.csv",
+        "sha256": "b2aa6c9d0964dcfc3039fdacb74f30037843d124ab54f07e22296c9cfa919d32"
+      }
+    },
+    "S10": {
+      "caption_label": "TABLE S10",
+      "caption_title": "CONVENTIONAL B004 ANNOTATION CLASSIFIERS",
+      "caption": "Table S10. Conventional B004 annotation classifiers.",
+      "note": "Classifiers used B004 training-region cell labels, richer supervision than the LLM prompts. Hyperparameters were chosen in validation regions. Metrics average the two test regions equally; fixed 28-label macro-F1 includes absent classes as zero.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "d5eb637f7c3a9e6d8be4758d62118785a9eaf9d1d4eb1d21d597d74944addf15",
+      "numeric_columns_zero_based": [
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.027777777777778,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/baselines/classifier_equal_test_region_metrics.csv": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801"
+      },
+      "files": {
+        ".html": {
+          "sha256": "1645473a792a0fe2b4ef1679c747ea02081664c7f11cb923e862e78b30e237bd",
+          "bytes": 31035
+        },
+        ".standalone.html": {
+          "sha256": "64b278384d4a881e0521d2d0444228729c89616fe07a033d36d06195cd61e3b4",
+          "bytes": 31097
+        },
+        ".tsv": {
+          "sha256": "e99c560bf2b483f61a9c52524da6a12c2c68b7b58d4fa00331c41640c438e222",
+          "bytes": 911
+        },
+        ".tex": {
+          "sha256": "1d6986a5cf79d547a9a26997bb81690b40b9f40080f11e746748cbb58989edda",
+          "bytes": 1810
+        },
+        ".pdf": {
+          "sha256": "af7d55ec06d688006b877d542d3e6940d44e5f1362f13ecc3ae510a6bac7f71e",
+          "bytes": 54971
+        },
+        ".png": {
+          "sha256": "90e3b9dd0edacbe73530d9e3ec7a95a20dcb46292474b7c02d4ce723dcc2bfe1",
+          "bytes": 1000135
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S10.csv",
+        "sha256": "08660bdab4c71d79a930efe77aa12ea51e91c28c168bc9df416b9d360bfd8329"
+      }
+    },
+    "S11": {
+      "caption_label": "TABLE S11",
+      "caption_title": "B004 PARTITION GRANULARITY SENSITIVITY",
+      "caption": "Table S11. B004 partition granularity sensitivity.",
+      "note": "K100 and K200 are cell-count-weighted Ward coarsenings of frozen full-precision cluster profiles, sealed before reference scoring. They are not native-K refits or LLM ranking-stability experiments. Metrics average the two test regions equally.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "7b272a7f5a17d4ba9b3901ed00bf4f4edc576015c124bdb1484a852e972d267f",
+      "numeric_columns_zero_based": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 4.916666666666667,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/granularity/equal_test_region_metrics.csv": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a"
+      },
+      "files": {
+        ".html": {
+          "sha256": "5beaf87ec89682599cedd5b560899463dbd9ee81a74fa18eabd0629ad63cb51d",
+          "bytes": 23817
+        },
+        ".standalone.html": {
+          "sha256": "8fa039f4511dc85f8c826cd6ab5e4b4ff44e7e085dad04e1fa7c6eb4908da044",
+          "bytes": 23879
+        },
+        ".tsv": {
+          "sha256": "5a4f5c0673b69c5531ceefc847608bfdfc26cc11df53458bc2e2026cd41533b1",
+          "bytes": 443
+        },
+        ".tex": {
+          "sha256": "935a7bc4dddba75cb3e2c94e3fe62ad0f9ebe7c5643801ad9ef56395a810eda1",
+          "bytes": 1297
+        },
+        ".pdf": {
+          "sha256": "7e26f3a15f2bd6d6942cd245a0df9c6b4b6329c02ad8a80291695a2606363d0b",
+          "bytes": 56247
+        },
+        ".png": {
+          "sha256": "632015e3c2e89effc50669ef4e0756938ac4b8f14bdcfa57e75c6cb0d77933c8",
+          "bytes": 629565
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S11.csv",
+        "sha256": "0377f2c1dcff23c784671d83363ed3f49cd38c1bd0ab9b6eb72a817160e99dfb"
+      }
+    },
+    "S12a": {
+      "caption_label": "TABLE S12a",
+      "caption_title": "GPT-6 ASTRA CROSS-MODEL AGREEMENT CALIBRATION",
+      "caption": "Table S12a. GPT-6 Astra cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "f640a422cb8e1c916b0ec93fbeb904dd82d6b50c971013890fead909277e13ef",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.083333333333333,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "92261aa5b97f36e7266e7798b6f78e728e6b549c1d4f9c22ca8823d72c0ba589",
+          "bytes": 24103
+        },
+        ".standalone.html": {
+          "sha256": "63e4c6b589db926e0e244195f7aeb4bca459b3234fabd5bc289f20d8b26c3986",
+          "bytes": 24165
+        },
+        ".tsv": {
+          "sha256": "31c64da034d3ee414fe28b967154ba70f59ce3dacb12cd0e8e130ff9928656a0",
+          "bytes": 619
+        },
+        ".tex": {
+          "sha256": "b48e763e5e1a4cece09b358e8ecaabaf83925e2ffca4fb7458448e51ee386470",
+          "bytes": 1478
+        },
+        ".pdf": {
+          "sha256": "b059d9b67d42e374c98bac8ea425e146292d5911a67a678eb34a1ea9304b894e",
+          "bytes": 51422
+        },
+        ".png": {
+          "sha256": "1d1e6b99fd1ee729978cf8356d906fedc30414224b2e022dd039b84898fd8e61",
+          "bytes": 801209
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12a.csv",
+        "sha256": "c3054ff637d5b4579669765c9893c04bf2a2b5f467f4eaf1bd62f5ca644cccd5"
+      }
+    },
+    "S12b": {
+      "caption_label": "TABLE S12b",
+      "caption_title": "CLAUDE OPUS 5.5 CROSS-MODEL AGREEMENT CALIBRATION",
+      "caption": "Table S12b. Claude Opus 5.5 cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "e2df46b9f0d7dfb85bce50b006e6da42db541a7aec77ce3cde8a52b8eb6ff45b",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.083333333333333,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "e5d74c405097bfabfa19c13d9167deded69f5effef360ccf1ca61374d19948a0",
+          "bytes": 24107
+        },
+        ".standalone.html": {
+          "sha256": "1c614e016349bcdc205010e6280fd33c18d818938c67512a88aa53fd6baf18cd",
+          "bytes": 24169
+        },
+        ".tsv": {
+          "sha256": "e275241beacd006fec60cc1813e945a318f629c53842c63a9d8a37b4b9dc935f",
+          "bytes": 619
+        },
+        ".tex": {
+          "sha256": "9eaad37c94a0662fc0d2eae26ac370a61ccc1f8d860feaf0c4ce461896c1fa78",
+          "bytes": 1482
+        },
+        ".pdf": {
+          "sha256": "ca5ea96cef9071dcddff8c87983776c1cddec5d3b7733d2e4f646939cca1ea7a",
+          "bytes": 51847
+        },
+        ".png": {
+          "sha256": "b3ca1f3663e7bf56e9b334407cfdade978c8322739758a95e01c9d32d2bebd94",
+          "bytes": 809143
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12b.csv",
+        "sha256": "71c351d3f64d936e3ace1ced8633e6f47fd3586a3abf796825bdfc02de2bacaa"
+      }
+    },
+    "S12c": {
+      "caption_label": "TABLE S12c",
+      "caption_title": "GEMINI 4 ARGON CROSS-MODEL AGREEMENT CALIBRATION",
+      "caption": "Table S12c. Gemini 4 Argon cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "936920858900a93924943f9dcedb34507a72e2e0d2cb27cac71d347b8f653ed7",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.083333333333333,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "6891ea5929cbd7698488cf25d8da6f5e27c2b37c37c9bb10fa4144794e5cefb8",
+          "bytes": 24106
+        },
+        ".standalone.html": {
+          "sha256": "397a4c36b1b820e2a9784d98f31415200db9e89f9008f622c5c76aad08907385",
+          "bytes": 24168
+        },
+        ".tsv": {
+          "sha256": "9f5b1000e06504e4c708ca403b0dbaf4e2b95826aefc98303981e084654625c9",
+          "bytes": 619
+        },
+        ".tex": {
+          "sha256": "64d90c18894f44f145ce1341b8a006391c0595a8220819c992293f99a374ec53",
+          "bytes": 1481
+        },
+        ".pdf": {
+          "sha256": "0d15db636df78cbd352e75e71ffa512b6e525d2d159efdadbb57ab76ef19a76c",
+          "bytes": 51401
+        },
+        ".png": {
+          "sha256": "1378455c2e42d7cb88ba33210dbc31fa05c45abccb1388ffd63f455942118ab1",
+          "bytes": 810282
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12c.csv",
+        "sha256": "ffc688e7f3fbb9aaecbc4bef1a23549839e3419bcfcc27584491fa61cdc8d61d"
+      }
+    },
+    "S12d": {
+      "caption_label": "TABLE S12d",
+      "caption_title": "DEEPSEEK V4.1 FLASH 1017 CROSS-MODEL AGREEMENT CALIBRATION",
+      "caption": "Table S12d. DeepSeek V4.1 Flash 1017 cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "7577eedcef94aeb934ef37952ea6fb49fb262c584ae5a88cc699082560e38066",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.083333333333333,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "9df2caaca57370f8e756f9dd1903a4868c192b4561ac0845a4a86eb5f48a9afb",
+          "bytes": 24116
+        },
+        ".standalone.html": {
+          "sha256": "8a6635ddfe10d9bd609a0a512494a9b70efa8da4d82894adabcd89e3b396e87c",
+          "bytes": 24178
+        },
+        ".tsv": {
+          "sha256": "695a4f4fc4435c76bb6613df57424da17595ac80f3bf0534cb5792f2f8636aa4",
+          "bytes": 619
+        },
+        ".tex": {
+          "sha256": "c1532096612b60b91c3078d7d6374ef5ed473f563a859a0d0f6d268641100115",
+          "bytes": 1491
+        },
+        ".pdf": {
+          "sha256": "88a0a6a26042974498a08d9efa1a2db4ddb127bca0e356d1b9ae59e4a93b4864",
+          "bytes": 52939
+        },
+        ".png": {
+          "sha256": "0a9762dce67435994e2f2338225191e19a329bcc116b328d423f7fd3f6536b56",
+          "bytes": 805796
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12d.csv",
+        "sha256": "ba5da45aadf22e399a5e55ec649a5cc096ae99ca32fb877b87337fa7770d4c0d"
+      }
+    }
+  }
+}

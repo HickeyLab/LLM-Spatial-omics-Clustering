@@ -438,11 +438,11 @@
     },
     "dense_point_layers_native_dpi": 610,
     "inputs": {
-      "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
-      "data/frozen/annotation47_results_20261110/per_type_metrics.csv": "d6fb0bfa30687aa15e82fe5d43049c2ea02807d8c626fdffcc73b9dd096c0e4b",
-      "data/frozen/annotation47_results_20261110/reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
-      "data/frozen/annotation47_results_20261110/cell_predictions.npz": "4e2fc1a98a34f879f1efa9973a05b6bd0800758b0299997d50f6fbddb7a3434a",
-      "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+      "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+      "data/frozen/annotation47_results_20261111/per_type_metrics.csv": "2c1dab60a412cdb54e5117e2d18ab22db5a627617f7ba68a94ebaadb2087d137",
+      "data/frozen/annotation47_results_20261111/reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
+      "data/frozen/annotation47_results_20261111/cell_predictions.npz": "07779061eceb84bef8a9978cc724d746d6e922069d7c6c24315e7fdd4b923d65",
+      "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba"
     },
     "notes": [
       "One accepted annotation per model/method/arm; no repeated-generation SD.",
@@ -450,20 +450,20 @@
     ],
     "files": {
       "Figure_3.svg": {
-        "sha256": "cee6713d62e8b7483037b1acbf182884852a33bb12aee31f34c198adb79706dd",
-        "bytes": 3427858
+        "sha256": "14c99bb1627803709ddc8fa2cbc0c99df876bdf65ce191f96f4418703a376ecb",
+        "bytes": 3430482
       },
       "Figure_3.pdf": {
-        "sha256": "e28fca59a6ac36321280a881bf920c6b583dc7be61b96bc4809d4ec978805257",
-        "bytes": 2372086
+        "sha256": "1d127e689c1af35af16ed7b5a8020f1bcd37eeb65a61275738db01961f133905",
+        "bytes": 2365856
       },
       "Figure_3.png": {
-        "sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
-        "bytes": 2932330
+        "sha256": "abf986acc449c2ef5366642edd50c542c50b80bbd39305fa1ce6093e99f15152",
+        "bytes": 2968544
       },
       "Figure_3.tiff": {
-        "sha256": "c128db2c8a270f8803ae4eead2a277d7169e2b15777036d8f556ed7aabf6c9f5",
-        "bytes": 4148758
+        "sha256": "72f930a1ebf6c756b6398fd5e0105d583ea77e356de125a7109966c20e32ab0f",
+        "bytes": 4138020
       }
     }
   },
@@ -533,25 +533,25 @@
       "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
     },
     "notes": [
-      "Prespecified Leiden\u2013Opus5.5 means-plus-fractions pipeline. B/C use test cells. D/E use all220082 cells and original28 labels.",
+      "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells. D/E use all220082 cells and original28 labels.",
       "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
     ],
     "files": {
       "Figure_4.svg": {
-        "sha256": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638",
-        "bytes": 2640618
+        "sha256": "cda2db842b7054e19852a4b6c371a341dac7708a69404afb1a8fee0521366d1a",
+        "bytes": 2641505
       },
       "Figure_4.pdf": {
-        "sha256": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
-        "bytes": 1319807
+        "sha256": "a8915406e16c2db625cd53df383ff4a238506b8708b0bf4cd10026240277cd48",
+        "bytes": 1320563
       },
       "Figure_4.png": {
-        "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
-        "bytes": 1294375
+        "sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6",
+        "bytes": 1209221
       },
       "Figure_4.tiff": {
-        "sha256": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
-        "bytes": 2359476
+        "sha256": "4c6d3aebe79909dae708fe8801dbd3baf8d68a12fcad7acd8e01620097bff532",
+        "bytes": 2258628
       }
     }
   },
@@ -598,28 +598,28 @@
     },
     "dense_point_layers_native_dpi": null,
     "inputs": {
-      "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
-      "data/frozen/annotation47_results_20261110/paired_contrasts.csv": "99e0741e612c3cb6eb76850acd72f70a3ded7b74de693fcfa985c84e8d1051ee"
+      "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+      "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
     },
     "notes": [
       "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
     ],
     "files": {
       "Figure_S10.svg": {
-        "sha256": "b28de1e773d3dab827b937d15d610c8e29952f939c70e8c98c7e75fbbd37d8a5",
+        "sha256": "22f37fbab3ba5efdbedccc9aa7c51f42d0023938ae84bc95f56069ef1a10d22d",
         "bytes": 37093
       },
       "Figure_S10.pdf": {
-        "sha256": "25b8c1b54ccd7459d2aa6d84f7c67a7739d992d7ec0b4f1a4f94aee985cce2be",
-        "bytes": 44568
+        "sha256": "7efe86684a490a822b535fdb774e53a6360a20ddcdb8ec29d05ec63a6cb0bf55",
+        "bytes": 44586
       },
       "Figure_S10.png": {
-        "sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
-        "bytes": 181368
+        "sha256": "6f4cf792f91244ec472c4a55d771d29975934d69423d815005574bd7f11b322b",
+        "bytes": 205260
       },
       "Figure_S10.tiff": {
-        "sha256": "0ca3c5e2c94fdb38ef66d8d5bc1cd462ee34e13fa0960f05205a33d10de60a9f",
-        "bytes": 391346
+        "sha256": "5b764fe421bc94467f98ea3b504299ed768993d58684065637629bdda3ec5d8b",
+        "bytes": 391994
       }
     }
   },
@@ -649,28 +649,28 @@
     },
     "dense_point_layers_native_dpi": 610,
     "inputs": {
-      "data/frozen/annotation47_results_20261110/cd8_consensus_profiles.csv": "9ade4ab92d6bc706f863ba88501856ece4dc12826c38b38187c10bd6b5c3a852",
-      "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+      "data/frozen/annotation47_results_20261111/cd8_consensus_profiles.csv": "186aa665e685b64dbb264062603702e1167410f4b419bcd1b1987bc9b1799420",
+      "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba"
     },
     "notes": [
       "Cells selected using one accepted label per model and fixed four-model modal ties, not repeated-call votes. Color uses stored processed expression without another transform, min-max scaled by marker across the four displayed methods. Size encodes the numerical fraction >0, not validated biological positivity."
     ],
     "files": {
       "Figure_S11.svg": {
-        "sha256": "4148710593e0c5a6360734b382f877257035c2c328e6fcd732749775660bfa7d",
-        "bytes": 147122
+        "sha256": "f04a38d130f258c8f9855f1ad9d56d16a6cc43b5e835163131146f84400195d6",
+        "bytes": 147090
       },
       "Figure_S11.pdf": {
-        "sha256": "cb932e9160d732dc936acf8458e1edd6f9ceb53ba93fe5d2ee61184f18c239bb",
-        "bytes": 76379
+        "sha256": "5fffa2da10616a54cd82b787939bbaf493dcc1bb1a2d5e65f08c6eb7006e18a7",
+        "bytes": 75778
       },
       "Figure_S11.png": {
-        "sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
-        "bytes": 342203
+        "sha256": "7580efccf224da38e01fa487d81877b0b665a9536419c2951d0be3eed35d9b6c",
+        "bytes": 406499
       },
       "Figure_S11.tiff": {
-        "sha256": "d69a40a0a6ed5d9f42415b6326319ce3eada1b3f95104bd60cbb5ca7b1e2edf0",
-        "bytes": 459508
+        "sha256": "57d9c5ffc6c3c36145664a7577e20398579b8cc87358eba4d2c72b450e85dc54",
+        "bytes": 459866
       }
     }
   },
@@ -1232,27 +1232,161 @@
     },
     "dense_point_layers_native_dpi": null,
     "inputs": {
-      "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e"
+      "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff"
     },
     "notes": [
       "All16means-plus-fractions conditions. Components computed within each test region before equal weighting. The arithmetic components are not causal or independent biological error classes."
     ],
     "files": {
       "Figure_S7.svg": {
-        "sha256": "04549249af1e3baf1517ee80505b0c99bbfff8d0a7243ef5cca3ebf02a61acb2",
+        "sha256": "24799add1d7cc3995d4256dcdbd192eb8acde29966278141c163f6a06b7247e9",
         "bytes": 35728
       },
       "Figure_S7.pdf": {
-        "sha256": "46cba3c88a07517ac78f477cd39bca0b7a17c31433bec0c88260aac19a6197ac",
-        "bytes": 28931
+        "sha256": "ec6214bf1b71d61b031ab42a245c4766c17777235a89f6ace7f89f7b23c4cb4d",
+        "bytes": 28942
       },
       "Figure_S7.png": {
-        "sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
-        "bytes": 365711
+        "sha256": "648f6abe26c75650b7f0f68556ca190c65c73be88d1dfe515a1faaa8a6509ad3",
+        "bytes": 405098
       },
       "Figure_S7.tiff": {
-        "sha256": "cf3aced87cf8ef60fabe129c759929c72555c1e253984ef0f67f923546f1bb58",
-        "bytes": 751356
+        "sha256": "223911afb63efc50ebd969183b8c5f4ed023f2159fefeb350ed5ac7450d982a2",
+        "bytes": 749222
+      }
+    }
+  },
+  {
+    "figure": "Figure_S8",
+    "width_mm": 165.1,
+    "height_mm": 99.57066666666671,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2352
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 137,
+      "height_mm": 99.57066666666671,
+      "height_reduction_percent": 27.32068126520678,
+      "vacant_bands_removed_mm": [
+        [
+          7.040000000000011,
+          11.864999999999993
+        ],
+        [
+          54.860333333333344,
+          67.5
+        ],
+        [
+          73.04,
+          77.86499999999998
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+    },
+    "notes": [
+      "Equal-weighted agreement across the two B004 test regions; fixed 28-label vocabulary including Noise.",
+      "Four frozen partitions and one generation per condition. Partial conditions are masked as Pending, not scored.",
+      "Selected names and selected means use at most six label-blind selected markers; full arms use all47 markers."
+    ],
+    "files": {
+      "Figure_S8.svg": {
+        "sha256": "c499b8b9022272a64bec89e76ea5b22a8709e068114337c269356619cf4f4134",
+        "bytes": 63627
+      },
+      "Figure_S8.pdf": {
+        "sha256": "c1c42c9944ddaa36f37dc2c9f2441f224a26f06ed41dfbd2a5c783c98bc692cc",
+        "bytes": 52812
+      },
+      "Figure_S8.png": {
+        "sha256": "388dc935b48a7cc30c381010569748999ac562efccff0873132d5a91e2d6920a",
+        "bytes": 383402
+      },
+      "Figure_S8.tiff": {
+        "sha256": "f803a17e9a30c7faf2b88b25f918d2c13045e5bf5437983b5dc5f39417bc4361",
+        "bytes": 1052220
+      }
+    }
+  },
+  {
+    "figure": "Figure_S9",
+    "width_mm": 165.1,
+    "height_mm": 133.19822916666666,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      3146
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 171,
+      "height_mm": 133.19822916666666,
+      "height_reduction_percent": 22.106298732943472,
+      "vacant_bands_removed_mm": [
+        [
+          59.93233680555555,
+          77.5
+        ],
+        [
+          83.04,
+          87.86500000000001
+        ],
+        [
+          145.84105555555556,
+          149.47013888888887
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441",
+      "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846",
+      "data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
+    },
+    "notes": [
+      "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
+      "C: each line/dot is one of16method/model conditions; diamonds are arithmetic means of equal-region Brier scores. Lower is better.",
+      "D: illustrative Astra-Leiden selective-risk curves by test region, on hash-held-out evaluation clusters. All tied scores are retained together; undefined zero-retention risk is omitted.",
+      "Calibration development/evaluation use disjoint clusters and disjoint regions. It estimates within-donor reference agreement, not native confidence, repeatability or biological correctness.",
+      "Eight separately submitted Astra named/neighborhood requests remain pending and do not supply plotted results."
+    ],
+    "files": {
+      "Figure_S9.svg": {
+        "sha256": "00423eb31a9abebc259e9953a2bf6dca4383fee65c38934719244c9cc7d22c27",
+        "bytes": 49413
+      },
+      "Figure_S9.pdf": {
+        "sha256": "8d5ca44c1d78c6104a150f368c49580f9d3df200fd9ca789ba6478ec3897adb3",
+        "bytes": 41460
+      },
+      "Figure_S9.png": {
+        "sha256": "5bdb4701c79c0669e3b5d47727a6e8632aff803f114c0e2da62a9a8178664a43",
+        "bytes": 413427
+      },
+      "Figure_S9.tiff": {
+        "sha256": "79dce8771d29ecbebec1d91822759fd9e636d80310f2018ec567d2279c435c41",
+        "bytes": 597948
       }
     }
   }

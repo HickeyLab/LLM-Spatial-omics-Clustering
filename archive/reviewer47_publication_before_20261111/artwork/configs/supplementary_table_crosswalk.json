@@ -1,0 +1,67 @@
+{
+  "schema": "manuscript.current_supplementary_table_crosswalk.v2",
+  "updated_date": "2026-11-10",
+  "policy": "Only retained manuscript companions are active. Source hashes distinguish new primary47 and completed annotation results. Archived companion filenames and bytes remain unchanged in the archive and immutable release.",
+  "archive_crosswalk": "data/historical/annotation47_pre_scoring_20261110/configs/supplementary_table_crosswalk.json",
+  "tables": [
+    {
+      "current_label": "S2B",
+      "filename": "Table_S1_channel_membership.csv",
+      "path": "data/frozen/clustering47_primary_20261108/Table_S1_channel_membership.csv",
+      "sha256": "ca988f22648f2854a5504e2bb802a9c4eac198a0fa74b0ff95978d3212b4476a"
+    },
+    {
+      "current_label": "S6a",
+      "filename": "Table_S6a.csv",
+      "path": "data/frozen/annotation47_results_20261110/Table_S6a.csv",
+      "sha256": "bd471bddc39249afae1a94b6ee7690f00238d787f678057ac448a7f8ee6f0994"
+    },
+    {
+      "current_label": "S6b",
+      "filename": "Table_S6b.csv",
+      "path": "data/frozen/annotation47_results_20261110/Table_S6b.csv",
+      "sha256": "562fe41eee829a27c62e0ee8438f8e36b4573507c97ebb835f6f8e9dd34968b7"
+    },
+    {
+      "current_label": "S6c",
+      "filename": "Table_S6c.csv",
+      "path": "data/frozen/annotation47_results_20261110/Table_S6c.csv",
+      "sha256": "79d8e87376e3badeab4824db2893fc330fc1045aa52871720d4488683a1bfd2b"
+    },
+    {
+      "current_label": "S6d",
+      "filename": "Table_S6d.csv",
+      "path": "data/frozen/annotation47_results_20261110/Table_S6d.csv",
+      "sha256": "ce84487b0040baddf47a8c627d62b97a4354ca0fee4f10f6050c037546186115"
+    },
+    {
+      "current_label": "S7",
+      "filename": "conditional_comparisons.csv",
+      "path": "data/frozen/clustering47_primary_20261108/conditional_comparisons.csv",
+      "sha256": "7e28740f387be750897dbd2b95fc36c634a9c7b0973a4825fab26fa7937e285b"
+    },
+    {
+      "current_label": "S7",
+      "filename": "paired_regional_observations.csv",
+      "path": "data/frozen/clustering47_primary_20261108/paired_regional_observations.csv",
+      "sha256": "b32487d19c49a8a88de82d5a1cc19b7d40647f4d3c623d3e9fb816d66a70f9eb"
+    }
+  ],
+  "native_table_sources": [
+    {
+      "current_label": "S1",
+      "path": "data/frozen/manuscript_replay/tables/current_tables.json",
+      "table_label_selector": "S1"
+    },
+    {
+      "current_label": "S2A",
+      "path": "data/frozen/clustering47_primary_20261108/current_tables.json",
+      "table_label_selector": "S2A"
+    },
+    {
+      "current_label": "S2B",
+      "path": "data/frozen/clustering47_primary_20261108/current_tables.json",
+      "table_label_selector": "S2B"
+    }
+  ]
+}

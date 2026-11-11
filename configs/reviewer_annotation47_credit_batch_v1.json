@@ -1,0 +1,40 @@
+{
+  "schema": "reviewer47.credit_batch.protocol.v1",
+  "protocol_id": "reviewer47-credit-batch-20261110-v1",
+  "status": "planned_not_executed",
+  "execution": {"inference_enabled": false, "automatic_launch": false, "separate_launch_instruction_required": true, "new_paid_calls": 0, "technical_validation_cash_cap_usd": "3.00", "production_cash_cap_usd": null, "openai_credit_cap_usd": null, "purchase_credits": false},
+  "b004_bundle": "data/frozen/annotation47_results_20261110",
+  "b004_clustering_manifest": "data/frozen/clustering47_primary_20261108/manifest.json",
+  "b004_cells": 220082,
+  "n_markers": 47,
+  "ontology_size": 28,
+  "marker_and_label_order": "exact orders in the frozen B004 protocol",
+  "methods": ["leiden", "flowsom", "spatialsort", "pixie_tiff"],
+  "representation_arms": ["selected_names", "selected_means", "all_means", "all_means_fractions"],
+  "repetitions": 1,
+  "clusters_per_request": 75,
+  "preserve_original_groups": true,
+  "models": {
+    "openai": {"source_model": "openai/gpt-6-astra", "native_model_candidate": "gpt-6-astra", "source_canonical_model": "openai/gpt-6-astra-20260903", "provider": "openai", "transport": "openai_native_batch", "endpoint": "/v1/chat/completions", "effort": "high", "max_completion_tokens": 32768, "seed": 42, "funding": "existing_openai_api_balance", "model_binding_admitted": false, "input_usd_per_million": "5.00", "output_usd_per_million": "25.00"},
+    "anthropic": {"source_model": "anthropic/claude-opus-5.5", "source_canonical_model": "anthropic/claude-opus-5.5-20260921", "provider": "anthropic", "transport": "openrouter_batch", "effort": "high", "max_completion_tokens": 32768, "seed": null, "funding": "third_party_balance", "input_usd_per_million": "2.00", "output_usd_per_million": "10.00"},
+    "google": {"source_model": "google/gemini-4-argon", "source_canonical_model": "google/gemini-4-argon-20261013", "provider": "google-vertex/global", "transport": "native_google_batch_candidate", "effort": "high", "max_completion_tokens": 943718, "seed": 42, "funding": "third_party_balance", "long_output_admitted": false, "automatic_foreground_fallback": false, "input_usd_per_million_proxy": "1.00", "output_usd_per_million_proxy": "5.00", "pricing_admitted": false},
+    "deepseek": {"source_model": "deepseek/deepseek-v4.1-flash-1017", "source_canonical_model": "deepseek/deepseek-v4.1-flash-20261017", "provider": "morph/fp8", "precision": "fp8", "transport": "openrouter_batch", "effort": "high", "max_completion_tokens": 943718, "seed": null, "funding": "third_party_balance", "long_output_admitted": false, "input_usd_per_million": "0.011", "output_usd_per_million": "0.20"}
+  },
+  "selection": {"maximum_markers": 6, "positive_wilcoxon_only": true, "minimum_fraction": 0, "rank_ties": ["descending_transformed_mean", "lexical_marker_name"], "fallback": "highest transformed mean; lexical tie", "reference_labels_used": false, "paid_tuning": false},
+  "controls": {"method_named": {"model": "anthropic", "methods": ["leiden", "flowsom", "spatialsort", "pixie_tiff"], "base_arm": "all_means_fractions"}, "neighborhood": {"model": "anthropic", "method": "leiden", "base_arm": "all_means_fractions", "neighbors": 15, "within_region": true, "exclude_self": true, "tie_break": "distance then cell ID", "labels_supplied": false}},
+  "granularity": {"targets": [100, 200], "algorithm": "cell-count-weighted Ward on full-precision 47-marker profiles", "tie_break": "lexical original cluster-ID tuple", "new_native_fits": false, "new_llm_calls": false},
+  "classifiers": {"families": ["nearest_centroid", "logistic_regression"], "features": [47, 94], "training_unit": "B004 training-region cells", "query_unit": "one literal LLM profile per cluster", "C_grid": [0.001, 0.01, 0.1, 1, 10], "C_tie_break": "smaller", "solver": "lbfgs", "max_iter": 2000},
+  "calibration": {"arm": "all_means_fractions", "score": "number of four models agreeing with this predicted label divided by four", "cluster_split": "frozen hash of method and cluster ID", "region_split": "existing calibration versus test regions", "repeatability_claim": false, "native_probability_claim": false},
+  "donors": {
+    "cohorts": {"B005": {"expected_cells": 288188, "expected_regions": 8}, "B006": {"expected_cells": 301280, "expected_regions": 8}},
+    "expected_cells_total": 589468,
+    "measurement_source": "new externally verified Yang H5AD selections, not the older 619037-row atlas cohort",
+    "annotation_arm": "all_means_fractions",
+    "fit_other_methods_only_after_input_admission": true,
+    "spatialsort": {"ownership": "external_chat", "thread_id": "01a1c7cb-7c45-7a63-8297-8b4b7f7c3fed", "thread_title": "Run 47-marker SpatialSort on 5/6", "host_id": "local", "expected_sweeps": 50, "dmh_iter": 5, "required_seeds": [42, 43], "primary_seed": 42, "sensitivity_seed": 43, "both_chains_required": true, "approved_by_user": true, "duplicate_submission_allowed": false, "change_external_run_allowed": false},
+    "label_projection": {"status": "unbound_pending_current_cohort_reference_audit", "native_predictions": 28, "old_atlas_23_class_projection_automatically_reused": false},
+    "pixie": {"native_images_required": true, "verified_cell_correspondence_required": true, "common_verified_population_primary": true, "tabular_substitute_allowed": false}
+  },
+  "publication": {"google_doc_mode": "Suggesting", "tables": "IEEE-style", "heatmaps": "red-green", "S11": "white-red", "new_results_required_before_replacement": true, "unrelated_suggestions_preserved": true},
+  "launch_gates": ["source_and_cell_join_integrity", "literal_paired_evidence", "model_and_route_admission", "existing_openai_balance_and_project", "native_google_batch_checkpoint_validation", "deepseek_batch_output_validation", "external_donor_completion", "current_donor_reference_and_pixie_admission", "exact_cash_and_credit_reservations", "separate_user_launch_instruction"]
+}

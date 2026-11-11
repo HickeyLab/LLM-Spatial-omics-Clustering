@@ -1,0 +1,5 @@
+Model,Requested model ID,Transport,Reasoning,Decoding fields sent
+GPT-6 Astra,gpt-6-astra; openai/gpt-6-astra,Batch,high,"Combined output ceiling 32,768; seed 42; temperature/top-p omitted"
+Claude Opus 5.5,anthropic/claude-opus-5.5,Batch,high,"Combined output ceiling 32,768; seed omitted; temperature/top-p omitted"
+Gemini 4 Argon,google/gemini-4-argon,Standard streaming,high,"Combined output ceiling 943,718; seed 42; temperature/top-p omitted"
+DeepSeek V4.1 Flash 1017,deepseek/deepseek-v4.1-flash-1017,Standard streaming,high,"Combined output ceiling 943,718; seed omitted; temperature/top-p omitted"

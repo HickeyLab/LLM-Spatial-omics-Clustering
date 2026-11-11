@@ -471,6 +471,8 @@ RENDERERS={"1":figure_1,"2":figure_2,"S1":figure_s1,"S2":figure_s2,"S4":figure_s
            "S3A":figure_s3a,"S3B":figure_s3b,"S3C":figure_s3c,"S5":figure_s5}
 from render_annotation47_figures import RENDERERS as ANNOTATION47_RENDERERS
 RENDERERS.update(ANNOTATION47_RENDERERS)
+from render_reviewer47_figures import RENDERERS as REVIEWER47_RENDERERS
+RENDERERS.update(REVIEWER47_RENDERERS)
 
 
 

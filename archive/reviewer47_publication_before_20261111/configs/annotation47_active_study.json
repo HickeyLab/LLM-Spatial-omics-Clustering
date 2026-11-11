@@ -1,0 +1,175 @@
+{
+  "schema": "manuscript.annotation47_active_study.v2",
+  "prepared_date": "2026-11-09",
+  "status": "completed_scored_verified",
+  "active_preparation": "configs/primary_annotation47_1repeat_opus55_v1.json",
+  "readable_protocol": "docs/revision/primary_annotation47_one_repeat_protocol.md",
+  "active_experiment_ids": [
+    7,
+    14
+  ],
+  "active_analyses": {
+    "7": "Full47-marker benchmark from the means-plus-fractions arm.",
+    "14": "Paired means-plus-fractions minus means contrast from the same physical requests."
+  },
+  "study_summary": {
+    "cells": 220082,
+    "markers": 47,
+    "allowed_labels": 28,
+    "noise_allowed": true,
+    "methods": [
+      "leiden",
+      "flowsom",
+      "spatialsort",
+      "pixie_tiff"
+    ],
+    "occupied_clusters": [
+      300,
+      299,
+      229,
+      300
+    ],
+    "arms": [
+      "all_means",
+      "all_means_fractions"
+    ],
+    "repetitions": 1,
+    "seed_where_supported": 42,
+    "model_ids": [
+      "openai/gpt-6-astra",
+      "anthropic/claude-opus-5.5",
+      "google/gemini-4-argon",
+      "deepseek/deepseek-v4.1-flash-1017"
+    ],
+    "reasoning": "high",
+    "batch_size": 75,
+    "annotation_sets": 32,
+    "initial_request_items": 128,
+    "planned_cluster_predictions": 9024,
+    "initial_batch_request_items": 96,
+    "initial_standard_request_items": 32,
+    "accepted_batch_request_items": 64,
+    "accepted_standard_streaming_request_items": 64,
+    "accepted_request_items": 128,
+    "accepted_cluster_predictions": 9024
+  },
+  "repetition_claims": {
+    "repeatability_study": false,
+    "repeat_consistency": false,
+    "sample_sd_across_repetitions": false,
+    "within_model_voting": false,
+    "independent_donor_replication": false
+  },
+  "experiment_9": {
+    "id": 9,
+    "status": "archived",
+    "new_execution": false,
+    "active_manuscript_result": false,
+    "description": "Five-call annotation repeatability on75-cluster subsets. Stable ID and evidence are preserved.",
+    "archive_index": "data/historical/publication_before_primary47_20261109/index.json",
+    "archive_index_sha256": "7363960dbbf8136ce3395aa7f50bd62a519768e1d5468c2f1fb76625f98d2887",
+    "archive_index_member_count": 175,
+    "archived_members": [
+      {
+        "original_path": "notebooks/final_figures/table_s5_repeatability_and_prompt_controls.ipynb",
+        "archive_path": "data/historical/publication_before_primary47_20261109/notebooks/final_figures/table_s5_repeatability_and_prompt_controls.ipynb",
+        "sha256": "fdf307a4e0feba04fb44178dcf6dd3e13d4d5f4ebedec54d9fbd648d051a6c43",
+        "bytes": 1223
+      },
+      {
+        "original_path": "data/frozen/manuscript_replay/manifest.json",
+        "archive_path": "data/historical/publication_before_primary47_20261109/data/frozen/manuscript_replay/manifest.json",
+        "sha256": "5ed52a3d945dc30c3984bdccec03101168fdcad17e9e37027b5873bc6eeb876d",
+        "bytes": 24427
+      },
+      {
+        "original_path": "configs/manuscript_inventory.json",
+        "archive_path": "data/historical/publication_before_primary47_20261109/configs/manuscript_inventory.json",
+        "sha256": "e8d7cddd154fec0eae051b13825dd05f73a2ee2334314d9fcd94a4312be2fbe4",
+        "bytes": 25272
+      }
+    ],
+    "preserved_manifest_pinned_evidence": [
+      {
+        "path": "data/frozen/manuscript_replay/tables/companions/S4a_repeat_variability.csv",
+        "sha256": "a447da3ed3002b1d2b675f189472a8599125c3bb47d4bd62a9c36bc9463d1f02",
+        "bytes": 9928,
+        "release_path": "supplementary_tables/S4a_repeat_variability.csv"
+      },
+      {
+        "path": "data/frozen/manuscript_replay/tables/companions/S4b_consistency_and_review_coverage.csv",
+        "sha256": "f4d55acc73eb61b1844927d3c0c92764b36b4de20c15aeba56c4a6e49782d359",
+        "bytes": 35366,
+        "release_path": "supplementary_tables/S4b_consistency_and_review_coverage.csv"
+      }
+    ],
+    "evidence_note": "The two CSVs retain their existing paths and hashes and are covered by the replay manifest preserved in the checksum archive. They are evidence only, not inputs or results of the active one-repeat study. The archive index is not claimed to include a complete raw generation history.",
+    "registry_archive_manifest": "data/historical/annotation47_pre_one_repeat_20261109/manifest.json",
+    "registry_archive_manifest_sha256": "f9af2a77344dcdac1ea492b34be6644780c77bcebe517fdc77fec368216734e6"
+  },
+  "supersedes_planning_only": {
+    "path": "configs/primary_annotation47_3repeat_v1.json",
+    "sha256": "d22155c550654327d72f3c3014c7847d8ace7ee020d7889a374a3da3d4258da6",
+    "scope": "Active planning selection only. Do not rewrite or delete the three-repeat preparation or any five-repeat preparation."
+  },
+  "execution": {
+    "enabled": false,
+    "automatic_launch": false,
+    "state": "completed_scored_verified",
+    "accepted_request_items": 128,
+    "accepted_cluster_predictions": 9024,
+    "annotation_sets": 32,
+    "repetitions": 1,
+    "all_final_predictions_valid": true,
+    "final_cluster_coverage": 1.0,
+    "final_cell_coverage": 1.0,
+    "new_annotation_calls_by_publication_update": 0,
+    "new_fits_by_publication_update": 0,
+    "recoveries_are_independent_repetitions": false,
+    "further_generation_authorized_by_this_record": false,
+    "actual_execution_summary": "data/frozen/annotation47_results_20261110/actual_execution_summary.json"
+  },
+  "publication": {
+    "state": "google_doc_suggestions_saved_and_verified",
+    "figure_replacements": "completed_as_suggestions",
+    "google_doc_mode": "Suggesting",
+    "unrelated_suggestions_preserved": true,
+    "result_placeholders_only_until_valid_outputs": false,
+    "previous_planning_records": "data/historical/annotation47_pre_scoring_20261110/manifest.json",
+    "three_and_five_repeat_preparations": "Preserved unchanged; not executed by this update.",
+    "integration_receipt": "docs/revision/annotation47_publication_integration_20261110.json",
+    "live_google_doc_saved_verified": true
+  },
+  "active_preparation_protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
+  "prepared_bundle": {
+    "role": "Original sealed scientific request bundle; superseded runtime availability flags remain only in the pre-scoring archive.",
+    "manifest_sha256": "ec0b91b1cb769c8b05a68272f9d9de2c0e946600e24412910ffcd6dc34f18303",
+    "request_registry_sha256": "c15700c414d8e41e54485b7c6e9d3b4c9cf116d85ae07789ba15d6a24f48721f",
+    "execution_enabled": false,
+    "actual_execution_record": "data/frozen/annotation47_results_20261110/actual_execution_summary.json"
+  },
+  "updated_date": "2026-11-10",
+  "protocol_note": "The versioned preparation is preserved unchanged. Actual execution amendments, delivery, accepted requests and scoring are recorded in the completed result manifest and execution summary.",
+  "financial_execution": {
+    "confirmed_campaign_charge_usd": "77.078729829",
+    "retained_unknown_holds_usd": "6.7679820",
+    "total_commitment_usd": "83.846711829",
+    "approved_cap_usd": "90",
+    "scope": "All models, failed generations and authorized recoveries; each charge counted once.",
+    "new_calls_from_offline_scoring": 0,
+    "automatic_budget_increase": false,
+    "new_credit_purchase": false
+  },
+  "results": {
+    "manifest": "data/frozen/annotation47_results_20261110/manifest.json",
+    "manifest_sha256": "c7edd3c1611ae31b7cb08e845003437c4ef49273cdced8860362e3d1a5052f6c",
+    "primary_scope": "equal_test_regions",
+    "primary_arm": "all_means_fractions",
+    "label_vocabulary": 28,
+    "accepted_prediction_bank": "data/frozen/annotation47_results_20261110/accepted_requests.json",
+    "scoring_verification": "data/frozen/annotation47_results_20261110/verification.json",
+    "summary": "data/frozen/annotation47_results_20261110/summary.json",
+    "scorer": "scripts/revision/score_annotation47_completed.py",
+    "annotation_calls_by_scoring": 0
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "cells": 220082,
+  "environment": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "python": "3.12.4",
+    "scipy": "1.16.2",
+    "sklearn": "1.7.2"
+  },
+  "input_sha256": {
+    "memberships.csv.gz": "6c707e5f8f5ade7918895ae5cac848fcaafb813cbedba4c1f47b5f4d6eed0ffa",
+    "profiles_fractions.csv": "852ac3d2bbee83287bb9cbe3250bb02a17893885d6e5c4cb502d823ede7e1147",
+    "profiles_means_z.csv": "8e1c478e05d3594bdeb5ff48d4e949b5e6c6ec4c878ecdc512cf2ab1049da942",
+    "protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
+    "reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2"
+  },
+  "interpretation": "Post-clustering coarsening; not native-K fits or LLM annotation-ranking evidence.",
+  "methods": [
+    "leiden",
+    "flowsom",
+    "spatialsort",
+    "pixie_tiff"
+  ],
+  "new_annotation_calls": 0,
+  "offline_only": true,
+  "outputs": {
+    "assignments_K100.csv.gz": {
+      "bytes": 1382316,
+      "sha256": "8208b4d744a85c1ae281b14414df002e49bb02863bb9d54372558d3a1f5f1275"
+    },
+    "assignments_K200.csv.gz": {
+      "bytes": 1552506,
+      "sha256": "b5c2e0a00b7ec4d0a41eade6b5ee59dc49c6231147c8d88481f5fc1e44918e5d"
+    },
+    "cluster_maps.csv": {
+      "bytes": 60258,
+      "sha256": "90614031ec1cf7f4b2eae4986740699208e4f2c84230686e8add81e06b026ebd"
+    },
+    "cluster_sizes.csv": {
+      "bytes": 56651,
+      "sha256": "1ebfaeb4644082257df739f49e9246b66944034fccef6f27a5148069c402663e"
+    },
+    "coarsening_freeze.json": {
+      "bytes": 1002,
+      "sha256": "fb578b5ceeb0d7189f4937816c7459de74da0bd5b14d0e724532413eb9526a20"
+    },
+    "equal_test_region_metrics.csv": {
+      "bytes": 879,
+      "sha256": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a"
+    },
+    "flowsom_merge_trace.json": {
+      "bytes": 58100,
+      "sha256": "3f07f70729dfadb74bcc2061869945458e8b70167bd95479cdc6f7ff76b34f65"
+    },
+    "leiden_merge_trace.json": {
+      "bytes": 60927,
+      "sha256": "d248e8dbeeb66b4f8518eca45ff3395e6fcef21d7ac0edee5429746ce82dce54"
+    },
+    "pixie_tiff_merge_trace.json": {
+      "bytes": 58032,
+      "sha256": "b2750ef048e90c6d05e0247f891eaf38a2b81d8d9800b5b1967ef47e0c9b5e27"
+    },
+    "regional_metrics.csv": {
+      "bytes": 12885,
+      "sha256": "55edc6abd7ffe1fd34902ec9376bb1988bca64f9e8cacf93dc88cc75ab2104be"
+    },
+    "spatialsort_merge_trace.json": {
+      "bytes": 36946,
+      "sha256": "ba9ef8bbefa184e15ba2c29b5d758391ed5d7ee78aa0cefcc7690b1542d95367"
+    }
+  },
+  "reference_labels_materialized_after_assignment_freeze": true,
+  "reference_labels_used_to_build_tree": false,
+  "reference_noise_preserved": true,
+  "schema": "reviewer47.granularity.offline.v1",
+  "scientific_parameters_tuned_on_test": false,
+  "status": "completed",
+  "targets": [
+    100,
+    200
+  ]
+}

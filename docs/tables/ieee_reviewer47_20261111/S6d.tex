@@ -1,0 +1,22 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S6d\\
+MODEL IDENTITIES AND INFERENCE SETTINGS\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.85\hsize\raggedright\arraybackslash}X>{\hsize=1.2\hsize\raggedright\arraybackslash}X>{\hsize=0.9\hsize\raggedright\arraybackslash}X>{\hsize=0.6\hsize\raggedright\arraybackslash}X>{\hsize=1.45\hsize\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Model} & \textbf{Requested model ID} & \textbf{Transport} & \textbf{Reasoning} & \textbf{Decoding fields sent} \\
+\midrule
+GPT-6 Astra & gpt-6-astra; openai/gpt-6-astra & Batch & high & Combined output ceiling 32,768; seed 42; temperature/top-p omitted \\
+Claude Opus 5.5 & anthropic/claude-opus-5.5 & Batch & high & Combined output ceiling 32,768; seed omitted; temperature/top-p omitted \\
+Gemini 4 Argon & google/gemini-4-argon & Standard streaming & high & Combined output ceiling 943,718; seed 42; temperature/top-p omitted \\
+DeepSeek V4.1 Flash 1017 & deepseek/deepseek-v4.1-flash-1017 & Standard streaming & high & Combined output ceiling 943,718; seed omitted; temperature/top-p omitted \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

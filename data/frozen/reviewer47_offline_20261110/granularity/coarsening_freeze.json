@@ -1,0 +1,15 @@
+{
+  "algorithm": "cell-count-weighted Ward; exact-cost ties use sorted original ID tuples",
+  "output_sha256": {
+    "assignments_K100.csv.gz": "8208b4d744a85c1ae281b14414df002e49bb02863bb9d54372558d3a1f5f1275",
+    "assignments_K200.csv.gz": "b5c2e0a00b7ec4d0a41eade6b5ee59dc49c6231147c8d88481f5fc1e44918e5d",
+    "cluster_maps.csv": "90614031ec1cf7f4b2eae4986740699208e4f2c84230686e8add81e06b026ebd",
+    "cluster_sizes.csv": "1ebfaeb4644082257df739f49e9246b66944034fccef6f27a5148069c402663e",
+    "flowsom_merge_trace.json": "3f07f70729dfadb74bcc2061869945458e8b70167bd95479cdc6f7ff76b34f65",
+    "leiden_merge_trace.json": "d248e8dbeeb66b4f8518eca45ff3395e6fcef21d7ac0edee5429746ce82dce54",
+    "pixie_tiff_merge_trace.json": "b2750ef048e90c6d05e0247f891eaf38a2b81d8d9800b5b1967ef47e0c9b5e27",
+    "spatialsort_merge_trace.json": "ba9ef8bbefa184e15ba2c29b5d758391ed5d7ee78aa0cefcc7690b1542d95367"
+  },
+  "reference_label_values_materialized": false,
+  "schema": "reviewer47.coarsening_freeze.v1"
+}

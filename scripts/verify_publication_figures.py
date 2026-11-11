@@ -31,7 +31,7 @@ _inventory = json.loads((ROOT/'configs/manuscript_inventory.json').read_text())[
 ORDER = [Path(e['path']).stem.removeprefix('Figure_') for r in _inventory.values() for e in r['images']]
 PANELS = {'1':'ABCDEF','2':'ABCDEFGH','3':'ABCDE','4':'ABCDE',
           'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCD',
-          'S5':'A','S6':'AB','S7':'','S10':'ABCD','S11':'A'}
+          'S5':'A','S6':'AB','S7':'','S8':'ABCD','S9':'ABCD','S10':'ABCD','S11':'A'}
 
 NS = {'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
       'a':'http://schemas.openxmlformats.org/drawingml/2006/main',
@@ -248,7 +248,8 @@ def main():
     parser.add_argument('--figures',nargs='+',choices=ORDER,help='Verify selected current native figures without regenerating other exports.')
     args = parser.parse_args()
     result = {'status':'pass','native_figures':verify_native(args.folder,args.render_qa,args.figures),
-              'independent_annotation_scoring_receipt':'data/frozen/annotation47_results_20261110/verification.json',
+              'independent_annotation_scoring_receipt':'data/frozen/annotation47_results_20261111/verification.json',
+              'reviewer_control_scoring_receipt':'data/frozen/reviewer47_results_20261111/verification.json',
               'new_model_calls':0,'new_fits':0}
     if args.docx:
         result['manuscript_export_sha256'] = digest(args.docx)

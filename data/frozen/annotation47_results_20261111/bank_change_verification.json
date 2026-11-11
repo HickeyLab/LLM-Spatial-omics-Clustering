@@ -1,0 +1,40 @@
+{
+  "non_deepseek_full_conditions": 24,
+  "non_deepseek_all_cell_predictions_byte_equal": true,
+  "n_cells_each": 220082,
+  "deepseek_changes": [
+    {
+      "condition": "deepseek__leiden__all_means",
+      "changed_all_cells": 56079
+    },
+    {
+      "condition": "deepseek__leiden__all_means_fractions",
+      "changed_all_cells": 91053
+    },
+    {
+      "condition": "deepseek__flowsom__all_means",
+      "changed_all_cells": 14948
+    },
+    {
+      "condition": "deepseek__flowsom__all_means_fractions",
+      "changed_all_cells": 38725
+    },
+    {
+      "condition": "deepseek__spatialsort__all_means",
+      "changed_all_cells": 48243
+    },
+    {
+      "condition": "deepseek__spatialsort__all_means_fractions",
+      "changed_all_cells": 46183
+    },
+    {
+      "condition": "deepseek__pixie_tiff__all_means",
+      "changed_all_cells": 46146
+    },
+    {
+      "condition": "deepseek__pixie_tiff__all_means_fractions",
+      "changed_all_cells": 73513
+    }
+  ],
+  "old_bank_preserved": true
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "reviewer47.portable_results_manifest.v1",
+  "files": {
+    "all_means_centroids.npz": {
+      "sha256": "858c4ceab3197c0aa0360d8a362d4c482350c4ea8bdbc1622593eafb70e4d58e",
+      "bytes": 11802
+    },
+    "all_means_fractions_centroids.npz": {
+      "sha256": "81d9aece1c25cea38f1f7cdd1317d1c9cda838f3714b8d30793b508f57829c63",
+      "bytes": 20514
+    },
+    "classifier_C_selection.csv": {
+      "sha256": "6197ec4b3723ebd315079316cc87c6ea37a50a3aafc621caa722b0f017565242",
+      "bytes": 1983
+    },
+    "classifier_cluster_predictions.csv": {
+      "sha256": "1af5383b3b0b78fa18e3bf1697112b1a0a51785e7deb0e971174f20495b742b1",
+      "bytes": 225252
+    },
+    "classifier_equal_test_region_metrics.csv": {
+      "sha256": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801",
+      "bytes": 1448
+    },
+    "classifier_models.json": {
+      "sha256": "85f42c9bb3e888f6c17779323f4050873208231863d09468abe095457773d621",
+      "bytes": 3753
+    },
+    "classifier_regional_metrics.csv": {
+      "sha256": "20638312ad426ec5871560ab8a07776590d31aa41573776c24b00b160473f51b",
+      "bytes": 17754
+    },
+    "flowsom_all_means_fractions_logistic.npz": {
+      "sha256": "1fab85b99eed6a65387ed5d010a493b3d2642fe48f198b8c8f51433e2675e076",
+      "bytes": 22503
+    },
+    "flowsom_all_means_logistic.npz": {
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787",
+      "bytes": 12394
+    },
+    "leiden_all_means_fractions_logistic.npz": {
+      "sha256": "20afcf35a7126a9838a35598caeaaaaf84d5371a65b6609c07c63b0b79db4c0d",
+      "bytes": 22523
+    },
+    "leiden_all_means_logistic.npz": {
+      "sha256": "a918093cde7f9541518fe24e5c69f88e506bd946ad7bc6ecf9f6f34c8a789925",
+      "bytes": 12394
+    },
+    "pixie_tiff_all_means_fractions_logistic.npz": {
+      "sha256": "1fab85b99eed6a65387ed5d010a493b3d2642fe48f198b8c8f51433e2675e076",
+      "bytes": 22503
+    },
+    "pixie_tiff_all_means_logistic.npz": {
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787",
+      "bytes": 12394
+    },
+    "spatialsort_all_means_fractions_logistic.npz": {
+      "sha256": "39518185cee06ef7712984ee3b03036b665a443d64439bf6c584de65f93b4fca",
+      "bytes": 22489
+    },
+    "spatialsort_all_means_logistic.npz": {
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787",
+      "bytes": 12394
+    },
+    "verification.json": {
+      "sha256": "fa7a12e0db5d1deb816879fcff65d9ed11e9b11b88891e75f551a3e10a1d6f60",
+      "bytes": 3695
+    }
+  },
+  "new_annotation_calls": 0,
+  "created_at": "2026-11-11T18:41:26.338243+00:00"
+}

@@ -21,7 +21,7 @@ from publication_figure_design import (
 )
 from biorender_workflows import add_workflow
 
-DATA = ROOT / "data/frozen/annotation47_results_20261110"
+DATA = ROOT / "data/frozen/annotation47_results_20261111"
 MODEL_KEYS = ["openai", "anthropic", "google", "deepseek"]
 MODELS = ["Astra", "Opus 5.5", "Argon", "DeepSeek"]
 FULL_MODELS = ["GPT-6 Astra", "Claude Opus 5.5", "Gemini 4 Argon", "DeepSeek V4.1 Flash 1017"]

@@ -1,7 +1,7 @@
 {
   "schema": "manuscript.artwork.v2",
-  "figure_count": 13,
-  "image_count": 15,
+  "figure_count": 15,
+  "image_count": 17,
   "policy": "Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
   "native_renderer": "scripts/render_publication_figures.py",
   "style_file": "configs/publication_figure_style.json",
@@ -48,8 +48,8 @@
     {
       "file": "figures/manuscript/Figure_3.png",
       "source_file": "figures/publication/Figure_3.png",
-      "source_sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
-      "output_sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
+      "source_sha256": "abf986acc449c2ef5366642edd50c542c50b80bbd39305fa1ce6093e99f15152",
+      "output_sha256": "abf986acc449c2ef5366642edd50c542c50b80bbd39305fa1ce6093e99f15152",
       "size_pixels": [
         3900,
         4007
@@ -238,8 +238,8 @@
     {
       "file": "figures/manuscript/Figure_S7.png",
       "source_file": "figures/publication/Figure_S7.png",
-      "source_sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
-      "output_sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
+      "source_sha256": "648f6abe26c75650b7f0f68556ca190c65c73be88d1dfe515a1faaa8a6509ad3",
+      "output_sha256": "648f6abe26c75650b7f0f68556ca190c65c73be88d1dfe515a1faaa8a6509ad3",
       "size_pixels": [
         3900,
         2837
@@ -255,10 +255,48 @@
       ]
     },
     {
+      "file": "figures/manuscript/Figure_S8.png",
+      "source_file": "figures/publication/Figure_S8.png",
+      "source_sha256": "388dc935b48a7cc30c381010569748999ac562efccff0873132d5a91e2d6920a",
+      "output_sha256": "388dc935b48a7cc30c381010569748999ac562efccff0873132d5a91e2d6920a",
+      "size_pixels": [
+        3900,
+        2352
+      ],
+      "width_mm": 165.1,
+      "height_mm": 99.57066666666671,
+      "minimum_font_pt": 5.5,
+      "minimum_placement_width_mm": 150.091,
+      "dpi": 600,
+      "vector_files": [
+        "figures/publication/Figure_S8.pdf",
+        "figures/publication/Figure_S8.svg"
+      ]
+    },
+    {
+      "file": "figures/manuscript/Figure_S9.png",
+      "source_file": "figures/publication/Figure_S9.png",
+      "source_sha256": "5bdb4701c79c0669e3b5d47727a6e8632aff803f114c0e2da62a9a8178664a43",
+      "output_sha256": "5bdb4701c79c0669e3b5d47727a6e8632aff803f114c0e2da62a9a8178664a43",
+      "size_pixels": [
+        3900,
+        3146
+      ],
+      "width_mm": 165.1,
+      "height_mm": 133.19822916666666,
+      "minimum_font_pt": 5.5,
+      "minimum_placement_width_mm": 150.091,
+      "dpi": 600,
+      "vector_files": [
+        "figures/publication/Figure_S9.pdf",
+        "figures/publication/Figure_S9.svg"
+      ]
+    },
+    {
       "file": "figures/manuscript/Figure_S10.png",
       "source_file": "figures/publication/Figure_S10.png",
-      "source_sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
-      "output_sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
+      "source_sha256": "6f4cf792f91244ec472c4a55d771d29975934d69423d815005574bd7f11b322b",
+      "output_sha256": "6f4cf792f91244ec472c4a55d771d29975934d69423d815005574bd7f11b322b",
       "size_pixels": [
         3900,
         2214
@@ -276,8 +314,8 @@
     {
       "file": "figures/manuscript/Figure_S11.png",
       "source_file": "figures/publication/Figure_S11.png",
-      "source_sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
-      "output_sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
+      "source_sha256": "7580efccf224da38e01fa487d81877b0b665a9536419c2951d0be3eed35d9b6c",
+      "output_sha256": "7580efccf224da38e01fa487d81877b0b665a9536419c2951d0be3eed35d9b6c",
       "size_pixels": [
         3900,
         1010
