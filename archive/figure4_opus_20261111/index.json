@@ -1,0 +1,112 @@
+{
+  "schema": "publication.figure4.opus_preservation.v1",
+  "status": "preserved_replaced_presentation",
+  "source_commit": "8b36de690cca59ed1d8823e7b520b61b54e2f227",
+  "data_unchanged": "data/frozen/annotation47_results_20261110/manifest.json",
+  "source_artwork_config": "configs/biorender_workflows.json",
+  "reconstruction_entry": "archive/figure4_opus_20261111/replay.py",
+  "files": [
+    {
+      "original_path": "scripts/render_annotation47_figures.py",
+      "archive_path": "archive/figure4_opus_20261111/scripts/render_annotation47_figures.py",
+      "sha256": "01e8970d6fcf907c945f052b1ab05143a76a924a1462d17265ad070ffae2a32a",
+      "bytes": 17864
+    },
+    {
+      "original_path": "scripts/biorender_workflows.py",
+      "archive_path": "archive/figure4_opus_20261111/scripts/biorender_workflows.py",
+      "sha256": "19aa8c49b66d55075bfbd756a6b68b93892ac836348e29a78255aac5e79606de",
+      "bytes": 7371
+    },
+    {
+      "original_path": "scripts/publication_figure_design.py",
+      "archive_path": "archive/figure4_opus_20261111/scripts/publication_figure_design.py",
+      "sha256": "1f58c57c13692cf5d2eb87b5a1168b8ab514fcfda97d80f839880155ee329f41",
+      "bytes": 12931
+    },
+    {
+      "original_path": "configs/manuscript_inventory.json",
+      "archive_path": "archive/figure4_opus_20261111/configs/manuscript_inventory.json",
+      "sha256": "0183ef0986152f2370983aed8e8894ae2c8013cb93cc23e02f134c77d38d35f0",
+      "bytes": 19360
+    },
+    {
+      "original_path": "configs/biorender_workflows.json",
+      "archive_path": "archive/figure4_opus_20261111/configs/biorender_workflows.json",
+      "sha256": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee",
+      "bytes": 1347
+    },
+    {
+      "original_path": "configs/figure_04_historical_claude.json",
+      "archive_path": "archive/figure4_opus_20261111/configs/figure_04_historical_claude.json",
+      "sha256": "c34ab5b1e2114dd34102b68dad13836054e5045ba3b01efe7937cf0953a05020",
+      "bytes": 2908
+    },
+    {
+      "original_path": "configs/publication_figure_style.json",
+      "archive_path": "archive/figure4_opus_20261111/configs/publication_figure_style.json",
+      "sha256": "f89a4ff3481b6f1973aadc9d808597af2f70ef652167a25912f14e53ac2426ae",
+      "bytes": 1465
+    },
+    {
+      "original_path": "configs/cell_type_colors.csv",
+      "archive_path": "archive/figure4_opus_20261111/configs/cell_type_colors.csv",
+      "sha256": "8ec1b607f398eaca6851d385114518f2a3a419b0680a008ffc594fd6d1c79a69",
+      "bytes": 557
+    },
+    {
+      "original_path": "notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb",
+      "archive_path": "archive/figure4_opus_20261111/notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb",
+      "sha256": "20cb0e658a10bb1ed34478f0f8d2473039d6d82a383782dee6ce02bcca4b177b",
+      "bytes": 2714
+    },
+    {
+      "original_path": "notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb",
+      "archive_path": "archive/figure4_opus_20261111/notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb",
+      "sha256": "9b61876bb1950f4ba960a21d27a7ee78de2e81f0f5777ed13f61b2e3b0786b6a",
+      "bytes": 1351
+    },
+    {
+      "original_path": "figures/manuscript/Figure_4.png",
+      "archive_path": "archive/figure4_opus_20261111/figures/manuscript/Figure_4.png",
+      "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+      "bytes": 1294375
+    },
+    {
+      "original_path": "notebooks/final_figures/previews/figure_04.png",
+      "archive_path": "archive/figure4_opus_20261111/notebooks/final_figures/previews/figure_04.png",
+      "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+      "bytes": 1294375
+    },
+    {
+      "original_path": "figures/publication/Figure_4.pdf",
+      "archive_path": "archive/figure4_opus_20261111/figures/publication/Figure_4.pdf",
+      "sha256": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
+      "bytes": 1319807
+    },
+    {
+      "original_path": "figures/publication/Figure_4.png",
+      "archive_path": "archive/figure4_opus_20261111/figures/publication/Figure_4.png",
+      "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+      "bytes": 1294375
+    },
+    {
+      "original_path": "figures/publication/Figure_4.svg",
+      "archive_path": "archive/figure4_opus_20261111/figures/publication/Figure_4.svg",
+      "sha256": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638",
+      "bytes": 2640618
+    },
+    {
+      "original_path": "figures/publication/Figure_4.tiff",
+      "archive_path": "archive/figure4_opus_20261111/figures/publication/Figure_4.tiff",
+      "sha256": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
+      "bytes": 2359476
+    },
+    {
+      "original_path": "figures/publication/Figure_4_verification.json",
+      "archive_path": "archive/figure4_opus_20261111/figures/publication/Figure_4_verification.json",
+      "sha256": "c66abef37b3b6a022d8c88e2f96c5f9a27b0bb038d01673d6671d57f92a44158",
+      "bytes": 2723
+    }
+  ]
+}

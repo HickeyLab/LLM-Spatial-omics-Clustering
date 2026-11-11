@@ -11,7 +11,7 @@ Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occupied clust
 | 1 | A–F | [figure_01_spillover_compensation.ipynb](notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
 | 2 | A–H | [figure_02_clustering_method_benchmark.ipynb](notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
 | 3 | A–E | [figure_03_llm_annotation_benchmark.ipynb](notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
-| 4 | A–E | [figure_04_leiden_claude_end_to_end.ipynb](notebooks/final_figures/figure_04_leiden_claude_end_to_end.ipynb) |
+| 4 | A–E | [figure_04_leiden_gpt_end_to_end.ipynb](notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb) |
 | S1 | A–C | [figure_s01_clustering_metrics.ipynb](notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
 | S2 | A–B | [figure_s02_spatial_celltypes.ipynb](notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
 | S3 | A–C | [figure_s03_matching_and_compensation.ipynb](notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
@@ -30,7 +30,9 @@ The means-plus-fractions arm supplies the benchmark. Reference agreement is calc
 
 Across the 16 benchmark combinations, equal-test-region agreement ranges from **23.06% to 58.12%** and macro-F1 from **0.151 to 0.449**. Leiden–Astra has the highest agreement in these two regions. Adding fractions is associated with higher agreement in nine conditions and lower agreement in seven, with changes from **−8.75 to +6.50 percentage points**. These are descriptive single-run outcomes on existing B004 partitions, not estimates of repeated-call variability or generalization to new donors.
 
-Figure 4 uses the prespecified Leiden–Opus 5.5 pipeline. Its three example clusters were selected by cell count before outcomes were inspected. Figure S11 uses one accepted prediction per model, fixed model-order modal ties, and no reference-label filtering to select CD8+ T groups.
+Figure 4 uses the Leiden–Astra pipeline selected for detailed presentation from the B004 benchmark results. Figure S6 retains Leiden–Opus 5.5 as a supplementary comparison. The three Figure 4 example clusters were selected by cell count before outcomes were inspected. Figure S11 uses one accepted prediction per model, fixed model-order modal ties, and no reference-label filtering to select CD8+ T groups.
+
+The [B004 presentation amendment](docs/revision/b004_astra_presentation_amendment_20261111.md) records this selection without changing the original protocol. A separate [Astra–Leiden control extension](docs/revision/astra_leiden_controls_protocol_20261111.md) prepares eight native Batch items with a conservative $8.71 reservation. It remains disabled pending fresh preflight and separate launch approval; B005/B006 and completed Opus controls are unchanged.
 
 The [execution summary](data/frozen/annotation47_results_20261110/actual_execution_summary.json) records actual accepted settings: Astra/Opus Batch at 32,768 requested output tokens; Gemini/DeepSeek standard streaming at 943,718, with Gemini continuation segments recorded separately. The original disabled preparation remains unchanged. Rejected/interrupted attempts, authorized recoveries, request hashes and per-request route metadata remain in the source records. There is one accepted output per logical condition; this does not imply one physical generation. Confirmed campaign charges are **$77.078729829**, with **$6.767982** in retained uncertain holds and **$83.846711829** in total commitment under the approved $90 cap. Offline scoring and plotting make no paid calls.
 

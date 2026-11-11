@@ -1,0 +1,57 @@
+{
+  "schema": "biorender.workflows.v1",
+  "source_url": "https://app.biorender.com/illustrations/69a8866b418c74cd641a8cfc",
+  "source_file": "data/frozen/biorender_workflows/source_canvas.pdf",
+  "source_sha256": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+  "export_dpi": 600,
+  "source_page_points": [
+    720,
+    504
+  ],
+  "panels": {
+    "2A": {
+      "clip_points": [
+        13,
+        60,
+        672,
+        168
+      ],
+      "rect_mm": [
+        3,
+        11,
+        159,
+        26.057663125948405
+      ]
+    },
+    "3A": {
+      "clip_points": [
+        13,
+        207,
+        708,
+        316
+      ],
+      "rect_mm": [
+        6,
+        9,
+        155,
+        24.309352517985612
+      ]
+    },
+    "4A": {
+      "clip_points": [
+        27,
+        386,
+        556,
+        454
+      ],
+      "rect_mm": [
+        6,
+        9,
+        154,
+        19.795841209829867
+      ]
+    }
+  },
+  "edits": "Original BioRender artwork retained. Imported text tables and lists retyped in editable Arial. Sub-print-size generic template phase captions and color-key labels removed. No scientific values changed.",
+  "publication_license_status": "Open-access publication-license form was left unsubmitted at the author's request. No CC-BY license or public BioRender link is asserted by this repository."
+}

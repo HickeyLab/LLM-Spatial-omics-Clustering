@@ -1,0 +1,17 @@
+# B004 detailed-pipeline presentation amendment
+
+**Scope:** B004 presentation and an offline, disabled control extension. No B005/B006 inputs, protocols, donor jobs or model choices are changed.
+
+Figure 4 now illustrates Leiden with GPT-6 Astra in the means-plus-fractions arm. This choice was made after examining the completed B004 benchmark. The original [one-repetition protocol](primary_annotation47_one_repeat_protocol.md) and [configuration](../../configs/primary_annotation47_1repeat_opus55_v1.json) specified Opus before outcomes; those records remain unchanged. The manuscript therefore describes Astra as selected from the B004 benchmark and does not call that choice prespecified or treat the selected result as an independent model-selection evaluation.
+
+The frozen primary endpoint is the equal-weighted mean of agreement in the two test regions. For Leiden, it is 58.1200178399% for Astra and 50.2680393248% for Opus. Each condition has one accepted prediction per cluster. These figures motivate the descriptive illustration; they do not establish repeatability or general superiority of one model.
+
+Figure 4B/C use the same 69,576 test cells and all 28 labels including Noise. Figure 4D/E use all 220,082 B004 cells. Direct cell-key-aligned recomputation gives 118,584 Astra matches (53.8817349897%), a fixed-cluster majority bound of 151,164 matches (68.6853082033%), and a 14.8035732136-percentage-point gap. The bound is unchanged by the choice of annotation model. The three example clusters remain `0::6`, `1::6` and `2::6`, selected by descending cluster size with cluster-ID tie-breaking before annotation outcomes. The fixed spatial region is unchanged.
+
+Figure S6 retains the Opus test confusion and all-cluster diagnostics as a supplementary comparison. Its seven publication/manuscript/preview assets are byte-identical to the prior main branch. The original Opus Figure 4, source renderers and reconstruction instructions are retained in the [archive index](../../archive/figure4_opus_20261111/index.json). Its archived replay reproduces the original PNG byte-for-byte. The exact Opus prompt/answer example in Supplementary Note 1 is retained and labeled as an Opus comparison example.
+
+The [manuscript change ledger](b004_astra_presentation_change_ledger_20261111.json) identifies eight narrow prose/caption replacements. Google Doc text edits remain suggestions, with unrelated pending suggestions preserved. Figure 4 is replaced proportionally at 6.5 by 6.73 inches, with its crop reset. The repository mirror, renderer, workflow labels, figure inventory, notebook entry points, previews, manifests and PNG/TIFF/PDF/SVG exports use the same presentation choice. Existing red–green heatmaps and unrelated IEEE-style tables are retained.
+
+The [Astra–Leiden control extension](astra_leiden_controls_protocol_20261111.md) prepares four named-method and four measured-neighborhood native Batch items, reusing the four accepted blinded baseline items. It preserves the completed Opus controls and every all-model benchmark result. Its configuration disables execution, contains no launch hook, and makes no paid calls. The conservative full-output reservation is $8.71 under the recorded price snapshot; fresh live binding, pricing and funding checks plus a separate spending/launch instruction are required before submission.
+
+No donor study, classifier, granularity analysis, calibration, all-model representation comparison or running annotation worker is modified by this amendment.
