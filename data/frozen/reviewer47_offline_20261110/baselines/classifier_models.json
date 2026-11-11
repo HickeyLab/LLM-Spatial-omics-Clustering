@@ -1,0 +1,122 @@
+{
+  "flowsom/all_means": {
+    "C": 0.1,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "flowsom/all_means_fractions": {
+    "C": 0.1,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "leiden/all_means": {
+    "C": 0.01,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "leiden/all_means_fractions": {
+    "C": 1.0,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "pixie_tiff/all_means": {
+    "C": 0.1,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "pixie_tiff/all_means_fractions": {
+    "C": 0.1,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "spatialsort/all_means": {
+    "C": 0.1,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  },
+  "spatialsort/all_means_fractions": {
+    "C": 0.01,
+    "absent_training_classes": [],
+    "max_iter": 2000,
+    "query_unit": "one label per frozen cluster",
+    "selection_population": "two calibration regions only",
+    "solver": "lbfgs",
+    "training_cells": 90296,
+    "training_regions": [
+      "2e65eeef2dd18bee2a0baf1cec6d35a1",
+      "63d000170e475af142f6e8673de5eb0f",
+      "76d3efd17b6fc83aaac13e961824c5ae",
+      "ae422532f260b3d6fc662aae69b05d33"
+    ]
+  }
+}
