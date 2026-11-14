@@ -94,19 +94,28 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
         f._biorender_overlays = []
     f._biorender_overlays.append(spec)
     if key == '2A':
-        for x,title in [(16.5,'CODEX images'),(43,'Cell-level features'),(74,'Clustering'),
+        for x,title in [(16.5,'CODEX images'),(44,'Cell-level features'),(74,'Clustering'),
                         (92,'UMAP'),(124,'Reference-majority\ncluster labels'),(151,'Evaluation')]:
             text(f,x,3,title,size=6.6,ha='center')
-        feature_table(f,23.8,16.5,38.3,14,size=6.6)
+        # Retain the table's right edge and clear the incoming arrow tip.
+        feature_table(f,25.9,16.5,36.2,14,size=6.6)
         for x,label in zip([146.5,151.7,156.9],'ABC'):
             text(f,x,34.5,label,size=6.6,ha='center')
     elif key == '3A':
         for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Cluster summaries'),
                         (107,'Input representations'),(130,'Annotation'),(150,'Evaluation')]:
             text(f,x,2.5,title,size=6.5,ha='center')
-        feature_table(f,4.8,15,34.5,12.5)
-        text(f,58.2,13.4,'47 marker channels\nCluster means\nMarker fractions\nAnonymous cluster IDs',size=5.5,linespacing=1.2)
-        text(f,94.4,15.2,'All-marker means\nMeans plus fractions\nFixed 28-label ontology\nOne accepted annotation',size=5.5,linespacing=1.2)
+        feature_table(f,4.8,15.55,34.5,12.5)
+        # Bounded stages center the current labels on the original flow and
+        # retain the original short, similarly sized connector arrows.
+        for x,w,label in [(59,30,'47 marker channels\nCluster means\nMarker fractions\nAnonymous cluster IDs'),
+                          (94.6,24.8,'All-marker means\nMeans plus fractions\nFixed 28-label ontology\nOne accepted annotation')]:
+            a = axes(f,x,16.2,w,10.8)
+            a.add_patch(Rectangle((0,0),1,1,transform=a.transAxes,
+                                  facecolor='#f6f8fa',edgecolor='#7a858e',lw=.4))
+            a.text(.5,.5,label,transform=a.transAxes,ha='center',va='center',
+                   fontsize=5.5,linespacing=1.2)
+            a.set_axis_off()
     elif key == '4A':
         for x,title in [(15,'CODEX images'),(54,'Cell-level features'),(98,'Leiden clustering'),
                         (122,f'{annotation_model} annotation'),(149,'Spatial visualization')]:

@@ -35,7 +35,7 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_2.png",
-          "sha256": "6fa9df5bab954403c3f7b03cd37486502e7bba96c35a55fdc5cc11b639e160b4"
+          "sha256": "96036c7cab8b032861edbed7b792c0a2bbbe31a533140f6870aff292caea81d3"
         }
       ],
       "caption": "Figure 2. Benchmarking unsupervised clustering against reference cell-type annotations. (A) Workflow from CODEX images and cell features to clustering and reference-majority labeling. The workflow illustration was created with BioRender.com. (B\u2013C) Reference cell counts and a representative spatial map. Cell-type colors in C and D correspond to B. (D) UMAP embeddings colored by reference or cluster-assigned labels, with boxed regions enlarged above [36]. (E, G) Regional cell-count-weighted F1 and cluster purity after majority labeling within each region. Points identify regions. Boxes show medians and interquartile ranges, with 1.5-interquartile-range whiskers. (F, H) Cell-type F1 (0\u20131) and recall (0\u2013100%) after global majority labeling, with reference-cell counts at right. E\u2013H use 209,587 non-Noise cells and 20 harmonized classes, with alphabetical tie-breaking. The eight regions are within-donor observations. Conditional comparisons are in Supplementary Table S7. Leiden, FlowSOM and SpatialSort used 47 markers. The primary FlowSOM and SpatialSort partitions contained 299 and 229 occupied clusters, respectively. Methods and limitations are in Sections 2.9 and 2.17. CD8+ T marker-expression profiles are shown in Figure S11. Source data: Duke Research Data Repository record 505 (Availability of Data and Materials).",
@@ -53,7 +53,7 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_3.png",
-          "sha256": "482504731ee181a65ceea0d1b7b84f1a3894f93ec58eaf1cf55f1cbc7b2cd051"
+          "sha256": "6fe572e2d4c7d8598fd10edd995e18b099e89e4abc0ff0b05289cc1b041c4e83"
         }
       ],
       "caption": "Figure 3. Annotation benchmark using 47-marker cluster profiles. (A) Workflow from cell features through clustering, anonymous 47-marker summaries, fixed input representations and model annotation to reference-label evaluation, created with BioRender.com. (B) Reference agreement and (C) fixed-28-label macro-F1 for the means-plus-fractions arm, averaged equally across the two test regions. The original 28-label vocabulary includes Noise; absent-class F1 is zero. (D) Cell-type reference agreement (recall) for Leiden predictions, using pooled test cells and cell types ordered by decreasing mean recall across the four models. (E) Reference labels and the four models' Leiden predictions in the fixed mid-jejunum region shown in Figure 2C, using the same cell-type colors. Each model supplies one accepted prediction per cluster and arm. There are no repeated-annotation error bars. All regions are from donor B004.",
