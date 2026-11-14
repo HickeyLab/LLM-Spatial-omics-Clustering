@@ -299,6 +299,9 @@ def finish(f, name, output, inputs=None, notes=None):
     if hasattr(f,"_original_raster_workflow"):
         receipt["original_raster_workflow"] = f._original_raster_workflow
         receipt["minimum_font_scope"] = "All text, including the retyped Figure 1A labels. Original illustration pixels remain raster."
+    if any(o.get("original_marker_blocks",False)
+           for o in getattr(f,"_biorender_overlays",[])):
+        receipt["minimum_font_scope"] = "Native editable text. The author's original marker-list and threshold-setting illustrations retain their original raster typography."
     (output/(name+"_verification.json")).write_text(json.dumps(receipt,indent=2)+"\n")
     plt.close(f)
     print(name, pixel_size, "minimum font", min_size, "pt",flush=True)

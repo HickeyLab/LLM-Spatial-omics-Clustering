@@ -31,7 +31,7 @@ def config():
     return d
 
 
-def artwork_document():
+def artwork_document(preserve_original_marker_blocks=False):
     d = config()
     doc = fitz.open(ROOT/d['source_file'])
     page = doc[0]
@@ -47,7 +47,8 @@ def artwork_document():
                 doc.update_stream(xref,stream)
     # Delete only imported raster text, keeping original icon/vector geometry.
     for image in page.get_image_info():
-        if image['width'] in [742,1542,1184]:
+        if image['width'] == 742 or (image['width'] in [1542,1184]
+                                    and not preserve_original_marker_blocks):
             page.add_redact_annot(image['bbox'],fill=False)
     page.apply_redactions(images=1,graphics=0,text=1)
     spans = [s for b in page.get_text('dict')['blocks'] if 'lines' in b
@@ -90,6 +91,8 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
     d = config()
     extra_inputs = {}
     spec = deepcopy(d['panels'][key])
+    if key == '3A':
+        spec['original_marker_blocks'] = True
     if not hasattr(f,'_biorender_overlays'):
         f._biorender_overlays = []
     f._biorender_overlays.append(spec)
@@ -102,20 +105,12 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
         for x,label in zip([146.5,151.7,156.9],'ABC'):
             text(f,x,34.5,label,size=6.6,ha='center')
     elif key == '3A':
-        for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Cluster summaries'),
-                        (107,'Input representations'),(130,'Annotation'),(150,'Evaluation')]:
+        for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Marker-list example'),
+                        (107,'Selection settings'),(130,'Annotation'),(150,'Evaluation')]:
             text(f,x,2.5,title,size=6.5,ha='center')
         feature_table(f,4.8,15.55,34.5,12.5)
-        # Bounded stages center the current labels on the original flow and
-        # retain the original short, similarly sized connector arrows.
-        for x,w,label in [(59,30,'47 marker channels\nCluster means\nMarker fractions\nAnonymous cluster IDs'),
-                          (94.6,24.8,'All-marker means\nMeans plus fractions\nFixed 28-label ontology\nOne accepted annotation')]:
-            a = axes(f,x,16.2,w,10.8)
-            a.add_patch(Rectangle((0,0),1,1,transform=a.transAxes,
-                                  facecolor='#f6f8fa',edgecolor='#7a858e',lw=.4))
-            a.text(.5,.5,label,transform=a.transAxes,ha='center',va='center',
-                   fontsize=5.5,linespacing=1.2)
-            a.set_axis_off()
+        # The original marker-list and five-setting illustrations are retained
+        # in the source PDF, including their transparency and short connectors.
     elif key == '4A':
         for x,title in [(15,'CODEX images'),(54,'Cell-level features'),(98,'Leiden clustering'),
                         (122,f'{annotation_model} annotation'),(149,'Spatial visualization')]:
@@ -149,7 +144,9 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
 
 def compose(f,output,name):
     """Keep vector artwork in PDF/SVG and rasterize only the final PNG export."""
-    source = artwork_document()
+    source = artwork_document(preserve_original_marker_blocks=any(
+        overlay.get('original_marker_blocks',False)
+        for overlay in f._biorender_overlays))
     pdf = fitz.open(output/(name+'.pdf'))
     svg_path = output/(name+'.svg')
     svg = ET.parse(svg_path)

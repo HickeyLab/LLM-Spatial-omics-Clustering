@@ -21,9 +21,13 @@ vacant bands and bottom margins while preserving native type and plot sizes.
 
 ## Current presentation update on 14 November 2026
 
-Figure 3A restores the original six-stage BioRender artwork with current
-47-marker summary and fixed-input labels. Figure 4A uses the user-supplied OpenAI
-logo for the Astra annotation step. The source artwork remains unchanged.
+Figure 3A retains the original six-stage BioRender artwork, including the
+original JSON marker-list and five-setting threshold images in its third and
+fourth steps. Their pixels, transparency and proportional placement are
+preserved. The marker-list and threshold panels are schematic. The primary
+benchmark uses fixed all-marker profiles, and selected-marker controls follow
+Section 2.11. Figure 4A uses the user-supplied OpenAI logo for the Astra
+annotation step. The source artwork remains unchanged.
 
 Comparison panels now use ranked display orders. Shared views retain shared
 orders: Figure 2E–H uses mean regional weighted F1, Figure 3B–C uses mean
@@ -37,7 +41,7 @@ inventory and hashes are in `figures/manuscript/manifest.json`.
 
 ## Typography and panel letters
 
-The nominal artwork width is 165.1 mm (6.5 inches). Arial is used throughout,
+The nominal artwork width is 165.1 mm (6.5 inches). Arial is used for native editable labels,
 with 8 pt bold panel letters, 6.5 pt panel headings, and no native text below 5.5 pt.
 Figure 1A preserves the original illustrations and arrows, with its small
 bitmap labels replaced by larger editable Arial text. Step captions and
@@ -71,8 +75,9 @@ lossless RGB conversion of those exact pixels with 600 dpi metadata and LZW
 compression. Every figure also has PDF and SVG exports. Graph lines, native diagrams,
 heatmap cells and text are vectors. Dense point layers and color gradients
 are drawn natively at approximately 610 dpi in the vector containers. Figures 2A, 3A and 4A reuse the author's native BioRender PDF export, preserving
-its original vectors and microscopy/logo pixels. Small imported text tables
-and lists are replaced by editable Arial. Generic template phase captions
+its original vectors and microscopy/logo pixels. Tables are retyped in
+editable Arial. Figure 3A retains its original marker-list and threshold-list
+images with their source transparency masks. Generic template phase captions
 and the unused color-key label are removed. There is no artificial
 upsampling or refitting in those three workflows. Figure 1A instead reuses the
 original raster artwork in `data/frozen/publication_artwork/figure_01_original.png`.
@@ -119,12 +124,14 @@ recorded in `source_manifest.json`. Preparation verification records the
 original H5AD and archived coordinate identities. No clustering, UMAP fit,
 model inference, new matching or new statistical experiment is performed.
 
-Figure 3A uses the original BioRender illustrations with current cluster
-summary and fixed-input labels. The earlier Cluster Features and Optimization
-wording is historical. All workflow panels in Figures 2–4 use the author's
-BioRender artwork, and Figure 1A separately retains its original raster
-illustrations. The workflow restoration changes no frozen scientific inputs
-or numerical results.
+Figure 3A preserves the original BioRender marker-list and threshold-setting
+artwork under the headings Marker-list example and Selection settings. These
+schematic steps do not specify a threshold-optimization procedure for the
+current benchmark. Its all-marker profiles and selected-marker controls are
+defined in Sections 2.10–2.11. All workflow panels in Figures 2–4 use the
+author's BioRender artwork, and Figure 1A separately retains its original
+raster illustrations. The workflow restoration changes no frozen scientific
+inputs or numerical results.
 
 The historical Figure 3E kept the original archived values. Its metric is the fraction of
 cells for which the Phase 7 prediction or the individual Leiden–LLM prediction

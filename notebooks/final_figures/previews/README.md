@@ -9,4 +9,4 @@ All current [native exports](../../../figures/publication) include 600 dpi PNG/T
 New S8/S9 previews use the frozen reviewer-result bank. The pending DeepSeek selected-means cell is masked; no pending Astra control result is shown.
 
 
-Figure 3A restores the original BioRender artwork with current input labels, and Figure 4A identifies Astra with the OpenAI logo. Comparison views use the ranked display orders recorded in the native renderer receipts. These presentation changes preserve the frozen November 11 results.
+Figure 3A retains the original BioRender marker-list and threshold-setting artwork as schematic examples, and Figure 4A identifies Astra with the OpenAI logo. Comparison views use the ranked display orders recorded in the native renderer receipts. These presentation changes preserve the frozen November 11 results.

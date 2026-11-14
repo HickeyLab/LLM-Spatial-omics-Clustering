@@ -13,13 +13,16 @@ values are retained. Panel letters are
 plain uppercase bold Arial, following the published EXO examples documented in
 the [design notes](../../docs/publication_figure_design.md).
 
-Figures 2A, 3A and 4A use the author's original BioRender illustrations, with
-small imported labels retyped as editable Arial. Figure 2 gives its workflow
-a full-width row.
+Figures 2A, 3A and 4A use the author's original BioRender illustrations.
+Tables and small labels are retyped as editable Arial. Figure 3A retains the
+original marker-list and threshold-setting images and their typography.
+Figure 2 gives its workflow a full-width row.
 
 The layout is rebuilt at a declared physical size. Every native text element
 is at least 5.5 pt, with Figure 2 at least 6.6 pt. The per-image manifest records
-minimum placement widths needed to keep all text at least 5 pt. Place images
+minimum placement widths needed to keep editable native text at least 5 pt.
+The original third and fourth illustrations in Figure 3A retain their source
+raster typography. Place images
 proportionally and use the original files for submission. Google Docs exports
 compressed previews that do not preserve the submission resolution.
 
@@ -31,8 +34,8 @@ python scripts/render_manuscript_figures.py --check
 ```
 
 These commands use frozen numerical inputs and stored coordinates. They make
-no model calls and perform no fits. Figure 3A uses the original BioRender
-artwork with current 47-marker summaries and fixed input representations.
+no model calls and perform no fits. Figure 3A retains the original BioRender
+marker-list and threshold-setting artwork as schematic examples.
 Figure 4A uses the OpenAI logo for Astra. Comparison panels use ranked display
 orders while retaining shared orders for paired views. Frozen numerical
 values and scoring vocabularies are unchanged. Figure 3E shows a fixed
