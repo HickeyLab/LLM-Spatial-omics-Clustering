@@ -1,0 +1,146 @@
+{
+  "status": "pass",
+  "candidate": "bounded text stages and original short arrows",
+  "visual_review": "Both text stages are centered within their blocks. The original headed connectors have consistent short lengths. All labels remain contained and aligned with the source flow.",
+  "same_dimensions": true,
+  "size_pixels": [
+    3900,
+    4179
+  ],
+  "panels_B_to_E_pixel_identical_from_y34mm": true,
+  "main_headed_arrow_lengths_mm": {
+    "clustering_to_summary": 2.888,
+    "summary_to_inputs": 2.751,
+    "annotation_to_evaluation": 2.889
+  },
+  "text_checks": [
+    {
+      "text": "47 marker channels",
+      "bbox_mm": [
+        65.47545543246798,
+        15.805882771809896,
+        82.51302981906467,
+        17.97511405944824
+      ],
+      "stage_bounds_mm": [
+        59,
+        14.986000000000008,
+        89,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "Cluster means",
+      "bbox_mm": [
+        67.74370630052354,
+        18.043816799587674,
+        80.25073788960773,
+        20.21304808722602
+      ],
+      "stage_bounds_mm": [
+        59,
+        14.986000000000008,
+        89,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "Marker fractions",
+      "bbox_mm": [
+        67.04366289774576,
+        20.28175082736545,
+        80.95157258775498,
+        22.450982115003796
+      ],
+      "stage_bounds_mm": [
+        59,
+        14.986000000000008,
+        89,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "Anonymous cluster IDs",
+      "bbox_mm": [
+        64.02024709913466,
+        22.51968485514323,
+        83.9682435353597,
+        24.688916142781572
+      ],
+      "stage_bounds_mm": [
+        59,
+        14.986000000000008,
+        89,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "All-marker means",
+      "bbox_mm": [
+        99.39874547322592,
+        15.76950471666124,
+        114.59888356526692,
+        17.938736004299585
+      ],
+      "stage_bounds_mm": [
+        94.6,
+        14.986000000000008,
+        119.4,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "Means plus fractions",
+      "bbox_mm": [
+        98.09787741767035,
+        18.040511661105686,
+        115.89022377861869,
+        20.20974294874403
+      ],
+      "stage_bounds_mm": [
+        94.6,
+        14.986000000000008,
+        119.4,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "Fixed 28-label ontology",
+      "bbox_mm": [
+        96.96237394544814,
+        20.285055965847437,
+        117.02096871270072,
+        22.454287253485784
+      ],
+      "stage_bounds_mm": [
+        94.6,
+        14.986000000000008,
+        119.4,
+        25.78600000000001
+      ],
+      "inside": true
+    },
+    {
+      "text": "One accepted annotation",
+      "bbox_mm": [
+        96.14657533433702,
+        22.58362367418077,
+        117.82723948160807,
+        24.752854961819118
+      ],
+      "stage_bounds_mm": [
+        94.6,
+        14.986000000000008,
+        119.4,
+        25.78600000000001
+      ],
+      "inside": true
+    }
+  ]
+}

@@ -11,3 +11,5 @@ Independent before/after artist comparisons confirmed that plotted metric values
 The scientific source is the exact November 11 frozen result bank in PR #38 at commit `5e4f11c91b24d14b6376b35892516562d0c8e475`, which matches the manuscript baseline. Every imported frozen-result file was checked byte-for-byte against that commit. No model calls, fitting, scoring changes or newly completed conditions are part of this presentation update.
 
 The author-supplied 534 × 474 pixel OpenAI PNG is embedded with unchanged pixels in the native Figure 4 PDF. Its decoded RGB pixels match the supplied image exactly, with matching horizontal and vertical effective resolution of approximately 848 dpi.
+
+Figure 3A layout follow-up: the table and two bounded text stages align with the original BioRender flow. Its original short headed connectors are approximately 2.89, 2.75 and 2.89 mm long. All labels remain inside their blocks, and panels B–E and full-figure dimensions are unchanged. Figure 2A keeps the native arrow and the table right edge fixed, with 1.83 mm clearance between the incoming arrow tip and table. Panels B–H are unchanged.

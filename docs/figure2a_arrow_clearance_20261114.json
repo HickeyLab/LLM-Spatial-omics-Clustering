@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "panel": "2A",
+  "native_arrow_tip_x_mm": 24.067,
+  "old_table_left_x_mm": 23.8,
+  "new_table_left_x_mm": 25.9,
+  "new_table_width_mm": 36.2,
+  "table_right_edge_mm": 62.1,
+  "new_arrow_to_table_clearance_mm": 1.833,
+  "image_to_arrow_clearance_mm": 2.032,
+  "all_table_labels_inside_cells_at_6_6_pt": true,
+  "minimum_horizontal_text_margin_mm": 0.177,
+  "panels_B_through_H_pixel_identical": true,
+  "same_full_figure_size_pixels": [
+    3900,
+    5033
+  ]
+}
