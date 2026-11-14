@@ -7,12 +7,14 @@ clusters. E shows the reference labels and the four models' predictions in the
 fixed mid-jejunum region used in Figure 2C. Each condition contributes one
 accepted annotation per cluster and arm.
 
-Panel A restores the author's six-stage BioRender artwork. Its editable labels
-now describe the current 47-marker cluster summaries, anonymous cluster IDs,
-all-marker means and means-plus-fractions representations, and fixed 28-label
-ontology. The historical marker-name-list and threshold-optimization wording
-is not part of the current workflow. The original authoring export and crop
-metadata remain pinned in `configs/biorender_workflows.json`.
+Panel A retains the author's six-stage BioRender artwork, including the
+original JSON marker-list image and five-setting threshold image in its third
+and fourth steps. Their source pixels and transparency masks are preserved.
+The headings identify these as a marker-list example and selection settings.
+These panels are schematic. The primary benchmark uses fixed all-marker
+profiles, and selected-marker controls follow the fixed procedure in Section
+2.11. The original authoring export and crop metadata remain pinned in
+`configs/biorender_workflows.json`.
 
 Panels B and C share model and method orders ranked by decreasing mean
 macro-F1 from C. D orders cell types by decreasing mean recall across the four

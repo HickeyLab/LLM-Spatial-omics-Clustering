@@ -420,7 +420,8 @@
           7.786000000000009,
           155,
           24.309352517985612
-        ]
+        ],
+        "original_marker_blocks": true
       }
     ],
     "provider_logos": null,
@@ -466,22 +467,23 @@
     ],
     "files": {
       "Figure_3.svg": {
-        "sha256": "2cd54e18e56e8b658064fdcdeb7d3df2bcc21502e3cfceffc7f5f1373d96f6ed",
-        "bytes": 5836697
+        "sha256": "fbd112815e39d3d9d03ef5ab999d211fde69ec05addd143b14a6ae0489e3e9ec",
+        "bytes": 6074701
       },
       "Figure_3.pdf": {
-        "sha256": "b6e4f8062eb302fbe82988b77267ca502a49d4d898e742445b2c9966d71bddaf",
-        "bytes": 3615000
+        "sha256": "2f88796936b900ee981ab7efea296df03ad46f6417d0a733a51849671d839b12",
+        "bytes": 3808096
       },
       "Figure_3.png": {
-        "sha256": "6fe572e2d4c7d8598fd10edd995e18b099e89e4abc0ff0b05289cc1b041c4e83",
-        "bytes": 2814316
+        "sha256": "8587b43f4c5ad303385c95799d569f1a41292799d76ed913de2e140be361ac2a",
+        "bytes": 2858634
       },
       "Figure_3.tiff": {
-        "sha256": "afd91138e61e2b784cbcb44e1f3499b0503ce35753146e17b95172d106c46054",
-        "bytes": 4609394
+        "sha256": "e7cf694770952115b96b65681e752bce1242256d89c79e7af0225b7c3c8d1df1",
+        "bytes": 4629576
       }
-    }
+    },
+    "minimum_font_scope": "Native editable text. The author's original marker-list and threshold-setting illustrations retain their original raster typography."
   },
   {
     "figure": "Figure_4",

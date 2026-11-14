@@ -53,10 +53,10 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_3.png",
-          "sha256": "6fe572e2d4c7d8598fd10edd995e18b099e89e4abc0ff0b05289cc1b041c4e83"
+          "sha256": "8587b43f4c5ad303385c95799d569f1a41292799d76ed913de2e140be361ac2a"
         }
       ],
-      "caption": "Figure 3. Annotation benchmark using 47-marker cluster profiles. (A) Workflow from cell features through clustering, anonymous 47-marker summaries, fixed input representations and model annotation to reference-label evaluation, created with BioRender.com. (B) Reference agreement and (C) fixed-28-label macro-F1 for the means-plus-fractions arm, averaged equally across the two test regions. The original 28-label vocabulary includes Noise; absent-class F1 is zero. (D) Cell-type reference agreement (recall) for Leiden predictions, using pooled test cells and cell types ordered by decreasing mean recall across the four models. (E) Reference labels and the four models' Leiden predictions in the fixed mid-jejunum region shown in Figure 2C, using the same cell-type colors. Each model supplies one accepted prediction per cluster and arm. There are no repeated-annotation error bars. All regions are from donor B004.",
+      "caption": "Figure 3. Annotation benchmark using 47-marker cluster profiles. (A) Workflow from cell features through clustering, marker summaries and annotation to reference-label evaluation, created with BioRender.com. The marker-list and threshold panels are schematic. The primary benchmark uses fixed all-marker profiles, and selected-marker controls follow Section 2.11. (B) Reference agreement and (C) fixed-28-label macro-F1 for the means-plus-fractions arm, averaged equally across the two test regions. The original 28-label vocabulary includes Noise; absent-class F1 is zero. (D) Cell-type reference agreement (recall) for Leiden predictions, using pooled test cells and cell types ordered by decreasing mean recall across the four models. (E) Reference labels and the four models' Leiden predictions in the fixed mid-jejunum region shown in Figure 2C, using the same cell-type colors. Each model supplies one accepted prediction per cluster and arm. There are no repeated-annotation error bars. All regions are from donor B004.",
       "scientific_status": "annotation47_scored_single_run",
       "artifact_type": "scored_scientific_figure",
       "execution_enabled": false,
