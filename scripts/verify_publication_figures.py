@@ -94,6 +94,13 @@ def verify_native(folder, render_qa=None, figure_ids=None):
                             'scientific_rerender_performed':False})
             continue
         receipt = json.loads((folder/(name+'_verification.json')).read_text())
+        donor_admission = None
+        if key in {'5','S12','S13'}:
+            from verify_donor47_figures import admit_donor_receipt
+            donor_admission = admit_donor_receipt(key,folder,receipt,root=ROOT)
+            expected_panels = donor_admission['panel_letters']
+        else:
+            expected_panels = PANELS[key]
         for filename,entry in receipt['files'].items():
             assert digest(folder/filename) == entry['sha256'], filename
         for source,sha in receipt['inputs'].items():
@@ -121,7 +128,7 @@ def verify_native(folder, render_qa=None, figure_ids=None):
         assert {s['font'] for s in spans}.issubset({'ArialMT','Arial-BoldMT','Arial-ItalicMT'})
         letters = [s['text'] for s in spans if s['size'] >= 7.99 and 'Bold' in s['font']
                    and re.fullmatch('[A-J]',s['text'])]
-        assert ''.join(sorted(letters)) == PANELS[key], (name,letters)
+        assert ''.join(sorted(letters)) == expected_panels, (name,letters)
         assert not any(re.fullmatch(r'\([A-J]\)',s['text']) for s in spans)
         assert not re.search(r'\bFigure\s+(?:[1-5]|S\d)',page.get_text())
         assert abs(page.rect.width-receipt['width_mm']/25.4*72) < .01
@@ -183,9 +190,11 @@ def verify_native(folder, render_qa=None, figure_ids=None):
         if render_qa:
             render_qa.mkdir(parents=True,exist_ok=True)
             page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),alpha=False).save(render_qa/(name+'.png'))
-        results.append({'figure':name,'minimum_font_pt':minimum,'panel_letters':PANELS[key],
+        result={'figure':name,'minimum_font_pt':minimum,'panel_letters':expected_panels,
                         'png_tiff_dpi':600,'minimum_pdf_image_dpi':min(image_dpi,default=None),
-                        'editable_svg_text_nodes':len(text_nodes)})
+                        'editable_svg_text_nodes':len(text_nodes)}
+        if donor_admission is not None:result['donor_verification']=donor_admission
+        results.append(result)
     return results
 
 

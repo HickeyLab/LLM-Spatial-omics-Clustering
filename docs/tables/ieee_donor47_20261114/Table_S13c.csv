@@ -1,0 +1,25 @@
+Clustering,Annotator,Agreement (%),Macro-F1,Cell coverage (%)
+Leiden,Astra,35.87,0.3025,100.00
+Leiden,Opus 5.5,38.57,0.3167,100.00
+Leiden,Argon,35.77,0.3002,100.00
+Leiden,DeepSeek,28.30,0.2412,100.00
+Leiden,Nearest centroid,48.96,0.3900,100.00
+Leiden,Logistic regression,59.78,0.4144,100.00
+FlowSOM,Astra,34.46,0.3106,100.00
+FlowSOM,Opus 5.5,36.03,0.3196,100.00
+FlowSOM,Argon,37.60,0.3247,100.00
+FlowSOM,DeepSeek,23.27,0.2361,84.12
+FlowSOM,Nearest centroid,42.42,0.3418,100.00
+FlowSOM,Logistic regression,53.81,0.3768,100.00
+SpatialSort,Astra,29.20,0.1932,100.00
+SpatialSort,Opus 5.5,28.93,0.1963,100.00
+SpatialSort,Argon,26.86,0.1906,100.00
+SpatialSort,DeepSeek,17.26,0.1229,85.56
+SpatialSort,Nearest centroid,33.04,0.1819,100.00
+SpatialSort,Logistic regression,47.24,0.2101,100.00
+PIXIE,Astra,24.67,0.1493,100.00
+PIXIE,Opus 5.5,27.96,0.1543,100.00
+PIXIE,Argon,23.01,0.1445,100.00
+PIXIE,DeepSeek,16.33,0.0982,79.48
+PIXIE,Nearest centroid,37.83,0.1753,100.00
+PIXIE,Logistic regression,44.32,0.1680,100.00

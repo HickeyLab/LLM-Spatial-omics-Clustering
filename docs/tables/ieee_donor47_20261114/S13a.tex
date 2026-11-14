@@ -1,0 +1,36 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont\bfseries
+TABLE S13a\\
+B005 DONOR ANNOTATION\par\smallskip
+\normalfont\fontsize{10}{12}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1.14\hsize\raggedright\arraybackslash}X>{\hsize=1.02\hsize\raggedright\arraybackslash}X>{\hsize=1.02\hsize\raggedleft\arraybackslash}X>{\hsize=0.78\hsize\raggedleft\arraybackslash}X>{\hsize=1.02\hsize\raggedleft\arraybackslash}X>{\hsize=1.02\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Model} & \textbf{Agreement (\%)} & \textbf{Macro-F1} & \textbf{Cell coverage (\%)} & \textbf{Cluster coverage (\%)} \\
+\midrule
+Leiden & Astra & 34.22 & 0.3095 & 100.00 & 100.00 \\
+Leiden & Opus 5.5 & 35.37 & 0.2990 & 100.00 & 100.00 \\
+Leiden & Argon & 32.80 & 0.3041 & 100.00 & 100.00 \\
+Leiden & DeepSeek & 32.03 & 0.2865 & 100.00 & 100.00 \\
+FlowSOM & Astra & 36.00 & 0.3626 & 100.00 & 100.00 \\
+FlowSOM & Opus 5.5 & 36.39 & 0.3558 & 100.00 & 100.00 \\
+FlowSOM & Argon & 37.07 & 0.3758 & 100.00 & 100.00 \\
+FlowSOM & DeepSeek & 30.35 & 0.3061 & 100.00 & 100.00 \\
+SpatialSort & Astra & 27.71 & 0.1976 & 100.00 & 100.00 \\
+SpatialSort & Opus 5.5 & 28.15 & 0.2009 & 100.00 & 100.00 \\
+SpatialSort & Argon & 25.55 & 0.1940 & 100.00 & 100.00 \\
+SpatialSort & DeepSeek & 17.44 & 0.1263 & 71.12 & 74.83 \\
+PIXIE & Astra & 27.06 & 0.1782 & 100.00 & 100.00 \\
+PIXIE & Opus 5.5 & 29.15 & 0.1802 & 100.00 & 100.00 \\
+PIXIE & Argon & 27.75 & 0.1773 & 100.00 & 100.00 \\
+PIXIE & DeepSeek & 14.28 & 0.0975 & 58.96 & 50.00 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\noindent Agreement, macro-F1 and cell coverage average each donor's eight regions equally. Cluster coverage uses whole-donor occupied clusters. The full native 28-label vocabulary includes Noise (code 21). Missing/invalid predictions remain errors in the fixed planned denominator and differ from valid Noise predictions. One planned annotation per cluster/condition; accepted outputs are scored where available. No repeated-generation uncertainty is estimated.\par
+\endgroup
+\end{table*}

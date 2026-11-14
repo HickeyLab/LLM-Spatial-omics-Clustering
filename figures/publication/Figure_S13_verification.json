@@ -1,0 +1,69 @@
+{
+  "figure": "Figure_S13",
+  "width_mm": 165.1,
+  "height_mm": 95.30911111111114,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    2251
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "provider_logos": null,
+  "layout_compaction": {
+    "original_height_mm": 125,
+    "height_mm": 95.30911111111114,
+    "height_reduction_percent": 23.75271111111109,
+    "vacant_bands_removed_mm": [
+      [
+        7.0399999999999965,
+        11.864999999999993
+      ],
+      [
+        52.72955555555556,
+        63.5
+      ],
+      [
+        69.04,
+        73.865
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
+    "data/frozen/donor47_results_20261114/annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+  },
+  "notes": [
+    "All four panels use exactly the same reference-eligible cells within donor; no new annotation calls.",
+    "Native 28-label and approved shared-23 projection are evaluation vocabularies, not two generation protocols.",
+    "Predictions mapped outside the 23-label vocabulary stay errors; no prediction-dependent cell exclusion.",
+    "Noise, ITLN+Epithelial and PDPN+Stromal reference labels are outside the shared-23 eligible population.",
+    "\u2020 denotes incomplete native output delivery, distinct from valid Noise (code 21); shared-23 vocabulary coverage is separately reported in Table S15."
+  ],
+  "files": {
+    "Figure_S13.svg": {
+      "sha256": "177396a77ce8d6727c14851334ed563e50055d9d19b52b9463928fe285ce4235",
+      "bytes": 60345
+    },
+    "Figure_S13.pdf": {
+      "sha256": "f3a6cd7a1fc1ffa7706836030102a7eb9817a2b40ee99dd7e03954601ac6ec67",
+      "bytes": 45142
+    },
+    "Figure_S13.png": {
+      "sha256": "d5bdde583c4a4a2323241eb42349fb77b43bee851ed627c66e80161837155caa",
+      "bytes": 372804
+    },
+    "Figure_S13.tiff": {
+      "sha256": "c9d599bc1ccf152272ba27c48fcaa6310c33ddc0f765993c820d6257e4114938",
+      "bytes": 1102848
+    }
+  }
+}

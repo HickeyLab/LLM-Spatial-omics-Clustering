@@ -1,0 +1,71 @@
+{
+  "figure": "Figure_5",
+  "width_mm": 165.1,
+  "height_mm": 97.17839236111114,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    2295
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "provider_logos": null,
+  "layout_compaction": {
+    "original_height_mm": 125,
+    "height_mm": 97.17839236111114,
+    "height_reduction_percent": 22.25728611111109,
+    "vacant_bands_removed_mm": [
+      [
+        7.0399999999999965,
+        11.864999999999993
+      ],
+      [
+        52.72955555555556,
+        63.5
+      ],
+      [
+        69.04,
+        73.865
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
+    "data/frozen/donor47_results_20261114/annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e",
+    "data/frozen/donor47_results_20261114/annotation_equal_donor_metrics.csv": "6c5769cbefcb499d8c97e1c1f9c322122912af4da64767e0a8d31f5bb86308a6",
+    "data/frozen/donor47_results_20261114/baselines_donor_metrics.csv": "ed14d4053b06b73fbafe8c51236b1282c687ea247bfb3c5ca6fa4619557564e4"
+  },
+  "notes": [
+    "A,B: native 28-label evaluation including Noise; each donor averages its eight region scores equally.",
+    "C,D: equal donor weights after equal region weights; frozen B004 classifiers use the same 94 decoded query features.",
+    "\u2020 denotes incomplete delivery. Missing/invalid labels remain errors in every planned denominator, distinct from valid Noise (code 21); Table S13 gives coverage.",
+    "One planned annotation per cluster/condition; accepted outputs are scored where available. No repeat SD, confidence interval or repeatability claim.",
+    "Baselines use training-cell reference labels, richer supervision than supplied to the LLMs; no donor fitting/tuning."
+  ],
+  "files": {
+    "Figure_5.svg": {
+      "sha256": "ac5e0cc795e87bd20fcf00d9303fe4fbe1f046fc6dab6eb6ceb36b6ace2424f9",
+      "bytes": 68969
+    },
+    "Figure_5.pdf": {
+      "sha256": "e93f245da58eb72cb816f3b3ae693c561572d01f5ec537a1f3a5badb24daa97b",
+      "bytes": 46891
+    },
+    "Figure_5.png": {
+      "sha256": "9464c459ac5a8cce15d8de47ab48697c5b671833d7b8c66b744ae734d984d8e4",
+      "bytes": 407899
+    },
+    "Figure_5.tiff": {
+      "sha256": "115e050098ef0769b77fa1859b4baff8ea926f1275f0a86ab6a0f80d58721ef9",
+      "bytes": 1234262
+    }
+  }
+}

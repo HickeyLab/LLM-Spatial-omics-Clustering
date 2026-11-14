@@ -16,6 +16,9 @@ The retained manuscript uses the following table identifiers without renumbering
 | S10 | Matched conventional classifiers | [Table_S10.csv](tables/ieee_reviewer47_20261111/Table_S10.csv) |
 | S11 | K100/K200 post-clustering coarsening | [Table_S11.csv](tables/ieee_reviewer47_20261111/Table_S11.csv) |
 | S12a–d | Cross-model agreement calibration by model | [IEEE tables](tables/ieee_reviewer47_20261111/manifest.json), [complete selective-risk observations](../data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv) |
+| S13a–c | Native-28-label cross-donor annotation, delivery and frozen B004 classifier comparison | [Donor source bank](../data/frozen/donor47_results_20261114/manifest.json) |
+| S14a–b | Frozen cross-donor clustering and SpatialSort seed sensitivity; ready | [Table_S14a.csv](tables/ieee_donor47_20261114/Table_S14a.csv), [Table_S14b.csv](tables/ieee_donor47_20261114/Table_S14b.csv) |
+| S15a–b | Same-cell native-28-label versus projected-23-label sensitivity | [Donor source bank](../data/frozen/donor47_results_20261114/manifest.json) |
 
 S6 reports one accepted prediction per condition and no across-repetition SD. The original 28-label vocabulary includes Noise, and absent-class F1 is zero within each test region before equal region averaging. Complete final delivery makes the S6c delivery term zero; the valid-label term equals the observed total change and is a descriptive arithmetic decomposition. [Table notes](tables/ieee_reviewer47_20261111/source_tables.json) record units and denominators.
 
@@ -23,4 +26,4 @@ S7 contains all six method pairs for weighted F1 and cluster purity, with Holm c
 
 Main Table 1 and Tables S3, S4 and S5 are excluded from the active manuscript. Their prior table grids, companion filenames and reconstruction entry points remain in the [checksum archive](../data/historical/publication_before_primary47_20261109/index.json) and immutable release. `scripts/render_current_tables.py`, `scripts/render_table_s01.py`, `scripts/render_table_s02.py` describe archival snapshots and earlier display labels; they must not be used as current annotation table sources.
 
-The current IEEE-style exports for S6 and the added reviewer tables are in [ieee_reviewer47_20261111](tables/ieee_reviewer47_20261111/manifest.json). S8d retains the pending DeepSeek–Leiden selected-means condition without partial accuracy. The added Astra prompt-control extension and B005/B006 are not complete results. Original table cells and artwork remain in their checksum-linked archives.
+The current IEEE-style exports for S6 and the added reviewer tables are in [ieee_reviewer47_20261111](tables/ieee_reviewer47_20261111/manifest.json). S8d retains the pending DeepSeek–Leiden selected-means condition without partial accuracy. The B004 Astra prompt-control results remain outside that export. B005/B006 tables S13a–c, S14a–b and S15a–b use the terminal cross-donor bank; invalid responses remain missing errors rather than being omitted. Original table cells and artwork remain in their checksum-linked archives.
