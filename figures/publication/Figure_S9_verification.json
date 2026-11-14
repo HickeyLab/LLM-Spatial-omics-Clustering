@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 171,
     "height_mm": 133.19822916666666,
@@ -43,6 +44,7 @@
   },
   "notes": [
     "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
+    "A: method rows share the primary benchmark descending mean four-model macro-F1 ranking. B/C retain their evidence/calibration progression, and D keeps ascending numeric coverage.",
     "C: each line/dot is one of16method/model conditions; diamonds are arithmetic means of equal-region Brier scores. Lower is better.",
     "D: illustrative Astra-Leiden selective-risk curves by test region, on hash-held-out evaluation clusters. All tied scores are retained together; undefined zero-retention risk is omitted.",
     "Calibration development/evaluation use disjoint clusters and disjoint regions. It estimates within-donor reference agreement, not native confidence, repeatability or biological correctness.",
@@ -50,20 +52,20 @@
   ],
   "files": {
     "Figure_S9.svg": {
-      "sha256": "00423eb31a9abebc259e9953a2bf6dca4383fee65c38934719244c9cc7d22c27",
+      "sha256": "586d5f89afb4014be0710317b1f0a9afc6adc1bf1516672d2b2f5d515cbfbdef",
       "bytes": 49413
     },
     "Figure_S9.pdf": {
-      "sha256": "8d5ca44c1d78c6104a150f368c49580f9d3df200fd9ca789ba6478ec3897adb3",
-      "bytes": 41460
+      "sha256": "ebe616a38f7a44e7c5c8dd8f0badd2021b528dd583e8a134fb65c1c743c0bd06",
+      "bytes": 41445
     },
     "Figure_S9.png": {
-      "sha256": "5bdb4701c79c0669e3b5d47727a6e8632aff803f114c0e2da62a9a8178664a43",
-      "bytes": 413427
+      "sha256": "ada95299320c3d7da8c4c813b2e221f0771c27a8cc422fd59458983c4e7050b5",
+      "bytes": 377608
     },
     "Figure_S9.tiff": {
-      "sha256": "79dce8771d29ecbebec1d91822759fd9e636d80310f2018ec567d2279c435c41",
-      "bytes": 597948
+      "sha256": "57b993f201349b2c36a22bb9158f13ffa76c89d803d480a78cf06f4f39de986a",
+      "bytes": 597716
     }
   }
 }

@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "native_figures": [
+    {
+      "figure": "Figure_S11",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "A",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 610.0000299541623,
+      "editable_svg_text_nodes": 61
+    }
+  ],
+  "independent_annotation_scoring_receipt": "data/frozen/annotation47_results_20261111/verification.json",
+  "reviewer_control_scoring_receipt": "data/frozen/reviewer47_results_20261111/verification.json",
+  "new_model_calls": 0,
+  "new_fits": 0
+}

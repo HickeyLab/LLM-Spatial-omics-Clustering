@@ -7,6 +7,7 @@ Imported raster text is replaced by native Arial text in the figure renderer.
 from __future__ import annotations
 
 from copy import deepcopy
+import base64
 import hashlib
 import json
 import re
@@ -87,6 +88,7 @@ def feature_table(f,x,y,w,h,size=5.5):
 
 def add_workflow(f,key,annotation_model="Opus 5.5"):
     d = config()
+    extra_inputs = {}
     spec = deepcopy(d['panels'][key])
     if not hasattr(f,'_biorender_overlays'):
         f._biorender_overlays = []
@@ -99,12 +101,12 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
         for x,label in zip([146.5,151.7,156.9],'ABC'):
             text(f,x,34.5,label,size=6.6,ha='center')
     elif key == '3A':
-        for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Cluster features'),
-                        (107,'Optimization'),(130,'Annotation'),(150,'Evaluation')]:
+        for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Cluster summaries'),
+                        (107,'Input representations'),(130,'Annotation'),(150,'Evaluation')]:
             text(f,x,2.5,title,size=6.5,ha='center')
         feature_table(f,4.8,15,34.5,12.5)
-        text(f,58.2,13.4,'{\n"cluster 1": ["marker 1",\n  "marker 2", ...],\n"cluster 2": ["marker 1",\n  "marker 2", ...],\n... }',size=5.5,linespacing=1.13)
-        text(f,94.4,15.2,'1. Expression threshold\n2. Fraction threshold\n3. Mean expression threshold\n4. Maximum number of markers\n5. Minimum number of markers',size=5.5,linespacing=1.2)
+        text(f,58.2,13.4,'47 marker channels\nCluster means\nMarker fractions\nAnonymous cluster IDs',size=5.5,linespacing=1.2)
+        text(f,94.4,15.2,'All-marker means\nMeans plus fractions\nFixed 28-label ontology\nOne accepted annotation',size=5.5,linespacing=1.2)
     elif key == '4A':
         for x,title in [(15,'CODEX images'),(54,'Cell-level features'),(98,'Leiden clustering'),
                         (122,f'{annotation_model} annotation'),(149,'Spatial visualization')]:
@@ -116,14 +118,24 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
             a = axes(f,114,11,16,16)
             a.add_patch(Rectangle((0,0),1,1,transform=a.transAxes,
                                   facecolor="white",edgecolor="none"))
-            a.add_patch(Rectangle((.04,.04),.92,.92,transform=a.transAxes,
-                                  facecolor="#f6f8fa",edgecolor="#7a858e",lw=.6))
-            a.text(.5,.5,"LLM",transform=a.transAxes,ha="center",va="center",
-                   fontsize=8,color="#334155",weight="bold")
             a.set_axis_off()
+            logo_dir = ROOT/'data/frozen/provider_logos'
+            manifest_path = logo_dir/'manifest.json'
+            manifest = json.loads(manifest_path.read_text())
+            for filename, expected in manifest['files'].items():
+                path = logo_dir/filename
+                actual = hashlib.sha256(path.read_bytes()).hexdigest()
+                if actual != expected:
+                    raise ValueError('Supplied OpenAI logo checksum differs.')
+                extra_inputs[str(path.relative_to(ROOT))] = actual
+            extra_inputs[str(manifest_path.relative_to(ROOT))] = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+            if not hasattr(f,'_provider_logo_overlays'):
+                f._provider_logo_overlays = []
+            f._provider_logo_overlays.append({'source_file':str((logo_dir/'openai_logo_user_supplied.png').relative_to(ROOT)),
+                                             'rect_mm':[114,11,16,16]})
     else:
         raise ValueError(key)
-    return {d['source_file']:d['source_sha256'],str(CONFIG.relative_to(ROOT)):hashlib.sha256(CONFIG.read_bytes()).hexdigest()}
+    return {d['source_file']:d['source_sha256'],str(CONFIG.relative_to(ROOT)):hashlib.sha256(CONFIG.read_bytes()).hexdigest(),**extra_inputs}
 
 
 def compose(f,output,name):
@@ -148,6 +160,19 @@ def compose(f,output,name):
                                         overlay['clip_points'][3]-overlay['clip_points'][1]]),
                               'preserveAspectRatio':'xMidYMid meet','overflow':'hidden'})
         svg.getroot().insert(0,nested)
+    # Embed the exact author-supplied icon without altering its pixels or ratio.
+    for overlay in getattr(f,'_provider_logo_overlays',[]):
+        logo_path = ROOT/overlay['source_file']
+        x,y,w,h = overlay['rect_mm']
+        rect = fitz.Rect(x,y,x+w,y+h)*(72/25.4)
+        pdf[0].insert_image(rect,filename=str(logo_path),keep_proportion=True,overlay=True)
+        nested = ET.Element('{'+ns+'}image',
+                            {'x':str(x*72/25.4),'y':str(y*72/25.4),
+                             'width':str(w*72/25.4),'height':str(h*72/25.4),
+                             'preserveAspectRatio':'xMidYMid meet',
+                             '{http://www.w3.org/1999/xlink}href':
+                             'data:image/png;base64,'+base64.b64encode(logo_path.read_bytes()).decode('ascii')})
+        svg.getroot().append(nested)
     # The cleaned source contains no remaining native text. All labels are
     # the explicitly authored Matplotlib text above and remain editable.
     temp = output/(name+'.composed.pdf')

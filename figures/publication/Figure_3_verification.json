@@ -1,30 +1,42 @@
 {
   "figure": "Figure_3",
   "width_mm": 165.1,
-  "height_mm": 169.66338185884396,
+  "height_mm": 176.90938185884394,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4007
+    4179
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
-  "biorender_workflow": null,
+  "biorender_workflow": [
+    {
+      "clip_points": [
+        13,
+        207,
+        708,
+        316
+      ],
+      "rect_mm": [
+        6,
+        7.786000000000009,
+        155,
+        24.309352517985612
+      ]
+    }
+  ],
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 205,
-    "height_mm": 169.66338185884396,
-    "height_reduction_percent": 17.237374703002946,
+    "height_mm": 176.90938185884394,
+    "height_reduction_percent": 13.70274055666149,
     "vacant_bands_removed_mm": [
       [
-        6.040000000000007,
-        8.500000000000007
-      ],
-      [
-        28.50000000000001,
-        34.499999999999986
+        6.286000000000009,
+        7.5
       ],
       [
         40.039999999999985,
@@ -49,28 +61,30 @@
     "data/frozen/annotation47_results_20261111/per_type_metrics.csv": "2c1dab60a412cdb54e5117e2d18ab22db5a627617f7ba68a94ebaadb2087d137",
     "data/frozen/annotation47_results_20261111/reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
     "data/frozen/annotation47_results_20261111/cell_predictions.npz": "07779061eceb84bef8a9978cc724d746d6e922069d7c6c24315e7fdd4b923d65",
-    "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba"
+    "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba",
+    "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
     "One accepted annotation per model/method/arm; no repeated-generation SD.",
-    "B/C: equal-weighted two test regions, all original28 labels including Noise. D: pooled test cells. E: fixed Figure2C region."
+    "B/C: equal-weighted two test regions, all original28 labels including Noise. Both share descending mean macro-F1 model/method rankings. D: pooled test cells, cell types sorted by descending mean four-model recall. E: fixed Figure2C region."
   ],
   "files": {
     "Figure_3.svg": {
-      "sha256": "14c99bb1627803709ddc8fa2cbc0c99df876bdf65ce191f96f4418703a376ecb",
-      "bytes": 3430482
+      "sha256": "4e2861602e520d1676a9b8e61d4bc41492903a8b7755acd6b655d06c392005db",
+      "bytes": 5835918
     },
     "Figure_3.pdf": {
-      "sha256": "1d127e689c1af35af16ed7b5a8020f1bcd37eeb65a61275738db01961f133905",
-      "bytes": 2365856
+      "sha256": "49b7044096b197e4e3ec8cff2525ff5a8aee4dd51b8bf48fe20636fbb964ee25",
+      "bytes": 3614797
     },
     "Figure_3.png": {
-      "sha256": "abf986acc449c2ef5366642edd50c542c50b80bbd39305fa1ce6093e99f15152",
-      "bytes": 2968544
+      "sha256": "482504731ee181a65ceea0d1b7b84f1a3894f93ec58eaf1cf55f1cbc7b2cd051",
+      "bytes": 2818098
     },
     "Figure_3.tiff": {
-      "sha256": "72f930a1ebf6c756b6398fd5e0105d583ea77e356de125a7109966c20e32ab0f",
-      "bytes": 4138020
+      "sha256": "368066f9e7391d139b1ba0a806f772fba0404e90492edfbc41bb126f784b62d0",
+      "bytes": 4586574
     }
   }
 }

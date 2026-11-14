@@ -28,6 +28,17 @@
       ]
     }
   ],
+  "provider_logos": [
+    {
+      "source_file": "data/frozen/provider_logos/openai_logo_user_supplied.png",
+      "rect_mm": [
+        114,
+        11,
+        16,
+        16
+      ]
+    }
+  ],
   "layout_compaction": {
     "original_height_mm": 191,
     "height_mm": 170.92676482094097,
@@ -56,33 +67,35 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
-    "data/frozen/annotation47_results_20261110/per_type_metrics.csv": "d6fb0bfa30687aa15e82fe5d43049c2ea02807d8c626fdffcc73b9dd096c0e4b",
-    "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
-    "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
+    "data/frozen/annotation47_results_20261111/confusion.csv.gz": "7712a457fcf5bbea0fc3c33c519a9baada0bcc340f3f3e2854db8644d011a5c0",
+    "data/frozen/annotation47_results_20261111/per_type_metrics.csv": "2c1dab60a412cdb54e5117e2d18ab22db5a627617f7ba68a94ebaadb2087d137",
+    "data/frozen/annotation47_results_20261111/cluster_predictions.csv": "4095f9f3fc6f37d3c96e681435b9cb9fcca223ab7087767391671a4ecdcf7d86",
+    "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba",
     "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
-    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+    "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee",
+    "data/frozen/provider_logos/openai_logo_user_supplied.png": "dcf1c971795cad8a12d32ba59a41f2fdaf02d74b6eef0e8f0983d98cb1f81421",
+    "data/frozen/provider_logos/manifest.json": "50769d43eadab420e85aa8b4b995c118faab641cbbf0873f1be1339261260e35"
   },
   "notes": [
-    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells. D/E use all220082 cells and original28 labels.",
+    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the bar y axis. D/E use all220082 cells and original28 labels.",
     "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
   ],
   "files": {
     "Figure_4.svg": {
-      "sha256": "cda2db842b7054e19852a4b6c371a341dac7708a69404afb1a8fee0521366d1a",
-      "bytes": 2641505
+      "sha256": "80413985723d62c9cb25ae5ed66e80302974992db90795d8822f1d0b4f8dfab5",
+      "bytes": 2678691
     },
     "Figure_4.pdf": {
-      "sha256": "a8915406e16c2db625cd53df383ff4a238506b8708b0bf4cd10026240277cd48",
-      "bytes": 1320563
+      "sha256": "6b3489672a160d5940e9ad5014df375a0b02f5f31e8f85d1944d5e47ac515ef9",
+      "bytes": 1336041
     },
     "Figure_4.png": {
-      "sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6",
-      "bytes": 1209221
+      "sha256": "31596adbcc4d444d941df0cca0e89e88c35e222bb26bf4100459d129b3b940f6",
+      "bytes": 1234229
     },
     "Figure_4.tiff": {
-      "sha256": "4c6d3aebe79909dae708fe8801dbd3baf8d68a12fcad7acd8e01620097bff532",
-      "bytes": 2258628
+      "sha256": "c4dd42c4aaf073a487c8d9652f7f9a800f934f71e74ce3d1474d68948ab9bc5c",
+      "bytes": 2250254
     }
   }
 }

@@ -7,3 +7,6 @@ Figures 2, S4 and S5 use the primary 47-marker clustering outputs. Figures 3, 4,
 All current [native exports](../../../figures/publication) include 600 dpi PNG/TIFF and editable PDF/SVG. The [preview manifest](../../../docs/reference_figure_label_changes.json) pins the source and target files. `python scripts/update_reference_figure_labels.py --check` verifies preview pixels. These previews are display copies, not analytical inputs.
 
 New S8/S9 previews use the frozen reviewer-result bank. The pending DeepSeek selected-means cell is masked; no pending Astra control result is shown.
+
+
+Figure 3A restores the original BioRender artwork with current input labels, and Figure 4A identifies Astra with the OpenAI logo. Comparison views use the ranked display orders recorded in the native renderer receipts. These presentation changes preserve the frozen November 11 results.

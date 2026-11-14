@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 216,
     "height_mm": 192.19465277850452,
@@ -49,24 +50,24 @@
   },
   "notes": [
     "Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.",
-    "Panel B retains the precision archived in the executed notebook."
+    "Panel B retains the precision archived in the executed notebook. B/C share descending mean pooled cell-type F1-change method order. D\u2013F share descending mean regional F1-change cell-type order across the three displayed methods."
   ],
   "files": {
     "Figure_1.svg": {
-      "sha256": "58f147247fa5d9cd90ed589bbafbccd30848863104e797d9dddf4dbd2da3de48",
-      "bytes": 494302
+      "sha256": "5f0cb79b90a7b98ef113b0357c1829db1f6bab48d0ff89ec69ecc6522413f19b",
+      "bytes": 494192
     },
     "Figure_1.pdf": {
-      "sha256": "88a0fc87de364f74d44fc9f69b6476b47bde05d3b4eaf79490df32d4dcdb4c9b",
-      "bytes": 239992
+      "sha256": "e5e4930bbbf705224bf8b546831ad94be68d7260ca7e5d55ea6b86b89088bbf4",
+      "bytes": 239935
     },
     "Figure_1.png": {
-      "sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
-      "bytes": 1086598
+      "sha256": "b501ecc45b80556e356d97701ff02f3f816954bf5fc1394e5975c9a9f21c201e",
+      "bytes": 1082867
     },
     "Figure_1.tiff": {
-      "sha256": "c748048d7b0315c414c7d7843a23d87d7e0ff40cc94833544e949581f7b04e5d",
-      "bytes": 2210020
+      "sha256": "5f8fae4108d95119c7a8a1e5a760671de6e38935cfb7f02b6e479e18923f4d4e",
+      "bytes": 2206954
     }
   },
   "original_raster_workflow": {

@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 78,
     "height_mm": 56.06639236111113,
@@ -32,24 +33,24 @@
     "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b"
   },
   "notes": [
-    "Single-panel primary fixed-partition reference upper bounds. Original 28 labels including Noise. No shared-marker or cluster-count refitting."
+    "Single-panel primary fixed-partition reference upper bounds sorted by descending pooled value. Original 28 labels including Noise. No shared-marker or cluster-count refitting."
   ],
   "files": {
     "Figure_S5.svg": {
-      "sha256": "8bbe8f40f5e86ce944531016b09acd9ef4e7466892160a501451ae5c2b61b554",
+      "sha256": "e8d802715f72f39c0769a1ae016936a00e3828b217269d945a36ef37a4f211d6",
       "bytes": 16373
     },
     "Figure_S5.pdf": {
-      "sha256": "b6e034e87e710405b382576de1ea2a12f2fe9f50701a872ad620b37d6c1a14e4",
-      "bytes": 34746
+      "sha256": "0618b556d8074873a8efbb8552a974d33d05a56233de891cf6d27d981fc7c2b9",
+      "bytes": 34744
     },
     "Figure_S5.png": {
-      "sha256": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
-      "bytes": 128700
+      "sha256": "d198d20bb4e08f1d2dc803ab57df93bc7476a7d44f314fb718dda021fba455cc",
+      "bytes": 129770
     },
     "Figure_S5.tiff": {
-      "sha256": "3e7e7abbca3e88bd3483f3cbbfb53148dce5b9abcea1e272b15229e4a32a3c29",
-      "bytes": 294090
+      "sha256": "97d9c8df80c281c136075bd72d4ddb66758c80652ccb7a9aebf6632f9d60b3d8",
+      "bytes": 294962
     }
   }
 }

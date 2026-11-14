@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 133,
     "height_mm": 120.0998402777778,
@@ -32,24 +33,24 @@
     "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff"
   },
   "notes": [
-    "All16means-plus-fractions conditions. Components computed within each test region before equal weighting. The arithmetic components are not causal or independent biological error classes."
+    "All16means-plus-fractions conditions sorted by descending reference agreement. Components computed within each test region before equal weighting. The arithmetic components are not causal or independent biological error classes."
   ],
   "files": {
     "Figure_S7.svg": {
-      "sha256": "24799add1d7cc3995d4256dcdbd192eb8acde29966278141c163f6a06b7247e9",
-      "bytes": 35728
+      "sha256": "0779b494b3d5965b82d31c678311a9e2fc5e62ce5ae2c9d39a31596942063a2c",
+      "bytes": 35112
     },
     "Figure_S7.pdf": {
-      "sha256": "ec6214bf1b71d61b031ab42a245c4766c17777235a89f6ace7f89f7b23c4cb4d",
-      "bytes": 28942
+      "sha256": "841190daed8d4c0c1dafb832b8d24089e2f895133e96a6bdd9b789867d4880e4",
+      "bytes": 28878
     },
     "Figure_S7.png": {
-      "sha256": "648f6abe26c75650b7f0f68556ca190c65c73be88d1dfe515a1faaa8a6509ad3",
-      "bytes": 405098
+      "sha256": "7842e794d9befb5a90881883328248a9c07c89345be89996da3ba314408ced17",
+      "bytes": 362509
     },
     "Figure_S7.tiff": {
-      "sha256": "223911afb63efc50ebd969183b8c5f4ed023f2159fefeb350ed5ac7450d982a2",
-      "bytes": 749222
+      "sha256": "aac96f66f764bbae8c1a1d797a662732276c7e7fdd983a4d409a61cc773d2ef9",
+      "bytes": 747290
     }
   }
 }

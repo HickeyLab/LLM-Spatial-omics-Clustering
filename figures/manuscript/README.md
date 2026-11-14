@@ -1,11 +1,10 @@
 # Retained manuscript figure artwork
 
-These 17 PNG files retain the artwork from before the November 6 manuscript
-panel reductions. Figure S3 has separate A, B and C images. They are
-byte-identical copies of the retained 600 dpi [publication exports](../publication),
-with editable PDF/SVG and lossless RGB TIFF versions. Use the current
+These 17 PNG files contain the current artwork for 15 figure identifiers.
+Figure S3 has separate A, B and C images. They are byte-identical copies of
+the 600 dpi [publication exports](../publication), with editable PDF/SVG and
+lossless RGB TIFF versions. Use the current
 [figure map](../../docs/figure_map.md) for manuscript display labels.
-This documentation update does not regenerate those image files.
 
 Figure numbers, figure-level titles and explanatory notes remain in manuscript
 captions. Descriptive subfigure titles are omitted. Distinguishing condition,
@@ -32,16 +31,17 @@ python scripts/render_manuscript_figures.py --check
 ```
 
 These commands use frozen numerical inputs and stored coordinates. They make
-no model calls and perform no fits. Retained Figure 3 artwork includes the
-earlier optimization schematic and reference-informed selection panels.
-Current Figure 3 has A–E, with its E corresponding to the former H spatial
-comparison. Each cluster's most frequent label uses GPT, Claude, Gemini and
-DeepSeek order for ties without reference labels. The former Figure 2I marker
-profiles are now S11A, with [numerical source](../../data/frozen/manuscript_replay/figure_02/panel_I_marker_summaries.csv)
-available. Earlier selected spatial windows are archived.
+no model calls and perform no fits. Figure 3A uses the original BioRender
+artwork with current 47-marker summaries and fixed input representations.
+Figure 4A uses the OpenAI logo for Astra. Comparison panels use ranked display
+orders while retaining shared orders for paired views. Frozen numerical
+values and scoring vocabularies are unchanged. Figure 3E shows a fixed
+spatial region. Figure S11 uses the four-model most-frequent-label summary,
+with ties in Astra, Opus, Argon and DeepSeek order without reference labels.
+Earlier reference-selected panels and windows remain archived.
 
 The earlier title-cleanup snapshots and Figure 3A restoration audits remain
 historical provenance. Their former pixel-preservation claims describe those
-older operations, not this native publication redesign. Retained notebook
-previews are exact copies of the files in this directory and do not define
-the current manuscript panel inventory.
+older operations, not this native publication redesign. Current notebook
+previews are exact copies of the files in this directory. The current
+[figure inventory](../../configs/manuscript_inventory.json) defines panels and captions.

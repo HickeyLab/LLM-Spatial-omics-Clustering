@@ -19,6 +19,8 @@ from publication_figure_design import (
     colorbar, finish, sha,
 )
 
+from render_annotation47_figures import benchmark_orders
+
 DATA = ROOT / "data/frozen/reviewer47_results_20261111"
 FAMILIES = ["openai", "anthropic", "google", "deepseek"]
 MODELS = ["GPT-6 Astra", "Claude Opus 5.5", "Gemini 4 Argon", "DeepSeek V4.1 Flash 1017"]
@@ -64,7 +66,7 @@ def representation_matrix(rows, family):
     if len(selected) != 16:
         raise ValueError("Representation Cartesian coverage differs")
     return selected.pivot(index="method", columns="arm", values="agreement").reindex(
-        index=METHOD_KEYS, columns=ARMS).to_numpy(dtype=float) * 100
+        index=benchmark_orders()[1], columns=ARMS).to_numpy(dtype=float) * 100
 
 
 def figure_s8(out):
@@ -77,7 +79,8 @@ def figure_s8(out):
         text(f, x + 42, y, MODELS[i], size=6.5, ha="center", weight="bold")
         a = axes(f, x + 22, y + 11, 48, 35)
         matrix = representation_matrix(rows, family)
-        artist = heatmap(a, matrix, METHODS, ARM_LABELS, 0, 100,
+        method_names = [METHODS[METHOD_KEYS.index(m)] for m in benchmark_orders()[1]]
+        artist = heatmap(a, matrix, method_names, ARM_LABELS, 0, 100,
                          cmap="RdYlGn", annotate=False)
         for (r, c), value in np.ndenumerate(matrix):
             if np.isfinite(value):
@@ -95,6 +98,7 @@ def figure_s8(out):
         "Equal-weighted agreement across the two B004 test regions; fixed 28-label vocabulary including Noise.",
         "Four frozen partitions and one generation per condition. Partial conditions are masked as Pending, not scored.",
         "Selected names and selected means use at most six label-blind selected markers; full arms use all47 markers.",
+        "Method rows share the primary benchmark ranking by descending mean four-model fixed-28-label macro-F1 for means plus fractions. Columns retain the planned information progression.",
     ])
 
 
@@ -107,7 +111,7 @@ def values_for(rows, arm):
     selected = rows[rows.arm.eq(arm)]
     if not selected.status.eq("complete").all():
         raise ValueError("A plotted Opus control is incomplete")
-    return selected.set_index("method").agreement.reindex(METHOD_KEYS).to_numpy(dtype=float) * 100
+    return selected.set_index("method").agreement.reindex(benchmark_orders()[1]).to_numpy(dtype=float) * 100
 
 
 def figure_s9(out):
@@ -123,7 +127,8 @@ def figure_s9(out):
         a.plot([blind[i], named[i]], [i, i], color="#b9c2cc", lw=.9, zorder=1)
     a.scatter(blind, np.arange(4) - .055, s=15, color="#2864a5", marker="o", zorder=3)
     a.scatter(named, np.arange(4) + .055, s=15, color="#b55224", marker="s", zorder=3)
-    a.set(yticks=range(4), yticklabels=METHODS, ylim=(3.5, -.5), xlim=(0, 100),
+    method_names = [METHODS[METHOD_KEYS.index(m)] for m in benchmark_orders()[1]]
+    a.set(yticks=range(4), yticklabels=method_names, ylim=(3.5, -.5), xlim=(0, 100),
           xticks=[0, 25, 50, 75, 100], xlabel="Reference agreement (%)")
     grid(a, "x")
     a.legend(handles=[Line2D([], [], marker="o", ls="", color="#2864a5", label="Blinded"),
@@ -189,6 +194,7 @@ def figure_s9(out):
              fontsize=5.5, columnspacing=.8, handlelength=1.7)
     return finish(f, "Figure_S9", out, inputs("set_metrics.csv", name, risk_name), notes=[
         "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
+        "A: method rows share the primary benchmark descending mean four-model macro-F1 ranking. B/C retain their evidence/calibration progression, and D keeps ascending numeric coverage.",
         "C: each line/dot is one of16method/model conditions; diamonds are arithmetic means of equal-region Brier scores. Lower is better.",
         "D: illustrative Astra-Leiden selective-risk curves by test region, on hash-held-out evaluation clusters. All tied scores are retained together; undefined zero-retention risk is omitted.",
         "Calibration development/evaluation use disjoint clusters and disjoint regions. It estimates within-donor reference agreement, not native confidence, repeatability or biological correctness.",

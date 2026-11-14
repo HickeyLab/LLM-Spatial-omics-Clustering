@@ -2,13 +2,12 @@
 
 This design record describes the retained artwork from before the November 6
 manuscript panel reductions. It is historical provenance where its panel
-references differ from the current [figure map](figure_map.md). The retained
-image files, native designs and frozen inputs are unchanged by the
-current documentation synchronization.
+references differ from the current [figure map](figure_map.md). Historical source assets and frozen scientific inputs remain pinned.
+Current presentation updates are recorded below.
 
-All five main and ten supplementary figures are supplied as 17 native image
-sets because S3A, S3B and S3C are separate. The manuscript and current notebook
-previews use the same compositions. Whole-figure numbers and titles belong in
+The historical release supplied five main and ten supplementary figures as
+17 native image sets because S3A, S3B and S3C were separate. Current counts
+and compositions follow the figure inventory and artwork manifest. Whole-figure numbers and titles belong in
 captions. Descriptive subfigure titles are omitted. Artwork retains panel
 letters, distinguishing condition, model, method, population and metric labels,
 axes, keys, units and values. Explanatory notes and methodological qualifications
@@ -19,6 +18,22 @@ The subsequent [panel-title pass](figure_panel_titles_20261101.md) applies
 this rule across all figures and updates the manuscript in Editing mode.
 The [layout pass](figure_layout_compaction_20261101.md) closes the resulting
 vacant bands and bottom margins while preserving native type and plot sizes.
+
+## Current presentation update on 14 November 2026
+
+Figure 3A restores the original six-stage BioRender artwork with current
+47-marker summary and fixed-input labels. Figure 4A uses the user-supplied OpenAI
+logo for the Astra annotation step. The source artwork remains unchanged.
+
+Comparison panels now use ranked display orders. Shared views retain shared
+orders: Figure 2E–H uses mean regional weighted F1, Figure 3B–C uses mean
+fixed-28-label macro-F1, and Figure 4B–C uses pooled-test cell-type F1. Figure
+3D ranks cell types by mean four-model recall. Other comparison views rank
+the displayed metric, using increasing order where smaller values indicate
+better separation or lower diversity. Spatial coordinates, marker order,
+legend identities and frozen numerical values are preserved. Exact rules
+are recorded in the renderer verification receipts. The current image
+inventory and hashes are in `figures/manuscript/manifest.json`.
 
 ## Typography and panel letters
 
@@ -104,16 +119,14 @@ recorded in `source_manifest.json`. Preparation verification records the
 original H5AD and archived coordinate identities. No clustering, UMAP fit,
 model inference, new matching or new statistical experiment is performed.
 
-Figure 3A follows the latest live-manuscript workflow, including Cluster
-Features and the five marker-selection settings under Optimization. All
-workflow panels in Figures 2–4 now use the original BioRender illustrations.
-Figure 1A separately restores its original illustrated raster artwork.
-Figure 2 is reflowed to give its workflow the full figure width; the other
-numerical panels retain their frozen data and definitions. Its
-caption preserves the distinction between retrospective marker-name-list
-settings and the numerical benchmark prompt inputs.
+Figure 3A uses the original BioRender illustrations with current cluster
+summary and fixed-input labels. The earlier Cluster Features and Optimization
+wording is historical. All workflow panels in Figures 2–4 use the author's
+BioRender artwork, and Figure 1A separately retains its original raster
+illustrations. The workflow restoration changes no frozen scientific inputs
+or numerical results.
 
-Figure 3E keeps the original archived values. Its metric is the fraction of
+The historical Figure 3E kept the original archived values. Its metric is the fraction of
 cells for which the Phase 7 prediction or the individual Leiden–LLM prediction
 matches the reference label. It is a full-data, post-hoc reference-selected
 union and does not estimate performance on unlabeled data. The author

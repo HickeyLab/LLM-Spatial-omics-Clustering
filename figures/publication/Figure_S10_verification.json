@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 126,
     "height_mm": 93.75400694444443,
@@ -45,24 +46,24 @@
     "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
   },
   "notes": [
-    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
+    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
   ],
   "files": {
     "Figure_S10.svg": {
-      "sha256": "22f37fbab3ba5efdbedccc9aa7c51f42d0023938ae84bc95f56069ef1a10d22d",
-      "bytes": 37093
+      "sha256": "ae146ca584fe8386ba4ea8a49b040757d4a6606753ad455b07e98825b3ba0530",
+      "bytes": 37089
     },
     "Figure_S10.pdf": {
-      "sha256": "7efe86684a490a822b535fdb774e53a6360a20ddcdb8ec29d05ec63a6cb0bf55",
-      "bytes": 44586
+      "sha256": "c8ce7d1f5a6e7b2126726ac86b0b54e9d07c6dd0b5a38d67319ac657184ff682",
+      "bytes": 44569
     },
     "Figure_S10.png": {
-      "sha256": "6f4cf792f91244ec472c4a55d771d29975934d69423d815005574bd7f11b322b",
-      "bytes": 205260
+      "sha256": "871d04da00fb7c8fc475a3079946a231c64653b85c4f3b09343054726430c709",
+      "bytes": 181977
     },
     "Figure_S10.tiff": {
-      "sha256": "5b764fe421bc94467f98ea3b504299ed768993d58684065637629bdda3ec5d8b",
-      "bytes": 391994
+      "sha256": "e1677199837b3c570753d32c27f31017f9be0ba93b28e4701ec1638bf2e8ee74",
+      "bytes": 392608
     }
   }
 }
