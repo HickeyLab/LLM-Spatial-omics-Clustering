@@ -9,7 +9,7 @@
   "annotation_arm": "all_means_fractions",
   "source_manifest_sha256": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
   "renderer_sha256": "d18c6476c90c7c564ed531af0f1e2cf60d8a5ea4d6847e0c322e1fb49a9750b7",
-  "shared_style_sha256": "cdf237ea683d7764ae8189dd485e0aa0a1a5ef1160c6ee7f067d0b9a03989bad",
+  "shared_style_sha256": "a76b2456fec060a07529102a6644819ae6e715c9a75f1d65bf02d34a87b95b4f",
   "figures": {
     "5": {
       "figure": "Figure_5",
