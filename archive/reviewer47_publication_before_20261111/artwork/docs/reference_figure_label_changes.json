@@ -1,0 +1,158 @@
+{
+  "schema": "manuscript.preview-replay.v1",
+  "source_date": "2026-10-31",
+  "note": "Current previews copy approved artwork. Historical overlay coordinates are archived in docs/archive.",
+  "figures": [
+    {
+      "file": "notebooks/final_figures/previews/figure_01.png",
+      "source_file": "figures/manuscript/Figure_1.png",
+      "source_sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        4540
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_02.png",
+      "source_file": "figures/manuscript/Figure_2.png",
+      "source_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5033
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_03.png",
+      "source_file": "figures/manuscript/Figure_3.png",
+      "source_sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        4007
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_04.png",
+      "source_file": "figures/manuscript/Figure_4.png",
+      "source_sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        4038
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s01.png",
+      "source_file": "figures/manuscript/Figure_S1.png",
+      "source_sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2776
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s02.png",
+      "source_file": "figures/manuscript/Figure_S2.png",
+      "source_sha256": "51c0561a46b087915a656fa886ab3eaa63cfc5f0485317002fc0cb15df2190cf",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        3590
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s03_a.png",
+      "source_file": "figures/manuscript/Figure_S3A.png",
+      "source_sha256": "192024de7e5632f5e1cc4751f67b0115d1d2848e4a260b5e8d002463351fb57b",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        1564
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s03_b.png",
+      "source_file": "figures/manuscript/Figure_S3B.png",
+      "source_sha256": "12f8c3d4fa680257d0d0a22b4d45ba5795dec8997eff740d2284e41b87278a51",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        1463
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s03_c.png",
+      "source_file": "figures/manuscript/Figure_S3C.png",
+      "source_sha256": "1e0db1ac622ec09fae48d77b005d9e4d27f858f9e6ef47b10ade28e531c3799d",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2844
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s04.png",
+      "source_file": "figures/manuscript/Figure_S4.png",
+      "source_sha256": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        4955
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s05.png",
+      "source_file": "figures/manuscript/Figure_S5.png",
+      "source_sha256": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        1324
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s06.png",
+      "source_file": "figures/manuscript/Figure_S6.png",
+      "source_sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        5234
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s07.png",
+      "source_file": "figures/manuscript/Figure_S7.png",
+      "source_sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2837
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s10.png",
+      "source_file": "figures/manuscript/Figure_S10.png",
+      "source_sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        2214
+      ]
+    },
+    {
+      "file": "notebooks/final_figures/previews/figure_s11.png",
+      "source_file": "figures/manuscript/Figure_S11.png",
+      "source_sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
+      "labels": [],
+      "size_pixels": [
+        3900,
+        1010
+      ]
+    }
+  ],
+  "policy": "Current previews copy the native publication exports with no overlays. Earlier label overlays remain historical."
+}

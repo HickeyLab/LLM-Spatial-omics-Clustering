@@ -1,0 +1,1259 @@
+[
+  {
+    "figure": "Figure_1",
+    "width_mm": 165.1,
+    "height_mm": 192.19465277850452,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4540
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 216,
+      "height_mm": 192.19465277850452,
+      "height_reduction_percent": 11.020994084025686,
+      "vacant_bands_removed_mm": [
+        [
+          35.04,
+          40.499999999999986
+        ],
+        [
+          78.71546875072676,
+          82.63013888888891
+        ],
+        [
+          101.9694826388889,
+          107.5
+        ],
+        [
+          199.93233680555554,
+          201.4701388888889
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_artwork/figure_01_original.png": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "configs/figure_01_original_workflow.json": "71529330c3e78f45744f6440c8b829dcf5c4b71df7bfb257fdcf4b5397dac5f2",
+      "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80",
+      "data/frozen/publication_design/figure1_pooled_f1_changes.csv": "524ca9c6851bc9461a2dae60dd3e0dd4849c973b162f33b24fb13fe71056aa27",
+      "data/frozen/figure_01_descriptive/regional_f1_changes.csv": "1cb68b8b1c8905a56a4a22a2f147ec8ceb1d69cba6579864f84b20a6116657bd"
+    },
+    "notes": [
+      "Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.",
+      "Panel B retains the precision archived in the executed notebook."
+    ],
+    "files": {
+      "Figure_1.svg": {
+        "sha256": "58f147247fa5d9cd90ed589bbafbccd30848863104e797d9dddf4dbd2da3de48",
+        "bytes": 494302
+      },
+      "Figure_1.pdf": {
+        "sha256": "88a0fc87de364f74d44fc9f69b6476b47bde05d3b4eaf79490df32d4dcdb4c9b",
+        "bytes": 239992
+      },
+      "Figure_1.png": {
+        "sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
+        "bytes": 1086598
+      },
+      "Figure_1.tiff": {
+        "sha256": "c748048d7b0315c414c7d7843a23d87d7e0ff40cc94833544e949581f7b04e5d",
+        "bytes": 2210020
+      }
+    },
+    "original_raster_workflow": {
+      "schema": "figure01.original_workflow.v2",
+      "source_file": "data/frozen/publication_artwork/figure_01_original.png",
+      "source_sha256": "4b1fca30056c35d6bb8cbb14494dca7a73d577e173443c646fa9afaede7b7593",
+      "crop_pixels": [
+        45,
+        126,
+        1810,
+        344
+      ],
+      "crop_rgb_sha256": "f28106f3e6e6580d837e319c8e2d13a817d6205b9ee851862b9eace6829b2a66",
+      "rect_mm": [
+        3,
+        7,
+        159,
+        19.6385269121813
+      ],
+      "policy": "Preserve the original Figure 1A illustrations and arrows. Erase only declared raster text rectangles and replace their labels with larger editable Arial. Keep the current native A letter and panels B-F unchanged.",
+      "source_type": "original raster artwork",
+      "native_text_policy": "All workflow labels are native editable Arial, 6.5 pt for step captions and H5AD, 6 pt for input descriptions and 5.5 pt for the small TIF icon. Source illustrations retain their original pixels outside declared text rectangles.",
+      "erase_regions": [
+        {
+          "rect_pixels": [
+            45,
+            143,
+            220,
+            191
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            45,
+            220,
+            219,
+            248
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            45,
+            289,
+            220,
+            322
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            409,
+            290,
+            600,
+            323
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            675,
+            289,
+            921,
+            337
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            1020,
+            291,
+            1220,
+            326
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            1302,
+            291,
+            1515,
+            326
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            1610,
+            289,
+            1810,
+            337
+          ],
+          "fill_rgb": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "rect_pixels": [
+            233,
+            222,
+            263,
+            248
+          ],
+          "fill_rgb": [
+            228,
+            234,
+            251
+          ]
+        },
+        {
+          "rect_pixels": [
+            1668,
+            202,
+            1751,
+            227
+          ],
+          "fill_rgb": [
+            244,
+            223,
+            251
+          ]
+        }
+      ],
+      "labels": [
+        {
+          "text": "Multiplexed\nfluorescence\ntissue",
+          "position_mm": [
+            10.6,
+            7.1
+          ],
+          "font_pt": 6.0
+        },
+        {
+          "text": "TIF Mask\nFiles",
+          "position_mm": [
+            10.6,
+            15.2
+          ],
+          "font_pt": 6.0
+        },
+        {
+          "text": "Marker\nChannel List",
+          "position_mm": [
+            10.6,
+            22.0
+          ],
+          "font_pt": 6.0
+        },
+        {
+          "text": "REDSEA\nCompensation",
+          "position_mm": [
+            44.4,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Merge Regions for\nBefore and After\nREDSEA",
+          "position_mm": [
+            71.0,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Data\nPreprocessing",
+          "position_mm": [
+            99.2,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Cell Clustering\nLeiden 1.5",
+          "position_mm": [
+            126.5,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "Two Clustered\nH5AD Files\nBefore + After REDSEA",
+          "position_mm": [
+            151.4,
+            22.1
+          ],
+          "font_pt": 6.5
+        },
+        {
+          "text": "TIF",
+          "position_mm": [
+            21.1,
+            16.64
+          ],
+          "font_pt": 5.5,
+          "va": "center"
+        },
+        {
+          "text": "H5AD",
+          "position_mm": [
+            153.1,
+            15.1
+          ],
+          "font_pt": 6.5,
+          "va": "center"
+        }
+      ],
+      "cleaned_crop_rgb_sha256": "13f416077fce135500f7aa2ce860787e528c9eb4b7ea2ac98ac6bc4edc84233a",
+      "native_size_pixels": [
+        1765,
+        218
+      ],
+      "effective_source_dpi": 281.95597484276726
+    },
+    "minimum_font_scope": "All text, including the retyped Figure 1A labels. Original illustration pixels remain raster."
+  },
+  {
+    "figure": "Figure_2",
+    "width_mm": 165.1,
+    "height_mm": 213.0476035997217,
+    "minimum_font_pt": 6.6,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 125.076,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      5033
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": [
+      {
+        "clip_points": [
+          13,
+          60,
+          672,
+          168
+        ],
+        "rect_mm": [
+          3,
+          11,
+          159,
+          26.057663125948405
+        ]
+      }
+    ],
+    "layout_compaction": {
+      "original_height_mm": 224,
+      "height_mm": 213.0476035997217,
+      "height_reduction_percent": 4.889462678695671,
+      "vacant_bands_removed_mm": [
+        [
+          116.66794444444444,
+          119.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+      "data/frozen/publication_design/umap_coordinates.csv.gz": "54e0335d3e63dda86d11dd336eebed0460741301d58a055bd84497aff991c7d8",
+      "data/frozen/clustering47_primary_20261108/regional_metrics.csv": "88f416abc19dc2f13edfc0a089267f5f407bc2fd45b144d8759eece7ee75e55b",
+      "data/frozen/clustering47_primary_20261108/panel_F_values.csv": "91d9edd92a6f0692a1a4a2ee5e7a47cb40dd36856aa7ba3091d5489a8128843e",
+      "data/frozen/clustering47_primary_20261108/panel_H_values.csv": "0e2d8ee3534ab590f1e24026c860736e396b4a91b932df13144a73c9b1879bd1",
+      "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+      "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+    },
+    "notes": [
+      "Current A\u2013H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."
+    ],
+    "files": {
+      "Figure_2.svg": {
+        "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
+        "bytes": 5446481
+      },
+      "Figure_2.pdf": {
+        "sha256": "741077c375416e080ab92b5f42bceb2fd579f7b8bcf854768b4a2f650827fb3e",
+        "bytes": 3299170
+      },
+      "Figure_2.png": {
+        "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+        "bytes": 2824858
+      },
+      "Figure_2.tiff": {
+        "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
+        "bytes": 4483584
+      }
+    }
+  },
+  {
+    "figure": "Figure_3",
+    "width_mm": 165.1,
+    "height_mm": 169.66338185884396,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4007
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 205,
+      "height_mm": 169.66338185884396,
+      "height_reduction_percent": 17.237374703002946,
+      "vacant_bands_removed_mm": [
+        [
+          6.040000000000007,
+          8.500000000000007
+        ],
+        [
+          28.50000000000001,
+          34.499999999999986
+        ],
+        [
+          40.039999999999985,
+          43.864999999999995
+        ],
+        [
+          93.06047333145322,
+          104.49999999999999
+        ],
+        [
+          110.136,
+          115.865
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
+      "data/frozen/annotation47_results_20261110/per_type_metrics.csv": "d6fb0bfa30687aa15e82fe5d43049c2ea02807d8c626fdffcc73b9dd096c0e4b",
+      "data/frozen/annotation47_results_20261110/reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
+      "data/frozen/annotation47_results_20261110/cell_predictions.npz": "4e2fc1a98a34f879f1efa9973a05b6bd0800758b0299997d50f6fbddb7a3434a",
+      "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+    },
+    "notes": [
+      "One accepted annotation per model/method/arm; no repeated-generation SD.",
+      "B/C: equal-weighted two test regions, all original28 labels including Noise. D: pooled test cells. E: fixed Figure2C region."
+    ],
+    "files": {
+      "Figure_3.svg": {
+        "sha256": "cee6713d62e8b7483037b1acbf182884852a33bb12aee31f34c198adb79706dd",
+        "bytes": 3427858
+      },
+      "Figure_3.pdf": {
+        "sha256": "e28fca59a6ac36321280a881bf920c6b583dc7be61b96bc4809d4ec978805257",
+        "bytes": 2372086
+      },
+      "Figure_3.png": {
+        "sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
+        "bytes": 2932330
+      },
+      "Figure_3.tiff": {
+        "sha256": "c128db2c8a270f8803ae4eead2a277d7169e2b15777036d8f556ed7aabf6c9f5",
+        "bytes": 4148758
+      }
+    }
+  },
+  {
+    "figure": "Figure_4",
+    "width_mm": 165.1,
+    "height_mm": 170.92676482094097,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4038
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": [
+      {
+        "clip_points": [
+          27,
+          386,
+          556,
+          454
+        ],
+        "rect_mm": [
+          6,
+          9,
+          154,
+          19.795841209829867
+        ]
+      }
+    ],
+    "layout_compaction": {
+      "original_height_mm": 191,
+      "height_mm": 170.92676482094097,
+      "height_reduction_percent": 10.509547214167029,
+      "vacant_bands_removed_mm": [
+        [
+          30.295841209829867,
+          33.500000000000014
+        ],
+        [
+          39.13599999999999,
+          41.49999999999998
+        ],
+        [
+          135.72128125,
+          143.5
+        ],
+        [
+          149.136,
+          152.49999999999997
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
+      "data/frozen/annotation47_results_20261110/per_type_metrics.csv": "d6fb0bfa30687aa15e82fe5d43049c2ea02807d8c626fdffcc73b9dd096c0e4b",
+      "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
+      "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
+      "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+      "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
+    },
+    "notes": [
+      "Prespecified Leiden\u2013Opus5.5 means-plus-fractions pipeline. B/C use test cells. D/E use all220082 cells and original28 labels.",
+      "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
+    ],
+    "files": {
+      "Figure_4.svg": {
+        "sha256": "6be3f20ef665ce130d221c666aca64780f15952ca6abd2f041ce285d2d5e7638",
+        "bytes": 2640618
+      },
+      "Figure_4.pdf": {
+        "sha256": "2b9123ee632d5f0d9e96527ae955a7c8c0bdd20384f7773aceeca4fb8dd3249d",
+        "bytes": 1319807
+      },
+      "Figure_4.png": {
+        "sha256": "7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d",
+        "bytes": 1294375
+      },
+      "Figure_4.tiff": {
+        "sha256": "263277257a15d06a1aa29f88bde0b5bb028b99665ced4ee1b208572a97d94637",
+        "bytes": 2359476
+      }
+    }
+  },
+  {
+    "figure": "Figure_S10",
+    "width_mm": 165.1,
+    "height_mm": 93.75400694444443,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2214
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 126,
+      "height_mm": 93.75400694444443,
+      "height_reduction_percent": 25.592057980599662,
+      "vacant_bands_removed_mm": [
+        [
+          6.61733333333334,
+          12.500000000000009
+        ],
+        [
+          18.136000000000003,
+          22.500000000000018
+        ],
+        [
+          59.932336805555565,
+          62.5
+        ],
+        [
+          68.136,
+          72.50000000000001
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
+      "data/frozen/annotation47_results_20261110/paired_contrasts.csv": "99e0741e612c3cb6eb76850acd72f70a3ded7b74de693fcfa985c84e8d1051ee"
+    },
+    "notes": [
+      "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
+    ],
+    "files": {
+      "Figure_S10.svg": {
+        "sha256": "b28de1e773d3dab827b937d15d610c8e29952f939c70e8c98c7e75fbbd37d8a5",
+        "bytes": 37093
+      },
+      "Figure_S10.pdf": {
+        "sha256": "25b8c1b54ccd7459d2aa6d84f7c67a7739d992d7ec0b4f1a4f94aee985cce2be",
+        "bytes": 44568
+      },
+      "Figure_S10.png": {
+        "sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
+        "bytes": 181368
+      },
+      "Figure_S10.tiff": {
+        "sha256": "0ca3c5e2c94fdb38ef66d8d5bc1cd462ee34e13fa0960f05205a33d10de60a9f",
+        "bytes": 391346
+      }
+    }
+  },
+  {
+    "figure": "Figure_S11",
+    "width_mm": 165.1,
+    "height_mm": 42.77151865778886,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1010
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 55,
+      "height_mm": 42.77151865778886,
+      "height_reduction_percent": 22.23360244038389,
+      "vacant_bands_removed_mm": [],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/annotation47_results_20261110/cd8_consensus_profiles.csv": "9ade4ab92d6bc706f863ba88501856ece4dc12826c38b38187c10bd6b5c3a852",
+      "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+    },
+    "notes": [
+      "Cells selected using one accepted label per model and fixed four-model modal ties, not repeated-call votes. Color uses stored processed expression without another transform, min-max scaled by marker across the four displayed methods. Size encodes the numerical fraction >0, not validated biological positivity."
+    ],
+    "files": {
+      "Figure_S11.svg": {
+        "sha256": "4148710593e0c5a6360734b382f877257035c2c328e6fcd732749775660bfa7d",
+        "bytes": 147122
+      },
+      "Figure_S11.pdf": {
+        "sha256": "cb932e9160d732dc936acf8458e1edd6f9ceb53ba93fe5d2ee61184f18c239bb",
+        "bytes": 76379
+      },
+      "Figure_S11.png": {
+        "sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
+        "bytes": 342203
+      },
+      "Figure_S11.tiff": {
+        "sha256": "d69a40a0a6ed5d9f42415b6326319ce3eada1b3f95104bd60cbb5ca7b1e2edf0",
+        "bytes": 459508
+      }
+    }
+  },
+  {
+    "figure": "Figure_S1",
+    "width_mm": 165.1,
+    "height_mm": 117.53095582527263,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2776
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 139,
+      "height_mm": 117.53095582527263,
+      "height_reduction_percent": 15.445355521386599,
+      "vacant_bands_removed_mm": [
+        [
+          6.682333333333309,
+          9.499999999999995
+        ],
+        [
+          15.039999999999996,
+          17.350554591394022
+        ],
+        [
+          48.526392361111114,
+          50.49999999999999
+        ],
+        [
+          56.03999999999999,
+          58.49999999999999
+        ],
+        [
+          89.5263923611111,
+          91.5
+        ],
+        [
+          97.03999999999999,
+          99.49999999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80"
+    },
+    "notes": [
+      "Metrics retain the four-decimal precision archived in the executed notebook stdout."
+    ],
+    "files": {
+      "Figure_S1.svg": {
+        "sha256": "e460444e0afee7065a1d37f2567fa6644d3628485a238a969414a19b48e30482",
+        "bytes": 103900
+      },
+      "Figure_S1.pdf": {
+        "sha256": "dd4dcfad463126ae288c5759b71f29a9f31c8c5fade01b84867545e9cd0d5ef1",
+        "bytes": 81914
+      },
+      "Figure_S1.png": {
+        "sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
+        "bytes": 510312
+      },
+      "Figure_S1.tiff": {
+        "sha256": "f7640f084a4bcc2fd5c9c5fb4dbb69cb994c1c5b11f86ed2ce902287e4d2c3a2",
+        "bytes": 739438
+      }
+    }
+  },
+  {
+    "figure": "Figure_S2",
+    "width_mm": 165.1,
+    "height_mm": 152.0105,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      3590
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 168,
+      "height_mm": 152.0105,
+      "height_reduction_percent": 9.51755952380952,
+      "vacant_bands_removed_mm": [
+        [
+          6.135999999999985,
+          8.500000000000007
+        ],
+        [
+          13.119250000000006,
+          14.5
+        ],
+        [
+          79.50000000000001,
+          83.5
+        ],
+        [
+          89.136,
+          91.5
+        ],
+        [
+          96.11925000000001,
+          97.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/publication_design/figureS2_spatial_cells.csv.gz": "f6d5ee8fc800f2de3905abe5819de5f488d08cf76e7d14b2aabf8d64009031fa",
+      "data/frozen/publication_design/reference_cells.csv.gz": "ee1fb61110f37fbb5b160e5f3bbd1db5e4d9cc57058b6d6026e840a80dc1656b"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S2.svg": {
+        "sha256": "9f84ce9ed317704bb47c02382b22133d43e14744d71d694ff0d461bbd13e958a",
+        "bytes": 2858571
+      },
+      "Figure_S2.pdf": {
+        "sha256": "109750ad2a25a1470b0a2d9b084901dfef95453e36ab8541d3cfae74ed4bfe83",
+        "bytes": 1978621
+      },
+      "Figure_S2.png": {
+        "sha256": "51c0561a46b087915a656fa886ab3eaa63cfc5f0485317002fc0cb15df2190cf",
+        "bytes": 2105716
+      },
+      "Figure_S2.tiff": {
+        "sha256": "177cb807d96633404ada79b4a9f70b1fee769ac9a9716d2429285fa95b5ea929",
+        "bytes": 2013386
+      }
+    }
+  },
+  {
+    "figure": "Figure_S3A",
+    "width_mm": 165.1,
+    "height_mm": 66.23080902777778,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1564
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 84,
+      "height_mm": 66.23080902777778,
+      "height_reduction_percent": 21.153798776455023,
+      "vacant_bands_removed_mm": [
+        [
+          6.040000000000007,
+          10.5
+        ],
+        [
+          63.52639236111111,
+          68.35013888888889
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS3_population.csv": "468231d1c8527250b395239fa130f24ad67f6c05d297e32dbd74049fa540de56"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S3A.svg": {
+        "sha256": "d4d7184077750b2b1b7db8de90f14d7961339a6c1a9d711938f76f47c0cf9983",
+        "bytes": 51495
+      },
+      "Figure_S3A.pdf": {
+        "sha256": "e3dd36355ef530595ce9035da8d0be4e608c6c8f8b2539728575a2d5e9ececbe",
+        "bytes": 42958
+      },
+      "Figure_S3A.png": {
+        "sha256": "192024de7e5632f5e1cc4751f67b0115d1d2848e4a260b5e8d002463351fb57b",
+        "bytes": 237753
+      },
+      "Figure_S3A.tiff": {
+        "sha256": "cbcf4a2d0a65671a8ddbeed060338a6267fd6194697c39aa0bb30c38a54dc826",
+        "bytes": 322358
+      }
+    }
+  },
+  {
+    "figure": "Figure_S3B",
+    "width_mm": 165.1,
+    "height_mm": 61.94327068710028,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1463
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 88,
+      "height_mm": 61.94327068710028,
+      "height_reduction_percent": 29.609919673749683,
+      "vacant_bands_removed_mm": [
+        [
+          6.039999999999993,
+          13.499999999999996
+        ],
+        [
+          18.785999999999998,
+          21.86499999999999
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/publication_design/figureS3_regional_changes.csv": "6bc88dfb3fcf59500dd93ac239ca3f6d7190fbe49eafd9cfb8d5d31bdcae8126",
+      "data/frozen/publication_design/figureS3_intervals.csv": "70091ad39c7a93f02eeb4746fae6e5c5d2b78784c006b5cda2b0277eb93982f9"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S3B.svg": {
+        "sha256": "5e1e60701c71700516fb5e201787eea5dca25dd30b5e43b01a3a2c51b01dec53",
+        "bytes": 37170
+      },
+      "Figure_S3B.pdf": {
+        "sha256": "5fd0a5173e6086d9bea2e69701d451430680ef4469a1b9fb979322b1223f4528",
+        "bytes": 38658
+      },
+      "Figure_S3B.png": {
+        "sha256": "12f8c3d4fa680257d0d0a22b4d45ba5795dec8997eff740d2284e41b87278a51",
+        "bytes": 260472
+      },
+      "Figure_S3B.tiff": {
+        "sha256": "44e4194e1e5a03e7790d598398c26f164db9e2e63c42ec91b8912f86334a92e4",
+        "bytes": 341244
+      }
+    }
+  },
+  {
+    "figure": "Figure_S3C",
+    "width_mm": 165.1,
+    "height_mm": 120.41955902777775,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2844
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 140,
+      "height_mm": 120.41955902777775,
+      "height_reduction_percent": 13.986029265873036,
+      "vacant_bands_removed_mm": [
+        [
+          6.039999999999979,
+          8.499999999999995
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/figure_s05/celltype_mean_effects.csv": "ad08d229fbef84f0c175ba5c518685d340dd24deaa4a86a42407a7f7f6fb7f46"
+    },
+    "notes": [],
+    "files": {
+      "Figure_S3C.svg": {
+        "sha256": "1ecdc8062efcf927a5c4d5a7d58ea86e972f99a3e252c1a0f4f2b53b03e6131a",
+        "bytes": 167818
+      },
+      "Figure_S3C.pdf": {
+        "sha256": "6277afb436b0753f04303bdc764b6b0122ce94e240cef02030f85445423c57c7",
+        "bytes": 52304
+      },
+      "Figure_S3C.png": {
+        "sha256": "1e0db1ac622ec09fae48d77b005d9e4d27f858f9e6ef47b10ade28e531c3799d",
+        "bytes": 579370
+      },
+      "Figure_S3C.tiff": {
+        "sha256": "65d465fac73d454995a5d34d7413e2c00851c415c676e0b66dd2185363fb3fc8",
+        "bytes": 1632404
+      }
+    }
+  },
+  {
+    "figure": "Figure_S4",
+    "width_mm": 165.1,
+    "height_mm": 209.79967654440935,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      4955
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 239,
+      "height_mm": 209.79967654440935,
+      "height_reduction_percent": 12.21770855882454,
+      "vacant_bands_removed_mm": [
+        [
+          6.040000000000008,
+          10.500000000000016
+        ],
+        [
+          81.95280555555557,
+          86.50000000000001
+        ],
+        [
+          146.90594444444446,
+          153.5
+        ],
+        [
+          159.04,
+          164.5
+        ],
+        [
+          169.024,
+          172.49999999999997
+        ],
+        [
+          201.2216452944093,
+          202.5
+        ],
+        [
+          207.11528125,
+          210.5
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/clustering47_primary_20261108/reference_plot_cells.csv.gz": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+      "data/frozen/reference47_profiles_20261110/figureS4_marker_summaries.csv": "b9ffeb1e93ab1bc2060600355466b87bddd5d5be32c837953d119d15627ff2da",
+      "data/frozen/clustering47_primary_20261108/figureS4_compositions.csv.gz": "18050a4f45ff3aa91654ef8e810edfb12bb221716bed004b6f462074fc8cf860",
+      "data/frozen/clustering47_primary_20261108/figureS4_cluster_metrics.csv": "a1383fb0270bc51c30261b5ab5da92fa3552ddc4145efb62a2aa4702b596218a",
+      "data/frozen/clustering47_primary_20261108/figureS4_celltype_metrics.csv": "c65a8d86561d675be27bc358749e9fa45d25c5914b2567014bed9b8746fff685",
+      "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b",
+      "configs/figure_s03.yaml": "fb03de469fd1a5b286c4668b87536fa282d4d9b68eb7e3fd2433763c916fd78f",
+      "data/frozen/reference47_profiles_20261110/manifest.json": "1bb2e6380cf36968584121d0e9cf7d384ee9d52985dd10bdee625bfabbffadf1"
+    },
+    "notes": [
+      "Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B\u2013D preserve the same frozen reference/primary-clustering data and geometry. Suggested manuscript width: 152.4 mm (6 in)."
+    ],
+    "files": {
+      "Figure_S4.svg": {
+        "sha256": "439ed6e2aa88fc867c0f412db2719720e4ac9273c7066f606c1c4ac2bd762a0b",
+        "bytes": 6249046
+      },
+      "Figure_S4.pdf": {
+        "sha256": "1d46e3adcafacbf0528bffba10e895da95e8a5c8c08d0bb4c689d2046c3e1a47",
+        "bytes": 2747981
+      },
+      "Figure_S4.png": {
+        "sha256": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
+        "bytes": 3599829
+      },
+      "Figure_S4.tiff": {
+        "sha256": "1f3ba7756f5420f3a19951cb330c0ea9784986091b5a8deb51e30a673efb3764",
+        "bytes": 4571520
+      }
+    }
+  },
+  {
+    "figure": "Figure_S5",
+    "width_mm": 165.1,
+    "height_mm": 56.06639236111113,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      1324
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 78,
+      "height_mm": 56.06639236111113,
+      "height_reduction_percent": 28.12000979344727,
+      "vacant_bands_removed_mm": [
+        [
+          6.040000000000008,
+          11.499999999999991
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/clustering47_primary_20261108/fixed_raw_metrics.csv": "17f3ef44382e3c59642297d7bcb1ebe788a03573aa98b81a49eba9330face59b"
+    },
+    "notes": [
+      "Single-panel primary fixed-partition reference upper bounds. Original 28 labels including Noise. No shared-marker or cluster-count refitting."
+    ],
+    "files": {
+      "Figure_S5.svg": {
+        "sha256": "8bbe8f40f5e86ce944531016b09acd9ef4e7466892160a501451ae5c2b61b554",
+        "bytes": 16373
+      },
+      "Figure_S5.pdf": {
+        "sha256": "b6e034e87e710405b382576de1ea2a12f2fe9f50701a872ad620b37d6c1a14e4",
+        "bytes": 34746
+      },
+      "Figure_S5.png": {
+        "sha256": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
+        "bytes": 128700
+      },
+      "Figure_S5.tiff": {
+        "sha256": "3e7e7abbca3e88bd3483f3cbbfb53148dce5b9abcea1e272b15229e4a32a3c29",
+        "bytes": 294090
+      }
+    }
+  },
+  {
+    "figure": "Figure_S6",
+    "width_mm": 165.1,
+    "height_mm": 221.6105625,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      5234
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 251,
+      "height_mm": 221.6105625,
+      "height_reduction_percent": 11.708939243027894,
+      "vacant_bands_removed_mm": [
+        [
+          10.785999999999996,
+          12.499999999999993
+        ],
+        [
+          19.958722222222196,
+          23.499999999999975
+        ],
+        [
+          106.72128124999998,
+          111.5
+        ],
+        [
+          117.13600000000001,
+          122.4701388888889
+        ],
+        [
+          128.63764236111112,
+          136.50000000000003
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": 610,
+    "inputs": {
+      "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
+      "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
+      "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+    },
+    "notes": [
+      "A: held-out test-cell confusion. B: all220082cells across300Leidenclusters; sorted by decreasing majority-reference fraction, then clusterID."
+    ],
+    "files": {
+      "Figure_S6.svg": {
+        "sha256": "ac888158f037939146ce8e90e43e93341282229d71e557c9c63d0c3e0c5c9ba5",
+        "bytes": 543648
+      },
+      "Figure_S6.pdf": {
+        "sha256": "6e8c81a4f0a50502128fe4135c830f8c06bc97c9511cdb6560ec6e900e19d57e",
+        "bytes": 91370
+      },
+      "Figure_S6.png": {
+        "sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
+        "bytes": 559733
+      },
+      "Figure_S6.tiff": {
+        "sha256": "1cff04dea14003db34996b7bf6cecff23bec19cba031cc0be373ca99b305545b",
+        "bytes": 1847508
+      }
+    }
+  },
+  {
+    "figure": "Figure_S7",
+    "width_mm": 165.1,
+    "height_mm": 120.0998402777778,
+    "minimum_font_pt": 5.5,
+    "font_family": "Arial",
+    "minimum_placement_width_mm": 150.091,
+    "raster_dpi": 600,
+    "raster_size_pixels": [
+      3900,
+      2837
+    ],
+    "vector_text_editable": true,
+    "panel_letter_format": "A",
+    "biorender_workflow": null,
+    "layout_compaction": {
+      "original_height_mm": 133,
+      "height_mm": 120.0998402777778,
+      "height_reduction_percent": 9.699368212197143,
+      "vacant_bands_removed_mm": [
+        [
+          112.93233680555556,
+          118.47013888888888
+        ]
+      ],
+      "minimum_gap_mm": 3.0,
+      "bottom_margin_mm": 2.5,
+      "plot_sizes_and_font_sizes_preserved": true
+    },
+    "dense_point_layers_native_dpi": null,
+    "inputs": {
+      "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e"
+    },
+    "notes": [
+      "All16means-plus-fractions conditions. Components computed within each test region before equal weighting. The arithmetic components are not causal or independent biological error classes."
+    ],
+    "files": {
+      "Figure_S7.svg": {
+        "sha256": "04549249af1e3baf1517ee80505b0c99bbfff8d0a7243ef5cca3ebf02a61acb2",
+        "bytes": 35728
+      },
+      "Figure_S7.pdf": {
+        "sha256": "46cba3c88a07517ac78f477cd39bca0b7a17c31433bec0c88260aac19a6197ac",
+        "bytes": 28931
+      },
+      "Figure_S7.png": {
+        "sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
+        "bytes": 365711
+      },
+      "Figure_S7.tiff": {
+        "sha256": "cf3aced87cf8ef60fabe129c759929c72555c1e253984ef0f67f923546f1bb58",
+        "bytes": 751356
+      }
+    }
+  }
+]

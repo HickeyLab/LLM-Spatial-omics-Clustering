@@ -1,0 +1,34 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S8c\\
+GEMINI 4 ARGON MARKER-REPRESENTATION COMPARISON\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.8\hsize\raggedright\arraybackslash}X>{\hsize=1.35\hsize\raggedright\arraybackslash}X>{\hsize=0.95\hsize\raggedleft\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X>{\hsize=1.1\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Input} & \textbf{Agreement (\%)} & \textbf{Macro-F1} & \textbf{Clusters delivered} \\
+\midrule
+Leiden & Selected names & 37.33 & 0.3233 & 300/300 \\
+Leiden & Selected means & 45.76 & 0.4075 & 300/300 \\
+Leiden & All means & 46.16 & 0.4073 & 300/300 \\
+Leiden & Means + fractions & 47.51 & 0.4133 & 300/300 \\
+FlowSOM & Selected names & 25.91 & 0.2299 & 299/299 \\
+FlowSOM & Selected means & 40.09 & 0.2946 & 299/299 \\
+FlowSOM & All means & 39.57 & 0.3189 & 299/299 \\
+FlowSOM & Means + fractions & 41.84 & 0.2917 & 299/299 \\
+SpatialSort & Selected names & 32.39 & 0.2060 & 229/229 \\
+SpatialSort & Selected means & 32.78 & 0.2007 & 229/229 \\
+SpatialSort & All means & 33.31 & 0.2090 & 229/229 \\
+SpatialSort & Means + fractions & 33.80 & 0.2154 & 229/229 \\
+PIXIE & Selected names & 37.96 & 0.2566 & 300/300 \\
+PIXIE & Selected means & 40.93 & 0.2737 & 300/300 \\
+PIXIE & All means & 38.70 & 0.2689 & 300/300 \\
+PIXIE & Means + fractions & 36.40 & 0.2619 & 300/300 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

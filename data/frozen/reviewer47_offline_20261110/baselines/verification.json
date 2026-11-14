@@ -1,0 +1,101 @@
+{
+  "C_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "donor_tuning": false,
+  "environment": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "python": "3.12.4",
+    "scipy": "1.16.2",
+    "sklearn": "1.7.2"
+  },
+  "feature_dimensions": [
+    47,
+    94
+  ],
+  "input_sha256": {
+    "authoritative_h5ad": "5d0a59d1e7866dee5a3a06772c3c80ce7328ba6420bc140708be5ec451b8a49a",
+    "memberships.csv.gz": "6c707e5f8f5ade7918895ae5cac848fcaafb813cbedba4c1f47b5f4d6eed0ffa",
+    "profiles_fractions.csv": "852ac3d2bbee83287bb9cbe3250bb02a17893885d6e5c4cb502d823ede7e1147",
+    "profiles_means_z.csv": "8e1c478e05d3594bdeb5ff48d4e949b5e6c6ec4c878ecdc512cf2ab1049da942",
+    "protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3",
+    "reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2"
+  },
+  "new_annotation_calls": 0,
+  "offline_only": true,
+  "outputs": {
+    "all_means_centroids.npz": {
+      "bytes": 11802,
+      "sha256": "858c4ceab3197c0aa0360d8a362d4c482350c4ea8bdbc1622593eafb70e4d58e"
+    },
+    "all_means_fractions_centroids.npz": {
+      "bytes": 20514,
+      "sha256": "81d9aece1c25cea38f1f7cdd1317d1c9cda838f3714b8d30793b508f57829c63"
+    },
+    "classifier_C_selection.csv": {
+      "bytes": 1983,
+      "sha256": "6197ec4b3723ebd315079316cc87c6ea37a50a3aafc621caa722b0f017565242"
+    },
+    "classifier_cluster_predictions.csv": {
+      "bytes": 225252,
+      "sha256": "1af5383b3b0b78fa18e3bf1697112b1a0a51785e7deb0e971174f20495b742b1"
+    },
+    "classifier_equal_test_region_metrics.csv": {
+      "bytes": 1448,
+      "sha256": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801"
+    },
+    "classifier_models.json": {
+      "bytes": 3753,
+      "sha256": "85f42c9bb3e888f6c17779323f4050873208231863d09468abe095457773d621"
+    },
+    "classifier_regional_metrics.csv": {
+      "bytes": 17754,
+      "sha256": "20638312ad426ec5871560ab8a07776590d31aa41573776c24b00b160473f51b"
+    },
+    "flowsom_all_means_fractions_logistic.npz": {
+      "bytes": 22503,
+      "sha256": "1fab85b99eed6a65387ed5d010a493b3d2642fe48f198b8c8f51433e2675e076"
+    },
+    "flowsom_all_means_logistic.npz": {
+      "bytes": 12394,
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787"
+    },
+    "leiden_all_means_fractions_logistic.npz": {
+      "bytes": 22523,
+      "sha256": "20afcf35a7126a9838a35598caeaaaaf84d5371a65b6609c07c63b0b79db4c0d"
+    },
+    "leiden_all_means_logistic.npz": {
+      "bytes": 12394,
+      "sha256": "a918093cde7f9541518fe24e5c69f88e506bd946ad7bc6ecf9f6f34c8a789925"
+    },
+    "pixie_tiff_all_means_fractions_logistic.npz": {
+      "bytes": 22503,
+      "sha256": "1fab85b99eed6a65387ed5d010a493b3d2642fe48f198b8c8f51433e2675e076"
+    },
+    "pixie_tiff_all_means_logistic.npz": {
+      "bytes": 12394,
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787"
+    },
+    "spatialsort_all_means_fractions_logistic.npz": {
+      "bytes": 22489,
+      "sha256": "39518185cee06ef7712984ee3b03036b665a443d64439bf6c584de65f93b4fca"
+    },
+    "spatialsort_all_means_logistic.npz": {
+      "bytes": 12394,
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787"
+    }
+  },
+  "profiles_reproduced_from_authoritative_measurements": true,
+  "query_values": "exact decoded integer thousandths supplied to LLMs",
+  "reference_supervision": "Training-cell reference labels; richer supervision than supplied to LLMs.",
+  "schema": "reviewer47.classical_baselines.offline.v1",
+  "scientific_parameters_tuned_on_test": false,
+  "status": "completed",
+  "test_tuning": false,
+  "training_cells": 90296
+}

@@ -1,0 +1,17 @@
+# B004 reviewer experiments: scored output snapshot
+
+This export contains 69 planned base annotation sets (276 logical request items): 68 complete sets and one pending DeepSeek–Leiden selected-numerical set. The latter retains all 300 planned clusters; its pending request has 75 clusters with missing predictions. Its accuracy and macro-F1 are intentionally null. The four-arm aggregate is also null, so incomplete conditions are never silently dropped.
+
+The separate eight-item Astra–Leiden named/neighborhood Batch is pending and has no result in this snapshot. B005/B006 and the private HIGH-versus-XHIGH pilot are excluded.
+
+`prediction_freeze.json` and its seal were saved before this assembler opened reference labels. The 275 accepted logical items comprise 109 exact reused items and 166 newly accepted items. Recovery selection follows sealed identity/route and strict response acceptance, never reference accuracy. Raw source hashes and physical generation identities are preserved. `accepted_requests.json` contains portable response content and usage with internal reasoning, credentials, opaque checkpoints and private account/path metadata omitted. `request_bodies/` are scientific logical templates; `model_settings.json` distinguishes them from executed transport settings.
+
+`set_metrics.csv` reports agreement and fixed-28-label macro-F1 averaged equally across the two fixed test regions (33,112 and 36,464 cells). Noise remains a valid label. Missing predictions are retained in delivery denominators. The classifiers use richer training-label supervision than the LLM prompts. Granularity is deterministic post-clustering Ward coarsening to K=100/200, not native-K fitting. Calibration is within-donor reference-agreement calibration on hash-held-out clusters and separate regions, not biological confidence.
+
+`primary47` in the companion export supplies the complete 128-request, 32-set primary bank and existing figure-renderer schemas. Nineteen DeepSeek full-arm requests were replaced under the sealed route reconciliation, changing 538 cluster labels across both arms; original scientific task/evidence messages match exactly. The prior accepted study export remains archived unchanged. The new primary bank is used consistently for the paired comparison, cross-model displays and recalibration.
+
+One generation per condition was accepted. These data do not estimate repeated-call consistency or independent donor generalization. No new annotation calls or scheduler jobs were made while assembling/scoring this export.
+
+## Offline evidence
+
+All 276 literal logical request bodies are preserved under `request_bodies/`; their canonical hashes exactly match the pre-inference sealed request rows. `request_registry.json` binds each body to model/method/arm/batch and source request ID. `query_map.csv` preserves all 1,128 occupied method-cluster identities and anonymous query IDs. `marker_selection.json` records the label-blind compact-marker selections, and `training_scaler.npz` preserves the fixed 47-marker training normalization. The exact encoded neighborhood vectors and all other model-visible numerical evidence are already literal content inside the request bodies. No local H5AD or private path is needed to reconstruct the submitted scientific prompts. Actual transport settings, including continuation/recovery attempts, are distinguished in `model_settings.json` and `physical_attempts.json`.

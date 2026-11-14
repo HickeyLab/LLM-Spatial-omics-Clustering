@@ -1,0 +1,17 @@
+Clustering,Model,Means macro-F1,Means + fractions macro-F1,Means coverage (%),Means + fractions coverage (%)
+Leiden,GPT-6 Astra,0.4582,0.4490,100.00,100.00
+FlowSOM,GPT-6 Astra,0.3028,0.2713,100.00,100.00
+SpatialSort,GPT-6 Astra,0.2152,0.2074,100.00,100.00
+PIXIE,GPT-6 Astra,0.2777,0.2553,100.00,100.00
+Leiden,Claude Opus 5.5,0.3842,0.4165,100.00,100.00
+FlowSOM,Claude Opus 5.5,0.2884,0.2999,100.00,100.00
+SpatialSort,Claude Opus 5.5,0.1966,0.2226,100.00,100.00
+PIXIE,Claude Opus 5.5,0.2527,0.2751,100.00,100.00
+Leiden,Gemini 4 Argon,0.4073,0.4133,100.00,100.00
+FlowSOM,Gemini 4 Argon,0.3189,0.2917,100.00,100.00
+SpatialSort,Gemini 4 Argon,0.2090,0.2154,100.00,100.00
+PIXIE,Gemini 4 Argon,0.2689,0.2619,100.00,100.00
+Leiden,DeepSeek V4.1 Flash 1017,0.4084,0.2974,100.00,100.00
+FlowSOM,DeepSeek V4.1 Flash 1017,0.2373,0.2196,100.00,100.00
+SpatialSort,DeepSeek V4.1 Flash 1017,0.1230,0.1145,100.00,100.00
+PIXIE,DeepSeek V4.1 Flash 1017,0.1895,0.1660,100.00,100.00

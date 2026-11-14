@@ -160,7 +160,7 @@ def table_tex(table_id, rows, label, title):
     return "\n".join(lines)
 
 
-def render_preview(path, table_id, rows, label, title):
+def render_preview(path, table_id, rows, label, title, note=None):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -216,7 +216,10 @@ def render_preview(path, table_id, rows, label, title):
     row_heights = [max(len(c) for c in row) * line_height + 2 * pad for row in wrapped]
     title_lines = wrap(title, width_pt - 8, body_fp)
     caption_height = 16 + 12 * len(title_lines) + 12
+    note_lines = wrap(note, width_pt - 8, body_fp) if note else []
     height_pt = caption_height + sum(row_heights) + 8
+    if note_lines:
+        height_pt += 10 + line_height * len(note_lines)
     with rc_context({"font.family": "Times New Roman", "font.size": 10,
                      "pdf.fonttype": 42, "ps.fonttype": 42}):
         fig = plt.figure(figsize=(6.5, height_pt / 72), facecolor="white")
@@ -240,6 +243,9 @@ def render_preview(path, table_id, rows, label, title):
             if i == 0:
                 ax.plot([0, width_pt], [y, y], color="black", lw=0.6)
         ax.plot([0, width_pt], [y, y], color="black", lw=0.8)
+        if note_lines:
+            ax.text(4, y + 10, "\n".join(note_lines), ha="left", va="top",
+                    fontproperties=body_fp, linespacing=1.2)
         fig.savefig(path.with_suffix(".pdf"), metadata={"Creator": "render_ieee_tables.py", "CreationDate": None, "ModDate": None})
         fig.savefig(path.with_suffix(".png"), dpi=600)
         plt.close(fig)

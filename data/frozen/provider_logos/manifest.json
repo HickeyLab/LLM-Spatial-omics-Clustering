@@ -1,0 +1,10 @@
+{
+  "source_type": "user_supplied_attachment",
+  "provided_date": "2026-11-14",
+  "source_file_name": "Screenshot 2026-11-14 at 4.00.42\u202fPM.png",
+  "attribution": "The OpenAI logo is a trademark of OpenAI. Used to identify GPT-6 Astra annotation.",
+  "derivation": "The user-supplied PNG is embedded unchanged, with its original pixels and aspect ratio.",
+  "files": {
+    "openai_logo_user_supplied.png": "dcf1c971795cad8a12d32ba59a41f2fdaf02d74b6eef0e8f0983d98cb1f81421"
+  }
+}

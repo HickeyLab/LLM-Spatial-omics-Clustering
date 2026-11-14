@@ -1,0 +1,21 @@
+{
+  "model": "openai/gpt-6-astra",
+  "reasoning": {
+    "effort": "high"
+  },
+  "seed": 42,
+  "max_tokens": 32768,
+  "response_format": {
+    "type": "json_object"
+  },
+  "messages": [
+    {
+      "content": "Directly annotate intestinal CODEX query clusters using only supplied evidence. You choose every final label. Keep all 28 original labels including distinct Paneth, NK, M1 and M2 macrophages. Noise is a technical-quality class, not abstention. Return only JSON {\"a\":[{\"i\":0,\"l\":label_code},...]}. Use every supplied query_case_id exactly once. i is a query ID, never a prototype ID. Do not return explanations or tools.",
+      "role": "system"
+    },
+    {
+      "content": "{\"expression_definition\":\"Cluster means of arcsinh(deposited processed X/5), standardized by frozen B004 four-training-region marker means and SD. Encoded as integer thousandths: divide by 1000. Processed X can be negative. Standardized values are not biological positivity.\",\"fraction_definition\":\"If provided, fraction_above_processed_zero is the fraction of cells with deposited processed X strictly greater than 0, encoded as integer thousandths: divide by 1000. It is a numerical summary, not validated biological marker positivity.\",\"label_dictionary\":{\"0\":\"B\",\"1\":\"CD36 high Endothelial\",\"10\":\"Epithelial\",\"11\":\"Goblet\",\"12\":\"ICC\",\"13\":\"ITLN+ Epithelial\",\"14\":\"M1 Macrophage\",\"15\":\"M2 Macrophage\",\"16\":\"MUC1+ Epithelial\",\"17\":\"NK\",\"18\":\"Nerve\",\"19\":\"Neuroendocrine\",\"2\":\"CD36 low Endothelial\",\"20\":\"Neutrophil\",\"21\":\"Noise\",\"22\":\"PDPN+ Stromal\",\"23\":\"Paneth\",\"24\":\"Plasma\",\"25\":\"Smooth muscle\",\"26\":\"Stromal\",\"27\":\"TA\",\"3\":\"CD4+ T\",\"4\":\"CD49a+ Smooth muscle\",\"5\":\"CD57+ Epithelial\",\"6\":\"CD66+ Epithelial\",\"7\":\"CD8+ T\",\"8\":\"Cycling TA\",\"9\":\"DC\"},\"marker_order\":[\"CD45RO\",\"CD56\",\"CD15\",\"CD163\",\"MUC2\",\"CD34\",\"CD36\",\"aDefensin5\",\"CD49a\",\"HLA-DR\",\"CD38\",\"CollagenIV\",\"CD4\",\"CD138\",\"CD44\",\"Vimentin\",\"CD66\",\"Podoplanin\",\"CHGA\",\"CD3\",\"SOX9\",\"CD161\",\"Synaptophysin\",\"CD57\",\"ITLN1\",\"CD127\",\"CD45\",\"CD49f\",\"aSMA\",\"Cytokeratin\",\"CD8\",\"CD19\",\"BCL2\",\"CD90\",\"CD21\",\"CD7\",\"CD11c\",\"Ki67\",\"CD68\",\"MUC1\",\"CD206\",\"CD16\",\"CD117\",\"CD69\",\"CD31\",\"CD123\",\"CDX2\"],\"query_case_ids\":[0,1,2,3],\"response_contract\":{\"a\":\"one object per case; fields i=query case ID and l=original label code 0..27\"},\"selected_marker_definition\":\"Up to six markers per query, selected without reference labels by positive one-versus-rest tie-corrected Wilcoxon rank, then transformed mean and marker name. If no marker qualifies, the highest transformed-mean marker is supplied.\",\"selected_marker_names\":[[\"CD38\",\"CD44\",\"CD163\",\"CD206\",\"CollagenIV\",\"CD31\"],[\"CD44\",\"CD38\",\"CD90\",\"CD21\",\"CD19\",\"CollagenIV\"],[\"CD90\",\"Podoplanin\",\"CD56\",\"CollagenIV\",\"CD44\",\"CD206\"],[\"CD38\",\"Vimentin\",\"aSMA\",\"CD31\",\"BCL2\",\"CD15\"]],\"selected_mean_asinh_expression_z_thousandths\":[[938,1396,1149,1063,984,142],[1475,908,884,-4,116,1182],[496,328,554,420,264,-3],[3366,1668,1371,243,1440,443]],\"task\":\"Assign one allowed label per query case using the marker profiles and intestinal biological context.\"}",
+      "role": "user"
+    }
+  ]
+}

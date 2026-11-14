@@ -24,28 +24,28 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/annotation47_results_20261110/cd8_consensus_profiles.csv": "9ade4ab92d6bc706f863ba88501856ece4dc12826c38b38187c10bd6b5c3a852",
-    "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+    "data/frozen/annotation47_results_20261111/cd8_consensus_profiles.csv": "186aa665e685b64dbb264062603702e1167410f4b419bcd1b1987bc9b1799420",
+    "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba"
   },
   "notes": [
     "Cells selected using one accepted label per model and fixed four-model modal ties, not repeated-call votes. Color uses stored processed expression without another transform, min-max scaled by marker across the four displayed methods. Size encodes the numerical fraction >0, not validated biological positivity."
   ],
   "files": {
     "Figure_S11.svg": {
-      "sha256": "4148710593e0c5a6360734b382f877257035c2c328e6fcd732749775660bfa7d",
-      "bytes": 147122
+      "sha256": "f04a38d130f258c8f9855f1ad9d56d16a6cc43b5e835163131146f84400195d6",
+      "bytes": 147090
     },
     "Figure_S11.pdf": {
-      "sha256": "cb932e9160d732dc936acf8458e1edd6f9ceb53ba93fe5d2ee61184f18c239bb",
-      "bytes": 76379
+      "sha256": "5fffa2da10616a54cd82b787939bbaf493dcc1bb1a2d5e65f08c6eb7006e18a7",
+      "bytes": 75778
     },
     "Figure_S11.png": {
-      "sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
-      "bytes": 342203
+      "sha256": "7580efccf224da38e01fa487d81877b0b665a9536419c2951d0be3eed35d9b6c",
+      "bytes": 406499
     },
     "Figure_S11.tiff": {
-      "sha256": "d69a40a0a6ed5d9f42415b6326319ce3eada1b3f95104bd60cbb5ca7b1e2edf0",
-      "bytes": 459508
+      "sha256": "57d9c5ffc6c3c36145664a7577e20398579b8cc87358eba4d2c72b450e85dc54",
+      "bytes": 459866
     }
   }
 }

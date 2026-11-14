@@ -50,6 +50,10 @@ def main():
             else:
                 preview = f'figure_{int(key):02d}.png'
             shutil.copyfile(source,ROOT/'notebooks/final_figures/previews'/preview)
+            if not any(e['source_file'] == entry['path'] for e in preview_manifest['figures']):
+                preview_manifest['figures'].append({'file': 'notebooks/final_figures/previews/' + preview,
+                    'source_file': entry['path'], 'source_sha256': entry['sha256'],
+                    'labels': [], 'size_pixels': receipt['raster_size_pixels']})
             by_file[entry['path']] = {'file':entry['path'],'source_file':str(source.relative_to(ROOT)),
                           'source_sha256':entry['sha256'],'output_sha256':entry['sha256'],
                           'size_pixels':receipt['raster_size_pixels'],

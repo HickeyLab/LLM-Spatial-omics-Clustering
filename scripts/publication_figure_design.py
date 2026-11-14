@@ -184,7 +184,8 @@ def compact_vertical_layout(f):
                 kind = "legend"
             objects.append((kind, artist, bounds, pos))
             occupied.append(bounds)
-    overlays = getattr(f, "_biorender_overlays", [])
+    overlays = [*getattr(f, "_biorender_overlays", []),
+                *getattr(f, "_provider_logo_overlays", [])]
     for overlay in overlays:
         x,y,w,h = overlay["rect_mm"]
         occupied.append((y,y+h))
@@ -246,8 +247,9 @@ def finish(f, name, output, inputs=None, notes=None):
         for axis in (ax.xaxis,ax.yaxis):
             cached_ticks.update(label for tick in [*axis.majorTicks,*axis.minorTicks]
                                 for label in (tick.label1,tick.label2))
-            drawn_ticks.update(label for tick in axis._update_ticks()
-                               for label in (tick.label1,tick.label2))
+            if ax.axison and axis.get_visible():
+                drawn_ticks.update(label for tick in axis._update_ticks()
+                                   for label in (tick.label1,tick.label2))
     visible=[t for t in f.findobj(Text) if t.get_visible() and t.get_text().strip()
              and (t not in cached_ticks or t in drawn_ticks)]
     min_size=min(t.get_fontsize() for t in visible)
@@ -289,6 +291,7 @@ def finish(f, name, output, inputs=None, notes=None):
              "raster_dpi":600,"raster_size_pixels":pixel_size,
              "vector_text_editable":True,"panel_letter_format":"A",
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
+             "provider_logos":getattr(f,"_provider_logo_overlays",None),
              "layout_compaction":f._layout_compaction,
              "dense_point_layers_native_dpi":610 if any(getattr(a,"get_rasterized",lambda:False)() for a in f.findobj()) else None,
              "inputs":inputs or {},"notes":notes or [],

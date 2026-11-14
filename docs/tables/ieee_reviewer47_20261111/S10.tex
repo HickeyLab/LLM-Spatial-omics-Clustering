@@ -1,0 +1,34 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S10\\
+CONVENTIONAL B004 ANNOTATION CLASSIFIERS\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.75\hsize\raggedright\arraybackslash}X>{\hsize=1.25\hsize\raggedright\arraybackslash}X>{\hsize=1.2\hsize\raggedright\arraybackslash}X>{\hsize=1\hsize\raggedleft\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Classifier} & \textbf{Input} & \textbf{Agreement (\%)} & \textbf{Macro-F1} \\
+\midrule
+Leiden & Nearest centroid & All means & 58.20 & 0.4341 \\
+Leiden & Nearest centroid & Means + fractions & 55.74 & 0.4370 \\
+Leiden & Logistic regression & All means & 67.05 & 0.4981 \\
+Leiden & Logistic regression & Means + fractions & 68.20 & 0.5030 \\
+FlowSOM & Nearest centroid & All means & 35.63 & 0.2745 \\
+FlowSOM & Nearest centroid & Means + fractions & 35.19 & 0.2787 \\
+FlowSOM & Logistic regression & All means & 45.69 & 0.3078 \\
+FlowSOM & Logistic regression & Means + fractions & 45.72 & 0.3059 \\
+SpatialSort & Nearest centroid & All means & 36.10 & 0.1798 \\
+SpatialSort & Nearest centroid & Means + fractions & 35.26 & 0.1778 \\
+SpatialSort & Logistic regression & All means & 44.12 & 0.2165 \\
+SpatialSort & Logistic regression & Means + fractions & 44.09 & 0.2170 \\
+PIXIE & Nearest centroid & All means & 46.76 & 0.2551 \\
+PIXIE & Nearest centroid & Means + fractions & 46.96 & 0.2577 \\
+PIXIE & Logistic regression & All means & 49.95 & 0.2684 \\
+PIXIE & Logistic regression & Means + fractions & 51.92 & 0.2728 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

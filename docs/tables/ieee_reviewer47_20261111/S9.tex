@@ -1,0 +1,23 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S9\\
+OPUS 5.5 MATCHED PROMPT CONTROLS\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.9\hsize\raggedright\arraybackslash}X>{\hsize=1.26\hsize\raggedright\arraybackslash}X>{\hsize=0.96\hsize\raggedleft\arraybackslash}X>{\hsize=0.96\hsize\raggedleft\arraybackslash}X>{\hsize=0.96\hsize\raggedleft\arraybackslash}X>{\hsize=0.96\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Control} & \textbf{Blinded (\%)} & \textbf{Control (\%)} & \textbf{Change (pp)} & \textbf{Changed clusters} \\
+\midrule
+Leiden & Method name & 50.27 & 45.15 & -5.12 & 75 \\
+FlowSOM & Method name & 36.82 & 34.00 & -2.83 & 50 \\
+SpatialSort & Method name & 36.17 & 31.11 & -5.06 & 53 \\
+PIXIE & Method name & 42.54 & 40.00 & -2.54 & 51 \\
+Leiden & Neighborhood & 50.27 & 45.97 & -4.29 & 63 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

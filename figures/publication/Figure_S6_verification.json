@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 251,
     "height_mm": 221.6105625,
@@ -45,29 +46,30 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/annotation47_results_20261110/confusion.csv.gz": "2df3f87c8ce9ce890e7a195170e98c40df9cabc1cf50f3e08effb3179c721e62",
-    "data/frozen/annotation47_results_20261110/cluster_predictions.csv": "8bab68f22238ff89e04a1bd497b5c748ce3c80b04713675d3423719ab4cfd031",
-    "data/frozen/annotation47_results_20261110/protocol.json": "a675a3a575731c0378782b2668c447c08d7fb6a27a97b17825e0f27fbe23ece3"
+    "data/frozen/annotation47_results_20261111/confusion.csv.gz": "7712a457fcf5bbea0fc3c33c519a9baada0bcc340f3f3e2854db8644d011a5c0",
+    "data/frozen/annotation47_results_20261111/per_type_metrics.csv": "2c1dab60a412cdb54e5117e2d18ab22db5a627617f7ba68a94ebaadb2087d137",
+    "data/frozen/annotation47_results_20261111/cluster_predictions.csv": "4095f9f3fc6f37d3c96e681435b9cb9fcca223ab7087767391671a4ecdcf7d86",
+    "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba"
   },
   "notes": [
-    "A: held-out test-cell confusion. B: all220082cells across300Leidenclusters; sorted by decreasing majority-reference fraction, then clusterID."
+    "A: held-out test-cell confusion, both axes sorted by descending pooled cell-type F1. B: all220082cells across300Leidenclusters; sorted by decreasing majority-reference fraction, then clusterID."
   ],
   "files": {
     "Figure_S6.svg": {
-      "sha256": "ac888158f037939146ce8e90e43e93341282229d71e557c9c63d0c3e0c5c9ba5",
-      "bytes": 543648
+      "sha256": "700a66aee09cb132960b709584a65f9da6769871632134fabd43731b6587e047",
+      "bytes": 543654
     },
     "Figure_S6.pdf": {
-      "sha256": "6e8c81a4f0a50502128fe4135c830f8c06bc97c9511cdb6560ec6e900e19d57e",
-      "bytes": 91370
+      "sha256": "f74dc4cd889419876c6106fc069776db936d2ec5624cc97610b0fcbe53128d58",
+      "bytes": 91514
     },
     "Figure_S6.png": {
-      "sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
-      "bytes": 559733
+      "sha256": "9d5f58198c1b3704e1835146abe4887ee501c390ce4f7e04e90d24bf883eca79",
+      "bytes": 558379
     },
     "Figure_S6.tiff": {
-      "sha256": "1cff04dea14003db34996b7bf6cecff23bec19cba031cc0be373ca99b305545b",
-      "bytes": 1847508
+      "sha256": "14a833e438e8cafd290950a4b8d4e320403e5a9367b15a9f2dfbc45c27bb7b9f",
+      "bytes": 1846146
     }
   }
 }

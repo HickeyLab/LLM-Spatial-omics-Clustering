@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-11-11T18:39:13.621286+00:00",
+  "deepseek_selected_means": {
+    "request_id": "r47_94568343fcddc146209aad2e4095fe5e52446a51a1161a0a27d1c81175be0cb1",
+    "family": "deepseek",
+    "method": "leiden",
+    "arm": "selected_means",
+    "batch": 0,
+    "planned_clusters": 75,
+    "status": "pending",
+    "batch_id": "batch-1794363908-i5Nt17caM0IWWvyhAqOP",
+    "provider_status": "in_progress",
+    "request_counts": {
+      "completed": 0,
+      "failed": 0,
+      "total": 1
+    }
+  },
+  "astra_extension": {
+    "batch_id": "batch_6af47698f0c08190a0f909d122c2344e",
+    "provider_status": "in_progress",
+    "accepted_request_items": 0,
+    "planned_request_items": 8,
+    "annotation_sets": 2,
+    "conditions": [
+      "openai/leiden/method_named",
+      "openai/leiden/neighborhood"
+    ],
+    "status": "pending"
+  },
+  "B005_B006": "Excluded; separate producer work remains untouched.",
+  "public_incomplete_metrics": "null; no aggregate silently omits incomplete planned conditions."
+}

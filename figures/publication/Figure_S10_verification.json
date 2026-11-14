@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 126,
     "height_mm": 93.75400694444443,
@@ -41,28 +42,28 @@
   },
   "dense_point_layers_native_dpi": null,
   "inputs": {
-    "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
-    "data/frozen/annotation47_results_20261110/paired_contrasts.csv": "99e0741e612c3cb6eb76850acd72f70a3ded7b74de693fcfa985c84e8d1051ee"
+    "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+    "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
   },
   "notes": [
-    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
+    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
   ],
   "files": {
     "Figure_S10.svg": {
-      "sha256": "b28de1e773d3dab827b937d15d610c8e29952f939c70e8c98c7e75fbbd37d8a5",
-      "bytes": 37093
+      "sha256": "ae146ca584fe8386ba4ea8a49b040757d4a6606753ad455b07e98825b3ba0530",
+      "bytes": 37089
     },
     "Figure_S10.pdf": {
-      "sha256": "25b8c1b54ccd7459d2aa6d84f7c67a7739d992d7ec0b4f1a4f94aee985cce2be",
-      "bytes": 44568
+      "sha256": "c8ce7d1f5a6e7b2126726ac86b0b54e9d07c6dd0b5a38d67319ac657184ff682",
+      "bytes": 44569
     },
     "Figure_S10.png": {
-      "sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
-      "bytes": 181368
+      "sha256": "871d04da00fb7c8fc475a3079946a231c64653b85c4f3b09343054726430c709",
+      "bytes": 181977
     },
     "Figure_S10.tiff": {
-      "sha256": "0ca3c5e2c94fdb38ef66d8d5bc1cd462ee34e13fa0960f05205a33d10de60a9f",
-      "bytes": 391346
+      "sha256": "e1677199837b3c570753d32c27f31017f9be0ba93b28e4701ec1638bf2e8ee74",
+      "bytes": 392608
     }
   }
 }

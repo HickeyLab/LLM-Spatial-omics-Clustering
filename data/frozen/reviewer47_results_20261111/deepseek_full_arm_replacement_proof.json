@@ -1,0 +1,787 @@
+{
+  "request_items": 19,
+  "exact_messages_all": true,
+  "selection_independent_of_accuracy": true,
+  "records": [
+    {
+      "request_id": "r47_011a0c5ca2f156814af39f8c456fbca02e1f7407883623a05363ba8be6cd23bb",
+      "source_request_id": "q112d8fde068ba5c1f4a793ddd943ae76ba0b06e3426f9c890cbde671a262e280",
+      "method": "flowsom",
+      "arm": "all_means_fractions",
+      "batch": 0,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "ddd388c342540318495d5c85d4a4e0751bdaa405ae36397e24b590587695ef77",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794338731-9erfyd32yfqsFOmSUbTr",
+      "new_generation_id": "gen-1794401965-O4E3l40HHQKVsIXeOaNj",
+      "changed_labels": 13,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_173cad2eef51838050b0c1c07936ac5bc19b1de01641c5b3327fe8ef18f4db11",
+      "source_request_id": "qaad08a052be3295221b5ac730d0c261d4219706c2ba98d02db0e343bf5b86169",
+      "method": "spatialsort",
+      "arm": "all_means",
+      "batch": 2,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "13a57af7e5582f1579d7e01a14e7bf8278f1a7ead71c6564a269426dd1305d62",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794339189-QdwXt40NyLAM0t1sWFS8",
+      "new_generation_id": "gen-1794402911-EhMvTd8Jv7eYVIG8Gz17",
+      "changed_labels": 46,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_194b38bd8f7d1d1c37abcc045f10c0403aa0f7dee6dee0cce105fe5fb56ff47e",
+      "source_request_id": "q2b622ee6a3370445db3b1cd7d8a8fe206860a298ecf0798535c81cda79b72647",
+      "method": "pixie_tiff",
+      "arm": "all_means",
+      "batch": 3,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "6f5efaf13bdac33f55b4c30f98944ba186f79840b0038341ae5a29c78361ca7e",
+      "old_provider": "CoreWeave",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794336579-OjY4rS7DRrE5lZxt9dYi",
+      "new_generation_id": "gen-1794403339-vEDNjfGfgu49Wui9xLIF",
+      "changed_labels": 5,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_1ce23b5fb63ca55d0a14895a709cbf145d19d5d9019c52486a59fb1c9d36d42a",
+      "source_request_id": "q2ed8e267e4503a4afaa7e1962a300c5ca5b35407869888113653bc17d5daa9fe",
+      "method": "flowsom",
+      "arm": "all_means",
+      "batch": 2,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "4f2f2f4c484c08e165b9837d8c688a00067846b12c7f975bfd9f8eddd7aaf981",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794338731-2MgHhBezqZ9mvIMO4YAT",
+      "new_generation_id": "gen-1794402381-XXeTEn9K2Vpef7mop3b1",
+      "changed_labels": 11,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_24bdd0b5293f674c07058ee7dfa6fe878ea1e4ce1e8fbb6709b67d66bb30d8aa",
+      "source_request_id": "qc1682084a0442a7a227b3c49c6bccd944a595d59392dc7e7359b8cf206818724",
+      "method": "leiden",
+      "arm": "all_means_fractions",
+      "batch": 0,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "ce33cacd3ba927114faa9d8dba050f1a92c86b6da5c156a85d61536ee58f8348",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794251347-OqgOK2a9Nq7P32hKT3Lu",
+      "new_generation_id": "gen-1794366288-1kmOZsdbi2KMwNY9sa1k",
+      "changed_labels": 24,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_3c969c606429e2ed12abf93dc2a4c877acbff7a952f25003fb66bd9533fde0a5",
+      "source_request_id": "qc8e006b716826916f856a13a4baa267b47300908c3f7db70822bdd7312b56b12",
+      "method": "flowsom",
+      "arm": "all_means",
+      "batch": 1,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "a87d367a02f7e3589ddaf9c2ae1ae5eced551cfe33cfd9ebff5a54b7d5c713db",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794339666-jYctt7nnqws6DAAtQ60Z",
+      "new_generation_id": "gen-1794401964-R0XtZjcxYMMIqECKaFNg",
+      "changed_labels": 19,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_516fb21ccf78973ef5a3d2a5a0f4391afa9d8503e0bfad95460b97af4ac2c68c",
+      "source_request_id": "q655e010a9b538046163bc498beaa4d066e2ba02127a02073d8de7f9306b0bf0a",
+      "method": "pixie_tiff",
+      "arm": "all_means",
+      "batch": 1,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "93c5a10a120959969f7d67a4dc5cf41438014790c5fc17ce91f012b410c90ba2",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794339399-TMcQmSrhDR1kfo1VV31I",
+      "new_generation_id": "gen-1794403109-sL6SCIcRLwJmxePMzaFW",
+      "changed_labels": 42,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_638027ba64e87e287f80242c18f9b882f0ed5c4023f9541f0733968d70f3d423",
+      "source_request_id": "q4534ae0dbfab3de9b66135e16c1a5631f4fc0664fb8ea15cccb7870ed9dc026a",
+      "method": "pixie_tiff",
+      "arm": "all_means_fractions",
+      "batch": 3,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "1df082460d6323e7aff32e749ffccf2186496c2e7f30d3629fa7f1f4e4875d81",
+      "old_provider": "CoreWeave",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794336579-GdKXYZJNGQEIpQsTUDMg",
+      "new_generation_id": "gen-1794403342-swjkky88U6ZzjeqLfrWC",
+      "changed_labels": 53,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_69b0a4cca3f7182df8c25d56418d018df424db1e1f0bdc6ccba5f4fc7f2145f3",
+      "source_request_id": "q451b40bd5a70c49dc8bf850d5bab978fe8e160794ae9133467837606f12b06d9",
+      "method": "leiden",
+      "arm": "all_means_fractions",
+      "batch": 1,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "3f43f67dc536f1167caa22b90c2adc173a1e75e26c20c43496a54bb3bf8de23d",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794262628-Blokj2mWlbjeZeYK7lus",
+      "new_generation_id": "gen-1794366562-veher7dQxHfFgPVU7iWE",
+      "changed_labels": 13,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_81c3645d25ebb7373e878c6db07523fad263af6ffc6bcf2479ffcf633f8a457b",
+      "source_request_id": "q53579c231b72cea68123bad248261a974b1ece2f7d422e77940c3bed2e28f913",
+      "method": "leiden",
+      "arm": "all_means",
+      "batch": 0,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "9ea21bc39054a5edd22364755508cb7f9365bdf446dbcb9d12539f996073942e",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794252962-59mcVSdhPN3jYrWflpmq",
+      "new_generation_id": "gen-1794366288-73hY0gDjnaD8aw74kbBX",
+      "changed_labels": 21,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_8911a568f872d0f5e87b9905d6e2b63d68ad9b11f91d1c0b4c11553f9d2860e7",
+      "source_request_id": "q7743363532d2fc4ba692205374a5ac7389e3d634f7dc213c0a53d456fb941050",
+      "method": "leiden",
+      "arm": "all_means_fractions",
+      "batch": 3,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "c846511e7526c270d940b7f27c2b5a0e27df85b8cef8c6953193aff3296de056",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794272939-tJmJpEJ3x9Mah1y5aSHO",
+      "new_generation_id": "gen-1794368414-q6gqJyiGbtLJW7S6BwV2",
+      "changed_labels": 27,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_ab8c12b18abd509a82ef6bc57cbfe5a0b76220c756de97b41be5fd8109ed386d",
+      "source_request_id": "q30003b3752142595ca1ad2e454ba0e62840f67bd89e4e526b9933b24af93a9c9",
+      "method": "leiden",
+      "arm": "all_means",
+      "batch": 1,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "b4138b18b3c1b59f806810818d447d7407c359ecff9f3cc2b1853ffe58e2c5aa",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794340042-EVMsivBpQ5kcA0ZzaY2j",
+      "new_generation_id": "gen-1794408403-SGYFaV5PxdBkx6IuQuNW",
+      "changed_labels": 15,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_acbb07178374b78ea74280f88bc17b4fe3b1de0ec3991d130b43db068077ba69",
+      "source_request_id": "qf1c84d4d7740206612c46e45e7451ed4a4f4825e34ac8dd1c443d3d98570d73f",
+      "method": "pixie_tiff",
+      "arm": "all_means_fractions",
+      "batch": 2,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "190426f1081d5742b3b26b53eddc6a400dda6d67a504204a5c1dad67a92cd9d6",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794339567-qNgBiBHkKLgRLDcRmWpg",
+      "new_generation_id": "gen-1794403227-vAQ0pHwkvQCokFYFoJBN",
+      "changed_labels": 45,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_afe4a3f09e8230da7a323bb3f92abc1e82fc5a8254d7029ed3fd05c9aed8eede",
+      "source_request_id": "qb6be3b3d194040612c00e609ccfcf848b5771e1562f61fb5487a4c03f5d5d202",
+      "method": "leiden",
+      "arm": "all_means",
+      "batch": 3,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "b69312ac305dcccb947e61ef5fd9eed7ae5d489a8b12a278335f9480734e1950",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794273808-rxdERXxSsmDiJz7d6jiT",
+      "new_generation_id": "gen-1794367949-eX9aLuKDH1gGsL2W6LOC",
+      "changed_labels": 26,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_b430d252091b7c6186723d2226bd4fbf6ad0561e9bcf64c1255f1b6f1825ccd2",
+      "source_request_id": "qa79ecae0f0fda5c6d081c20e42cd108bd18796cbb36128a59805f447030413d6",
+      "method": "spatialsort",
+      "arm": "all_means_fractions",
+      "batch": 0,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "243c35410ecfeeee8e434bc2ad9806989a6e0aff2c9a52c126545470784fd276",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794339031-jt4sZDolgSqDtEOAGEXm",
+      "new_generation_id": "gen-1794402610-zP0YiTIv6Mv0lp3OdiZG",
+      "changed_labels": 50,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_c3e5acd3cc665696eb0b9ddb18d1ba85b4669ea9d2b16e7e631990198d3dd75d",
+      "source_request_id": "q6dc595bc6953266990ae1851e701d0b6ca89aa8ab6527515ff4e65474ed3f0fc",
+      "method": "leiden",
+      "arm": "all_means_fractions",
+      "batch": 2,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "4404d5830d0ecfd4f0c9d15cc5c75d374d386e4539e6ca2b4f862746b33a0d35",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794271986-Exv7cax6YjhFVJn2JKTH",
+      "new_generation_id": "gen-1794408397-i41Ap4XQyb29mytDRjWn",
+      "changed_labels": 54,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_e027ec42277e3d069321aaa2a57ed3b6999ed6ab122a81c9024c787f30bbf7dc",
+      "source_request_id": "q096b2a76949708a5b0d3823895e5910d70b0987f864ed4031a420c7fff532f15",
+      "method": "leiden",
+      "arm": "all_means",
+      "batch": 2,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "ad8944c4273be901e388246b9f80e1e1b93556b2cf9e3b69ce86c6d70fb4bf29",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794269880-07730zPcqfzO4tCtvF3Z",
+      "new_generation_id": "gen-1794367048-3mC1GR5rq9IvoL4bvd8s",
+      "changed_labels": 14,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_e5993b7f1dbe72cfd4de21cc1dca74793435852fd02f91cd1abe06686aabc584",
+      "source_request_id": "q0c29f897e062224158d6230ece37bb79bbd3b36f8acb8eb966d4fee09c02d120",
+      "method": "flowsom",
+      "arm": "all_means",
+      "batch": 0,
+      "expected_n": 75,
+      "exact_model_visible_messages": true,
+      "message_sha256": "ad5e1ae0d430a1a6ce2c39a6290f3d096525b267e0546e2b8cfc09f415518bd1",
+      "old_provider": "Relace",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794275595-yjnIDEmNuPkQN6HuassL",
+      "new_generation_id": "gen-1794408391-1Uu4e6Vk5syrXdhmRbe0",
+      "changed_labels": 22,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    },
+    {
+      "request_id": "r47_ea85506ac4aeb86c3f36297c24cc7b2a396358ddf625eb230dd30edebd2a9729",
+      "source_request_id": "q677d4af6556fd738df71f6cafda93bc7f1860c8d928bf1171e4c68dea0c4e4ae",
+      "method": "flowsom",
+      "arm": "all_means_fractions",
+      "batch": 3,
+      "expected_n": 74,
+      "exact_model_visible_messages": true,
+      "message_sha256": "63e3bb1adbee34b4fa506c3253b466bff6cc3f1f843101254708d238da9f0540",
+      "old_provider": "Wafer",
+      "new_provider": "Morph",
+      "new_wire_settings": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "reasoning": {
+          "effort": "high"
+        },
+        "max_tokens": 943718,
+        "response_format": {
+          "type": "json_object"
+        },
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.4,
+            "prompt": 0.022
+          },
+          "only": [
+            "morph/fp8"
+          ],
+          "require_parameters": true
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "old_generation_id": "gen-1794338936-CqKHLbv2njlUJuzPFsjv",
+      "new_generation_id": "gen-1794402448-eHSr4gcyh0dCmcB9kUJK",
+      "changed_labels": 38,
+      "selection_rule": "Route and wire-contract reconciliation in the sealed pre-inference scope; no accuracy selection."
+    }
+  ],
+  "changed_labels_total": 538
+}

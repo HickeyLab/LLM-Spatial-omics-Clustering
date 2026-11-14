@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 139,
     "height_mm": 117.53095582527263,
@@ -52,24 +53,24 @@
     "data/frozen/publication_design/figureS1_archived_metrics.csv": "6b22db95dc6d36228fe37fdbce2ba94150a79678c50c2bf10fda380347bc7c80"
   },
   "notes": [
-    "Metrics retain the four-decimal precision archived in the executed notebook stdout."
+    "Metrics retain the four-decimal precision archived in the executed notebook stdout. Method groups are ordered by after-compensation means, descending except ascending Davies\u2013Bouldin index. Before/after pairs remain together."
   ],
   "files": {
     "Figure_S1.svg": {
-      "sha256": "e460444e0afee7065a1d37f2567fa6644d3628485a238a969414a19b48e30482",
+      "sha256": "190b7703fc18301e9fd03397791e0465a31441cc94565d504289e9f408569e44",
       "bytes": 103900
     },
     "Figure_S1.pdf": {
-      "sha256": "dd4dcfad463126ae288c5759b71f29a9f31c8c5fade01b84867545e9cd0d5ef1",
-      "bytes": 81914
+      "sha256": "dff1bdbf3af8ef435b4c66df185fcef875729e5cbdea73ff910cfb07e57590d6",
+      "bytes": 82011
     },
     "Figure_S1.png": {
-      "sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
-      "bytes": 510312
+      "sha256": "a544e630ebd5dadd5494a7080f59b74bc8ddc58f7f5610ba5559edc7e231e600",
+      "bytes": 508516
     },
     "Figure_S1.tiff": {
-      "sha256": "f7640f084a4bcc2fd5c9c5fb4dbb69cb994c1c5b11f86ed2ce902287e4d2c3a2",
-      "bytes": 739438
+      "sha256": "ee4acbc4e84a648da535ff30fe367701255a30620e2699b936b1014f8ec7833b",
+      "bytes": 738206
     }
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema": "reviewer47.portable_results_manifest.v1",
+  "files": {
+    "assignments_K100.csv.gz": {
+      "sha256": "8208b4d744a85c1ae281b14414df002e49bb02863bb9d54372558d3a1f5f1275",
+      "bytes": 1382316
+    },
+    "assignments_K200.csv.gz": {
+      "sha256": "b5c2e0a00b7ec4d0a41eade6b5ee59dc49c6231147c8d88481f5fc1e44918e5d",
+      "bytes": 1552506
+    },
+    "cluster_maps.csv": {
+      "sha256": "90614031ec1cf7f4b2eae4986740699208e4f2c84230686e8add81e06b026ebd",
+      "bytes": 60258
+    },
+    "cluster_sizes.csv": {
+      "sha256": "1ebfaeb4644082257df739f49e9246b66944034fccef6f27a5148069c402663e",
+      "bytes": 56651
+    },
+    "coarsening_freeze.json": {
+      "sha256": "fb578b5ceeb0d7189f4937816c7459de74da0bd5b14d0e724532413eb9526a20",
+      "bytes": 1002
+    },
+    "equal_test_region_metrics.csv": {
+      "sha256": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a",
+      "bytes": 879
+    },
+    "flowsom_merge_trace.json": {
+      "sha256": "3f07f70729dfadb74bcc2061869945458e8b70167bd95479cdc6f7ff76b34f65",
+      "bytes": 58100
+    },
+    "leiden_merge_trace.json": {
+      "sha256": "d248e8dbeeb66b4f8518eca45ff3395e6fcef21d7ac0edee5429746ce82dce54",
+      "bytes": 60927
+    },
+    "pixie_tiff_merge_trace.json": {
+      "sha256": "b2750ef048e90c6d05e0247f891eaf38a2b81d8d9800b5b1967ef47e0c9b5e27",
+      "bytes": 58032
+    },
+    "regional_metrics.csv": {
+      "sha256": "55edc6abd7ffe1fd34902ec9376bb1988bca64f9e8cacf93dc88cc75ab2104be",
+      "bytes": 12885
+    },
+    "spatialsort_merge_trace.json": {
+      "sha256": "ba9ef8bbefa184e15ba2c29b5d758391ed5d7ee78aa0cefcc7690b1542d95367",
+      "bytes": 36946
+    },
+    "verification.json": {
+      "sha256": "999d0fd655cf3e09bdde84c6a8f625f514f43de26ddff9c865456d0285af2163",
+      "bytes": 2827
+    }
+  },
+  "new_annotation_calls": 0,
+  "created_at": "2026-11-11T18:41:26.340627+00:00"
+}

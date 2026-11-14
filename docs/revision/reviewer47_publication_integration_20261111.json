@@ -1,0 +1,96 @@
+{
+  "schema": "reviewer47.publication_integration.v1",
+  "verified_at": "2026-11-11T19:54:14.757606+00:00",
+  "scope": "Completed B004 reviewer follow-up; B005/B006 unchanged",
+  "google_doc": {
+    "saved_verified": true,
+    "mode": "Suggesting",
+    "suggestions_accepted_or_rejected": false,
+    "comments_resolved": false,
+    "fresh_native_view_verified": true,
+    "projected_paragraphs_verified": 287,
+    "native_structural_tables": 26,
+    "active_native_tables": 18,
+    "new_native_tables": 11,
+    "equations_preserved": 5,
+    "unrelated_paragraph_revision_states_preserved": 620,
+    "untouched_cell_revision_states_preserved": 756,
+    "all_authorized_text_and_table_values_exact": true,
+    "new_table_spacing": {
+      "before_pt": 0,
+      "after_pt": 0,
+      "line": 1
+    },
+    "new_tables_complete_on_individual_pages": true,
+    "tracked_readback_sha256": "43111cba9732d05c60443900514b9c6cf179037358a7ee25aacecf1a0e61c541",
+    "local_verification_snapshot_sha256": "21200627afe1fbb84915cd3111b61956e77d85b124c242d8ded1d3c773b3a581"
+  },
+  "figures": {
+    "replaced": [
+      "3",
+      "S7",
+      "S10",
+      "S11"
+    ],
+    "added": [
+      "S8",
+      "S9"
+    ],
+    "all_saved_native_width_inches": 6.5,
+    "saved_native_heights_inches": {
+      "3": 6.68,
+      "S7": 4.73,
+      "S8": 3.92,
+      "S9": 5.25,
+      "S10": 3.69,
+      "S11": 1.68
+    },
+    "saved_aspect_ratios_locked": true,
+    "native_numerical_spot_checks": {
+      "3": "DeepSeek means-plus-fractions row: 39.9 / 27.9 / 17.4 / 27.4 percent",
+      "S11": "Leiden CD8 summary group: 15,746 cells; white-to-red scale"
+    },
+    "new_S8_S9_export_payloads_match_staging_exactly": true,
+    "publication_exports_and_previews_verified": true,
+    "unchanged_Figure4_S6_preserved": true
+  },
+  "google_native_export_limitation": "Native PDF export is the accepted view. Tracked DOCX retains previous payloads/geometry for four pending replacement images, so those placements were verified through the fresh saved native Doc view and image options. New S8/S9 payloads match the staged files exactly. Local proposed-view rendering was QA only; no suggestions were accepted.",
+  "results": {
+    "base_sets_planned": 69,
+    "base_sets_complete": 68,
+    "base_request_items_accepted": 275,
+    "base_request_items_planned": 276,
+    "base_predictions_accepted": 19401,
+    "base_predictions_planned": 19476,
+    "primary_sets_complete": 32,
+    "primary_predictions_complete": 9024,
+    "separate_Astra_extension_items_pending": 8,
+    "DeepSeek_selected_means_items_pending": 1,
+    "pending_final_collection_observed_utc": "2026-11-11T19:52:40Z",
+    "both_existing_batches_in_progress": true,
+    "private_high_xhigh_pilot_included": false
+  },
+  "scientific_inputs": {
+    "primary_manifest": "data/frozen/annotation47_results_20261111/manifest.json",
+    "primary_manifest_sha256": "ddc897d33efe2ccd4f94ae930045d5bf3f4784cc3c06630e3f3bcfd102577120",
+    "reviewer_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+    "reviewer_manifest_sha256": "5f1ec944dd8ab4dfe2c691f36cabf0b61f1d3f6df3eb3bdcea96d3a3d02f834a"
+  },
+  "validation": {
+    "root_reviewer_tests_passed": 125,
+    "default_portable_replay_exact": true,
+    "independent_completed_conditions_exact": 68,
+    "calibration_rows_independently_checked": 144,
+    "selective_risk_rows_independently_checked": 432,
+    "QA_appendix_pages_visually_checked": 13,
+    "active_study_tests_passed_after_final_publication_promotion": 9
+  },
+  "new_annotation_calls": 0,
+  "new_jobs": 0,
+  "scheduler_actions": 0,
+  "B005_B006_changed": false,
+  "archives": [
+    "archive/reviewer47_publication_before_20261111/metadata_index.json",
+    "archive/reviewer47_publication_before_20261111/artwork_index.json"
+  ]
+}

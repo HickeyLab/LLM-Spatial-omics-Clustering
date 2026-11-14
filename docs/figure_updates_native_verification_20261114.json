@@ -1,0 +1,137 @@
+{
+  "status": "pass",
+  "native_figures": [
+    {
+      "figure": "Figure_1",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDEF",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 281.9559696081066,
+      "editable_svg_text_nodes": 218
+    },
+    {
+      "figure": "Figure_2",
+      "minimum_font_pt": 6.599999904632568,
+      "panel_letters": "ABCDEFGH",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9980812802352,
+      "editable_svg_text_nodes": 154
+    },
+    {
+      "figure": "Figure_3",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDE",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9984271478588,
+      "editable_svg_text_nodes": 128
+    },
+    {
+      "figure": "Figure_4",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCDE",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9999759710322,
+      "editable_svg_text_nodes": 150
+    },
+    {
+      "figure": "Figure_S1",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABC",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 41
+    },
+    {
+      "figure": "Figure_S3A",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "A",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 19
+    },
+    {
+      "figure": "Figure_S3B",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "B",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 27
+    },
+    {
+      "figure": "Figure_S3C",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "C",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9999922659658,
+      "editable_svg_text_nodes": 387
+    },
+    {
+      "figure": "Figure_S4",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9998543718676,
+      "editable_svg_text_nodes": 137
+    },
+    {
+      "figure": "Figure_S5",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "A",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 19
+    },
+    {
+      "figure": "Figure_S6",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "AB",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9999759710322,
+      "editable_svg_text_nodes": 180
+    },
+    {
+      "figure": "Figure_S7",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 74
+    },
+    {
+      "figure": "Figure_S8",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 609.9993151881486,
+      "editable_svg_text_nodes": 132
+    },
+    {
+      "figure": "Figure_S9",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 56
+    },
+    {
+      "figure": "Figure_S10",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "ABCD",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": null,
+      "editable_svg_text_nodes": 50
+    },
+    {
+      "figure": "Figure_S11",
+      "minimum_font_pt": 5.5,
+      "panel_letters": "A",
+      "png_tiff_dpi": 600,
+      "minimum_pdf_image_dpi": 610.0000299541623,
+      "editable_svg_text_nodes": 61
+    }
+  ],
+  "independent_annotation_scoring_receipt": "data/frozen/annotation47_results_20261111/verification.json",
+  "reviewer_control_scoring_receipt": "data/frozen/reviewer47_results_20261111/verification.json",
+  "new_model_calls": 0,
+  "new_fits": 0
+}

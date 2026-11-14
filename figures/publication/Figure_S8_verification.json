@@ -1,0 +1,67 @@
+{
+  "figure": "Figure_S8",
+  "width_mm": 165.1,
+  "height_mm": 99.57066666666671,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    2352
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "biorender_workflow": null,
+  "provider_logos": null,
+  "layout_compaction": {
+    "original_height_mm": 137,
+    "height_mm": 99.57066666666671,
+    "height_reduction_percent": 27.32068126520678,
+    "vacant_bands_removed_mm": [
+      [
+        7.040000000000011,
+        11.864999999999993
+      ],
+      [
+        54.860333333333344,
+        67.5
+      ],
+      [
+        73.04,
+        77.86499999999998
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+  },
+  "notes": [
+    "Equal-weighted agreement across the two B004 test regions; fixed 28-label vocabulary including Noise.",
+    "Four frozen partitions and one generation per condition. Partial conditions are masked as Pending, not scored.",
+    "Selected names and selected means use at most six label-blind selected markers; full arms use all47 markers.",
+    "Method rows share the primary benchmark ranking by descending mean four-model fixed-28-label macro-F1 for means plus fractions. Columns retain the planned information progression."
+  ],
+  "files": {
+    "Figure_S8.svg": {
+      "sha256": "ee59be63e9e54202a9d5ee94c68d7003b6aa10ef7392e094bdec084ff367443f",
+      "bytes": 63383
+    },
+    "Figure_S8.pdf": {
+      "sha256": "8fc0f6283e5452256495ca0c0b979e99eec42ee3bba21b1c15a6ccf81e1efe17",
+      "bytes": 53088
+    },
+    "Figure_S8.png": {
+      "sha256": "279a87e4442ce3415bcdc68192b5c5bd3638d7e514754e93a59038082db87598",
+      "bytes": 356681
+    },
+    "Figure_S8.tiff": {
+      "sha256": "98cfee2405f1dddbec5ba088905af80afc01fd6572c62514c6aede485208b16c",
+      "bytes": 1054860
+    }
+  }
+}

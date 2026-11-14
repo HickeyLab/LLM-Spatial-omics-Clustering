@@ -28,6 +28,7 @@
       ]
     }
   ],
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 224,
     "height_mm": 213.0476035997217,
@@ -53,24 +54,24 @@
     "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
-    "Current A\u2013H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."
+    "Current A\u2013H manuscript arrangement. E\u2013H share descending mean regional weighted-F1 method order. F/H share descending across-method mean F1 cell-type order. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."
   ],
   "files": {
     "Figure_2.svg": {
-      "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
-      "bytes": 5446481
+      "sha256": "cef17737e590cb18528921aa09e449997093ece8b45629a4130096b7f391cfc6",
+      "bytes": 5446477
     },
     "Figure_2.pdf": {
-      "sha256": "741077c375416e080ab92b5f42bceb2fd579f7b8bcf854768b4a2f650827fb3e",
-      "bytes": 3299170
+      "sha256": "c66ee116353ca672682589f57a8929a54429ad9a505828d41a236ae3beab5ded",
+      "bytes": 3299191
     },
     "Figure_2.png": {
-      "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
-      "bytes": 2824858
+      "sha256": "6fa9df5bab954403c3f7b03cd37486502e7bba96c35a55fdc5cc11b639e160b4",
+      "bytes": 2825193
     },
     "Figure_2.tiff": {
-      "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
-      "bytes": 4483584
+      "sha256": "b1cae79c04289d11c228c0274e3121846112abf90e7c54a96f5d55839e4353c2",
+      "bytes": 4483580
     }
   }
 }

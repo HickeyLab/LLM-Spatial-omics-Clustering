@@ -1,0 +1,154 @@
+{
+  "schema": "manuscript.experiment_registry.v1",
+  "updated_date": "2026-11-10",
+  "stable_ids": true,
+  "active_reported_ids": [
+    1,
+    2,
+    3,
+    7,
+    14
+  ],
+  "experiments": [
+    {
+      "id": 1,
+      "experiment": "REDSEA compensation across six segmentation workflows",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 2,
+      "experiment": "Compensation sensitivity using fixed FlowSOM workflow",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 3,
+      "experiment": "Main four-method B004 clustering benchmark",
+      "status": "reported_existing",
+      "new_execution": false
+    },
+    {
+      "id": 4,
+      "experiment": "Historical FlowSOM cluster-count sweep",
+      "status": "archived",
+      "new_execution": false,
+      "archive": "data/historical/flowsom_cluster_count_sweep_20261103/manifest.json"
+    },
+    {
+      "id": 5,
+      "experiment": "Common-45-marker by requested-K clustering study",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 6,
+      "experiment": "Historical 21-label four-LLM annotation benchmark",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 7,
+      "experiment": "Separate full-marker means-plus-fractions benchmark",
+      "status": "reported_completed",
+      "new_execution": false,
+      "active_manuscript_result": true,
+      "reported_protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
+      "result_manifest": "data/frozen/annotation47_results_20261110/manifest.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 8,
+      "experiment": "Controlled marker-only versus reference-assisted annotation and donor transfer with conventional baselines",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 9,
+      "experiment": "Five-call annotation repeatability on 75-cluster subsets",
+      "status": "archived",
+      "new_execution": false,
+      "existing_results_remain_reported": false,
+      "archive": "data/historical/annotation47_pre_one_repeat_20261109/manifest.json",
+      "evidence_archive": "data/historical/publication_before_primary47_20261109/index.json"
+    },
+    {
+      "id": 10,
+      "experiment": "Compact marker names versus selected names-plus-means, with validation-only selection",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 11,
+      "experiment": "Clustering-method identity prompt ablation",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 12,
+      "experiment": "Calibration and selective annotation assessment",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 13,
+      "experiment": "GPT-Leiden marker-only versus neighborhood-augmented input",
+      "status": "archived",
+      "new_execution": false,
+      "active_manuscript_result": false,
+      "archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "prior_results_remain_reported": false
+    },
+    {
+      "id": 14,
+      "experiment": "Paired all-marker means versus means-plus-fractions, 28-label study",
+      "status": "reported_completed",
+      "new_execution": false,
+      "active_manuscript_result": true,
+      "reported_protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
+      "result_manifest": "data/frozen/annotation47_results_20261110/manifest.json",
+      "prior_results_remain_reported": false
+    }
+  ],
+  "archival_preparations": [
+    {
+      "path": "configs/primary_annotation47_3repeat_v1.json",
+      "sha256": "d22155c550654327d72f3c3014c7847d8ace7ee020d7889a374a3da3d4258da6",
+      "status": "archival_preparation_not_active"
+    },
+    {
+      "path": "configs/combined_annotation47_7_9_14_v1.json",
+      "sha256": "480d9fd4191346ba8cd3b2a4a541698a6e8c7806bc5eaedf427e7e9ce9d3e99a",
+      "status": "archival_preparation_not_active"
+    }
+  ],
+  "active_annotation_experiment_ids": [
+    7,
+    14
+  ],
+  "active_study_record": "configs/annotation47_active_study.json",
+  "annotation_protocol": "configs/primary_annotation47_1repeat_opus55_v1.json",
+  "completed_result_ids": [
+    7,
+    14
+  ],
+  "result_manifest": "data/frozen/annotation47_results_20261110/manifest.json"
+}

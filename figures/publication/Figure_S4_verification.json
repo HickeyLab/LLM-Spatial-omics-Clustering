@@ -13,6 +13,7 @@
   "vector_text_editable": true,
   "panel_letter_format": "A",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 239,
     "height_mm": 209.79967654440935,
@@ -63,24 +64,24 @@
     "data/frozen/reference47_profiles_20261110/manifest.json": "1bb2e6380cf36968584121d0e9cf7d384ee9d52985dd10bdee625bfabbffadf1"
   },
   "notes": [
-    "Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B\u2013D preserve the same frozen reference/primary-clustering data and geometry. Suggested manuscript width: 152.4 mm (6 in)."
+    "Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B\u2013D preserve the same frozen reference/primary-clustering data. D ranks each metric by its median, descending except ascending Shannon index. Suggested manuscript width: 152.4 mm (6 in)."
   ],
   "files": {
     "Figure_S4.svg": {
-      "sha256": "439ed6e2aa88fc867c0f412db2719720e4ac9273c7066f606c1c4ac2bd762a0b",
-      "bytes": 6249046
+      "sha256": "ac6682684759628c32e3993495f829f85c8b48d9b106913d0ce73d283bd48ea0",
+      "bytes": 6249050
     },
     "Figure_S4.pdf": {
-      "sha256": "1d46e3adcafacbf0528bffba10e895da95e8a5c8c08d0bb4c689d2046c3e1a47",
-      "bytes": 2747981
+      "sha256": "dd76d11178b69e39baa95716f2b3d5fad427a853aba8619e4c3df37cf64d142c",
+      "bytes": 2748020
     },
     "Figure_S4.png": {
-      "sha256": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
-      "bytes": 3599829
+      "sha256": "3551685edb3c87e1e0865498da99ef156a578a60836234f03100b6956319ae11",
+      "bytes": 3600587
     },
     "Figure_S4.tiff": {
-      "sha256": "1f3ba7756f5420f3a19951cb330c0ea9784986091b5a8deb51e30a673efb3764",
-      "bytes": 4571520
+      "sha256": "38b65800cda8a5d53435f9b3bb748bd98f98a4d651fac12cbf5bbb62332f7d2f",
+      "bytes": 4572312
     }
   }
 }

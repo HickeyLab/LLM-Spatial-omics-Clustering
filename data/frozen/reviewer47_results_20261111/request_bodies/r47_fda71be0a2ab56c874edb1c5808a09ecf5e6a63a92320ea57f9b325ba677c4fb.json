@@ -1,0 +1,21 @@
+{
+  "model": "openai/gpt-6-astra",
+  "reasoning": {
+    "effort": "high"
+  },
+  "seed": 42,
+  "max_tokens": 32768,
+  "response_format": {
+    "type": "json_object"
+  },
+  "messages": [
+    {
+      "content": "Directly annotate intestinal CODEX query clusters using only supplied evidence. You choose every final label. Keep all 28 original labels including distinct Paneth, NK, M1 and M2 macrophages. Noise is a technical-quality class, not abstention. Return only JSON {\"a\":[{\"i\":0,\"l\":label_code},...]}. Use every supplied query_case_id exactly once. i is a query ID, never a prototype ID. Do not return explanations or tools.",
+      "role": "system"
+    },
+    {
+      "content": "{\"expression_definition\":\"Cluster means of arcsinh(deposited processed X/5), standardized by frozen B004 four-training-region marker means and SD. Encoded as integer thousandths: divide by 1000. Processed X can be negative. Standardized values are not biological positivity.\",\"fraction_above_processed_zero\":[[142,518,14,784,0,257,423,51,524,571,749,795,643,556,924,762,0,497,0,40,8,6,384,299,59,14,581,19,292,0,0,223,411,773,262,1,565,164,427,25,790,505,0,256,456,89,141],[7,563,3,134,0,0,10,0,447,63,745,764,197,638,967,791,0,477,0,122,0,23,437,183,4,23,443,0,492,0,38,327,501,852,413,0,377,113,42,0,108,98,0,350,60,0,157],[1,489,60,274,0,26,26,16,361,182,207,544,177,129,560,389,1,525,1,49,2,10,314,32,62,12,40,47,351,11,41,1,38,641,64,0,112,3,21,36,344,168,218,20,7,0,0],[322,113,273,180,0,0,19,35,204,367,946,410,131,169,249,877,378,332,0,150,131,0,383,3,700,78,681,11,684,0,142,139,761,520,3,75,107,0,249,8,472,11,0,19,684,0,525]],\"fraction_definition\":\"If provided, fraction_above_processed_zero is the fraction of cells with deposited processed X strictly greater than 0, encoded as integer thousandths: divide by 1000. It is a numerical summary, not validated biological marker positivity.\",\"label_dictionary\":{\"0\":\"B\",\"1\":\"CD36 high Endothelial\",\"10\":\"Epithelial\",\"11\":\"Goblet\",\"12\":\"ICC\",\"13\":\"ITLN+ Epithelial\",\"14\":\"M1 Macrophage\",\"15\":\"M2 Macrophage\",\"16\":\"MUC1+ Epithelial\",\"17\":\"NK\",\"18\":\"Nerve\",\"19\":\"Neuroendocrine\",\"2\":\"CD36 low Endothelial\",\"20\":\"Neutrophil\",\"21\":\"Noise\",\"22\":\"PDPN+ Stromal\",\"23\":\"Paneth\",\"24\":\"Plasma\",\"25\":\"Smooth muscle\",\"26\":\"Stromal\",\"27\":\"TA\",\"3\":\"CD4+ T\",\"4\":\"CD49a+ Smooth muscle\",\"5\":\"CD57+ Epithelial\",\"6\":\"CD66+ Epithelial\",\"7\":\"CD8+ T\",\"8\":\"Cycling TA\",\"9\":\"DC\"},\"marker_order\":[\"CD45RO\",\"CD56\",\"CD15\",\"CD163\",\"MUC2\",\"CD34\",\"CD36\",\"aDefensin5\",\"CD49a\",\"HLA-DR\",\"CD38\",\"CollagenIV\",\"CD4\",\"CD138\",\"CD44\",\"Vimentin\",\"CD66\",\"Podoplanin\",\"CHGA\",\"CD3\",\"SOX9\",\"CD161\",\"Synaptophysin\",\"CD57\",\"ITLN1\",\"CD127\",\"CD45\",\"CD49f\",\"aSMA\",\"Cytokeratin\",\"CD8\",\"CD19\",\"BCL2\",\"CD90\",\"CD21\",\"CD7\",\"CD11c\",\"Ki67\",\"CD68\",\"MUC1\",\"CD206\",\"CD16\",\"CD117\",\"CD69\",\"CD31\",\"CD123\",\"CDX2\"],\"mean_asinh_expression_z_thousandths\":[[-117,596,-151,1149,-285,-90,287,-60,203,382,938,984,213,866,1396,1378,-388,245,-93,-248,-376,-236,275,22,-304,-281,201,-457,46,-490,-351,-20,51,721,-66,-394,475,-106,151,-505,1063,370,-376,-86,142,-320,-261],[-311,845,-160,-215,-291,-360,-247,-132,145,-196,908,1182,-195,879,1475,1256,-400,213,-94,-156,-411,-152,470,-53,-396,-303,64,-612,725,-509,-302,116,160,884,-4,-386,-6,-160,-338,-617,-263,-221,-387,0,-212,-588,-260],[-517,554,-133,-62,-278,-360,-244,-92,-31,-99,-157,420,-238,-223,264,129,-390,328,-80,-271,-477,-273,184,-390,-346,-386,-307,-452,153,-428,-304,-250,-435,496,-148,-462,-341,-366,-459,-586,-3,-197,181,-347,-291,-568,-517],[48,-221,443,-159,-297,-447,-269,-46,-261,175,3366,-48,-287,-171,-257,1668,58,1007,-86,-165,-198,-481,376,-490,234,-233,540,-468,1371,-518,-141,-127,1440,154,-194,-186,-240,-417,-86,-511,280,-339,-402,-351,243,-478,252]],\"query_case_ids\":[0,1,2,3],\"response_contract\":{\"a\":\"one object per case; fields i=query case ID and l=original label code 0..27\"},\"task\":\"Assign one allowed label per query case using the marker profiles and intestinal biological context.\"}",
+      "role": "user"
+    }
+  ]
+}
