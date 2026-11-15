@@ -147,14 +147,14 @@ def confusion_matrix(scope="pooled_test", model_family="anthropic"):
 
 
 def figure_3(out):
-    f = figure(205)
+    f = figure(240)
     panel(f, "A", 3, 2)
     workflow_inputs = add_workflow(f, "3A")
     panel(f, "B", 3, 36)
     matrix_panel(f, 3, 36, "agreement", "Reference agreement (%)")
     panel(f, "C", 85, 36)
     matrix_panel(f, 85, 36, "fixed28_macro_f1", "Fixed-28-label macro-F1 (%)")
-    panel(f, "D", 3, 106, "Leiden cell-type agreement")
+    panel(f, "D", 3, 106, "Leiden cell-type recall")
     d = table("per_type_metrics.csv")
     d = d[d.method.eq("leiden") & d.arm.eq(ARM) & d.scope.eq("pooled_test") & d.population.eq("all_labels")]
     vals = d.pivot(index="label", columns="model_family", values="recall").reindex(columns=MODEL_KEYS)
@@ -183,10 +183,22 @@ def figure_3(out):
         text(f, x+11.5, y-5, title, size=6, ha="center")
         a = axes(f, x, y, 23, 26)
         draw_spatial(a, z, z[col])
-    text(f, 88, 190, "B004 mid-jejunum · fixed spatial view", size=5.5)
-    return finish(f, "Figure_3", out, {**input_hashes("metrics.csv", "per_type_metrics.csv", "reference_cells.csv.gz", "cell_predictions.npz", "protocol.json"), **workflow_inputs},
+    text(f, 88, 190, "B004 mid-jejunum", size=5.5)
+    # The spatial views share the native 28-label palette. Keep a single
+    # complete key below the plots, without changing their framing or colours.
+    spatial_palette = palette()
+    legend_labels = policy()["labels"]
+    if set(legend_labels) != set(spatial_palette):
+        raise ValueError("Spatial colour key must cover the native 28-label vocabulary")
+    f.legend(handles=[Patch(facecolor=spatial_palette[label], label=label)
+                      for label in legend_labels],
+             loc="upper center", bbox_to_anchor=(.5, 1-207/240),
+             ncol=4, fontsize=5.5, handlelength=.9, handletextpad=.5,
+             columnspacing=1.5, labelspacing=.5, borderaxespad=0)
+    return finish(f, "Figure_3", out, {**input_hashes("metrics.csv", "per_type_metrics.csv", "reference_cells.csv.gz", "cell_predictions.npz", "protocol.json"),
+                  "configs/cell_type_colors.csv": sha(ROOT / "configs/cell_type_colors.csv"), **workflow_inputs},
                   notes=["One accepted annotation per model/method/arm; no repeated-generation SD.",
-                         "B/C: equal-weighted two test regions, all original28 labels including Noise. Both share descending mean macro-F1 model/method rankings. D: pooled test cells, cell types sorted by descending mean four-model recall. E: fixed Figure2C region."])
+                         "B/C: equal-weighted two test regions, all original28 labels including Noise. Both share descending mean macro-F1 model/method rankings. D: pooled test cells, cell types sorted by descending mean four-model recall. E: fixed Figure2C region with a shared native-28-label colour key."])
 
 
 def figure_4(out):
@@ -205,7 +217,8 @@ def figure_4(out):
     d = d[d.model_family.eq("openai") & d.method.eq("leiden") & d.arm.eq(ARM) & d.population.eq("all_labels")]
     labels = counts.index.tolist()
     pooled = d[d.scope.eq("pooled_test")].set_index("label").reindex(labels)
-    a = axes(f, 119, 47, 42, 73)
+    # Align class centres exactly with the square confusion-matrix cells.
+    a = axes(f, 119, 54, 42, 56)
     a.barh(range(28), pooled.f1, color="#e7e8ec", edgecolor="#9ca3af", linewidth=.35, height=.7)
     regions = d[d.scope.eq("region") & d.split.eq("test")].region.drop_duplicates().tolist()
     colors = ["#2864a5", "#bc6535"]
@@ -215,7 +228,7 @@ def figure_4(out):
         v = d[d.scope.eq("region") & d.region.eq(region)].set_index("label").reindex(labels).f1
         a.scatter(v, range(28), s=6, color=c, edgecolors="white", linewidths=.15, zorder=3)
         handles.append(Line2D([],[],marker="o",ls="",color=c,markersize=2.5,label=names[region]["name"]))
-    a.set(yticks=range(28), yticklabels=labels, ylim=(27.7,-.7), xlim=(0,1), xticks=[0,.5,1], xlabel="F1 score")
+    a.set(yticks=range(28), yticklabels=labels, ylim=(27.5,-.5), xlim=(0,1), xticks=[0,.5,1], xlabel="F1 score")
     grid(a,"x")
     f.legend(handles=handles, loc="upper center", bbox_to_anchor=(.77,1-123/191), ncol=1, fontsize=5.5)
     d = focal_clusters(model_family="openai")
@@ -243,7 +256,7 @@ def figure_4(out):
     a.xaxis.set_major_formatter(PercentFormatter(1,decimals=0))
     legend_components(f,181)
     return finish(f,"Figure_4",out,{**input_hashes("confusion.csv.gz","per_type_metrics.csv","cluster_predictions.csv","protocol.json"),**workflow_inputs},
-                  notes=["Leiden–Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the bar y axis. D/E use all220082 cells and original28 labels.","Examples chosen by descending cell count, then clusterID; no reference-agreement selection."])
+                  notes=["Leiden–Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the physically aligned bar y axis. D/E use all220082 cells and original28 labels.","Examples chosen by descending cell count, then clusterID; no reference-agreement selection."])
 
 
 def figure_s6(out):

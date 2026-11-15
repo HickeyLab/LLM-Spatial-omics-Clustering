@@ -920,7 +920,7 @@ L 371.338583 163.588346
 L 371.338583 188.391496 
 L 346.535433 188.391496 
 L 346.535433 163.588346 
-" clip-path="url(#pd5911315ff)" style="fill: none"/>
+" clip-path="url(#pd5911315ff)" style="fill: #fee593"/>
     <path d="M 371.338583 163.588346 
 L 396.141732 163.588346 
 L 396.141732 188.391496 
@@ -1006,14 +1006,6 @@ L 396.141732 262.800945
 L 396.141732 237.997795 
 " clip-path="url(#pd5911315ff)" style="fill: #ec5c3b"/>
    </g>
-   <g id="patch_24">
-    <path d="M 346.535433 163.588346 
-L 371.338583 163.588346 
-L 371.338583 188.391496 
-L 346.535433 188.391496 
-z
-" clip-path="url(#pd5911315ff)" style="fill: url(#h4fed894258); stroke: #b5b5b5; stroke-width: 0.3; stroke-linejoin: miter"/>
-   </g>
    <g id="matplotlib.axis_13">
     <g id="xtick_13">
      <g id="line2d_34"/>
@@ -1070,22 +1062,22 @@ z
      </g>
     </g>
    </g>
-   <g id="patch_25">
+   <g id="patch_24">
     <path d="M 321.732283 262.800945 
 L 321.732283 163.588346 
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_26">
+   <g id="patch_25">
     <path d="M 420.944882 262.800945 
 L 420.944882 163.588346 
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_27">
+   <g id="patch_26">
     <path d="M 321.732283 262.800945 
 L 420.944882 262.800945 
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_28">
+   <g id="patch_27">
     <path d="M 321.732283 163.588346 
 L 420.944882 163.588346 
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
@@ -1094,7 +1086,7 @@ L 420.944882 163.588346
     <text style="font-size: 6.1px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="334.133858" y="177.566867" transform="rotate(-0 334.133858 177.566867)">35.3</text>
    </g>
    <g id="text_91">
-    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="358.937008" y="177.379531" transform="rotate(-0 358.937008 177.379531)">Pending</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="358.937008" y="177.566867" transform="rotate(-0 358.937008 177.566867)">41.4</text>
    </g>
    <g id="text_92">
     <text style="font-size: 6.1px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="383.740157" y="177.566867" transform="rotate(-0 383.740157 177.566867)">50.2</text>
@@ -1140,7 +1132,7 @@ L 420.944882 163.588346
    </g>
   </g>
   <g id="axes_8">
-   <g id="patch_29">
+   <g id="patch_28">
     <path d="M 447.874016 262.800945 
 L 452.125984 262.800945 
 L 452.125984 163.588346 
@@ -1184,7 +1176,7 @@ iVBORw0KGgoAAAANSUhEUgAAACUAAANICAYAAABAHCYaAAAE60lEQVR4nO2c25ErWQzD1BrEsplvmO6+
     </g>
    </g>
    <g id="LineCollection_4"/>
-   <g id="patch_30">
+   <g id="patch_29">
     <path d="M 447.874016 262.800945 
 L 450 262.800945 
 L 452.125984 262.800945 
@@ -1234,49 +1226,5 @@ z
   <clipPath id="pd5911315ff">
    <rect x="321.732283" y="163.588346" width="99.212598" height="99.212598"/>
   </clipPath>
- </defs>
- <defs>
-  <pattern id="h4fed894258" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
-   <rect x="0" y="0" width="73" height="73" fill="#eeeeee"/>
-   <path d="M -36 36 
-L 36 -36 
-M -32 40 
-L 40 -32 
-M -28 44 
-L 44 -28 
-M -24 48 
-L 48 -24 
-M -20 52 
-L 52 -20 
-M -16 56 
-L 56 -16 
-M -12 60 
-L 60 -12 
-M -8 64 
-L 64 -8 
-M -4 68 
-L 68 -4 
-M 0 72 
-L 72 0 
-M 4 76 
-L 76 4 
-M 8 80 
-L 80 8 
-M 12 84 
-L 84 12 
-M 16 88 
-L 88 16 
-M 20 92 
-L 92 20 
-M 24 96 
-L 96 24 
-M 28 100 
-L 100 28 
-M 32 104 
-L 104 32 
-M 36 108 
-L 108 36 
-" style="fill: #b5b5b5; stroke: #b5b5b5; stroke-width: 1.0; stroke-linecap: butt; stroke-linejoin: miter"/>
-  </pattern>
  </defs>
 </svg>

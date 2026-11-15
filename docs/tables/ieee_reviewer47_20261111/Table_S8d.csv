@@ -1,6 +1,6 @@
 Clustering,Input,Agreement (%),Macro-F1,Clusters delivered
 Leiden,Selected names,35.28,0.3083,300/300
-Leiden,Selected means,Pending,Pending,225/300
+Leiden,Selected means,41.42,0.3576,300/300
 Leiden,All means,50.17,0.4084,300/300
 Leiden,Means + fractions,39.92,0.2974,300/300
 FlowSOM,Selected names,17.24,0.1681,299/299

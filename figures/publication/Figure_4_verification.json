@@ -1,14 +1,14 @@
 {
   "figure": "Figure_4",
   "width_mm": 165.1,
-  "height_mm": 170.92676482094097,
+  "height_mm": 169.19218330509892,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4038
+    3997
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -41,23 +41,27 @@
   ],
   "layout_compaction": {
     "original_height_mm": 191,
-    "height_mm": 170.92676482094097,
-    "height_reduction_percent": 10.509547214167029,
+    "height_mm": 169.19218330509892,
+    "height_reduction_percent": 11.417705075864438,
     "vacant_bands_removed_mm": [
       [
         30.295841209829867,
         33.500000000000014
       ],
       [
-        39.13599999999999,
+        39.14858940972223,
         41.49999999999998
       ],
       [
-        135.72128125,
+        49.36705216471352,
+        52.50000000000002
+      ],
+      [
+        136.566625,
         143.5
       ],
       [
-        149.136,
+        149.1485894097222,
         152.49999999999997
       ]
     ],
@@ -77,25 +81,25 @@
     "data/frozen/provider_logos/manifest.json": "50769d43eadab420e85aa8b4b995c118faab641cbbf0873f1be1339261260e35"
   },
   "notes": [
-    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the bar y axis. D/E use all220082 cells and original28 labels.",
+    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the physically aligned bar y axis. D/E use all220082 cells and original28 labels.",
     "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
   ],
   "files": {
     "Figure_4.svg": {
-      "sha256": "80413985723d62c9cb25ae5ed66e80302974992db90795d8822f1d0b4f8dfab5",
-      "bytes": 2678691
+      "sha256": "dd4a5a9dd17e7c8801702995d832e603fb490b0af7f5fc8fd6dae6b7d62a7cb1",
+      "bytes": 2657655
     },
     "Figure_4.pdf": {
-      "sha256": "6b3489672a160d5940e9ad5014df375a0b02f5f31e8f85d1944d5e47ac515ef9",
-      "bytes": 1336041
+      "sha256": "2fca6591429ffbfbfdc34d81bea92b075abb07ded612ad1f17493d54382c3417",
+      "bytes": 1337079
     },
     "Figure_4.png": {
-      "sha256": "31596adbcc4d444d941df0cca0e89e88c35e222bb26bf4100459d129b3b940f6",
-      "bytes": 1234229
+      "sha256": "e22cb9c26ecf1223d43f57bf03138c1b07ff0e1d1621d163ebf92b76fc30f857",
+      "bytes": 1184295
     },
     "Figure_4.tiff": {
-      "sha256": "c4dd42c4aaf073a487c8d9652f7f9a800f934f71e74ce3d1474d68948ab9bc5c",
-      "bytes": 2250254
+      "sha256": "4f7a88018e3ee26441e18e47cd3eb135037a309182f8d4506e06f7f8a9bc0bd3",
+      "bytes": 2213070
     }
   }
 }

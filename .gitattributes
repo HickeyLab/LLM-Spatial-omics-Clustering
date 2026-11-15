@@ -13,3 +13,10 @@ data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/*.svg l
 data/frozen/annotation47_results_20261111/** -text whitespace=cr-at-eol
 data/frozen/reviewer47_results_20261111/** -text whitespace=cr-at-eol
 archive/reviewer47_publication_before_20261111/artwork/figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol
+
+# Append-only November 15 completion banks preserve exact scored bytes.
+data/frozen/reviewer47_deepseek_completion_20261115/** -text whitespace=cr-at-eol
+data/frozen/astra_prompt_controls_results_20261115/** -text whitespace=cr-at-eol
+
+# Preserve the verified current-number figure inventory CSV line endings.
+figures/current_manuscript/Figure_inventory.csv -text whitespace=cr-at-eol

@@ -22,6 +22,9 @@ from publication_figure_design import (
 from render_annotation47_figures import benchmark_orders
 
 DATA = ROOT / "data/frozen/reviewer47_results_20261111"
+COMPLETION_DATA = ROOT / "data/frozen/reviewer47_deepseek_completion_20261115"
+ASTRA_DATA = ROOT / "data/frozen/astra_prompt_controls_results_20261115"
+
 FAMILIES = ["openai", "anthropic", "google", "deepseek"]
 MODELS = ["GPT-6 Astra", "Claude Opus 5.5", "Gemini 4 Argon", "DeepSeek V4.1 Flash 1017"]
 ARMS = ["selected_names", "selected_means", "all_means", "all_means_fractions"]
@@ -29,10 +32,11 @@ ARM_LABELS = ["Selected\nnames", "Selected\nmeans", "All\nmeans", "Means +\nfrac
 
 
 def checked_path(name):
-    manifest = json.loads((DATA / "manifest.json").read_text())
+    directory = ASTRA_DATA if name in {"set_metrics.csv", "control_contrasts.csv"} else COMPLETION_DATA if name == "model_settings.json" else DATA
+    manifest = json.loads((directory / "manifest.json").read_text())
     spec = manifest["files"][name]
     expected = spec["sha256"] if isinstance(spec, dict) else spec
-    path = DATA / name
+    path = directory / name
     if sha(path) != expected:
         raise ValueError("Frozen reviewer result changed: " + name)
     return path
@@ -43,7 +47,7 @@ def table(name, **kwargs):
 
 
 def inputs(*names):
-    return {str((DATA / n).relative_to(ROOT)): sha(checked_path(n)) for n in names}
+    return {str(checked_path(n).relative_to(ROOT)): sha(checked_path(n)) for n in names}
 
 
 def complete_sets():
@@ -96,7 +100,7 @@ def figure_s8(out):
                  ticks=[0, 50, 100], orientation="vertical")
     return finish(f, "Figure_S8", out, inputs("set_metrics.csv"), notes=[
         "Equal-weighted agreement across the two B004 test regions; fixed 28-label vocabulary including Noise.",
-        "Four frozen partitions and one generation per condition. Partial conditions are masked as Pending, not scored.",
+        "Four frozen partitions and one generation per condition. All 64 representation conditions are complete.",
         "Selected names and selected means use at most six label-blind selected markers; full arms use all47 markers.",
         "Method rows share the primary benchmark ranking by descending mean four-model fixed-28-label macro-F1 for means plus fractions. Columns retain the planned information progression.",
     ])
@@ -115,37 +119,54 @@ def values_for(rows, arm):
 
 
 def figure_s9(out):
-    rows = control_rows()
+    rows = complete_sets()
+
+    def agreement(family, method, arm):
+        selected = rows[rows.family.eq(family) & rows.method.eq(method) & rows.arm.eq(arm)]
+        if len(selected) != 1 or selected.iloc[0].status != "complete":
+            raise ValueError("A plotted prompt-control condition is incomplete or duplicated")
+        value = float(selected.iloc[0].agreement) * 100
+        if not np.isfinite(value):
+            raise ValueError("A plotted prompt-control condition has no agreement")
+        return value
+
     f = figure(171)
     panel(f, "A", 3, 3)
-    a = axes(f, 27, 15, 51, 38)
-    blind = values_for(rows, "all_means_fractions")
-    named = values_for(rows, "method_named")
-    if not np.isfinite(np.concatenate([blind, named])).all():
-        raise ValueError("Method-name control has missing values")
-    for i in range(4):
-        a.plot([blind[i], named[i]], [i, i], color="#b9c2cc", lw=.9, zorder=1)
-    a.scatter(blind, np.arange(4) - .055, s=15, color="#2864a5", marker="o", zorder=3)
-    a.scatter(named, np.arange(4) + .055, s=15, color="#b55224", marker="s", zorder=3)
-    method_names = [METHODS[METHOD_KEYS.index(m)] for m in benchmark_orders()[1]]
-    a.set(yticks=range(4), yticklabels=method_names, ylim=(3.5, -.5), xlim=(0, 100),
+    a = axes(f, 30, 15, 48, 38)
+    methods = benchmark_orders()[1]
+    conditions = [("anthropic", method) for method in methods] + [("openai", "leiden")]
+    blind = np.asarray([agreement(family, method, "all_means_fractions")
+                        for family, method in conditions])
+    named = np.asarray([agreement(family, method, "method_named")
+                        for family, method in conditions])
+    positions = np.asarray([0, 1, 2, 3, 4.35])
+    for y, left, right in zip(positions, blind, named):
+        a.plot([left, right], [y, y], color="#b9c2cc", lw=.9, zorder=1)
+    a.scatter(blind, positions - .055, s=15, color="#2864a5", marker="o", zorder=3)
+    a.scatter(named, positions + .055, s=15, color="#b55224", marker="s", zorder=3)
+    labels = ["Opus–" + METHODS[METHOD_KEYS.index(method)] for method in methods] + ["Astra–Leiden"]
+    a.set(yticks=positions, yticklabels=labels, ylim=(4.95, -.55), xlim=(0, 100),
           xticks=[0, 25, 50, 75, 100], xlabel="Reference agreement (%)")
+    a.axhline(3.7, color="#d1d5db", lw=.5, zorder=1)
     grid(a, "x")
     a.legend(handles=[Line2D([], [], marker="o", ls="", color="#2864a5", label="Blinded"),
                       Line2D([], [], marker="s", ls="", color="#b55224", label="Named")],
              loc="upper left", bbox_to_anchor=(-.1, 1.32), ncol=2, fontsize=5.5, markerscale=.5)
 
     panel(f, "B", 85, 3)
-    a = axes(f, 111, 15, 50, 38)
-    selected = rows[rows.method.eq("leiden")].set_index("arm")
-    if any(selected.loc[arm, "status"] != "complete" for arm in ["all_means_fractions", "neighborhood"]):
-        raise ValueError("Neighborhood control is incomplete")
-    vals = selected.loc[["all_means_fractions", "neighborhood"], "agreement"].to_numpy(dtype=float) * 100
-    a.barh([0, 1], vals, color=["#2864a5", "#b55224"], height=.55, zorder=2)
-    for i, v in enumerate(vals):
-        a.text(v + 1.2, i, f"{v:.1f}", va="center", fontsize=6)
-    a.set(yticks=[0, 1], yticklabels=["Markers", "Markers +\nneighborhood"], ylim=(1.7, -.7),
-          xlim=(0, 100), xticks=[0, 25, 50, 75, 100], xlabel="Reference agreement (%)")
+    a = axes(f, 112, 15, 49, 38)
+    conditions = [("anthropic", "all_means_fractions"), ("anthropic", "neighborhood"),
+                  ("openai", "all_means_fractions"), ("openai", "neighborhood")]
+    vals = np.asarray([agreement(family, "leiden", arm) for family, arm in conditions])
+    positions = np.asarray([0, 1, 2.5, 3.5])
+    a.barh(positions, vals, color=["#2864a5", "#b55224"] * 2, height=.55, zorder=2)
+    for y, value in zip(positions, vals):
+        a.text(value + 1.2, y, f"{value:.1f}", va="center", fontsize=6)
+    a.set(yticks=positions,
+          yticklabels=["Opus\nmarkers", "Opus\n+ neighborhood", "Astra\nmarkers", "Astra\n+ neighborhood"],
+          ylim=(4.2, -.7), xlim=(0, 100), xticks=[0, 25, 50, 75, 100],
+          xlabel="Reference agreement (%)")
+    a.axhline(1.75, color="#d1d5db", lw=.5, zorder=1)
     grid(a, "x")
 
     panel(f, "C", 3, 79)
@@ -193,12 +214,12 @@ def figure_s9(out):
     f.legend(handles=handles, loc="upper center", bbox_to_anchor=(.76, 1 - 150 / 171), ncol=2,
              fontsize=5.5, columnspacing=.8, handlelength=1.7)
     return finish(f, "Figure_S9", out, inputs("set_metrics.csv", name, risk_name), notes=[
-        "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
-        "A: method rows share the primary benchmark descending mean four-model macro-F1 ranking. B/C retain their evidence/calibration progression, and D keeps ascending numeric coverage.",
+        "A/B: Opus5.5 and Astra single-generation controls; matched means-plus-fractions evidence; equal-weighted two test-region agreement.",
+        "A: the four Opus method rows share the primary benchmark descending mean four-model macro-F1 ranking, followed by Astra-Leiden. B groups markers and neighborhood evidence within Opus-Leiden and Astra-Leiden. C retains the calibration progression, and D keeps ascending numeric coverage.",
         "C: each line/dot is one of16method/model conditions; diamonds are arithmetic means of equal-region Brier scores. Lower is better.",
         "D: illustrative Astra-Leiden selective-risk curves by test region, on hash-held-out evaluation clusters. All tied scores are retained together; undefined zero-retention risk is omitted.",
         "Calibration development/evaluation use disjoint clusters and disjoint regions. It estimates within-donor reference agreement, not native confidence, repeatability or biological correctness.",
-        "Eight separately submitted Astra named/neighborhood requests remain pending and do not supply plotted results.",
+        "The eight Astra named/neighborhood requests are complete. Astra controls used native OpenAI Batch and reused an accepted OpenRouter Batch baseline. These comparisons do not establish repeatability or isolate prompt content from execution-route differences.",
     ])
 
 

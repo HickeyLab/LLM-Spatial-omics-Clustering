@@ -24,31 +24,41 @@ def sha(path):
 
 
 class ReviewerPublicationArtworkTests(unittest.TestCase):
-    def test_representation_matrix_retains_the_pending_planned_condition(self):
+    def test_representation_matrix_contains_the_completed_planned_condition(self):
         rows = figures.complete_sets()
-        self.assertEqual(len(rows), 69)
-        pending = rows[rows.status.eq("pending")]
-        self.assertEqual(pending[["family", "method", "arm"]].values.tolist(),
-                         [["deepseek", "leiden", "selected_means"]])
-        self.assertTrue(pending[["agreement", "fixed28_macro_f1"]].isna().all().all())
+        self.assertEqual(len(rows), 71)
+        self.assertTrue(rows.status.eq("complete").all())
+        selected = rows[rows.family.eq("deepseek") & rows.method.eq("leiden") & rows.arm.eq("selected_means")].iloc[0]
+        self.assertEqual(int(selected.delivered_clusters), 300)
+        self.assertAlmostEqual(float(selected.agreement), 0.41421655633688514, places=14)
         matrix = figures.representation_matrix(rows, "deepseek")
-        self.assertTrue(np.isnan(matrix[0, 1]))
-        self.assertEqual(int(np.isfinite(matrix).sum()), 15)
+        self.assertEqual(int(np.isfinite(matrix).sum()), 16)
+        # Historical pending evidence is preserved, rather than rewritten.
+        original = pd.read_csv(ROOT / "data/frozen/reviewer47_results_20261111/set_metrics.csv")
+        pending = original[original.status.eq("pending")]
+        self.assertEqual(len(pending), 1)
+        self.assertTrue(pending[["agreement", "fixed28_macro_f1"]].isna().all().all())
 
     def test_partial_accuracy_is_rejected_before_plotting(self):
         rows = figures.complete_sets()
-        rows.loc[rows.status.eq("pending"), "agreement"] = .99
+        rows.loc[0, "status"] = "pending"
+        rows.loc[0, "agreement"] = .99
         with patch.object(figures, "table", return_value=rows):
             with self.assertRaisesRegex(ValueError, "partial accuracy"):
                 figures.complete_sets()
 
-    def test_only_complete_opus_controls_are_plotted(self):
-        rows = figures.control_rows()
-        self.assertTrue(rows[rows.arm.isin(["method_named", "neighborhood"])].status.eq("complete").all())
-        self.assertEqual(set(rows.family), {"anthropic"})
+    def test_complete_opus_and_astra_controls_are_plotted(self):
+        rows = figures.complete_sets()
+        controls = rows[rows.arm.isin(["method_named", "neighborhood"])]
+        self.assertTrue(controls.status.eq("complete").all())
+        self.assertEqual(set(controls.family), {"anthropic", "openai"})
+        self.assertEqual(len(controls), 7)
         pending = read("data/frozen/reviewer47_results_20261111/pending_dependencies.json")
         self.assertEqual(pending["astra_extension"]["planned_request_items"], 8)
         self.assertEqual(pending["astra_extension"]["status"], "pending")
+        latest = read("data/frozen/astra_prompt_controls_results_20261115/verification.json")
+        self.assertEqual(latest["extension_requests"], 8)
+        self.assertEqual(latest["extension_predictions"], 600)
 
     def test_native_table_rows_and_covariates_are_preserved(self):
         original = read("docs/tables/ieee/source_tables.json")["tables"]
@@ -59,8 +69,8 @@ class ReviewerPublicationArtworkTests(unittest.TestCase):
         self.assertIn("Means + fractions macro-F1", current["S6b"]["rows"][0])
         deep = current["S8d"]["rows"]
         selected = next(r for r in deep[1:] if r[:2] == ["Leiden", "Selected means"])
-        self.assertEqual(selected[2:4], ["Pending", "Pending"])
-        self.assertEqual(selected[4], "225/300")
+        self.assertEqual(selected[2:4], ["41.42", "0.3576"])
+        self.assertEqual(selected[4], "300/300")
 
     def test_export_hashes_and_ieee_style(self):
         folder = ROOT / "docs/tables/ieee_reviewer47_20261111"
@@ -83,14 +93,14 @@ class ReviewerPublicationArtworkTests(unittest.TestCase):
         for key in ["S8", "S9"]:
             record = inventory["figures"][key]
             self.assertEqual(record["panels"], list("ABCD"))
-            self.assertEqual(record["scored_inputs"], "data/frozen/reviewer47_results_20261111/manifest.json")
+            self.assertEqual(record["scored_inputs"], "data/frozen/astra_prompt_controls_results_20261115/manifest.json")
             self.assertNotIn(key, inventory["archived_figure_ids"])
         archive = read("archive/reviewer47_publication_before_20261111/artwork_index.json")
         for entry in archive["entries"]:
             self.assertEqual(sha(ROOT / entry["archive_path"]), entry["sha256"])
-        # The original selected Astra and supplementary Opus artwork is unchanged.
-        self.assertEqual(sha(ROOT / "figures/manuscript/Figure_4.png"), "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6")
-        self.assertEqual(sha(ROOT / "figures/manuscript/Figure_S6.png"), "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d")
+        # The current native export must match its publication inventory.
+        self.assertEqual(sha(ROOT / "figures/manuscript/Figure_4.png"), inventory["figures"]["4"]["images"][0]["sha256"])
+        self.assertEqual(sha(ROOT / "figures/manuscript/Figure_S6.png"), inventory["figures"]["S6"]["images"][0]["sha256"])
 
 
 if __name__ == "__main__":

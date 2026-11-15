@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "native_figure_file": "Figure_S9",
+  "live_figure_number": "S2",
+  "live_document": "https://docs.google.com/document/d/1aqZgv5aFS-fgXT2KnZw3CXcxD_W3X1HgjRz_KXf1L18/edit",
+  "source_snapshot": "data/frozen/astra_prompt_controls_results_20261115",
+  "extension_items": 8,
+  "extension_predictions": 600,
+  "complete_B004_sets": 71,
+  "complete_B004_items": 284,
+  "complete_B004_predictions": 20076,
+  "new_generation_calls": 0,
+  "transport_qualification": "Native OpenAI Batch controls reuse the OpenRouter Batch baseline."
+}

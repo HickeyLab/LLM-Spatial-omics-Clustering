@@ -179,14 +179,14 @@
       "caption_label": "TABLE S6d",
       "caption_title": "MODEL IDENTITIES AND INFERENCE SETTINGS",
       "caption": "Table S6d. Model identities and inference settings.",
-      "note": "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. One selected-means request and the separate eight-item Astra extension remain pending.",
+      "note": "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. All base-design and Astra extension requests are complete. The Astra controls used native OpenAI Batch, while their reused baseline used OpenRouter Batch.",
       "rows_including_header": 5,
       "columns": 5,
-      "cell_order_sha256": "d53dce38f60e7e7ce5def05ad2d8d5ea9026a9cdec0b60144d2865062884abc7",
+      "cell_order_sha256": "4835c1f955a99c43259a756b6716cc36e0b99aeb78a9b1a936378cf6736ec242",
       "numeric_columns_zero_based": [],
       "render": {
         "width_inches": 6.5,
-        "height_inches": 4.027777777777778,
+        "height_inches": 4.194444444444445,
         "font_points": 10,
         "font_file_basename": "Times New Roman.ttf",
         "horizontal_rules": 3,
@@ -194,44 +194,44 @@
         "interior_body_rules": 0
       },
       "sources": {
-        "data/frozen/reviewer47_results_20261111/model_settings.json": "855de6d8fbb8d5e214ad4add09dfe6f04712b7c9944da38b9e83cc34dfe081e4"
+        "data/frozen/reviewer47_deepseek_completion_20261115/model_settings.json": "ef79874fead505258601ee02dadf0a7b245c9e6d0a59d1beaccc24a84c3e8551"
       },
       "files": {
         ".html": {
-          "sha256": "e043f96cfccc10787823d2eebf989cc2067bb13261d82266042983cf15360807",
-          "bytes": 10480
+          "sha256": "ad955a0d1677acc2a039ce184e6455caf24723d402ebf31da9e03125e5264b9a",
+          "bytes": 10558
         },
         ".standalone.html": {
-          "sha256": "0dbf39de1c2068fc27e7d5adc1f5430d2d2d67e9baa8f78314a8b2d303a5da0f",
-          "bytes": 10542
+          "sha256": "bd8b31eee6487a5d952796fac6faa6cb63d661399a3d6f713c224d9896bfefa7",
+          "bytes": 10620
         },
         ".tsv": {
-          "sha256": "9f6ce0b5e39cd31193e58d6b41bbe63d3ddd7d0385f305b39069ed7fd00fae90",
-          "bytes": 598
+          "sha256": "196073ca2817ea639763995426659a247ec59d224ddd8d47f68089ef0bcc1545",
+          "bytes": 608
         },
         ".tex": {
-          "sha256": "ffc8420a47f90722ec6ae26d6903d3718a1da839c11439c631b28874fa804b31",
-          "bytes": 1367
+          "sha256": "50cbea092fa83af37fca00781596cc6897a538bed54b864f66d07cd7c5775310",
+          "bytes": 1377
         },
         ".pdf": {
-          "sha256": "61f5c57743d4e4e74f66e3cc6dad77730217d5bf3e199b5845599a04d762d232",
-          "bytes": 54680
+          "sha256": "9f38a51b1c0b34500abace825dc0b89ef87f6d3c70a849a870563ca7bf6fba1d",
+          "bytes": 54759
         },
         ".png": {
-          "sha256": "d29c841d990d183d3ab5fd8ab25f03a805b446b3e3d6d283e4ed544e49dbb66a",
-          "bytes": 707693
+          "sha256": "82452564f40fb9792df38a1461fa87e0d4f1fad690a9f61381001fc20265dbf6",
+          "bytes": 643774
         }
       },
       "csv_companion": {
         "path": "Table_S6d.csv",
-        "sha256": "85493e1edba04b6a7ea4c4fc04e73ee27f3aa1723873c72fd361933423628624"
+        "sha256": "66480b4e6a03fa1dd25335f8395331e1ed9d8e6f8118ac3fa85ff0615c2a0589"
       }
     },
     "S8a": {
       "caption_label": "TABLE S8a",
       "caption_title": "GPT-6 ASTRA MARKER-REPRESENTATION COMPARISON",
       "caption": "Table S8a. GPT-6 Astra marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "rows_including_header": 17,
       "columns": 5,
       "cell_order_sha256": "1c8b6545063671770be9cbb6c961430a11402351ea935546ade58bc8017f0e23",
@@ -250,16 +250,16 @@
         "interior_body_rules": 0
       },
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       },
       "files": {
         ".html": {
-          "sha256": "20c2508a7281cbebc9242e4b6d36516954c3803a96606cbec42ed93a120e7154",
-          "bytes": 30849
+          "sha256": "7285ad46d69146f867bf5331014b58910469eda6259e60e8251b7cd88e86eb23",
+          "bytes": 30853
         },
         ".standalone.html": {
-          "sha256": "938e2f254e0fc9fe19ac75a8c6309688bcc448cba0f6881681936dab271cc513",
-          "bytes": 30911
+          "sha256": "467e36793ccaee0fd43148261d6bff6c9e528eddf04eaef6004590ebe05898a5",
+          "bytes": 30915
         },
         ".tsv": {
           "sha256": "bdc047685d0f3d339f495b01e710ca18b7bb1ddb35b6297a408732349cfd435b",
@@ -270,12 +270,12 @@
           "bytes": 1663
         },
         ".pdf": {
-          "sha256": "ff75e88ca8e561bbcfd223c3990a42b9c5019159eb008e10981200d0b5211859",
-          "bytes": 54980
+          "sha256": "97724935791857baa6860dfc7968828d75fa391f93e905555116a1bf93e2b7c2",
+          "bytes": 54974
         },
         ".png": {
-          "sha256": "357ab908037bb684a7f6071587039fc4afe64e8d2c7082111bfc9865ce01f1ba",
-          "bytes": 922447
+          "sha256": "5de45342f74ad701f94222964b2b80f57c6ed74ca4a6459c2a933b1a0eca1d97",
+          "bytes": 768551
         }
       },
       "csv_companion": {
@@ -287,7 +287,7 @@
       "caption_label": "TABLE S8b",
       "caption_title": "CLAUDE OPUS 5.5 MARKER-REPRESENTATION COMPARISON",
       "caption": "Table S8b. Claude Opus 5.5 marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "rows_including_header": 17,
       "columns": 5,
       "cell_order_sha256": "bed484d3281dc17392aea90f2561eda94c5c17e2ab555fdeb7dea2a5389ea2e6",
@@ -306,16 +306,16 @@
         "interior_body_rules": 0
       },
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       },
       "files": {
         ".html": {
-          "sha256": "44fd54c1a82d592e9917f2c0b42a44195f3095809376dc056f20068f43193cc1",
-          "bytes": 30853
+          "sha256": "47718241664ec335f44a2c262b72d205e08557d2a9b63ce39129e0e7bdc1db0d",
+          "bytes": 30857
         },
         ".standalone.html": {
-          "sha256": "8d698d9472b6646709c5a692769d88bdc61ada4a723db95f1551eb1656584001",
-          "bytes": 30915
+          "sha256": "c09941c68a13cfa1647d2bcb69601710b44d0e29635485b016d3b8595d5e423a",
+          "bytes": 30919
         },
         ".tsv": {
           "sha256": "424cbf1af774752770f35a9c9745fb673f4ceb7cf89f3d867a360efaf737e107",
@@ -326,12 +326,12 @@
           "bytes": 1667
         },
         ".pdf": {
-          "sha256": "172092cce6a6e6f73bb5085a9184d7f09568805d6fad9d6527ee937e3df15b5c",
-          "bytes": 55232
+          "sha256": "5fa42def268bd4e34aa5b60cfe415893963f20430f664535de48bb24fed50f36",
+          "bytes": 55226
         },
         ".png": {
-          "sha256": "d13d2e345ca5f36b95b7f42ee3511acee88f362e3a7669c201fdf66ff4bec847",
-          "bytes": 921559
+          "sha256": "d94176b860ca12ccd3f2d5e3812f85d44a9a41a76be7c75b7b97c86ef126694d",
+          "bytes": 767131
         }
       },
       "csv_companion": {
@@ -343,7 +343,7 @@
       "caption_label": "TABLE S8c",
       "caption_title": "GEMINI 4 ARGON MARKER-REPRESENTATION COMPARISON",
       "caption": "Table S8c. Gemini 4 Argon marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "rows_including_header": 17,
       "columns": 5,
       "cell_order_sha256": "4c75eef5589c98dc27e33b19da18700d3d46f26c3a2a5d94713d2c9a118df5a0",
@@ -362,16 +362,16 @@
         "interior_body_rules": 0
       },
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       },
       "files": {
         ".html": {
-          "sha256": "561a18b8fb9f04c4fb0c3e34978d9cf4f4c93a43be60341b39bc4366175102a9",
-          "bytes": 30852
+          "sha256": "c624d9eb2e27b68b713df1472e15a9eb966bc381f589b89491a0c814dd38c88b",
+          "bytes": 30856
         },
         ".standalone.html": {
-          "sha256": "228395e7a41a5509b0157fad57290f736b379ed10af5febc4c86b884646c808d",
-          "bytes": 30914
+          "sha256": "ebe8f0a7d77bdec443895810667dd1a5ff5b4b2da60a0a6bd2bbaa026a84baa7",
+          "bytes": 30918
         },
         ".tsv": {
           "sha256": "b46ed41c733fead349a837a7be9d074b63c3767b5ce86455849f0886f1e7a2e6",
@@ -382,12 +382,12 @@
           "bytes": 1666
         },
         ".pdf": {
-          "sha256": "65554febca269e4a309a70ec12bc7853b7b26144a62459af86803cee2356e443",
-          "bytes": 54945
+          "sha256": "5ee551cadaf494f00282be0c45f9c6aa8d220db2f80edbd65ca8a589aed9ccc5",
+          "bytes": 54935
         },
         ".png": {
-          "sha256": "7b77f5eb101ce1d83e7d1ea5d8de8dbb3dae9f917fb7d28f1ac77c2419d0dca7",
-          "bytes": 919241
+          "sha256": "abddf5bf9178ac02fe47a36ea98d25d4506e12a7c1373004811f953ffffb834c",
+          "bytes": 766299
         }
       },
       "csv_companion": {
@@ -399,10 +399,10 @@
       "caption_label": "TABLE S8d",
       "caption_title": "DEEPSEEK V4.1 FLASH 1017 MARKER-REPRESENTATION COMPARISON",
       "caption": "Table S8d. DeepSeek V4.1 Flash 1017 marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "rows_including_header": 17,
       "columns": 5,
-      "cell_order_sha256": "1708af758938d90dc71f12dabd64c259088bc777079750318c4afa41ac2fdb49",
+      "cell_order_sha256": "dfc95b43b29815ee8f80ecb602345e5247bbbaa276bed1383e37f95604a37611",
       "numeric_columns_zero_based": [
         2,
         3,
@@ -418,47 +418,47 @@
         "interior_body_rules": 0
       },
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       },
       "files": {
         ".html": {
-          "sha256": "1ad53dc84c7c1ceced472f7783bd87c1c6ef46e36be6028e37c6d2de8f8d2daa",
-          "bytes": 30865
+          "sha256": "c6cd1418c2a58e15cbb0fefa060d8248574f13e32a1b55e5d154982eee85776e",
+          "bytes": 30866
         },
         ".standalone.html": {
-          "sha256": "118d86027a9d5f80ec8262fc99e0e185b3c432f067faacde57899586a3868112",
-          "bytes": 30927
+          "sha256": "0a427c1c4930e9ce46b4a3a65749b8617b91193c92854a85b3483c1630c69e19",
+          "bytes": 30928
         },
         ".tsv": {
-          "sha256": "cffe19341c34d84e741789ca2e039fb86c2f4df131f1c2e4e4581ec0208ba375",
-          "bytes": 762
+          "sha256": "d7ba2018310f42f24b881ed9ab24a1abde79134b29bfc03a60820be3cad82cf0",
+          "bytes": 759
         },
         ".tex": {
-          "sha256": "b6e87a1a7dacd7dd3cc3b86ca58227b26cdcb8bc9e0356776dbc3ab72dd868eb",
-          "bytes": 1679
+          "sha256": "a09fe0f635f132bedd3b429c7a1b5b56470a46459839fd8c090ab5bfe14c2ef9",
+          "bytes": 1676
         },
         ".pdf": {
-          "sha256": "d66673c499b8139191aa02d827dd4fc75482be649896f222770826a98da0dd8d",
-          "bytes": 55710
+          "sha256": "a1a0a2463be9f11923d3d8dd4d673c86b50a24128525ed9bcd15037e0be0524f",
+          "bytes": 55689
         },
         ".png": {
-          "sha256": "045b7c8e902c40fedd751f49c931eb193f5b35ea5682bd34a488e717b32b026f",
-          "bytes": 908267
+          "sha256": "ec188aee714b07ec264435aad93e21b39fc9365c6d65793a5441852985f06114",
+          "bytes": 759811
         }
       },
       "csv_companion": {
         "path": "Table_S8d.csv",
-        "sha256": "19eefd8e99fbf079de777fde82d6dd5f2ab085c289c1bb2fff7ed6b415b815f1"
+        "sha256": "bb461ec2eca50f11efd2145c7c30ade7b0fe06da7ffdd47dab865bcab1dafaed"
       }
     },
     "S9": {
       "caption_label": "TABLE S9",
-      "caption_title": "OPUS 5.5 MATCHED PROMPT CONTROLS",
-      "caption": "Table S9. Opus 5.5 matched prompt controls.",
-      "note": "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages two test regions equally. Changed-cluster counts retain all planned clusters. The separately submitted Astra extension is pending.",
-      "rows_including_header": 6,
+      "caption_title": "LLM MATCHED-EVIDENCE PROMPT CONTROLS",
+      "caption": "Table S9. LLM matched-evidence prompt controls.",
+      "note": "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages the two B004 test regions equally. Changed-cluster counts use all 300 Leiden, 299 FlowSOM, 229 SpatialSort or 300 PIXIE clusters. Astra fixed-28-label macro-F1 was 0.4490 for the baseline, 0.4458 with the method name and 0.4531 with neighborhood evidence. Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline. These single-generation comparisons do not establish repeatability or a general prompt effect. Opus denotes Claude Opus 5.5, and Astra denotes GPT-6 Astra.",
+      "rows_including_header": 8,
       "columns": 6,
-      "cell_order_sha256": "30d911c5e05116446a0b8ecfe6d926b9059dd51b556e041d15fc789789d8d1f8",
+      "cell_order_sha256": "3c87e46748535d989bd8fc6388bbe018d7fd40d9fa0903bcde398fe13823dc7f",
       "numeric_columns_zero_based": [
         2,
         3,
@@ -467,7 +467,7 @@
       ],
       "render": {
         "width_inches": 6.5,
-        "height_inches": 2.9722222222222223,
+        "height_inches": 4.194444444444445,
         "font_points": 10,
         "font_file_basename": "Times New Roman.ttf",
         "horizontal_rules": 3,
@@ -475,37 +475,37 @@
         "interior_body_rules": 0
       },
       "sources": {
-        "data/frozen/reviewer47_results_20261111/control_contrasts.csv": "e61f5d147cf3098de49bf0c5a548fbf4fb7a60dbcc07eaf23da485f0d9ad241e"
+        "data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv": "ea4a32683fb61dbc5fc6f77413f289a18c9a1c480f1dde834be2a3563f3185cd"
       },
       "files": {
         ".html": {
-          "sha256": "fba3f70493344a887f2e55b28cacd099a828879e7cc51b15fe8775fc5b612259",
-          "bytes": 13877
+          "sha256": "f1ff19c9e9fa643ac80ce52bb36839d3a14e4e446bdc58d6c2b74fd96981328b",
+          "bytes": 18442
         },
         ".standalone.html": {
-          "sha256": "f82155018ec8c3b537dcb977a0c274d0a669f10028d1b34dcd3aee9e2796cb75",
-          "bytes": 13939
+          "sha256": "a2ba99eabf48b47813c55efcc33306daa7fff03dd4ff48eb053b00fb9d977aba",
+          "bytes": 18504
         },
         ".tsv": {
-          "sha256": "cdfeccc1d38a3ec91828de96378deab439e3d777ae14add7eb3b9870e38f3cf6",
-          "bytes": 278
+          "sha256": "c2245d47dffc93d6a9c860952791bb5a31f6c8cfa4afa6f27296bef0fd319dd8",
+          "bytes": 414
         },
         ".tex": {
-          "sha256": "4ad16511cc11cebf2b72552249d176ac5ceceb7485adb0c0d8eaa0817d9eda68",
-          "bytes": 1119
+          "sha256": "efa1eb973de8307978ff25274e80ac485ac0e3ca6b9748e3a1d920054a6c8673",
+          "bytes": 1285
         },
         ".pdf": {
-          "sha256": "3b898a35b862ade67a96845d747d6b7b0d70823eeec16a2bcbc1c0cb3d557b33",
-          "bytes": 52497
+          "sha256": "51f0633e53817e58bad87ae2653a9626e1ab7057cf1b9bca1ed196bd41e02928",
+          "bytes": 54840
         },
         ".png": {
-          "sha256": "4696182d6ef54d8d82cffd0395648e22f338ea4f83f12747077ebb990c4012b8",
-          "bytes": 408504
+          "sha256": "5ca1420dc8ea273133704f3a13334c998a30efc6bef15d1315197fd9767c24e4",
+          "bytes": 633848
         }
       },
       "csv_companion": {
         "path": "Table_S9.csv",
-        "sha256": "b2aa6c9d0964dcfc3039fdacb74f30037843d124ab54f07e22296c9cfa919d32"
+        "sha256": "302e08b264e37fc3e7c0a3f369533d9dffa2983c9b623dfba00bcddd4c4842f7"
       }
     },
     "S10": {

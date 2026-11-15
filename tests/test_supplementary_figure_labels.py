@@ -7,17 +7,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SupplementaryFigureLabelTests(unittest.TestCase):
-    def test_inventory_has_all_ten_current_supplementary_figures(self):
-        records = json.loads((ROOT / 'configs/manuscript_inventory.json').read_text())['figures']
+    def test_inventory_has_all_thirteen_current_supplementary_figures(self):
+        records = json.loads((ROOT / 'configs/manuscript_display_crosswalk.json').read_text())['figures']
         paths = []
-        for number in range(1, 11):
+        for number in range(1, 14):
             record = records[f'S{number}']
             path = ROOT / record['notebook']
             self.assertTrue(path.is_file(), path)
             paths.append(path)
             source = '\n'.join(''.join(c['source']) for c in json.loads(path.read_text())['cells'])
             self.assertTrue(f'Figure S{number}' in source or f'Figure S{number:02}' in source, path)
-        self.assertEqual(len(set(paths)), 10)
+        self.assertEqual(len(set(paths)), 13)
 
     def test_renumbered_compatibility_notebooks_point_to_current_owners(self):
         aliases = {
@@ -41,10 +41,10 @@ class SupplementaryFigureLabelTests(unittest.TestCase):
         self.assertNotIn('/Users/', source)
 
     def test_navigation_lists_every_current_supplement(self):
-        records = json.loads((ROOT / 'configs/manuscript_inventory.json').read_text())['figures']
+        records = json.loads((ROOT / 'configs/manuscript_display_crosswalk.json').read_text())['figures']
         for name in ['README.md', 'docs/figure_map.md', 'notebooks/final_figures/README.md']:
             text = (ROOT / name).read_text()
-            for number in range(1, 11):
+            for number in range(1, 14):
                 self.assertIn(Path(records[f'S{number}']['notebook']).name, text)
 
 

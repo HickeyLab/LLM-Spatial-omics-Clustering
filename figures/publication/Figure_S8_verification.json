@@ -38,30 +38,30 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+    "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
   },
   "notes": [
     "Equal-weighted agreement across the two B004 test regions; fixed 28-label vocabulary including Noise.",
-    "Four frozen partitions and one generation per condition. Partial conditions are masked as Pending, not scored.",
+    "Four frozen partitions and one generation per condition. All 64 representation conditions are complete.",
     "Selected names and selected means use at most six label-blind selected markers; full arms use all47 markers.",
     "Method rows share the primary benchmark ranking by descending mean four-model fixed-28-label macro-F1 for means plus fractions. Columns retain the planned information progression."
   ],
   "files": {
     "Figure_S8.svg": {
-      "sha256": "ee59be63e9e54202a9d5ee94c68d7003b6aa10ef7392e094bdec084ff367443f",
-      "bytes": 63383
+      "sha256": "08317078e823106ee9da889ed4eee39f341b94c7a9d63a093eb38ce61e1aef32",
+      "bytes": 62437
     },
     "Figure_S8.pdf": {
-      "sha256": "8fc0f6283e5452256495ca0c0b979e99eec42ee3bba21b1c15a6ccf81e1efe17",
-      "bytes": 53088
+      "sha256": "539fb87a5eba8a6e53a4a83a07a6d156ef91d830e475d76d9bf2d24b0a64c830",
+      "bytes": 52049
     },
     "Figure_S8.png": {
-      "sha256": "279a87e4442ce3415bcdc68192b5c5bd3638d7e514754e93a59038082db87598",
-      "bytes": 356681
+      "sha256": "a2cd3609c933e887c7def0e71e110b1ddce77b033c435dfcba080353f3f5c1c0",
+      "bytes": 351556
     },
     "Figure_S8.tiff": {
-      "sha256": "98cfee2405f1dddbec5ba088905af80afc01fd6572c62514c6aede485208b16c",
-      "bytes": 1054860
+      "sha256": "c7c00fe9fef85cd11466777baad3248b464f818c8a9938126e0cba886d070d8f",
+      "bytes": 1048538
     }
   }
 }

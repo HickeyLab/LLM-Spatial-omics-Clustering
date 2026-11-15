@@ -441,16 +441,16 @@
         [
           "DeepSeek V4.1 Flash 1017",
           "deepseek/deepseek-v4.1-flash-1017",
-          "Standard streaming",
+          "Standard streaming and Batch",
           "high",
           "Combined output ceiling 943,718; seed omitted; temperature/top-p omitted"
         ]
       ],
       "caption": "Table S6d. Model identities and inference settings.",
-      "note": "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. One selected-means request and the separate eight-item Astra extension remain pending.",
-      "cell_order_sha256": "d53dce38f60e7e7ce5def05ad2d8d5ea9026a9cdec0b60144d2865062884abc7",
+      "note": "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. All base-design and Astra extension requests are complete. The Astra controls used native OpenAI Batch, while their reused baseline used OpenRouter Batch.",
+      "cell_order_sha256": "4835c1f955a99c43259a756b6716cc36e0b99aeb78a9b1a936378cf6736ec242",
       "sources": {
-        "data/frozen/reviewer47_results_20261111/model_settings.json": "855de6d8fbb8d5e214ad4add09dfe6f04712b7c9944da38b9e83cc34dfe081e4"
+        "data/frozen/reviewer47_deepseek_completion_20261115/model_settings.json": "ef79874fead505258601ee02dadf0a7b245c9e6d0a59d1beaccc24a84c3e8551"
       }
     },
     "S8a": {
@@ -576,10 +576,10 @@
         ]
       ],
       "caption": "Table S8a. GPT-6 Astra marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "cell_order_sha256": "1c8b6545063671770be9cbb6c961430a11402351ea935546ade58bc8017f0e23",
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       }
     },
     "S8b": {
@@ -705,10 +705,10 @@
         ]
       ],
       "caption": "Table S8b. Claude Opus 5.5 marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "cell_order_sha256": "bed484d3281dc17392aea90f2561eda94c5c17e2ab555fdeb7dea2a5389ea2e6",
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       }
     },
     "S8c": {
@@ -834,10 +834,10 @@
         ]
       ],
       "caption": "Table S8c. Gemini 4 Argon marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
       "cell_order_sha256": "4c75eef5589c98dc27e33b19da18700d3d46f26c3a2a5d94713d2c9a118df5a0",
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       }
     },
     "S8d": {
@@ -859,9 +859,9 @@
         [
           "Leiden",
           "Selected means",
-          "Pending",
-          "Pending",
-          "225/300"
+          "41.42",
+          "0.3576",
+          "300/300"
         ],
         [
           "Leiden",
@@ -963,16 +963,16 @@
         ]
       ],
       "caption": "Table S8d. DeepSeek V4.1 Flash 1017 marker-representation comparison.",
-      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
-      "cell_order_sha256": "1708af758938d90dc71f12dabd64c259088bc777079750318c4afa41ac2fdb49",
+      "note": "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "cell_order_sha256": "dfc95b43b29815ee8f80ecb602345e5247bbbaa276bed1383e37f95604a37611",
       "sources": {
-        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+        "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf"
       }
     },
     "S9": {
       "rows": [
         [
-          "Clustering",
+          "Model\u2013method",
           "Control",
           "Blinded (%)",
           "Control (%)",
@@ -980,7 +980,7 @@
           "Changed clusters"
         ],
         [
-          "Leiden",
+          "Opus\u2013Leiden",
           "Method name",
           "50.27",
           "45.15",
@@ -988,7 +988,7 @@
           "75"
         ],
         [
-          "FlowSOM",
+          "Opus\u2013FlowSOM",
           "Method name",
           "36.82",
           "34.00",
@@ -996,7 +996,7 @@
           "50"
         ],
         [
-          "SpatialSort",
+          "Opus\u2013SpatialSort",
           "Method name",
           "36.17",
           "31.11",
@@ -1004,7 +1004,7 @@
           "53"
         ],
         [
-          "PIXIE",
+          "Opus\u2013PIXIE",
           "Method name",
           "42.54",
           "40.00",
@@ -1012,19 +1012,35 @@
           "51"
         ],
         [
-          "Leiden",
+          "Opus\u2013Leiden",
           "Neighborhood",
           "50.27",
           "45.97",
           "-4.29",
           "63"
+        ],
+        [
+          "Astra\u2013Leiden",
+          "Method name",
+          "58.12",
+          "53.53",
+          "-4.59",
+          "40"
+        ],
+        [
+          "Astra\u2013Leiden",
+          "Neighborhood",
+          "58.12",
+          "51.43",
+          "-6.69",
+          "39"
         ]
       ],
-      "caption": "Table S9. Opus 5.5 matched prompt controls.",
-      "note": "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages two test regions equally. Changed-cluster counts retain all planned clusters. The separately submitted Astra extension is pending.",
-      "cell_order_sha256": "30d911c5e05116446a0b8ecfe6d926b9059dd51b556e041d15fc789789d8d1f8",
+      "caption": "Table S9. LLM matched-evidence prompt controls.",
+      "note": "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages the two B004 test regions equally. Changed-cluster counts use all 300 Leiden, 299 FlowSOM, 229 SpatialSort or 300 PIXIE clusters. Astra fixed-28-label macro-F1 was 0.4490 for the baseline, 0.4458 with the method name and 0.4531 with neighborhood evidence. Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline. These single-generation comparisons do not establish repeatability or a general prompt effect. Opus denotes Claude Opus 5.5, and Astra denotes GPT-6 Astra.",
+      "cell_order_sha256": "3c87e46748535d989bd8fc6388bbe018d7fd40d9fa0903bcde398fe13823dc7f",
       "sources": {
-        "data/frozen/reviewer47_results_20261111/control_contrasts.csv": "e61f5d147cf3098de49bf0c5a548fbf4fb7a60dbcc07eaf23da485f0d9ad241e"
+        "data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv": "ea4a32683fb61dbc5fc6f77413f289a18c9a1c480f1dde834be2a3563f3185cd"
       }
     },
     "S10": {

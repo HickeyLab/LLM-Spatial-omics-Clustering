@@ -101,11 +101,11 @@ def table_specs():
         model_ids = {r["model"] for r in logical}
         model_ids.update(r["actual_wire_settings"]["model"] for r in accepted if r.get("actual_wire_settings"))
         seed = next(iter(seeds))
-        transport = "Batch" if family in ["openai", "anthropic"] else "Standard streaming"
+        transport = "Batch" if family in ["openai", "anthropic"] else "Standard streaming and Batch" if family == "deepseek" else "Standard streaming"
         decoding = f"Combined output ceiling {next(iter(ceilings)):,}; " + (f"seed {seed}" if seed is not None else "seed omitted") + "; temperature/top-p omitted"
         rows.append([model, "; ".join(sorted(model_ids)), transport, "high", decoding])
     add("S6d", "Model identities and inference settings", rows, style.WEIGHTS["S6d"], style.NUMERIC["S6d"], [setting_source],
-        "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. One selected-means request and the separate eight-item Astra extension remain pending.")
+        "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. All base-design and Astra extension requests are complete. The Astra controls used native OpenAI Batch, while their reused baseline used OpenRouter Batch.")
 
     sets = complete_sets()
     for family, model, suffix in zip(FAMILIES, MODELS, "abcd"):
@@ -120,22 +120,27 @@ def table_specs():
                              number(r.fixed28_macro_f1), f"{int(r.delivered_clusters)}/{int(r.planned_clusters)}"])
         add("S8" + suffix, model + " marker-representation comparison", rows, [16, 27, 19, 16, 22], [2, 3, 4],
             [checked_path("set_metrics.csv")],
-            "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.")
+            "Reference agreement and fixed-28-label macro-F1 average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.")
 
     contrasts = pd.read_csv(checked_path("control_contrasts.csv"))
-    rows = [["Clustering", "Control", "Blinded (%)", "Control (%)", "Change (pp)", "Changed clusters"]]
+    rows = [["Model–method", "Control", "Blinded (%)", "Control (%)", "Change (pp)", "Changed clusters"]]
     for method in METHODS:
-        r = contrasts[contrasts.method.eq(method) & contrasts.control_arm.eq("method_named")].iloc[0]
-        rows.append([METHOD_LABELS[method], "Method name", number(r.baseline_agreement, scale=100, digits=2),
+        r = contrasts[contrasts.family.eq("anthropic") & contrasts.method.eq(method) & contrasts.control_arm.eq("method_named")].iloc[0]
+        rows.append(["Opus–" + METHOD_LABELS[method], "Method name", number(r.baseline_agreement, scale=100, digits=2),
                      number(r.control_agreement, scale=100, digits=2), number(r.agreement_difference, scale=100, digits=2, signed=True),
                      str(int(r.cluster_label_changes))])
-    r = contrasts[contrasts.method.eq("leiden") & contrasts.control_arm.eq("neighborhood")].iloc[0]
-    rows.append(["Leiden", "Neighborhood", number(r.baseline_agreement, scale=100, digits=2),
+    r = contrasts[contrasts.family.eq("anthropic") & contrasts.method.eq("leiden") & contrasts.control_arm.eq("neighborhood")].iloc[0]
+    rows.append(["Opus–Leiden", "Neighborhood", number(r.baseline_agreement, scale=100, digits=2),
                  number(r.control_agreement, scale=100, digits=2), number(r.agreement_difference, scale=100, digits=2, signed=True),
                  str(int(r.cluster_label_changes))])
-    add("S9", "Opus 5.5 matched prompt controls", rows, [15, 21, 16, 16, 16, 16], [2, 3, 4, 5],
+    for arm, label in [("method_named", "Method name"), ("neighborhood", "Neighborhood")]:
+        r = contrasts[contrasts.family.eq("openai") & contrasts.method.eq("leiden") & contrasts.control_arm.eq(arm)].iloc[0]
+        rows.append(["Astra–Leiden", label, number(r.baseline_agreement, scale=100, digits=2),
+                     number(r.control_agreement, scale=100, digits=2), number(r.agreement_difference, scale=100, digits=2, signed=True),
+                     str(int(r.cluster_label_changes))])
+    add("S9", "LLM matched-evidence prompt controls", rows, [22, 20, 14, 14, 14, 16], [2, 3, 4, 5],
         [checked_path("control_contrasts.csv")],
-        "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages two test regions equally. Changed-cluster counts retain all planned clusters. The separately submitted Astra extension is pending.")
+        "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages the two B004 test regions equally. Changed-cluster counts use all 300 Leiden, 299 FlowSOM, 229 SpatialSort or 300 PIXIE clusters. Astra fixed-28-label macro-F1 was 0.4490 for the baseline, 0.4458 with the method name and 0.4531 with neighborhood evidence. Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline. These single-generation comparisons do not establish repeatability or a general prompt effect. Opus denotes Claude Opus 5.5, and Astra denotes GPT-6 Astra.")
 
     path = checked_path("baselines/classifier_equal_test_region_metrics.csv")
     data = pd.read_csv(path)

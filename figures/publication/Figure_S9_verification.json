@@ -38,34 +38,34 @@
   },
   "dense_point_layers_native_dpi": null,
   "inputs": {
-    "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441",
+    "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8",
     "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846",
     "data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
   },
   "notes": [
-    "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
-    "A: method rows share the primary benchmark descending mean four-model macro-F1 ranking. B/C retain their evidence/calibration progression, and D keeps ascending numeric coverage.",
+    "A/B: Opus5.5 and Astra single-generation controls; matched means-plus-fractions evidence; equal-weighted two test-region agreement.",
+    "A: the four Opus method rows share the primary benchmark descending mean four-model macro-F1 ranking, followed by Astra-Leiden. B groups markers and neighborhood evidence within Opus-Leiden and Astra-Leiden. C retains the calibration progression, and D keeps ascending numeric coverage.",
     "C: each line/dot is one of16method/model conditions; diamonds are arithmetic means of equal-region Brier scores. Lower is better.",
     "D: illustrative Astra-Leiden selective-risk curves by test region, on hash-held-out evaluation clusters. All tied scores are retained together; undefined zero-retention risk is omitted.",
     "Calibration development/evaluation use disjoint clusters and disjoint regions. It estimates within-donor reference agreement, not native confidence, repeatability or biological correctness.",
-    "Eight separately submitted Astra named/neighborhood requests remain pending and do not supply plotted results."
+    "The eight Astra named/neighborhood requests are complete. Astra controls used native OpenAI Batch and reused an accepted OpenRouter Batch baseline. These comparisons do not establish repeatability or isolate prompt content from execution-route differences."
   ],
   "files": {
     "Figure_S9.svg": {
-      "sha256": "586d5f89afb4014be0710317b1f0a9afc6adc1bf1516672d2b2f5d515cbfbdef",
-      "bytes": 49413
+      "sha256": "0faea1f9b3715bbedab5b1e9f3058911e7140571be58b25fddfd37064f63a973",
+      "bytes": 52793
     },
     "Figure_S9.pdf": {
-      "sha256": "ebe616a38f7a44e7c5c8dd8f0badd2021b528dd583e8a134fb65c1c743c0bd06",
-      "bytes": 41445
+      "sha256": "2bc6c19a47ec070b0130336075d5bf698fc3769072e7d240afbc398d505028e2",
+      "bytes": 42700
     },
     "Figure_S9.png": {
-      "sha256": "ada95299320c3d7da8c4c813b2e221f0771c27a8cc422fd59458983c4e7050b5",
-      "bytes": 377608
+      "sha256": "07a057d77348c0b8d6ae478ebd477ceeaed5581013c30d5906e2358f85051de6",
+      "bytes": 419359
     },
     "Figure_S9.tiff": {
-      "sha256": "57b993f201349b2c36a22bb9158f13ffa76c89d803d480a78cf06f4f39de986a",
-      "bytes": 597716
+      "sha256": "a7bc4c9fcd918df7d37983bf3625d27cefa320908ff9386fe11a061917ccced3",
+      "bytes": 627706
     }
   }
 }

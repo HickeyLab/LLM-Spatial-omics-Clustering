@@ -164,8 +164,13 @@ def figure5(scores,output):
             donor,coverage=metric_matrix(selected,'cell_delivery_coverage'))
     for i,(metric,label) in enumerate([('agreement','Agreement (%)'),('macro_f1','Macro-F1 (%)')]):
         values,coverage=baseline_join(scores,metric)
-        matrix_panel(f,chr(67+i),3+80*i,65,values,MODEL_LABELS+['Nearest\ncentroid','Logistic\nregression'],
+        ax=matrix_panel(f,chr(67+i),3+80*i,65,values,MODEL_LABELS+['Nearest\ncentroid','Logistic\nregression'],
             label,coverage=coverage)
+        # Separate annotation approaches without altering the scored grid.
+        ax.axvline(3.5,color='white',linewidth=2.0,zorder=3)
+        ax.text(1.5,-.68,'LLMs',ha='center',va='bottom',fontsize=5.5,clip_on=False)
+        ax.text(4.5,-.68,'B004-supervised\nclassifiers',ha='center',va='bottom',
+                fontsize=5.5,linespacing=1.05,clip_on=False)
     return design.finish(f,'Figure_5',output,dict(scores.inputs),notes=[
         'A,B: native 28-label evaluation including Noise; each donor averages its eight region scores equally.',
         'C,D: equal donor weights after equal region weights; frozen B004 classifiers use the same 94 decoded query features.',

@@ -1,6 +1,6 @@
 {
   "schema": "manuscript.current_supplementary_table_crosswalk.v2",
-  "updated_date": "2026-11-11",
+  "updated_date": "2026-11-15",
   "policy": "Only retained manuscript companions are active. Source hashes distinguish new primary47 and completed annotation results. Archived companion filenames and bytes remain unchanged in the archive and immutable release.",
   "archive_crosswalk": "data/historical/annotation47_pre_scoring_20261110/configs/supplementary_table_crosswalk.json",
   "tables": [
@@ -32,7 +32,7 @@
       "current_label": "S6d",
       "filename": "Table_S6d.csv",
       "path": "docs/tables/ieee_reviewer47_20261111/Table_S6d.csv",
-      "sha256": "85493e1edba04b6a7ea4c4fc04e73ee27f3aa1723873c72fd361933423628624"
+      "sha256": "66480b4e6a03fa1dd25335f8395331e1ed9d8e6f8118ac3fa85ff0615c2a0589"
     },
     {
       "current_label": "S7",
@@ -68,13 +68,13 @@
       "current_label": "S8d",
       "filename": "Table_S8d.csv",
       "path": "docs/tables/ieee_reviewer47_20261111/Table_S8d.csv",
-      "sha256": "19eefd8e99fbf079de777fde82d6dd5f2ab085c289c1bb2fff7ed6b415b815f1"
+      "sha256": "bb461ec2eca50f11efd2145c7c30ade7b0fe06da7ffdd47dab865bcab1dafaed"
     },
     {
       "current_label": "S9",
       "filename": "Table_S9.csv",
       "path": "docs/tables/ieee_reviewer47_20261111/Table_S9.csv",
-      "sha256": "b2aa6c9d0964dcfc3039fdacb74f30037843d124ab54f07e22296c9cfa919d32"
+      "sha256": "302e08b264e37fc3e7c0a3f369533d9dffa2983c9b623dfba00bcddd4c4842f7"
     },
     {
       "current_label": "S10",
@@ -136,5 +136,9 @@
     "current_label": "S12a-d",
     "path": "data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv",
     "sha256": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
-  }
+  },
+  "completion_evidence_manifests": [
+    "data/frozen/reviewer47_deepseek_completion_20261115/manifest.json",
+    "data/frozen/astra_prompt_controls_results_20261115/manifest.json"
+  ]
 }

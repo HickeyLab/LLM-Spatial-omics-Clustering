@@ -1,14 +1,14 @@
 {
   "figure": "Figure_3",
   "width_mm": 165.1,
-  "height_mm": 176.90938185884394,
+  "height_mm": 202.54937752830875,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4179
+    4785
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -22,7 +22,7 @@
       ],
       "rect_mm": [
         6,
-        7.786000000000009,
+        7.785999999999981,
         155,
         24.309352517985612
       ],
@@ -31,25 +31,29 @@
   ],
   "provider_logos": null,
   "layout_compaction": {
-    "original_height_mm": 205,
-    "height_mm": 176.90938185884394,
-    "height_reduction_percent": 13.70274055666149,
+    "original_height_mm": 240,
+    "height_mm": 202.54937752830875,
+    "height_reduction_percent": 15.604426029871354,
     "vacant_bands_removed_mm": [
       [
-        6.286000000000009,
+        6.285999999999981,
         7.5
       ],
       [
-        40.039999999999985,
-        43.864999999999995
+        40.148589409722234,
+        43.738
       ],
       [
-        93.06047333145322,
+        93.36636330557715,
         104.49999999999999
       ],
       [
-        110.136,
-        115.865
+        110.1485894097222,
+        115.738
+      ],
+      [
+        198.32183507776634,
+        205.50000000000003
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -63,29 +67,30 @@
     "data/frozen/annotation47_results_20261111/reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
     "data/frozen/annotation47_results_20261111/cell_predictions.npz": "07779061eceb84bef8a9978cc724d746d6e922069d7c6c24315e7fdd4b923d65",
     "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba",
+    "configs/cell_type_colors.csv": "8ec1b607f398eaca6851d385114518f2a3a419b0680a008ffc594fd6d1c79a69",
     "data/frozen/biorender_workflows/source_canvas.pdf": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
     "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
     "One accepted annotation per model/method/arm; no repeated-generation SD.",
-    "B/C: equal-weighted two test regions, all original28 labels including Noise. Both share descending mean macro-F1 model/method rankings. D: pooled test cells, cell types sorted by descending mean four-model recall. E: fixed Figure2C region."
+    "B/C: equal-weighted two test regions, all original28 labels including Noise. Both share descending mean macro-F1 model/method rankings. D: pooled test cells, cell types sorted by descending mean four-model recall. E: fixed Figure2C region with a shared native-28-label colour key."
   ],
   "files": {
     "Figure_3.svg": {
-      "sha256": "fbd112815e39d3d9d03ef5ab999d211fde69ec05addd143b14a6ae0489e3e9ec",
-      "bytes": 6074701
+      "sha256": "bb3a7200e539fd481a44b265b573dcfeb5a26d22b67ce16ee1babb09756b9abf",
+      "bytes": 6064146
     },
     "Figure_3.pdf": {
-      "sha256": "2f88796936b900ee981ab7efea296df03ad46f6417d0a733a51849671d839b12",
-      "bytes": 3808096
+      "sha256": "43644f7e7fc659e96c3ceb0f9d78976aaa08407e7af5eabb61aef0d2b96b0769",
+      "bytes": 3809368
     },
     "Figure_3.png": {
-      "sha256": "8587b43f4c5ad303385c95799d569f1a41292799d76ed913de2e140be361ac2a",
-      "bytes": 2858634
+      "sha256": "d5d7abdced86015508aad855ba66f3079bc1224bc4494916806923438da79a99",
+      "bytes": 2956347
     },
     "Figure_3.tiff": {
-      "sha256": "e7cf694770952115b96b65681e752bce1242256d89c79e7af0225b7c3c8d1df1",
-      "bytes": 4629576
+      "sha256": "da10208cbe017bc869c07139dc1cdfe67aab1e95458a07247e3afee6f0e9c383",
+      "bytes": 4794232
     }
   },
   "minimum_font_scope": "Native editable text. The author's original marker-list and threshold-setting illustrations retain their original raster typography."

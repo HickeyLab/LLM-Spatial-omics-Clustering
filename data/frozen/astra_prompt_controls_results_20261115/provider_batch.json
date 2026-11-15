@@ -1,0 +1,43 @@
+{
+  "id": "batch_6af47698f0c08190a0f909d122c2344e",
+  "object": "batch",
+  "endpoint": "/v1/chat/completions",
+  "model": "gpt-6-astra",
+  "errors": null,
+  "input_file_id": "file-SDPTZgwyafecPzoXeid7xb",
+  "completion_window": "24h",
+  "status": "completed",
+  "output_file_id": "file-BYKxZcC5oGK2Siq224dB28",
+  "error_file_id": null,
+  "created_at": 1794406040,
+  "in_progress_at": 1794406102,
+  "expires_at": 1794492440,
+  "finalizing_at": 1794433126,
+  "completed_at": 1794433127,
+  "failed_at": null,
+  "expired_at": null,
+  "cancelling_at": null,
+  "cancelled_at": null,
+  "request_counts": {
+    "total": 8,
+    "completed": 8,
+    "failed": 0
+  },
+  "usage": {
+    "input_tokens": 151543,
+    "output_tokens": 114699,
+    "total_tokens": 266242,
+    "input_tokens_details": {
+      "cached_tokens": 22530
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 108559
+    }
+  },
+  "metadata": {
+    "certificate_sha256": "5764d1c438cdd45069ecc9421384f57c795173272be79801d8ad86aa432875ca",
+    "manifest_sha256": "4d07bf5bc5dbc485eee00e2f9764b631ec966fcec7f5301e561a7bdb063e2e46",
+    "native_jsonl_sha256": "74a19f58ac0d9350624fea4f241c490e2380acd6b6d33d6c6c5c401b4f2679b7",
+    "protocol_sha256": "e3979eba4f0b8923539e6860d1efc4eec3844a8c6538fd19e11ce32d49780a1d"
+  }
+}
