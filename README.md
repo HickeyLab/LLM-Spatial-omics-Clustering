@@ -1,10 +1,16 @@
 # Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
 
+## Current manuscript figures
+
+[View the current Figure 1–5 and S1–S13 PNGs](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/tree/codex/rtr-submission-sync-20261115/figures/current_manuscript/PNG), or browse the [manuscript-numbered notebook index](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/codex/rtr-submission-sync-20261115/notebooks/final_figures/README.md).
+
+The sections below document the earlier B004 release on this branch.
+
 The manuscript uses the frozen 47-marker primary clustering assignments and the completed single-annotation campaign: **220,082 B004 cells, four clustering methods, four models, two marker-representation arms, 32 annotation sets, 128 accepted logical request items and 9,024 cluster predictions**. The [active study record](configs/annotation47_active_study.json), [figure inventory](configs/manuscript_inventory.json) and [scored result manifest](data/frozen/annotation47_results_20261110/manifest.json) define the current publication inputs.
 
 Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occupied clusters. FlowSOM used three complete shuffled passes, and the primary SpatialSort partition is seed 42 at sweep 100 with `dmh_iter=5`. Seed 43 remains a clustering sensitivity result. The annotation models are GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017.
 
-## Retained figures
+## Figures in the earlier B004 release
 
 | Figure | Panels | Notebook |
 | --- | --- | --- |
