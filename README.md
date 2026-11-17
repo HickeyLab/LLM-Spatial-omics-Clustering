@@ -8,6 +8,8 @@ In B004, Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occup
 
 ## Retained figures
 
+[Download or view the current manuscript figures](figures/current_manuscript/PNG).
+
 | Manuscript figure | Native source | Panels | Notebook |
 | --- | --- | --- | --- |
 | 1 | 1 | A–F | [figure_01_spillover_compensation.ipynb](notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
@@ -29,7 +31,7 @@ In B004, Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occup
 | S12 | S12 | A–C | [figure_s12_donor_clustering.ipynb](notebooks/final_figures/figure_s12_donor_clustering.ipynb) |
 | S13 | S13 | A–D | [figure_s13_donor_label_projection.ipynb](notebooks/final_figures/figure_s13_donor_label_projection.ipynb) |
 
-There are 18 manuscript figure identifiers and 20 image files because manuscript Figure S5 has three parts. The [display crosswalk](configs/manuscript_display_crosswalk.json) keeps manuscript labels separate from stable native renderer IDs and source filenames. [Current figure notebooks](notebooks/final_figures/README.md) use the November 15 numbering.
+There are 18 manuscript figure identifiers and 20 image files because manuscript Figure S5 has three parts. The [display crosswalk](configs/manuscript_display_crosswalk.json) keeps manuscript labels separate from stable native renderer IDs and source filenames. [Current figure notebooks](notebooks/final_figures/README.md) use the current manuscript numbering.
 
 ## Annotation results and scoring
 
@@ -45,7 +47,9 @@ The [B004 presentation amendment](docs/revision/b004_astra_presentation_amendmen
 
 B005 and B006 contain **288,188 and 301,280 cells**, respectively, with eight regions each. Frozen Leiden, FlowSOM, SpatialSort and PIXIE partitions retain every donor cell. FlowSOM used three all-cell passes; primary SpatialSort used seed 42 at 50 actual sweeps with `dmh_iter=5`. The [frozen donor protocol](data/frozen/donor47_results_20261114/scientific_inputs/protocol.json) records 47 proteins plus Hoechst1 for native donor Leiden-parent generation, followed by a 47-protein local hierarchy and frozen label-blind Ward coarsening. Donor PIXIE uses 47 protein image channels plus Hoechst1. These donor-parent settings differ from the B004 cell-feature benchmark, which uses 47 proteins without Hoechst1. All annotation profiles use only the same 47 proteins. The [donor score bank](data/frozen/donor47_results_20261114/manifest.json) provides the terminal response bank and offline results. Figure S12 and Tables S14a/b use equal-region clustering metrics and global common-cell seed ARI as specified.
 
-The single means-plus-fractions annotation design has **32 donor–method–model sets, 128 planned logical items and 9,468 planned cluster predictions**. Strict acceptance delivered **9,093 of 9,468 planned cluster predictions from 123 of 128 logical items**. Astra, Opus and Gemini had complete delivery; five DeepSeek items were invalid and their 375 predictions remain errors in the planned denominator. The 23-label sensitivity uses the same reference-eligible cells for both vocabularies and no separate generation protocol. The B004-selected Astra–Leiden pipeline supplies the illustrative cross-donor analysis; frozen B004 conventional classifiers are applied without donor refitting. Equal-donor native-28-label agreement ranges from 16.33% to 38.57%; the illustrative Astra–Leiden pipeline reaches 35.87%.
+The frozen November 14 donor release has **32 donor–method–model sets, 128 planned logical items and 9,468 planned cluster predictions**. Strict acceptance delivered **9,093 of 9,468 planned cluster predictions from 123 of 128 logical items**. Astra, Opus and Gemini had complete delivery; five DeepSeek items were invalid and their 375 predictions remain errors in the planned denominator. The 23-label sensitivity uses the same reference-eligible cells for both vocabularies and no separate generation protocol. The B004-selected Astra–Leiden pipeline supplies the illustrative cross-donor analysis; frozen B004 conventional classifiers are applied without donor refitting. Equal-donor native-28-label agreement ranges from 16.33% to 38.57%; the illustrative Astra–Leiden pipeline reaches 35.87%.
+
+Current Figures 5 and S13 include later DeepSeek recovery results from the saved manuscript. The frozen donor manifest and coverage above refer to the original November 14 replay.
 
 ## Reviewer experiments
 
@@ -73,4 +77,4 @@ python3.12 scripts/verify_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S8 
 
 [The checksum-indexed publication archive](data/historical/publication_before_primary47_20261109/index.json) preserves excluded figures and studies; stable experiment IDs remain in the [registry](configs/experiment_registry.json). Earlier reconstruction code and the immutable [revision release](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/releases/tag/revision-2026-10-30-v1) remain available as archival evidence. Those inputs do not define the current annotation figures or active manuscript claims. No archival release or frozen preparation was overwritten.
 
-Current manuscript PNG artwork is preserved in [the separate-figure package](figures/current_manuscript/READ_ME.txt), with [checksums and source limits](figures/current_manuscript/Figure_manifest.json). The current notebook display uses these exact PNG files. Native renderer/vector exports remain separately labeled because their palettes may differ. The original workflow raster in Figure 1A is approximately 300 dpi at its retained placement, so the package does not claim that every element meets a 600 dpi source-resolution requirement.
+The [current figure PNGs](figures/current_manuscript/PNG) match the saved November 17 manuscript. The [figure manifest](figures/current_manuscript/Figure_manifest.json) records checksums and source limits. The figure notebooks display these PNGs. The native renderer and vector exports correspond to their source snapshots.
