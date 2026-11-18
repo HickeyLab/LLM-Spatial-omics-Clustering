@@ -196,7 +196,7 @@ def figure_4(out):
     panel(f, "B", 3, 35, "Test-cell confusion")
     counts, mat = confusion_matrix(model_family="openai")
     a = axes(f, 29, 54, 56, 56)
-    h = heatmap(a, mat, counts.index, counts.columns, 0, 1, cmap="RdYlGn")
+    h = heatmap(a, mat, counts.index, counts.columns, 0, 1, cmap="RdYlGn", cell_dividers=False)
     plt.setp(a.get_xticklabels(), rotation=90)
     a.set_xlabel("Predicted cell type"); a.set_ylabel("Reference cell type")
     colorbar(f, h, (29,43,56,1.7), None, ticks=[0,.5,1])
@@ -251,10 +251,10 @@ def figure_s6(out):
     counts,row=confusion_matrix()
     panel(f,"A",3,2)
     for i,(mat,title,lim) in enumerate([(counts.to_numpy(),"Counts",float(counts.to_numpy().max())),(row,"Row fraction",1)]):
-        x=3+i*81
+        x=4.65+i*81
         text(f,x+43,7,title,size=6.5,ha="center",weight="bold")
         a=axes(f,x+22,25,56,56)
-        h=heatmap(a,mat,counts.index,counts.columns,0,lim,cmap="RdYlGn")
+        h=heatmap(a,mat,counts.index,counts.columns,0,lim,cmap="RdYlGn",cell_dividers=False)
         plt.setp(a.get_xticklabels(),rotation=90)
         a.set_xlabel("Predicted cell type");a.set_ylabel("Reference cell type")
         colorbar(f,h,(x+22,14,56,1.7),None,ticks=[0,lim])

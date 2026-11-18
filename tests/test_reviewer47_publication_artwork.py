@@ -88,9 +88,11 @@ class ReviewerPublicationArtworkTests(unittest.TestCase):
         archive = read("archive/reviewer47_publication_before_20261111/artwork_index.json")
         for entry in archive["entries"]:
             self.assertEqual(sha(ROOT / entry["archive_path"]), entry["sha256"])
-        # The original selected Astra and supplementary Opus artwork is unchanged.
-        self.assertEqual(sha(ROOT / "figures/manuscript/Figure_4.png"), "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6")
-        self.assertEqual(sha(ROOT / "figures/manuscript/Figure_S6.png"), "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d")
+        for key in ["4", "S6"]:
+            image = inventory["figures"][key]["images"][0]
+            receipt = read(f"figures/publication/Figure_{key}_verification.json")
+            self.assertEqual(sha(ROOT / image["path"]), image["sha256"])
+            self.assertEqual(image["sha256"], receipt["files"][f"Figure_{key}.png"]["sha256"])
 
 
 if __name__ == "__main__":

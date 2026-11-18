@@ -15,6 +15,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
+from matplotlib.collections import QuadMesh
 from matplotlib.text import Text
 from matplotlib.patches import FancyArrowPatch, Rectangle
 import numpy as np
@@ -91,7 +92,7 @@ def grid(ax, axis="y"):
 
 
 def heatmap(ax, data, rows, cols, vmin=0, vmax=100, cmap="RdYlGn",
-            annotate=False, fmt=".1f", size=6):
+            annotate=False, fmt=".1f", size=6, *, cell_dividers=True):
     a = np.asarray(data, float)
     p = ax.pcolormesh(np.arange(a.shape[1]+1)-.5, np.arange(a.shape[0]+1)-.5,
                       a, cmap=cmap, vmin=vmin, vmax=vmax, shading="flat",
@@ -102,10 +103,7 @@ def heatmap(ax, data, rows, cols, vmin=0, vmax=100, cmap="RdYlGn",
         ax.set_aspect("equal", adjustable="box")
     ax.set_xticks(range(len(cols)), cols)
     ax.set_yticks(range(len(rows)), rows)
-    ax.tick_params(length=0)
-    for s in ax.spines.values():
-        s.set_visible(True)
-        s.set_linewidth(.5)
+    style_heatmap_axes(ax, p, cell_dividers=cell_dividers)
     if annotate:
         for (i,j),v in np.ndenumerate(a):
             rgb = np.asarray(p.cmap(p.norm(v))[:3])
@@ -118,6 +116,29 @@ def heatmap(ax, data, rows, cols, vmin=0, vmax=100, cmap="RdYlGn",
     return p
 
 
+def style_heatmap_axes(ax, mesh, *, cell_dividers):
+    """Format a heatmap independently of its values, normalization and labels."""
+    if cell_dividers:
+        mesh.set_edgecolor("white")
+        mesh.set_linewidth(.28)
+    ax.tick_params(length=0, labelsize=6)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+
+def style_heatmap_colorbar(f, artist, cb):
+    """Tuck the color key near the matrix and keep its scale and width."""
+    bar = cb.ax.get_position()
+    plot = artist.axes.get_position()
+    fw, fh = f._physical_mm
+    if cb.orientation == "vertical":
+        cb.ax.set_position([min(bar.x0, plot.x1 + 3 / fw), bar.y0, bar.width, bar.height])
+    elif bar.y0 >= plot.y1:
+        cb.ax.set_position([bar.x0, min(bar.y0, plot.y1 + 3.8 / fh), bar.width, bar.height])
+    cb.outline.set_visible(False)
+    cb.ax.tick_params(labelsize=6, length=0, pad=1.5)
+
+
 def colorbar(f, artist, rect, label=None, ticks=None, orientation="horizontal"):
     ax = axes(f, *rect)
     cb = f.colorbar(artist,cax=ax,orientation=orientation,ticks=ticks)
@@ -125,6 +146,8 @@ def colorbar(f, artist, rect, label=None, ticks=None, orientation="horizontal"):
     cb.ax.tick_params(labelsize=5.5,length=2,width=.5,pad=1.5)
     if label:
         cb.set_label(label,fontsize=5.5,labelpad=2)
+    if isinstance(artist, QuadMesh):
+        style_heatmap_colorbar(f, artist, cb)
     return cb
 
 

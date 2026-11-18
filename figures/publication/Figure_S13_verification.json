@@ -2,9 +2,9 @@
   "figure": "Figure_S13",
   "width_mm": 165.1,
   "height_mm": 95.30911111111114,
-  "minimum_font_pt": 5.5,
+  "minimum_font_pt": 6.0,
   "font_family": "Arial",
-  "minimum_placement_width_mm": 150.091,
+  "minimum_placement_width_mm": 137.583,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
@@ -50,20 +50,20 @@
   ],
   "files": {
     "Figure_S13.svg": {
-      "sha256": "177396a77ce8d6727c14851334ed563e50055d9d19b52b9463928fe285ce4235",
-      "bytes": 60345
+      "sha256": "690af114a81ff51a766216f3316d14f98ef326ab04dd0cf518b41c88924ec850",
+      "bytes": 56124
     },
     "Figure_S13.pdf": {
-      "sha256": "f3a6cd7a1fc1ffa7706836030102a7eb9817a2b40ee99dd7e03954601ac6ec67",
-      "bytes": 45142
+      "sha256": "80577bc64501e7f44b49ba271ac2ed9aea64ebaea50692a04649e18141eece25",
+      "bytes": 45079
     },
     "Figure_S13.png": {
-      "sha256": "d5bdde583c4a4a2323241eb42349fb77b43bee851ed627c66e80161837155caa",
-      "bytes": 372804
+      "sha256": "644d885a5fcf287b3f2df1ca497b1ddd8e14ee9c3a883cbc974fdcf8bef61f4b",
+      "bytes": 353689
     },
     "Figure_S13.tiff": {
-      "sha256": "c9d599bc1ccf152272ba27c48fcaa6310c33ddc0f765993c820d6257e4114938",
-      "bytes": 1102848
+      "sha256": "fc849e23ba40d589cfc25becb704834d35863bf6cdf3ca3892e194327bbc3840",
+      "bytes": 1052604
     }
   }
 }

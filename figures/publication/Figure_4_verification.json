@@ -1,14 +1,14 @@
 {
   "figure": "Figure_4",
   "width_mm": 165.1,
-  "height_mm": 170.92676482094097,
+  "height_mm": 169.05401482094095,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4038
+    3994
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -41,8 +41,8 @@
   ],
   "layout_compaction": {
     "original_height_mm": 191,
-    "height_mm": 170.92676482094097,
-    "height_reduction_percent": 10.509547214167029,
+    "height_mm": 169.05401482094095,
+    "height_reduction_percent": 11.490044596365996,
     "vacant_bands_removed_mm": [
       [
         30.295841209829867,
@@ -50,10 +50,10 @@
       ],
       [
         39.13599999999999,
-        41.49999999999998
+        45.49999999999999
       ],
       [
-        135.72128125,
+        137.84853124999998,
         143.5
       ],
       [
@@ -82,20 +82,20 @@
   ],
   "files": {
     "Figure_4.svg": {
-      "sha256": "80413985723d62c9cb25ae5ed66e80302974992db90795d8822f1d0b4f8dfab5",
-      "bytes": 2678691
+      "sha256": "db5c7c869663cace7b5a209741f3b28b7d88a5422f3b51602209b3782a708418",
+      "bytes": 2677003
     },
     "Figure_4.pdf": {
-      "sha256": "6b3489672a160d5940e9ad5014df375a0b02f5f31e8f85d1944d5e47ac515ef9",
-      "bytes": 1336041
+      "sha256": "a1f8f6d91a2423ac73cd4a6b78b8110d38fe6222c69b38929e526b591ab40f21",
+      "bytes": 1335946
     },
     "Figure_4.png": {
-      "sha256": "31596adbcc4d444d941df0cca0e89e88c35e222bb26bf4100459d129b3b940f6",
-      "bytes": 1234229
+      "sha256": "3f731bbd9f4322d2b21df47276df7e0885ed14d44ab562a9587a925ae5680ce7",
+      "bytes": 1243044
     },
     "Figure_4.tiff": {
-      "sha256": "c4dd42c4aaf073a487c8d9652f7f9a800f934f71e74ce3d1474d68948ab9bc5c",
-      "bytes": 2250254
+      "sha256": "f565bb1fe136b915f0ca09e92d35e5eb3a77a3b856b4decd98be66c3b72bba7e",
+      "bytes": 2284342
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "figure": "Figure_3",
   "width_mm": 165.1,
-  "height_mm": 176.90938185884394,
+  "height_mm": 178.1479188348108,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4179
+    4209
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
@@ -32,8 +32,8 @@
   "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 205,
-    "height_mm": 176.90938185884394,
-    "height_reduction_percent": 13.70274055666149,
+    "height_mm": 178.1479188348108,
+    "height_reduction_percent": 13.09857617814107,
     "vacant_bands_removed_mm": [
       [
         6.286000000000009,
@@ -44,7 +44,7 @@
         43.864999999999995
       ],
       [
-        93.06047333145322,
+        93.66664061962538,
         104.49999999999999
       ],
       [
@@ -72,20 +72,20 @@
   ],
   "files": {
     "Figure_3.svg": {
-      "sha256": "fbd112815e39d3d9d03ef5ab999d211fde69ec05addd143b14a6ae0489e3e9ec",
-      "bytes": 6074701
+      "sha256": "18c77c8815a150833721320d659a431ef27e33e9593deb0d6e62c08e6d96ee84",
+      "bytes": 6075946
     },
     "Figure_3.pdf": {
-      "sha256": "2f88796936b900ee981ab7efea296df03ad46f6417d0a733a51849671d839b12",
-      "bytes": 3808096
+      "sha256": "7a189349fdd4dc818530300e5e5061a16aa78fe26a8077b14436555b7c7b025b",
+      "bytes": 3808954
     },
     "Figure_3.png": {
-      "sha256": "8587b43f4c5ad303385c95799d569f1a41292799d76ed913de2e140be361ac2a",
-      "bytes": 2858634
+      "sha256": "e4c62b81b8bd36e400b5ce5d4e7bad0be661a8bd37c8a9b1df032d44b828dbc5",
+      "bytes": 2864174
     },
     "Figure_3.tiff": {
-      "sha256": "e7cf694770952115b96b65681e752bce1242256d89c79e7af0225b7c3c8d1df1",
-      "bytes": 4629576
+      "sha256": "2d29573005ca544e83ad1032f3b52ecc547528a2911dfe4b327dd4b81fe2f7e5",
+      "bytes": 4619960
     }
   },
   "minimum_font_scope": "Native editable text. The author's original marker-list and threshold-setting illustrations retain their original raster typography."
