@@ -141,7 +141,7 @@ def figure_2(out):
     rcfg=json.loads((ROOT/"configs/figure_04_historical_claude.json").read_text())["regions"]
     for i,(letter,key,title,ylab) in enumerate([("E","weighted_f1",None,"Weighted F1"),("G","cluster_purity",None,"Cluster purity")]):
         x=3+i*83;panel(f,letter,x,121,title)
-        a=axes(f,x+12,129,63,14)
+        a=axes(f,x+15,123,57,20)
         values=[region[region.method.eq(m)].sort_values("region")[key].to_numpy() for m in method_order]
         a.boxplot(values,positions=range(4),widths=.48,showfliers=False,patch_artist=True,
                   boxprops={"facecolor":"#e5e7eb","linewidth":.5},medianprops={"color":"black","linewidth":.6},whiskerprops={"linewidth":.5},capprops={"linewidth":.5})
