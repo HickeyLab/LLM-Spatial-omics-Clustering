@@ -2,7 +2,7 @@
 
 ## Current manuscript figures
 
-[View the current Figure 1–5 and S1–S13 PNGs](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/tree/codex/rtr-submission-sync-20261115/figures/current_manuscript/PNG), or browse the [manuscript-numbered notebook index](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/codex/rtr-submission-sync-20261115/notebooks/final_figures/README.md).
+[View the current Figure 1–5 and S1–S13 PNGs](figures/current_manuscript/PNG), or browse the [manuscript-numbered notebook index](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/codex/rtr-submission-sync-20261115/notebooks/final_figures/README.md).
 
 The sections below document the earlier B004 release on this branch.
 
