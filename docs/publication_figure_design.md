@@ -54,7 +54,7 @@ recommended placement, its panel letters are approximately 8 pt.
 PDF fonts are embedded TrueType and SVG labels remain editable text. An
 installed Arial is needed to reproduce the committed font appearance.
 
-Main and supplementary artwork use lowercase panel letters without
+Main and supplementary artwork use uppercase panel letters without
 parentheses. These letters are black Arial Bold. Captions may refer to
 panels using parenthesized letters. Single-panel artwork without panel
 identifiers needs no lettering.

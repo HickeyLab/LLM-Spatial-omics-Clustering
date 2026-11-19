@@ -9,7 +9,7 @@ lossless RGB TIFF versions. Use the current
 Figure numbers, figure-level titles and explanatory notes remain in manuscript
 captions. Descriptive subfigure titles are omitted. Distinguishing condition,
 model, method, population and metric labels, axes, keys, units and scientific
-values are retained. Panel letters are lowercase, unparenthesized, and set
+values are retained. Panel letters are uppercase, unparenthesized, and set
 in black Arial Bold. The [design notes](../../docs/publication_figure_design.md)
 document the type sizes and proportional placement.
 

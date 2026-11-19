@@ -3740,7 +3740,7 @@ L 450.708661 511.071909
    </g>
   </g>
   <g id="panel-letter-a">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">a</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">A</text>
   </g>
   <g id="text_40">
    <text style="font-size: 6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(14.873807 24.420672)">Multiplexed</text>
@@ -3784,13 +3784,13 @@ L 450.708661 511.071909
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="433.984252" y="44.483501" transform="rotate(-0 433.984252 44.483501)">H5AD</text>
   </g>
   <g id="panel-letter-b">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="93.600266" transform="rotate(-0 8.503937 93.600266)">b</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="93.600266" transform="rotate(-0 8.503937 93.600266)">B</text>
   </g>
   <g id="panel-letter-c">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="93.600266" transform="rotate(-0 240.944882 93.600266)">c</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="93.600266" transform="rotate(-0 240.944882 93.600266)">C</text>
   </g>
   <g id="panel-letter-d">
-   <text style="font-weight: 700; font-size: 8.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="275.795928" transform="rotate(-0 8.503937 275.795928)">d</text>
+   <text style="font-weight: 700; font-size: 8.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="275.795928" transform="rotate(-0 8.503937 275.795928)">D</text>
   </g>
   <g id="text_50">
    <text style="font-size: 7.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #172127" x="162.141732" y="275.531647" transform="rotate(-0 162.141732 275.531647)">Mesmer</text>
@@ -3967,7 +3967,7 @@ L 450.708661 511.071909
    <text style="font-size: 5.8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #435159" x="220.393701" y="508.633167" transform="rotate(-0 220.393701 508.633167)">8</text>
   </g>
   <g id="panel-letter-e">
-   <text style="font-weight: 700; font-size: 8.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="221.385827" y="275.795928" transform="rotate(-0 221.385827 275.795928)">e</text>
+   <text style="font-weight: 700; font-size: 8.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="221.385827" y="275.795928" transform="rotate(-0 221.385827 275.795928)">E</text>
   </g>
   <g id="text_108">
    <text style="font-size: 7.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #172127" x="280.913386" y="275.575522" transform="rotate(-0 280.913386 275.575522)">CellposeSAM</text>
@@ -4060,7 +4060,7 @@ L 450.708661 511.071909
    <text style="font-size: 5.8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #435159" x="339.165354" y="508.633167" transform="rotate(-0 339.165354 508.633167)">8</text>
   </g>
   <g id="panel-letter-f">
-   <text style="font-weight: 700; font-size: 8.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="340.15748" y="275.795928" transform="rotate(-0 340.15748 275.795928)">f</text>
+   <text style="font-weight: 700; font-size: 8.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="340.15748" y="275.795928" transform="rotate(-0 340.15748 275.795928)">F</text>
   </g>
   <g id="text_138">
    <text style="font-size: 7.2px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #172127" x="399.685039" y="275.533335" transform="rotate(-0 399.685039 275.533335)">CellposeCyto3</text>

@@ -81,11 +81,10 @@ def text(f, x, y, value, size=6, **kw):
 
 
 def panel(f, letter, x, y, title=None, title_x=None, *, letter_size=None, letter_va="top"):
-    letter = letter.lower()
-    label = STYLE["panel_letter_format"].format(letter=letter)
+    label = STYLE["panel_letter_format"].format(letter=letter.upper())
     size = STYLE["panel_letter_font_pt"] if letter_size is None else letter_size
     text(f, x, y, label, size=size, weight=STYLE["panel_letter_weight"], color="black",
-         va=letter_va, gid=f"{PANEL_LETTER_GID}{letter}")
+         va=letter_va, gid=f"{PANEL_LETTER_GID}{letter.lower()}")
     if title:
         text(f, title_x if title_x is not None else x + 8, y + .35,
              title, size=6.5)
@@ -327,7 +326,7 @@ def finish(f, name, output, inputs=None, notes=None):
              "minimum_placement_width_mm":round(fw*5/min_size,3),
              "raster_dpi":600,"raster_size_pixels":pixel_size,
              "vector_text_editable":True,
-             "panel_letter_format":STYLE["panel_letter_format"].format(letter="a"),
+             "panel_letter_format":STYLE["panel_letter_format"].format(letter="A"),
              "panel_letter_weight":STYLE["panel_letter_weight"],
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
              "provider_logos":getattr(f,"_provider_logo_overlays",None),
