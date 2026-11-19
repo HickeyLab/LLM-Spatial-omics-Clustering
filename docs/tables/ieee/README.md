@@ -1,5 +1,8 @@
 # IEEE-style supplementary tables
 
+Current routing: S1 and S2A/B remain active here. Current S6 and the added reviewer tables use [ieee_reviewer47_20261111](../ieee_reviewer47_20261111/manifest.json). The S6 exports retained in this directory preserve the preceding frozen bank and are not the active numerical table source.
+
+
 These are format-only versions of the seven retained manuscript tables. The exact **414 cell strings, their order, numerical values and units are unchanged** from the verified Google Docs accepted view. Tables S6a–d also match their frozen scored CSVs exactly.
 
 The [IEEE Editorial Style Manual](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE-Editorial-Style-Manual-for-Authors.pdf) places a table's label and descriptive caption above it. These assets use centered captions, Times New Roman at 10 pt, a white background, right-aligned numerical columns, and only top, header-bottom and bottom horizontal rules. Vertical rules and interior body-row grids are omitted. **Existing supplementary identifiers are retained**; IEEE's Roman-numeral renumbering convention has not been applied.

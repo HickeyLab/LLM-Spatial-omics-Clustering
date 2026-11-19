@@ -1,0 +1,160 @@
+{
+  "schema": "reviewer47.preparation_record.v1",
+  "recorded_utc": "2026-11-11T00:07:51.682976+00:00",
+  "base_main_sha": "663545d2a5b0afde0b6920dc72101a4caf3673ab",
+  "status": "offline_completed_inference_disabled",
+  "protocol": "configs/reviewer_annotation47_credit_batch_v1.json",
+  "protocol_sha256": "f3a64db5069c6194dd37d4ef2e353995c3b64dde42b8fecbb590a7df7dd339ee",
+  "new_paid_calls": 0,
+  "new_cloud_jobs": 0,
+  "execution_enabled": false,
+  "b004": {
+    "artifact_directory": "/Users/zacharydeutsch/.codex/analysis_artifacts/reviewer47_credit_batch_20261110/b004_preparation_v2",
+    "manifest_sha256": "9518f3195b8c5a6d087c6642b4e2d84a120076a2730bac55e2d6390a825837d5",
+    "request_items": 276,
+    "annotation_sets": 69,
+    "conditional_reuse_items": 109,
+    "conditional_new_items": 167,
+    "all_reuse_admissions_pending": true,
+    "exact_source_manifest_sha256": "ec0b91b1cb769c8b05a68272f9d9de2c0e946600e24412910ffcd6dc34f18303",
+    "accepted_result_manifest_sha256": "c7edd3c1611ae31b7cb08e845003437c4ef49273cdced8860362e3d1a5052f6c"
+  },
+  "donors": {
+    "external_thread_id": "01a1c7cb-7c45-7a63-8297-8b4b7f7c3fed",
+    "expected_sweeps": 50,
+    "dmh_iter": 5,
+    "seeds": [
+      42,
+      43
+    ],
+    "primary_seed": 42,
+    "both_chains_required": true,
+    "cells": {
+      "B005": 288188,
+      "B006": 301280
+    },
+    "annotation_admitted": false,
+    "duplicate_jobs_allowed": false
+  },
+  "offline_index": "data/frozen/reviewer47_offline_20261110/index.json",
+  "offline_index_sha256": "80dd32325560ed4479f4b77fdbbb059c577943888013c0f74439242bad064f28",
+  "preparation_certificate": {
+    "schema": "reviewer47.preparation_certificate.v1",
+    "status": "blocked_before_launch",
+    "passed": false,
+    "offline_checks": {
+      "passed": true,
+      "request_items": 276,
+      "logical_annotation_sets": 69,
+      "reference_labels_used_for_inputs": false,
+      "paid_calls": 0,
+      "manifest_sha256": "9518f3195b8c5a6d087c6642b4e2d84a120076a2730bac55e2d6390a825837d5",
+      "protocol_sha256": "f3a64db5069c6194dd37d4ef2e353995c3b64dde42b8fecbb590a7df7dd339ee",
+      "inference_authorized": false
+    },
+    "execution_enabled": false,
+    "paid_calls": 0,
+    "batch_only": true,
+    "scientific_repetitions": 1,
+    "conditional_b004_reservations": {
+      "openai": {
+        "planned_items": 64,
+        "conditional_reuse_candidates": 32,
+        "new_items_if_reuse_admitted": 32,
+        "funding": "existing_openai_api_balance",
+        "full_output_plus_byte_input_proxy_usd": "27.535835",
+        "pricing_and_tokenization_admitted": false
+      },
+      "anthropic": {
+        "planned_items": 84,
+        "conditional_reuse_candidates": 32,
+        "new_items_if_reuse_admitted": 52,
+        "funding": "third_party_balance",
+        "full_output_plus_byte_input_proxy_usd": "18.888178",
+        "pricing_and_tokenization_admitted": false
+      },
+      "google": {
+        "planned_items": 64,
+        "conditional_reuse_candidates": 32,
+        "new_items_if_reuse_admitted": 32,
+        "funding": "third_party_balance",
+        "full_output_plus_byte_input_proxy_usd": "151.259167",
+        "pricing_and_tokenization_admitted": false
+      },
+      "deepseek": {
+        "planned_items": 64,
+        "conditional_reuse_candidates": 13,
+        "new_items_if_reuse_admitted": 51,
+        "funding": "third_party_balance",
+        "full_output_plus_byte_input_proxy_usd": "9.634007192",
+        "pricing_and_tokenization_admitted": false
+      }
+    },
+    "donor_request_count": null,
+    "donor_count_reason": "Occupied clusters and admitted memberships pending",
+    "blockers": [
+      "no_separate_launch_instruction_for_this_preflight",
+      "native_astra_exact_model_and_seed_support_not_admitted",
+      "existing_openai_project_balance_and_credit_reservation_not_admitted",
+      "reused_outputs_require_exact_wire_model_route_reconciliation",
+      "native_google_batch_long_output_checkpoint_and_pricing_not_admitted",
+      "deepseek_morph_fp8_batch_long_output_contract_not_admitted",
+      "new_campaign_cash_and_credit_caps_not_bound",
+      "donor_both_chains_50_sweeps_not_admitted",
+      "current_donor_labels_other_memberships_and_pixie_correspondence_not_admitted"
+    ],
+    "donor_observation": {
+      "producer_thread_id": "01a1c7cb-7c45-7a63-8297-8b4b7f7c3fed",
+      "producer_root": "/Users/zacharydeutsch/.codex/analysis_artifacts/spatialsort47_b005_b006_20261110",
+      "observed_utc": "2026-11-10T23:58:40.631776+00:00",
+      "status": "awaiting_completion",
+      "admitted_for_annotation": false,
+      "approved_external_contract": {
+        "expected_sweeps": 50,
+        "dmh_iter": 5,
+        "beta_rounds_per_sweep": 5,
+        "required_seeds": [
+          42,
+          43
+        ],
+        "primary_seed": 42,
+        "requested_clusters": 300,
+        "approval_source": "User instruction in this chat, 2026-11-10: use current 50-sweep donor runs"
+      },
+      "expected_total_cells": 589468,
+      "full_observation_sha256": "d027589d35dc3c6a06795731a4bcfc120f2e0c079644ff7af7f349b2cbd43940"
+    },
+    "note": "This is not a transport launch certificate. No account credit source is restricted to Pro promotions."
+  },
+  "checks": {
+    "command": "PYTHONPATH=src:. OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 python3.12 -m unittest discover -s tests -p 'test_reviewer47_*.py' -q",
+    "tests_passed": 113,
+    "actual_b004_coverage_and_source_replay_passed": true,
+    "cli_help_passed": true,
+    "git_diff_check_passed": true,
+    "openai_api_key_observed_available": false,
+    "independent_reservation_exploit_rejection_verified": true
+  },
+  "implementation_files": {
+    "scripts/reviewer47.py": "2342834aa81b2206ae588f6cbc7167de57f8507484d49390305b7d3157ac8b57",
+    "scripts/revision/reviewer47/__init__.py": "e5140bc18a3a74a404eaeb0eefc068a4e13c5eea98a05fe9008cc4c68bc6b8f8",
+    "scripts/revision/reviewer47/common.py": "42cc3efb8d451029ded070e4abeb6039f10a644425236ac24a72733b7e5467b7",
+    "scripts/revision/reviewer47/donors.py": "274ad54296197d20600a423dd238de680823255fff41c476b41fabb1d9dca5c4",
+    "scripts/revision/reviewer47/native_astra.py": "19e7f58c18c0e92d1c726619f4ff43a1faeace7e5ea9d639c030dc5825d89f91",
+    "scripts/revision/reviewer47/offline.py": "2d890529e2aec372e57b6ae4e0f3ac6215b7e026d05c0d5ef376d5a441eb50bd",
+    "scripts/revision/reviewer47/preflight.py": "b26e15795b7886233f73a7e66cd823f31c178c80b2a57725a3d30981b3ae5265",
+    "scripts/revision/reviewer47/prepare.py": "69c96258fee6db58c23034a4b17b818ae91c44db9c926cf801cdda63cacb8400",
+    "scripts/revision/reviewer47/transport.py": "e87fc6fd70c37d3afb28df4682db42549ad8899ae6e0583ca30f4595a0f8bd6b",
+    "tests/test_reviewer47_donors.py": "a1b38fba8435cd7982291672fc53d22858347d708f6abf6c64e12048e733e3de",
+    "tests/test_reviewer47_native_astra.py": "e73d7ade756b82825162d06df414b9452944d84292045274cef79db46939a5f6",
+    "tests/test_reviewer47_offline.py": "a070ca0faa87bd533527194a69013a2f28d629ebb46bb23781bb28e0f2049dfb",
+    "tests/test_reviewer47_preflight.py": "a34ea34558a14756c2266bce6e17c360707d53d4b03812343dcb1ca18d59387b",
+    "tests/test_reviewer47_prepare.py": "bac2e0f6ccaae6c2c84adc0e147e1ce81af7691b062542e2c5e9e3071affb172",
+    "tests/test_reviewer47_transport.py": "2be1fe29065b30ec873920b7aa547867ae684b9f1645725f03a34218fc9fab33"
+  },
+  "publication": {
+    "current_figures_changed": false,
+    "manuscript_changed": false,
+    "google_doc_mode_for_later_edits": "Suggesting"
+  }
+}

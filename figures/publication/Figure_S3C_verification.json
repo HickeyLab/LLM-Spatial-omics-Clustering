@@ -1,22 +1,24 @@
 {
   "figure": "Figure_S3C",
   "width_mm": 165.1,
-  "height_mm": 120.41955902777775,
+  "height_mm": 119.71400347222219,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    2844
+    2827
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "panel_letter_weight": "bold",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 140,
-    "height_mm": 120.41955902777775,
-    "height_reduction_percent": 13.986029265873036,
+    "height_mm": 119.71400347222219,
+    "height_reduction_percent": 14.489997519841294,
     "vacant_bands_removed_mm": [
       [
         6.039999999999979,
@@ -31,23 +33,25 @@
   "inputs": {
     "data/frozen/figure_s05/celltype_mean_effects.csv": "ad08d229fbef84f0c175ba5c518685d340dd24deaa4a86a42407a7f7f6fb7f46"
   },
-  "notes": [],
+  "notes": [
+    "Both backends share cell-type and method orders ranked by descending mean displayed F1 change."
+  ],
   "files": {
     "Figure_S3C.svg": {
-      "sha256": "1ecdc8062efcf927a5c4d5a7d58ea86e972f99a3e252c1a0f4f2b53b03e6131a",
-      "bytes": 167818
+      "sha256": "27f0c700a79f0e61eddfd922b7f627b1ad43a6ff54fd61a62684ac6e9008bda2",
+      "bytes": 177103
     },
     "Figure_S3C.pdf": {
-      "sha256": "6277afb436b0753f04303bdc764b6b0122ce94e240cef02030f85445423c57c7",
-      "bytes": 52304
+      "sha256": "7f9890e929991a43e5b6ef45978a922ce4b821702ffb0297a9dcbd38adfb6091",
+      "bytes": 48440
     },
     "Figure_S3C.png": {
-      "sha256": "1e0db1ac622ec09fae48d77b005d9e4d27f858f9e6ef47b10ade28e531c3799d",
-      "bytes": 579370
+      "sha256": "bd05a880c0b004953926dbfb445645ce6dc07febbea0c92edc21274a5e30d605",
+      "bytes": 595064
     },
     "Figure_S3C.tiff": {
-      "sha256": "65d465fac73d454995a5d34d7413e2c00851c415c676e0b66dd2185363fb3fc8",
-      "bytes": 1632404
+      "sha256": "30b30c912d1407fd3fedfe17e6e426d58dbd2c49574941793d8376f10f414017",
+      "bytes": 1608600
     }
   }
 }

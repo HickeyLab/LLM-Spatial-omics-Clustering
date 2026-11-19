@@ -1,0 +1,44 @@
+{
+  "schema": "reviewer47.previous_publication_metadata.v1",
+  "source_git_commit": "55638ee701e32e06d7e4553e4fbc4b73b990cc6e",
+  "files": [
+    {
+      "original_path": "README.md",
+      "archive_path": "archive/reviewer47_publication_before_20261111/README.md",
+      "sha256": "819e494ff14f6d8b0098c28cc49b6181fbc27407679a1e83abd3da5f56e2c589",
+      "bytes": 7139
+    },
+    {
+      "original_path": "docs/manuscript_reproduction.md",
+      "archive_path": "archive/reviewer47_publication_before_20261111/docs/manuscript_reproduction.md",
+      "sha256": "2a9eb9c047139111739a04c2b7cf9a6ec20982ee439abf84a57db0566f68b2c3",
+      "bytes": 5989
+    },
+    {
+      "original_path": "configs/annotation47_active_study.json",
+      "archive_path": "archive/reviewer47_publication_before_20261111/configs/annotation47_active_study.json",
+      "sha256": "440a956f4eb50ddb37ce876bb495eb2ca9fe334b37a477c86730a0926586ca53",
+      "bytes": 7921
+    },
+    {
+      "original_path": "configs/experiment_registry.json",
+      "archive_path": "archive/reviewer47_publication_before_20261111/configs/experiment_registry.json",
+      "sha256": "2c1c66820c05278f94ce27c8d379c8c575b1d635f0c0e3b74fcaf8a31ff8f495",
+      "bytes": 5392
+    },
+    {
+      "original_path": "tests/test_annotation47_active_study.py",
+      "archive_path": "archive/reviewer47_publication_before_20261111/tests/test_annotation47_active_study.py",
+      "sha256": "ad021e9e24ea742d94100ad9cc5ead4459b10ce846038cbdce327de6a49828c6",
+      "bytes": 10158
+    },
+    {
+      "original_path": "scripts/revision/score_annotation47_completed.py",
+      "archive_path": "archive/reviewer47_publication_before_20261111/scripts/revision/score_annotation47_completed.py",
+      "sha256": "8dcf569d299aceb35dc075aef5ab6bfc34291902c58bb77bcab6cd4eec949ae1",
+      "bytes": 34058
+    }
+  ],
+  "preservation": "Original Git HEAD metadata; dirty checkouts and frozen data were not reset or overwritten.",
+  "artwork_index": "artwork_index.json"
+}

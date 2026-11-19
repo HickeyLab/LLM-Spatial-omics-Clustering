@@ -1,0 +1,712 @@
+{
+  "schema": "donor47.ieee_table_cells.v1",
+  "tables": {
+    "S13a": {
+      "rows": [
+        [
+          "Clustering method",
+          "Model",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "34.22",
+          "0.3095"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "35.37",
+          "0.2990"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "32.80",
+          "0.3041"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "32.03",
+          "0.2865"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "36.00",
+          "0.3626"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "36.39",
+          "0.3558"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "37.07",
+          "0.3758"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "30.35",
+          "0.3061"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "27.71",
+          "0.1976"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "28.15",
+          "0.2009"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "25.55",
+          "0.1940"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "25.18",
+          "0.1630"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "27.06",
+          "0.1782"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "29.15",
+          "0.1802"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "27.75",
+          "0.1773"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "27.64",
+          "0.1705"
+        ]
+      ],
+      "caption": "Table S13a. B005 donor annotation.",
+      "note": "Agreement and macro-F1 average the donor's eight regions equally. Cell- and cluster-level prediction coverage was 100% in all conditions. The original 28-label vocabulary includes Noise (code 21). Missing or invalid predictions remain errors in the fixed planned denominator and are distinct from valid Noise predictions. One annotation was planned per cluster and condition, with accepted outputs scored where available. No uncertainty from repeated generations is estimated.",
+      "cell_order_sha256": "029040a75da6b960fb6df90ccab9b5641cc365683307efd3873cf5d31d4d8679",
+      "sources": {
+        "annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
+      }
+    },
+    "S13b": {
+      "rows": [
+        [
+          "Clustering method",
+          "Model",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "37.51",
+          "0.2955"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "41.77",
+          "0.3344"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "38.74",
+          "0.2962"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "24.56",
+          "0.1959"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "32.91",
+          "0.2586"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "35.67",
+          "0.2834"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "38.12",
+          "0.2736"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "25.69",
+          "0.2284"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "30.69",
+          "0.1887"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "29.70",
+          "0.1918"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "28.17",
+          "0.1871"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "17.09",
+          "0.1196"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "22.29",
+          "0.1205"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "26.77",
+          "0.1283"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "18.28",
+          "0.1116"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "18.38",
+          "0.0989"
+        ]
+      ],
+      "caption": "Table S13b. B006 donor annotation.",
+      "note": "Agreement and macro-F1 average the donor's eight regions equally. Cell- and cluster-level prediction coverage was 100% in all conditions. The original 28-label vocabulary includes Noise (code 21). Missing or invalid predictions remain errors in the fixed planned denominator and are distinct from valid Noise predictions. One annotation was planned per cluster and condition, with accepted outputs scored where available. No uncertainty from repeated generations is estimated.",
+      "cell_order_sha256": "dc0fcdd8cbe603cec80055657b6650ed07c1db044e86b943b53a27dfef778bc9",
+      "sources": {
+        "annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
+      }
+    },
+    "S14a": {
+      "rows": [
+        [
+          "Donor",
+          "Clustering method",
+          "Cells",
+          "Clusters",
+          "Purity",
+          "ARI",
+          "NMI"
+        ],
+        [
+          "B005",
+          "Leiden",
+          "288,188",
+          "300",
+          "0.7392",
+          "0.2261",
+          "0.5209"
+        ],
+        [
+          "B005",
+          "FlowSOM",
+          "288,188",
+          "299",
+          "0.6896",
+          "0.3555",
+          "0.5292"
+        ],
+        [
+          "B005",
+          "SpatialSort",
+          "288,188",
+          "298",
+          "0.5773",
+          "0.2329",
+          "0.4277"
+        ],
+        [
+          "B005",
+          "PIXIE",
+          "288,188",
+          "300",
+          "0.5999",
+          "0.2673",
+          "0.4094"
+        ],
+        [
+          "B006",
+          "Leiden",
+          "301,280",
+          "300",
+          "0.7309",
+          "0.2436",
+          "0.5362"
+        ],
+        [
+          "B006",
+          "FlowSOM",
+          "301,280",
+          "300",
+          "0.6153",
+          "0.3529",
+          "0.4750"
+        ],
+        [
+          "B006",
+          "SpatialSort",
+          "301,280",
+          "270",
+          "0.5600",
+          "0.1703",
+          "0.4330"
+        ],
+        [
+          "B006",
+          "PIXIE",
+          "301,280",
+          "300",
+          "0.5116",
+          "0.2371",
+          "0.4106"
+        ]
+      ],
+      "caption": "Table S14a. Frozen donor clustering.",
+      "note": "Partitions use frozen method-specific inputs, and annotation profiles contain all 47 protein markers. Clustering is evaluated against the original 28-label reference, including Noise. Purity, adjusted Rand index and normalized mutual information average the eight regions equally. Cell and nonempty-cluster counts cover the whole donor. SpatialSort seed 42 is primary, with 50 sweeps and five DMH iterations per sweep in each donor chain.",
+      "cell_order_sha256": "01e80bcfd01c950af984eb7d388723bd4dd5e651d7a5618fe90cdd2784c19565",
+      "sources": {
+        "clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
+        "clustering_pooled_metrics.csv": "c284bd9ed6922b6faff1d8ca17f1c5d6937ded7df6272ff6f2ef8a817af8f435"
+      }
+    },
+    "S14b": {
+      "rows": [
+        [
+          "Donor",
+          "Cells",
+          "Seed 42 clusters",
+          "Seed 43 clusters",
+          "Partition ARI"
+        ],
+        [
+          "B005",
+          "288,188",
+          "298",
+          "298",
+          "0.6917"
+        ],
+        [
+          "B006",
+          "301,280",
+          "270",
+          "267",
+          "0.5805"
+        ]
+      ],
+      "caption": "Table S14b. SpatialSort comparison across random seeds.",
+      "note": "Both seeds use the same donor cells, 47-marker source and computational budget of 50 sweeps with five DMH iterations per sweep. Partition ARI compares the two sets of cluster assignments across all common donor cells. Seed 43 is used only to compare clustering results across random seeds, without additional annotation calls or reference-guided seed selection.",
+      "cell_order_sha256": "879e5933bf9716b7ec9e28b6b1dbb10005d20448bf748d2d2212b2c540bda9e6",
+      "sources": {
+        "spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
+      }
+    },
+    "S15a": {
+      "rows": [
+        [
+          "Clustering method",
+          "Model",
+          "Original 28-label agreement (%)",
+          "Projected 23-label agreement (%)",
+          "Change (pp)",
+          "Original 28-label macro-F1",
+          "Projected 23-label macro-F1",
+          "Projected-vocabulary coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "35.70",
+          "42.25",
+          "+6.55",
+          "0.3075",
+          "0.3881",
+          "82.34"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "36.15",
+          "40.14",
+          "+3.99",
+          "0.2793",
+          "0.3400",
+          "84.20"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "33.01",
+          "38.06",
+          "+5.05",
+          "0.2890",
+          "0.3614",
+          "84.50"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "32.11",
+          "39.31",
+          "+7.20",
+          "0.2659",
+          "0.3424",
+          "79.33"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "33.78",
+          "36.74",
+          "+2.96",
+          "0.3295",
+          "0.3879",
+          "63.98"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "35.10",
+          "37.52",
+          "+2.42",
+          "0.3273",
+          "0.3833",
+          "66.20"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "34.95",
+          "37.54",
+          "+2.59",
+          "0.3411",
+          "0.4012",
+          "65.48"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "27.90",
+          "31.14",
+          "+3.24",
+          "0.2788",
+          "0.3344",
+          "55.82"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "28.28",
+          "32.98",
+          "+4.70",
+          "0.1838",
+          "0.2309",
+          "82.96"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "28.46",
+          "31.64",
+          "+3.18",
+          "0.1862",
+          "0.2282",
+          "80.76"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "25.93",
+          "30.49",
+          "+4.57",
+          "0.1814",
+          "0.2267",
+          "82.96"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "24.47",
+          "29.88",
+          "+5.41",
+          "0.1523",
+          "0.2025",
+          "75.94"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "28.05",
+          "36.91",
+          "+8.86",
+          "0.1703",
+          "0.2249",
+          "93.56"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "30.29",
+          "37.98",
+          "+7.69",
+          "0.1738",
+          "0.2276",
+          "94.79"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "29.06",
+          "38.21",
+          "+9.15",
+          "0.1725",
+          "0.2286",
+          "88.49"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "28.44",
+          "37.94",
+          "+9.50",
+          "0.1649",
+          "0.2235",
+          "86.49"
+        ]
+      ],
+      "caption": "Table S15a. B005 evaluation using 28 and 23 labels.",
+      "note": "Both vocabularies use exactly the same reference-eligible cells. The 23-label projection merges or renames the specified classes. Reference ITLN+ Epithelial, Noise and PDPN+ Stromal cells are excluded from the eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells from evaluation. Projected-vocabulary coverage is separate from prediction coverage. Macro-F1 uses the stated fixed vocabulary of 28 or 23 labels. This evaluation using 28 and 23 labels changes the number of classes without generating new predictions.",
+      "cell_order_sha256": "80059892dd398b7dedc19171d2ad9fc7037ae1d19c75435ad28e2b0c59032b22",
+      "sources": {
+        "annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
+      }
+    },
+    "S15b": {
+      "rows": [
+        [
+          "Clustering method",
+          "Model",
+          "Original 28-label agreement (%)",
+          "Projected 23-label agreement (%)",
+          "Change (pp)",
+          "Original 28-label macro-F1",
+          "Projected 23-label macro-F1",
+          "Projected-vocabulary coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "37.70",
+          "44.66",
+          "+6.97",
+          "0.2661",
+          "0.3413",
+          "86.18"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "41.60",
+          "46.20",
+          "+4.60",
+          "0.3012",
+          "0.3654",
+          "84.05"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "39.06",
+          "45.03",
+          "+5.97",
+          "0.2756",
+          "0.3452",
+          "84.65"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "23.78",
+          "27.33",
+          "+3.54",
+          "0.1691",
+          "0.2217",
+          "81.58"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "33.26",
+          "35.31",
+          "+2.05",
+          "0.2513",
+          "0.2960",
+          "76.52"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "36.13",
+          "38.02",
+          "+1.89",
+          "0.2760",
+          "0.3236",
+          "76.19"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "38.88",
+          "41.13",
+          "+2.25",
+          "0.2692",
+          "0.3174",
+          "77.11"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "25.03",
+          "27.02",
+          "+1.99",
+          "0.2209",
+          "0.2537",
+          "55.49"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "30.87",
+          "34.00",
+          "+3.13",
+          "0.1730",
+          "0.2122",
+          "85.81"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "29.77",
+          "32.12",
+          "+2.35",
+          "0.1782",
+          "0.2160",
+          "78.65"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "28.15",
+          "33.30",
+          "+5.14",
+          "0.1726",
+          "0.2168",
+          "83.56"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "16.45",
+          "20.12",
+          "+3.66",
+          "0.1078",
+          "0.1332",
+          "74.84"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "21.52",
+          "32.76",
+          "+11.24",
+          "0.1143",
+          "0.1625",
+          "72.02"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "26.19",
+          "30.81",
+          "+4.62",
+          "0.1226",
+          "0.1578",
+          "70.39"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "17.29",
+          "28.61",
+          "+11.32",
+          "0.1072",
+          "0.1542",
+          "71.26"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "19.16",
+          "24.62",
+          "+5.46",
+          "0.0986",
+          "0.1192",
+          "93.65"
+        ]
+      ],
+      "caption": "Table S15b. B006 evaluation using 28 and 23 labels.",
+      "note": "Both vocabularies use exactly the same reference-eligible cells. The 23-label projection merges or renames the specified classes. Reference ITLN+ Epithelial, Noise and PDPN+ Stromal cells are excluded from the eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells from evaluation. Projected-vocabulary coverage is separate from prediction coverage. Macro-F1 uses the stated fixed vocabulary of 28 or 23 labels. This evaluation using 28 and 23 labels changes the number of classes without generating new predictions.",
+      "cell_order_sha256": "984ff92a854fd78d932d42cba01b2cad99a0de82b64701bfcc7cda4cf2c89e27",
+      "sources": {
+        "annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
+      }
+    }
+  }
+}

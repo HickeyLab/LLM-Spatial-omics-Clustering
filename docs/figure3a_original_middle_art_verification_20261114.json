@@ -1,0 +1,92 @@
+{
+  "status": "pass",
+  "source_pdf": "data/frozen/biorender_workflows/source_canvas.pdf",
+  "source_pdf_sha256": "ce49dac76cbf579e6b13af51a2c76872fe6cfd6b1e0be5308a09dc935bc09e2b",
+  "comparison_commit": "a21bea9",
+  "original_art_checks": [
+    {
+      "label": "original JSON marker-list image",
+      "source_xref": 55,
+      "source_alpha_xref": 95,
+      "size_pixels": [
+        1542,
+        568
+      ],
+      "source_RGB_sha256": "e76d302d761c4467b7f33ea990328ee572ceed99ab372e8e3a92d9aaece81fae",
+      "source_alpha_sha256": "aa929f00eed141175ad2bb1c6d074a5efc67261f236357c1c8de6835aa58e3bf",
+      "matches": [
+        {
+          "composed_xref": 74,
+          "composed_alpha_xref": 75,
+          "RGB_pixels_exact": true,
+          "alpha_pixels_exact": true,
+          "composed_placement_mm": [
+            [
+              58.31533584594726,
+              15.64558490117391,
+              89.49152827792697,
+              27.129421785142686
+            ]
+          ],
+          "RGB_sha256": "e76d302d761c4467b7f33ea990328ee572ceed99ab372e8e3a92d9aaece81fae",
+          "alpha_sha256": "aa929f00eed141175ad2bb1c6d074a5efc67261f236357c1c8de6835aa58e3bf"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "original five-setting threshold image",
+      "source_xref": 58,
+      "source_alpha_xref": 93,
+      "size_pixels": [
+        1184,
+        546
+      ],
+      "source_RGB_sha256": "f2f919551b088c9c66f7deb376aa2e21e0505e85a1afc585dab989e77c2e5cc6",
+      "source_alpha_sha256": "81e3056c8ebb4028312be5753fbaae580fb288a22125d595a73df1f3cae1082b",
+      "matches": [
+        {
+          "composed_xref": 76,
+          "composed_alpha_xref": 77,
+          "RGB_pixels_exact": true,
+          "alpha_pixels_exact": true,
+          "composed_placement_mm": [
+            [
+              95.46061375935872,
+              15.021579869588216,
+              119.26388736300997,
+              25.998429234822588
+            ]
+          ],
+          "RGB_sha256": "f2f919551b088c9c66f7deb376aa2e21e0505e85a1afc585dab989e77c2e5cc6",
+          "alpha_sha256": "81e3056c8ebb4028312be5753fbaae580fb288a22125d595a73df1f3cae1082b"
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "geometry": {
+    "size_pixels": [
+      3900,
+      4179
+    ],
+    "dimensions_unchanged": true,
+    "B_to_E_pixel_identical_from_y34mm": true,
+    "comparison_start_row": 804,
+    "main_headed_arrow_lengths_mm": [
+      2.888,
+      2.751,
+      2.889
+    ],
+    "original_middle_gaps_mm": {
+      "JSON_end_to_middle_shaft": 1.594,
+      "middle_tip_to_threshold_start": 1.624
+    },
+    "overlay_compaction_shift_mm": 1.2139999999999906
+  },
+  "Figure2A_source_branch_unchanged": true,
+  "Figure2A_clearance_mm": 1.83,
+  "visual_review": "Original JSON marker-list and five-setting threshold raster artwork are visible in their original source positions. The original short connectors and fork/join brackets are intact. No replacement boxes, clipped artwork or stray line extensions remain.",
+  "protocol_context": "The original marker-list and threshold panels are schematic. Current primary arms use fixed all-marker profiles, and selected-marker controls follow Section 2.11. No scientific input or result is changed.",
+  "composed_figure": "figures/publication/Figure_3.pdf"
+}

@@ -1,0 +1,29 @@
+cell_type_update,color_hex
+Epithelial,#1f77b4
+Stromal,#aec7e8
+Smooth muscle,#ff7f0e
+Plasma,#ffbb78
+M2 Macrophage,#2ca02c
+CD8+ T,#98df8a
+Nerve,#d62728
+Noise,#ff9896
+CD49a+ Smooth muscle,#9467bd
+CD66+ Epithelial,#c5b0d5
+TA,#8c564b
+CD4+ T,#c49c94
+CD36 low Endothelial,#e377c2
+Goblet,#f7b6d2
+CD36 high Endothelial,#7f7f7f
+MUC1+ Epithelial,#c7c7c7
+ITLN+ Epithelial,#bcbd22
+DC,#dbdb8d
+PDPN+ Stromal,#17becf
+B,#9edae5
+Cycling TA,#e65c5c
+M1 Macrophage,#e6c35c
+Paneth,#a1e65c
+Neuroendocrine,#5ce67e
+Neutrophil,#5ce6e6
+ICC,#5c7ee6
+CD57+ Epithelial,#a15ce6
+NK,#e65cc3

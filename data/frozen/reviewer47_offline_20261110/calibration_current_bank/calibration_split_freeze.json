@@ -1,0 +1,6 @@
+{
+  "reference_and_prediction_values_materialized": false,
+  "schema": "reviewer47.calibration_split_freeze.v1",
+  "split_sha256": "ec9262824a2c769d48fd52c615be177cd66e178c5b03a4a5f5ddc87a363f8861",
+  "split_version": "reviewer47-calibration-cluster-split-v1"
+}

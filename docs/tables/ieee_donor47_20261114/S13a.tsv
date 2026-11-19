@@ -1,0 +1,17 @@
+Clustering	Model	Agreement (%)	Macro-F1	Cell coverage (%)	Cluster coverage (%)
+Leiden	Astra	34.22	0.3095	100.00	100.00
+Leiden	Opus 5.5	35.37	0.2990	100.00	100.00
+Leiden	Argon	32.80	0.3041	100.00	100.00
+Leiden	DeepSeek	32.03	0.2865	100.00	100.00
+FlowSOM	Astra	36.00	0.3626	100.00	100.00
+FlowSOM	Opus 5.5	36.39	0.3558	100.00	100.00
+FlowSOM	Argon	37.07	0.3758	100.00	100.00
+FlowSOM	DeepSeek	30.35	0.3061	100.00	100.00
+SpatialSort	Astra	27.71	0.1976	100.00	100.00
+SpatialSort	Opus 5.5	28.15	0.2009	100.00	100.00
+SpatialSort	Argon	25.55	0.1940	100.00	100.00
+SpatialSort	DeepSeek	17.44	0.1263	71.12	74.83
+PIXIE	Astra	27.06	0.1782	100.00	100.00
+PIXIE	Opus 5.5	29.15	0.1802	100.00	100.00
+PIXIE	Argon	27.75	0.1773	100.00	100.00
+PIXIE	DeepSeek	14.28	0.0975	58.96	50.00

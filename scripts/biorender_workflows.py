@@ -7,6 +7,7 @@ Imported raster text is replaced by native Arial text in the figure renderer.
 from __future__ import annotations
 
 from copy import deepcopy
+import base64
 import hashlib
 import json
 import re
@@ -30,7 +31,7 @@ def config():
     return d
 
 
-def artwork_document():
+def artwork_document(preserve_original_marker_blocks=False):
     d = config()
     doc = fitz.open(ROOT/d['source_file'])
     page = doc[0]
@@ -46,7 +47,8 @@ def artwork_document():
                 doc.update_stream(xref,stream)
     # Delete only imported raster text, keeping original icon/vector geometry.
     for image in page.get_image_info():
-        if image['width'] in [742,1542,1184]:
+        if image['width'] == 742 or (image['width'] in [1542,1184]
+                                    and not preserve_original_marker_blocks):
             page.add_redact_annot(image['bbox'],fill=False)
     page.apply_redactions(images=1,graphics=0,text=1)
     spans = [s for b in page.get_text('dict')['blocks'] if 'lines' in b
@@ -87,24 +89,30 @@ def feature_table(f,x,y,w,h,size=5.5):
 
 def add_workflow(f,key,annotation_model="Opus 5.5"):
     d = config()
+    extra_inputs = {}
     spec = deepcopy(d['panels'][key])
+    if key == '3A':
+        spec['original_marker_blocks'] = True
     if not hasattr(f,'_biorender_overlays'):
         f._biorender_overlays = []
     f._biorender_overlays.append(spec)
     if key == '2A':
-        for x,title in [(16.5,'CODEX images'),(43,'Cell-level features'),(74,'Clustering'),
-                        (92,'UMAP'),(124,'Reference-majority\ncluster labels'),(151,'Evaluation')]:
-            text(f,x,3,title,size=6.6,ha='center')
-        feature_table(f,23.8,16.5,38.3,14,size=6.6)
+        # Center headings over the fixed workflow steps. The first heading is
+        # close to the left edge and sits below the separate panel letter.
+        for x,title in [(11.3,'CODEX images'),(44,'Cell-level features'),(72.2,'Clustering'),
+                        (92,'UMAP'),(123.5,'Reference-majority\ncluster labels'),(152.4,'Evaluation')]:
+            text(f,x,6.2,title,size=6.6,ha='center')
+        # Retain the table's right edge and clear the incoming arrow tip.
+        feature_table(f,25.9,16.5,36.2,14,size=6.6)
         for x,label in zip([146.5,151.7,156.9],'ABC'):
             text(f,x,34.5,label,size=6.6,ha='center')
     elif key == '3A':
-        for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Cluster features'),
-                        (107,'Optimization'),(130,'Annotation'),(150,'Evaluation')]:
+        for x,title in [(22,'CODEX features'),(49,'Clustering'),(74,'Marker-list example'),
+                        (107,'Selection settings'),(130,'Annotation'),(150,'Evaluation')]:
             text(f,x,2.5,title,size=6.5,ha='center')
-        feature_table(f,4.8,15,34.5,12.5)
-        text(f,58.2,13.4,'{\n"cluster 1": ["marker 1",\n  "marker 2", ...],\n"cluster 2": ["marker 1",\n  "marker 2", ...],\n... }',size=5.5,linespacing=1.13)
-        text(f,94.4,15.2,'1. Expression threshold\n2. Fraction threshold\n3. Mean expression threshold\n4. Maximum number of markers\n5. Minimum number of markers',size=5.5,linespacing=1.2)
+        feature_table(f,4.8,15.55,34.5,12.5)
+        # The original marker-list and five-setting illustrations are retained
+        # in the source PDF, including their transparency and short connectors.
     elif key == '4A':
         for x,title in [(15,'CODEX images'),(54,'Cell-level features'),(98,'Leiden clustering'),
                         (122,f'{annotation_model} annotation'),(149,'Spatial visualization')]:
@@ -116,19 +124,31 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
             a = axes(f,114,11,16,16)
             a.add_patch(Rectangle((0,0),1,1,transform=a.transAxes,
                                   facecolor="white",edgecolor="none"))
-            a.add_patch(Rectangle((.04,.04),.92,.92,transform=a.transAxes,
-                                  facecolor="#f6f8fa",edgecolor="#7a858e",lw=.6))
-            a.text(.5,.5,"LLM",transform=a.transAxes,ha="center",va="center",
-                   fontsize=8,color="#334155",weight="bold")
             a.set_axis_off()
+            logo_dir = ROOT/'data/frozen/provider_logos'
+            manifest_path = logo_dir/'manifest.json'
+            manifest = json.loads(manifest_path.read_text())
+            for filename, expected in manifest['files'].items():
+                path = logo_dir/filename
+                actual = hashlib.sha256(path.read_bytes()).hexdigest()
+                if actual != expected:
+                    raise ValueError('Supplied OpenAI logo checksum differs.')
+                extra_inputs[str(path.relative_to(ROOT))] = actual
+            extra_inputs[str(manifest_path.relative_to(ROOT))] = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+            if not hasattr(f,'_provider_logo_overlays'):
+                f._provider_logo_overlays = []
+            f._provider_logo_overlays.append({'source_file':str((logo_dir/'openai_logo_user_supplied.png').relative_to(ROOT)),
+                                             'rect_mm':[114,11,16,16]})
     else:
         raise ValueError(key)
-    return {d['source_file']:d['source_sha256'],str(CONFIG.relative_to(ROOT)):hashlib.sha256(CONFIG.read_bytes()).hexdigest()}
+    return {d['source_file']:d['source_sha256'],str(CONFIG.relative_to(ROOT)):hashlib.sha256(CONFIG.read_bytes()).hexdigest(),**extra_inputs}
 
 
 def compose(f,output,name):
     """Keep vector artwork in PDF/SVG and rasterize only the final PNG export."""
-    source = artwork_document()
+    source = artwork_document(preserve_original_marker_blocks=any(
+        overlay.get('original_marker_blocks',False)
+        for overlay in f._biorender_overlays))
     pdf = fitz.open(output/(name+'.pdf'))
     svg_path = output/(name+'.svg')
     svg = ET.parse(svg_path)
@@ -148,6 +168,19 @@ def compose(f,output,name):
                                         overlay['clip_points'][3]-overlay['clip_points'][1]]),
                               'preserveAspectRatio':'xMidYMid meet','overflow':'hidden'})
         svg.getroot().insert(0,nested)
+    # Embed the exact author-supplied icon without altering its pixels or ratio.
+    for overlay in getattr(f,'_provider_logo_overlays',[]):
+        logo_path = ROOT/overlay['source_file']
+        x,y,w,h = overlay['rect_mm']
+        rect = fitz.Rect(x,y,x+w,y+h)*(72/25.4)
+        pdf[0].insert_image(rect,filename=str(logo_path),keep_proportion=True,overlay=True)
+        nested = ET.Element('{'+ns+'}image',
+                            {'x':str(x*72/25.4),'y':str(y*72/25.4),
+                             'width':str(w*72/25.4),'height':str(h*72/25.4),
+                             'preserveAspectRatio':'xMidYMid meet',
+                             '{http://www.w3.org/1999/xlink}href':
+                             'data:image/png;base64,'+base64.b64encode(logo_path.read_bytes()).decode('ascii')})
+        svg.getroot().append(nested)
     # The cleaned source contains no remaining native text. All labels are
     # the explicitly authored Matplotlib text above and remain editable.
     temp = output/(name+'.composed.pdf')

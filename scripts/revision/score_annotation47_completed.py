@@ -523,7 +523,7 @@ def main():
         'interpretation': 'Single accepted predictions; descriptive comparisons on transductive previously examined B004 data. No donor generalization, biological correctness, or repeated-call stability is inferred.'}
     save_json(out / 'summary.json', summary)
     outputs = {p.name: {'sha256': sha(p), 'bytes': p.stat().st_size} for p in out.iterdir()
-               if p.is_file() and p.name not in ['verification.json']}
+               if p.is_file() and p.name not in ['verification.json', 'manifest.json']}
     verification = {'schema':'annotation47.scoring_verification.v1', 'passed':True,
         'scored_at':datetime.now(timezone.utc).isoformat(), 'checks':{
         '128_unique_request_ids':True,'9024_valid_cluster_predictions':True,'32_complete_annotation_sets':True,

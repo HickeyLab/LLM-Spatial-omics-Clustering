@@ -1,5 +1,5 @@
 {
-  "schema": "manuscript.annotation47_active_study.v2",
+  "schema": "manuscript.annotation47_active_study.v3",
   "prepared_date": "2026-11-09",
   "status": "completed_scored_verified",
   "active_preparation": "configs/primary_annotation47_1repeat_opus55_v1.json",
@@ -115,7 +115,7 @@
   "execution": {
     "enabled": false,
     "automatic_launch": false,
-    "state": "completed_scored_verified",
+    "state": "completed_scored_verified_primary_bank",
     "accepted_request_items": 128,
     "accepted_cluster_predictions": 9024,
     "annotation_sets": 32,
@@ -127,7 +127,8 @@
     "new_fits_by_publication_update": 0,
     "recoveries_are_independent_repetitions": false,
     "further_generation_authorized_by_this_record": false,
-    "actual_execution_summary": "data/frozen/annotation47_results_20261110/actual_execution_summary.json"
+    "actual_execution_summary": "docs/revision/reviewer47_execution_summary_20261111.json",
+    "new_clustering_fits_by_publication_update": 0
   },
   "publication": {
     "state": "google_doc_suggestions_saved_and_verified",
@@ -137,8 +138,10 @@
     "result_placeholders_only_until_valid_outputs": false,
     "previous_planning_records": "data/historical/annotation47_pre_scoring_20261110/manifest.json",
     "three_and_five_repeat_preparations": "Preserved unchanged; not executed by this update.",
-    "integration_receipt": "docs/revision/annotation47_publication_integration_20261110.json",
-    "live_google_doc_saved_verified": true
+    "integration_receipt": "docs/revision/reviewer47_publication_integration_20261111.json",
+    "live_google_doc_saved_verified": true,
+    "pending_dependencies_explicit": true,
+    "previous_publication_metadata": "archive/reviewer47_publication_before_20261111/metadata_index.json"
   },
   "active_preparation_protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
   "prepared_bundle": {
@@ -146,30 +149,65 @@
     "manifest_sha256": "ec0b91b1cb769c8b05a68272f9d9de2c0e946600e24412910ffcd6dc34f18303",
     "request_registry_sha256": "c15700c414d8e41e54485b7c6e9d3b4c9cf116d85ae07789ba15d6a24f48721f",
     "execution_enabled": false,
-    "actual_execution_record": "data/frozen/annotation47_results_20261110/actual_execution_summary.json"
+    "actual_execution_record": "docs/revision/reviewer47_execution_summary_20261111.json"
   },
-  "updated_date": "2026-11-10",
-  "protocol_note": "The versioned preparation is preserved unchanged. Actual execution amendments, delivery, accepted requests and scoring are recorded in the completed result manifest and execution summary.",
+  "updated_date": "2026-11-11",
+  "protocol_note": "The versioned preparation and primary experiment IDs 7/14 remain unchanged and disabled. The current full-arm bank consistently adopts the sealed reviewer campaign; 109 full-arm items are exact reuse and 19 DeepSeek items were replaced by predeclared route/strict-acceptance criteria, never reference accuracy. Follow-up components have separate statuses.",
   "financial_execution": {
-    "confirmed_campaign_charge_usd": "77.078729829",
-    "retained_unknown_holds_usd": "6.7679820",
-    "total_commitment_usd": "83.846711829",
-    "approved_cap_usd": "90",
-    "scope": "All models, failed generations and authorized recoveries; each charge counted once.",
-    "new_calls_from_offline_scoring": 0,
-    "automatic_budget_increase": false,
-    "new_credit_purchase": false
+    "scope": "Current enlarged B004 study and reused primary bank; earlier $90 record does not represent this enlarged scope.",
+    "settled_total_campaign_cost_usd": null,
+    "native_openai_settled_charge_usd": null,
+    "reported_stream_cost_sum_usd": "20.981257260",
+    "reported_opus_batch_cost_usd": "4.75028",
+    "reported_failed_gemini_batch_validation_cost_usd": "0.16873",
+    "unknown_billing_preserved": true,
+    "logical_physical_accounting": "data/frozen/reviewer47_results_20261111/logical_physical_accounting.json",
+    "physical_attempts": "data/frozen/reviewer47_results_20261111/physical_attempts.json",
+    "prior_scope_financial_record": "archive/reviewer47_publication_before_20261111/configs/annotation47_active_study.json",
+    "new_calls_from_publication": 0,
+    "new_scheduler_actions_from_publication": 0,
+    "new_credit_purchase_by_publication": false,
+    "automatic_budget_increase": false
   },
   "results": {
-    "manifest": "data/frozen/annotation47_results_20261110/manifest.json",
-    "manifest_sha256": "c7edd3c1611ae31b7cb08e845003437c4ef49273cdced8860362e3d1a5052f6c",
+    "manifest": "data/frozen/annotation47_results_20261111/manifest.json",
+    "manifest_sha256": "ddc897d33efe2ccd4f94ae930045d5bf3f4784cc3c06630e3f3bcfd102577120",
     "primary_scope": "equal_test_regions",
     "primary_arm": "all_means_fractions",
     "label_vocabulary": 28,
-    "accepted_prediction_bank": "data/frozen/annotation47_results_20261110/accepted_requests.json",
-    "scoring_verification": "data/frozen/annotation47_results_20261110/verification.json",
-    "summary": "data/frozen/annotation47_results_20261110/summary.json",
+    "accepted_prediction_bank": "data/frozen/annotation47_results_20261111/accepted_requests.json",
+    "scoring_verification": "data/frozen/annotation47_results_20261111/verification.json",
+    "summary": "data/frozen/annotation47_results_20261111/summary.json",
     "scorer": "scripts/revision/score_annotation47_completed.py",
     "annotation_calls_by_scoring": 0
+  },
+  "followup_components": {
+    "protocol": "docs/revision/reviewer47_credit_batch_protocol.md",
+    "protocol_id": "reviewer47-credit-batch-20261110-v1",
+    "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+    "result_manifest_sha256": "5f1ec944dd8ab4dfe2c691f36cabf0b61f1d3f6df3eb3bdcea96d3a3d02f834a",
+    "response_evidence_manifest": "data/frozen/reviewer47_response_evidence_20261111/manifest.json",
+    "planned_base_annotation_sets": 69,
+    "complete_base_annotation_sets": 68,
+    "pending_base_annotation_sets": 1,
+    "planned_base_request_items": 276,
+    "accepted_base_request_items": 275,
+    "exact_reused_request_items": 109,
+    "newly_accepted_request_items": 166,
+    "pending_base_request_items": 1,
+    "additional_astra_control_sets": 2,
+    "additional_astra_control_request_items": 8,
+    "total_pending_request_items": 9,
+    "pending_dependencies": "data/frozen/reviewer47_results_20261111/pending_dependencies.json",
+    "per_generation_settings": "data/frozen/reviewer47_results_20261111/model_settings.json",
+    "physical_attempts": "data/frozen/reviewer47_results_20261111/physical_attempts.json",
+    "execution_summary": "docs/revision/reviewer47_execution_summary_20261111.json",
+    "publication_annotation_calls": 0,
+    "publication_scheduler_actions": 0,
+    "offline_calibration_recomputed": true,
+    "offline_logistic_calibrator_fits": 16,
+    "donor_results_included": false,
+    "private_high_xhigh_pilot_included": false,
+    "status": "reported_components_with_pending_dependencies"
   }
 }

@@ -1,0 +1,86 @@
+{
+  "Noise_code": 21,
+  "accepted_request_items": 123,
+  "active_panels": [
+    "Figure5",
+    "FigureS12",
+    "FigureS13",
+    "TableS13a",
+    "TableS13b",
+    "TableS13c",
+    "TableS14a",
+    "TableS14b",
+    "TableS15a",
+    "TableS15b"
+  ],
+  "annotation_design": "One means-plus-fractions arm and one repetition per donor, method and model.",
+  "archival45_controls_not_used_in_active_outputs": true,
+  "cells": 589468,
+  "delivered_cluster_predictions": 9093,
+  "donors": {
+    "B005": {
+      "methods": {
+        "flowsom": {
+          "membership_sha256": "e4e27b9b81009152e8864099fd6b3d69406bced81aa0a69c53383a5a398e9e10",
+          "occupied_clusters": 299
+        },
+        "leiden": {
+          "membership_sha256": "b47e1608d2e3a964be7b99ac3453c09aae51cd9681d934a7f6115a6d6cc8d323",
+          "occupied_clusters": 300
+        },
+        "pixie_tiff": {
+          "membership_sha256": "3d69d7996ba71742d53c4e1176313db9fe9ea3c7aedf2e7efe3870fc0d2f4b23",
+          "occupied_clusters": 300
+        },
+        "spatialsort": {
+          "membership_sha256": "cba32af74ce7e32822f1d49e60647cd584e212da8eae8531f178a2adabeeaa87",
+          "occupied_clusters": 298
+        }
+      },
+      "n_cells": 288188
+    },
+    "B006": {
+      "methods": {
+        "flowsom": {
+          "membership_sha256": "312b85e85c14eec09dc1a5bbbf0df5d30ce6d0461f7d5ddb20953c166caccdb4",
+          "occupied_clusters": 300
+        },
+        "leiden": {
+          "membership_sha256": "9fc5b30dbbcaa888c9b268b0055268bb61090dc1f6b810c5989f288eaadfaaf1",
+          "occupied_clusters": 300
+        },
+        "pixie_tiff": {
+          "membership_sha256": "490b642ef79610de4e182072cc807356d4ab9999d0280022289baa1eca08983f",
+          "occupied_clusters": 300
+        },
+        "spatialsort": {
+          "membership_sha256": "b8d7fd4089d2c096429c57b873ff495e83ba320d63352607d1ab83b71f7676ca",
+          "occupied_clusters": 270
+        }
+      },
+      "n_cells": 301280
+    }
+  },
+  "markers": 47,
+  "missing_predictions": "Five invalid DeepSeek items remain errors in the planned denominator; no partial-response salvage.",
+  "new_annotation_calls": 0,
+  "new_fits": 0,
+  "planned_annotation_sets": 32,
+  "planned_cluster_predictions": 9468,
+  "planned_request_items": 128,
+  "pooled_metrics": "descriptive, separately labeled",
+  "primary_aggregation": "Equal regions within each donor, then equal donors.",
+  "private_resolution_manifest_sha256": "022031db6564a810e08b5cd6d58c4a53b065a77a4af5e7fce071f5be5ef4e69c",
+  "reference_labels": 28,
+  "regions": 16,
+  "reproduction": "python scientific_inputs/score_core.py --bundle scientific_inputs --output reproduced",
+  "schema": "donor47.publication_provenance.v1",
+  "scientific_bundle_manifest_sha256": "bdd8b83afc3901c350dea4ee0cc663e9f38bbb0881a63c82efae46dc3c1c0b59",
+  "scientific_input_manifest_sha256": "6eb33b4367e9ba94c0baf18c4e611a487a3a10ac5efa49b7e8d5c8df3358c678",
+  "score_manifest_sha256": "04341b1d887bb8f29c9acf8b0906f907a00bccc6506627b38e69093ee1e28d12",
+  "seed_sensitivity": "seed42 vs43 on all common cells, native28_all/File_ID ALL; not regional meanARI",
+  "study_cells": 809550,
+  "study_design": "B004 development and paired-representation analyses; B005/B006 cross-donor evaluation.",
+  "study_donors": 3,
+  "study_regions": 24
+}

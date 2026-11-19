@@ -15,6 +15,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
+from matplotlib.collections import QuadMesh
 from matplotlib.text import Text
 from matplotlib.patches import FancyArrowPatch, Rectangle
 import numpy as np
@@ -22,6 +23,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 STYLE = json.loads((ROOT / "configs/publication_figure_style.json").read_text())
+PANEL_LETTER_GID = "panel-letter-"
 MM = 1 / 25.4
 METHODS = ["Leiden", "FlowSOM", "SpatialSort", "PIXIE"]
 METHOD_KEYS = ["leiden", "flowsom", "spatialsort", "pixie_tiff"]
@@ -36,14 +38,14 @@ def sha(path):
 
 
 def configure():
-    for suffix in ("", " Bold", " Italic", " Bold Italic"):
+    for suffix in ("", " Bold", " Italic"):
         path = Path("/System/Library/Fonts/Supplemental") / ("Arial" + suffix + ".ttf")
         if path.exists():
             font_manager.fontManager.addfont(str(path))
     # Other systems can use an installed Arial or the metrically similar font.
     plt.rcParams.update({
         "font.family": "sans-serif", "font.sans-serif": ["Arial", "Liberation Sans", "DejaVu Sans"],
-        "font.size": 6, "axes.labelsize": 6, "axes.titlesize": 6.5,
+        "font.size": 6, "font.weight": "normal", "axes.labelsize": 6, "axes.titlesize": 6.5,
         "xtick.labelsize": 5.5, "ytick.labelsize": 5.5, "legend.fontsize": 5.5,
         "figure.titlesize": 6.5, "axes.linewidth": .5,
         "xtick.major.width": .5, "ytick.major.width": .5,
@@ -78,11 +80,14 @@ def text(f, x, y, value, size=6, **kw):
                   va=kw.pop("va", "top"), **kw)
 
 
-def panel(f, letter, x, y, title=None, title_x=None):
-    text(f, x, y, letter, size=8, weight="bold")
+def panel(f, letter, x, y, title=None, title_x=None, *, letter_size=None, letter_va="top"):
+    label = STYLE["panel_letter_format"].format(letter=letter.upper())
+    size = STYLE["panel_letter_font_pt"] if letter_size is None else letter_size
+    text(f, x, y, label, size=size, weight=STYLE["panel_letter_weight"], color="black",
+         va=letter_va, gid=f"{PANEL_LETTER_GID}{letter.lower()}")
     if title:
         text(f, title_x if title_x is not None else x + 8, y + .35,
-             title, size=6.5, weight="bold")
+             title, size=6.5)
 
 
 def grid(ax, axis="y"):
@@ -91,7 +96,7 @@ def grid(ax, axis="y"):
 
 
 def heatmap(ax, data, rows, cols, vmin=0, vmax=100, cmap="RdYlGn",
-            annotate=False, fmt=".1f", size=6):
+            annotate=False, fmt=".1f", size=6, *, cell_dividers=True):
     a = np.asarray(data, float)
     p = ax.pcolormesh(np.arange(a.shape[1]+1)-.5, np.arange(a.shape[0]+1)-.5,
                       a, cmap=cmap, vmin=vmin, vmax=vmax, shading="flat",
@@ -102,10 +107,7 @@ def heatmap(ax, data, rows, cols, vmin=0, vmax=100, cmap="RdYlGn",
         ax.set_aspect("equal", adjustable="box")
     ax.set_xticks(range(len(cols)), cols)
     ax.set_yticks(range(len(rows)), rows)
-    ax.tick_params(length=0)
-    for s in ax.spines.values():
-        s.set_visible(True)
-        s.set_linewidth(.5)
+    style_heatmap_axes(ax, p, cell_dividers=cell_dividers)
     if annotate:
         for (i,j),v in np.ndenumerate(a):
             rgb = np.asarray(p.cmap(p.norm(v))[:3])
@@ -118,6 +120,29 @@ def heatmap(ax, data, rows, cols, vmin=0, vmax=100, cmap="RdYlGn",
     return p
 
 
+def style_heatmap_axes(ax, mesh, *, cell_dividers):
+    """Format a heatmap independently of its values, normalization and labels."""
+    if cell_dividers:
+        mesh.set_edgecolor("white")
+        mesh.set_linewidth(.28)
+    ax.tick_params(length=0, labelsize=6)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+
+def style_heatmap_colorbar(f, artist, cb):
+    """Tuck the color key near the matrix and keep its scale and width."""
+    bar = cb.ax.get_position()
+    plot = artist.axes.get_position()
+    fw, fh = f._physical_mm
+    if cb.orientation == "vertical":
+        cb.ax.set_position([min(bar.x0, plot.x1 + 3 / fw), bar.y0, bar.width, bar.height])
+    elif bar.y0 >= plot.y1:
+        cb.ax.set_position([bar.x0, min(bar.y0, plot.y1 + 3.8 / fh), bar.width, bar.height])
+    cb.outline.set_visible(False)
+    cb.ax.tick_params(labelsize=6, length=0, pad=1.5)
+
+
 def colorbar(f, artist, rect, label=None, ticks=None, orientation="horizontal"):
     ax = axes(f, *rect)
     cb = f.colorbar(artist,cax=ax,orientation=orientation,ticks=ticks)
@@ -125,6 +150,8 @@ def colorbar(f, artist, rect, label=None, ticks=None, orientation="horizontal"):
     cb.ax.tick_params(labelsize=5.5,length=2,width=.5,pad=1.5)
     if label:
         cb.set_label(label,fontsize=5.5,labelpad=2)
+    if isinstance(artist, QuadMesh):
+        style_heatmap_colorbar(f, artist, cb)
     return cb
 
 
@@ -184,7 +211,8 @@ def compact_vertical_layout(f):
                 kind = "legend"
             objects.append((kind, artist, bounds, pos))
             occupied.append(bounds)
-    overlays = getattr(f, "_biorender_overlays", [])
+    overlays = [*getattr(f, "_biorender_overlays", []),
+                *getattr(f, "_provider_logo_overlays", [])]
     for overlay in overlays:
         x,y,w,h = overlay["rect_mm"]
         occupied.append((y,y+h))
@@ -246,10 +274,20 @@ def finish(f, name, output, inputs=None, notes=None):
         for axis in (ax.xaxis,ax.yaxis):
             cached_ticks.update(label for tick in [*axis.majorTicks,*axis.minorTicks]
                                 for label in (tick.label1,tick.label2))
-            drawn_ticks.update(label for tick in axis._update_ticks()
-                               for label in (tick.label1,tick.label2))
+            if ax.axison and axis.get_visible():
+                drawn_ticks.update(label for tick in axis._update_ticks()
+                                   for label in (tick.label1,tick.label2))
     visible=[t for t in f.findobj(Text) if t.get_visible() and t.get_text().strip()
              and (t not in cached_ticks or t in drawn_ticks)]
+    panel_weight = font_manager.weight_dict[STYLE["panel_letter_weight"]]
+    incorrect_weights = []
+    for artist in visible:
+        expected = panel_weight if (artist.get_gid() or "").startswith(PANEL_LETTER_GID) else 400
+        weight = artist.get_fontweight()
+        if font_manager.weight_dict.get(weight, weight) != expected:
+            incorrect_weights.append(artist.get_text())
+    if incorrect_weights:
+        raise ValueError(f"Incorrect text weight in {name}: {incorrect_weights}")
     min_size=min(t.get_fontsize() for t in visible)
     if min_size < STYLE["minimum_font_pt"]-1e-5:
         bad=[(t.get_text(),t.get_fontsize()) for t in visible if t.get_fontsize()<5.5-1e-5]
@@ -287,8 +325,11 @@ def finish(f, name, output, inputs=None, notes=None):
              "minimum_font_pt":min_size,"font_family":"Arial",
              "minimum_placement_width_mm":round(fw*5/min_size,3),
              "raster_dpi":600,"raster_size_pixels":pixel_size,
-             "vector_text_editable":True,"panel_letter_format":"A",
+             "vector_text_editable":True,
+             "panel_letter_format":STYLE["panel_letter_format"].format(letter="A"),
+             "panel_letter_weight":STYLE["panel_letter_weight"],
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
+             "provider_logos":getattr(f,"_provider_logo_overlays",None),
              "layout_compaction":f._layout_compaction,
              "dense_point_layers_native_dpi":610 if any(getattr(a,"get_rasterized",lambda:False)() for a in f.findobj()) else None,
              "inputs":inputs or {},"notes":notes or [],
@@ -296,6 +337,9 @@ def finish(f, name, output, inputs=None, notes=None):
     if hasattr(f,"_original_raster_workflow"):
         receipt["original_raster_workflow"] = f._original_raster_workflow
         receipt["minimum_font_scope"] = "All text, including the retyped Figure 1A labels. Original illustration pixels remain raster."
+    if any(o.get("original_marker_blocks",False)
+           for o in getattr(f,"_biorender_overlays",[])):
+        receipt["minimum_font_scope"] = "Native editable text. The author's original marker-list and threshold-setting illustrations retain their original raster typography."
     (output/(name+"_verification.json")).write_text(json.dumps(receipt,indent=2)+"\n")
     plt.close(f)
     print(name, pixel_size, "minimum font", min_size, "pt",flush=True)

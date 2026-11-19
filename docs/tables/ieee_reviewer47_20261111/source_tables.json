@@ -1,0 +1,1665 @@
+{
+  "schema": "reviewer47.ieee_table_cells.v1",
+  "tables": {
+    "S6a": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Means (%)",
+          "Means + fractions (%)",
+          "Paired change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "52.86",
+          "58.12",
+          "+5.26"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "36.66",
+          "36.05",
+          "-0.61"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "36.13",
+          "32.38",
+          "-3.75"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "41.32",
+          "35.64",
+          "-5.68"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "46.78",
+          "50.27",
+          "+3.49"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "37.48",
+          "36.82",
+          "-0.66"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "33.11",
+          "36.17",
+          "+3.06"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "36.04",
+          "42.54",
+          "+6.50"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "46.16",
+          "47.51",
+          "+1.35"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "39.57",
+          "41.84",
+          "+2.27"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "33.31",
+          "33.80",
+          "+0.49"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "38.70",
+          "36.40",
+          "-2.30"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "50.17",
+          "39.92",
+          "-10.25"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "27.62",
+          "27.87",
+          "+0.24"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "20.25",
+          "17.42",
+          "-2.83"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "33.42",
+          "27.35",
+          "-6.07"
+        ]
+      ],
+      "caption": "Table S6a. Paired reference agreement.",
+      "note": "Completed full-arm bank; equal weighting of two test regions; fixed 28-label vocabulary including Noise. One accepted annotation per cluster and condition; no repeated-call SD.",
+      "cell_order_sha256": "83f40e29480c03d5ff934b924a355c3e0c6b97a8207482a40c5590eefd1c34d8",
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      }
+    },
+    "S6b": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Means macro-F1",
+          "Means + fractions macro-F1",
+          "Means coverage (%)",
+          "Means + fractions coverage (%)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "0.4582",
+          "0.4490",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "0.3028",
+          "0.2713",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "0.2152",
+          "0.2074",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "0.2777",
+          "0.2553",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "0.3842",
+          "0.4165",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "0.2884",
+          "0.2999",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "0.1966",
+          "0.2226",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "0.2527",
+          "0.2751",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "0.4073",
+          "0.4133",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "0.3189",
+          "0.2917",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "0.2090",
+          "0.2154",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "0.2689",
+          "0.2619",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "0.4084",
+          "0.2974",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "0.2373",
+          "0.2196",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "0.1230",
+          "0.1145",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "0.1895",
+          "0.1660",
+          "100.00",
+          "100.00"
+        ]
+      ],
+      "caption": "Table S6b. Macro-F1 and prediction coverage.",
+      "note": "Completed full-arm bank; equal weighting of two test regions; fixed 28-label vocabulary including Noise. One accepted annotation per cluster and condition; no repeated-call SD.",
+      "cell_order_sha256": "b0318a91665ad964daf995ce254275aee8e3577cc9af713f73a8a953a401d4bd",
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      }
+    },
+    "S6c": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Valid-label term (pp)",
+          "Delivery term (pp)",
+          "Total change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "+5.26",
+          "0.00",
+          "+5.26"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "-0.61",
+          "0.00",
+          "-0.61"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "-3.75",
+          "0.00",
+          "-3.75"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "-5.68",
+          "0.00",
+          "-5.68"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "+3.49",
+          "0.00",
+          "+3.49"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "-0.66",
+          "0.00",
+          "-0.66"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "+3.06",
+          "0.00",
+          "+3.06"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "+6.50",
+          "0.00",
+          "+6.50"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "+1.35",
+          "0.00",
+          "+1.35"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "+2.27",
+          "0.00",
+          "+2.27"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "+0.49",
+          "0.00",
+          "+0.49"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "-2.30",
+          "0.00",
+          "-2.30"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "-10.25",
+          "0.00",
+          "-10.25"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "+0.24",
+          "0.00",
+          "+0.24"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "-2.83",
+          "0.00",
+          "-2.83"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "-6.07",
+          "0.00",
+          "-6.07"
+        ]
+      ],
+      "caption": "Table S6c. Decomposition of paired agreement changes.",
+      "note": "Completed full-arm bank; equal weighting of two test regions; fixed 28-label vocabulary including Noise. One accepted annotation per cluster and condition; no repeated-call SD.",
+      "cell_order_sha256": "82f1ffef0973a31d9a130b4a6b2a791aa7a8febb54b8b9194f3b1fc9fdbda058",
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      }
+    },
+    "S6d": {
+      "rows": [
+        [
+          "Model",
+          "Requested model ID",
+          "Transport",
+          "Reasoning",
+          "Decoding fields sent"
+        ],
+        [
+          "GPT-6 Astra",
+          "gpt-6-astra; openai/gpt-6-astra",
+          "Batch",
+          "high",
+          "Combined output ceiling 32,768; seed 42; temperature/top-p omitted"
+        ],
+        [
+          "Claude Opus 5.5",
+          "anthropic/claude-opus-5.5",
+          "Batch",
+          "high",
+          "Combined output ceiling 32,768; seed omitted; temperature/top-p omitted"
+        ],
+        [
+          "Gemini 4 Argon",
+          "google/gemini-4-argon",
+          "Standard streaming",
+          "high",
+          "Combined output ceiling 943,718; seed 42; temperature/top-p omitted"
+        ],
+        [
+          "DeepSeek V4.1 Flash 1017",
+          "deepseek/deepseek-v4.1-flash-1017",
+          "Standard streaming",
+          "high",
+          "Combined output ceiling 943,718; seed omitted; temperature/top-p omitted"
+        ]
+      ],
+      "caption": "Table S6d. Model identities and inference settings.",
+      "note": "Actual accepted settings are preserved per request with served model/provider, transport/recovery provenance and literal-body hashes. Exact accepted prior answers are reused once; interrupted or rejected attempts are separate physical records. One selected-means request and the separate eight-item Astra extension remain pending.",
+      "cell_order_sha256": "d53dce38f60e7e7ce5def05ad2d8d5ea9026a9cdec0b60144d2865062884abc7",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/model_settings.json": "855de6d8fbb8d5e214ad4add09dfe6f04712b7c9944da38b9e83cc34dfe081e4"
+      }
+    },
+    "S8a": {
+      "rows": [
+        [
+          "Clustering",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1",
+          "Clusters delivered"
+        ],
+        [
+          "Leiden",
+          "Selected names",
+          "46.76",
+          "0.3948",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Selected means",
+          "51.03",
+          "0.4511",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "All means",
+          "52.86",
+          "0.4582",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Means + fractions",
+          "58.12",
+          "0.4490",
+          "300/300"
+        ],
+        [
+          "FlowSOM",
+          "Selected names",
+          "24.23",
+          "0.2338",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Selected means",
+          "35.60",
+          "0.2827",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "All means",
+          "36.66",
+          "0.3028",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Means + fractions",
+          "36.05",
+          "0.2713",
+          "299/299"
+        ],
+        [
+          "SpatialSort",
+          "Selected names",
+          "34.11",
+          "0.2026",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Selected means",
+          "33.77",
+          "0.2121",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "All means",
+          "36.13",
+          "0.2152",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Means + fractions",
+          "32.38",
+          "0.2074",
+          "229/229"
+        ],
+        [
+          "PIXIE",
+          "Selected names",
+          "39.04",
+          "0.2543",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Selected means",
+          "41.69",
+          "0.2817",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "All means",
+          "41.32",
+          "0.2777",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Means + fractions",
+          "35.64",
+          "0.2553",
+          "300/300"
+        ]
+      ],
+      "caption": "Table S8a. GPT-6 Astra marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "cell_order_sha256": "1c8b6545063671770be9cbb6c961430a11402351ea935546ade58bc8017f0e23",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      }
+    },
+    "S8b": {
+      "rows": [
+        [
+          "Clustering",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1",
+          "Clusters delivered"
+        ],
+        [
+          "Leiden",
+          "Selected names",
+          "42.16",
+          "0.3437",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Selected means",
+          "43.23",
+          "0.3654",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "All means",
+          "46.78",
+          "0.3842",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Means + fractions",
+          "50.27",
+          "0.4165",
+          "300/300"
+        ],
+        [
+          "FlowSOM",
+          "Selected names",
+          "27.91",
+          "0.2414",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Selected means",
+          "33.42",
+          "0.2739",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "All means",
+          "37.48",
+          "0.2884",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Means + fractions",
+          "36.82",
+          "0.2999",
+          "299/299"
+        ],
+        [
+          "SpatialSort",
+          "Selected names",
+          "29.36",
+          "0.1915",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Selected means",
+          "28.40",
+          "0.1897",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "All means",
+          "33.11",
+          "0.1966",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Means + fractions",
+          "36.17",
+          "0.2226",
+          "229/229"
+        ],
+        [
+          "PIXIE",
+          "Selected names",
+          "35.41",
+          "0.2458",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Selected means",
+          "38.61",
+          "0.2610",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "All means",
+          "36.04",
+          "0.2527",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Means + fractions",
+          "42.54",
+          "0.2751",
+          "300/300"
+        ]
+      ],
+      "caption": "Table S8b. Claude Opus 5.5 marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "cell_order_sha256": "bed484d3281dc17392aea90f2561eda94c5c17e2ab555fdeb7dea2a5389ea2e6",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      }
+    },
+    "S8c": {
+      "rows": [
+        [
+          "Clustering",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1",
+          "Clusters delivered"
+        ],
+        [
+          "Leiden",
+          "Selected names",
+          "37.33",
+          "0.3233",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Selected means",
+          "45.76",
+          "0.4075",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "All means",
+          "46.16",
+          "0.4073",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Means + fractions",
+          "47.51",
+          "0.4133",
+          "300/300"
+        ],
+        [
+          "FlowSOM",
+          "Selected names",
+          "25.91",
+          "0.2299",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Selected means",
+          "40.09",
+          "0.2946",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "All means",
+          "39.57",
+          "0.3189",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Means + fractions",
+          "41.84",
+          "0.2917",
+          "299/299"
+        ],
+        [
+          "SpatialSort",
+          "Selected names",
+          "32.39",
+          "0.2060",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Selected means",
+          "32.78",
+          "0.2007",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "All means",
+          "33.31",
+          "0.2090",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Means + fractions",
+          "33.80",
+          "0.2154",
+          "229/229"
+        ],
+        [
+          "PIXIE",
+          "Selected names",
+          "37.96",
+          "0.2566",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Selected means",
+          "40.93",
+          "0.2737",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "All means",
+          "38.70",
+          "0.2689",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Means + fractions",
+          "36.40",
+          "0.2619",
+          "300/300"
+        ]
+      ],
+      "caption": "Table S8c. Gemini 4 Argon marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "cell_order_sha256": "4c75eef5589c98dc27e33b19da18700d3d46f26c3a2a5d94713d2c9a118df5a0",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      }
+    },
+    "S8d": {
+      "rows": [
+        [
+          "Clustering",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1",
+          "Clusters delivered"
+        ],
+        [
+          "Leiden",
+          "Selected names",
+          "35.28",
+          "0.3083",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Selected means",
+          "Pending",
+          "Pending",
+          "225/300"
+        ],
+        [
+          "Leiden",
+          "All means",
+          "50.17",
+          "0.4084",
+          "300/300"
+        ],
+        [
+          "Leiden",
+          "Means + fractions",
+          "39.92",
+          "0.2974",
+          "300/300"
+        ],
+        [
+          "FlowSOM",
+          "Selected names",
+          "17.24",
+          "0.1681",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Selected means",
+          "28.13",
+          "0.2495",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "All means",
+          "27.62",
+          "0.2373",
+          "299/299"
+        ],
+        [
+          "FlowSOM",
+          "Means + fractions",
+          "27.87",
+          "0.2196",
+          "299/299"
+        ],
+        [
+          "SpatialSort",
+          "Selected names",
+          "25.45",
+          "0.1623",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Selected means",
+          "26.53",
+          "0.1748",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "All means",
+          "20.25",
+          "0.1230",
+          "229/229"
+        ],
+        [
+          "SpatialSort",
+          "Means + fractions",
+          "17.42",
+          "0.1145",
+          "229/229"
+        ],
+        [
+          "PIXIE",
+          "Selected names",
+          "29.74",
+          "0.2080",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Selected means",
+          "33.54",
+          "0.2446",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "All means",
+          "33.42",
+          "0.1895",
+          "300/300"
+        ],
+        [
+          "PIXIE",
+          "Means + fractions",
+          "27.35",
+          "0.1660",
+          "300/300"
+        ]
+      ],
+      "caption": "Table S8d. DeepSeek V4.1 Flash 1017 marker-representation comparison.",
+      "note": "Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.",
+      "cell_order_sha256": "1708af758938d90dc71f12dabd64c259088bc777079750318c4afa41ac2fdb49",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/set_metrics.csv": "acdb3a64366b7d77dd38e180b1431668c30a0dc37946843f44ae6bf97884d441"
+      }
+    },
+    "S9": {
+      "rows": [
+        [
+          "Clustering",
+          "Control",
+          "Blinded (%)",
+          "Control (%)",
+          "Change (pp)",
+          "Changed clusters"
+        ],
+        [
+          "Leiden",
+          "Method name",
+          "50.27",
+          "45.15",
+          "-5.12",
+          "75"
+        ],
+        [
+          "FlowSOM",
+          "Method name",
+          "36.82",
+          "34.00",
+          "-2.83",
+          "50"
+        ],
+        [
+          "SpatialSort",
+          "Method name",
+          "36.17",
+          "31.11",
+          "-5.06",
+          "53"
+        ],
+        [
+          "PIXIE",
+          "Method name",
+          "42.54",
+          "40.00",
+          "-2.54",
+          "51"
+        ],
+        [
+          "Leiden",
+          "Neighborhood",
+          "50.27",
+          "45.97",
+          "-4.29",
+          "63"
+        ]
+      ],
+      "caption": "Table S9. Opus 5.5 matched prompt controls.",
+      "note": "Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages two test regions equally. Changed-cluster counts retain all planned clusters. The separately submitted Astra extension is pending.",
+      "cell_order_sha256": "30d911c5e05116446a0b8ecfe6d926b9059dd51b556e041d15fc789789d8d1f8",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/control_contrasts.csv": "e61f5d147cf3098de49bf0c5a548fbf4fb7a60dbcc07eaf23da485f0d9ad241e"
+      }
+    },
+    "S10": {
+      "rows": [
+        [
+          "Clustering",
+          "Classifier",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Nearest centroid",
+          "All means",
+          "58.20",
+          "0.4341"
+        ],
+        [
+          "Leiden",
+          "Nearest centroid",
+          "Means + fractions",
+          "55.74",
+          "0.4370"
+        ],
+        [
+          "Leiden",
+          "Logistic regression",
+          "All means",
+          "67.05",
+          "0.4981"
+        ],
+        [
+          "Leiden",
+          "Logistic regression",
+          "Means + fractions",
+          "68.20",
+          "0.5030"
+        ],
+        [
+          "FlowSOM",
+          "Nearest centroid",
+          "All means",
+          "35.63",
+          "0.2745"
+        ],
+        [
+          "FlowSOM",
+          "Nearest centroid",
+          "Means + fractions",
+          "35.19",
+          "0.2787"
+        ],
+        [
+          "FlowSOM",
+          "Logistic regression",
+          "All means",
+          "45.69",
+          "0.3078"
+        ],
+        [
+          "FlowSOM",
+          "Logistic regression",
+          "Means + fractions",
+          "45.72",
+          "0.3059"
+        ],
+        [
+          "SpatialSort",
+          "Nearest centroid",
+          "All means",
+          "36.10",
+          "0.1798"
+        ],
+        [
+          "SpatialSort",
+          "Nearest centroid",
+          "Means + fractions",
+          "35.26",
+          "0.1778"
+        ],
+        [
+          "SpatialSort",
+          "Logistic regression",
+          "All means",
+          "44.12",
+          "0.2165"
+        ],
+        [
+          "SpatialSort",
+          "Logistic regression",
+          "Means + fractions",
+          "44.09",
+          "0.2170"
+        ],
+        [
+          "PIXIE",
+          "Nearest centroid",
+          "All means",
+          "46.76",
+          "0.2551"
+        ],
+        [
+          "PIXIE",
+          "Nearest centroid",
+          "Means + fractions",
+          "46.96",
+          "0.2577"
+        ],
+        [
+          "PIXIE",
+          "Logistic regression",
+          "All means",
+          "49.95",
+          "0.2684"
+        ],
+        [
+          "PIXIE",
+          "Logistic regression",
+          "Means + fractions",
+          "51.92",
+          "0.2728"
+        ]
+      ],
+      "caption": "Table S10. Conventional B004 annotation classifiers.",
+      "note": "Classifiers used B004 training-region cell labels, richer supervision than the LLM prompts. Hyperparameters were chosen in validation regions. Metrics average the two test regions equally; fixed 28-label macro-F1 includes absent classes as zero.",
+      "cell_order_sha256": "d5eb637f7c3a9e6d8be4758d62118785a9eaf9d1d4eb1d21d597d74944addf15",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/baselines/classifier_equal_test_region_metrics.csv": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801"
+      }
+    },
+    "S11": {
+      "rows": [
+        [
+          "Clustering",
+          "Occupied clusters",
+          "Purity",
+          "ARI",
+          "NMI"
+        ],
+        [
+          "Leiden",
+          "100",
+          "0.6792",
+          "0.3168",
+          "0.5485"
+        ],
+        [
+          "Leiden",
+          "200",
+          "0.7036",
+          "0.2760",
+          "0.5363"
+        ],
+        [
+          "Leiden",
+          "300",
+          "0.7149",
+          "0.1765",
+          "0.5224"
+        ],
+        [
+          "FlowSOM",
+          "100",
+          "0.4958",
+          "0.1837",
+          "0.4040"
+        ],
+        [
+          "FlowSOM",
+          "200",
+          "0.5035",
+          "0.1806",
+          "0.3999"
+        ],
+        [
+          "FlowSOM",
+          "299",
+          "0.5071",
+          "0.1807",
+          "0.3997"
+        ],
+        [
+          "SpatialSort",
+          "100",
+          "0.4758",
+          "0.2466",
+          "0.3964"
+        ],
+        [
+          "SpatialSort",
+          "200",
+          "0.4910",
+          "0.1750",
+          "0.3953"
+        ],
+        [
+          "SpatialSort",
+          "229",
+          "0.4955",
+          "0.1105",
+          "0.3841"
+        ],
+        [
+          "PIXIE",
+          "100",
+          "0.5554",
+          "0.2200",
+          "0.4214"
+        ],
+        [
+          "PIXIE",
+          "200",
+          "0.5609",
+          "0.2122",
+          "0.4115"
+        ],
+        [
+          "PIXIE",
+          "300",
+          "0.5641",
+          "0.2093",
+          "0.4085"
+        ]
+      ],
+      "caption": "Table S11. B004 partition granularity sensitivity.",
+      "note": "K100 and K200 are cell-count-weighted Ward coarsenings of frozen full-precision cluster profiles, sealed before reference scoring. They are not native-K refits or LLM ranking-stability experiments. Metrics average the two test regions equally.",
+      "cell_order_sha256": "7b272a7f5a17d4ba9b3901ed00bf4f4edc576015c124bdb1484a852e972d267f",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/granularity/equal_test_region_metrics.csv": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a"
+      }
+    },
+    "S12a": {
+      "rows": [
+        [
+          "Clustering",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw agreement",
+          "0.2928",
+          "4.3298",
+          "0.2111"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.2577",
+          "0.7166",
+          "0.1295"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2545",
+          "0.7022",
+          "0.1023"
+        ],
+        [
+          "FlowSOM",
+          "Raw agreement",
+          "0.3348",
+          "4.8255",
+          "0.2953"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.2670",
+          "0.7331",
+          "0.1717"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.2634",
+          "0.7228",
+          "0.1325"
+        ],
+        [
+          "SpatialSort",
+          "Raw agreement",
+          "0.3559",
+          "4.7292",
+          "0.3305"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.2191",
+          "0.6304",
+          "0.0803"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.2253",
+          "0.6440",
+          "0.0585"
+        ],
+        [
+          "PIXIE",
+          "Raw agreement",
+          "0.3116",
+          "4.1445",
+          "0.3292"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.1987",
+          "0.5694",
+          "0.1020"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.2264",
+          "0.6453",
+          "0.1408"
+        ]
+      ],
+      "caption": "Table S12a. GPT-6 Astra cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "cell_order_sha256": "f640a422cb8e1c916b0ec93fbeb904dd82d6b50c971013890fead909277e13ef",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    },
+    "S12b": {
+      "rows": [
+        [
+          "Clustering",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw agreement",
+          "0.2797",
+          "4.3007",
+          "0.2420"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.2223",
+          "0.6364",
+          "0.0912"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2523",
+          "0.6978",
+          "0.0486"
+        ],
+        [
+          "FlowSOM",
+          "Raw agreement",
+          "0.2992",
+          "4.7481",
+          "0.3038"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.2258",
+          "0.6436",
+          "0.1710"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.2284",
+          "0.6492",
+          "0.0866"
+        ],
+        [
+          "SpatialSort",
+          "Raw agreement",
+          "0.3934",
+          "4.8111",
+          "0.3665"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.2356",
+          "0.6648",
+          "0.0724"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.2356",
+          "0.6647",
+          "0.0518"
+        ],
+        [
+          "PIXIE",
+          "Raw agreement",
+          "0.3471",
+          "4.2212",
+          "0.3536"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.2394",
+          "0.6719",
+          "0.1677"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.2426",
+          "0.6783",
+          "0.1222"
+        ]
+      ],
+      "caption": "Table S12b. Claude Opus 5.5 cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "cell_order_sha256": "e2df46b9f0d7dfb85bce50b006e6da42db541a7aec77ce3cde8a52b8eb6ff45b",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    },
+    "S12c": {
+      "rows": [
+        [
+          "Clustering",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw agreement",
+          "0.2671",
+          "4.2733",
+          "0.2420"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.2095",
+          "0.6089",
+          "0.0949"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2523",
+          "0.6977",
+          "0.0662"
+        ],
+        [
+          "FlowSOM",
+          "Raw agreement",
+          "0.3072",
+          "4.7653",
+          "0.2720"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.2877",
+          "0.7786",
+          "0.2710"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.2799",
+          "0.7578",
+          "0.1734"
+        ],
+        [
+          "SpatialSort",
+          "Raw agreement",
+          "0.3865",
+          "4.7954",
+          "0.3571"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.2342",
+          "0.6669",
+          "0.0850"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.2343",
+          "0.6633",
+          "0.0772"
+        ],
+        [
+          "PIXIE",
+          "Raw agreement",
+          "0.3558",
+          "4.2403",
+          "0.3847"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.2197",
+          "0.6310",
+          "0.1469"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.2340",
+          "0.6610",
+          "0.1345"
+        ]
+      ],
+      "caption": "Table S12c. Gemini 4 Argon cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "cell_order_sha256": "936920858900a93924943f9dcedb34507a72e2e0d2cb27cac71d347b8f653ed7",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    },
+    "S12d": {
+      "rows": [
+        [
+          "Clustering",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw agreement",
+          "0.2487",
+          "4.2329",
+          "0.2864"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.1746",
+          "0.5212",
+          "0.0805"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2422",
+          "0.6777",
+          "0.0489"
+        ],
+        [
+          "FlowSOM",
+          "Raw agreement",
+          "0.2616",
+          "4.6661",
+          "0.3529"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.1414",
+          "0.4324",
+          "0.1335"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.1779",
+          "0.5413",
+          "0.1404"
+        ],
+        [
+          "SpatialSort",
+          "Raw agreement",
+          "0.2862",
+          "4.5765",
+          "0.3666"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.1232",
+          "0.3888",
+          "0.0398"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.1494",
+          "0.4758",
+          "0.0213"
+        ],
+        [
+          "PIXIE",
+          "Raw agreement",
+          "0.2466",
+          "4.0019",
+          "0.2991"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.1314",
+          "0.4155",
+          "0.0484"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.1689",
+          "0.5237",
+          "0.1019"
+        ]
+      ],
+      "caption": "Table S12d. DeepSeek V4.1 Flash 1017 cross-model agreement calibration.",
+      "note": "Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.",
+      "cell_order_sha256": "7577eedcef94aeb934ef37952ea6fb49fb262c584ae5a88cc699082560e38066",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    }
+  }
+}

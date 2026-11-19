@@ -5,6 +5,7 @@
   "body_font_pt": 6.0,
   "panel_heading_font_pt": 6.5,
   "panel_letter_font_pt": 8.0,
+  "panel_letter_weight": "bold",
   "panel_letter_format": "{letter}",
   "axis_line_width_pt": 0.5,
   "raster_export_dpi": 600,

@@ -1,0 +1,176 @@
+{
+  "schema": "reviewer47.publication_claims.v1",
+  "source_population": 220082,
+  "markers": 47,
+  "vocabulary": 28,
+  "test_regions": [
+    "768b7adb649959b6a4e354867595032d",
+    "8da8f27977d946b8c912d42c8827b55c"
+  ],
+  "test_region_cells": {
+    "768b7adb649959b6a4e354867595032d": 33112,
+    "8da8f27977d946b8c912d42c8827b55c": 36464
+  },
+  "scientific_repetitions": 1,
+  "planned_base_sets": 69,
+  "complete_base_sets": 68,
+  "pending_base_sets": 1,
+  "accepted_request_items": 275,
+  "planned_request_items": 276,
+  "reused_request_items": 109,
+  "accepted_new_request_items": 166,
+  "pending_cluster_predictions": 75,
+  "base_planned_cluster_predictions": 19476,
+  "base_accepted_cluster_predictions": 19401,
+  "separate_astra_extension_sets": 2,
+  "separate_astra_extension_requests": 8,
+  "per_representation": {
+    "selected_names": {
+      "planned_sets": 16,
+      "complete_sets": 16,
+      "status": "complete",
+      "mean_equal_test_region_agreement": 0.32518253593339813,
+      "mean_equal_test_region_macro_f1": 0.24814344557515605
+    },
+    "selected_means": {
+      "planned_sets": 16,
+      "complete_sets": 15,
+      "status": "pending",
+      "mean_equal_test_region_agreement": null,
+      "mean_equal_test_region_macro_f1": null
+    },
+    "all_means": {
+      "planned_sets": 16,
+      "complete_sets": 16,
+      "status": "complete",
+      "mean_equal_test_region_agreement": 0.38098463817298417,
+      "mean_equal_test_region_macro_f1": 0.28362950079438176
+    },
+    "all_means_fractions": {
+      "planned_sets": 16,
+      "complete_sets": 16,
+      "status": "complete",
+      "mean_equal_test_region_agreement": 0.37505554474404207,
+      "mean_equal_test_region_macro_f1": 0.27354545594040675
+    }
+  },
+  "overall_representation_aggregate": null,
+  "reason_overall_aggregate_null": "The planned DeepSeek-Leiden selected_means condition has one pending75cluster batch.",
+  "controls": [
+    {
+      "family": "anthropic",
+      "model": "Claude Opus 5.5",
+      "method": "leiden",
+      "control_arm": "method_named",
+      "status": "complete",
+      "baseline_agreement": 0.5026803932477601,
+      "control_agreement": 0.4515064572420371,
+      "agreement_difference": -0.051173936005723064,
+      "baseline_macro_f1": 0.41651904791962113,
+      "control_macro_f1": 0.3525342705762434,
+      "macro_f1_difference": -0.06398477734337771,
+      "planned_clusters": 300,
+      "cluster_label_changes": 75,
+      "planned_test_cells": 69576,
+      "test_cell_label_changes": 19798
+    },
+    {
+      "family": "anthropic",
+      "model": "Claude Opus 5.5",
+      "method": "flowsom",
+      "control_arm": "method_named",
+      "status": "complete",
+      "baseline_agreement": 0.36822495666972443,
+      "control_agreement": 0.33997374422240906,
+      "agreement_difference": -0.028251212447315377,
+      "baseline_macro_f1": 0.29992610493943905,
+      "control_macro_f1": 0.28604750142434376,
+      "macro_f1_difference": -0.013878603515095289,
+      "planned_clusters": 299,
+      "cluster_label_changes": 50,
+      "planned_test_cells": 69576,
+      "test_cell_label_changes": 12240
+    },
+    {
+      "family": "anthropic",
+      "model": "Claude Opus 5.5",
+      "method": "spatialsort",
+      "control_arm": "method_named",
+      "status": "complete",
+      "baseline_agreement": 0.36166219498258256,
+      "control_agreement": 0.3110938631194766,
+      "agreement_difference": -0.05056833186310594,
+      "baseline_macro_f1": 0.22255322176930753,
+      "control_macro_f1": 0.19480679977578624,
+      "macro_f1_difference": -0.027746421993521286,
+      "planned_clusters": 229,
+      "cluster_label_changes": 53,
+      "planned_test_cells": 69576,
+      "test_cell_label_changes": 17378
+    },
+    {
+      "family": "anthropic",
+      "model": "Claude Opus 5.5",
+      "method": "pixie_tiff",
+      "control_arm": "method_named",
+      "status": "complete",
+      "baseline_agreement": 0.4253673075045419,
+      "control_agreement": 0.3999734045823814,
+      "agreement_difference": -0.025393902922160483,
+      "baseline_macro_f1": 0.27511894699509004,
+      "control_macro_f1": 0.2845518804448553,
+      "macro_f1_difference": 0.009432933449765257,
+      "planned_clusters": 300,
+      "cluster_label_changes": 51,
+      "planned_test_cells": 69576,
+      "test_cell_label_changes": 15814
+    },
+    {
+      "family": "anthropic",
+      "model": "Claude Opus 5.5",
+      "method": "leiden",
+      "control_arm": "neighborhood",
+      "status": "complete",
+      "baseline_agreement": 0.5026803932477601,
+      "control_agreement": 0.4597445765199044,
+      "agreement_difference": -0.042935816727855736,
+      "baseline_macro_f1": 0.41651904791962113,
+      "control_macro_f1": 0.37801735871555936,
+      "macro_f1_difference": -0.03850168920406177,
+      "planned_clusters": 300,
+      "cluster_label_changes": 63,
+      "planned_test_cells": 69576,
+      "test_cell_label_changes": 14631
+    }
+  ],
+  "deepseek_full_arm_replaced_requests": 19,
+  "deepseek_full_arm_changed_cluster_labels": 538,
+  "independent_metric_checks": {
+    "completed_sets": 68,
+    "maximum_absolute_metric_difference": 0.0
+  },
+  "offline_artifacts": {
+    "baselines": {
+      "source_verification_sha256": "fa7a12e0db5d1deb816879fcff65d9ed11e9b11b88891e75f551a3e10a1d6f60",
+      "outputs_hash_verified": true,
+      "scientific_inputs_unchanged": true
+    },
+    "granularity": {
+      "source_verification_sha256": "999d0fd655cf3e09bdde84c6a8f625f514f43de26ddff9c865456d0285af2163",
+      "outputs_hash_verified": true,
+      "scientific_inputs_unchanged": true
+    }
+  },
+  "calibration_recomputed_on_updated_complete_primary_bank": true,
+  "calibration_cluster_split_unchanged": true,
+  "new_annotation_calls_from_this_assembler": 0,
+  "jobs_submitted": 0,
+  "private_high_xhigh_pilot_included": false,
+  "limitations": [
+    "Single generations do not establish repeatability.",
+    "B004 cluster evidence is transductive; these results are not a newdonor validation.",
+    "Classifier training reference labels supply richer supervision than LLM evidence.",
+    "Granularity is deterministic post-clustering coarsening, not native-K fitting.",
+    "Calibration is retrospective cross-model reference-agreement calibration within B004, not biological confidence."
+  ]
+}

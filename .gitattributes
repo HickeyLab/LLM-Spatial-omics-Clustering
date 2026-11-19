@@ -8,3 +8,8 @@ figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol
 # Historical copies retain the exact deposited/source bytes and SVG separators.
 data/historical/flowsom_cluster_count_sweep_20261103/** -text
 data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/*.svg linguist-generated=true whitespace=-blank-at-eol
+
+# Preserve the frozen B004 publication banks and archived native SVG bytes.
+data/frozen/annotation47_results_20261111/** -text whitespace=cr-at-eol
+data/frozen/reviewer47_results_20261111/** -text whitespace=cr-at-eol
+archive/reviewer47_publication_before_20261111/artwork/figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol

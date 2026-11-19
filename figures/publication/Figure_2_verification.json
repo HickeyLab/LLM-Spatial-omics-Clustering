@@ -1,17 +1,18 @@
 {
   "figure": "Figure_2",
   "width_mm": 165.1,
-  "height_mm": 213.0476035997217,
+  "height_mm": 212.00360359972166,
   "minimum_font_pt": 6.6,
   "font_family": "Arial",
   "minimum_placement_width_mm": 125.076,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    5033
+    5008
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "panel_letter_weight": "bold",
   "biorender_workflow": [
     {
       "clip_points": [
@@ -28,14 +29,19 @@
       ]
     }
   ],
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 224,
-    "height_mm": 213.0476035997217,
-    "height_reduction_percent": 4.889462678695671,
+    "height_mm": 212.00360359972166,
+    "height_reduction_percent": 5.355534107267117,
     "vacant_bands_removed_mm": [
       [
         116.66794444444444,
         119.49999999999999
+      ],
+      [
+        155.05599999999998,
+        156.10000000000002
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -53,24 +59,24 @@
     "configs/biorender_workflows.json": "3f3d8030527f23d6eaa27e480eb702edab5a9d284ef805eeccae6f42acc396ee"
   },
   "notes": [
-    "Current A\u2013H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."
+    "Current A\u2013H manuscript arrangement. E\u2013H share descending mean regional weighted-F1 method order. F/H share descending across-method mean F1 cell-type order. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."
   ],
   "files": {
     "Figure_2.svg": {
-      "sha256": "a546759429080f9a3655e9a369df2689ef72b42be0e88050893c7c3dd208f13e",
-      "bytes": 5446481
+      "sha256": "ddee49172e71324dd59c95e01d203a902a64539bf583d2c35310759b1ec1f02a",
+      "bytes": 5457059
     },
     "Figure_2.pdf": {
-      "sha256": "741077c375416e080ab92b5f42bceb2fd579f7b8bcf854768b4a2f650827fb3e",
-      "bytes": 3299170
+      "sha256": "e02d4bd2668ad60efdadd0f70911f4f5ee92175086e047c5e3e04d3116ec63af",
+      "bytes": 3297228
     },
     "Figure_2.png": {
-      "sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
-      "bytes": 2824858
+      "sha256": "580df474ba777b108a5b9d12624c9ac71418c6d3096ff8734143822e94364d8e",
+      "bytes": 2921483
     },
     "Figure_2.tiff": {
-      "sha256": "e54204be22280fbc94889d995e5b5ce868ad5c840d5f6988e06f21ef3885e1a8",
-      "bytes": 4483584
+      "sha256": "df55ffa1df7e6688c095a7fa74c27a4efe67071ee2cdddf712907c4d6db43e06",
+      "bytes": 4638054
     }
   }
 }

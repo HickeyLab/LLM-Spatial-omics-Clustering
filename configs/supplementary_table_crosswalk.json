@@ -1,6 +1,6 @@
 {
   "schema": "manuscript.current_supplementary_table_crosswalk.v2",
-  "updated_date": "2026-11-10",
+  "updated_date": "2026-11-11",
   "policy": "Only retained manuscript companions are active. Source hashes distinguish new primary47 and completed annotation results. Archived companion filenames and bytes remain unchanged in the archive and immutable release.",
   "archive_crosswalk": "data/historical/annotation47_pre_scoring_20261110/configs/supplementary_table_crosswalk.json",
   "tables": [
@@ -13,26 +13,26 @@
     {
       "current_label": "S6a",
       "filename": "Table_S6a.csv",
-      "path": "data/frozen/annotation47_results_20261110/Table_S6a.csv",
-      "sha256": "bd471bddc39249afae1a94b6ee7690f00238d787f678057ac448a7f8ee6f0994"
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6a.csv",
+      "sha256": "df17af9fa7172a31fe26029fbe1ad394159a575e6b63d2e56f404e79155877e3"
     },
     {
       "current_label": "S6b",
       "filename": "Table_S6b.csv",
-      "path": "data/frozen/annotation47_results_20261110/Table_S6b.csv",
-      "sha256": "562fe41eee829a27c62e0ee8438f8e36b4573507c97ebb835f6f8e9dd34968b7"
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6b.csv",
+      "sha256": "5c74000ed0dc1c962b3763045eec124ae8fe890f321672046847d391d4973152"
     },
     {
       "current_label": "S6c",
       "filename": "Table_S6c.csv",
-      "path": "data/frozen/annotation47_results_20261110/Table_S6c.csv",
-      "sha256": "79d8e87376e3badeab4824db2893fc330fc1045aa52871720d4488683a1bfd2b"
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6c.csv",
+      "sha256": "a7d4bdd55a86583dbed5511ec2cf619838e7fec42affc20a37f3762bd3172f41"
     },
     {
       "current_label": "S6d",
       "filename": "Table_S6d.csv",
-      "path": "data/frozen/annotation47_results_20261110/Table_S6d.csv",
-      "sha256": "ce84487b0040baddf47a8c627d62b97a4354ca0fee4f10f6050c037546186115"
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6d.csv",
+      "sha256": "85493e1edba04b6a7ea4c4fc04e73ee27f3aa1723873c72fd361933423628624"
     },
     {
       "current_label": "S7",
@@ -45,6 +45,72 @@
       "filename": "paired_regional_observations.csv",
       "path": "data/frozen/clustering47_primary_20261108/paired_regional_observations.csv",
       "sha256": "b32487d19c49a8a88de82d5a1cc19b7d40647f4d3c623d3e9fb816d66a70f9eb"
+    },
+    {
+      "current_label": "S8a",
+      "filename": "Table_S8a.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8a.csv",
+      "sha256": "579cea2275a50f9d64884c9a8b2ae7a404500f4d5ab01af5b3b8c46fc522e04c"
+    },
+    {
+      "current_label": "S8b",
+      "filename": "Table_S8b.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8b.csv",
+      "sha256": "50929396ae4264118a6eacae7b54d3a6d5eede87cdaf0976dbc587f832faa77c"
+    },
+    {
+      "current_label": "S8c",
+      "filename": "Table_S8c.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8c.csv",
+      "sha256": "e25880feaba68b167d20488e092a35386bdf43fe33f93850e0428ea90e1303ac"
+    },
+    {
+      "current_label": "S8d",
+      "filename": "Table_S8d.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8d.csv",
+      "sha256": "19eefd8e99fbf079de777fde82d6dd5f2ab085c289c1bb2fff7ed6b415b815f1"
+    },
+    {
+      "current_label": "S9",
+      "filename": "Table_S9.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S9.csv",
+      "sha256": "b2aa6c9d0964dcfc3039fdacb74f30037843d124ab54f07e22296c9cfa919d32"
+    },
+    {
+      "current_label": "S10",
+      "filename": "Table_S10.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S10.csv",
+      "sha256": "08660bdab4c71d79a930efe77aa12ea51e91c28c168bc9df416b9d360bfd8329"
+    },
+    {
+      "current_label": "S11",
+      "filename": "Table_S11.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S11.csv",
+      "sha256": "0377f2c1dcff23c784671d83363ed3f49cd38c1bd0ab9b6eb72a817160e99dfb"
+    },
+    {
+      "current_label": "S12a",
+      "filename": "Table_S12a.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12a.csv",
+      "sha256": "c3054ff637d5b4579669765c9893c04bf2a2b5f467f4eaf1bd62f5ca644cccd5"
+    },
+    {
+      "current_label": "S12b",
+      "filename": "Table_S12b.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12b.csv",
+      "sha256": "71c351d3f64d936e3ace1ced8633e6f47fd3586a3abf796825bdfc02de2bacaa"
+    },
+    {
+      "current_label": "S12c",
+      "filename": "Table_S12c.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12c.csv",
+      "sha256": "ffc688e7f3fbb9aaecbc4bef1a23549839e3419bcfcc27584491fa61cdc8d61d"
+    },
+    {
+      "current_label": "S12d",
+      "filename": "Table_S12d.csv",
+      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12d.csv",
+      "sha256": "ba5da45aadf22e399a5e55ec649a5cc096ae99ca32fb877b87337fa7770d4c0d"
     }
   ],
   "native_table_sources": [
@@ -63,5 +129,12 @@
       "path": "data/frozen/clustering47_primary_20261108/current_tables.json",
       "table_label_selector": "S2B"
     }
-  ]
+  ],
+  "current_ieee_table_manifest": "docs/tables/ieee_reviewer47_20261111/manifest.json",
+  "new_table_evidence_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+  "selective_risk_companion": {
+    "current_label": "S12a-d",
+    "path": "data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv",
+    "sha256": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
+  }
 }

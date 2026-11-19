@@ -1,0 +1,36 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont\bfseries
+TABLE S13b\\
+B006 DONOR ANNOTATION\par\smallskip
+\normalfont\fontsize{10}{12}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1.16\hsize\raggedright\arraybackslash}X>{\hsize=1\hsize\raggedright\arraybackslash}X>{\hsize=0.96\hsize\raggedleft\arraybackslash}X>{\hsize=0.88\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering method} & \textbf{Model} & \textbf{Agreement (\%)} & \textbf{Macro-F1} \\
+\midrule
+Leiden & Astra & 37.51 & 0.2955 \\
+Leiden & Opus 5.5 & 41.77 & 0.3344 \\
+Leiden & Argon & 38.74 & 0.2962 \\
+Leiden & DeepSeek & 24.56 & 0.1959 \\
+FlowSOM & Astra & 32.91 & 0.2586 \\
+FlowSOM & Opus 5.5 & 35.67 & 0.2834 \\
+FlowSOM & Argon & 38.12 & 0.2736 \\
+FlowSOM & DeepSeek & 25.69 & 0.2284 \\
+SpatialSort & Astra & 30.69 & 0.1887 \\
+SpatialSort & Opus 5.5 & 29.70 & 0.1918 \\
+SpatialSort & Argon & 28.17 & 0.1871 \\
+SpatialSort & DeepSeek & 17.09 & 0.1196 \\
+PIXIE & Astra & 22.29 & 0.1205 \\
+PIXIE & Opus 5.5 & 26.77 & 0.1283 \\
+PIXIE & Argon & 18.28 & 0.1116 \\
+PIXIE & DeepSeek & 18.38 & 0.0989 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\noindent Agreement and macro-F1 average the donor's eight regions equally. Cell- and cluster-level prediction coverage was 100\% in all conditions. The original 28-label vocabulary includes Noise (code 21). Missing or invalid predictions remain errors in the fixed planned denominator and are distinct from valid Noise predictions. One annotation was planned per cluster and condition, with accepted outputs scored where available. No uncertainty from repeated generations is estimated.\par
+\endgroup
+\end{table*}

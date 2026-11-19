@@ -31,7 +31,7 @@ _inventory = json.loads((ROOT/'configs/manuscript_inventory.json').read_text())[
 ORDER = [Path(e['path']).stem.removeprefix('Figure_') for r in _inventory.values() for e in r['images']]
 PANELS = {'1':'ABCDEF','2':'ABCDEFGH','3':'ABCDE','4':'ABCDE',
           'S1':'ABC','S2':'AB','S3A':'A','S3B':'B','S3C':'C','S4':'ABCD',
-          'S5':'A','S6':'AB','S7':'','S10':'ABCD','S11':'A'}
+          'S5':'A','S6':'AB','S7':'','S8':'ABCD','S9':'ABCD','S10':'ABCD','S11':'A'}
 
 NS = {'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
       'a':'http://schemas.openxmlformats.org/drawingml/2006/main',
@@ -94,6 +94,13 @@ def verify_native(folder, render_qa=None, figure_ids=None):
                             'scientific_rerender_performed':False})
             continue
         receipt = json.loads((folder/(name+'_verification.json')).read_text())
+        donor_admission = None
+        if key in {'5','S12','S13'}:
+            from verify_donor47_figures import admit_donor_receipt
+            donor_admission = admit_donor_receipt(key,folder,receipt,root=ROOT)
+            expected_panels = donor_admission['panel_letters']
+        else:
+            expected_panels = PANELS[key]
         for filename,entry in receipt['files'].items():
             assert digest(folder/filename) == entry['sha256'], filename
         for source,sha in receipt['inputs'].items():
@@ -118,11 +125,13 @@ def verify_native(folder, render_qa=None, figure_ids=None):
         minimum = min(s['size'] for s in spans)
         assert minimum >= 5.4999, (name,minimum)
         assert abs(minimum-receipt['minimum_font_pt']) < .001
-        assert {s['font'] for s in spans}.issubset({'ArialMT','Arial-BoldMT','Arial-ItalicMT'})
-        letters = [s['text'] for s in spans if s['size'] >= 7.99 and 'Bold' in s['font']
-                   and re.fullmatch('[A-J]',s['text'])]
-        assert ''.join(sorted(letters)) == PANELS[key], (name,letters)
-        assert not any(re.fullmatch(r'\([A-J]\)',s['text']) for s in spans)
+        assert receipt['panel_letter_format'] == 'A' and receipt['panel_letter_weight'] == 'bold', name
+        panel_spans = [s for s in spans if s['size'] >= 7.99
+                       and re.fullmatch(r'[a-jA-J]|\([a-jA-J]\)', s['text'])]
+        letters = [s['text'] for s in panel_spans]
+        assert ''.join(sorted(letters)) == expected_panels, (name, letters)
+        assert all(s['color'] == 0 and s['font'] == 'Arial-BoldMT' for s in panel_spans), name
+        assert {s['font'] for s in spans if s not in panel_spans}.issubset({'ArialMT','Arial-ItalicMT'}), name
         assert not re.search(r'\bFigure\s+(?:[1-5]|S\d)',page.get_text())
         assert abs(page.rect.width-receipt['width_mm']/25.4*72) < .01
         assert abs(page.rect.height-receipt['height_mm']/25.4*72) < .01
@@ -183,9 +192,11 @@ def verify_native(folder, render_qa=None, figure_ids=None):
         if render_qa:
             render_qa.mkdir(parents=True,exist_ok=True)
             page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),alpha=False).save(render_qa/(name+'.png'))
-        results.append({'figure':name,'minimum_font_pt':minimum,'panel_letters':PANELS[key],
+        result={'figure':name,'minimum_font_pt':minimum,'panel_letters':expected_panels,
                         'png_tiff_dpi':600,'minimum_pdf_image_dpi':min(image_dpi,default=None),
-                        'editable_svg_text_nodes':len(text_nodes)})
+                        'editable_svg_text_nodes':len(text_nodes)}
+        if donor_admission is not None:result['donor_verification']=donor_admission
+        results.append(result)
     return results
 
 
@@ -248,7 +259,8 @@ def main():
     parser.add_argument('--figures',nargs='+',choices=ORDER,help='Verify selected current native figures without regenerating other exports.')
     args = parser.parse_args()
     result = {'status':'pass','native_figures':verify_native(args.folder,args.render_qa,args.figures),
-              'independent_annotation_scoring_receipt':'data/frozen/annotation47_results_20261110/verification.json',
+              'independent_annotation_scoring_receipt':'data/frozen/annotation47_results_20261111/verification.json',
+              'reviewer_control_scoring_receipt':'data/frozen/reviewer47_results_20261111/verification.json',
               'new_model_calls':0,'new_fits':0}
     if args.docx:
         result['manuscript_export_sha256'] = digest(args.docx)

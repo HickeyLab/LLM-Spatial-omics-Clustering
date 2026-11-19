@@ -1,0 +1,17 @@
+Clustering method	Model	Agreement (%)	Macro-F1
+Leiden	Astra	34.22	0.3095
+Leiden	Opus 5.5	35.37	0.2990
+Leiden	Argon	32.80	0.3041
+Leiden	DeepSeek	32.03	0.2865
+FlowSOM	Astra	36.00	0.3626
+FlowSOM	Opus 5.5	36.39	0.3558
+FlowSOM	Argon	37.07	0.3758
+FlowSOM	DeepSeek	30.35	0.3061
+SpatialSort	Astra	27.71	0.1976
+SpatialSort	Opus 5.5	28.15	0.2009
+SpatialSort	Argon	25.55	0.1940
+SpatialSort	DeepSeek	25.18	0.1630
+PIXIE	Astra	27.06	0.1782
+PIXIE	Opus 5.5	29.15	0.1802
+PIXIE	Argon	27.75	0.1773
+PIXIE	DeepSeek	27.64	0.1705

@@ -50,6 +50,10 @@ def main():
             else:
                 preview = f'figure_{int(key):02d}.png'
             shutil.copyfile(source,ROOT/'notebooks/final_figures/previews'/preview)
+            if not any(e['source_file'] == entry['path'] for e in preview_manifest['figures']):
+                preview_manifest['figures'].append({'file': 'notebooks/final_figures/previews/' + preview,
+                    'source_file': entry['path'], 'source_sha256': entry['sha256'],
+                    'labels': [], 'size_pixels': receipt['raster_size_pixels']})
             by_file[entry['path']] = {'file':entry['path'],'source_file':str(source.relative_to(ROOT)),
                           'source_sha256':entry['sha256'],'output_sha256':entry['sha256'],
                           'size_pixels':receipt['raster_size_pixels'],
@@ -90,7 +94,7 @@ def main():
                 'labels':[],'size_pixels':size})
     files=[by_file[e['path']] for r in inventory['figures'].values() for e in r['images']]
     manifest = {'schema':'manuscript.artwork.v2','figure_count':len(inventory['figures']),'image_count':len(files),
-                'policy':'Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.',
+                'policy':'Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, black uppercase panel letters in Arial Bold, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.',
                 'native_renderer':'scripts/render_publication_figures.py',
                 'style_file':'configs/publication_figure_style.json',
                 'style_sha256':digest(ROOT/'configs/publication_figure_style.json'),

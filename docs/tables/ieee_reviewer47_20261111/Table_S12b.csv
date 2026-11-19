@@ -1,0 +1,13 @@
+Clustering,Score,Brier,Log loss,ECE
+Leiden,Raw agreement,0.2797,4.3007,0.2420
+Leiden,Logistic recalibration,0.2223,0.6364,0.0912
+Leiden,Development constant,0.2523,0.6978,0.0486
+FlowSOM,Raw agreement,0.2992,4.7481,0.3038
+FlowSOM,Logistic recalibration,0.2258,0.6436,0.1710
+FlowSOM,Development constant,0.2284,0.6492,0.0866
+SpatialSort,Raw agreement,0.3934,4.8111,0.3665
+SpatialSort,Logistic recalibration,0.2356,0.6648,0.0724
+SpatialSort,Development constant,0.2356,0.6647,0.0518
+PIXIE,Raw agreement,0.3471,4.2212,0.3536
+PIXIE,Logistic recalibration,0.2394,0.6719,0.1677
+PIXIE,Development constant,0.2426,0.6783,0.1222

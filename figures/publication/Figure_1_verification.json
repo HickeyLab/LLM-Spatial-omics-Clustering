@@ -1,22 +1,24 @@
 {
   "figure": "Figure_1",
   "width_mm": 165.1,
-  "height_mm": 192.19465277850452,
+  "height_mm": 197.09481250072676,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    4540
+    4655
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "panel_letter_weight": "bold",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
     "original_height_mm": 216,
-    "height_mm": 192.19465277850452,
-    "height_reduction_percent": 11.020994084025686,
+    "height_mm": 197.09481250072676,
+    "height_reduction_percent": 8.752401620033906,
     "vacant_bands_removed_mm": [
       [
         35.04,
@@ -28,11 +30,7 @@
       ],
       [
         101.9694826388889,
-        107.5
-      ],
-      [
-        199.93233680555554,
-        201.4701388888889
+        105.35
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -49,24 +47,24 @@
   },
   "notes": [
     "Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.",
-    "Panel B retains the precision archived in the executed notebook."
+    "Panel B retains the precision archived in the executed notebook. B/C share descending mean pooled cell-type F1-change method order. D\u2013F share descending mean regional F1-change cell-type order across the three displayed methods. Hollow dots show frozen individual regional changes; lines span their minimum and maximum. Diamond colors encode the sign of each mean."
   ],
   "files": {
     "Figure_1.svg": {
-      "sha256": "58f147247fa5d9cd90ed589bbafbccd30848863104e797d9dddf4dbd2da3de48",
-      "bytes": 494302
+      "sha256": "2e50c91e8224b2ba34bfa73192cff1d20495087d6088062e9de5c1a3add65a76",
+      "bytes": 491209
     },
     "Figure_1.pdf": {
-      "sha256": "88a0fc87de364f74d44fc9f69b6476b47bde05d3b4eaf79490df32d4dcdb4c9b",
-      "bytes": 239992
+      "sha256": "e8739f29ae5b25a9b448313a3a7beb52911a5b63a3b33a8a1cf6107a793d1ea6",
+      "bytes": 241779
     },
     "Figure_1.png": {
-      "sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
-      "bytes": 1086598
+      "sha256": "82c6c42afb6b5c4c68b6eaff7b19561adb2ebc3fc249c2938e3e0ab41885ab95",
+      "bytes": 1193506
     },
     "Figure_1.tiff": {
-      "sha256": "c748048d7b0315c414c7d7843a23d87d7e0ff40cc94833544e949581f7b04e5d",
-      "bytes": 2210020
+      "sha256": "11bf9c7d13bfcc7984c9adeabfae1394e53eb5d850b57ef501a2914b00fff49b",
+      "bytes": 2406812
     }
   },
   "original_raster_workflow": {

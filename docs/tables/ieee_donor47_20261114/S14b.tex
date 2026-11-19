@@ -1,0 +1,22 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont\bfseries
+TABLE S14b\\
+SPATIALSORT SEED SENSITIVITY\par\smallskip
+\normalfont\fontsize{10}{12}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.7\hsize\raggedright\arraybackslash}X>{\hsize=1\hsize\raggedleft\arraybackslash}X>{\hsize=1.1\hsize\raggedleft\arraybackslash}X>{\hsize=1.1\hsize\raggedleft\arraybackslash}X>{\hsize=1.1\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Donor} & \textbf{Cells} & \textbf{Seed 42 clusters} & \textbf{Seed 43 clusters} & \textbf{Partition ARI} \\
+\midrule
+B005 & 288,188 & 298 & 298 & 0.6917 \\
+B006 & 301,280 & 270 & 267 & 0.5805 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\noindent Both seeds use the same donor cells, 47-marker source and 50-sweep/DMH = 5 budget. Partition ARI compares the two memberships on all common donor cells. Seed 43 is used only for clustering sensitivity, with no additional annotation calls or reference-guided seed selection.\par
+\endgroup
+\end{table*}

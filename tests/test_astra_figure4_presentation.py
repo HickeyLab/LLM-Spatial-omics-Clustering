@@ -51,7 +51,10 @@ class AstraFigure4PresentationTests(unittest.TestCase):
         old=archive/'figures/manuscript/Figure_4.png'
         self.assertEqual(hashlib.sha256(old.read_bytes()).hexdigest(),'7b9617fbf63f2576c7efc9b710e964cbb7068609b6d3f10a8f404d19ab13163d')
         self.assertEqual(hashlib.sha256((ROOT/'configs/primary_annotation47_1repeat_opus55_v1.json').read_bytes()).hexdigest(),'c8de5b481ee48253015f54d6e30f47ba9cefc3ab00ec2ba465df0395b5580052')
-        self.assertEqual(hashlib.sha256((ROOT/'figures/manuscript/Figure_S6.png').read_bytes()).hexdigest(),'19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d')
+        s6_artwork = ROOT/'figures/manuscript/Figure_S6.png'
+        s6_receipt = json.loads((ROOT/'figures/publication/Figure_S6_verification.json').read_text())
+        self.assertEqual(hashlib.sha256(s6_artwork.read_bytes()).hexdigest(),
+                         s6_receipt['files']['Figure_S6.png']['sha256'])
 
     def test_exported_workflow_is_astra_and_red_green(self):
         svg=ROOT/'figures/publication/Figure_4.svg'

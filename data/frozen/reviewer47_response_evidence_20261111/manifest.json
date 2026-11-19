@@ -1,0 +1,18 @@
+{
+  "schema": "reviewer47.visible_response_evidence_manifest.v1",
+  "files": {
+    "reused_response_receipts.json": {
+      "sha256": "faa43ee1f46fba12656f6392bfbbc197d916e9b31860434a57b26a5519fb31e2",
+      "bytes": 510276
+    },
+    "new_response_receipts.json": {
+      "sha256": "f5497cd9efe30f6e37313746039c7fb3e00d26b5c1faa422716327933bf42410",
+      "bytes": 682796
+    },
+    "README.md": {
+      "sha256": "732d6d198a5b1dd66dd4083076954f4ae37d06a113155da7707e2346535fa1cb",
+      "bytes": 919
+    }
+  },
+  "new_calls": 0
+}

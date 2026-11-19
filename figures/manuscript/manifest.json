@@ -1,23 +1,23 @@
 {
   "schema": "manuscript.artwork.v2",
-  "figure_count": 13,
-  "image_count": 15,
-  "policy": "Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
+  "figure_count": 15,
+  "image_count": 17,
+  "policy": "Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, black uppercase panel letters in Arial Bold, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.",
   "native_renderer": "scripts/render_publication_figures.py",
   "style_file": "configs/publication_figure_style.json",
-  "style_sha256": "f89a4ff3481b6f1973aadc9d808597af2f70ef652167a25912f14e53ac2426ae",
+  "style_sha256": "d731b5ba930b842cedecd463884942f872f845bd35514227a1e5328dff1d83a6",
   "files": [
     {
       "file": "figures/manuscript/Figure_1.png",
       "source_file": "figures/publication/Figure_1.png",
-      "source_sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
-      "output_sha256": "8340906de0ce47fbba410bc2d48501ee814497a5f74b2315856166d976ab1786",
+      "source_sha256": "82c6c42afb6b5c4c68b6eaff7b19561adb2ebc3fc249c2938e3e0ab41885ab95",
+      "output_sha256": "82c6c42afb6b5c4c68b6eaff7b19561adb2ebc3fc249c2938e3e0ab41885ab95",
       "size_pixels": [
         3900,
-        4540
+        4655
       ],
       "width_mm": 165.1,
-      "height_mm": 192.19465277850452,
+      "height_mm": 197.09481250072676,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -29,14 +29,14 @@
     {
       "file": "figures/manuscript/Figure_2.png",
       "source_file": "figures/publication/Figure_2.png",
-      "source_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
-      "output_sha256": "bba57dc68a159e12b8f69af7120caf5d5f4e44366b52115ea139797afb315fc8",
+      "source_sha256": "580df474ba777b108a5b9d12624c9ac71418c6d3096ff8734143822e94364d8e",
+      "output_sha256": "580df474ba777b108a5b9d12624c9ac71418c6d3096ff8734143822e94364d8e",
       "size_pixels": [
         3900,
-        5033
+        5008
       ],
       "width_mm": 165.1,
-      "height_mm": 213.0476035997217,
+      "height_mm": 212.00360359972166,
       "minimum_font_pt": 6.6,
       "minimum_placement_width_mm": 125.076,
       "dpi": 600,
@@ -48,14 +48,14 @@
     {
       "file": "figures/manuscript/Figure_3.png",
       "source_file": "figures/publication/Figure_3.png",
-      "source_sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
-      "output_sha256": "8bf6f415901177e247f27043f45b8fa39e66adc0f82b9ad92e09bdc02a808826",
+      "source_sha256": "2a9a16e86ec1438bd2ac53c08c5870abbfeca8549bd33bc4e94e379a42a4bb81",
+      "output_sha256": "2a9a16e86ec1438bd2ac53c08c5870abbfeca8549bd33bc4e94e379a42a4bb81",
       "size_pixels": [
         3900,
-        4007
+        4209
       ],
       "width_mm": 165.1,
-      "height_mm": 169.66338185884396,
+      "height_mm": 178.1479188348108,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -67,14 +67,14 @@
     {
       "file": "figures/manuscript/Figure_4.png",
       "source_file": "figures/publication/Figure_4.png",
-      "source_sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6",
-      "output_sha256": "9c87907ca62846e3c94d3a55d3a5396fa645e175fb4a033991115d25cc4a1da6",
+      "source_sha256": "e8695c3a1b4b7b7597c8640ea678d395424dfc1f682f6b22081d9f0460ce1f6d",
+      "output_sha256": "e8695c3a1b4b7b7597c8640ea678d395424dfc1f682f6b22081d9f0460ce1f6d",
       "size_pixels": [
         3900,
-        4038
+        3958
       ],
       "width_mm": 165.1,
-      "height_mm": 170.92676482094097,
+      "height_mm": 167.55401482094095,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -86,8 +86,8 @@
     {
       "file": "figures/manuscript/Figure_S1.png",
       "source_file": "figures/publication/Figure_S1.png",
-      "source_sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
-      "output_sha256": "8305340a1cf1a782dbce212e164d487f0e5a86d3f140d4f4f990083036c52fea",
+      "source_sha256": "a544e630ebd5dadd5494a7080f59b74bc8ddc58f7f5610ba5559edc7e231e600",
+      "output_sha256": "a544e630ebd5dadd5494a7080f59b74bc8ddc58f7f5610ba5559edc7e231e600",
       "size_pixels": [
         3900,
         2776
@@ -105,14 +105,14 @@
     {
       "file": "figures/manuscript/Figure_S2.png",
       "source_file": "figures/publication/Figure_S2.png",
-      "source_sha256": "51c0561a46b087915a656fa886ab3eaa63cfc5f0485317002fc0cb15df2190cf",
-      "output_sha256": "51c0561a46b087915a656fa886ab3eaa63cfc5f0485317002fc0cb15df2190cf",
+      "source_sha256": "ebc3d9b52bc84478701ab1d19e254474d990a8bb8fceabcf04218ea106615289",
+      "output_sha256": "ebc3d9b52bc84478701ab1d19e254474d990a8bb8fceabcf04218ea106615289",
       "size_pixels": [
         3900,
         3590
       ],
       "width_mm": 165.1,
-      "height_mm": 152.0105,
+      "height_mm": 152.0025625,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -124,8 +124,8 @@
     {
       "file": "figures/manuscript/Figure_S3A.png",
       "source_file": "figures/publication/Figure_S3A.png",
-      "source_sha256": "192024de7e5632f5e1cc4751f67b0115d1d2848e4a260b5e8d002463351fb57b",
-      "output_sha256": "192024de7e5632f5e1cc4751f67b0115d1d2848e4a260b5e8d002463351fb57b",
+      "source_sha256": "cbb6527e8d5ebe06c7b56a381a115b49d61d688f204f1114ea1c8c94902ba53e",
+      "output_sha256": "cbb6527e8d5ebe06c7b56a381a115b49d61d688f204f1114ea1c8c94902ba53e",
       "size_pixels": [
         3900,
         1564
@@ -143,8 +143,8 @@
     {
       "file": "figures/manuscript/Figure_S3B.png",
       "source_file": "figures/publication/Figure_S3B.png",
-      "source_sha256": "12f8c3d4fa680257d0d0a22b4d45ba5795dec8997eff740d2284e41b87278a51",
-      "output_sha256": "12f8c3d4fa680257d0d0a22b4d45ba5795dec8997eff740d2284e41b87278a51",
+      "source_sha256": "f17b967a1abdde0e4a984e4028d8178856c41fc6119f9ad913ad281ead96bb56",
+      "output_sha256": "f17b967a1abdde0e4a984e4028d8178856c41fc6119f9ad913ad281ead96bb56",
       "size_pixels": [
         3900,
         1463
@@ -162,14 +162,14 @@
     {
       "file": "figures/manuscript/Figure_S3C.png",
       "source_file": "figures/publication/Figure_S3C.png",
-      "source_sha256": "1e0db1ac622ec09fae48d77b005d9e4d27f858f9e6ef47b10ade28e531c3799d",
-      "output_sha256": "1e0db1ac622ec09fae48d77b005d9e4d27f858f9e6ef47b10ade28e531c3799d",
+      "source_sha256": "bd05a880c0b004953926dbfb445645ce6dc07febbea0c92edc21274a5e30d605",
+      "output_sha256": "bd05a880c0b004953926dbfb445645ce6dc07febbea0c92edc21274a5e30d605",
       "size_pixels": [
         3900,
-        2844
+        2827
       ],
       "width_mm": 165.1,
-      "height_mm": 120.41955902777775,
+      "height_mm": 119.71400347222219,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -181,8 +181,8 @@
     {
       "file": "figures/manuscript/Figure_S4.png",
       "source_file": "figures/publication/Figure_S4.png",
-      "source_sha256": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
-      "output_sha256": "c212d93b0e82b61d11c25ed90d857c47e9e3dfcb9170ed685dc6c1b0a73f8a3f",
+      "source_sha256": "069d76e3546d99af7c558a2046487526839981de41f008fe5efa663ee3c9a481",
+      "output_sha256": "069d76e3546d99af7c558a2046487526839981de41f008fe5efa663ee3c9a481",
       "size_pixels": [
         3900,
         4955
@@ -200,8 +200,8 @@
     {
       "file": "figures/manuscript/Figure_S5.png",
       "source_file": "figures/publication/Figure_S5.png",
-      "source_sha256": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
-      "output_sha256": "5ec59227e9dcdb9f9d6a9776347226a93098d9f3394034aaefe89ea5215c87e7",
+      "source_sha256": "d198d20bb4e08f1d2dc803ab57df93bc7476a7d44f314fb718dda021fba455cc",
+      "output_sha256": "d198d20bb4e08f1d2dc803ab57df93bc7476a7d44f314fb718dda021fba455cc",
       "size_pixels": [
         3900,
         1324
@@ -219,14 +219,14 @@
     {
       "file": "figures/manuscript/Figure_S6.png",
       "source_file": "figures/publication/Figure_S6.png",
-      "source_sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
-      "output_sha256": "19ce2668b0182057ce609c78957348905d32c55e2b5cb64d0f81c14a9ecd6c2d",
+      "source_sha256": "d03d6a59df2413207abdab952055652aa7e3ab4fab08f1af58c17b9f94a79391",
+      "output_sha256": "d03d6a59df2413207abdab952055652aa7e3ab4fab08f1af58c17b9f94a79391",
       "size_pixels": [
         3900,
-        5234
+        5238
       ],
       "width_mm": 165.1,
-      "height_mm": 221.6105625,
+      "height_mm": 221.77909027777778,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -238,8 +238,8 @@
     {
       "file": "figures/manuscript/Figure_S7.png",
       "source_file": "figures/publication/Figure_S7.png",
-      "source_sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
-      "output_sha256": "8103eb19f13a960a69f6a44a2f5082b11e18bf323788119b5a5b2b254e489e75",
+      "source_sha256": "7842e794d9befb5a90881883328248a9c07c89345be89996da3ba314408ced17",
+      "output_sha256": "7842e794d9befb5a90881883328248a9c07c89345be89996da3ba314408ced17",
       "size_pixels": [
         3900,
         2837
@@ -255,18 +255,56 @@
       ]
     },
     {
-      "file": "figures/manuscript/Figure_S10.png",
-      "source_file": "figures/publication/Figure_S10.png",
-      "source_sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
-      "output_sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
+      "file": "figures/manuscript/Figure_S8.png",
+      "source_file": "figures/publication/Figure_S8.png",
+      "source_sha256": "c07519c890e80508ab256e86cbbc79bf6a6cf706ee10b4c27731814f687e7291",
+      "output_sha256": "c07519c890e80508ab256e86cbbc79bf6a6cf706ee10b4c27731814f687e7291",
       "size_pixels": [
         3900,
-        2214
+        2352
       ],
       "width_mm": 165.1,
-      "height_mm": 93.75400694444443,
+      "height_mm": 99.57066666666671,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
+      "dpi": 600,
+      "vector_files": [
+        "figures/publication/Figure_S8.pdf",
+        "figures/publication/Figure_S8.svg"
+      ]
+    },
+    {
+      "file": "figures/manuscript/Figure_S9.png",
+      "source_file": "figures/publication/Figure_S9.png",
+      "source_sha256": "ada95299320c3d7da8c4c813b2e221f0771c27a8cc422fd59458983c4e7050b5",
+      "output_sha256": "ada95299320c3d7da8c4c813b2e221f0771c27a8cc422fd59458983c4e7050b5",
+      "size_pixels": [
+        3900,
+        3146
+      ],
+      "width_mm": 165.1,
+      "height_mm": 133.19822916666666,
+      "minimum_font_pt": 5.5,
+      "minimum_placement_width_mm": 150.091,
+      "dpi": 600,
+      "vector_files": [
+        "figures/publication/Figure_S9.pdf",
+        "figures/publication/Figure_S9.svg"
+      ]
+    },
+    {
+      "file": "figures/manuscript/Figure_S10.png",
+      "source_file": "figures/publication/Figure_S10.png",
+      "source_sha256": "d997bbd9efe5166053fe158ecdb10fb401583c010efa5573b09be4ef3afad218",
+      "output_sha256": "d997bbd9efe5166053fe158ecdb10fb401583c010efa5573b09be4ef3afad218",
+      "size_pixels": [
+        3900,
+        2094
+      ],
+      "width_mm": 165.1,
+      "height_mm": 88.67808333333333,
+      "minimum_font_pt": 6.4,
+      "minimum_placement_width_mm": 128.984,
       "dpi": 600,
       "vector_files": [
         "figures/publication/Figure_S10.pdf",
@@ -276,8 +314,8 @@
     {
       "file": "figures/manuscript/Figure_S11.png",
       "source_file": "figures/publication/Figure_S11.png",
-      "source_sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
-      "output_sha256": "2df036c5fea15287bb594312d40ab73f77ecd937325c1735617cae59e2f638ea",
+      "source_sha256": "9d37463d501c4a99abba6c885ff06b0427e0df230b94f991e04d7d46da5fb9f1",
+      "output_sha256": "9d37463d501c4a99abba6c885ff06b0427e0df230b94f991e04d7d46da5fb9f1",
       "size_pixels": [
         3900,
         1010

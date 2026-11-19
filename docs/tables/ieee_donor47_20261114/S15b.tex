@@ -1,0 +1,36 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{11}{13.2}\selectfont\bfseries
+TABLE S15b\\
+B006 EVALUATION VOCABULARY SENSITIVITY\par\smallskip
+\normalfont\fontsize{10}{12}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1.12\hsize\raggedright\arraybackslash}X>{\hsize=0.96\hsize\raggedright\arraybackslash}X>{\hsize=1.04\hsize\raggedleft\arraybackslash}X>{\hsize=1.04\hsize\raggedleft\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X>{\hsize=0.88\hsize\raggedleft\arraybackslash}X>{\hsize=0.88\hsize\raggedleft\arraybackslash}X>{\hsize=1.28\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Model} & \textbf{Native 28 agreement (\%)} & \textbf{Shared 23 agreement (\%)} & \textbf{Change (pp)} & \textbf{Native 28 macro-F1} & \textbf{Shared 23 macro-F1} & \textbf{23-label coverage (\%)} \\
+\midrule
+Leiden & Astra & 37.70 & 44.66 & +6.97 & 0.2661 & 0.3413 & 86.18 \\
+Leiden & Opus 5.5 & 41.60 & 46.20 & +4.60 & 0.3012 & 0.3654 & 84.05 \\
+Leiden & Argon & 39.06 & 45.03 & +5.97 & 0.2756 & 0.3452 & 84.65 \\
+Leiden & DeepSeek & 23.78 & 27.33 & +3.54 & 0.1691 & 0.2217 & 81.58 \\
+FlowSOM & Astra & 33.26 & 35.31 & +2.05 & 0.2513 & 0.2960 & 76.52 \\
+FlowSOM & Opus 5.5 & 36.13 & 38.02 & +1.89 & 0.2760 & 0.3236 & 76.19 \\
+FlowSOM & Argon & 38.88 & 41.13 & +2.25 & 0.2692 & 0.3174 & 77.11 \\
+FlowSOM & DeepSeek & 15.32 & 16.55 & +1.24 & 0.1550 & 0.1802 & 34.92 \\
+SpatialSort & Astra & 30.87 & 34.00 & +3.13 & 0.1730 & 0.2122 & 85.81 \\
+SpatialSort & Opus 5.5 & 29.77 & 32.12 & +2.35 & 0.1782 & 0.2160 & 78.65 \\
+SpatialSort & Argon & 28.15 & 33.30 & +5.14 & 0.1726 & 0.2168 & 83.56 \\
+SpatialSort & DeepSeek & 16.45 & 20.12 & +3.66 & 0.1078 & 0.1332 & 74.84 \\
+PIXIE & Astra & 21.52 & 32.76 & +11.24 & 0.1143 & 0.1625 & 72.02 \\
+PIXIE & Opus 5.5 & 26.19 & 30.81 & +4.62 & 0.1226 & 0.1578 & 70.39 \\
+PIXIE & Argon & 17.29 & 28.61 & +11.32 & 0.1072 & 0.1542 & 71.26 \\
+PIXIE & DeepSeek & 19.16 & 24.62 & +5.46 & 0.0986 & 0.1192 & 93.65 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\noindent Both vocabularies use exactly the same reference-eligible cells. Shared-23 evaluation merges or renames the approved classes; reference ITLN+Epithelial, Noise and PDPN+Stromal are outside that eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells. Vocabulary coverage is separate from native output delivery coverage. Macro-F1 uses its stated fixed vocabulary (28 or 23); class-count changes are part of the sensitivity, with no new model generation.\par
+\endgroup
+\end{table*}

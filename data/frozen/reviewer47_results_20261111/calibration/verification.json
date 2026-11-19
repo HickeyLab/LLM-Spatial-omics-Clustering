@@ -1,0 +1,60 @@
+{
+  "cluster_and_region_separation_verified": true,
+  "conditions": 16,
+  "environment": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "python": "3.12.4",
+    "scipy": "1.16.2",
+    "sklearn": "1.7.2"
+  },
+  "evaluation_population": "Test-region cells in hash-held-out cluster IDs; not the entire primary benchmark population.",
+  "input_sha256": {
+    "cluster_predictions.csv": "4095f9f3fc6f37d3c96e681435b9cb9fcca223ab7087767391671a4ecdcf7d86",
+    "memberships.csv.gz": "6c707e5f8f5ade7918895ae5cac848fcaafb813cbedba4c1f47b5f4d6eed0ffa",
+    "profiles_fractions.csv": "852ac3d2bbee83287bb9cbe3250bb02a17893885d6e5c4cb502d823ede7e1147",
+    "profiles_means_z.csv": "8e1c478e05d3594bdeb5ff48d4e949b5e6c6ec4c878ecdc512cf2ab1049da942",
+    "protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba",
+    "reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2"
+  },
+  "interpretation": "Retrospective within-donor cross-model agreement calibration; not run-to-run repeatability or biological confidence.",
+  "new_annotation_calls": 0,
+  "offline_only": true,
+  "outputs": {
+    "calibration_cluster_split.csv": {
+      "bytes": 28424,
+      "sha256": "ec9262824a2c769d48fd52c615be177cd66e178c5b03a4a5f5ddc87a363f8861"
+    },
+    "calibration_equal_test_region_metrics.csv": {
+      "bytes": 5740,
+      "sha256": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+    },
+    "calibration_metrics.csv": {
+      "bytes": 22765,
+      "sha256": "ecebfc102ce479b3e59d018b188ee50b829865e41ad36c35c9632a74decae6bd"
+    },
+    "calibration_reliability.csv": {
+      "bytes": 43128,
+      "sha256": "41cb94788ca77575091e18252c5b28eb337f3ec1d992051920a575c060be80f8"
+    },
+    "calibration_risk_coverage.csv": {
+      "bytes": 51437,
+      "sha256": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
+    },
+    "calibration_split_freeze.json": {
+      "bytes": 262,
+      "sha256": "77bc8359da2efa24f87024236c65f44b6e1bad476ccef94d2aaee4a890164315"
+    },
+    "calibrators.json": {
+      "bytes": 8687,
+      "sha256": "e709e15c917bfb70048891801ccb50fe37166921894730eff08c5d7331d94364"
+    }
+  },
+  "probability_metrics": "Conditional on delivered predictions; planned-denominator coverage is reported separately.",
+  "schema": "reviewer47.agreement_calibration.offline.v1",
+  "scientific_parameters_tuned_on_test": false,
+  "split_sealed_before_reference_and_prediction_values": true,
+  "split_version": "reviewer47-calibration-cluster-split-v1",
+  "status": "completed",
+  "support_denominator": 4
+}

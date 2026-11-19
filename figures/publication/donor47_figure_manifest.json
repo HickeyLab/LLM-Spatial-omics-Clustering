@@ -1,0 +1,222 @@
+{
+  "schema": "donor47.publication_figures.v1",
+  "new_calls_or_fits": 0,
+  "source_manifest": "data/frozen/donor47_deepseek_completion_20261116/manifest.json",
+  "scope": "annotation",
+  "planned_annotation_sets": 32,
+  "planned_initial_request_items": 128,
+  "planned_cluster_predictions": 9468,
+  "annotation_arm": "all_means_fractions",
+  "source_manifest_sha256": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+  "renderer_sha256": "c2f9e4b506aeb97decf85a632812559aa40b1eb60059fa501a3b81ca3fcdb0ba",
+  "shared_style_sha256": "f12e5c5fd22dcd38b76d1c6dde4aac2ea3f80885b704306c2a2d34a62aca1c55",
+  "figures": {
+    "5": {
+      "figure": "Figure_5",
+      "width_mm": 165.1,
+      "height_mm": 102.00339236111112,
+      "minimum_font_pt": 5.5,
+      "font_family": "Arial",
+      "minimum_placement_width_mm": 150.091,
+      "raster_dpi": 600,
+      "raster_size_pixels": [
+        3900,
+        2409
+      ],
+      "vector_text_editable": true,
+      "panel_letter_format": "A",
+      "panel_letter_weight": "bold",
+      "biorender_workflow": null,
+      "provider_logos": null,
+      "layout_compaction": {
+        "original_height_mm": 125,
+        "height_mm": 102.00339236111112,
+        "height_reduction_percent": 18.3972861111111,
+        "vacant_bands_removed_mm": [
+          [
+            7.0399999999999965,
+            11.864999999999993
+          ],
+          [
+            52.72955555555556,
+            63.5
+          ]
+        ],
+        "minimum_gap_mm": 3.0,
+        "bottom_margin_mm": 2.5,
+        "plot_sizes_and_font_sizes_preserved": true
+      },
+      "dense_point_layers_native_dpi": 610,
+      "inputs": {
+        "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+        "data/frozen/donor47_deepseek_completion_20261116/annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8",
+        "data/frozen/donor47_deepseek_completion_20261116/annotation_equal_donor_metrics.csv": "a0300cee754070fd883d5d42dae2ff7d3e1c2226e6af707c277fd83d9cc4cbda",
+        "data/frozen/donor47_deepseek_completion_20261116/baselines_donor_metrics.csv": "ed14d4053b06b73fbafe8c51236b1282c687ea247bfb3c5ca6fa4619557564e4"
+      },
+      "notes": [
+        "A,B: native 28-label evaluation including Noise; each donor averages its eight region scores equally.",
+        "C,D: equal donor weights after equal region weights; frozen B004 classifiers use the same 94 decoded query features.",
+        "The completed score bank has 100% cell and cluster prediction delivery. For archival inputs, \u2020 marks incomplete delivery.",
+        "One planned annotation per cluster/condition; accepted outputs are scored where available. No repeat SD, confidence interval or repeatability claim.",
+        "Baselines use training-cell reference labels, richer supervision than supplied to the LLMs; no donor fitting/tuning."
+      ],
+      "files": {
+        "Figure_5.svg": {
+          "sha256": "f5bd51619eb95d50e74091517e089516d6834914dc5edb1a7c9350134bc8731a",
+          "bytes": 67834
+        },
+        "Figure_5.pdf": {
+          "sha256": "2822fd50e3bd181da94d9906ccf528e040521fe855b76b7abb4897f1d030d2c1",
+          "bytes": 47216
+        },
+        "Figure_5.png": {
+          "sha256": "31e6850e42e155e11e68aecf21127cc4d0041f6d2db3717a714e4dcbcd7e67c4",
+          "bytes": 428399
+        },
+        "Figure_5.tiff": {
+          "sha256": "e1778073d9c79ac77cefbe07eb12f34c0427139d82e8a2d46063cebb9497702f",
+          "bytes": 1197572
+        }
+      }
+    },
+    "S12": {
+      "figure": "Figure_S12",
+      "width_mm": 165.1,
+      "height_mm": 67.8768923611111,
+      "minimum_font_pt": 5.5,
+      "font_family": "Arial",
+      "minimum_placement_width_mm": 150.091,
+      "raster_dpi": 600,
+      "raster_size_pixels": [
+        3900,
+        1603
+      ],
+      "vector_text_editable": true,
+      "panel_letter_format": "A",
+      "panel_letter_weight": "bold",
+      "biorender_workflow": null,
+      "provider_logos": null,
+      "layout_compaction": {
+        "original_height_mm": 104,
+        "height_mm": 67.8768923611111,
+        "height_reduction_percent": 34.73375734508548,
+        "vacant_bands_removed_mm": [
+          [
+            7.0399999999999965,
+            12.86500000000001
+          ],
+          [
+            40.82083680555556,
+            58.49999999999999
+          ],
+          [
+            64.03999999999999,
+            69.5
+          ]
+        ],
+        "minimum_gap_mm": 3.0,
+        "bottom_margin_mm": 2.5,
+        "plot_sizes_and_font_sizes_preserved": true
+      },
+      "dense_point_layers_native_dpi": 610,
+      "inputs": {
+        "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+        "data/frozen/donor47_deepseek_completion_20261116/clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
+        "data/frozen/donor47_deepseek_completion_20261116/spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
+      },
+      "notes": [
+        "Frozen method-specific donor partitions, evaluated against native 28-label references; annotation profiles contain all 47 proteins and SpatialSort seed 42 is primary.",
+        "A,B average eight regions equally within each donor; C is a global common-cell membership comparison.",
+        "No reference-guided partition selection or donor retuning.",
+        "C, if present: global common-cell partition ARI between seeds 42 and 43; clustering stability only, with no seed-43 annotation calls."
+      ],
+      "files": {
+        "Figure_S12.svg": {
+          "sha256": "30e0ad44ee057a6c12de08cb04dfbc047e73d6c9d0076ff0758d180151498c15",
+          "bytes": 25787
+        },
+        "Figure_S12.pdf": {
+          "sha256": "5b8f714170d5287d66f2e2562a926f9b6f3f2be2197bff1128db992116a9c906",
+          "bytes": 38084
+        },
+        "Figure_S12.png": {
+          "sha256": "a3f2b66605bbfd0a23e093e7b9a74a14ba64ac48a0fd7ea84f66c505852d6b01",
+          "bytes": 188882
+        },
+        "Figure_S12.tiff": {
+          "sha256": "9fa589295039b55eb7bdf1ec324fdacb2adea0baa578b95a08a02b7756e4854e",
+          "bytes": 455984
+        }
+      }
+    },
+    "S13": {
+      "figure": "Figure_S13",
+      "width_mm": 165.1,
+      "height_mm": 95.30911111111114,
+      "minimum_font_pt": 6.0,
+      "font_family": "Arial",
+      "minimum_placement_width_mm": 137.583,
+      "raster_dpi": 600,
+      "raster_size_pixels": [
+        3900,
+        2251
+      ],
+      "vector_text_editable": true,
+      "panel_letter_format": "A",
+      "panel_letter_weight": "bold",
+      "biorender_workflow": null,
+      "provider_logos": null,
+      "layout_compaction": {
+        "original_height_mm": 125,
+        "height_mm": 95.30911111111114,
+        "height_reduction_percent": 23.75271111111109,
+        "vacant_bands_removed_mm": [
+          [
+            7.0399999999999965,
+            11.864999999999993
+          ],
+          [
+            52.72955555555556,
+            63.5
+          ],
+          [
+            69.04,
+            73.865
+          ]
+        ],
+        "minimum_gap_mm": 3.0,
+        "bottom_margin_mm": 2.5,
+        "plot_sizes_and_font_sizes_preserved": true
+      },
+      "dense_point_layers_native_dpi": 610,
+      "inputs": {
+        "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+        "data/frozen/donor47_deepseek_completion_20261116/annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
+      },
+      "notes": [
+        "Both vocabularies score the same predictions on the same reference-eligible cells within each donor.",
+        "Predictions outside the projected 23-label vocabulary remain errors.",
+        "The evaluation excludes cells with Noise, ITLN+ Epithelial and PDPN+ Stromal reference labels.",
+        "The completed bank has 100% prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, \u2020 marks incomplete prediction delivery."
+      ],
+      "files": {
+        "Figure_S13.svg": {
+          "sha256": "d3df21226da93c20fe331e6124b19635d10a6f7840a79e421de1b3d5df08a60a",
+          "bytes": 56208
+        },
+        "Figure_S13.pdf": {
+          "sha256": "4afba023889c87b4ffb58ded41de354c363361e261aca437a7926e9964989461",
+          "bytes": 45849
+        },
+        "Figure_S13.png": {
+          "sha256": "7ea3c1e4f03c499fa630231ea4fc5a9d0923c72ff1e56768d3f056b08dec21bf",
+          "bytes": 381344
+        },
+        "Figure_S13.tiff": {
+          "sha256": "75fe156f9e51c6d698751ca4c0a285488dfb127cfb67f8e1a0da0c8de74540f7",
+          "bytes": 1067320
+        }
+      }
+    }
+  }
+}

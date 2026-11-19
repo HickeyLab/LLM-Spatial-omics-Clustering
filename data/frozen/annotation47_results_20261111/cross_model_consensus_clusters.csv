@@ -1,0 +1,1129 @@
+method,cluster_id,n_cells,consensus_label_code,consensus_label,agreeing_models,openai_label_code,anthropic_label_code,google_label_code,deepseek_label_code
+leiden,0::0,935,5,CD57+ Epithelial,3,16,5,5,5
+leiden,0::1,947,10,Epithelial,3,10,10,27,10
+leiden,0::2,994,13,ITLN+ Epithelial,4,13,13,13,13
+leiden,0::3,920,8,Cycling TA,2,8,27,8,27
+leiden,0::4,1034,13,ITLN+ Epithelial,2,10,27,13,13
+leiden,0::5,939,27,TA,2,27,27,5,5
+leiden,0::6,7321,10,Epithelial,2,10,10,13,13
+leiden,10::0,588,15,M2 Macrophage,4,15,15,15,15
+leiden,10::1,634,15,M2 Macrophage,4,15,15,15,15
+leiden,10::2,682,15,M2 Macrophage,4,15,15,15,15
+leiden,10::3,469,15,M2 Macrophage,4,15,15,15,15
+leiden,10::4,474,15,M2 Macrophage,4,15,15,15,15
+leiden,10::5,496,15,M2 Macrophage,4,15,15,15,15
+leiden,10::6,3466,15,M2 Macrophage,4,15,15,15,15
+leiden,11::0,499,21,Noise,4,21,21,21,21
+leiden,11::1,643,21,Noise,2,21,24,24,21
+leiden,11::2,739,21,Noise,4,21,21,21,21
+leiden,11::3,656,21,Noise,2,21,24,24,21
+leiden,11::4,557,21,Noise,2,21,3,21,3
+leiden,11::5,919,21,Noise,2,21,24,24,21
+leiden,11::6,2343,21,Noise,4,21,21,21,21
+leiden,12::0,612,1,CD36 high Endothelial,4,1,1,1,1
+leiden,12::1,440,1,CD36 high Endothelial,3,1,1,1,4
+leiden,12::2,475,1,CD36 high Endothelial,4,1,1,1,1
+leiden,12::3,634,1,CD36 high Endothelial,4,1,1,1,1
+leiden,12::4,529,2,CD36 low Endothelial,4,2,2,2,2
+leiden,12::5,529,1,CD36 high Endothelial,4,1,1,1,1
+leiden,12::6,3049,2,CD36 low Endothelial,4,2,2,2,2
+leiden,13::0,521,11,Goblet,2,11,16,11,19
+leiden,13::1,726,11,Goblet,4,11,11,11,11
+leiden,13::2,545,11,Goblet,3,11,11,11,13
+leiden,13::3,465,11,Goblet,3,11,11,11,13
+leiden,13::4,414,11,Goblet,3,11,11,11,16
+leiden,13::5,537,11,Goblet,4,11,11,11,11
+leiden,13::6,2725,11,Goblet,3,11,11,11,6
+leiden,14::0,467,3,CD4+ T,4,3,3,3,3
+leiden,14::1,642,0,B,4,0,0,0,0
+leiden,14::2,687,3,CD4+ T,3,3,3,3,24
+leiden,14::3,404,3,CD4+ T,4,3,3,3,3
+leiden,14::4,520,3,CD4+ T,4,3,3,3,3
+leiden,14::5,447,3,CD4+ T,4,3,3,3,3
+leiden,14::6,2572,3,CD4+ T,4,3,3,3,3
+leiden,15::0,554,18,Nerve,2,18,26,18,22
+leiden,15::1,506,18,Nerve,3,18,18,18,22
+leiden,15::2,602,18,Nerve,3,18,18,18,17
+leiden,15::3,394,18,Nerve,3,18,18,18,22
+leiden,15::4,405,18,Nerve,3,18,18,18,24
+leiden,15::5,483,18,Nerve,4,18,18,18,18
+leiden,15::6,2499,18,Nerve,3,18,18,18,22
+leiden,16::0,537,14,M1 Macrophage,4,14,14,14,14
+leiden,16::1,780,14,M1 Macrophage,2,14,9,14,15
+leiden,16::2,653,9,DC,2,14,9,9,15
+leiden,16::3,695,14,M1 Macrophage,2,14,15,14,15
+leiden,16::4,637,14,M1 Macrophage,3,14,14,14,15
+leiden,16::5,450,14,M1 Macrophage,3,14,14,14,15
+leiden,16::6,1567,14,M1 Macrophage,2,14,9,14,15
+leiden,17::0,794,7,CD8+ T,4,7,7,7,7
+leiden,17::1,553,3,CD4+ T,3,3,3,3,7
+leiden,17::2,625,0,B,4,0,0,0,0
+leiden,17::3,403,3,CD4+ T,4,3,3,3,3
+leiden,17::4,560,3,CD4+ T,4,3,3,3,3
+leiden,17::5,296,7,CD8+ T,2,7,7,3,9
+leiden,17::6,1912,3,CD4+ T,4,3,3,3,3
+leiden,18::0,708,7,CD8+ T,4,7,7,7,7
+leiden,18::1,666,7,CD8+ T,4,7,7,7,7
+leiden,18::2,473,7,CD8+ T,4,7,7,7,7
+leiden,18::3,538,7,CD8+ T,3,7,7,7,22
+leiden,18::4,473,7,CD8+ T,4,7,7,7,7
+leiden,18::5,412,7,CD8+ T,4,7,7,7,7
+leiden,18::6,1278,7,CD8+ T,4,7,7,7,7
+leiden,19::1,557,25,Smooth muscle,3,25,25,25,21
+leiden,19::3,413,25,Smooth muscle,2,25,4,4,25
+leiden,19::4,318,25,Smooth muscle,4,25,25,25,25
+leiden,19::5,348,25,Smooth muscle,4,25,25,25,25
+leiden,19::6,2051,25,Smooth muscle,4,25,25,25,25
+leiden,19::coarsened_012,724,25,Smooth muscle,4,25,25,25,25
+leiden,1::0,1232,5,CD57+ Epithelial,3,5,5,6,5
+leiden,1::1,953,6,CD66+ Epithelial,4,6,6,6,6
+leiden,1::2,937,6,CD66+ Epithelial,4,6,6,6,6
+leiden,1::3,877,5,CD57+ Epithelial,2,5,5,6,6
+leiden,1::4,1150,6,CD66+ Epithelial,2,11,16,6,6
+leiden,1::5,856,13,ITLN+ Epithelial,3,13,13,6,13
+leiden,1::6,6596,10,Epithelial,2,10,10,6,6
+leiden,20::0,410,15,M2 Macrophage,4,15,15,15,15
+leiden,20::1,335,15,M2 Macrophage,4,15,15,15,15
+leiden,20::2,427,15,M2 Macrophage,3,15,14,15,15
+leiden,20::3,574,9,DC,2,9,9,15,14
+leiden,20::4,380,15,M2 Macrophage,3,15,3,15,15
+leiden,20::5,516,15,M2 Macrophage,3,15,14,15,15
+leiden,20::6,1751,15,M2 Macrophage,3,15,14,15,15
+leiden,21::0,353,18,Nerve,3,18,18,18,22
+leiden,21::1,385,18,Nerve,4,18,18,18,18
+leiden,21::2,536,18,Nerve,4,18,18,18,18
+leiden,21::3,369,18,Nerve,4,18,18,18,18
+leiden,21::4,347,18,Nerve,4,18,18,18,18
+leiden,21::5,311,19,Neuroendocrine,2,19,19,18,18
+leiden,21::6,1889,18,Nerve,4,18,18,18,18
+leiden,22::0,302,21,Noise,4,21,21,21,21
+leiden,22::1,428,21,Noise,4,21,21,21,21
+leiden,22::2,434,21,Noise,4,21,21,21,21
+leiden,22::5,415,21,Noise,4,21,21,21,21
+leiden,22::coarsened_015,1990,21,Noise,3,21,21,21,18
+leiden,23::2,394,26,Stromal,3,26,26,26,21
+leiden,23::3,427,26,Stromal,3,26,26,26,21
+leiden,23::4,375,10,Epithelial,2,10,10,26,21
+leiden,23::5,1663,10,Epithelial,2,10,10,26,21
+leiden,23::coarsened_016,628,26,Stromal,3,26,26,26,21
+leiden,24::0,468,24,Plasma,4,24,24,24,24
+leiden,24::1,369,24,Plasma,4,24,24,24,24
+leiden,24::2,296,24,Plasma,4,24,24,24,24
+leiden,24::3,433,24,Plasma,4,24,24,24,24
+leiden,24::4,380,24,Plasma,3,24,0,24,24
+leiden,24::5,461,24,Plasma,4,24,24,24,24
+leiden,24::6,1054,24,Plasma,3,24,0,24,24
+leiden,25::0,223,5,CD57+ Epithelial,2,5,10,6,5
+leiden,25::1,233,11,Goblet,2,11,11,6,6
+leiden,25::2,250,6,CD66+ Epithelial,3,27,6,6,6
+leiden,25::3,408,8,Cycling TA,3,8,8,6,8
+leiden,25::4,464,8,Cycling TA,2,8,27,6,8
+leiden,25::5,408,6,CD66+ Epithelial,3,13,6,6,6
+leiden,25::6,1463,16,MUC1+ Epithelial,2,16,10,6,16
+leiden,26::0,234,25,Smooth muscle,3,25,25,4,25
+leiden,26::1,257,4,CD49a+ Smooth muscle,4,4,4,4,4
+leiden,26::2,314,4,CD49a+ Smooth muscle,4,4,4,4,4
+leiden,26::3,375,4,CD49a+ Smooth muscle,4,4,4,4,4
+leiden,26::4,348,4,CD49a+ Smooth muscle,3,4,25,4,4
+leiden,26::5,243,25,Smooth muscle,3,25,25,4,25
+leiden,26::6,1523,4,CD49a+ Smooth muscle,4,4,4,4,4
+leiden,27::0,551,22,PDPN+ Stromal,4,22,22,22,22
+leiden,27::1,250,22,PDPN+ Stromal,4,22,22,22,22
+leiden,27::2,192,2,CD36 low Endothelial,2,2,2,22,22
+leiden,27::3,279,22,PDPN+ Stromal,3,2,22,22,22
+leiden,27::4,206,22,PDPN+ Stromal,4,22,22,22,22
+leiden,27::5,318,22,PDPN+ Stromal,4,22,22,22,22
+leiden,27::6,1359,22,PDPN+ Stromal,3,2,22,22,22
+leiden,28::2,244,21,Noise,4,21,21,21,21
+leiden,28::3,239,21,Noise,4,21,21,21,21
+leiden,28::5,1898,21,Noise,4,21,21,21,21
+leiden,28::coarsened_011,673,21,Noise,4,21,21,21,21
+leiden,29::0,259,12,ICC,4,12,12,12,12
+leiden,29::1,359,12,ICC,4,12,12,12,12
+leiden,29::2,326,12,ICC,4,12,12,12,12
+leiden,29::3,247,12,ICC,4,12,12,12,12
+leiden,29::4,419,12,ICC,4,12,12,12,12
+leiden,29::5,231,12,ICC,4,12,12,12,12
+leiden,29::6,1193,12,ICC,4,12,12,12,12
+leiden,2::0,1368,24,Plasma,4,24,24,24,24
+leiden,2::1,979,24,Plasma,4,24,24,24,24
+leiden,2::2,1255,24,Plasma,4,24,24,24,24
+leiden,2::3,1332,24,Plasma,4,24,24,24,24
+leiden,2::4,718,24,Plasma,4,24,24,24,24
+leiden,2::5,952,24,Plasma,3,24,24,24,15
+leiden,2::6,5217,24,Plasma,4,24,24,24,24
+leiden,30::0,363,13,ITLN+ Epithelial,2,27,13,8,13
+leiden,30::1,245,10,Epithelial,1,10,27,8,7
+leiden,30::2,284,8,Cycling TA,3,8,8,8,14
+leiden,30::3,286,8,Cycling TA,2,8,11,8,14
+leiden,30::4,220,8,Cycling TA,3,8,8,8,14
+leiden,30::5,244,8,Cycling TA,3,8,8,8,14
+leiden,30::6,1254,8,Cycling TA,2,8,5,8,14
+leiden,31::0,240,6,CD66+ Epithelial,3,6,6,6,22
+leiden,31::1,265,6,CD66+ Epithelial,3,6,6,6,22
+leiden,31::4,239,6,CD66+ Epithelial,2,6,10,6,22
+leiden,31::5,1630,6,CD66+ Epithelial,2,6,21,6,21
+leiden,31::coarsened_014,490,10,Epithelial,3,10,10,10,21
+leiden,32::coarsened_013,1633,21,Noise,3,21,21,13,21
+leiden,32::coarsened_019,964,21,Noise,3,21,21,10,21
+leiden,33::0,284,20,Neutrophil,4,20,20,20,20
+leiden,33::1,214,20,Neutrophil,2,20,1,20,1
+leiden,33::2,223,20,Neutrophil,4,20,20,20,20
+leiden,33::3,244,20,Neutrophil,4,20,20,20,20
+leiden,33::4,269,20,Neutrophil,2,20,2,20,2
+leiden,33::5,213,20,Neutrophil,4,20,20,20,20
+leiden,33::6,1103,20,Neutrophil,3,20,20,20,19
+leiden,34::0,251,17,NK,2,17,23,21,17
+leiden,34::1,273,5,CD57+ Epithelial,1,5,12,21,19
+leiden,34::2,242,17,NK,1,17,26,21,19
+leiden,34::3,319,7,CD8+ T,1,7,17,21,19
+leiden,34::4,218,19,Neuroendocrine,2,17,19,21,19
+leiden,34::5,217,17,NK,1,17,18,21,19
+leiden,34::6,895,21,Noise,2,17,22,21,21
+leiden,35::0,191,10,Epithelial,2,10,21,10,21
+leiden,35::1,224,21,Noise,3,21,21,21,22
+leiden,35::2,241,6,CD66+ Epithelial,3,6,6,6,27
+leiden,35::3,223,10,Epithelial,2,10,10,27,7
+leiden,35::4,191,7,CD8+ T,2,7,3,7,21
+leiden,35::5,1069,17,NK,2,7,17,17,16
+leiden,36::0,188,16,MUC1+ Epithelial,4,16,16,16,16
+leiden,36::1,208,16,MUC1+ Epithelial,4,16,16,16,16
+leiden,36::2,153,16,MUC1+ Epithelial,4,16,16,16,16
+leiden,36::3,147,16,MUC1+ Epithelial,4,16,16,16,16
+leiden,36::4,180,16,MUC1+ Epithelial,4,16,16,16,16
+leiden,36::5,1201,16,MUC1+ Epithelial,3,16,16,16,21
+leiden,37::0,181,4,CD49a+ Smooth muscle,4,4,4,4,4
+leiden,37::1,240,4,CD49a+ Smooth muscle,3,4,4,4,25
+leiden,37::2,208,25,Smooth muscle,3,25,25,25,4
+leiden,37::3,159,4,CD49a+ Smooth muscle,3,4,4,4,25
+leiden,37::4,250,25,Smooth muscle,3,25,25,25,4
+leiden,37::5,950,4,CD49a+ Smooth muscle,3,4,4,4,9
+leiden,38::0,194,9,DC,3,9,9,9,15
+leiden,38::1,140,9,DC,3,15,9,9,9
+leiden,38::2,147,15,M2 Macrophage,3,15,15,15,9
+leiden,38::3,138,9,DC,3,9,14,9,9
+leiden,38::4,214,9,DC,3,9,9,9,0
+leiden,38::5,760,9,DC,3,9,9,9,0
+leiden,39::0,196,0,B,3,0,0,0,24
+leiden,39::1,198,0,B,4,0,0,0,0
+leiden,39::2,240,24,Plasma,2,24,0,0,24
+leiden,39::3,175,0,B,4,0,0,0,0
+leiden,39::4,221,0,B,2,24,0,0,7
+leiden,39::5,554,0,B,3,0,0,0,7
+leiden,3::0,656,7,CD8+ T,4,7,7,7,7
+leiden,3::1,1074,7,CD8+ T,4,7,7,7,7
+leiden,3::2,686,7,CD8+ T,4,7,7,7,7
+leiden,3::3,922,7,CD8+ T,4,7,7,7,7
+leiden,3::4,818,7,CD8+ T,4,7,7,7,7
+leiden,3::5,731,7,CD8+ T,3,7,7,7,21
+leiden,3::6,4711,7,CD8+ T,3,7,7,7,21
+leiden,40::coarsened_003,219,21,Noise,4,21,21,21,21
+leiden,40::coarsened_005,315,21,Noise,3,21,16,21,21
+leiden,40::coarsened_007,1002,21,Noise,4,21,21,21,21
+leiden,41::1,123,21,Noise,4,21,21,21,21
+leiden,41::2,107,21,Noise,3,21,16,21,21
+leiden,41::3,120,21,Noise,4,21,21,21,21
+leiden,41::5,763,21,Noise,3,21,16,21,21
+leiden,41::coarsened_008,258,21,Noise,2,21,16,21,16
+leiden,42::0,133,26,Stromal,2,26,26,21,2
+leiden,42::2,142,21,Noise,3,21,21,21,19
+leiden,42::4,148,21,Noise,2,21,17,21,19
+leiden,42::5,606,21,Noise,2,21,3,21,14
+leiden,42::coarsened_006,314,21,Noise,3,21,21,21,23
+leiden,43::0,246,19,Neuroendocrine,4,19,19,19,19
+leiden,43::1,186,19,Neuroendocrine,4,19,19,19,19
+leiden,43::2,111,5,CD57+ Epithelial,2,5,5,19,7
+leiden,43::3,156,19,Neuroendocrine,4,19,19,19,19
+leiden,43::4,158,19,Neuroendocrine,4,19,19,19,19
+leiden,43::5,351,19,Neuroendocrine,4,19,19,19,19
+leiden,44::0,155,15,M2 Macrophage,3,15,14,15,15
+leiden,44::1,143,15,M2 Macrophage,4,15,15,15,15
+leiden,44::4,157,15,M2 Macrophage,4,15,15,15,15
+leiden,44::coarsened_018,670,15,M2 Macrophage,4,15,15,15,15
+leiden,45::0,234,23,Paneth,4,23,23,23,23
+leiden,45::1,144,23,Paneth,4,23,23,23,23
+leiden,45::2,161,23,Paneth,4,23,23,23,23
+leiden,45::3,473,23,Paneth,4,23,23,23,23
+leiden,46::0,138,24,Plasma,2,17,24,14,24
+leiden,46::1,141,14,M1 Macrophage,2,14,9,14,9
+leiden,46::2,113,21,Noise,2,0,21,14,21
+leiden,46::3,364,21,Noise,2,17,21,14,21
+leiden,47::0,98,10,Epithelial,3,10,10,27,10
+leiden,47::1,532,21,Noise,2,10,21,27,21
+leiden,48::0,83,11,Goblet,4,11,11,11,11
+leiden,48::1,304,11,Goblet,4,11,11,11,11
+leiden,49::0,69,4,CD49a+ Smooth muscle,4,4,4,4,4
+leiden,49::1,230,4,CD49a+ Smooth muscle,3,4,18,4,4
+leiden,4::0,755,13,ITLN+ Epithelial,2,13,10,13,6
+leiden,4::1,948,8,Cycling TA,2,8,8,13,5
+leiden,4::2,751,13,ITLN+ Epithelial,4,13,13,13,13
+leiden,4::3,674,27,TA,2,27,27,13,13
+leiden,4::4,841,13,ITLN+ Epithelial,2,16,27,13,13
+leiden,4::5,676,10,Epithelial,3,10,10,13,10
+leiden,4::6,4559,13,ITLN+ Epithelial,4,13,13,13,13
+leiden,50::0,199,4,CD49a+ Smooth muscle,2,4,8,12,4
+leiden,51::0,98,8,Cycling TA,2,8,20,8,17
+leiden,52::0,39,20,Neutrophil,3,20,19,20,20
+leiden,53::0,33,19,Neuroendocrine,2,19,6,7,19
+leiden,54::0,14,6,CD66+ Epithelial,2,6,10,10,6
+leiden,5::0,563,10,Epithelial,3,10,27,10,10
+leiden,5::1,642,27,TA,2,27,6,10,27
+leiden,5::2,755,6,CD66+ Epithelial,3,6,6,10,6
+leiden,5::3,964,10,Epithelial,2,5,10,10,6
+leiden,5::4,572,10,Epithelial,3,10,7,10,10
+leiden,5::5,546,10,Epithelial,2,7,10,10,6
+leiden,5::6,4508,10,Epithelial,4,10,10,10,10
+leiden,6::0,578,25,Smooth muscle,4,25,25,25,25
+leiden,6::1,571,25,Smooth muscle,4,25,25,25,25
+leiden,6::2,594,25,Smooth muscle,2,25,4,25,4
+leiden,6::3,726,25,Smooth muscle,3,25,25,25,4
+leiden,6::4,516,4,CD49a+ Smooth muscle,2,4,4,25,12
+leiden,6::5,613,25,Smooth muscle,3,25,26,25,25
+leiden,6::6,4904,25,Smooth muscle,2,25,4,25,4
+leiden,7::0,818,1,CD36 high Endothelial,4,1,1,1,1
+leiden,7::1,650,1,CD36 high Endothelial,4,1,1,1,1
+leiden,7::2,916,1,CD36 high Endothelial,2,1,2,1,2
+leiden,7::3,907,1,CD36 high Endothelial,2,1,15,1,15
+leiden,7::4,692,2,CD36 low Endothelial,3,2,2,1,2
+leiden,7::5,967,1,CD36 high Endothelial,4,1,1,1,1
+leiden,7::6,3294,1,CD36 high Endothelial,4,1,1,1,1
+leiden,8::1,753,4,CD49a+ Smooth muscle,2,4,4,18,12
+leiden,8::4,870,18,Nerve,4,18,18,18,18
+leiden,8::6,3884,21,Noise,2,4,21,18,21
+leiden,8::coarsened_017,958,21,Noise,2,4,21,18,21
+leiden,8::coarsened_020,1307,4,CD49a+ Smooth muscle,2,4,4,18,21
+leiden,9::0,400,22,PDPN+ Stromal,4,22,22,22,22
+leiden,9::1,442,26,Stromal,3,26,16,26,26
+leiden,9::2,597,21,Noise,3,21,21,26,21
+leiden,9::3,480,21,Noise,3,21,21,26,21
+leiden,9::4,597,26,Stromal,3,2,26,26,26
+leiden,9::5,419,26,Stromal,4,26,26,26,26
+leiden,9::6,3957,26,Stromal,4,26,26,26,26
+flowsom,1,1631,11,Goblet,3,11,11,11,10
+flowsom,10,457,25,Smooth muscle,4,25,25,25,25
+flowsom,100,26,23,Paneth,4,23,23,23,23
+flowsom,101,66,19,Neuroendocrine,3,19,19,5,19
+flowsom,102,21,19,Neuroendocrine,2,19,21,5,19
+flowsom,103,735,7,CD8+ T,4,7,7,7,7
+flowsom,104,1223,11,Goblet,4,11,11,11,11
+flowsom,105,475,4,CD49a+ Smooth muscle,4,4,4,4,4
+flowsom,106,4050,2,CD36 low Endothelial,4,2,2,2,2
+flowsom,107,4432,10,Epithelial,2,10,10,27,21
+flowsom,108,569,24,Plasma,4,24,24,24,24
+flowsom,109,2673,21,Noise,4,21,21,21,21
+flowsom,11,208,24,Plasma,4,24,24,24,24
+flowsom,110,41,1,CD36 high Endothelial,3,9,1,1,1
+flowsom,111,291,26,Stromal,2,24,26,26,25
+flowsom,112,511,8,Cycling TA,4,8,8,8,8
+flowsom,113,323,19,Neuroendocrine,3,19,19,5,19
+flowsom,114,35,12,ICC,3,12,12,5,12
+flowsom,115,1493,24,Plasma,4,24,24,24,24
+flowsom,116,50,23,Paneth,4,23,23,23,23
+flowsom,117,196,11,Goblet,4,11,11,11,11
+flowsom,118,14,17,NK,3,17,21,17,17
+flowsom,119,208,11,Goblet,4,11,11,11,11
+flowsom,12,78,11,Goblet,3,11,11,11,5
+flowsom,120,16,17,NK,3,17,17,17,15
+flowsom,121,82,20,Neutrophil,4,20,20,20,20
+flowsom,122,123,22,PDPN+ Stromal,4,22,22,22,22
+flowsom,123,12,23,Paneth,4,23,23,23,23
+flowsom,124,13,19,Neuroendocrine,4,19,19,19,19
+flowsom,125,237,23,Paneth,4,23,23,23,23
+flowsom,126,31,19,Neuroendocrine,3,19,19,5,19
+flowsom,127,87,11,Goblet,4,11,11,11,11
+flowsom,128,193,15,M2 Macrophage,3,14,15,15,15
+flowsom,129,730,24,Plasma,4,24,24,24,24
+flowsom,13,545,3,CD4+ T,3,3,3,3,0
+flowsom,130,33,23,Paneth,2,23,27,23,16
+flowsom,131,166,24,Plasma,4,24,24,24,24
+flowsom,132,311,20,Neutrophil,4,20,20,20,20
+flowsom,133,851,6,CD66+ Epithelial,4,6,6,6,6
+flowsom,134,322,23,Paneth,4,23,23,23,23
+flowsom,135,3614,16,MUC1+ Epithelial,3,16,16,16,27
+flowsom,136,70,11,Goblet,1,11,27,5,13
+flowsom,137,196,13,ITLN+ Epithelial,4,13,13,13,13
+flowsom,138,293,14,M1 Macrophage,2,14,14,15,15
+flowsom,139,443,3,CD4+ T,3,3,0,3,3
+flowsom,14,644,24,Plasma,4,24,24,24,24
+flowsom,140,117,1,CD36 high Endothelial,3,1,2,1,1
+flowsom,141,31,6,CD66+ Epithelial,3,6,20,6,6
+flowsom,142,3702,15,M2 Macrophage,4,15,15,15,15
+flowsom,143,55,17,NK,4,17,17,17,17
+flowsom,144,4127,21,Noise,2,21,24,24,21
+flowsom,145,1152,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,146,689,24,Plasma,3,0,24,24,24
+flowsom,147,52,17,NK,3,17,17,17,7
+flowsom,148,74,19,Neuroendocrine,4,19,19,19,19
+flowsom,149,50,13,ITLN+ Epithelial,4,13,13,13,13
+flowsom,15,287,20,Neutrophil,4,20,20,20,20
+flowsom,150,612,20,Neutrophil,4,20,20,20,20
+flowsom,151,202,20,Neutrophil,4,20,20,20,20
+flowsom,152,39,19,Neuroendocrine,4,19,19,19,19
+flowsom,153,21,19,Neuroendocrine,4,19,19,19,19
+flowsom,154,68,19,Neuroendocrine,4,19,19,19,19
+flowsom,155,69,19,Neuroendocrine,4,19,19,19,19
+flowsom,156,4,11,Goblet,2,11,21,11,6
+flowsom,157,43,17,NK,3,17,21,17,17
+flowsom,158,37,19,Neuroendocrine,3,19,19,5,19
+flowsom,159,108,11,Goblet,4,11,11,11,11
+flowsom,16,1707,18,Nerve,4,18,18,18,18
+flowsom,160,97,20,Neutrophil,4,20,20,20,20
+flowsom,161,77,0,B,3,0,0,0,24
+flowsom,162,84,20,Neutrophil,4,20,20,20,20
+flowsom,163,83,23,Paneth,4,23,23,23,23
+flowsom,164,71,19,Neuroendocrine,4,19,19,19,19
+flowsom,165,46,23,Paneth,4,23,23,23,23
+flowsom,166,32,17,NK,3,17,21,17,17
+flowsom,167,74,19,Neuroendocrine,4,19,19,19,19
+flowsom,168,2,20,Neutrophil,3,20,20,21,20
+flowsom,169,34,19,Neuroendocrine,4,19,19,19,19
+flowsom,17,261,7,CD8+ T,2,8,7,7,11
+flowsom,170,25,24,Plasma,2,24,12,24,4
+flowsom,171,23,11,Goblet,3,11,6,11,11
+flowsom,172,31,0,B,3,0,0,0,24
+flowsom,173,35,19,Neuroendocrine,4,19,19,19,19
+flowsom,174,7,21,Noise,2,12,21,21,17
+flowsom,175,24,17,NK,2,17,17,21,23
+flowsom,176,16,21,Noise,2,12,21,21,2
+flowsom,177,70,20,Neutrophil,4,20,20,20,20
+flowsom,178,24,19,Neuroendocrine,3,19,19,19,13
+flowsom,179,29,0,B,3,0,0,0,9
+flowsom,18,1862,1,CD36 high Endothelial,3,1,1,1,23
+flowsom,180,36,24,Plasma,3,24,26,24,24
+flowsom,181,3,19,Neuroendocrine,3,19,19,19,27
+flowsom,182,131,4,CD49a+ Smooth muscle,2,1,4,4,7
+flowsom,183,67,11,Goblet,2,11,16,11,13
+flowsom,184,10,12,ICC,1,12,14,21,7
+flowsom,185,36,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,186,7,23,Paneth,4,23,23,23,23
+flowsom,187,12,23,Paneth,3,23,23,21,23
+flowsom,188,44,11,Goblet,3,11,11,11,2
+flowsom,189,65,19,Neuroendocrine,1,19,27,11,13
+flowsom,19,276,1,CD36 high Endothelial,3,1,26,1,1
+flowsom,190,40,19,Neuroendocrine,3,19,19,19,13
+flowsom,191,3705,18,Nerve,3,18,18,18,17
+flowsom,192,18,19,Neuroendocrine,3,19,19,19,13
+flowsom,193,110,11,Goblet,3,11,11,11,13
+flowsom,194,69,11,Goblet,3,11,11,11,13
+flowsom,195,11,24,Plasma,3,24,26,24,24
+flowsom,196,35,15,M2 Macrophage,2,15,15,21,23
+flowsom,197,7,19,Neuroendocrine,3,19,19,19,27
+flowsom,198,34,23,Paneth,4,23,23,23,23
+flowsom,199,11,23,Paneth,4,23,23,23,23
+flowsom,2,1091,2,CD36 low Endothelial,3,2,2,2,10
+flowsom,20,4712,11,Goblet,2,11,10,11,27
+flowsom,200,30,21,Noise,2,12,21,21,17
+flowsom,201,89,24,Plasma,4,24,24,24,24
+flowsom,202,27,19,Neuroendocrine,4,19,19,19,19
+flowsom,203,140,19,Neuroendocrine,4,19,19,19,19
+flowsom,204,3,11,Goblet,2,11,21,11,2
+flowsom,205,156,20,Neutrophil,4,20,20,20,20
+flowsom,206,76,19,Neuroendocrine,4,19,19,19,19
+flowsom,207,27,24,Plasma,3,24,12,24,24
+flowsom,209,506,11,Goblet,2,11,16,11,27
+flowsom,21,182,11,Goblet,2,11,13,11,13
+flowsom,210,8,12,ICC,1,12,9,21,19
+flowsom,211,432,22,PDPN+ Stromal,3,22,22,22,3
+flowsom,212,32,19,Neuroendocrine,4,19,19,19,19
+flowsom,213,104,23,Paneth,4,23,23,23,23
+flowsom,214,8,19,Neuroendocrine,4,19,19,19,19
+flowsom,215,147,20,Neutrophil,4,20,20,20,20
+flowsom,216,33,19,Neuroendocrine,4,19,19,19,19
+flowsom,217,99,19,Neuroendocrine,4,19,19,19,19
+flowsom,218,27,23,Paneth,3,23,23,23,10
+flowsom,219,478,24,Plasma,4,24,24,24,24
+flowsom,22,1603,24,Plasma,4,24,24,24,24
+flowsom,220,119,24,Plasma,4,24,24,24,24
+flowsom,221,21,11,Goblet,2,19,11,11,27
+flowsom,222,2,12,ICC,1,12,3,21,19
+flowsom,223,56,17,NK,2,17,21,21,17
+flowsom,224,45,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,225,66,20,Neutrophil,4,20,20,20,20
+flowsom,226,48,17,NK,2,17,17,21,23
+flowsom,227,119,19,Neuroendocrine,4,19,19,19,19
+flowsom,228,17,24,Plasma,3,24,25,24,24
+flowsom,229,17,11,Goblet,3,11,11,11,27
+flowsom,23,420,17,NK,3,17,17,21,17
+flowsom,230,102,20,Neutrophil,4,20,20,20,20
+flowsom,231,49,23,Paneth,4,23,23,23,23
+flowsom,232,25,23,Paneth,4,23,23,23,23
+flowsom,233,28,19,Neuroendocrine,4,19,19,19,19
+flowsom,234,139,20,Neutrophil,4,20,20,20,20
+flowsom,235,52,19,Neuroendocrine,2,19,27,11,19
+flowsom,236,29,24,Plasma,4,24,24,24,24
+flowsom,237,75,0,B,3,0,0,3,0
+flowsom,238,31,12,ICC,3,12,17,12,12
+flowsom,239,64,19,Neuroendocrine,3,19,10,19,19
+flowsom,24,110,4,CD49a+ Smooth muscle,3,4,25,4,4
+flowsom,240,148,0,B,3,0,0,3,0
+flowsom,241,13,23,Paneth,4,23,23,23,23
+flowsom,242,19,11,Goblet,3,11,6,11,11
+flowsom,243,64,24,Plasma,4,24,24,24,24
+flowsom,244,43,19,Neuroendocrine,4,19,19,19,19
+flowsom,245,22,23,Paneth,2,18,23,23,19
+flowsom,246,73,0,B,4,0,0,0,0
+flowsom,247,84,0,B,4,0,0,0,0
+flowsom,248,35,4,CD49a+ Smooth muscle,4,4,4,4,4
+flowsom,249,62,12,ICC,3,12,17,12,12
+flowsom,25,5204,25,Smooth muscle,4,25,25,25,25
+flowsom,250,15,4,CD49a+ Smooth muscle,3,4,25,4,4
+flowsom,251,63,20,Neutrophil,4,20,20,20,20
+flowsom,252,63,4,CD49a+ Smooth muscle,3,4,25,4,4
+flowsom,253,47,19,Neuroendocrine,4,19,19,19,19
+flowsom,254,51,19,Neuroendocrine,4,19,19,19,19
+flowsom,255,26,12,ICC,3,12,17,12,12
+flowsom,256,58,19,Neuroendocrine,4,19,19,19,19
+flowsom,257,57,12,ICC,4,12,12,12,12
+flowsom,258,42,24,Plasma,4,24,24,24,24
+flowsom,259,156,7,CD8+ T,4,7,7,7,7
+flowsom,26,757,9,DC,2,14,9,9,15
+flowsom,260,185,11,Goblet,4,11,11,11,11
+flowsom,261,40,11,Goblet,2,19,5,11,11
+flowsom,262,111,0,B,4,0,0,0,0
+flowsom,263,89,0,B,4,0,0,0,0
+flowsom,264,16,4,CD49a+ Smooth muscle,3,4,25,4,4
+flowsom,265,161,4,CD49a+ Smooth muscle,3,4,25,4,4
+flowsom,266,2,4,CD49a+ Smooth muscle,3,4,21,4,4
+flowsom,267,155,19,Neuroendocrine,3,19,10,19,19
+flowsom,268,65,19,Neuroendocrine,4,19,19,19,19
+flowsom,269,10351,25,Smooth muscle,2,25,26,25,21
+flowsom,27,193,14,M1 Macrophage,2,21,14,14,9
+flowsom,270,45,17,NK,2,17,21,17,23
+flowsom,271,941,22,PDPN+ Stromal,4,22,22,22,22
+flowsom,272,144,0,B,3,0,0,3,0
+flowsom,273,158,19,Neuroendocrine,3,19,10,19,19
+flowsom,274,97,19,Neuroendocrine,3,19,10,19,19
+flowsom,275,48,17,NK,2,17,21,17,12
+flowsom,276,707,16,MUC1+ Epithelial,2,16,16,11,13
+flowsom,277,111,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,278,857,3,CD4+ T,4,3,3,3,3
+flowsom,279,40,1,CD36 high Endothelial,3,1,2,1,1
+flowsom,28,345,11,Goblet,4,11,11,11,11
+flowsom,280,5,12,ICC,3,12,21,12,12
+flowsom,281,25,11,Goblet,3,11,27,11,11
+flowsom,282,41,6,CD66+ Epithelial,3,6,6,11,6
+flowsom,283,90,24,Plasma,4,24,24,24,24
+flowsom,284,89,20,Neutrophil,4,20,20,20,20
+flowsom,285,1751,24,Plasma,4,24,24,24,24
+flowsom,286,143,2,CD36 low Endothelial,3,2,2,2,1
+flowsom,287,64,24,Plasma,4,24,24,24,24
+flowsom,288,1,23,Paneth,4,23,23,23,23
+flowsom,289,60,19,Neuroendocrine,4,19,19,19,19
+flowsom,29,327,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,290,22,24,Plasma,2,24,26,24,4
+flowsom,291,122,0,B,4,0,0,0,0
+flowsom,292,55,0,B,4,0,0,0,0
+flowsom,293,90,4,CD49a+ Smooth muscle,4,4,4,4,4
+flowsom,294,59,7,CD8+ T,3,7,7,7,3
+flowsom,295,58,11,Goblet,4,11,11,11,11
+flowsom,296,37,11,Goblet,4,11,11,11,11
+flowsom,297,69,12,ICC,3,12,17,12,12
+flowsom,298,6,11,Goblet,3,11,8,11,11
+flowsom,299,120,13,ITLN+ Epithelial,2,13,13,11,5
+flowsom,3,934,3,CD4+ T,4,3,3,3,3
+flowsom,30,367,20,Neutrophil,4,20,20,20,20
+flowsom,300,206,15,M2 Macrophage,3,15,15,15,14
+flowsom,31,1619,4,CD49a+ Smooth muscle,4,4,4,4,4
+flowsom,32,3760,1,CD36 high Endothelial,3,1,1,1,2
+flowsom,33,274,19,Neuroendocrine,4,19,19,19,19
+flowsom,34,904,19,Neuroendocrine,2,19,5,19,8
+flowsom,35,679,12,ICC,4,12,12,12,12
+flowsom,36,4479,6,CD66+ Epithelial,4,6,6,6,6
+flowsom,37,866,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,38,235,11,Goblet,4,11,11,11,11
+flowsom,39,690,10,Epithelial,2,10,10,27,27
+flowsom,4,924,24,Plasma,3,20,24,24,24
+flowsom,40,428,13,ITLN+ Epithelial,4,13,13,13,13
+flowsom,41,559,8,Cycling TA,4,8,8,8,8
+flowsom,42,151,24,Plasma,3,24,24,24,0
+flowsom,43,5580,10,Epithelial,2,10,10,27,21
+flowsom,44,745,2,CD36 low Endothelial,3,2,2,2,1
+flowsom,45,686,7,CD8+ T,4,7,7,7,7
+flowsom,46,120,17,NK,2,17,17,21,9
+flowsom,47,346,24,Plasma,3,24,24,24,0
+flowsom,48,164,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,49,1481,24,Plasma,4,24,24,24,24
+flowsom,5,260,0,B,3,0,0,0,3
+flowsom,50,1225,3,CD4+ T,4,3,3,3,3
+flowsom,51,132,1,CD36 high Endothelial,3,1,1,1,14
+flowsom,52,191,18,Nerve,3,18,18,18,22
+flowsom,53,2654,15,M2 Macrophage,2,14,15,24,15
+flowsom,54,2857,24,Plasma,4,24,24,24,24
+flowsom,55,101,20,Neutrophil,3,20,20,24,20
+flowsom,56,301,23,Paneth,4,23,23,23,23
+flowsom,57,642,7,CD8+ T,3,7,7,7,17
+flowsom,58,278,15,M2 Macrophage,4,15,15,15,15
+flowsom,59,5966,7,CD8+ T,4,7,7,7,7
+flowsom,6,4734,6,CD66+ Epithelial,2,6,6,10,10
+flowsom,60,1847,16,MUC1+ Epithelial,4,16,16,16,16
+flowsom,61,1411,21,Noise,2,10,21,27,21
+flowsom,62,107,18,Nerve,4,18,18,18,18
+flowsom,63,159,17,NK,3,17,17,21,17
+flowsom,64,102,11,Goblet,4,11,11,11,11
+flowsom,65,111,21,Noise,3,21,21,21,5
+flowsom,66,165,17,NK,3,17,17,21,17
+flowsom,67,248,4,CD49a+ Smooth muscle,2,4,25,4,25
+flowsom,68,801,1,CD36 high Endothelial,4,1,1,1,1
+flowsom,69,2212,6,CD66+ Epithelial,2,6,6,10,10
+flowsom,7,233,0,B,3,0,0,0,3
+flowsom,70,2083,7,CD8+ T,4,7,7,7,7
+flowsom,71,1997,11,Goblet,4,11,11,11,11
+flowsom,72,168,22,PDPN+ Stromal,3,22,22,22,26
+flowsom,73,53860,21,Noise,4,21,21,21,21
+flowsom,74,57,4,CD49a+ Smooth muscle,4,4,4,4,4
+flowsom,75,1202,24,Plasma,4,24,24,24,24
+flowsom,76,48,13,ITLN+ Epithelial,4,13,13,13,13
+flowsom,77,30,21,Noise,3,21,21,21,11
+flowsom,78,376,19,Neuroendocrine,4,19,19,19,19
+flowsom,79,378,7,CD8+ T,4,7,7,7,7
+flowsom,8,10106,10,Epithelial,2,6,10,10,21
+flowsom,80,58,19,Neuroendocrine,4,19,19,19,19
+flowsom,81,36,19,Neuroendocrine,4,19,19,19,19
+flowsom,82,479,24,Plasma,3,24,24,24,19
+flowsom,83,121,19,Neuroendocrine,2,19,13,19,11
+flowsom,84,536,11,Goblet,3,11,11,11,3
+flowsom,85,65,0,B,3,0,0,0,11
+flowsom,86,22,11,Goblet,3,11,11,11,13
+flowsom,87,224,13,ITLN+ Epithelial,2,13,27,13,3
+flowsom,88,302,3,CD4+ T,2,3,3,21,15
+flowsom,89,668,15,M2 Macrophage,2,25,15,15,17
+flowsom,9,161,17,NK,2,17,17,21,3
+flowsom,90,819,3,CD4+ T,2,0,3,3,7
+flowsom,91,300,7,CD8+ T,3,7,7,7,11
+flowsom,92,10,11,Goblet,2,21,11,11,2
+flowsom,93,1862,2,CD36 low Endothelial,3,2,2,2,10
+flowsom,94,3215,11,Goblet,2,11,27,13,11
+flowsom,95,417,23,Paneth,3,23,23,23,0
+flowsom,96,66,11,Goblet,3,11,11,11,27
+flowsom,97,275,24,Plasma,3,24,24,24,11
+flowsom,98,543,19,Neuroendocrine,2,19,5,19,11
+flowsom,99,25,11,Goblet,3,11,11,11,13
+spatialsort,0,1658,25,Smooth muscle,2,4,25,25,21
+spatialsort,1,3051,16,MUC1+ Epithelial,4,16,16,16,16
+spatialsort,10,2115,21,Noise,3,4,21,21,21
+spatialsort,100,407,13,ITLN+ Epithelial,2,13,13,5,14
+spatialsort,101,883,24,Plasma,4,24,24,24,24
+spatialsort,102,1032,24,Plasma,4,24,24,24,24
+spatialsort,103,1072,7,CD8+ T,4,7,7,7,7
+spatialsort,104,753,15,M2 Macrophage,4,15,15,15,15
+spatialsort,105,455,3,CD4+ T,4,3,3,3,3
+spatialsort,106,694,2,CD36 low Endothelial,3,2,2,2,12
+spatialsort,107,1047,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,108,764,5,CD57+ Epithelial,3,5,5,5,14
+spatialsort,109,639,6,CD66+ Epithelial,2,6,6,7,7
+spatialsort,11,1328,6,CD66+ Epithelial,3,27,6,6,6
+spatialsort,110,801,3,CD4+ T,3,3,3,3,7
+spatialsort,111,673,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,112,705,12,ICC,4,12,12,12,12
+spatialsort,113,903,15,M2 Macrophage,4,15,15,15,15
+spatialsort,114,825,8,Cycling TA,4,8,8,8,8
+spatialsort,115,685,9,DC,3,9,9,9,21
+spatialsort,117,1145,10,Epithelial,3,10,10,10,6
+spatialsort,118,968,26,Stromal,2,26,26,22,22
+spatialsort,119,959,7,CD8+ T,4,7,7,7,7
+spatialsort,12,1663,21,Noise,4,21,21,21,21
+spatialsort,120,750,3,CD4+ T,4,3,3,3,3
+spatialsort,121,1028,10,Epithelial,3,10,10,10,13
+spatialsort,122,972,21,Noise,2,10,21,26,21
+spatialsort,123,608,25,Smooth muscle,3,25,25,4,25
+spatialsort,124,938,6,CD66+ Epithelial,4,6,6,6,6
+spatialsort,125,841,24,Plasma,3,7,24,24,24
+spatialsort,126,894,15,M2 Macrophage,4,15,15,15,15
+spatialsort,127,1131,15,M2 Macrophage,4,15,15,15,15
+spatialsort,128,806,14,M1 Macrophage,2,14,14,15,15
+spatialsort,129,880,9,DC,3,9,9,9,6
+spatialsort,13,830,6,CD66+ Epithelial,2,6,20,6,21
+spatialsort,130,1323,21,Noise,2,18,21,21,11
+spatialsort,131,1111,11,Goblet,3,11,11,11,15
+spatialsort,132,1031,26,Stromal,2,15,26,26,4
+spatialsort,133,933,25,Smooth muscle,2,4,25,25,14
+spatialsort,134,744,14,M1 Macrophage,3,14,14,14,8
+spatialsort,135,802,8,Cycling TA,2,8,27,8,24
+spatialsort,136,911,24,Plasma,4,24,24,24,24
+spatialsort,137,724,24,Plasma,3,24,24,24,21
+spatialsort,138,1028,10,Epithelial,2,10,10,27,7
+spatialsort,139,1082,17,NK,1,17,7,24,22
+spatialsort,14,1120,9,DC,3,9,9,9,1
+spatialsort,140,575,22,PDPN+ Stromal,2,12,22,22,19
+spatialsort,141,860,1,CD36 high Endothelial,3,1,1,1,21
+spatialsort,142,922,19,Neuroendocrine,3,19,19,19,7
+spatialsort,143,1041,21,Noise,3,21,21,21,2
+spatialsort,144,811,7,CD8+ T,3,7,7,7,11
+spatialsort,145,1221,26,Stromal,2,22,26,26,3
+spatialsort,146,377,3,CD4+ T,4,3,3,3,3
+spatialsort,147,156,23,Paneth,3,23,23,23,21
+spatialsort,148,427,0,B,3,0,0,0,20
+spatialsort,149,435,2,CD36 low Endothelial,3,2,2,2,0
+spatialsort,15,1092,11,Goblet,3,11,11,11,18
+spatialsort,150,957,3,CD4+ T,3,3,3,24,3
+spatialsort,151,422,3,CD4+ T,4,3,3,3,3
+spatialsort,152,1065,21,Noise,3,21,21,21,23
+spatialsort,153,691,20,Neutrophil,2,20,17,20,18
+spatialsort,155,208,0,B,3,0,0,0,25
+spatialsort,156,707,18,Nerve,3,18,18,18,6
+spatialsort,157,323,3,CD4+ T,3,3,3,3,13
+spatialsort,158,1145,15,M2 Macrophage,3,15,15,15,2
+spatialsort,159,875,23,Paneth,3,23,23,23,7
+spatialsort,16,1321,18,Nerve,3,18,18,18,7
+spatialsort,160,752,4,CD49a+ Smooth muscle,3,4,4,4,11
+spatialsort,161,822,10,Epithelial,3,10,10,10,6
+spatialsort,163,1303,13,ITLN+ Epithelial,4,13,13,13,13
+spatialsort,164,944,2,CD36 low Endothelial,3,2,2,2,0
+spatialsort,165,681,7,CD8+ T,3,7,7,7,3
+spatialsort,167,943,17,NK,3,17,17,17,23
+spatialsort,169,1086,11,Goblet,3,11,11,11,18
+spatialsort,17,1574,6,CD66+ Epithelial,3,6,6,6,25
+spatialsort,170,889,23,Paneth,4,23,23,23,23
+spatialsort,171,855,7,CD8+ T,4,7,7,7,7
+spatialsort,172,87,21,Noise,3,21,21,23,21
+spatialsort,174,859,17,NK,3,17,17,17,9
+spatialsort,176,955,16,MUC1+ Epithelial,2,16,11,16,11
+spatialsort,177,1005,17,NK,2,17,18,17,7
+spatialsort,178,1105,9,DC,2,9,26,9,21
+spatialsort,179,276,0,B,4,0,0,0,0
+spatialsort,18,1011,21,Noise,4,21,21,21,21
+spatialsort,181,666,14,M1 Macrophage,1,14,21,24,9
+spatialsort,184,663,15,M2 Macrophage,4,15,15,15,15
+spatialsort,185,122,21,Noise,1,21,8,23,16
+spatialsort,186,857,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,187,827,14,M1 Macrophage,3,14,9,14,14
+spatialsort,19,885,6,CD66+ Epithelial,3,6,6,17,6
+spatialsort,190,712,5,CD57+ Epithelial,2,5,19,5,19
+spatialsort,192,827,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,195,806,2,CD36 low Endothelial,3,2,2,2,4
+spatialsort,196,632,12,ICC,3,12,12,5,12
+spatialsort,197,1154,10,Epithelial,3,10,10,10,21
+spatialsort,2,3057,4,CD49a+ Smooth muscle,2,25,4,4,21
+spatialsort,20,1412,2,CD36 low Endothelial,4,2,2,2,2
+spatialsort,200,757,11,Goblet,4,11,11,11,11
+spatialsort,202,698,19,Neuroendocrine,3,5,19,19,19
+spatialsort,204,808,18,Nerve,3,18,18,19,18
+spatialsort,205,746,25,Smooth muscle,3,4,25,25,25
+spatialsort,208,767,22,PDPN+ Stromal,4,22,22,22,22
+spatialsort,209,876,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,21,821,6,CD66+ Epithelial,2,6,10,6,21
+spatialsort,212,503,20,Neutrophil,4,20,20,20,20
+spatialsort,217,633,2,CD36 low Endothelial,4,2,2,2,2
+spatialsort,219,588,12,ICC,2,12,9,12,1
+spatialsort,22,759,26,Stromal,2,26,10,26,21
+spatialsort,223,762,3,CD4+ T,4,3,3,3,3
+spatialsort,224,1030,6,CD66+ Epithelial,3,6,6,6,17
+spatialsort,229,149,21,Noise,2,21,21,23,6
+spatialsort,23,811,6,CD66+ Epithelial,2,27,6,6,5
+spatialsort,232,791,16,MUC1+ Epithelial,2,8,16,16,6
+spatialsort,234,1054,6,CD66+ Epithelial,2,27,6,6,24
+spatialsort,237,943,24,Plasma,4,24,24,24,24
+spatialsort,238,983,24,Plasma,3,24,24,24,25
+spatialsort,24,1917,2,CD36 low Endothelial,2,2,25,2,8
+spatialsort,240,702,12,ICC,1,12,21,23,24
+spatialsort,241,1193,24,Plasma,3,24,24,24,13
+spatialsort,242,1219,13,ITLN+ Epithelial,3,13,13,13,11
+spatialsort,244,899,11,Goblet,2,11,27,11,0
+spatialsort,245,131,0,B,3,0,0,0,19
+spatialsort,246,981,19,Neuroendocrine,1,19,10,7,20
+spatialsort,248,711,20,Neutrophil,3,20,20,20,21
+spatialsort,25,870,9,DC,3,9,9,9,7
+spatialsort,250,899,7,CD8+ T,3,7,7,7,26
+spatialsort,252,823,15,M2 Macrophage,2,15,26,15,1
+spatialsort,253,820,18,Nerve,3,18,18,18,19
+spatialsort,254,863,8,Cycling TA,2,19,8,8,21
+spatialsort,257,912,7,CD8+ T,2,7,17,7,13
+spatialsort,258,886,5,CD57+ Epithelial,1,5,27,8,21
+spatialsort,26,1245,10,Epithelial,2,10,10,27,19
+spatialsort,260,760,19,Neuroendocrine,3,19,19,13,19
+spatialsort,262,887,5,CD57+ Epithelial,2,5,19,5,20
+spatialsort,265,662,20,Neutrophil,3,20,20,20,21
+spatialsort,266,910,24,Plasma,3,24,24,24,7
+spatialsort,267,538,14,M1 Macrophage,3,14,14,14,26
+spatialsort,269,796,7,CD8+ T,3,7,7,7,1
+spatialsort,27,1558,22,PDPN+ Stromal,2,22,26,22,19
+spatialsort,270,1114,6,CD66+ Epithelial,1,6,5,17,21
+spatialsort,272,978,7,CD8+ T,3,7,7,7,13
+spatialsort,273,880,15,M2 Macrophage,3,15,15,15,21
+spatialsort,274,1270,26,Stromal,2,26,21,26,19
+spatialsort,275,1280,6,CD66+ Epithelial,2,27,6,6,19
+spatialsort,278,665,17,NK,2,17,21,17,20
+spatialsort,279,1864,18,Nerve,3,18,18,18,21
+spatialsort,28,1130,7,CD8+ T,3,7,10,7,7
+spatialsort,283,2637,4,CD49a+ Smooth muscle,3,4,4,4,26
+spatialsort,284,487,23,Paneth,3,23,23,23,1
+spatialsort,29,1027,13,ITLN+ Epithelial,3,13,13,13,19
+spatialsort,292,1106,2,CD36 low Endothelial,3,2,2,2,1
+spatialsort,298,1016,7,CD8+ T,4,7,7,7,7
+spatialsort,3,2217,21,Noise,4,21,21,21,21
+spatialsort,30,710,11,Goblet,3,11,21,11,11
+spatialsort,31,737,5,CD57+ Epithelial,4,5,5,5,5
+spatialsort,32,1398,10,Epithelial,3,10,10,10,6
+spatialsort,33,1098,14,M1 Macrophage,2,14,15,15,14
+spatialsort,34,1662,25,Smooth muscle,3,25,25,4,25
+spatialsort,35,1161,15,M2 Macrophage,2,15,9,15,24
+spatialsort,36,1325,21,Noise,3,25,21,21,21
+spatialsort,37,882,15,M2 Macrophage,4,15,15,15,15
+spatialsort,38,980,13,ITLN+ Epithelial,4,13,13,13,13
+spatialsort,39,370,16,MUC1+ Epithelial,2,16,27,16,5
+spatialsort,4,2393,15,M2 Macrophage,3,15,15,15,14
+spatialsort,40,902,24,Plasma,4,24,24,24,24
+spatialsort,41,801,16,MUC1+ Epithelial,3,20,16,16,16
+spatialsort,42,855,26,Stromal,2,1,26,26,22
+spatialsort,43,703,26,Stromal,3,26,26,25,26
+spatialsort,44,828,20,Neutrophil,4,20,20,20,20
+spatialsort,45,970,8,Cycling TA,3,8,8,8,14
+spatialsort,46,803,16,MUC1+ Epithelial,3,16,16,16,13
+spatialsort,47,1153,6,CD66+ Epithelial,4,6,6,6,6
+spatialsort,48,690,9,DC,2,14,9,24,9
+spatialsort,49,794,24,Plasma,4,24,24,24,24
+spatialsort,5,1825,21,Noise,3,12,21,21,21
+spatialsort,50,1281,18,Nerve,3,18,18,12,18
+spatialsort,51,1151,17,NK,1,17,3,15,7
+spatialsort,52,1209,2,CD36 low Endothelial,4,2,2,2,2
+spatialsort,53,875,6,CD66+ Epithelial,4,6,6,6,6
+spatialsort,54,812,10,Epithelial,4,10,10,10,10
+spatialsort,55,900,5,CD57+ Epithelial,3,5,27,5,5
+spatialsort,56,606,7,CD8+ T,4,7,7,7,7
+spatialsort,57,963,15,M2 Macrophage,2,15,14,15,14
+spatialsort,58,1025,24,Plasma,4,24,24,24,24
+spatialsort,59,267,19,Neuroendocrine,2,19,10,19,13
+spatialsort,6,2173,4,CD49a+ Smooth muscle,3,4,25,4,4
+spatialsort,60,1249,9,DC,3,9,9,9,21
+spatialsort,61,813,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,62,1007,22,PDPN+ Stromal,3,22,22,22,6
+spatialsort,63,824,4,CD49a+ Smooth muscle,4,4,4,4,4
+spatialsort,64,879,8,Cycling TA,3,8,27,8,8
+spatialsort,65,1249,5,CD57+ Epithelial,4,5,5,5,5
+spatialsort,66,995,11,Goblet,4,11,11,11,11
+spatialsort,67,943,27,TA,3,27,27,27,13
+spatialsort,68,1032,2,CD36 low Endothelial,3,2,2,2,1
+spatialsort,69,942,13,ITLN+ Epithelial,2,13,10,13,10
+spatialsort,7,1166,6,CD66+ Epithelial,4,6,6,6,6
+spatialsort,70,845,27,TA,3,27,27,27,5
+spatialsort,71,1406,15,M2 Macrophage,3,15,15,15,14
+spatialsort,72,834,8,Cycling TA,2,27,8,8,13
+spatialsort,73,1011,0,B,4,0,0,0,0
+spatialsort,74,1204,4,CD49a+ Smooth muscle,3,4,25,4,4
+spatialsort,75,1060,24,Plasma,2,9,24,24,21
+spatialsort,76,914,7,CD8+ T,3,17,7,7,7
+spatialsort,77,833,1,CD36 high Endothelial,4,1,1,1,1
+spatialsort,78,1044,1,CD36 high Endothelial,3,1,1,1,12
+spatialsort,79,1025,17,NK,2,17,18,18,17
+spatialsort,8,2909,21,Noise,3,21,21,16,21
+spatialsort,80,997,3,CD4+ T,4,3,3,3,3
+spatialsort,81,490,14,M1 Macrophage,3,14,14,14,9
+spatialsort,82,842,23,Paneth,4,23,23,23,23
+spatialsort,83,1003,24,Plasma,2,3,24,7,24
+spatialsort,84,870,6,CD66+ Epithelial,4,6,6,6,6
+spatialsort,85,1093,11,Goblet,4,11,11,11,11
+spatialsort,86,1160,22,PDPN+ Stromal,3,22,26,22,22
+spatialsort,87,1186,3,CD4+ T,3,3,3,3,7
+spatialsort,88,876,17,NK,2,17,18,18,17
+spatialsort,89,1189,27,TA,3,16,27,27,27
+spatialsort,9,949,24,Plasma,2,9,24,24,21
+spatialsort,90,837,7,CD8+ T,2,7,17,17,7
+spatialsort,91,957,3,CD4+ T,4,3,3,3,3
+spatialsort,92,888,6,CD66+ Epithelial,4,6,6,6,6
+spatialsort,93,981,15,M2 Macrophage,3,15,15,15,24
+spatialsort,94,1025,10,Epithelial,3,10,10,10,21
+spatialsort,95,736,13,ITLN+ Epithelial,4,13,13,13,13
+spatialsort,96,903,15,M2 Macrophage,3,15,15,15,24
+spatialsort,97,732,18,Nerve,2,25,18,18,24
+spatialsort,98,1067,12,ICC,3,12,12,12,26
+spatialsort,99,373,24,Plasma,2,24,25,24,22
+pixie_tiff,1,7144,24,Plasma,4,24,24,24,24
+pixie_tiff,10,702,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,100,35,18,Nerve,2,18,18,23,12
+pixie_tiff,101,170,18,Nerve,3,17,18,18,18
+pixie_tiff,102,111,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,103,576,24,Plasma,4,24,24,24,24
+pixie_tiff,104,450,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,105,105,20,Neutrophil,3,20,20,14,20
+pixie_tiff,106,1,21,Noise,4,21,21,21,21
+pixie_tiff,107,147,20,Neutrophil,4,20,20,20,20
+pixie_tiff,108,55,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,109,402,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,11,470,21,Noise,4,21,21,21,21
+pixie_tiff,110,613,16,MUC1+ Epithelial,3,16,21,16,16
+pixie_tiff,111,3736,21,Noise,2,20,21,10,21
+pixie_tiff,112,1392,6,CD66+ Epithelial,4,6,6,6,6
+pixie_tiff,113,10,23,Paneth,4,23,23,23,23
+pixie_tiff,114,247,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,115,4167,22,PDPN+ Stromal,3,22,26,22,22
+pixie_tiff,116,120,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,117,23,24,Plasma,4,24,24,24,24
+pixie_tiff,118,313,21,Noise,4,21,21,21,21
+pixie_tiff,119,440,16,MUC1+ Epithelial,3,16,16,16,21
+pixie_tiff,12,1444,3,CD4+ T,2,3,0,0,3
+pixie_tiff,120,6,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,121,4222,10,Epithelial,2,5,10,10,6
+pixie_tiff,122,144,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,123,513,26,Stromal,4,26,26,26,26
+pixie_tiff,124,90,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,125,585,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,126,118,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,127,149,16,MUC1+ Epithelial,2,16,21,16,21
+pixie_tiff,128,231,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,129,417,21,Noise,2,20,21,5,21
+pixie_tiff,13,718,18,Nerve,4,18,18,18,18
+pixie_tiff,130,45,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,131,262,26,Stromal,3,26,26,26,2
+pixie_tiff,132,972,27,TA,4,27,27,27,27
+pixie_tiff,133,204,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,134,79,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,135,975,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,136,223,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,137,398,21,Noise,2,20,21,17,21
+pixie_tiff,138,201,24,Plasma,4,24,24,24,24
+pixie_tiff,139,82,25,Smooth muscle,2,25,21,25,21
+pixie_tiff,14,872,9,DC,3,9,9,9,0
+pixie_tiff,140,553,24,Plasma,3,0,24,24,24
+pixie_tiff,141,302,9,DC,2,14,9,9,15
+pixie_tiff,142,136,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,143,163,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,144,881,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,145,345,2,CD36 low Endothelial,4,2,2,2,2
+pixie_tiff,146,412,26,Stromal,4,26,26,26,26
+pixie_tiff,147,325,26,Stromal,2,26,21,26,21
+pixie_tiff,148,92,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,149,232,2,CD36 low Endothelial,3,2,2,2,4
+pixie_tiff,15,243,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,150,564,4,CD49a+ Smooth muscle,3,4,4,4,25
+pixie_tiff,151,28,24,Plasma,2,10,21,24,24
+pixie_tiff,152,818,6,CD66+ Epithelial,4,6,6,6,6
+pixie_tiff,153,142,18,Nerve,4,18,18,18,18
+pixie_tiff,154,308,16,MUC1+ Epithelial,3,16,16,16,21
+pixie_tiff,155,66,11,Goblet,3,11,8,11,11
+pixie_tiff,156,127,3,CD4+ T,4,3,3,3,3
+pixie_tiff,157,181,19,Neuroendocrine,3,19,21,19,19
+pixie_tiff,158,84,18,Nerve,4,18,18,18,18
+pixie_tiff,159,161,19,Neuroendocrine,3,19,19,19,13
+pixie_tiff,16,957,14,M1 Macrophage,3,14,14,9,14
+pixie_tiff,160,1344,13,ITLN+ Epithelial,2,13,10,13,10
+pixie_tiff,161,35,2,CD36 low Endothelial,4,2,2,2,2
+pixie_tiff,162,258,8,Cycling TA,3,8,27,8,8
+pixie_tiff,163,1537,7,CD8+ T,4,7,7,7,7
+pixie_tiff,164,203,12,ICC,3,12,12,12,26
+pixie_tiff,165,522,25,Smooth muscle,4,25,25,25,25
+pixie_tiff,166,238,3,CD4+ T,2,3,14,3,15
+pixie_tiff,167,1127,3,CD4+ T,4,3,3,3,3
+pixie_tiff,168,30,4,CD49a+ Smooth muscle,4,4,4,4,4
+pixie_tiff,169,564,18,Nerve,3,18,18,22,18
+pixie_tiff,17,2335,27,TA,2,27,10,27,11
+pixie_tiff,170,310,9,DC,3,9,9,9,15
+pixie_tiff,171,321,3,CD4+ T,3,3,18,3,3
+pixie_tiff,172,430,15,M2 Macrophage,3,15,15,25,15
+pixie_tiff,173,227,18,Nerve,3,18,18,25,18
+pixie_tiff,174,1,15,M2 Macrophage,2,15,21,21,15
+pixie_tiff,175,73,27,TA,3,27,27,27,11
+pixie_tiff,176,26,11,Goblet,1,11,26,19,22
+pixie_tiff,177,220,9,DC,3,9,9,9,15
+pixie_tiff,178,1,21,Noise,2,15,21,21,9
+pixie_tiff,179,1580,11,Goblet,4,11,11,11,11
+pixie_tiff,18,2023,22,PDPN+ Stromal,4,22,22,22,22
+pixie_tiff,180,6,23,Paneth,4,23,23,23,23
+pixie_tiff,181,208,3,CD4+ T,4,3,3,3,3
+pixie_tiff,182,117,1,CD36 high Endothelial,2,1,15,1,15
+pixie_tiff,183,97,27,TA,2,19,27,13,27
+pixie_tiff,184,131,18,Nerve,3,18,18,18,17
+pixie_tiff,185,446,24,Plasma,2,24,1,1,24
+pixie_tiff,186,11,21,Noise,3,8,21,21,21
+pixie_tiff,187,117,21,Noise,4,21,21,21,21
+pixie_tiff,188,2224,14,M1 Macrophage,3,14,14,14,15
+pixie_tiff,189,2,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,19,387,18,Nerve,3,18,18,18,22
+pixie_tiff,190,520,3,CD4+ T,4,3,3,3,3
+pixie_tiff,191,53,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,192,392,24,Plasma,3,24,24,24,15
+pixie_tiff,193,411,0,B,3,0,0,0,18
+pixie_tiff,194,188,23,Paneth,2,13,23,23,3
+pixie_tiff,195,292,18,Nerve,3,18,18,18,15
+pixie_tiff,196,1007,11,Goblet,3,11,11,11,24
+pixie_tiff,197,136,8,Cycling TA,3,8,8,8,0
+pixie_tiff,198,38,5,CD57+ Epithelial,3,5,5,5,23
+pixie_tiff,199,172,13,ITLN+ Epithelial,2,13,13,8,18
+pixie_tiff,2,383,15,M2 Macrophage,3,15,15,15,11
+pixie_tiff,20,76,21,Noise,3,21,21,21,27
+pixie_tiff,200,30,3,CD4+ T,4,3,3,3,3
+pixie_tiff,201,628,7,CD8+ T,4,7,7,7,7
+pixie_tiff,202,11850,16,MUC1+ Epithelial,2,16,16,11,11
+pixie_tiff,203,1276,17,NK,4,17,17,17,17
+pixie_tiff,204,103,18,Nerve,3,18,18,18,24
+pixie_tiff,205,182,3,CD4+ T,3,3,3,3,7
+pixie_tiff,206,164,24,Plasma,2,24,26,24,11
+pixie_tiff,207,50,7,CD8+ T,3,7,7,7,17
+pixie_tiff,208,6,25,Smooth muscle,2,25,25,4,3
+pixie_tiff,209,4,19,Neuroendocrine,2,2,19,19,9
+pixie_tiff,21,9623,21,Noise,2,12,21,21,24
+pixie_tiff,210,147,15,M2 Macrophage,3,15,15,15,11
+pixie_tiff,211,67,26,Stromal,2,9,26,26,3
+pixie_tiff,212,333,24,Plasma,2,24,26,24,0
+pixie_tiff,213,327,27,TA,3,27,27,27,7
+pixie_tiff,214,333,3,CD4+ T,3,3,3,3,21
+pixie_tiff,215,858,0,B,3,0,0,0,21
+pixie_tiff,216,259,3,CD4+ T,2,7,3,3,13
+pixie_tiff,217,418,7,CD8+ T,3,7,7,7,21
+pixie_tiff,218,267,26,Stromal,2,26,26,2,6
+pixie_tiff,219,840,10,Epithelial,3,10,10,10,21
+pixie_tiff,22,6672,10,Epithelial,3,10,10,10,24
+pixie_tiff,220,885,20,Neutrophil,3,20,20,20,7
+pixie_tiff,221,1394,6,CD66+ Epithelial,3,6,6,6,13
+pixie_tiff,222,156,21,Noise,2,21,21,16,15
+pixie_tiff,223,601,24,Plasma,3,24,24,24,18
+pixie_tiff,224,6134,7,CD8+ T,3,7,7,7,3
+pixie_tiff,225,1593,9,DC,3,9,9,9,7
+pixie_tiff,226,483,18,Nerve,2,18,18,22,13
+pixie_tiff,227,277,12,ICC,2,18,12,12,13
+pixie_tiff,228,360,9,DC,3,9,9,9,3
+pixie_tiff,229,332,22,PDPN+ Stromal,1,22,15,26,24
+pixie_tiff,23,1442,2,CD36 low Endothelial,3,2,2,2,9
+pixie_tiff,230,2229,10,Epithelial,3,10,10,10,6
+pixie_tiff,231,1270,14,M1 Macrophage,3,14,14,14,15
+pixie_tiff,232,43,18,Nerve,3,18,18,25,18
+pixie_tiff,233,433,3,CD4+ T,3,3,3,3,18
+pixie_tiff,234,680,0,B,3,0,0,0,24
+pixie_tiff,235,619,24,Plasma,4,24,24,24,24
+pixie_tiff,236,393,7,CD8+ T,4,7,7,7,7
+pixie_tiff,237,948,24,Plasma,4,24,24,24,24
+pixie_tiff,238,83,7,CD8+ T,4,7,7,7,7
+pixie_tiff,239,513,3,CD4+ T,4,3,3,3,3
+pixie_tiff,24,3009,21,Noise,2,21,21,16,16
+pixie_tiff,240,32,5,CD57+ Epithelial,2,5,27,5,11
+pixie_tiff,241,473,17,NK,3,9,17,17,17
+pixie_tiff,242,80,7,CD8+ T,4,7,7,7,7
+pixie_tiff,243,454,3,CD4+ T,3,3,9,3,3
+pixie_tiff,244,49,3,CD4+ T,3,3,3,17,3
+pixie_tiff,245,624,21,Noise,3,9,21,21,21
+pixie_tiff,246,2,19,Neuroendocrine,4,19,19,19,19
+pixie_tiff,247,126,22,PDPN+ Stromal,3,4,22,22,22
+pixie_tiff,248,40,3,CD4+ T,2,3,21,3,21
+pixie_tiff,249,340,24,Plasma,4,24,24,24,24
+pixie_tiff,25,788,22,PDPN+ Stromal,3,22,22,22,18
+pixie_tiff,250,13,20,Neutrophil,3,20,20,20,6
+pixie_tiff,251,819,11,Goblet,4,11,11,11,11
+pixie_tiff,252,200,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,253,4117,6,CD66+ Epithelial,4,6,6,6,6
+pixie_tiff,254,60,26,Stromal,3,26,26,26,21
+pixie_tiff,255,84,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,256,238,24,Plasma,4,24,24,24,24
+pixie_tiff,257,1149,23,Paneth,4,23,23,23,23
+pixie_tiff,258,36,8,Cycling TA,4,8,8,8,8
+pixie_tiff,259,10,12,ICC,2,12,21,12,21
+pixie_tiff,26,767,4,CD49a+ Smooth muscle,3,2,4,4,4
+pixie_tiff,260,9,25,Smooth muscle,3,25,21,25,25
+pixie_tiff,261,29,25,Smooth muscle,3,25,25,25,18
+pixie_tiff,262,57,14,M1 Macrophage,4,14,14,14,14
+pixie_tiff,263,394,9,DC,4,9,9,9,9
+pixie_tiff,264,55,18,Nerve,3,18,18,1,18
+pixie_tiff,265,514,24,Plasma,4,24,24,24,24
+pixie_tiff,266,5010,3,CD4+ T,4,3,3,3,3
+pixie_tiff,267,77,8,Cycling TA,3,8,8,8,19
+pixie_tiff,268,600,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,269,1515,15,M2 Macrophage,3,15,15,15,13
+pixie_tiff,27,2976,10,Epithelial,3,10,10,10,6
+pixie_tiff,270,146,16,MUC1+ Epithelial,2,16,27,27,16
+pixie_tiff,271,394,21,Noise,2,21,21,16,15
+pixie_tiff,272,76,26,Stromal,2,22,26,26,20
+pixie_tiff,273,210,24,Plasma,3,24,24,24,6
+pixie_tiff,274,83,18,Nerve,3,18,18,18,24
+pixie_tiff,275,1874,7,CD8+ T,3,7,7,7,22
+pixie_tiff,276,288,12,ICC,2,12,26,12,24
+pixie_tiff,277,27,15,M2 Macrophage,3,15,15,15,11
+pixie_tiff,278,22,14,M1 Macrophage,2,14,10,14,3
+pixie_tiff,279,3037,6,CD66+ Epithelial,3,6,6,6,11
+pixie_tiff,28,798,0,B,3,0,0,0,18
+pixie_tiff,280,500,4,CD49a+ Smooth muscle,1,4,26,22,15
+pixie_tiff,281,328,24,Plasma,3,24,24,24,1
+pixie_tiff,282,136,11,Goblet,3,11,11,11,6
+pixie_tiff,283,298,3,CD4+ T,2,17,3,3,18
+pixie_tiff,284,2057,11,Goblet,3,11,11,11,5
+pixie_tiff,285,156,25,Smooth muscle,2,25,12,25,22
+pixie_tiff,286,2,15,M2 Macrophage,3,15,15,15,13
+pixie_tiff,287,263,1,CD36 high Endothelial,3,1,1,1,27
+pixie_tiff,288,136,23,Paneth,2,23,23,13,6
+pixie_tiff,289,39,18,Nerve,3,18,18,18,0
+pixie_tiff,29,1177,27,TA,2,27,5,27,6
+pixie_tiff,290,132,26,Stromal,2,22,26,26,3
+pixie_tiff,291,313,23,Paneth,1,23,10,13,18
+pixie_tiff,292,667,23,Paneth,1,23,27,13,18
+pixie_tiff,293,4,13,ITLN+ Epithelial,3,13,13,13,1
+pixie_tiff,294,92,17,NK,2,3,17,17,10
+pixie_tiff,295,249,27,TA,2,27,10,27,18
+pixie_tiff,296,106,3,CD4+ T,3,3,3,3,15
+pixie_tiff,297,559,25,Smooth muscle,2,25,25,4,17
+pixie_tiff,298,133,18,Nerve,3,18,18,18,6
+pixie_tiff,299,80,2,CD36 low Endothelial,3,2,2,2,3
+pixie_tiff,3,2897,10,Epithelial,3,10,10,10,18
+pixie_tiff,30,381,18,Nerve,4,18,18,18,18
+pixie_tiff,300,415,15,M2 Macrophage,3,15,15,15,2
+pixie_tiff,31,408,4,CD49a+ Smooth muscle,3,4,25,4,4
+pixie_tiff,32,484,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,33,1147,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,34,496,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,35,186,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,36,679,26,Stromal,4,26,26,26,26
+pixie_tiff,37,468,21,Noise,2,21,21,16,16
+pixie_tiff,38,202,8,Cycling TA,3,8,8,8,23
+pixie_tiff,39,517,11,Goblet,1,11,27,8,23
+pixie_tiff,4,744,16,MUC1+ Epithelial,2,26,21,16,16
+pixie_tiff,40,2461,4,CD49a+ Smooth muscle,4,4,4,4,4
+pixie_tiff,41,1024,9,DC,2,9,26,9,22
+pixie_tiff,42,174,25,Smooth muscle,3,25,25,25,4
+pixie_tiff,43,1266,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,44,54,25,Smooth muscle,3,25,21,25,25
+pixie_tiff,45,427,23,Paneth,4,23,23,23,23
+pixie_tiff,46,385,18,Nerve,4,18,18,18,18
+pixie_tiff,47,11,2,CD36 low Endothelial,4,2,2,2,2
+pixie_tiff,48,1989,4,CD49a+ Smooth muscle,3,4,25,4,4
+pixie_tiff,49,987,18,Nerve,4,18,18,18,18
+pixie_tiff,5,605,22,PDPN+ Stromal,3,22,26,22,22
+pixie_tiff,50,109,25,Smooth muscle,2,25,21,25,21
+pixie_tiff,51,244,21,Noise,4,21,21,21,21
+pixie_tiff,52,85,4,CD49a+ Smooth muscle,3,4,25,4,4
+pixie_tiff,53,770,4,CD49a+ Smooth muscle,4,4,4,4,4
+pixie_tiff,54,642,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,55,213,25,Smooth muscle,4,25,25,25,25
+pixie_tiff,56,200,22,PDPN+ Stromal,2,22,26,22,26
+pixie_tiff,57,179,26,Stromal,2,26,21,26,21
+pixie_tiff,58,110,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,59,257,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,6,611,2,CD36 low Endothelial,3,2,25,2,2
+pixie_tiff,60,2089,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,61,268,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,62,85,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,63,360,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,64,239,21,Noise,3,26,21,21,21
+pixie_tiff,65,993,4,CD49a+ Smooth muscle,3,4,25,4,4
+pixie_tiff,66,22421,4,CD49a+ Smooth muscle,4,4,4,4,4
+pixie_tiff,67,845,7,CD8+ T,4,7,7,7,7
+pixie_tiff,68,240,13,ITLN+ Epithelial,3,13,10,13,13
+pixie_tiff,69,401,25,Smooth muscle,4,25,25,25,25
+pixie_tiff,7,624,11,Goblet,4,11,11,11,11
+pixie_tiff,70,105,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,71,1422,18,Nerve,4,18,18,18,18
+pixie_tiff,72,235,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,73,1334,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,74,405,2,CD36 low Endothelial,3,2,2,2,1
+pixie_tiff,75,1023,24,Plasma,4,24,24,24,24
+pixie_tiff,76,384,15,M2 Macrophage,3,15,9,15,15
+pixie_tiff,77,209,12,ICC,2,12,21,12,21
+pixie_tiff,78,162,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,79,293,20,Neutrophil,4,20,20,20,20
+pixie_tiff,8,530,3,CD4+ T,2,3,17,0,3
+pixie_tiff,80,111,21,Noise,4,21,21,21,21
+pixie_tiff,81,498,22,PDPN+ Stromal,4,22,22,22,22
+pixie_tiff,82,658,3,CD4+ T,4,3,3,3,3
+pixie_tiff,83,296,2,CD36 low Endothelial,4,2,2,2,2
+pixie_tiff,84,534,4,CD49a+ Smooth muscle,2,4,25,25,4
+pixie_tiff,85,1685,6,CD66+ Epithelial,4,6,6,6,6
+pixie_tiff,86,10,21,Noise,4,21,21,21,21
+pixie_tiff,87,63,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,88,526,1,CD36 high Endothelial,4,1,1,1,1
+pixie_tiff,89,123,21,Noise,4,21,21,21,21
+pixie_tiff,9,221,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,90,474,25,Smooth muscle,3,25,25,25,4
+pixie_tiff,91,224,16,MUC1+ Epithelial,2,15,21,16,16
+pixie_tiff,92,115,15,M2 Macrophage,4,15,15,15,15
+pixie_tiff,93,127,15,M2 Macrophage,3,2,15,15,15
+pixie_tiff,94,53,21,Noise,2,21,21,16,16
+pixie_tiff,95,76,2,CD36 low Endothelial,4,2,2,2,2
+pixie_tiff,96,225,20,Neutrophil,4,20,20,20,20
+pixie_tiff,97,184,25,Smooth muscle,3,25,25,25,4
+pixie_tiff,98,48,14,M1 Macrophage,3,14,14,14,9
+pixie_tiff,99,586,12,ICC,3,12,12,12,22

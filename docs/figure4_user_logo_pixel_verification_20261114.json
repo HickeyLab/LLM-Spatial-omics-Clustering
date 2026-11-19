@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "source_sha256": "dcf1c971795cad8a12d32ba59a41f2fdaf02d74b6eef0e8f0983d98cb1f81421",
+  "source_size_pixels": [
+    534,
+    474
+  ],
+  "pdf_embedded_image_checks": [
+    {
+      "xref": 73,
+      "size_pixels": [
+        534,
+        474
+      ],
+      "raw_rgb_pixels_exact": true,
+      "alpha_mask_exact": true,
+      "ICC_profile_exact": true
+    }
+  ],
+  "svg_embeds_original_png_bytes_exact": true,
+  "note": "The PDF raw RGB pixels, decoded alpha mask and original ICC profile all match the supplied PNG. MuPDF RGB extraction applies the ICC profile, so the direct image-stream pixels are checked separately. The SVG contains the exact original PNG bytes."
+}

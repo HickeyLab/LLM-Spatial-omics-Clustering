@@ -1,0 +1,966 @@
+{
+  "schema": "donor47.ieee_table_cells.v1",
+  "tables": {
+    "S13a": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Agreement (%)",
+          "Macro-F1",
+          "Cell coverage (%)",
+          "Cluster coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "34.22",
+          "0.3095",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "35.37",
+          "0.2990",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "32.80",
+          "0.3041",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "32.03",
+          "0.2865",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "36.00",
+          "0.3626",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "36.39",
+          "0.3558",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "37.07",
+          "0.3758",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "30.35",
+          "0.3061",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "27.71",
+          "0.1976",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "28.15",
+          "0.2009",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "25.55",
+          "0.1940",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "17.44",
+          "0.1263",
+          "71.12",
+          "74.83"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "27.06",
+          "0.1782",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "29.15",
+          "0.1802",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "27.75",
+          "0.1773",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "14.28",
+          "0.0975",
+          "58.96",
+          "50.00"
+        ]
+      ],
+      "caption": "Table S13a. B005 donor annotation.",
+      "note": "Agreement, macro-F1 and cell coverage average each donor's eight regions equally. Cluster coverage uses whole-donor occupied clusters. The full native 28-label vocabulary includes Noise (code 21). Missing/invalid predictions remain errors in the fixed planned denominator and differ from valid Noise predictions. One planned annotation per cluster/condition; accepted outputs are scored where available. No repeated-generation uncertainty is estimated.",
+      "cell_order_sha256": "2273b81081254d21bbb3bcbb2d5f13796833565b70240f3e498ef9b1d963ebbc",
+      "sources": {
+        "annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+      }
+    },
+    "S13b": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Agreement (%)",
+          "Macro-F1",
+          "Cell coverage (%)",
+          "Cluster coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "37.51",
+          "0.2955",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "41.77",
+          "0.3344",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "38.74",
+          "0.2962",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "24.56",
+          "0.1959",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "32.91",
+          "0.2586",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "35.67",
+          "0.2834",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "38.12",
+          "0.2736",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "16.19",
+          "0.1660",
+          "68.23",
+          "50.00"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "30.69",
+          "0.1887",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "29.70",
+          "0.1918",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "28.17",
+          "0.1871",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "17.09",
+          "0.1196",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "22.29",
+          "0.1205",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "26.77",
+          "0.1283",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "18.28",
+          "0.1116",
+          "100.00",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "18.38",
+          "0.0989",
+          "100.00",
+          "100.00"
+        ]
+      ],
+      "caption": "Table S13b. B006 donor annotation.",
+      "note": "Agreement, macro-F1 and cell coverage average each donor's eight regions equally. Cluster coverage uses whole-donor occupied clusters. The full native 28-label vocabulary includes Noise (code 21). Missing/invalid predictions remain errors in the fixed planned denominator and differ from valid Noise predictions. One planned annotation per cluster/condition; accepted outputs are scored where available. No repeated-generation uncertainty is estimated.",
+      "cell_order_sha256": "ae89c1e5f3154debefa73be37461dc3e1db4e6729984bbec1a4590e592512f09",
+      "sources": {
+        "annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+      }
+    },
+    "S13c": {
+      "rows": [
+        [
+          "Clustering",
+          "Annotator",
+          "Agreement (%)",
+          "Macro-F1",
+          "Cell coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "35.87",
+          "0.3025",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "38.57",
+          "0.3167",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "35.77",
+          "0.3002",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "28.30",
+          "0.2412",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Nearest centroid",
+          "48.96",
+          "0.3900",
+          "100.00"
+        ],
+        [
+          "Leiden",
+          "Logistic regression",
+          "59.78",
+          "0.4144",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "34.46",
+          "0.3106",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "36.03",
+          "0.3196",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "37.60",
+          "0.3247",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "23.27",
+          "0.2361",
+          "84.12"
+        ],
+        [
+          "FlowSOM",
+          "Nearest centroid",
+          "42.42",
+          "0.3418",
+          "100.00"
+        ],
+        [
+          "FlowSOM",
+          "Logistic regression",
+          "53.81",
+          "0.3768",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "29.20",
+          "0.1932",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "28.93",
+          "0.1963",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "26.86",
+          "0.1906",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "17.26",
+          "0.1229",
+          "85.56"
+        ],
+        [
+          "SpatialSort",
+          "Nearest centroid",
+          "33.04",
+          "0.1819",
+          "100.00"
+        ],
+        [
+          "SpatialSort",
+          "Logistic regression",
+          "47.24",
+          "0.2101",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "24.67",
+          "0.1493",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "27.96",
+          "0.1543",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "23.01",
+          "0.1445",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "16.33",
+          "0.0982",
+          "79.48"
+        ],
+        [
+          "PIXIE",
+          "Nearest centroid",
+          "37.83",
+          "0.1753",
+          "100.00"
+        ],
+        [
+          "PIXIE",
+          "Logistic regression",
+          "44.32",
+          "0.1680",
+          "100.00"
+        ]
+      ],
+      "caption": "Table S13c. Equal-donor annotation and frozen classifiers.",
+      "note": "B005 and B006 receive equal weight after equal region weighting within donor. All models use the same 47 means plus 47 fractions, decoded from integer thousandths. Baselines retain B004 training-cell reference supervision and frozen weights; no donor fitting, class balancing or hyperparameter selection. Agreement, macro-F1 and cell coverage average each donor's eight regions equally. Cluster coverage uses whole-donor occupied clusters. The full native 28-label vocabulary includes Noise (code 21). Missing/invalid predictions remain errors in the fixed planned denominator and differ from valid Noise predictions. One planned annotation per cluster/condition; accepted outputs are scored where available. No repeated-generation uncertainty is estimated.",
+      "cell_order_sha256": "104aafa4b1f9b5d106226329a8d812791f83f3635ea6e472d3565cffb28987a6",
+      "sources": {
+        "annotation_equal_donor_metrics.csv": "6c5769cbefcb499d8c97e1c1f9c322122912af4da64767e0a8d31f5bb86308a6",
+        "baselines_donor_metrics.csv": "ed14d4053b06b73fbafe8c51236b1282c687ea247bfb3c5ca6fa4619557564e4"
+      }
+    },
+    "S14a": {
+      "rows": [
+        [
+          "Donor",
+          "Clustering",
+          "Cells",
+          "Clusters",
+          "Purity",
+          "ARI",
+          "NMI"
+        ],
+        [
+          "B005",
+          "Leiden",
+          "288,188",
+          "300",
+          "0.7392",
+          "0.2261",
+          "0.5209"
+        ],
+        [
+          "B005",
+          "FlowSOM",
+          "288,188",
+          "299",
+          "0.6896",
+          "0.3555",
+          "0.5292"
+        ],
+        [
+          "B005",
+          "SpatialSort",
+          "288,188",
+          "298",
+          "0.5773",
+          "0.2329",
+          "0.4277"
+        ],
+        [
+          "B005",
+          "PIXIE",
+          "288,188",
+          "300",
+          "0.5999",
+          "0.2673",
+          "0.4094"
+        ],
+        [
+          "B006",
+          "Leiden",
+          "301,280",
+          "300",
+          "0.7309",
+          "0.2436",
+          "0.5362"
+        ],
+        [
+          "B006",
+          "FlowSOM",
+          "301,280",
+          "300",
+          "0.6153",
+          "0.3529",
+          "0.4750"
+        ],
+        [
+          "B006",
+          "SpatialSort",
+          "301,280",
+          "270",
+          "0.5600",
+          "0.1703",
+          "0.4330"
+        ],
+        [
+          "B006",
+          "PIXIE",
+          "301,280",
+          "300",
+          "0.5116",
+          "0.2371",
+          "0.4106"
+        ]
+      ],
+      "caption": "Table S14a. Frozen donor clustering.",
+      "note": "Partitions use the frozen method-specific inputs; annotation profiles contain all 47 proteins. Clustering is evaluated against the native 28-label reference, including Noise. Purity, ARI and NMI average the eight regions equally; cells and occupied clusters are whole-donor counts. SpatialSort seed 42 is primary; each donor chain uses 50 sweeps and DMH = 5.",
+      "cell_order_sha256": "6d1d8c36510bb4bcf528043d06bf6d06b1919f447336ed897b530e4685875aa3",
+      "sources": {
+        "clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
+        "clustering_pooled_metrics.csv": "c284bd9ed6922b6faff1d8ca17f1c5d6937ded7df6272ff6f2ef8a817af8f435"
+      }
+    },
+    "S14b": {
+      "rows": [
+        [
+          "Donor",
+          "Cells",
+          "Seed 42 clusters",
+          "Seed 43 clusters",
+          "Partition ARI"
+        ],
+        [
+          "B005",
+          "288,188",
+          "298",
+          "298",
+          "0.6917"
+        ],
+        [
+          "B006",
+          "301,280",
+          "270",
+          "267",
+          "0.5805"
+        ]
+      ],
+      "caption": "Table S14b. SpatialSort seed sensitivity.",
+      "note": "Both seeds use the same donor cells, 47-marker source and 50-sweep/DMH = 5 budget. Partition ARI compares the two memberships on all common donor cells. Seed 43 is used only for clustering sensitivity, with no additional annotation calls or reference-guided seed selection.",
+      "cell_order_sha256": "879e5933bf9716b7ec9e28b6b1dbb10005d20448bf748d2d2212b2c540bda9e6",
+      "sources": {
+        "spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
+      }
+    },
+    "S15a": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Native 28 agreement (%)",
+          "Shared 23 agreement (%)",
+          "Change (pp)",
+          "Native 28 macro-F1",
+          "Shared 23 macro-F1",
+          "23-label coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "35.70",
+          "42.25",
+          "+6.55",
+          "0.3075",
+          "0.3881",
+          "82.34"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "36.15",
+          "40.14",
+          "+3.99",
+          "0.2793",
+          "0.3400",
+          "84.20"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "33.01",
+          "38.06",
+          "+5.05",
+          "0.2890",
+          "0.3614",
+          "84.50"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "32.11",
+          "39.31",
+          "+7.20",
+          "0.2659",
+          "0.3424",
+          "79.33"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "33.78",
+          "36.74",
+          "+2.96",
+          "0.3295",
+          "0.3879",
+          "63.98"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "35.10",
+          "37.52",
+          "+2.42",
+          "0.3273",
+          "0.3833",
+          "66.20"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "34.95",
+          "37.54",
+          "+2.59",
+          "0.3411",
+          "0.4012",
+          "65.48"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "27.90",
+          "31.14",
+          "+3.24",
+          "0.2788",
+          "0.3344",
+          "55.82"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "28.28",
+          "32.98",
+          "+4.70",
+          "0.1838",
+          "0.2309",
+          "82.96"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "28.46",
+          "31.64",
+          "+3.18",
+          "0.1862",
+          "0.2282",
+          "80.76"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "25.93",
+          "30.49",
+          "+4.57",
+          "0.1814",
+          "0.2267",
+          "82.96"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "16.60",
+          "20.46",
+          "+3.85",
+          "0.1147",
+          "0.1542",
+          "52.10"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "28.05",
+          "36.91",
+          "+8.86",
+          "0.1703",
+          "0.2249",
+          "93.56"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "30.29",
+          "37.98",
+          "+7.69",
+          "0.1738",
+          "0.2276",
+          "94.79"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "29.06",
+          "38.21",
+          "+9.15",
+          "0.1725",
+          "0.2286",
+          "88.49"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "14.57",
+          "19.84",
+          "+5.27",
+          "0.0923",
+          "0.1327",
+          "46.98"
+        ]
+      ],
+      "caption": "Table S15a. B005 evaluation vocabulary sensitivity.",
+      "note": "Both vocabularies use exactly the same reference-eligible cells. Shared-23 evaluation merges or renames the approved classes; reference ITLN+Epithelial, Noise and PDPN+Stromal are outside that eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells. Vocabulary coverage is separate from native output delivery coverage. Macro-F1 uses its stated fixed vocabulary (28 or 23); class-count changes are part of the sensitivity, with no new model generation.",
+      "cell_order_sha256": "dcca455aca3b70f8bb287b6c1ad160363c12abf8fb42b81572efb244f22da60c",
+      "sources": {
+        "annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+      }
+    },
+    "S15b": {
+      "rows": [
+        [
+          "Clustering",
+          "Model",
+          "Native 28 agreement (%)",
+          "Shared 23 agreement (%)",
+          "Change (pp)",
+          "Native 28 macro-F1",
+          "Shared 23 macro-F1",
+          "23-label coverage (%)"
+        ],
+        [
+          "Leiden",
+          "Astra",
+          "37.70",
+          "44.66",
+          "+6.97",
+          "0.2661",
+          "0.3413",
+          "86.18"
+        ],
+        [
+          "Leiden",
+          "Opus 5.5",
+          "41.60",
+          "46.20",
+          "+4.60",
+          "0.3012",
+          "0.3654",
+          "84.05"
+        ],
+        [
+          "Leiden",
+          "Argon",
+          "39.06",
+          "45.03",
+          "+5.97",
+          "0.2756",
+          "0.3452",
+          "84.65"
+        ],
+        [
+          "Leiden",
+          "DeepSeek",
+          "23.78",
+          "27.33",
+          "+3.54",
+          "0.1691",
+          "0.2217",
+          "81.58"
+        ],
+        [
+          "FlowSOM",
+          "Astra",
+          "33.26",
+          "35.31",
+          "+2.05",
+          "0.2513",
+          "0.2960",
+          "76.52"
+        ],
+        [
+          "FlowSOM",
+          "Opus 5.5",
+          "36.13",
+          "38.02",
+          "+1.89",
+          "0.2760",
+          "0.3236",
+          "76.19"
+        ],
+        [
+          "FlowSOM",
+          "Argon",
+          "38.88",
+          "41.13",
+          "+2.25",
+          "0.2692",
+          "0.3174",
+          "77.11"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek",
+          "15.32",
+          "16.55",
+          "+1.24",
+          "0.1550",
+          "0.1802",
+          "34.92"
+        ],
+        [
+          "SpatialSort",
+          "Astra",
+          "30.87",
+          "34.00",
+          "+3.13",
+          "0.1730",
+          "0.2122",
+          "85.81"
+        ],
+        [
+          "SpatialSort",
+          "Opus 5.5",
+          "29.77",
+          "32.12",
+          "+2.35",
+          "0.1782",
+          "0.2160",
+          "78.65"
+        ],
+        [
+          "SpatialSort",
+          "Argon",
+          "28.15",
+          "33.30",
+          "+5.14",
+          "0.1726",
+          "0.2168",
+          "83.56"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek",
+          "16.45",
+          "20.12",
+          "+3.66",
+          "0.1078",
+          "0.1332",
+          "74.84"
+        ],
+        [
+          "PIXIE",
+          "Astra",
+          "21.52",
+          "32.76",
+          "+11.24",
+          "0.1143",
+          "0.1625",
+          "72.02"
+        ],
+        [
+          "PIXIE",
+          "Opus 5.5",
+          "26.19",
+          "30.81",
+          "+4.62",
+          "0.1226",
+          "0.1578",
+          "70.39"
+        ],
+        [
+          "PIXIE",
+          "Argon",
+          "17.29",
+          "28.61",
+          "+11.32",
+          "0.1072",
+          "0.1542",
+          "71.26"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek",
+          "19.16",
+          "24.62",
+          "+5.46",
+          "0.0986",
+          "0.1192",
+          "93.65"
+        ]
+      ],
+      "caption": "Table S15b. B006 evaluation vocabulary sensitivity.",
+      "note": "Both vocabularies use exactly the same reference-eligible cells. Shared-23 evaluation merges or renames the approved classes; reference ITLN+Epithelial, Noise and PDPN+Stromal are outside that eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells. Vocabulary coverage is separate from native output delivery coverage. Macro-F1 uses its stated fixed vocabulary (28 or 23); class-count changes are part of the sensitivity, with no new model generation.",
+      "cell_order_sha256": "8df8a4e667fcb51eeb47988ebe9faeb2752e0e3181d9a1fc3e4703c87a8a1ebf",
+      "sources": {
+        "annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "schema": "reviewer47.offline_artifact_index.v1",
+  "status": "offline_analyses_completed_inference_not_executed",
+  "protocol": "configs/reviewer_annotation47_credit_batch_v1.json",
+  "new_annotation_calls": 0,
+  "new_cloud_jobs": 0,
+  "baseline_training": "B004 four training regions, train-cell labels, no test tuning",
+  "granularity": "Post-clustering Ward coarsening, not native-K fits or LLM ranking evidence",
+  "calibration": "Current accepted bank only; rescore when admitted outputs change; no repeatability claim",
+  "files": {
+    "baselines/all_means_centroids.npz": {
+      "sha256": "858c4ceab3197c0aa0360d8a362d4c482350c4ea8bdbc1622593eafb70e4d58e",
+      "bytes": 11802
+    },
+    "baselines/all_means_fractions_centroids.npz": {
+      "sha256": "81d9aece1c25cea38f1f7cdd1317d1c9cda838f3714b8d30793b508f57829c63",
+      "bytes": 20514
+    },
+    "baselines/classifier_C_selection.csv": {
+      "sha256": "6197ec4b3723ebd315079316cc87c6ea37a50a3aafc621caa722b0f017565242",
+      "bytes": 1983
+    },
+    "baselines/classifier_cluster_predictions.csv": {
+      "sha256": "1af5383b3b0b78fa18e3bf1697112b1a0a51785e7deb0e971174f20495b742b1",
+      "bytes": 225252
+    },
+    "baselines/classifier_equal_test_region_metrics.csv": {
+      "sha256": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801",
+      "bytes": 1448
+    },
+    "baselines/classifier_models.json": {
+      "sha256": "85f42c9bb3e888f6c17779323f4050873208231863d09468abe095457773d621",
+      "bytes": 3753
+    },
+    "baselines/classifier_regional_metrics.csv": {
+      "sha256": "20638312ad426ec5871560ab8a07776590d31aa41573776c24b00b160473f51b",
+      "bytes": 17754
+    },
+    "baselines/flowsom_all_means_fractions_logistic.npz": {
+      "sha256": "1fab85b99eed6a65387ed5d010a493b3d2642fe48f198b8c8f51433e2675e076",
+      "bytes": 22503
+    },
+    "baselines/flowsom_all_means_logistic.npz": {
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787",
+      "bytes": 12394
+    },
+    "baselines/leiden_all_means_fractions_logistic.npz": {
+      "sha256": "20afcf35a7126a9838a35598caeaaaaf84d5371a65b6609c07c63b0b79db4c0d",
+      "bytes": 22523
+    },
+    "baselines/leiden_all_means_logistic.npz": {
+      "sha256": "a918093cde7f9541518fe24e5c69f88e506bd946ad7bc6ecf9f6f34c8a789925",
+      "bytes": 12394
+    },
+    "baselines/pixie_tiff_all_means_fractions_logistic.npz": {
+      "sha256": "1fab85b99eed6a65387ed5d010a493b3d2642fe48f198b8c8f51433e2675e076",
+      "bytes": 22503
+    },
+    "baselines/pixie_tiff_all_means_logistic.npz": {
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787",
+      "bytes": 12394
+    },
+    "baselines/spatialsort_all_means_fractions_logistic.npz": {
+      "sha256": "39518185cee06ef7712984ee3b03036b665a443d64439bf6c584de65f93b4fca",
+      "bytes": 22489
+    },
+    "baselines/spatialsort_all_means_logistic.npz": {
+      "sha256": "19c0258714ff12303f6b4276b8dc9b525f9916e6983e55a00bebda5a0df88787",
+      "bytes": 12394
+    },
+    "baselines/verification.json": {
+      "sha256": "fa7a12e0db5d1deb816879fcff65d9ed11e9b11b88891e75f551a3e10a1d6f60",
+      "bytes": 3695
+    },
+    "calibration_current_bank/calibration_cluster_split.csv": {
+      "sha256": "ec9262824a2c769d48fd52c615be177cd66e178c5b03a4a5f5ddc87a363f8861",
+      "bytes": 28424
+    },
+    "calibration_current_bank/calibration_equal_test_region_metrics.csv": {
+      "sha256": "f52f85e742378d2205b5411e4ca2b2921e45d8b2c03352f0063221df733d2164",
+      "bytes": 5741
+    },
+    "calibration_current_bank/calibration_metrics.csv": {
+      "sha256": "2ebc1cef2349f1e0c9cf39facb324f3f4061898f1a7af9ef007f4820bcb6cf7a",
+      "bytes": 22768
+    },
+    "calibration_current_bank/calibration_reliability.csv": {
+      "sha256": "036b10f360eadf02db24f9176b81f9078821cb4a033a2d5065d85a6675cba7ca",
+      "bytes": 43045
+    },
+    "calibration_current_bank/calibration_risk_coverage.csv": {
+      "sha256": "c558429c3329a4b1d9be53e120d5df0cecdb00fb31b1292ee095ebc7d9bf0bfb",
+      "bytes": 51455
+    },
+    "calibration_current_bank/calibration_split_freeze.json": {
+      "sha256": "77bc8359da2efa24f87024236c65f44b6e1bad476ccef94d2aaee4a890164315",
+      "bytes": 262
+    },
+    "calibration_current_bank/calibrators.json": {
+      "sha256": "0b3079f32936a74dc26ad11a0f738501be5ed79b90e0e24fa1c6ec00f9cf5857",
+      "bytes": 8684
+    },
+    "calibration_current_bank/verification.json": {
+      "sha256": "324340762ab3814c1e6cd178479b6080e0bf4bfc384955e4e5520e03a1b0c0ca",
+      "bytes": 2594
+    },
+    "granularity/assignments_K100.csv.gz": {
+      "sha256": "8208b4d744a85c1ae281b14414df002e49bb02863bb9d54372558d3a1f5f1275",
+      "bytes": 1382316
+    },
+    "granularity/assignments_K200.csv.gz": {
+      "sha256": "b5c2e0a00b7ec4d0a41eade6b5ee59dc49c6231147c8d88481f5fc1e44918e5d",
+      "bytes": 1552506
+    },
+    "granularity/cluster_maps.csv": {
+      "sha256": "90614031ec1cf7f4b2eae4986740699208e4f2c84230686e8add81e06b026ebd",
+      "bytes": 60258
+    },
+    "granularity/cluster_sizes.csv": {
+      "sha256": "1ebfaeb4644082257df739f49e9246b66944034fccef6f27a5148069c402663e",
+      "bytes": 56651
+    },
+    "granularity/coarsening_freeze.json": {
+      "sha256": "fb578b5ceeb0d7189f4937816c7459de74da0bd5b14d0e724532413eb9526a20",
+      "bytes": 1002
+    },
+    "granularity/equal_test_region_metrics.csv": {
+      "sha256": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a",
+      "bytes": 879
+    },
+    "granularity/flowsom_merge_trace.json": {
+      "sha256": "3f07f70729dfadb74bcc2061869945458e8b70167bd95479cdc6f7ff76b34f65",
+      "bytes": 58100
+    },
+    "granularity/leiden_merge_trace.json": {
+      "sha256": "d248e8dbeeb66b4f8518eca45ff3395e6fcef21d7ac0edee5429746ce82dce54",
+      "bytes": 60927
+    },
+    "granularity/pixie_tiff_merge_trace.json": {
+      "sha256": "b2750ef048e90c6d05e0247f891eaf38a2b81d8d9800b5b1967ef47e0c9b5e27",
+      "bytes": 58032
+    },
+    "granularity/regional_metrics.csv": {
+      "sha256": "55edc6abd7ffe1fd34902ec9376bb1988bca64f9e8cacf93dc88cc75ab2104be",
+      "bytes": 12885
+    },
+    "granularity/spatialsort_merge_trace.json": {
+      "sha256": "ba9ef8bbefa184e15ba2c29b5d758391ed5d7ee78aa0cefcc7690b1542d95367",
+      "bytes": 36946
+    },
+    "granularity/verification.json": {
+      "sha256": "999d0fd655cf3e09bdde84c6a8f625f514f43de26ddff9c865456d0285af2163",
+      "bytes": 2827
+    }
+  }
+}

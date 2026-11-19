@@ -1,0 +1,70 @@
+family,model,method,arm,status,planned_requests,accepted_requests,planned_clusters,delivered_clusters,cluster_delivery_coverage,planned_test_cells,delivered_test_cells,cell_delivery_coverage,agreement,fixed28_macro_f1
+openai,GPT-6 Astra,leiden,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.4676000972035712,0.39480012316406526
+openai,GPT-6 Astra,leiden,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.510265679469289,0.4510869614551593
+openai,GPT-6 Astra,leiden,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.5285639284162327,0.4581583476703903
+openai,GPT-6 Astra,leiden,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.5812001783991381,0.44901687365347975
+openai,GPT-6 Astra,flowsom,selected_names,complete,4,4,299,299,1.0,69576,69576,1.0,0.24227103597549865,0.23383007900419164
+openai,GPT-6 Astra,flowsom,selected_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.3559696399449961,0.2826505378820558
+openai,GPT-6 Astra,flowsom,all_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.3666311398515454,0.30282995464096024
+openai,GPT-6 Astra,flowsom,all_means_fractions,complete,4,4,299,299,1.0,69576,69576,1.0,0.36052967836314653,0.2712956149785928
+openai,GPT-6 Astra,spatialsort,selected_names,complete,4,4,229,229,1.0,69576,69576,1.0,0.3410720384317202,0.20259874243839926
+openai,GPT-6 Astra,spatialsort,selected_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.3377209124488314,0.21214043907862898
+openai,GPT-6 Astra,spatialsort,all_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.361289518568278,0.21518492329462025
+openai,GPT-6 Astra,spatialsort,all_means_fractions,complete,4,4,229,229,1.0,69576,69576,1.0,0.32378535489692806,0.20737022833868657
+openai,GPT-6 Astra,pixie_tiff,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.39042781034034396,0.25429507049694167
+openai,GPT-6 Astra,pixie_tiff,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.41688454271863196,0.28174473974543335
+openai,GPT-6 Astra,pixie_tiff,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.413180064553603,0.27767629685234296
+openai,GPT-6 Astra,pixie_tiff,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.3564055797807667,0.25525869998799167
+anthropic,Claude Opus 5.5,leiden,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.42164348522985956,0.3436894791254821
+anthropic,Claude Opus 5.5,leiden,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.43233428455510625,0.3654312885262728
+anthropic,Claude Opus 5.5,leiden,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.46781357480895613,0.38419772626572246
+anthropic,Claude Opus 5.5,leiden,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.5026803932477601,0.41651904791962113
+anthropic,Claude Opus 5.5,flowsom,selected_names,complete,4,4,299,299,1.0,69576,69576,1.0,0.27913781139941657,0.24138377249495274
+anthropic,Claude Opus 5.5,flowsom,selected_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.3341937679884649,0.2738661023386637
+anthropic,Claude Opus 5.5,flowsom,all_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.3747832161056215,0.28843320540917394
+anthropic,Claude Opus 5.5,flowsom,all_means_fractions,complete,4,4,299,299,1.0,69576,69576,1.0,0.36822495666972443,0.29992610493943905
+anthropic,Claude Opus 5.5,spatialsort,selected_names,complete,4,4,229,229,1.0,69576,69576,1.0,0.29361892319984956,0.19147570384757612
+anthropic,Claude Opus 5.5,spatialsort,selected_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.2840118213812024,0.18966725119370414
+anthropic,Claude Opus 5.5,spatialsort,all_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.33105849165797446,0.1965586169760038
+anthropic,Claude Opus 5.5,spatialsort,all_means_fractions,complete,4,4,229,229,1.0,69576,69576,1.0,0.36166219498258256,0.22255322176930753
+anthropic,Claude Opus 5.5,pixie_tiff,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.3541329864702679,0.2458376472992559
+anthropic,Claude Opus 5.5,pixie_tiff,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.38610517539843237,0.2609555704901314
+anthropic,Claude Opus 5.5,pixie_tiff,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.36039039679814466,0.2526960541429703
+anthropic,Claude Opus 5.5,pixie_tiff,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.4253673075045419,0.27511894699509004
+google,Gemini 4 Argon,leiden,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.3732509565577744,0.3232628537671716
+google,Gemini 4 Argon,leiden,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.45760562288046336,0.4074895386372659
+google,Gemini 4 Argon,leiden,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.4615911985553359,0.4072675486365004
+google,Gemini 4 Argon,leiden,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.47506163943061963,0.4132547966511634
+google,Gemini 4 Argon,flowsom,selected_names,complete,4,4,299,299,1.0,69576,69576,1.0,0.25913632999642416,0.22987963018283153
+google,Gemini 4 Argon,flowsom,selected_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.400915571054814,0.29463911349965627
+google,Gemini 4 Argon,flowsom,all_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.3956528004572565,0.31893353790180023
+google,Gemini 4 Argon,flowsom,all_means_fractions,complete,4,4,299,299,1.0,69576,69576,1.0,0.4183681852414468,0.2917189228347442
+google,Gemini 4 Argon,spatialsort,selected_names,complete,4,4,229,229,1.0,69576,69576,1.0,0.3239407306021416,0.2060204528065625
+google,Gemini 4 Argon,spatialsort,selected_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.3278458422017855,0.20073460241909197
+google,Gemini 4 Argon,spatialsort,all_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.3331419804774435,0.20904685903697778
+google,Gemini 4 Argon,spatialsort,all_means_fractions,complete,4,4,229,229,1.0,69576,69576,1.0,0.33800604177601495,0.21539014474562218
+google,Gemini 4 Argon,pixie_tiff,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.3796203997262313,0.256575905123289
+google,Gemini 4 Argon,pixie_tiff,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.4093311996218294,0.27370566643209193
+google,Gemini 4 Argon,pixie_tiff,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.3870391125904439,0.26886696561990614
+google,Gemini 4 Argon,pixie_tiff,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.3640086563548968,0.2618501288549662
+deepseek,DeepSeek V4.1 Flash 1017,leiden,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.35276340760481983,0.3082712950472463
+deepseek,DeepSeek V4.1 Flash 1017,leiden,selected_means,pending,4,3,300,225,0.75,69576,49257,0.7079596412556054,,
+deepseek,DeepSeek V4.1 Flash 1017,leiden,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.5016976800108048,0.4084199746515418
+deepseek,DeepSeek V4.1 Flash 1017,leiden,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.3991836785726288,0.2973587564353216
+deepseek,DeepSeek V4.1 Flash 1017,flowsom,selected_names,complete,4,4,299,299,1.0,69576,69576,1.0,0.17242031406220498,0.1681098716606233
+deepseek,DeepSeek V4.1 Flash 1017,flowsom,selected_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.2812616051406261,0.2494793823987361
+deepseek,DeepSeek V4.1 Flash 1017,flowsom,all_means,complete,4,4,299,299,1.0,69576,69576,1.0,0.27623025820805125,0.23728092889153296
+deepseek,DeepSeek V4.1 Flash 1017,flowsom,all_means_fractions,complete,4,4,299,299,1.0,69576,69576,1.0,0.27867519597348867,0.21956570409203302
+deepseek,DeepSeek V4.1 Flash 1017,spatialsort,selected_names,complete,4,4,229,229,1.0,69576,69576,1.0,0.25447334606305394,0.16225734342000822
+deepseek,DeepSeek V4.1 Flash 1017,spatialsort,selected_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.2652841093469678,0.17479468178484264
+deepseek,DeepSeek V4.1 Flash 1017,spatialsort,all_means,complete,4,4,229,229,1.0,69576,69576,1.0,0.20250137194428663,0.12299227923233971
+deepseek,DeepSeek V4.1 Flash 1017,spatialsort,all_means_fractions,complete,4,4,229,229,1.0,69576,69576,1.0,0.17420595858739857,0.11448074950388676
+deepseek,DeepSeek V4.1 Flash 1017,pixie_tiff,selected_names,complete,4,4,300,300,1.0,69576,69576,1.0,0.297410902071192,0.20800715932389988
+deepseek,DeepSeek V4.1 Flash 1017,pixie_tiff,selected_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.3354316386121972,0.2445995550572353
+deepseek,DeepSeek V4.1 Flash 1017,pixie_tiff,all_means,complete,4,4,300,300,1.0,69576,69576,1.0,0.3341894777637687,0.18952879348732535
+deepseek,DeepSeek V4.1 Flash 1017,pixie_tiff,all_means_fractions,complete,4,4,300,300,1.0,69576,69576,1.0,0.2735237161235907,0.16604935334656168
+anthropic,Claude Opus 5.5,leiden,method_named,complete,4,4,300,300,1.0,69576,69576,1.0,0.4515064572420371,0.3525342705762434
+anthropic,Claude Opus 5.5,flowsom,method_named,complete,4,4,299,299,1.0,69576,69576,1.0,0.33997374422240906,0.28604750142434376
+anthropic,Claude Opus 5.5,spatialsort,method_named,complete,4,4,229,229,1.0,69576,69576,1.0,0.3110938631194766,0.19480679977578624
+anthropic,Claude Opus 5.5,pixie_tiff,method_named,complete,4,4,300,300,1.0,69576,69576,1.0,0.3999734045823814,0.2845518804448553
+anthropic,Claude Opus 5.5,leiden,neighborhood,complete,4,4,300,300,1.0,69576,69576,1.0,0.4597445765199044,0.37801735871555936

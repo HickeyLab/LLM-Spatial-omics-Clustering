@@ -1,0 +1,3 @@
+# Completed cross-donor annotation
+
+All 128 logical request items and 9,468 planned cluster predictions are accepted. The five November 16 DeepSeek recoveries used the same scientific inputs and generation settings. A separately hash-bound, explicitly approved commercial amendment changed only provider.max_price.prompt from 0.104 to 0.112 and provider.max_price.completion from 0.583 to 1.000, with original frozen request files retained. All 123 prior accepted items and prior attempt histories are unchanged. Regions are weighted equally within donor, followed by equal donor weighting. Native delivery is complete, while projected-23 vocabulary coverage remains a distinct measure. See recovery5_lineage.json, recovery5_validation.json and FINAL_HANDOFF.json.

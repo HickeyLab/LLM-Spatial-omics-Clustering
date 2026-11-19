@@ -1,0 +1,23 @@
+{
+  "accepted_requests": 123,
+  "annotation_requests_terminal": true,
+  "clustering_ready": true,
+  "delivered_cluster_predictions": 9093,
+  "new_annotation_calls": 0,
+  "new_fits": 0,
+  "planned_cluster_predictions": 9468,
+  "planned_requests": 128,
+  "portable_replay_byte_identical": true,
+  "private_resolution_manifest_sha256": "022031db6564a810e08b5cd6d58c4a53b065a77a4af5e7fce071f5be5ef4e69c",
+  "public_bundle_manifest": {
+    "path": "scientific_inputs/manifest.json",
+    "sha256": "bdd8b83afc3901c350dea4ee0cc663e9f38bbb0881a63c82efae46dc3c1c0b59"
+  },
+  "public_privacy_scan_passed": true,
+  "publication_ready": true,
+  "schema": "donor47.final_offline_publication_score_handoff.v1",
+  "score_manifest": {
+    "path": "score_manifest.json",
+    "sha256": "04341b1d887bb8f29c9acf8b0906f907a00bccc6506627b38e69093ee1e28d12"
+  }
+}

@@ -1,0 +1,30 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S12c\\
+GEMINI 4 ARGON CROSS-MODEL AGREEMENT CALIBRATION\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1\hsize\raggedright\arraybackslash}X>{\hsize=1.55\hsize\raggedright\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X>{\hsize=0.85\hsize\raggedleft\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Score} & \textbf{Brier} & \textbf{Log loss} & \textbf{ECE} \\
+\midrule
+Leiden & Raw agreement & 0.2671 & 4.2733 & 0.2420 \\
+Leiden & Logistic recalibration & 0.2095 & 0.6089 & 0.0949 \\
+Leiden & Development constant & 0.2523 & 0.6977 & 0.0662 \\
+FlowSOM & Raw agreement & 0.3072 & 4.7653 & 0.2720 \\
+FlowSOM & Logistic recalibration & 0.2877 & 0.7786 & 0.2710 \\
+FlowSOM & Development constant & 0.2799 & 0.7578 & 0.1734 \\
+SpatialSort & Raw agreement & 0.3865 & 4.7954 & 0.3571 \\
+SpatialSort & Logistic recalibration & 0.2342 & 0.6669 & 0.0850 \\
+SpatialSort & Development constant & 0.2343 & 0.6633 & 0.0772 \\
+PIXIE & Raw agreement & 0.3558 & 4.2403 & 0.3847 \\
+PIXIE & Logistic recalibration & 0.2197 & 0.6310 & 0.1469 \\
+PIXIE & Development constant & 0.2340 & 0.6610 & 0.1345 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

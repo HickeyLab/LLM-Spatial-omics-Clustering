@@ -1,0 +1,6 @@
+Clustering,Control,Blinded (%),Control (%),Change (pp),Changed clusters
+Leiden,Method name,50.27,45.15,-5.12,75
+FlowSOM,Method name,36.82,34.00,-2.83,50
+SpatialSort,Method name,36.17,31.11,-5.06,53
+PIXIE,Method name,42.54,40.00,-2.54,51
+Leiden,Neighborhood,50.27,45.97,-4.29,63

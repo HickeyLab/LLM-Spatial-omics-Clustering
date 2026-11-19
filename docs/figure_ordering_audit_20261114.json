@@ -1,0 +1,1473 @@
+{
+  "status": "pass",
+  "source_commit": "5e4f11c91b24d14b6376b35892516562d0c8e475",
+  "ordering_policy": "Rank existing displayed summaries only. Exact ties keep the previous category order. Directly paired panels share their documented anchor order. No observations, scoring inputs or scientific results are changed.",
+  "ordering": [
+    {
+      "panel": "1C",
+      "metric": "Mean pooled cell-type F1 change",
+      "direction": "descending",
+      "paired_panels": [
+        "1B"
+      ],
+      "values": [
+        {
+          "label": "CellSAM",
+          "value": 0.040435588604083784
+        },
+        {
+          "label": "Mesmer",
+          "value": 0.022195655811140396
+        },
+        {
+          "label": "InstanSeg",
+          "value": 0.0016842640202113161
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": -0.009406023672709868
+        },
+        {
+          "label": "CellposeSAM",
+          "value": -0.03070511489278258
+        },
+        {
+          "label": "MicroSAM",
+          "value": -0.03594522928016631
+        }
+      ]
+    },
+    {
+      "panel": "1D\u2013F",
+      "metric": "Mean regional F1 change across displayed methods (percentage points)",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "CD36 high Endothelial",
+          "value": 20.679711138534852
+        },
+        {
+          "label": "DC",
+          "value": 19.343813794371922
+        },
+        {
+          "label": "PDPN+ Stromal",
+          "value": 12.77171024166231
+        },
+        {
+          "label": "Stromal",
+          "value": 3.3761780115626103
+        },
+        {
+          "label": "TA",
+          "value": 3.0744375120360967
+        },
+        {
+          "label": "B",
+          "value": 2.049914214676299
+        },
+        {
+          "label": "Goblet",
+          "value": 1.1499949394794002
+        },
+        {
+          "label": "Paneth",
+          "value": 0.9561474277616216
+        },
+        {
+          "label": "Noise",
+          "value": 0.5677386218159659
+        },
+        {
+          "label": "CD57+ Epithelial",
+          "value": 0.0
+        },
+        {
+          "label": "Cycling TA",
+          "value": 0.0
+        },
+        {
+          "label": "ICC",
+          "value": 0.0
+        },
+        {
+          "label": "M1 Macrophage",
+          "value": 0.0
+        },
+        {
+          "label": "NK",
+          "value": 0.0
+        },
+        {
+          "label": "Plasma",
+          "value": -0.055443424950203456
+        },
+        {
+          "label": "Neutrophil",
+          "value": -0.1726338618472141
+        },
+        {
+          "label": "M2 Macrophage",
+          "value": -0.3075592755077133
+        },
+        {
+          "label": "Epithelial",
+          "value": -0.6913074772768573
+        },
+        {
+          "label": "MUC1+ Epithelial",
+          "value": -0.9644059644059645
+        },
+        {
+          "label": "Smooth muscle",
+          "value": -1.2338973971762426
+        },
+        {
+          "label": "Nerve",
+          "value": -1.849776678877008
+        },
+        {
+          "label": "CD4+ T",
+          "value": -2.9675733549965115
+        },
+        {
+          "label": "Neuroendocrine",
+          "value": -4.437254706542272
+        },
+        {
+          "label": "CD66+ Epithelial",
+          "value": -5.147799190903056
+        },
+        {
+          "label": "ITLN+ Epithelial",
+          "value": -5.931141147037061
+        },
+        {
+          "label": "CD36 low Endothelial",
+          "value": -6.020749082552279
+        },
+        {
+          "label": "CD8+ T",
+          "value": -8.699999822055764
+        },
+        {
+          "label": "CD49a+ Smooth muscle",
+          "value": -14.845022635596202
+        }
+      ]
+    },
+    {
+      "panel": "2E",
+      "metric": "Mean regional weighted F1",
+      "direction": "descending",
+      "paired_panels": [
+        "2F",
+        "2G",
+        "2H"
+      ],
+      "values": [
+        {
+          "label": "Leiden",
+          "value": 0.7390881548997928
+        },
+        {
+          "label": "PIXIE",
+          "value": 0.6154287118189095
+        },
+        {
+          "label": "FlowSOM",
+          "value": 0.5323345330023315
+        },
+        {
+          "label": "SpatialSort",
+          "value": 0.5278020336586234
+        }
+      ]
+    },
+    {
+      "panel": "2F",
+      "metric": "Mean F1 across displayed methods",
+      "direction": "descending",
+      "paired_panels": [
+        "2H"
+      ],
+      "values": [
+        {
+          "label": "Smooth muscle",
+          "value": 0.7769647635868686
+        },
+        {
+          "label": "Endothelial",
+          "value": 0.7658735584868548
+        },
+        {
+          "label": "Plasma",
+          "value": 0.7506656233072855
+        },
+        {
+          "label": "Enterocyte",
+          "value": 0.5936680286706613
+        },
+        {
+          "label": "CD8+ T",
+          "value": 0.5842318851180778
+        },
+        {
+          "label": "M2 Macrophage",
+          "value": 0.5737933976556369
+        },
+        {
+          "label": "Nerve",
+          "value": 0.5685116660347016
+        },
+        {
+          "label": "Goblet",
+          "value": 0.5372674400082436
+        },
+        {
+          "label": "CD4+ T cell",
+          "value": 0.5343775107191397
+        },
+        {
+          "label": "Stroma",
+          "value": 0.45669594723635104
+        },
+        {
+          "label": "CD66+ Enterocyte",
+          "value": 0.4464357980898178
+        },
+        {
+          "label": "B",
+          "value": 0.4127086509952269
+        },
+        {
+          "label": "Neutrophil",
+          "value": 0.41119329044674113
+        },
+        {
+          "label": "Neuroendocrine",
+          "value": 0.3695524992400894
+        },
+        {
+          "label": "Lymphatic",
+          "value": 0.3327433830964738
+        },
+        {
+          "label": "Cycling TA",
+          "value": 0.29740146343284074
+        },
+        {
+          "label": "ICC",
+          "value": 0.22185024365805334
+        },
+        {
+          "label": "DC",
+          "value": 0.15705067375213513
+        },
+        {
+          "label": "MUC1+ Enterocyte",
+          "value": 0.09096120772023696
+        },
+        {
+          "label": "CD7+ Immune",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "panel": "3C models",
+      "metric": "Mean fixed-28-label macro-F1 across methods",
+      "direction": "descending",
+      "paired_panels": [
+        "3B rows",
+        "3D columns",
+        "3E model order",
+        "S10 panel order"
+      ],
+      "values": [
+        {
+          "label": "anthropic",
+          "value": 0.3035293304058644
+        },
+        {
+          "label": "openai",
+          "value": 0.29573535423968766
+        },
+        {
+          "label": "google",
+          "value": 0.29555349827162397
+        },
+        {
+          "label": "deepseek",
+          "value": 0.1993636408444507
+        }
+      ]
+    },
+    {
+      "panel": "3C methods",
+      "metric": "Mean fixed-28-label macro-F1 across models",
+      "direction": "descending",
+      "paired_panels": [
+        "3B columns",
+        "S10 method rows"
+      ],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.39403736866489647
+        },
+        {
+          "label": "flowsom",
+          "value": 0.27062658671120227
+        },
+        {
+          "label": "pixie_tiff",
+          "value": 0.23956928229615235
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.1899485860893757
+        }
+      ]
+    },
+    {
+      "panel": "3D",
+      "metric": "Mean pooled-test recall across all four displayed models",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "ICC",
+          "value": 0.967741935483871
+        },
+        {
+          "label": "CD36 high Endothelial",
+          "value": 0.8370535714285714
+        },
+        {
+          "label": "Neuroendocrine",
+          "value": 0.8116319444444445
+        },
+        {
+          "label": "Paneth",
+          "value": 0.7904829545454546
+        },
+        {
+          "label": "Neutrophil",
+          "value": 0.76657824933687
+        },
+        {
+          "label": "Plasma",
+          "value": 0.7012740711923751
+        },
+        {
+          "label": "CD8+ T",
+          "value": 0.6821638861629048
+        },
+        {
+          "label": "Nerve",
+          "value": 0.6524447212706321
+        },
+        {
+          "label": "M2 Macrophage",
+          "value": 0.6381944444444445
+        },
+        {
+          "label": "PDPN+ Stromal",
+          "value": 0.6296711509715994
+        },
+        {
+          "label": "CD4+ T",
+          "value": 0.6130273660205245
+        },
+        {
+          "label": "Noise",
+          "value": 0.5973486174308715
+        },
+        {
+          "label": "CD66+ Epithelial",
+          "value": 0.5791841631673665
+        },
+        {
+          "label": "Goblet",
+          "value": 0.5762209577999051
+        },
+        {
+          "label": "ITLN+ Epithelial",
+          "value": 0.5245752427184466
+        },
+        {
+          "label": "Smooth muscle",
+          "value": 0.4906705097087378
+        },
+        {
+          "label": "Cycling TA",
+          "value": 0.4787234042553192
+        },
+        {
+          "label": "M1 Macrophage",
+          "value": 0.4480337078651686
+        },
+        {
+          "label": "DC",
+          "value": 0.4319787985865724
+        },
+        {
+          "label": "Epithelial",
+          "value": 0.4300246279044866
+        },
+        {
+          "label": "CD36 low Endothelial",
+          "value": 0.4193386773547094
+        },
+        {
+          "label": "CD49a+ Smooth muscle",
+          "value": 0.32208415701779164
+        },
+        {
+          "label": "MUC1+ Epithelial",
+          "value": 0.31647300068352696
+        },
+        {
+          "label": "Stromal",
+          "value": 0.17637266355140183
+        },
+        {
+          "label": "NK",
+          "value": 0.15697674418604649
+        },
+        {
+          "label": "CD57+ Epithelial",
+          "value": 0.14285714285714282
+        },
+        {
+          "label": "TA",
+          "value": 0.0583333333333333
+        },
+        {
+          "label": "B",
+          "value": 0.026649746192893377
+        }
+      ]
+    },
+    {
+      "panel": "4C",
+      "metric": "Pooled-test cell-type F1",
+      "direction": "descending",
+      "paired_panels": [
+        "4B both confusion axes"
+      ],
+      "values": [
+        {
+          "label": "Paneth",
+          "value": 0.8348348348348348
+        },
+        {
+          "label": "Plasma",
+          "value": 0.8058368724817597
+        },
+        {
+          "label": "Goblet",
+          "value": 0.7969111969111969
+        },
+        {
+          "label": "Smooth muscle",
+          "value": 0.7615226887759651
+        },
+        {
+          "label": "Nerve",
+          "value": 0.7445388349514563
+        },
+        {
+          "label": "Neuroendocrine",
+          "value": 0.7272727272727273
+        },
+        {
+          "label": "CD8+ T",
+          "value": 0.69451871657754
+        },
+        {
+          "label": "CD49a+ Smooth muscle",
+          "value": 0.6831293241085684
+        },
+        {
+          "label": "M2 Macrophage",
+          "value": 0.664179104477612
+        },
+        {
+          "label": "Epithelial",
+          "value": 0.6353710638746769
+        },
+        {
+          "label": "CD36 high Endothelial",
+          "value": 0.6171714871327716
+        },
+        {
+          "label": "CD4+ T",
+          "value": 0.6092206366630076
+        },
+        {
+          "label": "Cycling TA",
+          "value": 0.5885747259088286
+        },
+        {
+          "label": "DC",
+          "value": 0.5817409766454352
+        },
+        {
+          "label": "Noise",
+          "value": 0.5429275640147885
+        },
+        {
+          "label": "CD66+ Epithelial",
+          "value": 0.4957464553794829
+        },
+        {
+          "label": "Neutrophil",
+          "value": 0.4875491480996068
+        },
+        {
+          "label": "CD36 low Endothelial",
+          "value": 0.4808061420345489
+        },
+        {
+          "label": "MUC1+ Epithelial",
+          "value": 0.4220679012345679
+        },
+        {
+          "label": "ICC",
+          "value": 0.3828623518687329
+        },
+        {
+          "label": "PDPN+ Stromal",
+          "value": 0.3610411418975651
+        },
+        {
+          "label": "Stromal",
+          "value": 0.2480563431811945
+        },
+        {
+          "label": "M1 Macrophage",
+          "value": 0.2216521292970754
+        },
+        {
+          "label": "ITLN+ Epithelial",
+          "value": 0.2029621503017005
+        },
+        {
+          "label": "TA",
+          "value": 0.1242165242165242
+        },
+        {
+          "label": "NK",
+          "value": 0.0825396825396825
+        },
+        {
+          "label": "B",
+          "value": 0.0585585585585585
+        },
+        {
+          "label": "CD57+ Epithelial",
+          "value": 0.0571428571428571
+        }
+      ]
+    },
+    {
+      "panel": "S6A",
+      "metric": "Pooled-test cell-type F1",
+      "direction": "descending",
+      "paired_panels": [
+        "S6A count/fraction both axes"
+      ],
+      "values": [
+        {
+          "label": "Paneth",
+          "value": 0.8365817091454273
+        },
+        {
+          "label": "Goblet",
+          "value": 0.7728407388916625
+        },
+        {
+          "label": "Nerve",
+          "value": 0.7099483204134367
+        },
+        {
+          "label": "Plasma",
+          "value": 0.6690582959641256
+        },
+        {
+          "label": "CD8+ T",
+          "value": 0.6688517425980552
+        },
+        {
+          "label": "Neuroendocrine",
+          "value": 0.6571428571428571
+        },
+        {
+          "label": "M2 Macrophage",
+          "value": 0.6393186657203691
+        },
+        {
+          "label": "Epithelial",
+          "value": 0.5962859596393302
+        },
+        {
+          "label": "CD4+ T",
+          "value": 0.5850234009360374
+        },
+        {
+          "label": "CD36 low Endothelial",
+          "value": 0.5612316305108468
+        },
+        {
+          "label": "CD36 high Endothelial",
+          "value": 0.5581635285014186
+        },
+        {
+          "label": "DC",
+          "value": 0.5312714776632302
+        },
+        {
+          "label": "Neutrophil",
+          "value": 0.5302175664786463
+        },
+        {
+          "label": "CD66+ Epithelial",
+          "value": 0.5146651909241837
+        },
+        {
+          "label": "Cycling TA",
+          "value": 0.4895397489539749
+        },
+        {
+          "label": "Smooth muscle",
+          "value": 0.4871400307759947
+        },
+        {
+          "label": "PDPN+ Stromal",
+          "value": 0.4763423710792132
+        },
+        {
+          "label": "Noise",
+          "value": 0.4502246693247262
+        },
+        {
+          "label": "ICC",
+          "value": 0.374331550802139
+        },
+        {
+          "label": "MUC1+ Epithelial",
+          "value": 0.3273582133411695
+        },
+        {
+          "label": "M1 Macrophage",
+          "value": 0.3132341425215348
+        },
+        {
+          "label": "CD49a+ Smooth muscle",
+          "value": 0.3031275060144346
+        },
+        {
+          "label": "Stromal",
+          "value": 0.255967148601249
+        },
+        {
+          "label": "ITLN+ Epithelial",
+          "value": 0.1931818181818181
+        },
+        {
+          "label": "TA",
+          "value": 0.1636549607909989
+        },
+        {
+          "label": "CD57+ Epithelial",
+          "value": 0.0380228136882129
+        },
+        {
+          "label": "B",
+          "value": 0.024074074074074
+        },
+        {
+          "label": "NK",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "panel": "S1 silhouette",
+      "metric": "Mean after-compensation silhouette",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "Mesmer",
+          "value": -0.025575
+        },
+        {
+          "label": "CellposeSAM",
+          "value": -0.0266
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": -0.0275625
+        },
+        {
+          "label": "InstanSeg",
+          "value": -0.042575
+        },
+        {
+          "label": "CellSAM",
+          "value": -0.04585
+        },
+        {
+          "label": "MicroSAM",
+          "value": -0.0493875
+        }
+      ]
+    },
+    {
+      "panel": "S1 davies_bouldin",
+      "metric": "Mean after-compensation davies_bouldin",
+      "direction": "ascending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "InstanSeg",
+          "value": 2.08505
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": 2.1354375
+        },
+        {
+          "label": "MicroSAM",
+          "value": 2.1715999999999998
+        },
+        {
+          "label": "CellSAM",
+          "value": 2.206775
+        },
+        {
+          "label": "CellposeSAM",
+          "value": 2.2152125
+        },
+        {
+          "label": "Mesmer",
+          "value": 2.237275
+        }
+      ]
+    },
+    {
+      "panel": "S1 calinski_harabasz",
+      "metric": "Mean after-compensation calinski_harabasz",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "CellposeSAM",
+          "value": 623.2313750000001
+        },
+        {
+          "label": "InstanSeg",
+          "value": 611.2315
+        },
+        {
+          "label": "MicroSAM",
+          "value": 589.2808375
+        },
+        {
+          "label": "Mesmer",
+          "value": 578.3655
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": 546.3613875
+        },
+        {
+          "label": "CellSAM",
+          "value": 544.32655
+        }
+      ]
+    },
+    {
+      "panel": "S3A",
+      "metric": "Mean retained shared objects across displayed variants",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "Mesmer",
+          "value": 0.7974490998270848
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": 0.7790704880214279
+        },
+        {
+          "label": "CellSAM",
+          "value": 0.758706321058439
+        },
+        {
+          "label": "CellposeSAM",
+          "value": 0.7586662115888191
+        },
+        {
+          "label": "InstanSeg",
+          "value": 0.7084866938676033
+        },
+        {
+          "label": "MicroSAM",
+          "value": 0.7049623033378357
+        }
+      ]
+    },
+    {
+      "panel": "S3B",
+      "metric": "Mean regional cell-type F1 change across displayed backends",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "CellSAM",
+          "value": 0.021217093575392258
+        },
+        {
+          "label": "Mesmer",
+          "value": -0.0036006641397196065
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": -0.004893341135554155
+        },
+        {
+          "label": "InstanSeg",
+          "value": -0.020207950958621386
+        },
+        {
+          "label": "MicroSAM",
+          "value": -0.029396111579328612
+        },
+        {
+          "label": "CellposeSAM",
+          "value": -0.035857043277273744
+        }
+      ]
+    },
+    {
+      "panel": "S3C cell types",
+      "metric": "Mean displayed F1 change across methods/backends",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "CD36 high Endothelial",
+          "value": 0.16743279036617917
+        },
+        {
+          "label": "Cycling TA",
+          "value": 0.07368629265938387
+        },
+        {
+          "label": "PDPN+ Stromal",
+          "value": 0.038855946779607374
+        },
+        {
+          "label": "M1 Macrophage",
+          "value": 0.02872973649455326
+        },
+        {
+          "label": "DC",
+          "value": 0.022605801484337388
+        },
+        {
+          "label": "NK",
+          "value": 0.0207479241166493
+        },
+        {
+          "label": "CD57+ Epithelial",
+          "value": 0.01875537323589205
+        },
+        {
+          "label": "Noise",
+          "value": 0.00017707921889259328
+        },
+        {
+          "label": "Goblet",
+          "value": 0.00016440253977163493
+        },
+        {
+          "label": "TA",
+          "value": -0.009739445842936416
+        },
+        {
+          "label": "CD4+ T",
+          "value": -0.010073872063753634
+        },
+        {
+          "label": "Plasma",
+          "value": -0.011071132564556484
+        },
+        {
+          "label": "CD8+ T",
+          "value": -0.01680633657169747
+        },
+        {
+          "label": "MUC1+ Epithelial",
+          "value": -0.017549585137281633
+        },
+        {
+          "label": "Neutrophil",
+          "value": -0.01942028655204894
+        },
+        {
+          "label": "Stromal",
+          "value": -0.020461379869168458
+        },
+        {
+          "label": "ICC",
+          "value": -0.02062381916752006
+        },
+        {
+          "label": "B",
+          "value": -0.022554787775129426
+        },
+        {
+          "label": "Nerve",
+          "value": -0.027093021059850574
+        },
+        {
+          "label": "Epithelial",
+          "value": -0.030638242833293892
+        },
+        {
+          "label": "Paneth",
+          "value": -0.03065307932304065
+        },
+        {
+          "label": "CD66+ Epithelial",
+          "value": -0.03525226689068787
+        },
+        {
+          "label": "Smooth muscle",
+          "value": -0.04178139172176563
+        },
+        {
+          "label": "ITLN+ Epithelial",
+          "value": -0.052882636269805126
+        },
+        {
+          "label": "M2 Macrophage",
+          "value": -0.053803517990029526
+        },
+        {
+          "label": "CD36 low Endothelial",
+          "value": -0.059340633033888424
+        },
+        {
+          "label": "Neuroendocrine",
+          "value": -0.08819498188166902
+        },
+        {
+          "label": "CD49a+ Smooth muscle",
+          "value": -0.14709364353695895
+        }
+      ]
+    },
+    {
+      "panel": "S3C methods",
+      "metric": "Mean displayed F1 change across cell types/backends",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "CellSAM",
+          "value": 0.020788830281203968
+        },
+        {
+          "label": "Mesmer",
+          "value": -0.0036873584564554368
+        },
+        {
+          "label": "CellposeCyto3",
+          "value": -0.005843602151094905
+        },
+        {
+          "label": "InstanSeg",
+          "value": -0.02020795095862139
+        },
+        {
+          "label": "MicroSAM",
+          "value": -0.029136191524030037
+        },
+        {
+          "label": "CellposeSAM",
+          "value": -0.0356020228745341
+        }
+      ]
+    },
+    {
+      "panel": "S4D ari",
+      "metric": "Median ari",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "pixie",
+          "value": 0.23558787141140625
+        },
+        {
+          "label": "flowsom",
+          "value": 0.1879343994951055
+        },
+        {
+          "label": "leiden",
+          "value": 0.17422565091694645
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.1052752866745939
+        }
+      ]
+    },
+    {
+      "panel": "S4D ami",
+      "metric": "Median ami",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.506746970623803
+        },
+        {
+          "label": "pixie",
+          "value": 0.42451304543927326
+        },
+        {
+          "label": "flowsom",
+          "value": 0.4102089880158619
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.3861662041868842
+        }
+      ]
+    },
+    {
+      "panel": "S4D shannon_index",
+      "metric": "Median shannon_index",
+      "direction": "ascending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.8091500437097289
+        },
+        {
+          "label": "flowsom",
+          "value": 1.2194945591604986
+        },
+        {
+          "label": "spatialsort",
+          "value": 1.4769099214507115
+        },
+        {
+          "label": "pixie",
+          "value": 1.5150539839148767
+        }
+      ]
+    },
+    {
+      "panel": "S4D f1",
+      "metric": "Median f1",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.6595576619273301
+        },
+        {
+          "label": "flowsom",
+          "value": 0.4590984974958264
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.3771377137713771
+        },
+        {
+          "label": "pixie",
+          "value": 0.1077071912286359
+        }
+      ]
+    },
+    {
+      "panel": "S4D recall",
+      "metric": "Median recall",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.6885964912280702
+        },
+        {
+          "label": "flowsom",
+          "value": 0.4490318906605922
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.3866708914237431
+        },
+        {
+          "label": "pixie",
+          "value": 0.0661648177496038
+        }
+      ]
+    },
+    {
+      "panel": "S4D purity_percent",
+      "metric": "Median purity_percent",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 75.01715720680673
+        },
+        {
+          "label": "flowsom",
+          "value": 60.0
+        },
+        {
+          "label": "pixie",
+          "value": 50.62118671696707
+        },
+        {
+          "label": "spatialsort",
+          "value": 44.637385086823286
+        }
+      ]
+    },
+    {
+      "panel": "S5",
+      "metric": "Pooled cluster-majority upper bound",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.6868530820330604
+        },
+        {
+          "label": "pixie",
+          "value": 0.5294026771839587
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.4835334102743522
+        },
+        {
+          "label": "flowsom",
+          "value": 0.4713833934624367
+        }
+      ]
+    },
+    {
+      "panel": "S7",
+      "metric": "Equal-weighted test-region agreement",
+      "direction": "descending",
+      "paired_panels": [],
+      "values": [
+        {
+          "label": [
+            "leiden",
+            "openai"
+          ],
+          "value": 0.5812001783991381
+        },
+        {
+          "label": [
+            "leiden",
+            "anthropic"
+          ],
+          "value": 0.5026803932477601
+        },
+        {
+          "label": [
+            "leiden",
+            "google"
+          ],
+          "value": 0.4750616394306196
+        },
+        {
+          "label": [
+            "pixie_tiff",
+            "anthropic"
+          ],
+          "value": 0.4253673075045419
+        },
+        {
+          "label": [
+            "flowsom",
+            "google"
+          ],
+          "value": 0.4183681852414468
+        },
+        {
+          "label": [
+            "leiden",
+            "deepseek"
+          ],
+          "value": 0.3991836785726288
+        },
+        {
+          "label": [
+            "flowsom",
+            "anthropic"
+          ],
+          "value": 0.3682249566697244
+        },
+        {
+          "label": [
+            "pixie_tiff",
+            "google"
+          ],
+          "value": 0.3640086563548968
+        },
+        {
+          "label": [
+            "spatialsort",
+            "anthropic"
+          ],
+          "value": 0.3616621949825825
+        },
+        {
+          "label": [
+            "flowsom",
+            "openai"
+          ],
+          "value": 0.3605296783631465
+        },
+        {
+          "label": [
+            "pixie_tiff",
+            "openai"
+          ],
+          "value": 0.3564055797807667
+        },
+        {
+          "label": [
+            "spatialsort",
+            "google"
+          ],
+          "value": 0.3380060417760149
+        },
+        {
+          "label": [
+            "spatialsort",
+            "openai"
+          ],
+          "value": 0.323785354896928
+        },
+        {
+          "label": [
+            "flowsom",
+            "deepseek"
+          ],
+          "value": 0.2786751959734886
+        },
+        {
+          "label": [
+            "pixie_tiff",
+            "deepseek"
+          ],
+          "value": 0.2735237161235907
+        },
+        {
+          "label": [
+            "spatialsort",
+            "deepseek"
+          ],
+          "value": 0.1742059585873985
+        }
+      ]
+    },
+    {
+      "panel": "S8 methods",
+      "metric": "Primary means-plus-fractions mean fixed-28-label macro-F1 across all four models",
+      "direction": "descending",
+      "paired_panels": [
+        "S9A"
+      ],
+      "values": [
+        {
+          "label": "leiden",
+          "value": 0.39403736866489647
+        },
+        {
+          "label": "flowsom",
+          "value": 0.27062658671120227
+        },
+        {
+          "label": "pixie_tiff",
+          "value": 0.23956928229615235
+        },
+        {
+          "label": "spatialsort",
+          "value": 0.1899485860893757
+        }
+      ]
+    }
+  ],
+  "independent_original_vs_current_artist_invariance": [
+    {
+      "figure": "1",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 969,
+        "scatter_sizes": 186,
+        "line_values": 298,
+        "bar_values": 42
+      }
+    },
+    {
+      "figure": "2",
+      "numeric_artist_values_preserved": {
+        "bar_values": 72,
+        "scatter_values": 2237348,
+        "scatter_sizes": 19,
+        "line_values": 80,
+        "heatmap": 672
+      }
+    },
+    {
+      "figure": "S1",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 288,
+        "scatter_sizes": 144,
+        "line_values": 288,
+        "bar_values": 36
+      }
+    },
+    {
+      "figure": "S3A",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 216,
+        "scatter_sizes": 48
+      }
+    },
+    {
+      "figure": "S3B",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 108,
+        "scatter_sizes": 24,
+        "line_values": 28
+      }
+    },
+    {
+      "figure": "S3C",
+      "numeric_artist_values_preserved": {
+        "heatmap": 592
+      }
+    },
+    {
+      "figure": "S4",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 223890,
+        "scatter_sizes": 1304,
+        "scatter_colors": 1269,
+        "heatmap": 256,
+        "bar_values": 5880,
+        "line_values": 240
+      }
+    },
+    {
+      "figure": "S5",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 32,
+        "scatter_sizes": 4,
+        "bar_values": 4
+      }
+    },
+    {
+      "figure": "3",
+      "numeric_artist_values_preserved": {
+        "heatmap": 912,
+        "scatter_values": 182320,
+        "scatter_sizes": 5
+      }
+    },
+    {
+      "figure": "4",
+      "numeric_artist_values_preserved": {
+        "heatmap": 1040,
+        "scatter_values": 56,
+        "scatter_sizes": 2,
+        "bar_values": 40
+      }
+    },
+    {
+      "figure": "S6",
+      "numeric_artist_values_preserved": {
+        "heatmap": 2080,
+        "bar_values": 900
+      }
+    },
+    {
+      "figure": "S7",
+      "numeric_artist_values_preserved": {
+        "bar_values": 48
+      }
+    },
+    {
+      "figure": "S10",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 32,
+        "scatter_sizes": 8,
+        "line_values": 32
+      }
+    },
+    {
+      "figure": "S11",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 191,
+        "scatter_sizes": 191,
+        "scatter_colors": 188,
+        "heatmap": 256
+      }
+    },
+    {
+      "figure": "S8",
+      "numeric_artist_values_preserved": {
+        "heatmap": 1088,
+        "bar_values": 1
+      }
+    },
+    {
+      "figure": "S9",
+      "numeric_artist_values_preserved": {
+        "scatter_values": 59,
+        "scatter_sizes": 8,
+        "line_values": 72,
+        "bar_values": 2,
+        "coverage_values": 16
+      }
+    }
+  ],
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "pending_condition_preserved": {
+    "family": "deepseek",
+    "method": "leiden",
+    "arm": "selected_means",
+    "agreement_is_missing": true,
+    "macro_f1_is_missing": true,
+    "display": "Pending with hatching",
+    "delivered_predictions": 225,
+    "planned_clusters": 300,
+    "source": "The same frozen condition already shown in the baseline manuscript"
+  },
+  "S11_native_pixels_identical_to_live_source": true
+}

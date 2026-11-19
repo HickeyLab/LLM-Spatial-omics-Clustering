@@ -53,7 +53,8 @@ class ActiveStudyTests(unittest.TestCase):
     def test_completed_results_are_recorded_without_an_inference_launch(self):
         entries = {x["id"]: x for x in self.registry["experiments"]}
         self.assertEqual(self.active["status"], "completed_scored_verified")
-        self.assertEqual(self.registry["active_reported_ids"], [1, 2, 3, 7, 14])
+        self.assertEqual(self.registry["active_reported_ids"],
+                         [1, 2, 3, 5, 7, 8, 10, 11, 12, 13, 14])
         for experiment_id in (7, 14):
             entry = entries[experiment_id]
             self.assertEqual(entry["status"], "reported_completed")
@@ -61,7 +62,7 @@ class ActiveStudyTests(unittest.TestCase):
             self.assertFalse(entry["prior_results_remain_reported"])
             self.assertFalse(entry["new_execution"])
             self.assertIn(experiment_id, self.registry["active_reported_ids"])
-        self.assertEqual(self.registry["completed_result_ids"], [7, 14])
+        self.assertEqual(self.registry["completed_result_ids"], [7, 12, 14])
         self.assertFalse(self.active["execution"]["enabled"])
         self.assertFalse(self.active["execution"]["automatic_launch"])
         self.assertEqual(self.active["execution"]["new_annotation_calls_by_publication_update"], 0)
@@ -78,19 +79,26 @@ class ActiveStudyTests(unittest.TestCase):
             path = str(Path(result["manifest"]).parent / name)
             self.assertEqual(sha(path), entry["sha256"])
             self.assertEqual((ROOT / path).stat().st_size, entry["bytes"])
-        self.assertEqual(manifest["logical_request_items"], 128)
-        self.assertEqual(manifest["cluster_predictions"], 9024)
+        summary = load(result["summary"])
+        self.assertEqual(summary["accepted_requests"], 128)
+        self.assertEqual(summary["accepted_predictions"], 9024)
         actual = load(self.active["execution"]["actual_execution_summary"])
         self.assertEqual(actual["new_calls_from_scoring"], 0)
-        self.assertEqual(actual["recorded_campaign_charge_usd"], "77.078729829")
-        self.assertEqual(actual["approved_cap_usd"], "90")
+        self.assertEqual(actual["new_scheduler_actions_from_publication"], 0)
+        self.assertIsNone(actual["settled_total_campaign_cost_usd"])
+        self.assertTrue(actual["unknown_billing_preserved"])
+        self.assertNotIn("recorded_campaign_charge_usd", actual)
+        self.assertNotIn("approved_cap_usd", actual)
         settings = {r["model_family"]: r for r in actual["models"]}
         for model in ("openai", "anthropic"):
-            self.assertEqual(settings[model]["accepted_transport"], "batch")
             self.assertEqual(settings[model]["accepted_wire_max_tokens"], 32768)
         for model in ("google", "deepseek"):
-            self.assertEqual(settings[model]["accepted_transport"], "standard_streaming")
             self.assertEqual(settings[model]["accepted_wire_max_tokens"], 943718)
+        self.assertEqual({row["reasoning"] for row in actual["models"]}, {"high"})
+        self.assertEqual(settings["openai"]["seed_where_supported"], 42)
+        self.assertEqual(settings["google"]["seed_where_supported"], 42)
+        self.assertIsNone(settings["anthropic"]["seed_where_supported"])
+        self.assertIsNone(settings["deepseek"]["seed_where_supported"])
         self.assertEqual(settings["google"]["native_continuation_segment_output_bound"], 65536)
         self.assertEqual(self.active["publication"]["google_doc_mode"], "Suggesting")
         self.assertFalse(self.active["publication"]["result_placeholders_only_until_valid_outputs"])
@@ -129,10 +137,57 @@ class ActiveStudyTests(unittest.TestCase):
             self.assertEqual(new_entries[experiment_id]["experiment"], old_entry["experiment"])
             if experiment_id in (1, 2, 3, 4):
                 self.assertEqual(new_entries[experiment_id], old_entry)
-        self.assertEqual(self.registry["active_reported_ids"], [1, 2, 3, 7, 14])
-        for experiment_id in (4, 5, 6, 8, 9, 10, 11, 12, 13):
+        self.assertEqual(self.registry["active_reported_ids"],
+                         [1, 2, 3, 5, 7, 8, 10, 11, 12, 13, 14])
+        for experiment_id in (4, 6, 9):
             self.assertEqual(new_entries[experiment_id]["status"], "archived")
             self.assertNotIn(experiment_id, self.registry["active_reported_ids"])
+        self.assertEqual(new_entries[5]["components"]["native_requested_K_study"]["status"], "archived")
+        self.assertEqual(new_entries[8]["components"]["reference_assisted_annotation"]["status"], "archived")
+        self.assertEqual(new_entries[8]["components"]["B005_B006_transfer"]["status"], "pending")
+        for experiment_id in (8, 10, 11, 13):
+            self.assertEqual(new_entries[experiment_id]["status"], "reported_partial")
+
+    def test_followup_pending_results_are_not_called_completed(self):
+        followup = self.active["followup_components"]
+        self.assertEqual(followup["planned_base_annotation_sets"], 69)
+        self.assertEqual(followup["complete_base_annotation_sets"], 68)
+        self.assertEqual(followup["planned_base_request_items"], 276)
+        self.assertEqual(followup["accepted_base_request_items"], 275)
+        self.assertEqual(followup["total_pending_request_items"], 9)
+        self.assertEqual(followup["exact_reused_request_items"], 109)
+        self.assertEqual(followup["newly_accepted_request_items"], 166)
+        self.assertFalse(followup["donor_results_included"])
+        self.assertFalse(followup["private_high_xhigh_pilot_included"])
+        self.assertEqual(sha(followup["result_manifest"]), followup["result_manifest_sha256"])
+        entries = {row["id"]: row for row in self.registry["experiments"]}
+        compact = entries[10]["components"]["matched47marker_representations"]
+        self.assertEqual(compact["complete_annotation_sets"], 63)
+        self.assertEqual(compact["pending_clusters"], 75)
+        self.assertIsNone(compact["incomplete_condition_accuracy"])
+        self.assertIsNone(compact["overall_four_arm_aggregate"])
+        for experiment_id in (11, 13):
+            self.assertEqual(entries[experiment_id]["components"]["Astra_Leiden"]["status"], "pending")
+            self.assertFalse(entries[experiment_id]["components"]["Astra_Leiden"]["results_included"])
+
+    def test_original_publication_metadata_is_hash_preserved(self):
+        index = load("archive/reviewer47_publication_before_20261111/metadata_index.json")
+        self.assertEqual(len(index["files"]), 6)
+        for row in index["files"]:
+            self.assertEqual(sha(row["archive_path"]), row["sha256"])
+            self.assertEqual((ROOT / row["archive_path"]).stat().st_size, row["bytes"])
+        archived = load("archive/reviewer47_publication_before_20261111/configs/annotation47_active_study.json")
+        self.assertEqual(archived["financial_execution"]["confirmed_campaign_charge_usd"], "77.078729829")
+        self.assertIsNone(self.active["financial_execution"]["settled_total_campaign_cost_usd"])
+
+    def test_live_document_verification_is_not_inferred_from_preparation(self):
+        publication = self.active["publication"]
+        if publication["live_google_doc_saved_verified"]:
+            self.assertEqual(publication["state"], "google_doc_suggestions_saved_and_verified")
+            self.assertTrue((ROOT / publication["integration_receipt"]).exists())
+        else:
+            self.assertEqual(publication["state"], "prepared_awaiting_google_doc_verification")
+            self.assertIsNone(publication["integration_receipt"])
 
     def test_preparations_and_repeatability_evidence_preserved(self):
         for path, expected in PRESERVED_PREPARATIONS.items():

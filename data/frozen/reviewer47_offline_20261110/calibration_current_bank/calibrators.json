@@ -1,0 +1,258 @@
+{
+  "flowsom/anthropic": {
+    "C": 1.0,
+    "coefficient": 0.1978567444421173,
+    "development_delivered_cells": 42099,
+    "development_planned_cells": 42099,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 18986,
+    "intercept": -0.8019806270685931,
+    "kind": "logistic",
+    "method": "flowsom",
+    "model_family": "anthropic",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "flowsom/deepseek": {
+    "C": 1.0,
+    "coefficient": 1.6784914208313026,
+    "development_delivered_cells": 42099,
+    "development_planned_cells": 42099,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 18986,
+    "intercept": -2.3409404597312204,
+    "kind": "logistic",
+    "method": "flowsom",
+    "model_family": "deepseek",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "flowsom/google": {
+    "C": 1.0,
+    "coefficient": 1.3146197624740161,
+    "development_delivered_cells": 42099,
+    "development_planned_cells": 42099,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 18986,
+    "intercept": -1.906444476622972,
+    "kind": "logistic",
+    "method": "flowsom",
+    "model_family": "google",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "flowsom/openai": {
+    "C": 1.0,
+    "coefficient": 1.1621058126886092,
+    "development_delivered_cells": 42099,
+    "development_planned_cells": 42099,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 18986,
+    "intercept": -1.766387685897465,
+    "kind": "logistic",
+    "method": "flowsom",
+    "model_family": "openai",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "leiden/anthropic": {
+    "C": 1.0,
+    "coefficient": 2.645215354605999,
+    "development_delivered_cells": 25793,
+    "development_planned_cells": 25793,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 42181,
+    "intercept": -2.203093563720126,
+    "kind": "logistic",
+    "method": "leiden",
+    "model_family": "anthropic",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "leiden/deepseek": {
+    "C": 1.0,
+    "coefficient": 3.6782759828060274,
+    "development_delivered_cells": 25793,
+    "development_planned_cells": 25793,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 42181,
+    "intercept": -3.3546927222355585,
+    "kind": "logistic",
+    "method": "leiden",
+    "model_family": "deepseek",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "leiden/google": {
+    "C": 1.0,
+    "coefficient": 1.6738158238430316,
+    "development_delivered_cells": 25793,
+    "development_planned_cells": 25793,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 42181,
+    "intercept": -1.1880611093393532,
+    "kind": "logistic",
+    "method": "leiden",
+    "model_family": "google",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "leiden/openai": {
+    "C": 1.0,
+    "coefficient": 2.502840497571766,
+    "development_delivered_cells": 25793,
+    "development_planned_cells": 25793,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 42181,
+    "intercept": -2.062736823450478,
+    "kind": "logistic",
+    "method": "leiden",
+    "model_family": "openai",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "pixie_tiff/anthropic": {
+    "C": 1.0,
+    "coefficient": 0.9369937712081297,
+    "development_delivered_cells": 34953,
+    "development_planned_cells": 34953,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 31743,
+    "intercept": -0.8532734103772375,
+    "kind": "logistic",
+    "method": "pixie_tiff",
+    "model_family": "anthropic",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "pixie_tiff/deepseek": {
+    "C": 1.0,
+    "coefficient": 3.487333204623721,
+    "development_delivered_cells": 34953,
+    "development_planned_cells": 34953,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 31743,
+    "intercept": -3.275407683641745,
+    "kind": "logistic",
+    "method": "pixie_tiff",
+    "model_family": "deepseek",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "pixie_tiff/google": {
+    "C": 1.0,
+    "coefficient": 1.9197594880855962,
+    "development_delivered_cells": 34953,
+    "development_planned_cells": 34953,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 31743,
+    "intercept": -1.8079054559819376,
+    "kind": "logistic",
+    "method": "pixie_tiff",
+    "model_family": "google",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "pixie_tiff/openai": {
+    "C": 1.0,
+    "coefficient": 4.013322221925549,
+    "development_delivered_cells": 34953,
+    "development_planned_cells": 34953,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 31743,
+    "intercept": -3.7554321808507627,
+    "kind": "logistic",
+    "method": "pixie_tiff",
+    "model_family": "openai",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "spatialsort/anthropic": {
+    "C": 1.0,
+    "coefficient": 0.3959037470522087,
+    "development_delivered_cells": 32654,
+    "development_planned_cells": 32654,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 32792,
+    "intercept": -1.0659941918115186,
+    "kind": "logistic",
+    "method": "spatialsort",
+    "model_family": "anthropic",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "spatialsort/deepseek": {
+    "C": 1.0,
+    "coefficient": 2.388808861388558,
+    "development_delivered_cells": 32654,
+    "development_planned_cells": 32654,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 32792,
+    "intercept": -2.971607303362435,
+    "kind": "logistic",
+    "method": "spatialsort",
+    "model_family": "deepseek",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "spatialsort/google": {
+    "C": 1.0,
+    "coefficient": 1.515776725328381,
+    "development_delivered_cells": 32654,
+    "development_planned_cells": 32654,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 32792,
+    "intercept": -2.1390139236923,
+    "kind": "logistic",
+    "method": "spatialsort",
+    "model_family": "google",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  },
+  "spatialsort/openai": {
+    "C": 1.0,
+    "coefficient": 1.6767131036462735,
+    "development_delivered_cells": 32654,
+    "development_planned_cells": 32654,
+    "development_regions": [
+      "5318485b16983482401c3be24b6c42ad",
+      "dceadbb36871071f30c308ca091fbdc8"
+    ],
+    "evaluation_planned_cells": 32792,
+    "intercept": -2.2996441971878525,
+    "kind": "logistic",
+    "method": "spatialsort",
+    "model_family": "openai",
+    "region_weighting": "equal total region weight; weights sum to delivered development cell count"
+  }
+}

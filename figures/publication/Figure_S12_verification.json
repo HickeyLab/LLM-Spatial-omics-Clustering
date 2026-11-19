@@ -1,0 +1,70 @@
+{
+  "figure": "Figure_S12",
+  "width_mm": 165.1,
+  "height_mm": 67.8768923611111,
+  "minimum_font_pt": 5.5,
+  "font_family": "Arial",
+  "minimum_placement_width_mm": 150.091,
+  "raster_dpi": 600,
+  "raster_size_pixels": [
+    3900,
+    1603
+  ],
+  "vector_text_editable": true,
+  "panel_letter_format": "A",
+  "panel_letter_weight": "bold",
+  "biorender_workflow": null,
+  "provider_logos": null,
+  "layout_compaction": {
+    "original_height_mm": 104,
+    "height_mm": 67.8768923611111,
+    "height_reduction_percent": 34.73375734508548,
+    "vacant_bands_removed_mm": [
+      [
+        7.0399999999999965,
+        12.86500000000001
+      ],
+      [
+        40.82083680555556,
+        58.49999999999999
+      ],
+      [
+        64.03999999999999,
+        69.5
+      ]
+    ],
+    "minimum_gap_mm": 3.0,
+    "bottom_margin_mm": 2.5,
+    "plot_sizes_and_font_sizes_preserved": true
+  },
+  "dense_point_layers_native_dpi": 610,
+  "inputs": {
+    "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+    "data/frozen/donor47_deepseek_completion_20261116/clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
+    "data/frozen/donor47_deepseek_completion_20261116/spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
+  },
+  "notes": [
+    "Frozen method-specific donor partitions, evaluated against native 28-label references; annotation profiles contain all 47 proteins and SpatialSort seed 42 is primary.",
+    "A,B average eight regions equally within each donor; C is a global common-cell membership comparison.",
+    "No reference-guided partition selection or donor retuning.",
+    "C, if present: global common-cell partition ARI between seeds 42 and 43; clustering stability only, with no seed-43 annotation calls."
+  ],
+  "files": {
+    "Figure_S12.svg": {
+      "sha256": "30e0ad44ee057a6c12de08cb04dfbc047e73d6c9d0076ff0758d180151498c15",
+      "bytes": 25787
+    },
+    "Figure_S12.pdf": {
+      "sha256": "5b8f714170d5287d66f2e2562a926f9b6f3f2be2197bff1128db992116a9c906",
+      "bytes": 38084
+    },
+    "Figure_S12.png": {
+      "sha256": "a3f2b66605bbfd0a23e093e7b9a74a14ba64ac48a0fd7ea84f66c505852d6b01",
+      "bytes": 188882
+    },
+    "Figure_S12.tiff": {
+      "sha256": "9fa589295039b55eb7bdf1ec324fdacb2adea0baa578b95a08a02b7756e4854e",
+      "bytes": 455984
+    }
+  }
+}

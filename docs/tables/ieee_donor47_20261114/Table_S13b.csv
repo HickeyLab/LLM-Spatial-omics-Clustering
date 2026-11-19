@@ -1,0 +1,17 @@
+Clustering,Model,Agreement (%),Macro-F1,Cell coverage (%),Cluster coverage (%)
+Leiden,Astra,37.51,0.2955,100.00,100.00
+Leiden,Opus 5.5,41.77,0.3344,100.00,100.00
+Leiden,Argon,38.74,0.2962,100.00,100.00
+Leiden,DeepSeek,24.56,0.1959,100.00,100.00
+FlowSOM,Astra,32.91,0.2586,100.00,100.00
+FlowSOM,Opus 5.5,35.67,0.2834,100.00,100.00
+FlowSOM,Argon,38.12,0.2736,100.00,100.00
+FlowSOM,DeepSeek,16.19,0.1660,68.23,50.00
+SpatialSort,Astra,30.69,0.1887,100.00,100.00
+SpatialSort,Opus 5.5,29.70,0.1918,100.00,100.00
+SpatialSort,Argon,28.17,0.1871,100.00,100.00
+SpatialSort,DeepSeek,17.09,0.1196,100.00,100.00
+PIXIE,Astra,22.29,0.1205,100.00,100.00
+PIXIE,Opus 5.5,26.77,0.1283,100.00,100.00
+PIXIE,Argon,18.28,0.1116,100.00,100.00
+PIXIE,DeepSeek,18.38,0.0989,100.00,100.00

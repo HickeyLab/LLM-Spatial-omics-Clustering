@@ -1,0 +1,58 @@
+{
+  "schema": "annotation47.scored_publication_summary.v1",
+  "status": "offline_scoring_complete",
+  "calls_made": 0,
+  "jobs_submitted": 0,
+  "accepted_requests": 128,
+  "accepted_predictions": 9024,
+  "n_cells": 220082,
+  "n_markers": 47,
+  "ontology_size": 28,
+  "repetitions": 1,
+  "test_regions": [
+    "768b7adb649959b6a4e354867595032d",
+    "8da8f27977d946b8c912d42c8827b55c"
+  ],
+  "test_region_cells": {
+    "768b7adb649959b6a4e354867595032d": 33112,
+    "8da8f27977d946b8c912d42c8827b55c": 36464
+  },
+  "split_cells": {
+    "train": 90296,
+    "test": 69576,
+    "calibration": 60210
+  },
+  "primary_arm": "all_means_fractions",
+  "primary_population": "all_labels",
+  "primary_weighting": "equal_mean_of_two_test_regions",
+  "primary_agreement_range": [
+    0.17420595858739857,
+    0.5812001783991381
+  ],
+  "primary_fixed28_macro_f1_range": [
+    0.11448074950388676,
+    0.4490168736534797
+  ],
+  "best_primary_condition": {
+    "model_family": "openai",
+    "model": "GPT-6 Astra",
+    "method": "leiden",
+    "agreement": 0.5812001783991381,
+    "fixed28_macro_f1": 0.4490168736534797
+  },
+  "paired_agreement_difference_range": [
+    -0.10251400143817602,
+    0.06497691070639722
+  ],
+  "paired_improved": 8,
+  "paired_reduced": 8,
+  "paired_tied": 0,
+  "independent_python_counter_check": {
+    "conditions": 32,
+    "max_agreement_abs_delta": 0.0,
+    "max_macro_f1_abs_delta": 5.551115123125783e-17
+  },
+  "full_delivery_coverage": true,
+  "repeat_sd_or_repeatability_estimated": false,
+  "interpretation": "Single accepted predictions; descriptive comparisons on transductive previously examined B004 data. No donor generalization, biological correctness, or repeated-call stability is inferred."
+}

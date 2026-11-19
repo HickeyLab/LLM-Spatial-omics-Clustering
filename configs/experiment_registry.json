@@ -1,12 +1,18 @@
 {
   "schema": "manuscript.experiment_registry.v1",
-  "updated_date": "2026-11-10",
+  "updated_date": "2026-11-11",
   "stable_ids": true,
   "active_reported_ids": [
     1,
     2,
     3,
+    5,
     7,
+    8,
+    10,
+    11,
+    12,
+    13,
     14
   ],
   "experiments": [
@@ -38,11 +44,29 @@
     {
       "id": 5,
       "experiment": "Common-45-marker by requested-K clustering study",
-      "status": "archived",
+      "status": "reported_component_completed",
       "new_execution": false,
-      "active_manuscript_result": false,
+      "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
-      "prior_results_remain_reported": false
+      "prior_results_remain_reported": false,
+      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "components": {
+        "post_clustering_coarsening": {
+          "status": "completed",
+          "targets": [
+            100,
+            200
+          ],
+          "interpretation": "Label-blind cell-count-weighted Ward coarsening; not native-K fits or LLM ranking stability.",
+          "results": "data/frozen/reviewer47_results_20261111/granularity/verification.json"
+        },
+        "native_requested_K_study": {
+          "status": "archived",
+          "active_manuscript_result": false,
+          "archive": "data/historical/publication_before_primary47_20261109/index.json"
+        }
+      }
     },
     {
       "id": 6,
@@ -60,17 +84,36 @@
       "new_execution": false,
       "active_manuscript_result": true,
       "reported_protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
-      "result_manifest": "data/frozen/annotation47_results_20261110/manifest.json",
+      "result_manifest": "data/frozen/annotation47_results_20261111/manifest.json",
       "prior_results_remain_reported": false
     },
     {
       "id": 8,
       "experiment": "Controlled marker-only versus reference-assisted annotation and donor transfer with conventional baselines",
-      "status": "archived",
+      "status": "reported_partial",
       "new_execution": false,
-      "active_manuscript_result": false,
+      "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
-      "prior_results_remain_reported": false
+      "prior_results_remain_reported": false,
+      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "components": {
+        "B004_conventional_baselines": {
+          "status": "completed",
+          "results": "data/frozen/reviewer47_results_20261111/baselines/verification.json",
+          "supervision": "Four training-region cell reference labels; richer supervision than LLM prompts."
+        },
+        "B005_B006_transfer": {
+          "status": "pending",
+          "results_included": false,
+          "dependency": "Separate 50-sweep donor SpatialSort and cohort admission work."
+        },
+        "reference_assisted_annotation": {
+          "status": "archived",
+          "active_manuscript_result": false,
+          "archive": "data/historical/publication_before_primary47_20261109/index.json"
+        }
+      }
     },
     {
       "id": 9,
@@ -84,38 +127,104 @@
     {
       "id": 10,
       "experiment": "Compact marker names versus selected names-plus-means, with validation-only selection",
-      "status": "archived",
+      "status": "reported_partial",
       "new_execution": false,
-      "active_manuscript_result": false,
+      "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
-      "prior_results_remain_reported": false
+      "prior_results_remain_reported": false,
+      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "components": {
+        "matched47marker_representations": {
+          "status": "partial",
+          "planned_annotation_sets": 64,
+          "complete_annotation_sets": 63,
+          "planned_request_items": 256,
+          "accepted_request_items": 255,
+          "pending_request_items": 1,
+          "pending_condition": "deepseek/leiden/selected_means",
+          "pending_clusters": 75,
+          "incomplete_condition_accuracy": null,
+          "overall_four_arm_aggregate": null,
+          "metrics": "data/frozen/reviewer47_results_20261111/set_metrics.csv"
+        },
+        "prior_compact_selection_study": {
+          "status": "archived",
+          "archive": "data/historical/publication_before_primary47_20261109/index.json"
+        }
+      }
     },
     {
       "id": 11,
       "experiment": "Clustering-method identity prompt ablation",
-      "status": "archived",
+      "status": "reported_partial",
       "new_execution": false,
-      "active_manuscript_result": false,
+      "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
-      "prior_results_remain_reported": false
+      "prior_results_remain_reported": false,
+      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "components": {
+        "Opus_four_methods": {
+          "status": "completed",
+          "annotation_sets": 4,
+          "request_items": 16,
+          "results": "data/frozen/reviewer47_results_20261111/control_contrasts.csv"
+        },
+        "Astra_Leiden": {
+          "status": "pending",
+          "annotation_sets": 1,
+          "request_items": 4,
+          "results_included": false
+        }
+      }
     },
     {
       "id": 12,
       "experiment": "Calibration and selective annotation assessment",
-      "status": "archived",
+      "status": "reported_completed",
       "new_execution": false,
-      "active_manuscript_result": false,
+      "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
-      "prior_results_remain_reported": false
+      "prior_results_remain_reported": false,
+      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "components": {
+        "current_B004_cross_model_agreement_calibration": {
+          "status": "completed",
+          "method_model_conditions": 16,
+          "recomputed_on_current_primary_bank": true,
+          "cluster_and_region_separation": true,
+          "results": "data/frozen/reviewer47_results_20261111/calibration/verification.json",
+          "interpretation": "Within-donor reference-agreement calibration, not native model probability, biological confidence or repeated-call consistency."
+        }
+      }
     },
     {
       "id": 13,
       "experiment": "GPT-Leiden marker-only versus neighborhood-augmented input",
-      "status": "archived",
+      "status": "reported_partial",
       "new_execution": false,
-      "active_manuscript_result": false,
+      "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
-      "prior_results_remain_reported": false
+      "prior_results_remain_reported": false,
+      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
+      "components": {
+        "Opus_Leiden": {
+          "status": "completed",
+          "annotation_sets": 1,
+          "request_items": 4,
+          "neighbors": 15,
+          "results": "data/frozen/reviewer47_results_20261111/control_contrasts.csv"
+        },
+        "Astra_Leiden": {
+          "status": "pending",
+          "annotation_sets": 1,
+          "request_items": 4,
+          "results_included": false
+        }
+      }
     },
     {
       "id": 14,
@@ -124,7 +233,7 @@
       "new_execution": false,
       "active_manuscript_result": true,
       "reported_protocol_id": "B004-primary-annotation47-one-repeat-opus55-20261109-v1",
-      "result_manifest": "data/frozen/annotation47_results_20261110/manifest.json",
+      "result_manifest": "data/frozen/annotation47_results_20261111/manifest.json",
       "prior_results_remain_reported": false
     }
   ],
@@ -148,7 +257,10 @@
   "annotation_protocol": "configs/primary_annotation47_1repeat_opus55_v1.json",
   "completed_result_ids": [
     7,
+    12,
     14
   ],
-  "result_manifest": "data/frozen/annotation47_results_20261110/manifest.json"
+  "result_manifest": "data/frozen/annotation47_results_20261111/manifest.json",
+  "followup_result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+  "reported_component_note": "An ID can have a completed reported B004 component while other original components are archived or pending; component completion does not imply completion of the entire original experiment."
 }

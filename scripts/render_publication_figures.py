@@ -22,11 +22,12 @@ from matplotlib.text import Text
 from matplotlib.ticker import PercentFormatter, MaxNLocator, FuncFormatter
 
 from publication_figure_design import (
-    ROOT, METHODS, METHOD_KEYS, METHOD_COLORS, MODELS, MODEL_KEYS, MODEL_COLORS,
+    ROOT, PANEL_LETTER_GID, METHODS, METHOD_KEYS, METHOD_COLORS, MODELS, MODEL_KEYS, MODEL_COLORS,
     figure, axes, text, panel, grid, heatmap, colorbar, flow, finish, sha,
 )
 
 from biorender_workflows import add_workflow
+from comparison_order import rank_labels
 from original_compensation_workflow import add_original_compensation_workflow
 
 sys.path.insert(0, str(ROOT / 'src'))
@@ -105,14 +106,27 @@ def figure_2(out):
     # Current manuscript Figure2 ends atH. Historical annotation profiles were
     # moved toS11A and the reference-selected spatial examples were removed.
     f=figure(224)
-    panel(f,"A",3,2)
+    panel(f,"A",3,0.8)
     workflow_inputs=add_workflow(f,"2A")
     panel(f,"B",3,39)
-    a=axes(f,15,45,96,9)
-    counts=ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
-    a.bar(range(27),counts,color=[cell_colors()[s] for s in counts.index],width=.88)
-    a.set(xticks=range(27),xticklabels=counts.index,yticks=[0,15000,30000],yticklabels=["0","15k","30k"],ylabel="Cell count",xlim=(-.6,26.6))
-    plt.setp(a.get_xticklabels(),rotation=90)
+    counts = ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
+    split = (len(counts) + 1) // 2
+    palette = cell_colors()
+    text(f, 57.1, 40.2, "Reference cell counts", size=6.6, ha="center", color="#111827")
+    for left, block in zip((28.4, 85.4), (counts.iloc[:split], counts.iloc[split:])):
+        a = axes(f, left, 44.05, 18.8, 30.9)
+        rows = range(len(block))
+        a.barh(rows, block, color=[palette[label] for label in block.index], height=.57, linewidth=0, zorder=3)
+        a.set(yticks=rows, yticklabels=block.index, ylim=(split - .5, -.5),
+              xticks=(0, 15000, 30000), xticklabels=("0", "15k", "30k"), xlim=(0, 33000))
+        a.tick_params(axis="y", length=0, pad=2.7, labelcolor="#111827")
+        a.tick_params(axis="x", length=1.8, pad=1.25, width=.45, labelcolor="#374151")
+        a.spines["left"].set_visible(False)
+        a.spines["bottom"].set_color("#8c929a")
+        grid(a, axis="x")
+        for row, count in enumerate(block):
+            a.text(1.36, row, f"{count:,}", ha="right", va="center",
+                   transform=a.get_yaxis_transform(), color="#111827")
     panel(f,"C",115,39)
     a=axes(f,126,45,30,30);r=ref[ref.File_ID.eq("8da8f27977d946b8c912d42c8827b55c")].copy()
     spatial(a,r,size=.2)
@@ -136,30 +150,32 @@ def figure_2(out):
         big.add_patch(Rectangle((x0,y0),s,s,fill=False,ec="#555555",lw=.35))
         f.add_artist(ConnectionPatch((x0,y0+s),(x0,y0),coordsA=big.transData,coordsB=small.transData,color="#777777",lw=.35))
     region=csv("figure2_regional_metrics.csv")
+    method_order = rank_labels(METHODS, region.groupby("method").weighted_f1.mean().reindex(METHODS))
     rcfg=json.loads((ROOT/"configs/figure_04_historical_claude.json").read_text())["regions"]
     for i,(letter,key,title,ylab) in enumerate([("E","weighted_f1",None,"Weighted F1"),("G","cluster_purity",None,"Cluster purity")]):
         x=3+i*83;panel(f,letter,x,121,title)
-        a=axes(f,x+12,129,63,14)
-        values=[region[region.method.eq(m)].sort_values("region")[key].to_numpy() for m in METHODS]
+        a=axes(f,x+15,123,57,20)
+        values=[region[region.method.eq(m)].sort_values("region")[key].to_numpy() for m in method_order]
         a.boxplot(values,positions=range(4),widths=.48,showfliers=False,patch_artist=True,
                   boxprops={"facecolor":"#e5e7eb","linewidth":.5},medianprops={"color":"black","linewidth":.6},whiskerprops={"linewidth":.5},capprops={"linewidth":.5})
-        for j,m in enumerate(METHODS):
+        for j,m in enumerate(method_order):
             z=region[region.method.eq(m)].sort_values("region")
             a.scatter(j+np.linspace(-.08,.08,8),z[key],s=7,c=z.region.map({k:v["color"] for k,v in rcfg.items()}),zorder=3)
-        a.set(xticks=range(4),xticklabels=METHODS,ylim=(.3,.9),yticks=[.3,.5,.7,.9],ylabel=ylab);grid(a)
+        a.set(xticks=range(4),xticklabels=method_order,ylim=(.3,.9),yticks=[.3,.5,.7,.9],ylabel=ylab);grid(a)
     norm=cfg['panel_e']['evaluation']['harmonization_map']
     nref=ref.loc[ref.cell_type_update.ne('Noise'),'cell_type_update'].replace(norm).value_counts().to_dict()
-    rows=csv("figure2_f1.csv").cell_type.tolist()
+    f1=csv("figure2_f1.csv").set_index("cell_type")
+    rows=rank_labels(f1.index, f1[METHODS].mean(axis=1))
     for i,(letter,filename,title,scale) in enumerate([("F","figure2_f1.csv","F1",1),("H","figure2_recall.csv","Recall (%)",100)]):
         x=3+i*83;panel(f,letter,x,150,title)
-        matrix=csv(filename).set_index("cell_type").reindex(rows)[METHODS].to_numpy()*scale
-        count_heatmap(f,matrix,rows,METHODS,x+27,163,38,39,nref,limits=(0,scale),rotation=55)
+        matrix=csv(filename).set_index("cell_type").reindex(rows)[method_order].to_numpy()*scale
+        count_heatmap(f,matrix,rows,method_order,x+27,163,38,39,nref,limits=(0,scale),rotation=55)
     # This dense figure has a small placement margin when fitted to one page.
     for t in f.findobj(Text):
         if t.get_fontsize()<6.6:t.set_fontsize(6.6)
-        if t.get_text() in list("ABCDEFGH") and t.get_weight()=="bold":t.set_fontsize(10.3)
+        if (t.get_gid() or "").startswith(PANEL_LETTER_GID):t.set_fontsize(10.3)
     names=["reference_plot_cells.csv.gz","umap_coordinates.csv.gz","figure2_regional_metrics.csv","figure2_f1.csv","figure2_recall.csv"]
-    return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."])
+    return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. E–H share descending mean regional weighted-F1 method order. F/H share descending across-method mean F1 cell-type order. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."])
 
 
 def figure_s4(out):
@@ -195,7 +211,7 @@ def figure_s4(out):
     comp=csv("figureS4_compositions.csv.gz");colors=cell_colors()
     for i,(m,title) in enumerate(zip(["leiden","flowsom","spatialsort","pixie"],METHODS)):
         x=3+(i%2)*83;y=99+(i//2)*27
-        text(f,x+44,y-5,title,size=6.5,weight="bold",ha="center")
+        text(f,x+44,y-5,title,size=6.5,ha="center")
         a=axes(f,x+10,y,65,17)
         z=comp[comp.method.eq(m)];tot=z.groupby("cluster").n_cells.sum().sort_values(ascending=False,kind="stable")
         top=tot.head(cfg["panel_c"]["displayed_cluster_limit"].get(m,50)).index
@@ -218,34 +234,114 @@ def figure_s4(out):
         x=15+(i%3)*53;y=174+(i//3)*38
         text(f,x+19,y-8,title,size=5.5,ha="center")
         a=axes(f,x,y,38,16)
-        vals=[frame[frame.method.eq(m)][metric].to_numpy() for m in ["leiden","flowsom","spatialsort","pixie"]]
+        keys=["leiden","flowsom","spatialsort","pixie"]
+        method_order=rank_labels(keys, frame.groupby("method")[metric].median().reindex(keys),
+                                 ascending=metric == "shannon_index")
+        method_names=[METHODS[keys.index(m)] for m in method_order]
+        vals=[frame[frame.method.eq(m)][metric].to_numpy() for m in method_order]
         a.boxplot(vals,positions=range(4),widths=.6,showfliers=False,patch_artist=True,
                   boxprops={"facecolor":"white","linewidth":.5},medianprops={"color":"black","linewidth":.6},whiskerprops={"linewidth":.5},capprops={"linewidth":.5})
         rng=np.random.default_rng(42)
-        for j,m in enumerate(["leiden","flowsom","spatialsort","pixie"]):
+        for j,m in enumerate(method_order):
             z=frame[frame.method.eq(m)];cs=color if color else z["cell_type" if "cell_type" in z else "majority_label"].map(colors)
             a.scatter(j+rng.uniform(-.12,.12,len(z)),z[metric],c=cs,s=3,alpha=.6,zorder=3,linewidths=0)
-        a.set(xticks=range(4),xticklabels=METHODS,xlim=(-.5,3.5))
+        a.set(xticks=range(4),xticklabels=method_names,xlim=(-.5,3.5))
         plt.setp(a.get_xticklabels(),rotation=50,ha="right",rotation_mode="anchor")
     names=["reference_plot_cells.csv.gz","figureS4_marker_summaries.csv","figureS4_compositions.csv.gz","figureS4_cluster_metrics.csv","figureS4_celltype_metrics.csv","figureS5_fixed_metrics.csv"]
-    return finish(f,"Figure_S4",out,{**inputs(*names),"configs/figure_s03.yaml":sha(ROOT/"configs/figure_s03.yaml"),"data/frozen/reference47_profiles_20261110/manifest.json":sha(ROOT/"data/frozen/reference47_profiles_20261110/manifest.json")},notes=["Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B–D preserve the same frozen reference/primary-clustering data and geometry. Suggested manuscript width: 152.4 mm (6 in)."])
+    return finish(f,"Figure_S4",out,{**inputs(*names),"configs/figure_s03.yaml":sha(ROOT/"configs/figure_s03.yaml"),"data/frozen/reference47_profiles_20261110/manifest.json":sha(ROOT/"data/frozen/reference47_profiles_20261110/manifest.json")},notes=["Primary clustering diagnostics. Panel A displays all 47 stored marker channels; marker tick labels are thinned for legibility. Panels B–D preserve the same frozen reference/primary-clustering data. D ranks each metric by its median, descending except ascending Shannon index. Suggested manuscript width: 152.4 mm (6 in)."])
 
 
+
+
+def draw_figure_1_regional_effects(f, reg, top):
+    methods = ("Mesmer", "CellposeSAM", "CellposeCyto3")
+    displayed = reg[reg.method.isin(methods)]
+    groups = displayed.groupby(["method", "cell_type"]).delta_pp
+    categories = sorted(displayed.cell_type.unique())
+    labels = rank_labels(categories, displayed.groupby("cell_type").delta_pp.mean().reindex(categories))
+    row_top, row_span = top + 9.4, 77.8
+    row_height = row_span / len(labels)
+    down, flat, up = "#A04427", "#76838C", "#176984"
+    ranges, dot = "#9CA6AD", "#767F86"
+    ink, secondary = "#172127", "#435159"
+
+    # One background spans the labels and all three methods. Keep the full
+    # block together when the publication layout trims unused vertical space.
+    band_top, band_height = top + 1, 100.5
+    band = axes(f, 2.7, band_top, 159.8, band_height)
+    band.set_axis_off()
+    band.set_ylim((band_top + band_height - row_top) / row_height - .5,
+                  (band_top - row_top) / row_height - .5)
+    for row in range(0, len(labels), 2):
+        band.axhspan(row - .5, row + .5, color="#F3F6F7", lw=0)
+
+    ticks = [-100, -50, 0, 50, 100]
+    width = 36
+    for i, (method, letter, center) in enumerate(zip(methods, "DEF", (57.2, 99.1, 141.0))):
+        left = center - width / 2
+        ax = axes(f, left, row_top, width, row_span)
+        ax.set_zorder(1)
+        ax.set_facecolor("none")
+        ax.set(xlim=(-100, 100), ylim=(len(labels) - .5, -.5), xticks=ticks, yticks=[])
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda value, pos: f"{value:g}".replace("-", "−")))
+        ax.spines[["top", "right", "left"]].set_visible(False)
+        ax.spines["bottom"].set(color="#636F77", linewidth=.42)
+        ax.tick_params(axis="x", length=2.25, width=.45, pad=1.5, colors=secondary, labelsize=5.8)
+        for x in (-50, 50):
+            ax.axvline(x, color="#DCE2E6", linewidth=.35, zorder=0)
+        ax.axvline(0, color="#77828A", linewidth=.55, zorder=1)
+        panel(f, letter, 3 if i == 0 else left - 3, top + 3.45, letter_size=8.2, letter_va="center")
+        text(f, center, top + 3.45, method, size=7.2, color=ink, ha="center", va="center")
+        count_x = left + width + 2.55
+        text(f, count_x, row_top - 1.1, "n", color=secondary, style="italic", ha="center", va="bottom")
+        for row, name in enumerate(labels):
+            values = groups.get_group((method, name)).to_numpy()
+            count = len(values)
+            mean = values.mean()
+            row_y = row_top + (row + .5) * row_height
+            if i == 0:
+                text(f, left - 1.35, row_y, name, color=ink, ha="right", va="center")
+            mean_color = up if mean > 0 else down if mean < 0 else flat
+            ax.plot([values.min(), values.max()], [row, row], lw=.57, color=ranges,
+                    solid_capstyle="round", zorder=2)
+            # Vertical offsets separate overlapping dots without shifting their values.
+            ax.scatter(values, row + np.linspace(-.21, .21, count), s=4.7,
+                       facecolors="white", edgecolors=dot, linewidths=.35, zorder=3)
+            ax.scatter([mean], [row], s=12.5, marker="D", color=mean_color,
+                       edgecolors="white", linewidths=.35, zorder=4)
+            text(f, count_x, row_y, str(count), size=5.8, ha="center", va="center", color=secondary)
+
+    text(f, 99.1, row_top + row_span + 6.4, "F1 change (percentage points)",
+         color=ink, size=6.25, va="center", ha="center")
+    handles = [
+        Line2D([0], [0], marker="o", color="none", markerfacecolor="white",
+               markeredgecolor=dot, markeredgewidth=.5, markersize=2.55, label="Tissue region"),
+        Line2D([0], [0], color=ranges, linewidth=.8, label="Observed regional range"),
+    ]
+    for color, label in ((down, "Mean decrease"), (flat, "No mean change"), (up, "Mean increase")):
+        handles.append(Line2D([0], [0], marker="D", color="none", markerfacecolor=color,
+                              markeredgecolor="white", markeredgewidth=.35, markersize=3.5, label=label))
+    f.legend(handles=handles, ncol=5, frameon=False, loc="center",
+             bbox_to_anchor=(.56, 1 - (top + 99.6513) / f._physical_mm[1]), fontsize=5.75,
+             handlelength=1.25, handletextpad=.45, columnspacing=1.12, labelcolor=ink,
+             borderaxespad=0, borderpad=0)
 
 
 def figure_1(out):
     names=["figureS1_archived_metrics.csv","figure1_pooled_f1_changes.csv"]
     m=csv(names[0]);c=csv(names[1]);p=ROOT/"data/frozen/figure_01_descriptive/regional_f1_changes.csv";reg=pd.read_csv(p)
+    seg_order=rank_labels(SEG, c.groupby("method").delta_f1.mean().reindex(SEG))
     f=figure(216)
     panel(f,"A",3,2)
     workflow_inputs=add_original_compensation_workflow(f)
     panel(f,"B",3,31)
     a=axes(f,16,42,63,27)
     vals=[]
-    for method in SEG:
+    for method in seg_order:
         z=m[m.method.eq(method)].pivot(index="region",columns="condition",values="silhouette")
         vals.append((z.after-z.before).to_numpy())
-    colors=["#90aecb","#efbd86","#a8c59e","#e8a3a3","#c8aac4","#97bfbd"]
+    colors_by_method=dict(zip(SEG,["#90aecb","#efbd86","#a8c59e","#e8a3a3","#c8aac4","#97bfbd"]))
+    colors=[colors_by_method[m] for m in seg_order]
     boxes=a.boxplot(vals,positions=range(6),widths=.58,showfliers=False,patch_artist=True,
                     medianprops={"color":"black","linewidth":.6},boxprops={"linewidth":.5},
                     whiskerprops={"linewidth":.5},capprops={"linewidth":.5})
@@ -254,43 +350,26 @@ def figure_1(out):
         a.scatter(i+np.linspace(-.07,.07,len(v)),v,s=5,color="#333333",zorder=3)
         a.scatter(i,v.mean(),s=13,marker="D",color=color,edgecolors="black",linewidths=.35,zorder=4)
     a.axhline(0,lw=.5,color="#777777")
-    a.set(xticks=range(6),xticklabels=SEG,ylim=(-.07,.07),yticks=[-.06,-.03,0,.03,.06],ylabel="Δ silhouette score")
+    a.set(xticks=range(6),xticklabels=seg_order,ylim=(-.07,.07),yticks=[-.06,-.03,0,.03,.06],ylabel="Δ silhouette score")
     plt.setp(a.get_xticklabels(),rotation=25,ha="right",rotation_mode="anchor")
     panel(f,"C",85,31)
     a=axes(f,99,42,62,27)
-    vals=[c[c.method.eq(method)].delta_f1.to_numpy() for method in SEG]
+    vals=[c[c.method.eq(method)].delta_f1.to_numpy() for method in seg_order]
     a.boxplot(vals,positions=range(6),widths=.58,showfliers=False,patch_artist=True,
               boxprops={"facecolor":"white","edgecolor":"#777777","linewidth":.5},
               medianprops={"color":"black","linewidth":.6},whiskerprops={"linewidth":.5},capprops={"linewidth":.5})
     rng=np.random.default_rng(42);palette=cell_colors()
-    for i,method in enumerate(SEG):
+    for i,method in enumerate(seg_order):
         z=c[c.method.eq(method)]
         a.scatter(i+rng.uniform(-.16,.16,len(z)),z.delta_f1,s=6,c=z.cell_type.map(palette),edgecolors="white",linewidths=.15,zorder=3)
     a.axhline(0,color="#777777",ls="--",lw=.5)
-    a.set(xticks=range(6),xticklabels=SEG,ylim=(-.7,.7),yticks=[-.6,-.3,0,.3,.6],ylabel="ΔF1")
+    a.set(xticks=range(6),xticklabels=seg_order,ylim=(-.7,.7),yticks=[-.6,-.3,0,.3,.6],ylabel="ΔF1")
     plt.setp(a.get_xticklabels(),rotation=25,ha="right",rotation_mode="anchor")
     handles=[Line2D([],[],marker="o",color=co,linestyle="",markersize=2.5,label=lab) for lab,co in palette.items()]
     f.legend(handles=handles,loc="upper left",bbox_to_anchor=(.015,.615),ncol=4,fontsize=5.5,
              handlelength=.6,handletextpad=.4,columnspacing=1.8,labelspacing=.3)
-    labels=sorted(reg.cell_type.unique())
-    for i,(method,x,w) in enumerate([("Mesmer",39,36),("CellposeSAM",83,36),("CellposeCyto3",127,34)]):
-        panel(f,chr(68+i),3 if i==0 else x-3,109,method,title_x=x+9)
-        a=axes(f,x,117,w,76)
-        for j,lab in enumerate(labels):
-            if j%2==0:a.axhspan(j-.5,j+.5,color="#f4f4f4",zorder=0)
-            values=reg[reg.method.eq(method)&reg.cell_type.eq(lab)].delta_pp.to_numpy()
-            a.plot([values.min(),values.max()],[j,j],color="#888888",lw=.6,zorder=2)
-            a.scatter(values,j+np.linspace(-.1,.1,len(values)),s=6,c="#c4c4c4",edgecolors="#888888",linewidths=.2,zorder=3)
-            a.scatter(values.mean(),j,marker="D",s=12,color="black",zorder=4)
-            a.text(1.025,j,str(len(values)),transform=a.get_yaxis_transform(),ha="left",va="center",fontsize=5.5)
-        a.text(1.025,1.02,"n",transform=a.transAxes,fontsize=5.5,ha="left")
-        a.axvline(0,color="#555555",lw=.5);a.set(xlim=(-100,100),ylim=(27.5,-.5),yticks=range(28),yticklabels=labels if i==0 else [""]*28,xticks=[-100,-50,0,50,100],xlabel="F1 change (percentage points)")
-        a.spines["left"].set_visible(False);a.tick_params(axis="y",length=0)
-    f.legend(handles=[Line2D([],[],marker="o",linestyle="",markersize=3,color="#bbbbbb",label="Individual tissue region"),
-                      Line2D([],[],marker="D",linestyle="",markersize=3,color="black",label="Mean regional change"),
-                      Line2D([],[],color="#888888",lw=.7,label="Observed regional range")],
-             loc="upper center",bbox_to_anchor=(.58,1-202/216),ncol=3,fontsize=5.5,columnspacing=1.1,handlelength=1.1)
-    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.","Panel B retains the precision archived in the executed notebook."])
+    draw_figure_1_regional_effects(f, reg, top=105.85)
+    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.","Panel B retains the precision archived in the executed notebook. B/C share descending mean pooled cell-type F1-change method order. D–F share descending mean regional F1-change cell-type order across the three displayed methods. Hollow dots show frozen individual regional changes; lines span their minimum and maximum. Diamond colors encode the sign of each mean."])
 
 
 def figure_s2(out):
@@ -310,7 +389,7 @@ def figure_s2(out):
         text(f,49,y+33,"Before compensation",size=5.5,rotation=90,ha="center",va="center")
         text(f,49,y+65,"After compensation",size=5.5,rotation=90,ha="center",va="center")
         for j,m in enumerate(["Mesmer","CellposeSAM","CellposeCyto3"]):
-            x=56+j*36;text(f,x+15,y+8,m,size=6,weight="bold",ha="center")
+            x=56+j*36;text(f,x+15,y+8,m,size=6,ha="center")
             for k,cond in enumerate(["before","after"]):
                 a=axes(f,x,y+15+k*32,30,29)
                 draw(a,d[d.method.eq(m)&d.condition.eq(cond)],target,"predicted_label")
@@ -327,17 +406,19 @@ def figure_s3c(out):
     f=figure(140)
     panel(f,"C",3,2)
     labels=config["cell_types"]
+    labels=rank_labels(labels, df.groupby("cell_type").mean_difference.mean().reindex(labels))
+    method_order=rank_labels(SEG, df.groupby("method").mean_difference.mean().reindex(SEG))
     for i,backend in enumerate(config["backends"]):
         x=43+i*59
-        text(f,x+25,10,backend,size=6.5,weight="bold",ha="center")
+        text(f,x+25,10,backend,size=6.5,ha="center")
         a=axes(f,x,15,51,84)
-        mat=df[df.clustering.eq(backend)].pivot(index="cell_type",columns="method",values="mean_difference").reindex(index=labels,columns=SEG).to_numpy()*100
+        mat=df[df.clustering.eq(backend)].pivot(index="cell_type",columns="method",values="mean_difference").reindex(index=labels,columns=method_order).to_numpy()*100
         assert mat.shape==(28,6) and np.isfinite(mat).all()
-        h=heatmap(a,mat,labels if i==0 else [""]*28,SEG,
+        h=heatmap(a,mat,labels if i==0 else [""]*28,method_order,
                   *config["color_limits"],annotate=True,fmt=".0f",size=5.5)
         plt.setp(a.get_xticklabels(),rotation=45,ha="right",rotation_mode="anchor")
     colorbar(f,h,(43,113,110,2.3),config["colorbar_label"],ticks=config["colorbar_ticks"])
-    return finish(f,"Figure_S3C",out,{str(source.relative_to(ROOT)):sha(source)})
+    return finish(f,"Figure_S3C",out,{str(source.relative_to(ROOT)):sha(source)},notes=["Both backends share cell-type and method orders ranked by descending mean displayed F1 change."])
 
 
 
@@ -360,7 +441,9 @@ def figure_s1(out):
                                        ("calinski_harabasz","Calinski-Harabasz index")]):
         y=11+i*41;panel(f,chr(65+i),3,y)
         a=axes(f,17,y+8,144,25)
-        for j,m in enumerate(SEG):
+        after=d[d.condition.eq("after")].groupby("method")[metric].mean().reindex(SEG)
+        method_order=rank_labels(SEG, after, ascending=metric == "davies_bouldin")
+        for j,m in enumerate(method_order):
             z=d[d.method.eq(m)].pivot(index="region",columns="condition",values=metric).sort_index()
             assert len(z)==8
             a.bar(j-.17,z.before.mean(),width=.32,color="#888780",zorder=2)
@@ -368,9 +451,9 @@ def figure_s1(out):
             for b,c in zip(z.before,z.after):
                 a.plot([j-.17,j+.17],[b,c],lw=.35,color="#aaa9a4",zorder=3)
                 a.scatter([j-.17,j+.17],[b,c],color="#222222",s=4,zorder=4)
-        a.set(xticks=range(6),xticklabels=SEG,xlim=(-.5,5.5),ylabel=title)
+        a.set(xticks=range(6),xticklabels=method_order,xlim=(-.5,5.5),ylabel=title)
         grid(a)
-    return finish(f,"Figure_S1",out,inputs(name),notes=["Metrics retain the four-decimal precision archived in the executed notebook stdout."])
+    return finish(f,"Figure_S1",out,inputs(name),notes=["Metrics retain the four-decimal precision archived in the executed notebook stdout. Method groups are ordered by after-compensation means, descending except ascending Davies–Bouldin index. Before/after pairs remain together."])
 
 
 def figure_s3a(out):
@@ -379,31 +462,33 @@ def figure_s3a(out):
     a=axes(f,17,12,144,47)
     variants=["directed_5","directed_10","directed_15","mutual_10"]
     colors=["#0072B2","#009E73","#E69F00","#CC79A7"]
+    method_order=rank_labels(SEG, d.groupby("method").paired_coverage_of_shared_ids.mean().reindex(SEG))
     for vi,(v,c) in enumerate(zip(variants,colors)):
-        for mi,m in enumerate(SEG):
+        for mi,m in enumerate(method_order):
             z=d[d.method.eq(m)&d.variant.eq(v)].sort_values("region")
             vals=z.paired_coverage_of_shared_ids.to_numpy()*100
             assert len(vals)==8
             x=mi+np.linspace(-.28,.28,4)[vi]
             a.scatter(x+np.linspace(-.035,.035,8),vals,s=7,color=c,alpha=.65,zorder=3)
             a.scatter(x,vals.mean(),s=14,marker="D",color=c,edgecolors="black",linewidths=.35,zorder=4)
-    a.set(xticks=range(6),xticklabels=SEG,xlim=(-.5,5.5),ylim=(0,103),
+    a.set(xticks=range(6),xticklabels=method_order,xlim=(-.5,5.5),ylim=(0,103),
           ylabel="Shared objects retained (%)")
     grid(a)
     handles=[Line2D([],[],color=c,marker="o",linestyle="",markersize=3,label=v.replace("_"," ")) for v,c in zip(variants,colors)]
     handles.append(Line2D([],[],color="black",marker="D",markersize=3,linestyle="",label="Regional mean"))
     f.legend(handles=handles,loc="upper center",bbox_to_anchor=(.53,.18),ncol=5,fontsize=5.5,handletextpad=.4,columnspacing=1)
-    return finish(f,"Figure_S3A",out,inputs(name))
+    return finish(f,"Figure_S3A",out,inputs(name),notes=["Segmentation methods ordered by descending mean retention across the displayed population variants."])
 
 
 def figure_s3b(out):
     names=["figureS3_regional_changes.csv","figureS3_intervals.csv"]
     d=csv(names[0]);intervals=csv(names[1]);f=figure(88)
+    method_order=rank_labels(SEG, d.groupby("method").mean_celltype_delta.mean().reindex(SEG))
     panel(f,"B",3,2)
     for i,(backend,c) in enumerate([("Leiden","#0072B2"),("FlowSOM","#D55E00")]):
-        x=3+82*i;text(f,x+45,15,backend,size=6.5,weight="bold",ha="center")
+        x=3+82*i;text(f,x+45,15,backend,size=6.5,ha="center")
         a=axes(f,x+15,24,63,36)
-        for j,m in enumerate(SEG):
+        for j,m in enumerate(method_order):
             z=d[d.method.eq(m)&d.clustering.eq(backend)].sort_values("region")
             vals=z.mean_celltype_delta.to_numpy()*100
             ci=intervals[intervals.method.eq(m)&intervals.clustering.eq(backend)].iloc[0]
@@ -412,11 +497,11 @@ def figure_s3b(out):
             a.plot([j,j],[ci.ci_low*100,ci.ci_high*100],color="black",lw=.6)
             a.scatter(j,vals.mean(),marker="D",color="black",s=12,zorder=4)
         a.axhline(0,color="#888888",lw=.5)
-        a.set(xticks=range(6),xticklabels=SEG,xlim=(-.5,5.5),ylim=(-10,10),yticks=[-10,-5,0,5,10])
+        a.set(xticks=range(6),xticklabels=method_order,xlim=(-.5,5.5),ylim=(-10,10),yticks=[-10,-5,0,5,10])
         plt.setp(a.get_xticklabels(),rotation=35,ha="right",rotation_mode="anchor")
         if i==0:a.set_ylabel("Mean cell-type ΔF1 within region\n(percentage points)")
         grid(a)
-    return finish(f,"Figure_S3B",out,inputs(*names))
+    return finish(f,"Figure_S3B",out,inputs(*names),notes=["Both clustering backends share descending mean regional cell-type F1-change method order."])
 
 
 def figure_s5(out):
@@ -424,8 +509,12 @@ def figure_s5(out):
     fixed=csv(name);f=figure(78)
     panel(f,"A",3,2)
     a=axes(f,23,13,126,43)
-    for i,(m,c) in enumerate(zip(METHOD_KEYS,METHOD_COLORS)):
-        key="pixie" if m=="pixie_tiff" else m
+    keys=["pixie" if m=="pixie_tiff" else m for m in METHOD_KEYS]
+    pooled=fixed[fixed.noise_policy.eq("include") & fixed.region.eq("ALL")].set_index("method")
+    method_order=rank_labels(keys, pooled.reindex(keys).purity)
+    method_names=[METHODS[keys.index(m)] for m in method_order]
+    for i,key in enumerate(method_order):
+        c=METHOD_COLORS[keys.index(key)]
         z=fixed[fixed.method.eq(key)&fixed.noise_policy.eq("include")]
         val=z[z.region.eq("ALL")].purity.iloc[0]
         reg=z[~z.region.eq("ALL")].sort_values("region").purity
@@ -433,10 +522,10 @@ def figure_s5(out):
         a.bar(i,val,width=.7,color=c,alpha=.65,zorder=2)
         a.scatter(i+np.linspace(-.16,.16,8),reg,s=10,color="#333333",edgecolors="white",linewidths=.25,zorder=3)
         a.text(i,.035,f"{val:.3f}",ha="center",va="bottom",fontsize=6)
-    a.set(xticks=range(4),xticklabels=METHODS,ylim=(0,1.1),yticks=[0,.2,.4,.6,.8,1],ylabel="Cluster-majority upper bound\non reference agreement")
+    a.set(xticks=range(4),xticklabels=method_names,ylim=(0,1.1),yticks=[0,.2,.4,.6,.8,1],ylabel="Cluster-majority upper bound\non reference agreement")
     grid(a)
     a.legend(handles=[Patch(color="#8ba0b1",label="Pooled"),Line2D([],[],color="#333333",marker="o",linestyle="",markersize=3,label="Regional")],loc="upper left",fontsize=5.5)
-    return finish(f,"Figure_S5",out,inputs(name),notes=["Single-panel primary fixed-partition reference upper bounds. Original 28 labels including Noise. No shared-marker or cluster-count refitting."])
+    return finish(f,"Figure_S5",out,inputs(name),notes=["Single-panel primary fixed-partition reference upper bounds sorted by descending pooled value. Original 28 labels including Noise. No shared-marker or cluster-count refitting."])
 
 
 
@@ -445,7 +534,7 @@ def figure_slot(out, key):
     """Create a plain pending-result slot; never read annotation tables."""
     out.mkdir(parents=True,exist_ok=True)
     f=figure(48)
-    text(f,82.55,10,"Figure "+key,size=11,weight="bold",ha="center")
+    text(f,82.55,10,"Figure "+key,size=11,ha="center")
     text(f,82.55,25,"[[annotation results pending]]",size=12,ha="center")
     text(f,82.55,38,"47-marker primary clustering · annotation outputs required",size=8,ha="center")
     name="Figure_"+key
@@ -471,6 +560,8 @@ RENDERERS={"1":figure_1,"2":figure_2,"S1":figure_s1,"S2":figure_s2,"S4":figure_s
            "S3A":figure_s3a,"S3B":figure_s3b,"S3C":figure_s3c,"S5":figure_s5}
 from render_annotation47_figures import RENDERERS as ANNOTATION47_RENDERERS
 RENDERERS.update(ANNOTATION47_RENDERERS)
+from render_reviewer47_figures import RENDERERS as REVIEWER47_RENDERERS
+RENDERERS.update(REVIEWER47_RENDERERS)
 
 
 

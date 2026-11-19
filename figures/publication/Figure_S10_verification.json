@@ -1,38 +1,36 @@
 {
   "figure": "Figure_S10",
   "width_mm": 165.1,
-  "height_mm": 93.75400694444443,
-  "minimum_font_pt": 5.5,
+  "height_mm": 88.67808333333333,
+  "minimum_font_pt": 6.4,
   "font_family": "Arial",
-  "minimum_placement_width_mm": 150.091,
+  "minimum_placement_width_mm": 128.984,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    2214
+    2094
   ],
   "vector_text_editable": true,
   "panel_letter_format": "A",
+  "panel_letter_weight": "bold",
   "biorender_workflow": null,
+  "provider_logos": null,
   "layout_compaction": {
-    "original_height_mm": 126,
-    "height_mm": 93.75400694444443,
-    "height_reduction_percent": 25.592057980599662,
+    "original_height_mm": 93.75,
+    "height_mm": 88.67808333333333,
+    "height_reduction_percent": 5.410044444444444,
     "vacant_bands_removed_mm": [
       [
-        6.61733333333334,
-        12.500000000000009
+        8.189805555555557,
+        9.568749999999987
       ],
       [
-        18.136000000000003,
-        22.500000000000018
+        46.669888888888885,
+        48.193749999999994
       ],
       [
-        59.932336805555565,
-        62.5
-      ],
-      [
-        68.136,
-        72.50000000000001
+        85.29488888888888,
+        86.70075
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -41,28 +39,29 @@
   },
   "dense_point_layers_native_dpi": null,
   "inputs": {
-    "data/frozen/annotation47_results_20261110/metrics.csv": "fb083d845ceba3f0de53864f42e6a5b0cbe6551baf2ba73014b6aff12527b61e",
-    "data/frozen/annotation47_results_20261110/paired_contrasts.csv": "99e0741e612c3cb6eb76850acd72f70a3ded7b74de693fcfa985c84e8d1051ee"
+    "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+    "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
   },
   "notes": [
-    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
+    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims.",
+    "Change is means plus fractions minus means alone, in percentage points."
   ],
   "files": {
     "Figure_S10.svg": {
-      "sha256": "b28de1e773d3dab827b937d15d610c8e29952f939c70e8c98c7e75fbbd37d8a5",
-      "bytes": 37093
+      "sha256": "3f52bd1809e7e81cf0af52c5e9f5b3249bc6866f07e3bb199fb3575c04691ade",
+      "bytes": 40026
     },
     "Figure_S10.pdf": {
-      "sha256": "25b8c1b54ccd7459d2aa6d84f7c67a7739d992d7ec0b4f1a4f94aee985cce2be",
-      "bytes": 44568
+      "sha256": "3dd0dad2880dee92021ba2b7d72903e6016482dac0d4d8f08d5f6d51801bedb2",
+      "bytes": 40135
     },
     "Figure_S10.png": {
-      "sha256": "aa62cda56da1619168ec31a15e4795dcf5bc0824577d1770f6f34d44a210d2c4",
-      "bytes": 181368
+      "sha256": "d997bbd9efe5166053fe158ecdb10fb401583c010efa5573b09be4ef3afad218",
+      "bytes": 254569
     },
     "Figure_S10.tiff": {
-      "sha256": "0ca3c5e2c94fdb38ef66d8d5bc1cd462ee34e13fa0960f05205a33d10de60a9f",
-      "bytes": 391346
+      "sha256": "16e05007ad8f84922c30276fc83c7ab4dad3a094cfdfec4a62a37b8601f49a18",
+      "bytes": 425996
     }
   }
 }

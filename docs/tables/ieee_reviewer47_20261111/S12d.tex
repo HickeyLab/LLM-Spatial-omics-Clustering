@@ -1,0 +1,30 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S12d\\
+DEEPSEEK V4.1 FLASH 1017 CROSS-MODEL AGREEMENT CALIBRATION\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=1\hsize\raggedright\arraybackslash}X>{\hsize=1.55\hsize\raggedright\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X>{\hsize=0.85\hsize\raggedleft\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering} & \textbf{Score} & \textbf{Brier} & \textbf{Log loss} & \textbf{ECE} \\
+\midrule
+Leiden & Raw agreement & 0.2487 & 4.2329 & 0.2864 \\
+Leiden & Logistic recalibration & 0.1746 & 0.5212 & 0.0805 \\
+Leiden & Development constant & 0.2422 & 0.6777 & 0.0489 \\
+FlowSOM & Raw agreement & 0.2616 & 4.6661 & 0.3529 \\
+FlowSOM & Logistic recalibration & 0.1414 & 0.4324 & 0.1335 \\
+FlowSOM & Development constant & 0.1779 & 0.5413 & 0.1404 \\
+SpatialSort & Raw agreement & 0.2862 & 4.5765 & 0.3666 \\
+SpatialSort & Logistic recalibration & 0.1232 & 0.3888 & 0.0398 \\
+SpatialSort & Development constant & 0.1494 & 0.4758 & 0.0213 \\
+PIXIE & Raw agreement & 0.2466 & 4.0019 & 0.2991 \\
+PIXIE & Logistic recalibration & 0.1314 & 0.4155 & 0.0484 \\
+PIXIE & Development constant & 0.1689 & 0.5237 & 0.1019 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

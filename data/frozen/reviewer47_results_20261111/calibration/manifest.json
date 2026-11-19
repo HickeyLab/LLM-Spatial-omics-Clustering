@@ -1,0 +1,39 @@
+{
+  "schema": "reviewer47.portable_results_manifest.v1",
+  "files": {
+    "calibration_cluster_split.csv": {
+      "sha256": "ec9262824a2c769d48fd52c615be177cd66e178c5b03a4a5f5ddc87a363f8861",
+      "bytes": 28424
+    },
+    "calibration_equal_test_region_metrics.csv": {
+      "sha256": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846",
+      "bytes": 5740
+    },
+    "calibration_metrics.csv": {
+      "sha256": "ecebfc102ce479b3e59d018b188ee50b829865e41ad36c35c9632a74decae6bd",
+      "bytes": 22765
+    },
+    "calibration_reliability.csv": {
+      "sha256": "41cb94788ca77575091e18252c5b28eb337f3ec1d992051920a575c060be80f8",
+      "bytes": 43128
+    },
+    "calibration_risk_coverage.csv": {
+      "sha256": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50",
+      "bytes": 51437
+    },
+    "calibration_split_freeze.json": {
+      "sha256": "77bc8359da2efa24f87024236c65f44b6e1bad476ccef94d2aaee4a890164315",
+      "bytes": 262
+    },
+    "calibrators.json": {
+      "sha256": "e709e15c917bfb70048891801ccb50fe37166921894730eff08c5d7331d94364",
+      "bytes": 8687
+    },
+    "verification.json": {
+      "sha256": "ef9fb2d55794ce376130c741e1959ba39f9681b1c3d07298c18f6712a2f9dbae",
+      "bytes": 2594
+    }
+  },
+  "new_annotation_calls": 0,
+  "created_at": "2026-11-11T18:41:26.341136+00:00"
+}

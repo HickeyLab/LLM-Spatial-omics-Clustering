@@ -1,0 +1,17 @@
+Clustering,Input,Agreement (%),Macro-F1,Clusters delivered
+Leiden,Selected names,46.76,0.3948,300/300
+Leiden,Selected means,51.03,0.4511,300/300
+Leiden,All means,52.86,0.4582,300/300
+Leiden,Means + fractions,58.12,0.4490,300/300
+FlowSOM,Selected names,24.23,0.2338,299/299
+FlowSOM,Selected means,35.60,0.2827,299/299
+FlowSOM,All means,36.66,0.3028,299/299
+FlowSOM,Means + fractions,36.05,0.2713,299/299
+SpatialSort,Selected names,34.11,0.2026,229/229
+SpatialSort,Selected means,33.77,0.2121,229/229
+SpatialSort,All means,36.13,0.2152,229/229
+SpatialSort,Means + fractions,32.38,0.2074,229/229
+PIXIE,Selected names,39.04,0.2543,300/300
+PIXIE,Selected means,41.69,0.2817,300/300
+PIXIE,All means,41.32,0.2777,300/300
+PIXIE,Means + fractions,35.64,0.2553,300/300

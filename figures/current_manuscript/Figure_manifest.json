@@ -1,6 +1,6 @@
 {
   "schema": "cell_masks.separate_figures_current.v1",
-  "created_utc": "2026-11-19T18:05:37.764642+00:00",
+  "created_utc": "2026-11-19T18:16:22.617204+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
   "source_manuscript_docx_sha256": "4b693cb7e6ba7471cd757a57b470081161cd60dd87150079f13a903e79d07dfd",
   "source_saved_export": "Saved Google Docs manuscript Word export",
@@ -583,8 +583,8 @@
       "current_figure": "S13",
       "part": null,
       "filename": "PNG/Figure_S13.png",
-      "sha256": "213c5dfbe2931bd459c30872bdf26dba823bfb3d2caf9e6efcb12be49c97adeb",
-      "bytes": 387824,
+      "sha256": "b86c2fadd9178a42c63ae531fe68f96318fd04c4a2f799e8603ba33f10786b7d",
+      "bytes": 416343,
       "dimensions_px": [
         3900,
         2289
@@ -603,10 +603,12 @@
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 0.5279093
+        "mae_0_255": 0.5790404
       },
-      "live_docx_image_sha256": "5f58be285d93c1a79e950ec27823d3c8391353d1e954713b72f608634ad2bbe7",
-      "source": "verified_higher_resolution_approved_figure_artwork"
+      "live_docx_image_sha256": "af29695bd2dff0525e6f4a2ac5eeee2cb16e10f1fe21d476309724497ed388b0",
+      "source": "verified_higher_resolution_approved_figure_artwork",
+      "source_manuscript_docx_sha256": "51d1de8c6be54841fc62934f34b3d28e7ec45e6ec88ee073bef6d66a0eb16bd9",
+      "source_artwork_commit": "6094f9a48726d8dc25635f4d5ae674d7edd02b7b"
     },
     {
       "current_figure": "S14",
@@ -658,8 +660,7 @@
         "S9",
         "S10",
         "S11",
-        "S12",
-        "S13"
+        "S12"
       ],
       "source_manuscript_docx_sha256": "85f59f4f053417ff715033fa262e1febdf5183bd0731dcef805adb26e43e0be2"
     },
@@ -668,6 +669,12 @@
         "S14"
       ],
       "source_manuscript_docx_sha256": "4b693cb7e6ba7471cd757a57b470081161cd60dd87150079f13a903e79d07dfd"
+    },
+    {
+      "figures": [
+        "S13"
+      ],
+      "source_manuscript_docx_sha256": "51d1de8c6be54841fc62934f34b3d28e7ec45e6ec88ee073bef6d66a0eb16bd9"
     }
   ]
 }
