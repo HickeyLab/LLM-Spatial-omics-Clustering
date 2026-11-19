@@ -1,6 +1,6 @@
 # Reproduce the retained manuscript
 
-The [active figure inventory](../configs/manuscript_inventory.json), [figure map](figure_map.md) and [table map](supplementary_table_numbering.md) define the current 15 figures and 17 image files. The completed annotation campaign is frozen under [annotation47_results_20261111](../data/frozen/annotation47_results_20261111/manifest.json); primary clustering inputs are separately pinned under [clustering47_primary_20261108](../data/frozen/clustering47_primary_20261108/manifest.json). Figure S4A separately uses the [47-channel reference-profile manifest](../data/frozen/reference47_profiles_20261110/manifest.json), covering all 27 non-Noise reference types and all 47 stored channels. Reproduction is offline after installing Python dependencies. It makes no model calls or clustering updates. Optional recalibration fits use the frozen development data only.
+The [active figure inventory](../configs/manuscript_inventory.json), [figure map](figure_map.md) and [table map](supplementary_table_numbering.md) define the retained manuscript figures and tables. The completed annotation campaign is frozen under [annotation47_results_20261111](../data/frozen/annotation47_results_20261111/manifest.json); primary clustering inputs are separately pinned under [clustering47_primary_20261108](../data/frozen/clustering47_primary_20261108/manifest.json). Figure S4A separately uses the [47-channel reference-profile manifest](../data/frozen/reference47_profiles_20261110/manifest.json), covering all 27 non-Noise reference types and all 47 stored channels. Reproduction is offline after installing Python dependencies. It makes no model calls or clustering updates. Optional recalibration fits use the frozen development data only.
 
 ## Current scoring replay
 
@@ -27,7 +27,7 @@ python3.12 -B scripts/replay_reviewer47_publication.py \
   --recompute-calibration
 ```
 
-Use a new output path. Sixty-eight reviewer sets are complete. DeepSeek–Leiden selected numerical means retains its pending 75-cluster item, null accuracy and macro-F1, and all planned denominators. The two Astra control sets add eight pending Batch items and contribute no plotted result. B005/B006 and the private HIGH/XHIGH pilot are excluded. No aggregate silently removes an incomplete condition.
+Use a new output path. This command reproduces the November 11 snapshot of 68 complete reviewer sets. The [completed B004 reviewer package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) also provides the recovered DeepSeek selected-means batch, the eight Astra control requests and their replay instructions.
 
 The replay recomputes per-set metrics and the five completed Opus contrasts with independent Counter arithmetic, compares the 32 primary conditions against the same admitted full-arm bank, and optionally refits the 16 frozen-development logistic calibrators. With recalibration enabled, its split and calibration/risk CSV hashes must match the frozen export. Marker selection and literal neighborhood vectors are already present in the published request bodies; no original H5AD is needed for this replay.
 
@@ -62,6 +62,29 @@ Syncing changes tracked artwork and inventories and is therefore a publication-m
 Figures 1, S1, S2 and S3 retain their compensation and matching inputs. Their existing H5AD workflows and compact frozen tables are distinct from the primary cluster annotation study. The external input identities are pinned for [Duke record 565](../configs/duke_record_565_manifest.json). Figure 1B and S1 retain the available source precision rather than claiming recovery of unavailable full-precision metrics. Shared-object matching, coordinate limits and within-donor interpretation remain unchanged. The current renderer can rebuild their published frozen presentations using figure IDs `1 S1 S2 S3A S3B S3C`.
 
 The S4A profiles can also be regenerated from the checksum-matched reference H5AD using `scripts/revision/prepare_reference47_profiles.py`; its arguments specify the H5AD, exact reference-cell keys, protocol and a fresh output directory. The source binds the 45 H5AD X channels plus the CD123/CDX2 observation channels and uses stored values without another transformation. The frozen profile CSV is sufficient for ordinary figure replay.
+
+## Completed cross-donor scoring
+
+The [completed B005/B006 score bank](../data/frozen/donor47_deepseek_completion_20261116/README.md) includes the exact frozen references, assignments, profiles, accepted labels, scorer and expected outputs. It delivers all 128 requests and all 9,468 cluster predictions. Run from the repository root with Python 3.12:
+
+```bash
+DONOR_BANK=data/frozen/donor47_deepseek_completion_20261116
+python3.12 -m pip install -r "$DONOR_BANK/scientific_inputs/requirements.txt"
+DONOR_REPLAY=$(mktemp -d)
+python3.12 "$DONOR_BANK/scientific_inputs/score_core.py" --bundle "$DONOR_BANK/scientific_inputs" --output "$DONOR_REPLAY/replayed"
+```
+
+The scoring replay uses saved labels and frozen classifiers. It requires no credentials or model calls and reproduces the files indexed by the [score manifest](../data/frozen/donor47_deepseek_completion_20261116/score_manifest.json). Figure 5 reports equal-region and equal-donor annotation scores. S12 reports the unchanged clustering results. S13 scores both vocabularies on the same reference-eligible cells. The [saved manuscript PNGs](../figures/current_manuscript/PNG) preserve manuscript layout. The renderer produces editable native exports from the same scores.
+
+To regenerate and verify donor figures and tables, install `requirements-publication-figures.txt` and use the same scratch directory:
+
+```bash
+python3.12 scripts/render_donor47_figures.py --figures 5 S12 S13 --output "$DONOR_REPLAY/figures"
+python3.12 scripts/verify_publication_figures.py --figures 5 S12 S13 --folder "$DONOR_REPLAY/figures"
+python3.12 scripts/revision/render_donor47_tables.py --output "$DONOR_REPLAY/tables"
+```
+
+The [November 14 donor bank](../data/frozen/donor47_results_20261114/manifest.json) preserves the original 123 accepted items and 9,093 delivered predictions. Its replay and [table exports](tables/ieee_donor47_20261114/manifest.json) document that historical snapshot. The [current donor table package](tables/ieee_donor47_20261116/manifest.json) follows the saved manuscript.
 
 ## Archived entry points
 

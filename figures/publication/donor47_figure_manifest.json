@@ -1,27 +1,27 @@
 {
   "schema": "donor47.publication_figures.v1",
   "new_calls_or_fits": 0,
-  "source_manifest": "data/frozen/donor47_results_20261114/manifest.json",
+  "source_manifest": "data/frozen/donor47_deepseek_completion_20261116/manifest.json",
   "scope": "annotation",
   "planned_annotation_sets": 32,
   "planned_initial_request_items": 128,
   "planned_cluster_predictions": 9468,
   "annotation_arm": "all_means_fractions",
-  "source_manifest_sha256": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
-  "renderer_sha256": "d18c6476c90c7c564ed531af0f1e2cf60d8a5ea4d6847e0c322e1fb49a9750b7",
+  "source_manifest_sha256": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+  "renderer_sha256": "82843c94a8df1217558f0750cdc58081790b81386d47a94149fa0827abe55736",
   "shared_style_sha256": "f12e5c5fd22dcd38b76d1c6dde4aac2ea3f80885b704306c2a2d34a62aca1c55",
   "figures": {
     "5": {
       "figure": "Figure_5",
       "width_mm": 165.1,
-      "height_mm": 97.17839236111114,
-      "minimum_font_pt": 6.0,
+      "height_mm": 102.00339236111112,
+      "minimum_font_pt": 5.5,
       "font_family": "Arial",
-      "minimum_placement_width_mm": 137.583,
+      "minimum_placement_width_mm": 150.091,
       "raster_dpi": 600,
       "raster_size_pixels": [
         3900,
-        2295
+        2409
       ],
       "vector_text_editable": true,
       "panel_letter_format": "A",
@@ -30,8 +30,8 @@
       "provider_logos": null,
       "layout_compaction": {
         "original_height_mm": 125,
-        "height_mm": 97.17839236111114,
-        "height_reduction_percent": 22.25728611111109,
+        "height_mm": 102.00339236111112,
+        "height_reduction_percent": 18.3972861111111,
         "vacant_bands_removed_mm": [
           [
             7.0399999999999965,
@@ -40,10 +40,6 @@
           [
             52.72955555555556,
             63.5
-          ],
-          [
-            69.04,
-            73.865
           ]
         ],
         "minimum_gap_mm": 3.0,
@@ -52,34 +48,34 @@
       },
       "dense_point_layers_native_dpi": 610,
       "inputs": {
-        "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
-        "data/frozen/donor47_results_20261114/annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e",
-        "data/frozen/donor47_results_20261114/annotation_equal_donor_metrics.csv": "6c5769cbefcb499d8c97e1c1f9c322122912af4da64767e0a8d31f5bb86308a6",
-        "data/frozen/donor47_results_20261114/baselines_donor_metrics.csv": "ed14d4053b06b73fbafe8c51236b1282c687ea247bfb3c5ca6fa4619557564e4"
+        "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+        "data/frozen/donor47_deepseek_completion_20261116/annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8",
+        "data/frozen/donor47_deepseek_completion_20261116/annotation_equal_donor_metrics.csv": "a0300cee754070fd883d5d42dae2ff7d3e1c2226e6af707c277fd83d9cc4cbda",
+        "data/frozen/donor47_deepseek_completion_20261116/baselines_donor_metrics.csv": "ed14d4053b06b73fbafe8c51236b1282c687ea247bfb3c5ca6fa4619557564e4"
       },
       "notes": [
         "A,B: native 28-label evaluation including Noise; each donor averages its eight region scores equally.",
         "C,D: equal donor weights after equal region weights; frozen B004 classifiers use the same 94 decoded query features.",
-        "\u2020 denotes incomplete delivery. Missing/invalid labels remain errors in every planned denominator, distinct from valid Noise (code 21); Table S13 gives coverage.",
+        "The completed score bank has 100% cell and cluster prediction delivery. For archival inputs, \u2020 marks incomplete delivery.",
         "One planned annotation per cluster/condition; accepted outputs are scored where available. No repeat SD, confidence interval or repeatability claim.",
         "Baselines use training-cell reference labels, richer supervision than supplied to the LLMs; no donor fitting/tuning."
       ],
       "files": {
         "Figure_5.svg": {
-          "sha256": "6bc066bf042571e009a64a6a2df6baf3d7a1d68fb00e6c4901639785994a89f0",
-          "bytes": 65370
+          "sha256": "f5bd51619eb95d50e74091517e089516d6834914dc5edb1a7c9350134bc8731a",
+          "bytes": 67834
         },
         "Figure_5.pdf": {
-          "sha256": "d10982e6f6b7795c8899bb7d37b902af868bfc94b802e9c104bf75bcbb52a4ad",
-          "bytes": 46801
+          "sha256": "2822fd50e3bd181da94d9906ccf528e040521fe855b76b7abb4897f1d030d2c1",
+          "bytes": 47216
         },
         "Figure_5.png": {
-          "sha256": "99171ae8d59d620b1bd7f537fbc9adac5a5d428161bdfcad083d5ef584600bed",
-          "bytes": 388708
+          "sha256": "31e6850e42e155e11e68aecf21127cc4d0041f6d2db3717a714e4dcbcd7e67c4",
+          "bytes": 428399
         },
         "Figure_5.tiff": {
-          "sha256": "420b9c681b394d4b7c024d51372ce7eff0197b2471fe2bd30c373f072a303616",
-          "bytes": 1183634
+          "sha256": "e1778073d9c79ac77cefbe07eb12f34c0427139d82e8a2d46063cebb9497702f",
+          "bytes": 1197572
         }
       }
     },
@@ -124,9 +120,9 @@
       },
       "dense_point_layers_native_dpi": 610,
       "inputs": {
-        "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
-        "data/frozen/donor47_results_20261114/clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
-        "data/frozen/donor47_results_20261114/spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
+        "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+        "data/frozen/donor47_deepseek_completion_20261116/clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
+        "data/frozen/donor47_deepseek_completion_20261116/spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
       },
       "notes": [
         "Frozen method-specific donor partitions, evaluated against native 28-label references; annotation profiles contain all 47 proteins and SpatialSort seed 42 is primary.",
@@ -136,16 +132,16 @@
       ],
       "files": {
         "Figure_S12.svg": {
-          "sha256": "8871c5bb20e6fee3bf7a6fb27dd00c6fc2b26e9ada6b81ea6e9b0a7e37578582",
-          "bytes": 25779
+          "sha256": "30e0ad44ee057a6c12de08cb04dfbc047e73d6c9d0076ff0758d180151498c15",
+          "bytes": 25787
         },
         "Figure_S12.pdf": {
-          "sha256": "7c400b80515af6f863550cdd69e5d6ea4a3942337869a3eddfd07d98f93bdbac",
-          "bytes": 38259
+          "sha256": "5b8f714170d5287d66f2e2562a926f9b6f3f2be2197bff1128db992116a9c906",
+          "bytes": 38084
         },
         "Figure_S12.png": {
-          "sha256": "16a0389fc2c1000065b2e1a82cb8fcc7b5e73856b9813ade7e0fdba6a4bfbae5",
-          "bytes": 175456
+          "sha256": "a3f2b66605bbfd0a23e093e7b9a74a14ba64ac48a0fd7ea84f66c505852d6b01",
+          "bytes": 188882
         },
         "Figure_S12.tiff": {
           "sha256": "9fa589295039b55eb7bdf1ec324fdacb2adea0baa578b95a08a02b7756e4854e",
@@ -194,32 +190,32 @@
       },
       "dense_point_layers_native_dpi": 610,
       "inputs": {
-        "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
-        "data/frozen/donor47_results_20261114/annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+        "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+        "data/frozen/donor47_deepseek_completion_20261116/annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
       },
       "notes": [
         "All four panels use exactly the same reference-eligible cells within donor; no new annotation calls.",
         "Native 28-label and approved shared-23 projection are evaluation vocabularies, not two generation protocols.",
         "Predictions mapped outside the 23-label vocabulary stay errors; no prediction-dependent cell exclusion.",
         "Noise, ITLN+Epithelial and PDPN+Stromal reference labels are outside the shared-23 eligible population.",
-        "\u2020 denotes incomplete native output delivery, distinct from valid Noise (code 21); shared-23 vocabulary coverage is separately reported in Table S15."
+        "The completed bank has 100% native prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, \u2020 marks incomplete native delivery."
       ],
       "files": {
         "Figure_S13.svg": {
-          "sha256": "ba919a53313457e481cd51f4c3388fa558f82501338c2d8c2513ce85596c797d",
-          "bytes": 56148
+          "sha256": "66f0c0ce719d22e814cb7129ab9ed5e902e6e12913b063389395d0ad70a8fd79",
+          "bytes": 56338
         },
         "Figure_S13.pdf": {
-          "sha256": "80577bc64501e7f44b49ba271ac2ed9aea64ebaea50692a04649e18141eece25",
-          "bytes": 45079
+          "sha256": "f4373176b91bcf870dd0e7b090239efe3b66f538cfb98d3318785b6246344a60",
+          "bytes": 44482
         },
         "Figure_S13.png": {
-          "sha256": "644d885a5fcf287b3f2df1ca497b1ddd8e14ee9c3a883cbc974fdcf8bef61f4b",
-          "bytes": 353689
+          "sha256": "2e8b56a1a3a1bbaf442a0b8247a491b2aea5b3c24a96560c3d6f76e4a2eefa2b",
+          "bytes": 375716
         },
         "Figure_S13.tiff": {
-          "sha256": "fc849e23ba40d589cfc25becb704834d35863bf6cdf3ca3892e194327bbc3840",
-          "bytes": 1052604
+          "sha256": "312fc0e3744b2e3b23494df742cddde051bcc84509662c81968cfb889790131a",
+          "bytes": 1042324
         }
       }
     }

@@ -39,9 +39,9 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
-    "data/frozen/donor47_results_20261114/clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
-    "data/frozen/donor47_results_20261114/spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
+    "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+    "data/frozen/donor47_deepseek_completion_20261116/clustering_donor_metrics.csv": "81f117a34d6d8356c4f6dc7ce4040f052bdd6df16ab98f7cbffd5d7dab72a5ab",
+    "data/frozen/donor47_deepseek_completion_20261116/spatialsort_seed_sensitivity.csv": "5f2900d889184c4f59f309459b99dfa2bcc49de958b147c2768b123cb5c6cecc"
   },
   "notes": [
     "Frozen method-specific donor partitions, evaluated against native 28-label references; annotation profiles contain all 47 proteins and SpatialSort seed 42 is primary.",
@@ -51,16 +51,16 @@
   ],
   "files": {
     "Figure_S12.svg": {
-      "sha256": "8871c5bb20e6fee3bf7a6fb27dd00c6fc2b26e9ada6b81ea6e9b0a7e37578582",
-      "bytes": 25779
+      "sha256": "30e0ad44ee057a6c12de08cb04dfbc047e73d6c9d0076ff0758d180151498c15",
+      "bytes": 25787
     },
     "Figure_S12.pdf": {
-      "sha256": "7c400b80515af6f863550cdd69e5d6ea4a3942337869a3eddfd07d98f93bdbac",
-      "bytes": 38259
+      "sha256": "5b8f714170d5287d66f2e2562a926f9b6f3f2be2197bff1128db992116a9c906",
+      "bytes": 38084
     },
     "Figure_S12.png": {
-      "sha256": "16a0389fc2c1000065b2e1a82cb8fcc7b5e73856b9813ade7e0fdba6a4bfbae5",
-      "bytes": 175456
+      "sha256": "a3f2b66605bbfd0a23e093e7b9a74a14ba64ac48a0fd7ea84f66c505852d6b01",
+      "bytes": 188882
     },
     "Figure_S12.tiff": {
       "sha256": "9fa589295039b55eb7bdf1ec324fdacb2adea0baa578b95a08a02b7756e4854e",

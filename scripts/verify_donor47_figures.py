@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-DATA=Path('data/frozen/donor47_results_20261114')
+DATA=Path('data/frozen/donor47_deepseek_completion_20261116')
 DONOR_PANELS={'5':'ABCD','S12':'ABC','S13':'ABCD'}
 REQUIRED_SOURCES={
     '5':{'annotation_donor_metrics.csv','annotation_equal_donor_metrics.csv','baselines_donor_metrics.csv'},

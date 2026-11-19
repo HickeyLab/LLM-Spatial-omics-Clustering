@@ -39,32 +39,32 @@
   },
   "dense_point_layers_native_dpi": 610,
   "inputs": {
-    "data/frozen/donor47_results_20261114/manifest.json": "c929e72e74d9bf4debcb66723c4365629026f0c8e1f2ee559a4e8a36c9bfbcd9",
-    "data/frozen/donor47_results_20261114/annotation_donor_metrics.csv": "32d5ac1db283b43a64ebf1179a7c62ac8482542ef53bc6eb3400ff44423d9b0e"
+    "data/frozen/donor47_deepseek_completion_20261116/manifest.json": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
+    "data/frozen/donor47_deepseek_completion_20261116/annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
   },
   "notes": [
     "All four panels use exactly the same reference-eligible cells within donor; no new annotation calls.",
     "Native 28-label and approved shared-23 projection are evaluation vocabularies, not two generation protocols.",
     "Predictions mapped outside the 23-label vocabulary stay errors; no prediction-dependent cell exclusion.",
     "Noise, ITLN+Epithelial and PDPN+Stromal reference labels are outside the shared-23 eligible population.",
-    "\u2020 denotes incomplete native output delivery, distinct from valid Noise (code 21); shared-23 vocabulary coverage is separately reported in Table S15."
+    "The completed bank has 100% native prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, \u2020 marks incomplete native delivery."
   ],
   "files": {
     "Figure_S13.svg": {
-      "sha256": "ba919a53313457e481cd51f4c3388fa558f82501338c2d8c2513ce85596c797d",
-      "bytes": 56148
+      "sha256": "66f0c0ce719d22e814cb7129ab9ed5e902e6e12913b063389395d0ad70a8fd79",
+      "bytes": 56338
     },
     "Figure_S13.pdf": {
-      "sha256": "80577bc64501e7f44b49ba271ac2ed9aea64ebaea50692a04649e18141eece25",
-      "bytes": 45079
+      "sha256": "f4373176b91bcf870dd0e7b090239efe3b66f538cfb98d3318785b6246344a60",
+      "bytes": 44482
     },
     "Figure_S13.png": {
-      "sha256": "644d885a5fcf287b3f2df1ca497b1ddd8e14ee9c3a883cbc974fdcf8bef61f4b",
-      "bytes": 353689
+      "sha256": "2e8b56a1a3a1bbaf442a0b8247a491b2aea5b3c24a96560c3d6f76e4a2eefa2b",
+      "bytes": 375716
     },
     "Figure_S13.tiff": {
-      "sha256": "fc849e23ba40d589cfc25becb704834d35863bf6cdf3ca3892e194327bbc3840",
-      "bytes": 1052604
+      "sha256": "312fc0e3744b2e3b23494df742cddde051bcc84509662c81968cfb889790131a",
+      "bytes": 1042324
     }
   }
 }

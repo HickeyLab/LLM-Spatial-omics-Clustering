@@ -1,0 +1,22 @@
+{
+  "schema": "donor47.ieee_table_paste_order.v1",
+  "order": [
+    "S13a",
+    "S13b",
+    "S14a",
+    "S14b",
+    "S15a",
+    "S15b"
+  ],
+  "continuous_html": "all_tables.html",
+  "page_break_html": "all_tables_paginated.html",
+  "page_break_before": [
+    "S13b",
+    "S14a",
+    "S14b",
+    "S15a",
+    "S15b"
+  ],
+  "page_break_style": "break-before:page;page-break-before:always",
+  "note": "The continuous file preserves native table flow; the paginated file requests one table per page. Confirm actual page breaks after native Google Docs paste."
+}

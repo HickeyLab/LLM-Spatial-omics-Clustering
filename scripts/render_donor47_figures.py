@@ -18,7 +18,7 @@ import pandas as pd
 import publication_figure_design as design
 
 ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT/'data/frozen/donor47_results_20261114'
+DATA=ROOT/'data/frozen/donor47_deepseek_completion_20261116'
 METHODS=['leiden','flowsom','spatialsort','pixie_tiff']
 METHOD_LABELS=['Leiden','FlowSOM','SpatialSort','PIXIE']
 FAMILIES=['openai','anthropic','google','deepseek']
@@ -164,12 +164,23 @@ def figure5(scores,output):
             donor,coverage=metric_matrix(selected,'cell_delivery_coverage'))
     for i,(metric,label) in enumerate([('agreement','Agreement (%)'),('macro_f1','Macro-F1 (%)')]):
         values,coverage=baseline_join(scores,metric)
-        matrix_panel(f,chr(67+i),3+80*i,65,values,MODEL_LABELS+['Nearest\ncentroid','Logistic\nregression'],
-            label,coverage=coverage)
+        x,y=3+80*i,65
+        design.panel(f,chr(67+i),x,y)
+        design.text(f,x+44,y+.2,label,size=6.5,ha='center')
+        llm_ax=design.axes(f,x+17,y+11,34,35)
+        annotate_heatmap(llm_ax,values[:,:4],METHOD_LABELS,MODEL_LABELS,coverage=coverage[:,:4])
+        llm_ax.text(1.5,-.68,'LLMs',ha='center',va='bottom',fontsize=5.5,clip_on=False)
+        classifier_ax=design.axes(f,x+54,y+11,17,35)
+        artist=annotate_heatmap(classifier_ax,values[:,4:],METHOD_LABELS,
+            ['Nearest\ncentroid','Logistic\nregression'],coverage=coverage[:,4:])
+        classifier_ax.tick_params(axis='y',left=False,labelleft=False)
+        classifier_ax.text(.5,-.68,'B004-supervised\nclassifiers',ha='center',va='bottom',
+                fontsize=5.5,linespacing=1.05,clip_on=False)
+        design.colorbar(f,artist,(x+74,y+11,1.5,35),ticks=[0,50,100],orientation='vertical')
     return design.finish(f,'Figure_5',output,dict(scores.inputs),notes=[
         'A,B: native 28-label evaluation including Noise; each donor averages its eight region scores equally.',
         'C,D: equal donor weights after equal region weights; frozen B004 classifiers use the same 94 decoded query features.',
-        '† denotes incomplete delivery. Missing/invalid labels remain errors in every planned denominator, distinct from valid Noise (code 21); Table S13 gives coverage.',
+        'The completed score bank has 100% cell and cluster prediction delivery. For archival inputs, † marks incomplete delivery.',
         'One planned annotation per cluster/condition; accepted outputs are scored where available. No repeat SD, confidence interval or repeatability claim.',
         'Baselines use training-cell reference labels, richer supervision than supplied to the LLMs; no donor fitting/tuning.',
     ])
@@ -225,7 +236,7 @@ def figure_s13(scores,output):
         'Native 28-label and approved shared-23 projection are evaluation vocabularies, not two generation protocols.',
         'Predictions mapped outside the 23-label vocabulary stay errors; no prediction-dependent cell exclusion.',
         'Noise, ITLN+Epithelial and PDPN+Stromal reference labels are outside the shared-23 eligible population.',
-        '† denotes incomplete native output delivery, distinct from valid Noise (code 21); shared-23 vocabulary coverage is separately reported in Table S15.',
+        'The completed bank has 100% native prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, † marks incomplete native delivery.',
     ])
 
 

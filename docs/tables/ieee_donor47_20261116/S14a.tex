@@ -1,0 +1,28 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont\bfseries
+TABLE S14a\\
+FROZEN DONOR CLUSTERING\par\smallskip
+\normalfont\fontsize{10}{12}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.77\hsize\raggedright\arraybackslash}X>{\hsize=1.33\hsize\raggedright\arraybackslash}X>{\hsize=1.05\hsize\raggedleft\arraybackslash}X>{\hsize=0.91\hsize\raggedleft\arraybackslash}X>{\hsize=0.98\hsize\raggedleft\arraybackslash}X>{\hsize=0.98\hsize\raggedleft\arraybackslash}X>{\hsize=0.98\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Donor} & \textbf{Clustering method} & \textbf{Cells} & \textbf{Clusters} & \textbf{Purity} & \textbf{ARI} & \textbf{NMI} \\
+\midrule
+B005 & Leiden & 288,188 & 300 & 0.7392 & 0.2261 & 0.5209 \\
+B005 & FlowSOM & 288,188 & 299 & 0.6896 & 0.3555 & 0.5292 \\
+B005 & SpatialSort & 288,188 & 298 & 0.5773 & 0.2329 & 0.4277 \\
+B005 & PIXIE & 288,188 & 300 & 0.5999 & 0.2673 & 0.4094 \\
+B006 & Leiden & 301,280 & 300 & 0.7309 & 0.2436 & 0.5362 \\
+B006 & FlowSOM & 301,280 & 300 & 0.6153 & 0.3529 & 0.4750 \\
+B006 & SpatialSort & 301,280 & 270 & 0.5600 & 0.1703 & 0.4330 \\
+B006 & PIXIE & 301,280 & 300 & 0.5116 & 0.2371 & 0.4106 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\noindent Partitions use frozen method-specific inputs, and annotation profiles contain all 47 protein markers. Clustering is evaluated against the original 28-label reference, including Noise. Purity, adjusted Rand index and normalized mutual information average the eight regions equally. Cell and nonempty-cluster counts cover the whole donor. SpatialSort seed 42 is primary, with 50 sweeps and five DMH iterations per sweep in each donor chain.\par
+\endgroup
+\end{table*}

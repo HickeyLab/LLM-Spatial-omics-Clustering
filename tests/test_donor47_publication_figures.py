@@ -14,7 +14,7 @@ import render_donor47_figures as r
 
 class FigureContractTests(unittest.TestCase):
     def test_repository_source_reference_is_portable(self):
-        self.assertEqual(r.source_key(r.DATA/'manifest.json'),'data/frozen/donor47_results_20261114/manifest.json')
+        self.assertEqual(r.source_key(r.DATA/'manifest.json'),'data/frozen/donor47_deepseek_completion_20261116/manifest.json')
     def data(self):
         return pd.DataFrame([{'method':m,'family':f,'agreement':.4,'macro_f1':.3,
             'cell_delivery_coverage':1.,'cluster_delivery_coverage':1.} for m in r.METHODS for f in r.FAMILIES])

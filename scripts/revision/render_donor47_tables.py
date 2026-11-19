@@ -47,39 +47,28 @@ def table_specs(scores):
         output[key]={'title':title,'rows':rows,'weights':weights,'numeric':numeric,'note':note,'sources':sources}
     annotations=scores.table('annotation_donor_metrics.csv');primary=donor.evaluation(annotations,donor.PRIMARY)
     donor.validate_coverage(primary)
-    common=('Agreement, macro-F1 and cell coverage average each donor\'s eight regions equally. Cluster coverage uses whole-donor occupied clusters. The full native 28-label vocabulary includes Noise (code 21). '
-        'Missing/invalid predictions remain errors in the fixed planned denominator and differ from valid Noise predictions. '
-        'One planned annotation per cluster/condition; accepted outputs are scored where available. No repeated-generation uncertainty is estimated.')
+    coverage_columns = ['cell_delivery_coverage', 'cluster_delivery_coverage']
+    if not primary[coverage_columns].eq(1.0).all().all():
+        raise ValueError('Current donor annotation tables require complete cell and cluster prediction coverage')
+    common = (
+        'Agreement and macro-F1 average the donor\'s eight regions equally. Cell- and cluster-level '
+        'prediction coverage was 100% in all conditions. The original 28-label vocabulary includes Noise '
+        '(code 21). Missing or invalid predictions remain errors in the fixed planned denominator and '
+        'are distinct from valid Noise predictions. One annotation was planned per cluster and condition, '
+        'with accepted outputs scored where available. No uncertainty from repeated generations is estimated.'
+    )
     for d,key in zip(donor.DONORS,['S13a','S13b']):
-        rows=[['Clustering','Model','Agreement (%)','Macro-F1','Cell coverage (%)','Cluster coverage (%)']]
+        rows = [['Clustering method', 'Model', 'Agreement (%)', 'Macro-F1']]
         for method,label in zip(donor.METHODS,donor.METHOD_LABELS):
             for family,model in zip(donor.FAMILIES,donor.MODEL_LABELS):
                 row=unique_row(primary,donor=d,method=method,family=family)
-                rows.append([label,model,number(row.agreement,percent=True),number(row.macro_f1),
-                    number(row.cell_delivery_coverage,percent=True),number(row.cluster_delivery_coverage,percent=True)])
-        add(key,d+' donor annotation',rows,[19,17,17,13,17,17],[2,3,4,5],common,['annotation_donor_metrics.csv'])
-    equal=donor.evaluation(scores.table('annotation_equal_donor_metrics.csv'),donor.PRIMARY)
-    base=scores.table('baselines_donor_metrics.csv')
-    base=donor.evaluation(base[base.arm.eq(donor.ARM)],donor.PRIMARY)
-    rows=[['Clustering','Annotator','Agreement (%)','Macro-F1','Cell coverage (%)']]
-    for method,label in zip(donor.METHODS,donor.METHOD_LABELS):
-        for family,model in zip(donor.FAMILIES,donor.MODEL_LABELS):
-            row=unique_row(equal,method=method,family=family)
-            rows.append([label,model,number(row.agreement,percent=True),number(row.macro_f1),number(row.cell_delivery_coverage,percent=True)])
-        for classifier,model in zip(donor.CLASSIFIERS,['Nearest centroid','Logistic regression']):
-            selected=base[base.method.eq(method)&base.classifier.eq(classifier)]
-            if len(selected)!=2 or set(selected.donor)!=set(donor.DONORS):raise ValueError('Frozen baseline donor pair differs')
-            rows.append([label,model,number(selected.agreement.mean(),percent=True),number(selected.macro_f1.mean()),
-                number(selected.cell_delivery_coverage.mean(),percent=True)])
-    add('S13c','Equal-donor annotation and frozen classifiers',rows,[18,28,18,16,20],[2,3,4],
-        'B005 and B006 receive equal weight after equal region weighting within donor. All models use the same 47 means plus 47 fractions, decoded from integer thousandths. '
-        'Baselines retain B004 training-cell reference supervision and frozen weights; no donor fitting, class balancing or hyperparameter selection. '+common,
-        ['annotation_equal_donor_metrics.csv','baselines_donor_metrics.csv'])
+                rows.append([label, model, number(row.agreement, percent=True), number(row.macro_f1)])
+        add(key,d+' donor annotation',rows,[29,25,24,22],[2,3],common,['annotation_donor_metrics.csv'])
     output.update(clustering_table_specs(scores))
     native=donor.evaluation(annotations,donor.ELIGIBLE_NATIVE);coarse=donor.evaluation(annotations,donor.SHARED23)
     for d,key in zip(donor.DONORS,['S15a','S15b']):
-        rows=[['Clustering','Model','Native 28 agreement (%)','Shared 23 agreement (%)','Change (pp)',
-            'Native 28 macro-F1','Shared 23 macro-F1','23-label coverage (%)']]
+        rows=[['Clustering method','Model','Original 28-label agreement (%)','Projected 23-label agreement (%)','Change (pp)',
+            'Original 28-label macro-F1','Projected 23-label macro-F1','Projected-vocabulary coverage (%)']]
         for method,label in zip(donor.METHODS,donor.METHOD_LABELS):
             for family,model in zip(donor.FAMILIES,donor.MODEL_LABELS):
                 n=unique_row(native,donor=d,method=method,family=family);s=unique_row(coarse,donor=d,method=method,family=family)
@@ -87,10 +76,12 @@ def table_specs(scores):
                 rows.append([label,model,number(n.agreement,percent=True),number(s.agreement,percent=True),
                     number(s.agreement-n.agreement,signed=True),number(n.macro_f1),number(s.macro_f1),
                     number(s.in_vocabulary_prediction_coverage,percent=True)])
-        add(key,d+' evaluation vocabulary sensitivity',rows,[14,12,13,13,10,11,11,16],[2,3,4,5,6,7],
-            'Both vocabularies use exactly the same reference-eligible cells. Shared-23 evaluation merges or renames the approved classes; reference ITLN+Epithelial, Noise and PDPN+Stromal are outside that eligibility set. '
-            'Projected predictions outside the 23-label vocabulary remain errors and never remove cells. Vocabulary coverage is separate from native output delivery coverage. '
-            'Macro-F1 uses its stated fixed vocabulary (28 or 23); class-count changes are part of the sensitivity, with no new model generation.',
+        add(key,d+' evaluation using 28 and 23 labels',rows,[14,12,13,13,10,11,11,16],[2,3,4,5,6,7],
+            'Both vocabularies use exactly the same reference-eligible cells. The 23-label projection merges or renames the specified classes. '
+            'Reference ITLN+ Epithelial, Noise and PDPN+ Stromal cells are excluded from the eligibility set. '
+            'Projected predictions outside the 23-label vocabulary remain errors and never remove cells from evaluation. '
+            'Projected-vocabulary coverage is separate from prediction coverage. Macro-F1 uses the stated fixed vocabulary of 28 or 23 labels. '
+            'This evaluation using 28 and 23 labels changes the number of classes without generating new predictions.',
             ['annotation_donor_metrics.csv'])
     return output
 
@@ -104,7 +95,7 @@ def clustering_table_specs(scores):
     if 'evaluation' in clust:clust=donor.evaluation(clust,donor.PRIMARY)
     counts=scores.table('clustering_pooled_metrics.csv')
     counts=counts[counts.evaluation.eq(donor.PRIMARY)&counts.aggregation.eq('pooled_descriptive')]
-    rows=[['Donor','Clustering','Cells','Clusters','Purity','ARI','NMI']]
+    rows=[['Donor','Clustering method','Cells','Clusters','Purity','ARI','NMI']]
     for d in donor.DONORS:
         for method,label in zip(donor.METHODS,donor.METHOD_LABELS):
             row=unique_row(clust,donor=d,method=method)
@@ -113,8 +104,10 @@ def clustering_table_specs(scores):
             rows.append([d,label,count(row,'n_cells'),count(whole,'occupied_clusters','n_clusters'),
                 number(row.purity),number(row.ari),number(row.nmi)])
     add('S14a','Frozen donor clustering',rows,[11,19,15,13,14,14,14],[2,3,4,5,6],
-        'Partitions use the frozen method-specific inputs; annotation profiles contain all 47 proteins. Clustering is evaluated against the native 28-label reference, including Noise. Purity, ARI and NMI average the eight regions equally; cells and occupied clusters are whole-donor counts. '
-        'SpatialSort seed 42 is primary; each donor chain uses 50 sweeps and DMH = 5.',
+        'Partitions use frozen method-specific inputs, and annotation profiles contain all 47 protein markers. '
+        'Clustering is evaluated against the original 28-label reference, including Noise. Purity, adjusted Rand index and '
+        'normalized mutual information average the eight regions equally. Cell and nonempty-cluster counts cover the whole donor. '
+        'SpatialSort seed 42 is primary, with 50 sweeps and five DMH iterations per sweep in each donor chain.',
         ['clustering_donor_metrics.csv','clustering_pooled_metrics.csv'])
     if scores.has('spatialsort_seed_sensitivity.csv'):
         seed=donor.seed_comparison(scores)
@@ -122,9 +115,10 @@ def clustering_table_specs(scores):
         for d in donor.DONORS:
             row=unique_row(seed,donor=d)
             rows.append([d,count(row,'n_cells'),count(row,'seed42_clusters'),count(row,'seed43_clusters'),number(row.partition_ari)])
-        add('S14b','SpatialSort seed sensitivity',rows,[14,20,22,22,22],[1,2,3,4],
-            'Both seeds use the same donor cells, 47-marker source and 50-sweep/DMH = 5 budget. Partition ARI compares the two memberships on all common donor cells. '
-            'Seed 43 is used only for clustering sensitivity, with no additional annotation calls or reference-guided seed selection.',
+        add('S14b','SpatialSort comparison across random seeds',rows,[14,20,22,22,22],[1,2,3,4],
+            'Both seeds use the same donor cells, 47-marker source and computational budget of 50 sweeps with five DMH iterations per sweep. '
+            'Partition ARI compares the two sets of cluster assignments across all common donor cells. Seed 43 is used only to compare '
+            'clustering results across random seeds, without additional annotation calls or reference-guided seed selection.',
             ['spatialsort_seed_sensitivity.csv'])
     return output
 
@@ -146,7 +140,7 @@ def render(scores,output,selected=None):
     for key,spec in specs.items():
         WEIGHTS[key]=spec['weights'];NUMERIC[key]=spec['numeric'];rows=spec['rows']
         label,title=style.caption(key,'Table '+key+'. '+spec['title']+'.')
-        heading='<p style="font-family:Times New Roman,Times,serif;font-size:11pt;font-weight:bold;text-align:center;">'+html.escape(label)+'<br>'+html.escape(title)+'</p>'
+        heading='<p style="font-family:Times New Roman,Times,serif;font-size:10pt;font-weight:bold;text-align:center;">'+html.escape(label)+'<br>'+html.escape(title)+'</p>'
         note='<p style="font-family:Times New Roman,Times,serif;font-size:10pt;">'+html.escape(spec['note'])+'</p>'
         fragment=heading+style.table_html(key,rows)+note
         fragments.append((key,fragment))
@@ -157,7 +151,7 @@ def render(scores,output,selected=None):
             with (output/name).open('w',newline='') as file:csv.writer(file,delimiter=delimiter,lineterminator='\n').writerows(rows)
         tex=style.table_tex(key,rows,label,title)
         tex=tex.replace(r'\fontsize{10}{12}\selectfont'+'\n'+style.tex_escape(label)+r'\\'+'\n'+style.tex_escape(title)+r'\par\smallskip',
-            r'\fontsize{11}{13.2}\selectfont\bfseries'+'\n'+style.tex_escape(label)+r'\\'+'\n'+style.tex_escape(title)+r'\par\smallskip'+
+            r'\fontsize{10}{12}\selectfont\bfseries'+'\n'+style.tex_escape(label)+r'\\'+'\n'+style.tex_escape(title)+r'\par\smallskip'+
             '\n'+r'\normalfont\fontsize{10}{12}\selectfont')
         tex=tex.replace(r'\end{tabularx}',r'\end{tabularx}'+'\n'+r'\par\smallskip\noindent '+style.tex_escape(spec['note'])+r'\par')
         (output/(key+'.tex')).write_text(tex)
@@ -215,7 +209,7 @@ def render_preview(path, table_id, rows, label, title, note=None):
     else:raise ValueError('No printable serif font is installed')
     body_fp = FontProperties(fname=font, size=10)
     bold_fp = FontProperties(fname=bold_font, size=10)
-    caption_fp = FontProperties(fname=bold_font, size=11)
+    caption_fp = FontProperties(fname=bold_font, size=10)
     body_measure = ImageFont.truetype(font, size=100)
     bold_measure = ImageFont.truetype(bold_font, size=100)
     width_pt = 6.5 * 72
@@ -260,7 +254,7 @@ def render_preview(path, table_id, rows, label, title, note=None):
     line_height = 12
     row_heights = [max(len(c) for c in row) * line_height + 2 * pad for row in wrapped]
     title_lines = wrap(title, width_pt - 8, caption_fp)
-    caption_height = 16 + 13.2 * len(title_lines) + 12
+    caption_height = 16 + 12 * len(title_lines) + 12
     note_lines = wrap(note, width_pt - 8, body_fp) if note else []
     height_pt = caption_height + sum(row_heights) + 8
     if note_lines:
@@ -302,12 +296,12 @@ def render_preview(path, table_id, rows, label, title, note=None):
         plt.close(fig)
     return {"width_inches": 6.5, "height_inches": height_pt / 72,
             "font_points": 10, "font_file_basename": Path(font).name,
-            "caption_font_points":11,"caption_bold":True,
+            "caption_font_points":10,"caption_bold":True,
             "horizontal_rules": 3, "vertical_rules": 0, "interior_body_rules": 0}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--data',type=Path,default=donor.DATA)
-    p.add_argument('--output',type=Path,default=ROOT/'docs/tables/ieee_donor47_20261114')
+    p.add_argument('--output',type=Path,default=ROOT/'docs/tables/ieee_donor47_20261116')
     p.add_argument('--tables',nargs='+')
     a=p.parse_args();scope='clustering' if a.tables and set(a.tables).issubset({'S14a','S14b'}) else 'annotation'
     print(json.dumps({'tables':list(render(donor.Scores(a.data,scope=scope),a.output,a.tables)['tables'])}))

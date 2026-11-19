@@ -293,16 +293,16 @@
       ],
       "images": [
         {
-          "path": "figures/publication/Figure_5.png",
-          "sha256": "99171ae8d59d620b1bd7f537fbc9adac5a5d428161bdfcad083d5ef584600bed"
+          "path": "figures/current_manuscript/PNG/Figure_5.png",
+          "sha256": "5ed0bcac883a90c68a117375e4ed285dae8d80d045270be53b13137a4a92a018"
         }
       ],
-      "caption": "Figure 5. Annotation transfer to B005 and B006 using 47-marker means plus fractions. (A,B) Native-28-label reference agreement, including the valid Noise label, in B005 and B006. Each donor's value averages its eight tissue regions equally. (C,D) Agreement and fixed-28-label macro-F1, equally weighted across the two donor means, for the four LLMs and B004-fitted conventional classifiers. Classifiers used training reference labels; no donor refitting was performed. Each cluster had one planned annotation per condition. Accepted outputs were scored where available; missing or invalid outputs remained errors in the planned denominator, and daggers mark incomplete delivery. These single-generation results do not establish repeated-call consistency.",
+      "caption": "Figure 5. Cross-donor annotation agreement using all-marker means plus fractions for all 47 markers. (A,B) Reference agreement using the original 28 labels in B005 and B006, respectively, including Noise as a valid label. Each donor's value averages its eight regions equally. (C,D) Agreement and macro-F1 across all 28 labels, respectively, after equal weighting of the two donor means. Conventional classifiers used B004 training reference labels and were applied without donor refitting, rebalancing or selecting new hyperparameters. All conditions delivered one accepted annotation per cluster. Tables S13a\u2013S13b report the donor-specific LLM results.",
       "scientific_status": "donor47_annotation_scored_single_run",
       "artifact_type": "scored_scientific_figure",
       "execution_enabled": false,
       "publication_ready": true,
-      "scored_inputs": "data/frozen/donor47_results_20261114/manifest.json",
+      "scored_inputs": "data/frozen/donor47_deepseek_completion_20261116/manifest.json",
       "verification_receipt": "figures/publication/Figure_5_verification.json"
     },
     "S12": {
@@ -314,8 +314,8 @@
       ],
       "images": [
         {
-          "path": "figures/publication/Figure_S12.png",
-          "sha256": "16a0389fc2c1000065b2e1a82cb8fcc7b5e73856b9813ade7e0fdba6a4bfbae5"
+          "path": "figures/current_manuscript/PNG/Figure_S12.png",
+          "sha256": "18891e5bbb704db720a92821b6d54efdb54e3a8660a659cded5a9e6a8e23ca06"
         }
       ],
       "caption": "Figure S12. Frozen donor partitions and SpatialSort seed sensitivity. (A,B) Purity and adjusted Rand index against the native 28-label reference, including Noise, averaged equally across each donor's eight regions. Whole-donor cell and occupied-cluster counts are reported in Table S14a. (C) Global common-cell partition ARI between SpatialSort seeds 42 and 43 in each donor, using 50 actual sweeps and DMH=5. Seed 42 supplies the primary partition; seed 43 is used only for clustering sensitivity, without separate annotation calls. This seed comparison does not establish convergence.",
@@ -323,7 +323,7 @@
       "artifact_type": "scored_scientific_figure",
       "execution_enabled": false,
       "publication_ready": true,
-      "scored_inputs": "data/frozen/donor47_results_20261114/manifest.json",
+      "scored_inputs": "data/frozen/donor47_deepseek_completion_20261116/manifest.json",
       "verification_receipt": "figures/publication/Figure_S12_verification.json"
     },
     "S13": {
@@ -336,16 +336,16 @@
       ],
       "images": [
         {
-          "path": "figures/publication/Figure_S13.png",
-          "sha256": "644d885a5fcf287b3f2df1ca497b1ddd8e14ee9c3a883cbc974fdcf8bef61f4b"
+          "path": "figures/current_manuscript/PNG/Figure_S13.png",
+          "sha256": "213c5dfbe2931bd459c30872bdf26dba823bfb3d2caf9e6efcb12be49c97adeb"
         }
       ],
-      "caption": "Figure S13. Evaluation-only 23-label sensitivity on the same reference-eligible cells. (A,B) Native-28-label and projected-23-label agreement in B005; (C,D) the corresponding comparison in B006. Each panel averages eight regions equally. The fixed reference-only mask excludes ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 B005 cells and 285,973 B006 cells. Predictions mapped outside the 23-label vocabulary remain errors. These are two evaluations of the same accepted native-28-label predictions, without separate annotation calls or prediction-dependent exclusions. Daggers indicate incomplete native-output delivery; Table S15 distinguishes delivery coverage from projected-vocabulary coverage.",
+      "caption": "Figure S13. Evaluation using 28 and 23 labels. (A,B) Agreement using the original 28 labels and the 23-label projected vocabulary in B005. (C,D) The corresponding comparison in B006. Each panel averages eight regions equally. Both vocabularies use the same reference-eligible cells. The fixed reference-only mask excludes ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 cells in B005 and 285,973 in B006. Predictions outside the projected vocabulary remain errors. The comparison reuses the accepted 28-label predictions. Tables S15a\u2013S15b report projected-vocabulary coverage.",
       "scientific_status": "donor47_annotation_scored_single_run",
       "artifact_type": "scored_scientific_figure",
       "execution_enabled": false,
       "publication_ready": true,
-      "scored_inputs": "data/frozen/donor47_results_20261114/manifest.json",
+      "scored_inputs": "data/frozen/donor47_deepseek_completion_20261116/manifest.json",
       "verification_receipt": "figures/publication/Figure_S13_verification.json"
     }
   },
@@ -360,7 +360,7 @@
     "S10": "Conventional classifiers with matched47/94-marker features",
     "S11": "K100/K200 post-clustering coarsening sensitivity",
     "S12a-d": "Cross-model agreement calibration on held-out cluster IDs",
-    "S13a-c": "Native28 cross-donor annotation, planned delivery and frozen B004 classifier transfer",
+    "S13a-b": "Native 28-label cross-donor annotation with complete delivery",
     "S14a-b": "Cross-donor frozen clustering and SpatialSort seed sensitivity",
     "S15a-b": "Same-cell native28/shared23 evaluation vocabulary sensitivity"
   },
@@ -405,8 +405,8 @@
     "cross_donor_planned_cluster_predictions": 9468,
     "annotation_publication_ready": true,
     "annotation_gate": "passed_terminal_collection_and_independent_raw_response_scoring",
-    "cross_donor_strict_valid_logical_items": 123,
-    "cross_donor_delivered_cluster_predictions": 9093,
-    "cross_donor_missing_predictions": 375
+    "cross_donor_strict_valid_logical_items": 128,
+    "cross_donor_delivered_cluster_predictions": 9468,
+    "cross_donor_missing_predictions": 0
   }
 }
