@@ -1,10 +1,10 @@
 {
   "schema": "cell_masks.separate_figures_current.v1",
-  "created_utc": "2026-11-19T20:20:42.041122+00:00",
+  "created_utc": "2026-11-19T20:49:51.013926+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
-  "source_manuscript_docx_sha256": "cc1d472e5762b2d1a99c6aa94b398dcdbeeb13d4e3e195040dd13bdd3799231c",
+  "source_manuscript_docx_sha256": "42a0868313b3fc63c49dcda6bcfacaa68955bf043172b9d1a3865d60497b63c9",
   "source_saved_export": "Saved Google Docs manuscript Word export",
-  "source_saved_export_time_local": "2026-11-19T15:27:04.259277-05:00 America/New_York",
+  "source_saved_export_time_local": "2026-11-19T15:49:51.013926-05:00 America/New_York",
   "figure_count": 19,
   "png_count": 21,
   "numbering": "Current manuscript labels. Figure S5 is supplied in three parts A, B and C.",
@@ -32,11 +32,11 @@
       "current_figure": "1",
       "part": null,
       "filename": "PNG/Figure_1.png",
-      "sha256": "7f2f1cf84f86db289986c1da3dcdfda6476c977dec13f57092893927db18acdb",
-      "bytes": 500178,
+      "sha256": "34ee7d1d82de4e0aa4b980852e43a7b7c1e518964bb4506ebb6fa9d3344b60fa",
+      "bytes": 497312,
       "dimensions_px": [
         1611,
-        2048
+        1814
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -46,7 +46,7 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         1611,
-        2048
+        1814
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 247.84615384615384,
@@ -54,18 +54,18 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "7f2f1cf84f86db289986c1da3dcdfda6476c977dec13f57092893927db18acdb",
+      "live_docx_image_sha256": "34ee7d1d82de4e0aa4b980852e43a7b7c1e518964bb4506ebb6fa9d3344b60fa",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "2",
       "part": null,
       "filename": "PNG/Figure_2.png",
-      "sha256": "e0fe7edbfa3276bd08e62d887f4a8f1693b6bb1848edd71951e11027fa42d1fa",
-      "bytes": 738066,
+      "sha256": "ab9682ec46c1f8c429bad829df7b528425f221f15656a633dab0dfd5b03ff647",
+      "bytes": 732482,
       "dimensions_px": [
         1587,
-        2048
+        1909
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -75,7 +75,7 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         1587,
-        2048
+        1909
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 244.15384615384616,
@@ -83,18 +83,18 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "e0fe7edbfa3276bd08e62d887f4a8f1693b6bb1848edd71951e11027fa42d1fa",
+      "live_docx_image_sha256": "ab9682ec46c1f8c429bad829df7b528425f221f15656a633dab0dfd5b03ff647",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "3",
       "part": null,
       "filename": "PNG/Figure_3.png",
-      "sha256": "2abf75606dc181cb7f39fbc30dac572af71833704e1ea475fadf8b134485fc0a",
-      "bytes": 757586,
+      "sha256": "29e351917994e67baa004261303525da7d2531b0a158030c015f911a0ab66e67",
+      "bytes": 750640,
       "dimensions_px": [
         1692,
-        2048
+        1746
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -104,7 +104,7 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         1692,
-        2048
+        1746
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 260.3076923076923,
@@ -112,18 +112,18 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "2abf75606dc181cb7f39fbc30dac572af71833704e1ea475fadf8b134485fc0a",
+      "live_docx_image_sha256": "29e351917994e67baa004261303525da7d2531b0a158030c015f911a0ab66e67",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "4",
       "part": null,
       "filename": "PNG/Figure_4.png",
-      "sha256": "ab3cd682ae0fae9c7a23dad5dd3bb232207a61979aecf8d9c9d322d7f2d45129",
-      "bytes": 1328532,
+      "sha256": "7acfd2124d022e7ad98b5eccf62bb4fe2fcc21f7a28f02b768547e49183f2a72",
+      "bytes": 1324503,
       "dimensions_px": [
         4042,
-        4096
+        3743
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -132,27 +132,27 @@
       ],
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
-        2021,
-        2048
+        2048,
+        1897
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 621.8461538461538,
       "live_content_match": {
-        "filter": "BOX",
-        "mae_0_255": 0.026384
+        "filter": "BICUBIC",
+        "mae_0_255": 1.493775
       },
-      "live_docx_image_sha256": "c14c44c922682bdfd64bf0e76000b75ab6e2795166a9eeda08e11a5c8d2490da",
+      "live_docx_image_sha256": "cdae3ce9ef4abdffcb8e7cd9215fcf4acaa77d1ff18f6b49123336eae4b5af9b",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "5",
       "part": null,
       "filename": "PNG/Figure_5.png",
-      "sha256": "56a8a84fa072427e8bb9d77048037a8a8fc05fe9cdf6f56ba6c4b3d8274e0d4d",
-      "bytes": 205824,
+      "sha256": "4751d9527b52ecf4475dfe3e87c759602596634950dd8bb529c9bed01a00e16f",
+      "bytes": 203203,
       "dimensions_px": [
         2048,
-        1293
+        1109
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -162,7 +162,7 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1293
+        1109
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 315.0769230769231,
@@ -170,18 +170,18 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "56a8a84fa072427e8bb9d77048037a8a8fc05fe9cdf6f56ba6c4b3d8274e0d4d",
+      "live_docx_image_sha256": "4751d9527b52ecf4475dfe3e87c759602596634950dd8bb529c9bed01a00e16f",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S1",
       "part": null,
       "filename": "PNG/Figure_S1.png",
-      "sha256": "064cbba13bb1abd02f87e94adfff487aaf1e43f3eecdc106b47a5898d1b07b66",
-      "bytes": 212065,
+      "sha256": "916bea14ddd533699f0e640a3b8c9d8cca30059add5ae0d1591d5d0bbfb5814a",
+      "bytes": 190765,
       "dimensions_px": [
         1527,
-        2048
+        1864
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -191,7 +191,7 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         1527,
-        2048
+        1864
       ],
       "live_display_width_inches": 5.91,
       "native_export_pixels_per_display_inch": 258.3756345177665,
@@ -199,18 +199,18 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "064cbba13bb1abd02f87e94adfff487aaf1e43f3eecdc106b47a5898d1b07b66",
+      "live_docx_image_sha256": "916bea14ddd533699f0e640a3b8c9d8cca30059add5ae0d1591d5d0bbfb5814a",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S2",
       "part": null,
       "filename": "PNG/Figure_S2.png",
-      "sha256": "49c93812e9c87853d5f0d8e4095fb887a1ce8c7bc46742724b4a65540e3f01cc",
-      "bytes": 429219,
+      "sha256": "33abf6bc8cc0a5454ac146cea2b24f9b23eebc5c2eacfdb572ca3a59eb7b4e5e",
+      "bytes": 478064,
       "dimensions_px": [
         3900,
-        3148
+        2769
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -220,26 +220,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1653
+        1454
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
-        "filter": "BICUBIC",
-        "mae_0_255": 0.342641
+        "filter": "LANCZOS",
+        "mae_0_255": 0.423739
       },
-      "live_docx_image_sha256": "7242a92154c0c725b1fd6970ed5a742c122d3ecfc15754796d0407a8f9ac3717",
+      "live_docx_image_sha256": "a9a4c3cd872f3748a4b5b7f4afbc59dcdc966b76789d05dae1a54777af79ee2a",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S3",
       "part": null,
       "filename": "PNG/Figure_S3.png",
-      "sha256": "2cd7edffc45f701bb83f9989190dc5f208d5ed5bd47b790e581ccb22574ea218",
-      "bytes": 664470,
+      "sha256": "f5f7c5d5f697d8b0ed1492c34e34c408e82c6e9273ad8c2bd63c87e6acaf2e13",
+      "bytes": 665277,
       "dimensions_px": [
         3600,
-        2616
+        2372
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -249,26 +249,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1488
+        1349
       ],
       "live_display_width_inches": 6.0,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 0.553553
+        "mae_0_255": 0.951323
       },
-      "live_docx_image_sha256": "a885b5eecd1fcd3aaf3274bfc84bbc30f77c4c0eefdf92e4bc0afc9fea2c5833",
+      "live_docx_image_sha256": "5bf44ba015f5ad548b9c8034bc8bd8ae20ed85f09efbb69e42d7b062ebc1d5a6",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S4",
       "part": null,
       "filename": "PNG/Figure_S4.png",
-      "sha256": "5c9400e40033b19f5ab4c4ffebf9fa25fb9c83ec0b998f311fc1c1a067a12576",
-      "bytes": 2434031,
+      "sha256": "9c50024e393ad011d16c4aac1e130968a6d547f2faff9a68fa611f6e00544fb3",
+      "bytes": 2600827,
       "dimensions_px": [
         3900,
-        3656
+        3339
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -278,26 +278,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1920
+        1753
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 0.272442
+        "mae_0_255": 0.545284
       },
-      "live_docx_image_sha256": "c75cd58f04b1036a4e4c5d806c1ca0e10a226e520e8df04819f9fb8d334f288a",
+      "live_docx_image_sha256": "049394208220537cc6bffc100fb5109b8c63aa55fd5d2a207bb9e29e2690d867",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S5",
       "part": "A",
       "filename": "PNG/Figure_S5_part_A.png",
-      "sha256": "18b1ae573148d7de993f91206943bc39823d63e3699624ff3100b5a50f0da0c8",
-      "bytes": 240746,
+      "sha256": "efc60c53c1a7cf106f314c9eb49c339e89da9a07c01aef621d70cbfa925a2c79",
+      "bytes": 239954,
       "dimensions_px": [
         3900,
-        1592
+        1417
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -307,26 +307,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        836
+        744
       ],
       "live_display_width_inches": 5.91,
       "native_export_pixels_per_display_inch": 659.8984771573604,
       "live_content_match": {
-        "filter": "BOX",
-        "mae_0_255": 0.289768
+        "filter": "BICUBIC",
+        "mae_0_255": 0.389609
       },
-      "live_docx_image_sha256": "7a5f0994902ab676e49026645490d5e2e043af1d94b77e01e0ce55fa98228a0e",
+      "live_docx_image_sha256": "68891cb50d13c8b89eace4adcd1eabffe14272568d9e6355e89ec4b3df8ab5a7",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S5",
       "part": "B",
       "filename": "PNG/Figure_S5_part_B.png",
-      "sha256": "b7f6bc04d6462d863a02815dfd23ebd741f91e936d375ca5e60ab1705cf30760",
-      "bytes": 252586,
+      "sha256": "160a2b6eba7749774f9383f993bd3ae4b881e948e157fae1cba8244192e60139",
+      "bytes": 287792,
       "dimensions_px": [
         3900,
-        1480
+        1294
       ],
       "mode": "RGBA",
       "dpi_metadata": [
@@ -336,26 +336,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        777
+        680
       ],
       "live_display_width_inches": 5.91,
       "native_export_pixels_per_display_inch": 659.8984771573604,
       "live_content_match": {
-        "filter": "BICUBIC",
-        "mae_0_255": 0.454139
+        "filter": "BOX",
+        "mae_0_255": 0.941876
       },
-      "live_docx_image_sha256": "a74db834760b78336c8a8fded3ca16f1e3aee03fd2ce7eb271e6355429b8d9eb",
+      "live_docx_image_sha256": "95d983e91771d818844d4926395d849788323294c2f5304e39b2385ec3871863",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S5",
       "part": "C",
       "filename": "PNG/Figure_S5_part_C.png",
-      "sha256": "d24fd89aa1aeb765a78a2050ad60df0c15dac83b0b7133154a19015907fc4eac",
-      "bytes": 642482,
+      "sha256": "48e037e5c2de12abccbac32c542c261e1553fff90336a98d19c1b6f43fed368c",
+      "bytes": 655685,
       "dimensions_px": [
         3900,
-        2869
+        2650
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -365,26 +365,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1507
+        1392
       ],
       "live_display_width_inches": 5.91,
       "native_export_pixels_per_display_inch": 659.8984771573604,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 1.064522
+        "mae_0_255": 1.178279
       },
-      "live_docx_image_sha256": "7c91f3aa2d5ed9ca065c51c7201775e859b9c434ce53c2c5d722dc4051d5e415",
+      "live_docx_image_sha256": "c871a8519aa532d7474d0827ba199815c76e438c0124184f4ad0eb506437cd6d",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S6",
       "part": null,
       "filename": "PNG/Figure_S6.png",
-      "sha256": "f22f2ff42bc16b108b229e71bcfa49d5b9eee157f4d1c25213fc4de9a7ef958c",
-      "bytes": 3339550,
+      "sha256": "0899161c63f58499466fa8f74dd508b9020ff6c27ca45b53a9015e847b2f2ee3",
+      "bytes": 3362820,
       "dimensions_px": [
         3900,
-        4995
+        4527
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -393,27 +393,27 @@
       ],
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
-        1599,
+        1764,
         2048
       ],
       "live_display_width_inches": 5.91,
       "native_export_pixels_per_display_inch": 659.8984771573604,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 1.311627
+        "mae_0_255": 1.758316
       },
-      "live_docx_image_sha256": "cf494a6e5691efd7bee81abf28d93b2530950ff1fe47d6cf4e27f9e56bda3129",
+      "live_docx_image_sha256": "dd22d52d04c43636b21f63ad469b75b01e25474afad63c95870751b4a3dc0716",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S7",
       "part": null,
       "filename": "PNG/Figure_S7.png",
-      "sha256": "042840d649f9cf8a4ff7becc39c162b8e01bcce09b349b65bf310719cb16bedd",
-      "bytes": 129934,
+      "sha256": "7a48b6a2af5f43e814b7360e8649ea1b4df0fbfaeb23f0775fa56f94509193bc",
+      "bytes": 129842,
       "dimensions_px": [
         3900,
-        1338
+        1137
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -423,26 +423,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        703
+        597
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 0.379765
+        "mae_0_255": 0.250491
       },
-      "live_docx_image_sha256": "c408ca16677ca5cc617c6128afea8a1d1adb6afc6c6ff0876a9417c9fbdd786c",
+      "live_docx_image_sha256": "046e8586e21106d29f87b832ac96dff9c3c4e110868a56729bcda29724672f3a",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S8",
       "part": null,
       "filename": "PNG/Figure_S8.png",
-      "sha256": "2f6ba34034042eab25c1b5e0bdc9939230e6b318f4e911c13aaaa44f08c1f5c5",
-      "bytes": 352873,
+      "sha256": "b4ec4eade7381e411b4e6084497b0da22501d60f5aea7bee45e8ebe18ff0a700",
+      "bytes": 344570,
       "dimensions_px": [
         3900,
-        2837
+        2336
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -452,26 +452,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1490
+        1227
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 0.542149
+        "mae_0_255": 0.879767
       },
-      "live_docx_image_sha256": "e76e18c73692c05e1add5f21425c494c1063b796cc34a609776871c3efd3f449",
+      "live_docx_image_sha256": "99d856da6e95fad647fc93299b654e56f380deb3725e0a4e6c06888b6a9900ea",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S9",
       "part": null,
       "filename": "PNG/Figure_S9.png",
-      "sha256": "06ecf927f5ff8635c4df9a73256c52a0d144c3e17f18140d74ce66a96535cc34",
-      "bytes": 262134,
+      "sha256": "b50c4d2afe00a44a5a8146b43a9f609c0b3fa92da93e7bf62400d662bc2a0f56",
+      "bytes": 256034,
       "dimensions_px": [
         3900,
-        2214
+        1873
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -481,26 +481,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1163
+        984
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 0.431989
+        "mae_0_255": 0.584402
       },
-      "live_docx_image_sha256": "582efd638734a50249c88f5ad6adbcc6604ddb7b4013d7853c05fbe44be351b7",
+      "live_docx_image_sha256": "bd9a4135428c901de585a017819b75c19f717783e23de508377b42dc9828eb64",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S10",
       "part": null,
       "filename": "PNG/Figure_S10.png",
-      "sha256": "09604ba73710a2fce18c58018a2b834671349724b6cde09e1e3871986816a8df",
-      "bytes": 345853,
+      "sha256": "37f4512e683556c7ecbdeda3fafa483fa9188e5cd0bc76db562a0fcc703d6ee8",
+      "bytes": 343228,
       "dimensions_px": [
         4096,
-        2646
+        2488
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -510,26 +510,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1323
+        1244
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 630.1538461538462,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 0.010655
+        "mae_0_255": 0.01383
       },
-      "live_docx_image_sha256": "bd27c52792a17a44483522ad222a6a59158695f000e4a0c8fafa30209dcab7a3",
+      "live_docx_image_sha256": "5584a1f7f96ee8aa3ccd318b418a324d898e28055bbb7c96c85396f9f2806aaf",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S11",
       "part": null,
       "filename": "PNG/Figure_S11.png",
-      "sha256": "86c993549811e171a41712cc398791afb5e356f11d5e4783a5624ed780c838ca",
-      "bytes": 321173,
+      "sha256": "7e03a26648619fb6c7980585a61fec7e6c70959e8c8a16fad3b1eb381b989ea4",
+      "bytes": 316773,
       "dimensions_px": [
         3900,
-        1013
+        899
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -539,26 +539,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        532
+        472
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 0.713135
+        "mae_0_255": 0.917352
       },
-      "live_docx_image_sha256": "fbfb90e19eb26e37fd59e4753e756974642aea571406cc2b5b25ff70b54190dd",
+      "live_docx_image_sha256": "3b88b09ce40a050a2b429a90e536777e3c1211d299cc617deb99d49c56896ae9",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S12",
       "part": null,
       "filename": "PNG/Figure_S12.png",
-      "sha256": "66cf25c5591d591e2f12822a6a85a9c331c653824a07384588d97e8d98ab1d1b",
-      "bytes": 173412,
+      "sha256": "9ec31fa3247ab857b69cf2c927dbdc5003493e8f72182c1ef7d02b7793ef8956",
+      "bytes": 161978,
       "dimensions_px": [
         3900,
-        1646
+        1430
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -568,26 +568,26 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        864
+        751
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
-        "filter": "BOX",
-        "mae_0_255": 0.377635
+        "filter": "BICUBIC",
+        "mae_0_255": 0.379793
       },
-      "live_docx_image_sha256": "db1f00ff54d10796f3b5635096909ebd276c255dc28c38acad1ea0f1e6ef89d0",
+      "live_docx_image_sha256": "1ab8f84df11eb51dc15c8365ad000db26b07a8843899cceedfb0739758b6d89a",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
       "current_figure": "S13",
       "part": null,
       "filename": "PNG/Figure_S13.png",
-      "sha256": "0e999f3cb8874edae1837262ae854aff60079c1eb8b9c0afad050335be08e498",
-      "bytes": 387808,
+      "sha256": "9237c888c0edbb8026c9c3a5d3ed7d8b080424f1b86fde4e35d2c6e6746721dc",
+      "bytes": 383377,
       "dimensions_px": [
         3900,
-        2289
+        2090
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -597,15 +597,15 @@
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
-        1202
+        1098
       ],
       "live_display_width_inches": 6.5,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BICUBIC",
-        "mae_0_255": 0.479333
+        "mae_0_255": 0.968486
       },
-      "live_docx_image_sha256": "2cfa2428552ca1137166ba5f89a527494c12664f0f7d7d7a2468747c79a246ca",
+      "live_docx_image_sha256": "a62ed8f75e905e3e9c9b250e6841fe9b987863e49eaa24caf9532684279a0e4b",
       "source": "verified_figure_artwork_at_manuscript_display_width",
       "source_manuscript_docx_sha256": "51d1de8c6be54841fc62934f34b3d28e7ec45e6ec88ee073bef6d66a0eb16bd9",
       "source_artwork_commit": "6094f9a48726d8dc25635f4d5ae674d7edd02b7b"
@@ -614,11 +614,11 @@
       "current_figure": "S14",
       "part": null,
       "filename": "PNG/Figure_S14.png",
-      "sha256": "bccf287480573692442cf53dca948bab67595e3d5ebdeadd17c6c3c11a7d9494",
-      "bytes": 6759347,
+      "sha256": "9ab969180b692fe0cc7cd18316e172adcd9c4ae12e5a86e305a37113b343e365",
+      "bytes": 6756478,
       "dimensions_px": [
         2550,
-        4692
+        4495
       ],
       "mode": "RGB",
       "dpi_metadata": [
@@ -627,16 +627,16 @@
       ],
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
-        1113,
+        1162,
         2048
       ],
       "live_display_width_inches": 4.25,
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
-        "filter": "BOX",
-        "mae_0_255": 2.222306
+        "filter": "BICUBIC",
+        "mae_0_255": 2.442431
       },
-      "live_docx_image_sha256": "db8b3bb9157f16fb5c637419fe19240454c70f498a9992cc3f9b9176e317f066",
+      "live_docx_image_sha256": "aa25ff5530c9df8aefb01000ebe5ffe0d38a958ac3ce94c8f091319582478890",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     }
   ],
