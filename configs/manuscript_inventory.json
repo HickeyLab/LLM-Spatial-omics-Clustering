@@ -35,7 +35,7 @@
       "images": [
         {
           "path": "figures/manuscript/Figure_2.png",
-          "sha256": "3fde85482c7eb9891c49f36a66e071240533fe8b2a87dec565a7816c674c8e51"
+          "sha256": "2562024d87a46713be54d334fc008c5de92a097f200d345cdb5e9cec8a9def2d"
         }
       ],
       "caption": "Figure 2. Benchmarking unsupervised clustering against reference cell-type annotations. (A) Workflow from CODEX images and cell features to clustering and reference-majority labeling. The workflow illustration was created with BioRender.com. (B\u2013C) Reference cell counts and a representative spatial map. Cell-type colors in C and D correspond to B. (D) UMAP embeddings colored by reference or cluster-assigned labels, with boxed regions enlarged above [36]. (E, G) Regional cell-count-weighted F1 and cluster purity after majority labeling within each region. Points identify regions. Boxes show medians and interquartile ranges, with 1.5-interquartile-range whiskers. (F, H) Cell-type F1 (0\u20131) and recall (0\u2013100%) after global majority labeling, with reference-cell counts at right. E\u2013H use 209,587 non-Noise cells and 20 harmonized classes, with alphabetical tie-breaking. The eight regions are within-donor observations. Conditional comparisons are in Supplementary Table S7. Leiden, FlowSOM and SpatialSort used 47 markers. The primary FlowSOM and SpatialSort partitions contained 299 and 229 occupied clusters, respectively. Methods and limitations are in Sections 2.9 and 2.17. CD8+ T marker-expression profiles are shown in Figure S11. Source data: Duke Research Data Repository record 505 (Availability of Data and Materials).",

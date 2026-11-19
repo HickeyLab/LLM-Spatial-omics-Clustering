@@ -106,7 +106,7 @@ def figure_2(out):
     # Current manuscript Figure2 ends atH. Historical annotation profiles were
     # moved toS11A and the reference-selected spatial examples were removed.
     f=figure(224)
-    panel(f,"A",3,2)
+    panel(f,"A",3,0.8)
     workflow_inputs=add_workflow(f,"2A")
     panel(f,"B",3,39)
     counts = ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
