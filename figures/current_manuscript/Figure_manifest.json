@@ -32,8 +32,8 @@
       "current_figure": "1",
       "part": null,
       "filename": "PNG/Figure_1.png",
-      "sha256": "f4bb5cf0f99621edd40417d1390c8fe1a2cc875a66bf1c6a67988b06c1b34060",
-      "bytes": 1159754,
+      "sha256": "1e69b382b4113d485d4a6a9bffe45bf2383938477c5d30a3d187357fba14c231",
+      "bytes": 1161924,
       "dimensions_px": [
         3900,
         4959
@@ -52,17 +52,17 @@
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 1.07749
+        "mae_0_255": 1.04367
       },
-      "live_docx_image_sha256": "655d15de867302202969d770004350523e461abf077c910675c3e2570f293c6e",
+      "live_docx_image_sha256": "908a0d6036bbae29d865b8887d750a94145e3bed45ed3facde97ab0df43e79c9",
       "source": "verified_higher_resolution_authoring_export"
     },
     {
       "current_figure": "2",
       "part": null,
       "filename": "PNG/Figure_2.png",
-      "sha256": "3d04ef10e401618e5295344f0d8ebbd2a861e6ea59861578d02d7d28373019d2",
-      "bytes": 2692191,
+      "sha256": "8241cb29ee60f22cbaee9d902431225017886ffdba5b64781b16d542fa9cda49",
+      "bytes": 2773723,
       "dimensions_px": [
         3900,
         5033
@@ -81,9 +81,9 @@
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 1.132573
+        "mae_0_255": 1.265777
       },
-      "live_docx_image_sha256": "dee477c013f877923fbb5a40bc52bec6fe9ac1d1feda440ff25350b4aacf2212",
+      "live_docx_image_sha256": "27c4e67c288f3187a5eb815b3b9fc3d822897a45aad6f095fbf39bb994657083",
       "source": "verified_higher_resolution_authoring_export"
     },
     {
@@ -116,14 +116,17 @@
       "current_figure": "4",
       "part": null,
       "filename": "PNG/Figure_4.png",
-      "sha256": "fe14174410f916eee4da3636b296f5a8b92a35b7402bdd79c07846f98e6503f6",
-      "bytes": 1198710,
+      "sha256": "47a9cbe88a5a3097a35b11d83cddf2e889ba6057e1b1272a236f262a7e10cb98",
+      "bytes": 1335949,
       "dimensions_px": [
         4042,
         4096
       ],
       "mode": "RGB",
-      "dpi_metadata": null,
+      "dpi_metadata": [
+        621.8428,
+        621.8428
+      ],
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2021,
@@ -133,9 +136,9 @@
       "native_export_pixels_per_display_inch": 621.8461538461538,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 0.023998
+        "mae_0_255": 0.023367
       },
-      "live_docx_image_sha256": "4190cd7383eb4e09ed8026813dd97c4cca29f78c4e138bcdb94a9081a94a3bd3",
+      "live_docx_image_sha256": "9c2e17b02060bc055f824b53d5dc98d2c1c6517367a0375d314aaa48167803cd",
       "source": "verified_higher_resolution_authoring_export"
     },
     {
@@ -461,26 +464,29 @@
       "current_figure": "S9",
       "part": null,
       "filename": "PNG/Figure_S9.png",
-      "sha256": "0664f9a05f02f9f7a5350ed0ca5c267e94fae926abc7d5003d6055556d45cd68",
-      "bytes": 179291,
+      "sha256": "2190ae832976d1c77fa78dd3a2b96ff123bf70b05e7aa3d78aefeef72899e74f",
+      "bytes": 284201,
       "dimensions_px": [
-        4096,
-        2326
+        3900,
+        2214
       ],
-      "mode": "RGB",
-      "dpi_metadata": null,
+      "mode": "RGBA",
+      "dpi_metadata": [
+        599.9988,
+        599.9988
+      ],
       "native_file_copied_byte_exactly": true,
       "live_docx_image_dimensions_px": [
         2048,
         1163
       ],
       "live_display_width_inches": 6.5,
-      "native_export_pixels_per_display_inch": 630.1538461538462,
+      "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 0.008703
+        "mae_0_255": 0.58861
       },
-      "live_docx_image_sha256": "8913c0b48966e9727ee0dd2d79e8d8195429237f916ffaec3695d6a3d678b320",
+      "live_docx_image_sha256": "4050ef9207b881bebc73394b30df4ffd1e7dc2cbce593c4f280519defc0f7f9a",
       "source": "verified_higher_resolution_authoring_export"
     },
     {
@@ -597,5 +603,18 @@
       "source": "verified_higher_resolution_authoring_export"
     }
   ],
-  "prior_public_figure_snapshot": "f72de2eca87b21c69987534693170d8dd1c6c2c1"
+  "prior_public_figure_snapshot": "f72de2eca87b21c69987534693170d8dd1c6c2c1",
+  "source_snapshot_overrides": [
+    {
+      "current_figures": [
+        "1",
+        "2",
+        "4",
+        "S9"
+      ],
+      "source_manuscript_docx_sha256": "5910690eee132c5ab193890daa9c48c607ad1576f0d96628ed1bbc5fca8170a8",
+      "source_saved_export": "Saved Google Docs manuscript Word export",
+      "source_saved_export_time_local": "2026-11-19 America/New_York"
+    }
+  ]
 }
