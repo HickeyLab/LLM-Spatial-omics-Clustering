@@ -23,7 +23,7 @@ class ManuscriptAlignmentTests(unittest.TestCase):
         self.assertEqual(receipt['figure_2_regional_values'], 64)
         self.assertEqual(receipt['figure_2_celltype_values'], 160)
         self.assertEqual(receipt['figure_3_method_model_maps'], 16)
-        self.assertEqual(receipt['approved_images'], 15)
+        self.assertEqual(receipt['approved_images'], 20)
 
     def test_corrupted_input_is_rejected_before_plotting(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -37,16 +37,13 @@ class ManuscriptAlignmentTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'Frozen table changed'):
                     manuscript.read_table('table.csv')
 
-    def test_current_panel_arrangement_and_notebook_python(self):
+    def test_native_panel_arrangement_and_notebook_python(self):
         inventory = manuscript.inventory()['figures']
         self.assertEqual(inventory['2']['panels'], list('ABCDEFGH'))
         self.assertEqual(inventory['S11']['panels'], ['A'])
         self.assertEqual(inventory['3']['panels'], list('ABCDE'))
-        self.assertEqual(len(inventory), 13)
-        self.assertEqual(sum(len(r['images']) for r in inventory.values()), 15)
-        self.assertNotIn('5', inventory)
-        self.assertNotIn('S8', inventory)
-        self.assertNotIn('S9', inventory)
+        self.assertEqual(set(inventory), {str(i) for i in range(1, 6)} | {f'S{i}' for i in range(1, 14)})
+        self.assertEqual(sum(len(r['images']) for r in inventory.values()), 20)
         self.assertEqual(inventory['S5']['panels'], ['A'])
         for key in ['3','4','S6','S7','S10','S11']:
             self.assertEqual(inventory[key]['scientific_status'], 'annotation47_scored_single_run')
@@ -54,8 +51,10 @@ class ManuscriptAlignmentTests(unittest.TestCase):
             self.assertNotIn('historical', inventory[key]['caption'].lower())
         self.assertEqual(inventory['4']['panels'], list('ABCDE'))
         self.assertEqual(inventory['S4']['panels'], list('ABCD'))
-        for record in inventory.values():
-            notebook = json.loads((ROOT / record['notebook']).read_text())
+        notebooks = {key: record['notebook'] for key, record in inventory.items() if record.get('notebook')}
+        self.assertEqual(set(inventory) - set(notebooks), {'5', 'S12', 'S13'})
+        for path in notebooks.values():
+            notebook = json.loads((ROOT / path).read_text())
             for cell in notebook['cells']:
                 if cell['cell_type'] == 'code':
                     ast.parse(''.join(cell['source']))
