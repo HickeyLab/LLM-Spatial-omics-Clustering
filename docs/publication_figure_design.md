@@ -54,13 +54,9 @@ PDF fonts are embedded TrueType and SVG labels remain editable text. An
 installed Arial is needed to reproduce the committed font appearance.
 
 The [EXO author instructions](https://sciexplor.com/exo/author_instructions)
-describe distinct labels as “(A), (B), (C)”. Actual Figure 2 artwork in both
-[Kandinsky](https://sciexplor.com/exo/articles/EXO.2025.0017) and
-[STAMP](https://sciexplor.com/exo/articles/EXO.2026.0012), visually inspected on
-31 October 2026, uses plain uppercase letters without parentheses. Their
-captions use parenthesized panel references. This artwork follows those
-published examples with bold A, B, C and retains (A), (B), (C) in captions.
-Figure 5 and S10 now have A–D, and S8 has A–B. Single-panel S7 is unlettered.
+show panel labels in the form “(A), (B), (C)”. Main and supplementary artwork
+use bold uppercase letters in parentheses. Captions use the same convention.
+Single-panel artwork without panel identifiers needs no lettering.
 
 The [Nature research figure guide](https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/)
 and the supplied [Hickey et al. Nature example](https://www.nature.com/articles/s41586-023-05915-x)

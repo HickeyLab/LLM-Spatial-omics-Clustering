@@ -126,10 +126,11 @@ def verify_native(folder, render_qa=None, figure_ids=None):
         assert minimum >= 5.4999, (name,minimum)
         assert abs(minimum-receipt['minimum_font_pt']) < .001
         assert {s['font'] for s in spans}.issubset({'ArialMT','Arial-BoldMT','Arial-ItalicMT'})
-        letters = [s['text'] for s in spans if s['size'] >= 7.99 and 'Bold' in s['font']
-                   and re.fullmatch('[A-J]',s['text'])]
+        panel_labels = [s['text'] for s in spans if s['size'] >= 7.99 and 'Bold' in s['font']
+                        and re.fullmatch(r'\([A-J]\)|[A-J]', s['text'])]
+        assert all(re.fullmatch(r'\([A-J]\)', label) for label in panel_labels), (name, panel_labels)
+        letters = [label[1] for label in panel_labels]
         assert ''.join(sorted(letters)) == expected_panels, (name,letters)
-        assert not any(re.fullmatch(r'\([A-J]\)',s['text']) for s in spans)
         assert not re.search(r'\bFigure\s+(?:[1-5]|S\d)',page.get_text())
         assert abs(page.rect.width-receipt['width_mm']/25.4*72) < .01
         assert abs(page.rect.height-receipt['height_mm']/25.4*72) < .01

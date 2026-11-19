@@ -94,7 +94,7 @@ def main():
                 'labels':[],'size_pixels':size})
     files=[by_file[e['path']] for r in inventory['figures'].values() for e in r['images']]
     manifest = {'schema':'manuscript.artwork.v2','figure_count':len(inventory['figures']),'image_count':len(files),
-                'policy':'Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, plain uppercase bold panel letters, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.',
+                'policy':'Figure numbers, figure-level titles, descriptive panel titles and explanatory notes stay in captions. Artwork retains distinguishing condition, model, method, population and metric labels, uppercase bold panel letters in parentheses, axes, keys, units and values. Physical-size typography and proportional placement follow the publication design configuration.',
                 'native_renderer':'scripts/render_publication_figures.py',
                 'style_file':'configs/publication_figure_style.json',
                 'style_sha256':digest(ROOT/'configs/publication_figure_style.json'),

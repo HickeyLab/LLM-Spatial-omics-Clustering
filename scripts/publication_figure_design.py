@@ -80,7 +80,8 @@ def text(f, x, y, value, size=6, **kw):
 
 
 def panel(f, letter, x, y, title=None, title_x=None):
-    text(f, x, y, letter, size=8, weight="bold")
+    label = STYLE["panel_letter_format"].format(letter=letter)
+    text(f, x, y, label, size=STYLE["panel_letter_font_pt"], weight="bold")
     if title:
         text(f, title_x if title_x is not None else x + 8, y + .35,
              title, size=6.5, weight="bold")
@@ -312,7 +313,8 @@ def finish(f, name, output, inputs=None, notes=None):
              "minimum_font_pt":min_size,"font_family":"Arial",
              "minimum_placement_width_mm":round(fw*5/min_size,3),
              "raster_dpi":600,"raster_size_pixels":pixel_size,
-             "vector_text_editable":True,"panel_letter_format":"A",
+             "vector_text_editable":True,
+             "panel_letter_format":STYLE["panel_letter_format"].format(letter="A"),
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
              "provider_logos":getattr(f,"_provider_logo_overlays",None),
              "layout_compaction":f._layout_compaction,

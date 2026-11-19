@@ -1020,25 +1020,25 @@ iVBORw0KGgoAAAANSUhEUgAAACQAAANICAYAAACv3k0kAAAE2UlEQVR4nO2c0ZHjWAzEKA5iucwvTFub
    <g id="LineCollection_4"/>
   </g>
   <g id="text_109">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="14.230187" transform="rotate(-0 8.503937 14.230187)">A</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="14.327687" transform="rotate(-0 8.503937 14.327687)">(A)</text>
   </g>
   <g id="text_110">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="127.559055" y="13.156515" transform="rotate(-0 127.559055 13.156515)">GPT-6 Astra</text>
   </g>
   <g id="text_111">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="14.230187" transform="rotate(-0 240.944882 14.230187)">B</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="14.327687" transform="rotate(-0 240.944882 14.327687)">(B)</text>
   </g>
   <g id="text_112">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360" y="13.235734" transform="rotate(-0 360 13.235734)">Claude Opus 5.5</text>
   </g>
   <g id="text_113">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="151.810659" transform="rotate(-0 8.503937 151.810659)">C</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="151.908159" transform="rotate(-0 8.503937 151.908159)">(C)</text>
   </g>
   <g id="text_114">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="127.559055" y="150.816206" transform="rotate(-0 127.559055 150.816206)">Gemini 4 Argon</text>
   </g>
   <g id="text_115">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="151.810659" transform="rotate(-0 240.944882 151.810659)">D</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="151.908159" transform="rotate(-0 240.944882 151.908159)">(D)</text>
   </g>
   <g id="text_116">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360" y="150.816206" transform="rotate(-0 360 150.816206)">DeepSeek V4.1 Flash 1017</text>

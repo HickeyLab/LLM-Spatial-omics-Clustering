@@ -191,7 +191,7 @@ def figure_3(out):
 
 def figure_4(out):
     f = figure(191)
-    panel(f, "A", 3, 2)
+    panel(f, "A", 2.4, 2)
     workflow_inputs = add_workflow(f, "4A", annotation_model="Astra")
     panel(f, "B", 3, 35, "Test-cell confusion")
     counts, mat = confusion_matrix(model_family="openai")

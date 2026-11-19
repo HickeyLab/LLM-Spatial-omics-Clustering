@@ -11,7 +11,7 @@
     3146
   ],
   "vector_text_editable": true,
-  "panel_letter_format": "A",
+  "panel_letter_format": "(A)",
   "biorender_workflow": null,
   "provider_logos": null,
   "layout_compaction": {
@@ -52,20 +52,20 @@
   ],
   "files": {
     "Figure_S9.svg": {
-      "sha256": "586d5f89afb4014be0710317b1f0a9afc6adc1bf1516672d2b2f5d515cbfbdef",
-      "bytes": 49413
+      "sha256": "911ff1f574e549e9f435328a683d3d0a561aba45513d30f0eb277fe7bbab7c02",
+      "bytes": 49421
     },
     "Figure_S9.pdf": {
-      "sha256": "ebe616a38f7a44e7c5c8dd8f0badd2021b528dd583e8a134fb65c1c743c0bd06",
-      "bytes": 41445
+      "sha256": "c3f6a11b0b583159f6cad7fdd226ccaa91b1f0f08ac6c8e816447ffec20aeb34",
+      "bytes": 41754
     },
     "Figure_S9.png": {
-      "sha256": "ada95299320c3d7da8c4c813b2e221f0771c27a8cc422fd59458983c4e7050b5",
-      "bytes": 377608
+      "sha256": "53e77c2ed6dd7fc612a80138e5fcf32c1b5dacdc22042d5f87aeb1b76e26e095",
+      "bytes": 382702
     },
     "Figure_S9.tiff": {
-      "sha256": "57b993f201349b2c36a22bb9158f13ffa76c89d803d480a78cf06f4f39de986a",
-      "bytes": 597716
+      "sha256": "c0a8f05ecd225357f959ddaa622dc3e89d70efd55cd3a62cb7f706976177321d",
+      "bytes": 602054
     }
   }
 }

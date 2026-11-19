@@ -2453,7 +2453,7 @@ z
 " style="fill: #ffffff"/>
    </g>
    <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAA6kAAAApCAYAAADXh2/2AAACMElEQVR4nO3XQVKEMBAF0NH7H9aN2+A20yk6QqH1F+/tqA5JJ8Do/zi+v47X7Jgv30vvtSfHNvd1814Ye/zRvI/t+9F56/U4r41Rxs7n0NRKfTnfZd6mh26dWhsX9nZlzdHt+/36uHlGbe/13t284+Z5ds/7yX6vPKe7z7Tem35m7Te866+53vZ3c+yl34q+3+M/9vZgv/efRf1z2rzryxndnHe35j/0Vz+f7htv11zm3b1X3fNv9nph7PrTcP4vU1db5l1aaOZd+qvz/r6H0fTQ9bfMO5razTVrfX+ecz/vxfXVmXp4lVq9bsZ2r/pRRnfrLP019y77Xnpq9tbcW9dcezpfc+l3/plZxs7jfn9Gyz6be+uadS/zGXX7rPWxOaPR1s7vvdTvduxcO05rux7qs+n3Vuf9m34/XwAAABBCSAUAACCGkAoAAEAMIRUAAIAYQioAAAAxhFQAAABiCKkAAADEEFIBAACIIaQCAAAQQ0gFAAAghpAKAABADCEVAACAGEIqAAAAMYRUAAAAYgipAAAAxBBSAQAAiCGkAgAAEENIBQAAIIaQCgAAQAwhFQAAgBhCKgAAADGEVAAAAGIIqQAAAMQQUgEAAIghpAIAABBDSAUAACCGkAoAAEAMIRUAAIAYQioAAAAxhFQAAABiCKkAAADEEFIBAACIIaQCAAAQQ0gFAAAghpAKAABADCEVAACAGEIqAAAAMYRUAAAAYgipAAAAxBBSAQAAiPED/1/41IBP+DEAAAAASUVORK5CYII=" id="image45e2e275c7" transform="scale(1 -1) translate(0 -4.839344)" x="343.003279" y="-28.327869" width="110.596721" height="4.839344"/>
+iVBORw0KGgoAAAANSUhEUgAAA6kAAAApCAYAAADXh2/2AAACLUlEQVR4nO3Xu3brIBAFUOf+/8emSSvSYrgajKI4p9i70wKGQZIf56N9fbZHr/WXz0PPY3fOLdZVdTfmtl+qe9u5b607Xh/nY0c3No736xZ127Ju0UO1zzh2bJxtZ8++7tTP83W7eI/K3se1q7rHxft5vKnfned09ZmOa9PvWfkZXvXXftDfxblb3xV1v+0dZ7ux3+vPYvw5Ld716R5drLva8w39jR+f6jNe7jnVXb1X1fMvzroxd/5qOP/LVI1NdacWirrHqu7rPfT77PQ31T3u33P3LNU9ml+drofH6q/Y+dzqVW/D7Gqfqb9i7XTuqafibMXacc+5p/M9p377r5lpbj/v9Xs0nbNYO+45nqW/R9U5x/F+3f/rvrbnXHej38dqbj827Fmsnd/l87XVnuO+d/b7b7gGAACAPyOkAgAAEENIBQAAIIaQCgAAQAwhFQAAgBhCKgAAADGEVAAAAGIIqQAAAMQQUgEAAIghpAIAABBDSAUAACCGkAoAAEAMIRUAAIAYQioAAAAxhFQAAABiCKkAAADEEFIBAACIIaQCAAAQQ0gFAAAghpAKAABADCEVAACAGEIqAAAAMYRUAAAAYgipAAAAxBBSAQAAiCGkAgAAEENIBQAAIIaQCgAAQAwhFQAAgBhCKgAAADGEVAAAAGIIqQAAAMQQUgEAAIghpAIAABBDSAUAACCGkAoAAEAMIRUAAIAYQioAAAAxhFQAAABiCKkAAAA8UnwD/1/41LTow04AAAAASUVORK5CYII=" id="image6d1a544698" transform="scale(1 -1) translate(0 -4.839344)" x="343.003279" y="-28.327869" width="110.596721" height="4.839344"/>
    <g id="matplotlib.axis_3">
     <g id="xtick_48">
      <g id="line2d_52">
@@ -2561,7 +2561,7 @@ z
    </g>
   </g>
   <g id="text_57">
-   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">A</text>
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.493041" transform="rotate(-0 8.503937 11.493041)">(A)</text>
   </g>
   <g id="text_58">
    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="11.313995" transform="rotate(-0 31.181102 11.313995)">CD8+ T</text>
