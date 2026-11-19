@@ -1,12 +1,12 @@
 {
   "schema": "cell_masks.separate_figures_current.v1",
-  "created_utc": "2026-11-19T17:37:12.561212+00:00",
+  "created_utc": "2026-11-19T18:05:37.764642+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
-  "source_manuscript_docx_sha256": "85f59f4f053417ff715033fa262e1febdf5183bd0731dcef805adb26e43e0be2",
+  "source_manuscript_docx_sha256": "4b693cb7e6ba7471cd757a57b470081161cd60dd87150079f13a903e79d07dfd",
   "source_saved_export": "Saved Google Docs manuscript Word export",
   "source_saved_export_time_local": "2026-11-19 America/New_York",
-  "figure_count": 18,
-  "png_count": 20,
+  "figure_count": 19,
+  "png_count": 21,
   "numbering": "Current manuscript labels. Figure S5 is supplied in three parts A, B and C.",
   "all_png_sources_preserved_without_resampling": true,
   "all_current_native_pngs_bound_to_saved_live_content": true,
@@ -607,7 +607,67 @@
       },
       "live_docx_image_sha256": "5f58be285d93c1a79e950ec27823d3c8391353d1e954713b72f608634ad2bbe7",
       "source": "verified_higher_resolution_approved_figure_artwork"
+    },
+    {
+      "current_figure": "S14",
+      "part": null,
+      "filename": "PNG/Figure_S14.png",
+      "sha256": "703ddb66c7dbb8e156691a6dfd404e6d5bf45225ba7626103e88e93b6a8e96cf",
+      "bytes": 7602735,
+      "dimensions_px": [
+        2550,
+        4692
+      ],
+      "mode": "RGBA",
+      "dpi_metadata": [
+        599.9988,
+        599.9988
+      ],
+      "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1113,
+        2048
+      ],
+      "live_display_width_inches": 4.25,
+      "native_export_pixels_per_display_inch": 600.0,
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 2.2587851
+      },
+      "live_docx_image_sha256": "a36e9ccee9d368b3a4ff22a56d308fee5524962d9b1eb10589a4f502e25f0d60",
+      "source": "verified_higher_resolution_approved_figure_artwork"
     }
   ],
-  "prior_public_figure_snapshot": "6cd6c0a330f0c72d3b5157d6379c65df6ddc34a9"
+  "prior_public_figure_snapshot": "1b73a57e0b659f7d3233290f082fa4c93f19a23a",
+  "caption_source_snapshots": [
+    {
+      "figures": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "S10",
+        "S11",
+        "S12",
+        "S13"
+      ],
+      "source_manuscript_docx_sha256": "85f59f4f053417ff715033fa262e1febdf5183bd0731dcef805adb26e43e0be2"
+    },
+    {
+      "figures": [
+        "S14"
+      ],
+      "source_manuscript_docx_sha256": "4b693cb7e6ba7471cd757a57b470081161cd60dd87150079f13a903e79d07dfd"
+    }
+  ]
 }
