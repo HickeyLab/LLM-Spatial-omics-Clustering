@@ -1,6 +1,6 @@
 # IEEE-style supplementary tables
 
-Current routing: S1 and S2A/B remain active here. Current S6 and the added reviewer tables use [ieee_reviewer47_20261111](../ieee_reviewer47_20261111/manifest.json). The S6 exports retained in this directory preserve the preceding frozen bank and are not the active numerical table source.
+This directory preserves the earlier IEEE-style release. The [current manuscript table package](../ieee_reviewer47_20261119/README.md) supplies S1, S2A and the B004 annotation and reviewer tables.
 
 
 These are format-only versions of the seven retained manuscript tables. The exact **414 cell strings, their order, numerical values and units are unchanged** from the verified Google Docs accepted view. Tables S6a–d also match their frozen scored CSVs exactly.

@@ -1,10 +1,6 @@
-# Retained manuscript figure artwork
+# Native artwork for manuscript replay
 
-These 17 PNG files contain the current artwork for 15 figure identifiers.
-Figure S3 has separate A, B and C images. They are byte-identical copies of
-the 600 dpi [publication exports](../publication), with editable PDF/SVG and
-lossless RGB TIFF versions. Use the current
-[figure map](../../docs/figure_map.md) for manuscript display labels.
+The included PNGs use stable native replay identifiers. Native Figure S3 has separate A, B and C images. These are copies of the [native exports](../publication) tracked in the local manifest. The [current artwork](../current_manuscript) and [figure map](../../docs/figure_map.md) use manuscript display labels.
 
 Figure numbers, figure-level titles and explanatory notes remain in manuscript
 captions. Descriptive subfigure titles are omitted. Distinguishing condition,
@@ -45,6 +41,6 @@ Earlier reference-selected panels and windows remain archived.
 
 The earlier title-cleanup snapshots and Figure 3A restoration audits remain
 historical provenance. Their former pixel-preservation claims describe those
-older operations, not this native publication redesign. Current notebook
-previews are exact copies of the files in this directory. The current
-[figure inventory](../../configs/manuscript_inventory.json) defines panels and captions.
+older operations, not this native publication redesign. The native notebook
+previews are exact copies of the files in this directory. The
+[native figure inventory](../../configs/manuscript_inventory.json) defines the source panels and captions.

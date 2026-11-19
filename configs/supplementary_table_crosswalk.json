@@ -1,38 +1,32 @@
 {
   "schema": "manuscript.current_supplementary_table_crosswalk.v2",
-  "updated_date": "2026-11-11",
-  "policy": "Only retained manuscript companions are active. Source hashes distinguish new primary47 and completed annotation results. Archived companion filenames and bytes remain unchanged in the archive and immutable release.",
+  "updated_date": "2026-11-19",
+  "policy": "Current displayed manuscript companions and the two file-only S7 companions are listed by source path and SHA-256. Earlier table versions remain available in their frozen banks and release snapshots.",
   "archive_crosswalk": "data/historical/annotation47_pre_scoring_20261110/configs/supplementary_table_crosswalk.json",
   "tables": [
     {
-      "current_label": "S2B",
-      "filename": "Table_S1_channel_membership.csv",
-      "path": "data/frozen/clustering47_primary_20261108/Table_S1_channel_membership.csv",
-      "sha256": "ca988f22648f2854a5504e2bb802a9c4eac198a0fa74b0ff95978d3212b4476a"
+      "current_label": "S1",
+      "filename": "Table_S1.csv",
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S1.csv",
+      "sha256": "29a3158af9bc47af7cb9003bcc9d0271f6285832584e029d614df7b3106392a5"
+    },
+    {
+      "current_label": "S2A",
+      "filename": "Table_S2A.csv",
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S2A.csv",
+      "sha256": "8e65503d48bd630ae43be3724a8506a0f945d73d0030fdec3faba7cd8dd960ae"
     },
     {
       "current_label": "S6a",
       "filename": "Table_S6a.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6a.csv",
-      "sha256": "df17af9fa7172a31fe26029fbe1ad394159a575e6b63d2e56f404e79155877e3"
-    },
-    {
-      "current_label": "S6b",
-      "filename": "Table_S6b.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6b.csv",
-      "sha256": "5c74000ed0dc1c962b3763045eec124ae8fe890f321672046847d391d4973152"
-    },
-    {
-      "current_label": "S6c",
-      "filename": "Table_S6c.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6c.csv",
-      "sha256": "a7d4bdd55a86583dbed5511ec2cf619838e7fec42affc20a37f3762bd3172f41"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S6a.csv",
+      "sha256": "cc7453d696c9ccc54ac6329e0058e857d60074d90af0386d544c039f3058a236"
     },
     {
       "current_label": "S6d",
       "filename": "Table_S6d.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S6d.csv",
-      "sha256": "85493e1edba04b6a7ea4c4fc04e73ee27f3aa1723873c72fd361933423628624"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S6d.csv",
+      "sha256": "9f0e60650dc63c7d99727fe76953b45fa2e0deb505aee5ac53cf181cb6605b1f"
     },
     {
       "current_label": "S7",
@@ -49,68 +43,104 @@
     {
       "current_label": "S8a",
       "filename": "Table_S8a.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8a.csv",
-      "sha256": "579cea2275a50f9d64884c9a8b2ae7a404500f4d5ab01af5b3b8c46fc522e04c"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S8a.csv",
+      "sha256": "dc1aca19e31b8fd08891c9ad436240c2470f7ad1e31e003892f73c3cd2397f19"
     },
     {
       "current_label": "S8b",
       "filename": "Table_S8b.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8b.csv",
-      "sha256": "50929396ae4264118a6eacae7b54d3a6d5eede87cdaf0976dbc587f832faa77c"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S8b.csv",
+      "sha256": "f19b8a326db1849db234f15f07ac815fde0c5b07efb40858a9cb485ee30f25bb"
     },
     {
       "current_label": "S8c",
       "filename": "Table_S8c.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8c.csv",
-      "sha256": "e25880feaba68b167d20488e092a35386bdf43fe33f93850e0428ea90e1303ac"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S8c.csv",
+      "sha256": "dbb1d31090adff0ce493ed6b70d4c0a0c6fffc74358047eed2f9b41abbc7bf36"
     },
     {
       "current_label": "S8d",
       "filename": "Table_S8d.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S8d.csv",
-      "sha256": "19eefd8e99fbf079de777fde82d6dd5f2ab085c289c1bb2fff7ed6b415b815f1"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S8d.csv",
+      "sha256": "7b51ca193b63cf9b61ffc89e6785ca19cf4c9c3aaa4975134df343344ee27347"
     },
     {
       "current_label": "S9",
       "filename": "Table_S9.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S9.csv",
-      "sha256": "b2aa6c9d0964dcfc3039fdacb74f30037843d124ab54f07e22296c9cfa919d32"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S9.csv",
+      "sha256": "7bd5eaaff5198ea81edc5e89567928be068a5e3d1aea1e449c1d02556512dcc5"
     },
     {
       "current_label": "S10",
       "filename": "Table_S10.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S10.csv",
-      "sha256": "08660bdab4c71d79a930efe77aa12ea51e91c28c168bc9df416b9d360bfd8329"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S10.csv",
+      "sha256": "fbfabd8e9655d106c32a83f7be4b9cabce5396c58b399d2f9d61550c016c4ab8"
     },
     {
       "current_label": "S11",
       "filename": "Table_S11.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S11.csv",
-      "sha256": "0377f2c1dcff23c784671d83363ed3f49cd38c1bd0ab9b6eb72a817160e99dfb"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S11.csv",
+      "sha256": "8740ef50325c13ce69de7dab7bc28fc7b445b7db9395ea26c0568ce13f0a5c66"
     },
     {
       "current_label": "S12a",
       "filename": "Table_S12a.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12a.csv",
-      "sha256": "c3054ff637d5b4579669765c9893c04bf2a2b5f467f4eaf1bd62f5ca644cccd5"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S12a.csv",
+      "sha256": "6fbd98fef62cc99b859acd71cb208b89df387c2cc0455419cfff7e06321edf98"
     },
     {
       "current_label": "S12b",
       "filename": "Table_S12b.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12b.csv",
-      "sha256": "71c351d3f64d936e3ace1ced8633e6f47fd3586a3abf796825bdfc02de2bacaa"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S12b.csv",
+      "sha256": "aa677cf815ca388fab6cb9a872443de9dd0e4bf14907a0faebc8c34e4e7d3feb"
     },
     {
       "current_label": "S12c",
       "filename": "Table_S12c.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12c.csv",
-      "sha256": "ffc688e7f3fbb9aaecbc4bef1a23549839e3419bcfcc27584491fa61cdc8d61d"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S12c.csv",
+      "sha256": "e8734df5f1b8286f3590a0ece180a8e262344a3806b20373d0307f1172ce8af5"
     },
     {
       "current_label": "S12d",
       "filename": "Table_S12d.csv",
-      "path": "docs/tables/ieee_reviewer47_20261111/Table_S12d.csv",
-      "sha256": "ba5da45aadf22e399a5e55ec649a5cc096ae99ca32fb877b87337fa7770d4c0d"
+      "path": "docs/tables/ieee_reviewer47_20261119/Table_S12d.csv",
+      "sha256": "e30466f91e37f49567c1a45c9bbf58ce9140d518c8fdeaa5a159e7aad1d4312b"
+    },
+    {
+      "current_label": "S13a",
+      "filename": "Table_S13a.csv",
+      "path": "docs/tables/ieee_donor47_20261116/Table_S13a.csv",
+      "sha256": "eec9ea811486ea45fdacc8603bca694917d1deb7319e8bedc6ebacf255bfac3b"
+    },
+    {
+      "current_label": "S13b",
+      "filename": "Table_S13b.csv",
+      "path": "docs/tables/ieee_donor47_20261116/Table_S13b.csv",
+      "sha256": "423bae8c9b4ab9328aaeb9b70796b2b789b671b922e1e51040b3605cfe3ca614"
+    },
+    {
+      "current_label": "S14a",
+      "filename": "Table_S14a.csv",
+      "path": "docs/tables/ieee_donor47_20261116/Table_S14a.csv",
+      "sha256": "2fc8d91fd27db7913837ad851b05a1bdbfecbff5c6b60d28b3c2a4da8d203bd4"
+    },
+    {
+      "current_label": "S14b",
+      "filename": "Table_S14b.csv",
+      "path": "docs/tables/ieee_donor47_20261116/Table_S14b.csv",
+      "sha256": "f0685789d8a7a16b0fb64131cb0a26002a5af92036461f273f1bf11743fcd95a"
+    },
+    {
+      "current_label": "S15a",
+      "filename": "Table_S15a.csv",
+      "path": "docs/tables/ieee_donor47_20261116/Table_S15a.csv",
+      "sha256": "cc87af31e2d871ade16159f2945b369d90bdf394f627782b229a08d7b6b733a6"
+    },
+    {
+      "current_label": "S15b",
+      "filename": "Table_S15b.csv",
+      "path": "docs/tables/ieee_donor47_20261116/Table_S15b.csv",
+      "sha256": "abe8f68b2d4c08f599fd93b32cd916900b0704ee28a68a545a324e1cdd007197"
     }
   ],
   "native_table_sources": [
@@ -123,18 +153,15 @@
       "current_label": "S2A",
       "path": "data/frozen/clustering47_primary_20261108/current_tables.json",
       "table_label_selector": "S2A"
-    },
-    {
-      "current_label": "S2B",
-      "path": "data/frozen/clustering47_primary_20261108/current_tables.json",
-      "table_label_selector": "S2B"
     }
   ],
-  "current_ieee_table_manifest": "docs/tables/ieee_reviewer47_20261111/manifest.json",
+  "current_ieee_table_manifest": "docs/tables/ieee_reviewer47_20261119/manifest.json",
   "new_table_evidence_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+  "completed_reviewer_evidence_manifest": "data/frozen/astra_prompt_controls_results_20261115/manifest.json",
   "selective_risk_companion": {
     "current_label": "S12a-d",
     "path": "data/frozen/reviewer47_results_20261111/calibration/calibration_risk_coverage.csv",
     "sha256": "a2168a9e68dd00d4466e26d80161c7a0bc61e6d567463b3e9d3dfbef0ca37c50"
-  }
+  },
+  "current_donor_table_manifest": "docs/tables/ieee_donor47_20261116/manifest.json"
 }

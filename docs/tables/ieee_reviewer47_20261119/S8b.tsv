@@ -1,0 +1,17 @@
+Clustering method	Input	Agreement (%)	Macro-F1
+Leiden	Selected marker names	42.16	0.3437
+Leiden	Selected marker means	43.23	0.3654
+Leiden	All-marker means	46.78	0.3842
+Leiden	All-marker means plus fractions	50.27	0.4165
+FlowSOM	Selected marker names	27.91	0.2414
+FlowSOM	Selected marker means	33.42	0.2739
+FlowSOM	All-marker means	37.48	0.2884
+FlowSOM	All-marker means plus fractions	36.82	0.2999
+SpatialSort	Selected marker names	29.36	0.1915
+SpatialSort	Selected marker means	28.40	0.1897
+SpatialSort	All-marker means	33.11	0.1966
+SpatialSort	All-marker means plus fractions	36.17	0.2226
+PIXIE	Selected marker names	35.41	0.2458
+PIXIE	Selected marker means	38.61	0.2610
+PIXIE	All-marker means	36.04	0.2527
+PIXIE	All-marker means plus fractions	42.54	0.2751

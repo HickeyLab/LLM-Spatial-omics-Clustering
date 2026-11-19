@@ -1,0 +1,7 @@
+Segmentation method	Processed before / after	Matched before / after	Shared IDs, fixed coordinates	Before-only IDs	After-only IDs
+Mesmer	162,439 / 161,867	133,665 / 133,266	161,656	783	211
+CellposeCyto3	145,925 / 145,270	118,668 / 118,104	145,011	914	259
+CellposeSAM	173,783 / 172,465	137,808 / 136,927	172,169	1,614	296
+CellSAM	195,752 / 194,832	154,163 / 153,385	194,071	1,681	761
+InstanSeg	198,959 / 196,717	146,477 / 144,996	195,459	3,500	1,258
+MicroSAM	197,314 / 197,400	149,626 / 149,080	196,124	1,190	1,276

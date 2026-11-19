@@ -1,4 +1,5 @@
-"""Guard current supplementary numbering while preserving compatible imports."""
+"""Guard manuscript display numbering and stable native replay paths."""
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -7,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SupplementaryFigureLabelTests(unittest.TestCase):
-    def test_inventory_has_all_ten_current_supplementary_figures(self):
+    def test_native_inventory_has_the_expected_supplementary_notebooks(self):
         records = json.loads((ROOT / 'configs/manuscript_inventory.json').read_text())['figures']
         paths = []
         for number in range(1, 11):
@@ -41,11 +42,29 @@ class SupplementaryFigureLabelTests(unittest.TestCase):
         self.assertNotIn('/Users/', source)
 
     def test_navigation_lists_every_current_supplement(self):
-        records = json.loads((ROOT / 'configs/manuscript_inventory.json').read_text())['figures']
-        for name in ['README.md', 'docs/figure_map.md', 'notebooks/final_figures/README.md']:
+        index = json.loads((ROOT / 'configs/manuscript_display_crosswalk.json').read_text())
+        records = index['figures']
+        expected_ids = {str(i) for i in range(1, 6)} | {f'S{i}' for i in range(1, 15)}
+        self.assertEqual(set(records), expected_ids)
+        caption_path = ROOT / 'figures/current_manuscript/Figure_captions.txt'
+        artwork_manifest = json.loads((ROOT / index['current_artwork_manifest']).read_text())
+        self.assertEqual(hashlib.sha256(caption_path.read_bytes()).hexdigest(),
+                         artwork_manifest['captions_sha256'])
+        self.assertEqual(caption_path.read_text().strip().split('\n\n'),
+                         [record['caption'] for record in records.values()])
+        for name in ['docs/figure_map.md', 'notebooks/final_figures/README.md']:
             text = (ROOT / name).read_text()
-            for number in range(1, 11):
-                self.assertIn(Path(records[f'S{number}']['notebook']).name, text)
+            for figure_id, record in records.items():
+                self.assertIn(f'| {figure_id}. ', text)
+                self.assertTrue(record['caption'].startswith(f'Figure {figure_id}. '))
+                if 'native_notebook' in record:
+                    self.assertIn(Path(record['native_notebook']).name, text)
+                for entry in record['images']:
+                    image = ROOT / entry['path']
+                    self.assertIn(image.name, text)
+                    self.assertEqual(hashlib.sha256(image.read_bytes()).hexdigest(), entry['sha256'])
+        self.assertEqual(sum(len(r['images']) for r in records.values()), 21)
+        self.assertEqual(len(records['S5']['images']), 3)
 
 
 if __name__ == '__main__':

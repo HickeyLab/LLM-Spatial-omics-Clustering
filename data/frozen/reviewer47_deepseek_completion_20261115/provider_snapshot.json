@@ -1,0 +1,75 @@
+{
+  "completion_window": "24h",
+  "created_at": 1794363908,
+  "endpoint": "/v1/chat/completions",
+  "error": null,
+  "expires_at": null,
+  "finalized_at": 1794443599,
+  "id": "batch-1794363908-i5Nt17caM0IWWvyhAqOP",
+  "model": "deepseek/deepseek-v4.1-flash-20261017",
+  "object": "batch",
+  "provider": "Morph",
+  "request_counts": {
+    "completed": 1,
+    "failed": 0,
+    "total": 1
+  },
+  "results": [
+    {
+      "custom_id": "94568343fcddc146209aad2e4095fe5e52446a51a1161a0a27d1c81175be0cb1",
+      "error": null,
+      "id": "batch_req_7a92290c-9d05-4363-b7fd-5f44af522c5f",
+      "response": {
+        "body": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "logprobs": null,
+              "message": {
+                "content": "{\"a\":[{\"i\":0,\"l\":5},{\"i\":1,\"l\":10},{\"i\":2,\"l\":13},{\"i\":3,\"l\":8},{\"i\":4,\"l\":27},{\"i\":5,\"l\":27},{\"i\":6,\"l\":10},{\"i\":7,\"l\":15},{\"i\":8,\"l\":14},{\"i\":9,\"l\":15},{\"i\":10,\"l\":15},{\"i\":11,\"l\":15},{\"i\":12,\"l\":15},{\"i\":13,\"l\":15},{\"i\":14,\"l\":21},{\"i\":15,\"l\":21},{\"i\":16,\"l\":23},{\"i\":17,\"l\":21},{\"i\":18,\"l\":3},{\"i\":19,\"l\":21},{\"i\":20,\"l\":21},{\"i\":21,\"l\":1},{\"i\":22,\"l\":2},{\"i\":23,\"l\":1},{\"i\":24,\"l\":1},{\"i\":25,\"l\":2},{\"i\":26,\"l\":2},{\"i\":27,\"l\":2},{\"i\":28,\"l\":16},{\"i\":29,\"l\":11},{\"i\":30,\"l\":6},{\"i\":31,\"l\":11},{\"i\":32,\"l\":11},{\"i\":33,\"l\":11},{\"i\":34,\"l\":11},{\"i\":35,\"l\":3},{\"i\":36,\"l\":0},{\"i\":37,\"l\":3},{\"i\":38,\"l\":3},{\"i\":39,\"l\":3},{\"i\":40,\"l\":3},{\"i\":41,\"l\":3},{\"i\":42,\"l\":22},{\"i\":43,\"l\":18},{\"i\":44,\"l\":18},{\"i\":45,\"l\":26},{\"i\":46,\"l\":19},{\"i\":47,\"l\":18},{\"i\":48,\"l\":18},{\"i\":49,\"l\":14},{\"i\":50,\"l\":15},{\"i\":51,\"l\":9},{\"i\":52,\"l\":15},{\"i\":53,\"l\":15},{\"i\":54,\"l\":15},{\"i\":55,\"l\":15},{\"i\":56,\"l\":7},{\"i\":57,\"l\":3},{\"i\":58,\"l\":0},{\"i\":59,\"l\":3},{\"i\":60,\"l\":3},{\"i\":61,\"l\":3},{\"i\":62,\"l\":3},{\"i\":63,\"l\":7},{\"i\":64,\"l\":7},{\"i\":65,\"l\":7},{\"i\":66,\"l\":7},{\"i\":67,\"l\":7},{\"i\":68,\"l\":7},{\"i\":69,\"l\":7},{\"i\":70,\"l\":21},{\"i\":71,\"l\":25},{\"i\":72,\"l\":25},{\"i\":73,\"l\":21},{\"i\":74,\"l\":4}]}",
+                "reasoning": null,
+                "refusal": null,
+                "role": "assistant"
+              },
+              "native_finish_reason": "stop"
+            }
+          ],
+          "created": 1794443196,
+          "id": "gen-batch-1794363908-03c308598aacbb72a0af",
+          "model": "deepseek/deepseek-v4.1-flash-1017",
+          "object": "chat.completion",
+          "provider": "Morph",
+          "service_tier": "standby",
+          "system_fingerprint": null,
+          "usage": {
+            "completion_tokens": 19899,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "image_tokens": 0,
+              "reasoning_tokens": 19297
+            },
+            "prompt_tokens": 3628,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 512,
+              "video_tokens": 0
+            },
+            "total_tokens": 23527
+          }
+        },
+        "request_id": "batch_req_7a92290c-9d05-4363-b7fd-5f44af522c5f",
+        "status_code": 200
+      }
+    }
+  ],
+  "status": "completed",
+  "usage": {
+    "completion_tokens": 19899,
+    "cost": 0.0040151,
+    "is_byok": false,
+    "prompt_tokens": 3628,
+    "total_tokens": 23527
+  }
+}

@@ -1,6 +1,6 @@
-# Reproduce the B004 reviewer results offline
+# Replay the November 11 B004 reviewer snapshot offline
 
-The current publication data are independently versioned:
+The [completed B004 release and replay](reviewer47_completed_publication_20261115.md) cover all 71 conditions. This guide describes the original November 11 snapshot, with independently versioned inputs:
 
 - `data/frozen/annotation47_results_20261111/`: the complete primary bank, 32 annotation sets, 128 logical requests and 9,024 cluster predictions.
 - `data/frozen/reviewer47_results_20261111/`: all 69 planned B004 reviewer conditions, their literal scientific request bodies, query maps, selected-marker evidence, training scaler, model settings, prediction freeze, scored tables and offline comparisons.

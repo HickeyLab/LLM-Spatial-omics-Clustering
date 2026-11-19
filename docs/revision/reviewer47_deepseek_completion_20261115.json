@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "request_id": "r47_94568343fcddc146209aad2e4095fe5e52446a51a1161a0a27d1c81175be0cb1",
+  "completed_provider_receipt_observed_at": "2026-11-12T00:33:37.185206+00:00",
+  "new_snapshot": "data/frozen/reviewer47_deepseek_completion_20261115",
+  "original_snapshot_preserved": true,
+  "changed_figure": "S8",
+  "changed_numeric_table": "S8d",
+  "agreement": 0.41421655633688514,
+  "fixed28_macro_f1": 0.3575828217902255,
+  "new_generation_calls": 0
+}

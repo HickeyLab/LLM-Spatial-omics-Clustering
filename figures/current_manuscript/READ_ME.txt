@@ -1,7 +1,9 @@
 Current manuscript figures
 
-Figures 1–5 and S1–S14 are available as 21 PNG files. Figure S5 is supplied in parts A, B and C. All 21 PNGs were checked against the saved Google Docs manuscript. Figures S13 and S14 each use the caption from the same verified export as their image. The manifest records the source export for each caption group. The PNGs use the verified figure artwork at the highest approved resolution available. Figure S8 retains its prior artwork.
+Figures 1–5 and S1–S14 are available as 21 PNG files. Figure S5 is supplied in parts A, B and C. All 21 PNGs and 19 captions were checked against the same saved Google Docs manuscript. The PNGs use the verified figure artwork at the highest approved resolution available.
 
-Figure_manifest.json records each file's dimensions, checksum and comparison with the corresponding image embedded in the saved manuscript. Native renderer exports remain available with their original source snapshots. Current Figures 5 and S13 include later donor recovery results. The completed donor scoring replay is documented in ../../docs/manuscript_reproduction.md. The November 14 replay is the earlier snapshot.
+Figure_manifest.json records the caption-file checksum, each image's dimensions and checksum, and the comparison with the corresponding image embedded in the saved manuscript. The current display numbers and native replay entry points are listed in ../../docs/figure_map.md.
+
+Figure S2 includes the completed Astra–Leiden prompt controls. Figure S10 includes all 64 completed marker-representation conditions. The B004 offline replay is documented in ../../docs/revision/reviewer47_completed_publication_20261115.md. Figures 5 and S13 use the completed donor results. The donor offline replay is documented in ../../docs/manuscript_reproduction.md.
 
 The package does not certify 600 dpi for every element. Figure 1A includes restored original raster artwork. The source resolution and provenance of retained workflow illustrations and thumbnails require verification for journal submission.

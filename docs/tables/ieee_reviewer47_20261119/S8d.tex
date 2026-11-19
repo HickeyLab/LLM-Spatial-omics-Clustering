@@ -1,0 +1,34 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S8d\\
+DEEPSEEK V4.1 FLASH 1017 MARKER-REPRESENTATION COMPARISON\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.88\hsize\raggedright\arraybackslash}X>{\hsize=1.68\hsize\raggedright\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X>{\hsize=0.64\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering method} & \textbf{Input} & \textbf{Agreement (\%)} & \textbf{Macro-F1} \\
+\midrule
+Leiden & Selected marker names & 35.28 & 0.3083 \\
+Leiden & Selected marker means & 41.42 & 0.3576 \\
+Leiden & All-marker means & 50.17 & 0.4084 \\
+Leiden & All-marker means plus fractions & 39.92 & 0.2974 \\
+FlowSOM & Selected marker names & 17.24 & 0.1681 \\
+FlowSOM & Selected marker means & 28.13 & 0.2495 \\
+FlowSOM & All-marker means & 27.62 & 0.2373 \\
+FlowSOM & All-marker means plus fractions & 27.87 & 0.2196 \\
+SpatialSort & Selected marker names & 25.45 & 0.1623 \\
+SpatialSort & Selected marker means & 26.53 & 0.1748 \\
+SpatialSort & All-marker means & 20.25 & 0.1230 \\
+SpatialSort & All-marker means plus fractions & 17.42 & 0.1145 \\
+PIXIE & Selected marker names & 29.74 & 0.2080 \\
+PIXIE & Selected marker means & 33.54 & 0.2446 \\
+PIXIE & All-marker means & 33.42 & 0.1895 \\
+PIXIE & All-marker means plus fractions & 27.35 & 0.1660 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

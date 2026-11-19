@@ -94,7 +94,8 @@ class FigureS03ContractTests(unittest.TestCase):
         )
 
         self.assertEqual(len(config["panel_a"]["cell_type_order"]), 27)
-        self.assertEqual(len(config["panel_a"]["marker_order"]), 45)
+        self.assertEqual(len(config["panel_a"]["marker_order"]), 47)
+        self.assertEqual(config["panel_a"]["marker_order"][-2:], ["CD123", "CDX2"])
         self.assertEqual(config["panel_a"]["expression_threshold"], 0.0)
         self.assertEqual(len(config["panel_b"]["file_id_order"]), 8)
         self.assertEqual(len(config["panel_c"]["cell_type_order"]), 28)

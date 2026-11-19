@@ -1,0 +1,38 @@
+{
+  "schema": "reviewer47.deepseek_completion.v1",
+  "supersedes_incomplete_condition_only": "data/frozen/reviewer47_results_20261111",
+  "files": {
+    "set_metrics.csv": {
+      "sha256": "591d3eaf13724e5c8b57cb5787bb696729e89f884c3facd92b57d4809bc77bdf",
+      "bytes": 9226
+    },
+    "accepted_collection.json": {
+      "sha256": "0b7810d5e277eae9e615ffcc9b1e5e6f7dc6f15ec5bfecd024c5e4f525c9533b",
+      "bytes": 2765
+    },
+    "completed_condition_region_metrics.csv": {
+      "sha256": "41073d8c4aa3cc3324b69e77db53d2d5b23b081c55bb0126e77ee2d3de5b1e75",
+      "bytes": 233
+    },
+    "accepted_response.json": {
+      "sha256": "ea0e171df1360c374e8944c50f9e0b5093f0c23cc52dafebc496dc9f818f286f",
+      "bytes": 2171
+    },
+    "prediction_freeze.json": {
+      "sha256": "ee841075d951bde344421e6ef32baf7ec1724de46b7e04e52eada200e4831d2d",
+      "bytes": 1493646
+    },
+    "provider_snapshot.json": {
+      "sha256": "10ac67104d5dff6db7f5aac6dcc6ac537e19e1350ecf6b58e48a2d888193650f",
+      "bytes": 3568
+    },
+    "verification.json": {
+      "sha256": "327859593d603633427fcb19d92562b02cd6e14f8983faeb2de2a2a6c922dee4",
+      "bytes": 1038
+    },
+    "model_settings.json": {
+      "sha256": "ef79874fead505258601ee02dadf0a7b245c9e6d0a59d1beaccc24a84c3e8551",
+      "bytes": 459924
+    }
+  }
+}

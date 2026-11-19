@@ -1,10 +1,11 @@
-"""Render B004 reviewer controls from checksum-bound completed offline results.
+"""Render B004 reviewer controls from checksum-bound offline results.
 
 There is no inference, fitting, scheduler or network path. Missing scientific
 conditions are masked before plotting; partial accuracy is never displayed.
 """
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -19,20 +20,21 @@ from publication_figure_design import (
     colorbar, finish, sha,
 )
 
-from render_annotation47_figures import benchmark_orders
+from render_annotation47_figures import benchmark_orders, input_hashes as annotation_inputs
 
 DATA = ROOT / "data/frozen/reviewer47_results_20261111"
+COMPLETED_DATA = ROOT / "data/frozen/astra_prompt_controls_results_20261115"
 FAMILIES = ["openai", "anthropic", "google", "deepseek"]
 MODELS = ["GPT-6 Astra", "Claude Opus 5.5", "Gemini 4 Argon", "DeepSeek V4.1 Flash 1017"]
 ARMS = ["selected_names", "selected_means", "all_means", "all_means_fractions"]
 ARM_LABELS = ["Selected\nnames", "Selected\nmeans", "All\nmeans", "Means +\nfractions"]
 
 
-def checked_path(name):
-    manifest = json.loads((DATA / "manifest.json").read_text())
+def checked_path(name, directory=DATA):
+    manifest = json.loads((directory / "manifest.json").read_text())
     spec = manifest["files"][name]
     expected = spec["sha256"] if isinstance(spec, dict) else spec
-    path = DATA / name
+    path = directory / name
     if sha(path) != expected:
         raise ValueError("Frozen reviewer result changed: " + name)
     return path
@@ -42,12 +44,14 @@ def table(name, **kwargs):
     return pd.read_csv(checked_path(name), **kwargs)
 
 
-def inputs(*names):
-    return {str((DATA / n).relative_to(ROOT)): sha(checked_path(n)) for n in names}
+def inputs(*names, directory=DATA):
+    paths = [checked_path(name, directory) for name in names]
+    return {str(path.relative_to(ROOT)): sha(path) for path in paths}
 
 
-def complete_sets():
-    rows = table("set_metrics.csv")
+def complete_sets(directory=DATA):
+    rows = (table("set_metrics.csv") if directory == DATA
+            else pd.read_csv(checked_path("set_metrics.csv", directory)))
     required = {"family", "method", "arm", "status", "agreement", "fixed28_macro_f1"}
     if not required.issubset(rows.columns):
         raise ValueError("Reviewer set-metric schema differs")
@@ -58,6 +62,8 @@ def complete_sets():
     incomplete = rows.status.ne("complete")
     if rows.loc[incomplete, ["agreement", "fixed28_macro_f1"]].notna().any().any():
         raise ValueError("Incomplete condition exposes partial accuracy")
+    if directory == COMPLETED_DATA and (len(rows) != 71 or incomplete.any()):
+        raise ValueError("Completed reviewer bank must contain all 71 completed conditions")
     return rows
 
 
@@ -69,8 +75,9 @@ def representation_matrix(rows, family):
         index=benchmark_orders()[1], columns=ARMS).to_numpy(dtype=float) * 100
 
 
-def figure_s8(out):
-    rows = complete_sets()
+def figure_s8(out, *, completed=False):
+    directory = COMPLETED_DATA if completed else DATA
+    rows = complete_sets(directory)
     f = figure(137)
     for i, family in enumerate(FAMILIES):
         x = 3 + (i % 2) * 82
@@ -79,6 +86,8 @@ def figure_s8(out):
         text(f, x + 42, y, MODELS[i], size=6.5, ha="center")
         a = axes(f, x + 22, y + 11, 48, 35)
         matrix = representation_matrix(rows, family)
+        if completed and not np.isfinite(matrix).all():
+            raise ValueError("Completed representation matrix contains a missing value")
         method_names = [METHODS[METHOD_KEYS.index(m)] for m in benchmark_orders()[1]]
         artist = heatmap(a, matrix, method_names, ARM_LABELS, 0, 100,
                          cmap="RdYlGn", annotate=False)
@@ -94,9 +103,15 @@ def figure_s8(out):
         a.tick_params(axis="x", pad=3)
         colorbar(f, artist, (x + 73, y + 11, 1.5, 35), None,
                  ticks=[0, 50, 100], orientation="vertical")
-    return finish(f, "Figure_S8", out, inputs("set_metrics.csv"), notes=[
+    name = "Figure_S10" if completed else "Figure_S8"
+    coverage = ("All 64 representation conditions are complete." if completed
+                else "Partial conditions are masked as Pending, not scored.")
+    source_hashes = inputs("set_metrics.csv", directory=directory)
+    if completed:
+        source_hashes.update(annotation_inputs("metrics.csv"))
+    return finish(f, name, out, source_hashes, notes=[
         "Equal-weighted agreement across the two B004 test regions; fixed 28-label vocabulary including Noise.",
-        "Four frozen partitions and one generation per condition. Partial conditions are masked as Pending, not scored.",
+        "Four frozen partitions and one generation per condition. " + coverage,
         "Selected names and selected means use at most six label-blind selected markers; full arms use all47 markers.",
         "Method rows share the primary benchmark ranking by descending mean four-model fixed-28-label macro-F1 for means plus fractions. Columns retain the planned information progression.",
     ])
@@ -114,9 +129,8 @@ def values_for(rows, arm):
     return selected.set_index("method").agreement.reindex(benchmark_orders()[1]).to_numpy(dtype=float) * 100
 
 
-def figure_s9(out):
+def _legacy_prompt_panels(f):
     rows = control_rows()
-    f = figure(171)
     panel(f, "A", 3, 3)
     a = axes(f, 27, 15, 51, 38)
     blind = values_for(rows, "all_means_fractions")
@@ -148,6 +162,63 @@ def figure_s9(out):
           xlim=(0, 100), xticks=[0, 25, 50, 75, 100], xlabel="Reference agreement (%)")
     grid(a, "x")
 
+def _completed_prompt_panels(f):
+    rows = complete_sets(COMPLETED_DATA)
+
+    def agreement(family, method, arm):
+        selected = rows[rows.family.eq(family) & rows.method.eq(method) & rows.arm.eq(arm)]
+        if len(selected) != 1 or selected.iloc[0].status != "complete":
+            raise ValueError("A plotted prompt-control condition is incomplete or duplicated")
+        value = float(selected.iloc[0].agreement) * 100
+        if not np.isfinite(value):
+            raise ValueError("A plotted prompt-control condition has no agreement")
+        return value
+
+    panel(f, "A", 3, 3)
+    a = axes(f, 30, 15, 48, 38)
+    methods = benchmark_orders()[1]
+    conditions = [("anthropic", method) for method in methods] + [("openai", "leiden")]
+    blind = np.asarray([agreement(family, method, "all_means_fractions")
+                        for family, method in conditions])
+    named = np.asarray([agreement(family, method, "method_named")
+                        for family, method in conditions])
+    positions = np.asarray([0, 1, 2, 3, 4.35])
+    for y, left, right in zip(positions, blind, named):
+        a.plot([left, right], [y, y], color="#b9c2cc", lw=.9, zorder=1)
+    a.scatter(blind, positions - .055, s=15, color="#2864a5", marker="o", zorder=3)
+    a.scatter(named, positions + .055, s=15, color="#b55224", marker="s", zorder=3)
+    labels = ["Opus–" + METHODS[METHOD_KEYS.index(method)] for method in methods] + ["Astra–Leiden"]
+    a.set(yticks=positions, yticklabels=labels, ylim=(4.95, -.55), xlim=(0, 100),
+          xticks=[0, 25, 50, 75, 100], xlabel="Reference agreement (%)")
+    a.axhline(3.7, color="#d1d5db", lw=.5, zorder=1)
+    grid(a, "x")
+    a.legend(handles=[Line2D([], [], marker="o", ls="", color="#2864a5", label="Blinded"),
+                      Line2D([], [], marker="s", ls="", color="#b55224", label="Named")],
+             loc="upper left", bbox_to_anchor=(-.1, 1.32), ncol=2, fontsize=5.5, markerscale=.5)
+
+    panel(f, "B", 85, 3)
+    a = axes(f, 112, 15, 49, 38)
+    conditions = [("anthropic", "all_means_fractions"), ("anthropic", "neighborhood"),
+                  ("openai", "all_means_fractions"), ("openai", "neighborhood")]
+    vals = np.asarray([agreement(family, "leiden", arm) for family, arm in conditions])
+    positions = np.asarray([0, 1, 2.5, 3.5])
+    a.barh(positions, vals, color=["#2864a5", "#b55224"] * 2, height=.55, zorder=2)
+    for y, value in zip(positions, vals):
+        a.text(value + 1.2, y, f"{value:.1f}", va="center", fontsize=6)
+    a.set(yticks=positions,
+          yticklabels=["Opus\nmarkers", "Opus\n+ neighborhood", "Astra\nmarkers", "Astra\n+ neighborhood"],
+          ylim=(4.2, -.7), xlim=(0, 100), xticks=[0, 25, 50, 75, 100],
+          xlabel="Reference agreement (%)")
+    a.axhline(1.75, color="#d1d5db", lw=.5, zorder=1)
+    grid(a, "x")
+
+def figure_s9(out, *, completed=False):
+    f = figure(171)
+    if completed:
+        _completed_prompt_panels(f)
+    else:
+        _legacy_prompt_panels(f)
+
     panel(f, "C", 3, 79)
     a = axes(f, 20, 90, 58, 49)
     name = "calibration/calibration_equal_test_region_metrics.csv"
@@ -175,7 +246,8 @@ def figure_s9(out):
     regions = sorted(risk.region.unique())
     if len(regions) != 2:
         raise ValueError("Risk display requires both test regions")
-    names = json.loads((ROOT / "configs/figure_04_historical_claude.json").read_text())["regions"]
+    region_config = "configs/figure_04_historical_claude.json"
+    names = json.loads((ROOT / region_config).read_text())["regions"]
     handles = []
     for region, color in zip(regions, ["#2864a5", "#b55224"]):
         handles.append(Line2D([], [], color=color, lw=1, label=names[region]["name"]))
@@ -192,6 +264,18 @@ def figure_s9(out):
                     Line2D([], [], color="#444444", ls="--", marker="s", markersize=2.5, label="Recalibrated")])
     f.legend(handles=handles, loc="upper center", bbox_to_anchor=(.76, 1 - 150 / 171), ncol=2,
              fontsize=5.5, columnspacing=.8, handlelength=1.7)
+    if completed:
+        source_hashes = {
+            **inputs("set_metrics.csv", directory=COMPLETED_DATA),
+            **inputs(name, risk_name),
+            **annotation_inputs("metrics.csv"),
+            region_config: sha(ROOT / region_config),
+        }
+        return finish(f, "Figure_S2", out, source_hashes, notes=[
+            "A/B: four Opus and one Astra method-name contrast, and a neighborhood contrast for each model.",
+            "The Astra controls used native OpenAI Batch and reused the accepted OpenRouter Batch baseline.",
+            "C/D: exploratory calibration uses disjoint clusters and regions.",
+        ])
     return finish(f, "Figure_S9", out, inputs("set_metrics.csv", name, risk_name), notes=[
         "A/B: Opus5.5 single-generation controls; matched means-plus-fractions baseline; equal-weighted two test-region agreement.",
         "A: method rows share the primary benchmark descending mean four-model macro-F1 ranking. B/C retain their evidence/calibration progression, and D keeps ascending numeric coverage.",
@@ -203,3 +287,16 @@ def figure_s9(out):
 
 
 RENDERERS = {"S8": figure_s8, "S9": figure_s9}
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Render completed manuscript Figures S2 and S10 offline.")
+    parser.add_argument("--output", type=Path, required=True, help="New directory for the figure files")
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=False)
+    figure_s9(args.output, completed=True)
+    figure_s8(args.output, completed=True)
+
+
+if __name__ == "__main__":
+    main()

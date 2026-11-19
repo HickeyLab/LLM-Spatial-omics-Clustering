@@ -1,0 +1,9 @@
+Field	Leiden	FlowSOM	SpatialSort	PIXIE
+Clustering inputs	47 marker-expression features	47 marker-expression features	47 marker-expression features, cell coordinates and a within-region 24-neighbor graph	48 image channels and cell masks
+Transform	arcsinh(x/5)	arcsinh(x/5)	arcsinh(x/5)	Pixel and cell composition pipeline
+Scaling	StandardScaler within each region	RobustScaler on all B004 cells	RobustScaler on all B004 cells	Channel and composition normalization
+Configured and nonempty clusters	300 and 300	300 requested and 299 nonempty	300 requested. 229 nonempty in the primary chain and 231 in the seed-43 comparison chain	300 and 300
+Implementation	K320 local Leiden with 20 within-parent merges	32×32 self-organizing map followed by Ward clustering	24 neighbors and precision 0.65	10×10 pixel map and 24×24 cell map
+Sigma and learning rate	See Leiden procedure in Section 2.3	1.0 and 0.3	Not applicable	Pixel 5.0 and 0.05. Cell 2.0 and 0.3
+Iterations	See Leiden procedure in Section 2.3	3 whole-cohort passes, giving 660,246 updates	100 actual sweeps per chain with dmh_iter=5	One pixel pass and 5,000 cell iterations
+Seed	42	42	Sampling seeds 42 (primary) and 43 (comparison)	42

@@ -1,21 +1,23 @@
-# Evaluation of Clustering Methods and Large Language Models for Spatial Proteomic Cell Type Annotation
+# Evaluation of Clustering Methods and Large Language Models for Spatial Proteomic Cell-Type Annotation
+
+[Current reproducibility files](manuscript_reproduction.md) · [Supplementary tables](supplementary_table_numbering.md) · [Figure index](figure_map.md)
 
 Zachary Deutsch¹, Nick Surguladze², Yang Miao¹, John W. Hickey¹*
 
-¹Department of Biomedical Engineering, Duke University, Durham, NC 27708, USA
+¹Department of Biomedical Engineering, Duke University, Durham, NC 27708, USA<br>
 ²Department of Biostatistics and Bioinformatics, Duke University School of Medicine, Durham, NC 27710, USA
 
-*Corresponding author. E-mail: john.hickey@duke.edu
+\*Corresponding author. E-mail: [john.hickey@duke.edu](mailto:john.hickey@duke.edu)
 
 ## Abstract
 
-Aims: Spatial proteomics enables cell-type annotation while preserving tissue architecture, but this task remains difficult to scale because performance depends on segmentation, clustering, marker selection, and expert interpretation.
+Aims: Spatial proteomics allows for cell-type annotation while preserving tissue architecture, but annotation remains difficult to scale. We evaluated how image processing, clustering, marker representation and large language models (LLMs) affect annotation of co-detection by indexing (CODEX) data.
 
-Methods: We benchmarked these components using a healthy human intestine CO-Detection by indEXing (CODEX) dataset comprising 809,550 cells across 24 tissue regions from three donors. B004 supplied 220,082 cells for within-donor benchmarking and classifier development, and B005/B006 supplied 589,468 cells for cross-donor evaluation. Four frozen clustering partitions were annotated by four large language models using all 47 protein markers and the native 28-label vocabulary, including Noise. B004 compared marker means alone with means plus fractions of processed values above zero; cross-donor annotation used means plus fractions. Supporting analyses examined representations, context, classifiers, granularity and calibration. Endpoints equally weighted two B004 test regions or each cross-donor evaluation donor’s eight regions followed by the two donor means.
+Methods: We analyzed a healthy human intestine CODEX dataset with 809,550 cells across 24 tissue regions from three donors. B004 provided 220,082 cells for within-donor evaluation and classifier training, and B005/B006 provided 589,468 cells for cross-donor evaluation. Four LLMs annotated clusters from four clustering methods using 47 protein markers and the original 28-label vocabulary. We compared two ways of summarizing marker expression within each cluster. Both used the mean expression of each marker, and the second also included the fraction of cells whose processed expression for that marker was above zero.
 
-Results: Spillover-compensation effects varied across six segmentation methods, tissue regions and cell types, with no consistent improvement across metrics. We compared Leiden, FlowSOM, SpatialSort and PIXIE against reference annotations and evaluated GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017 for cluster annotation. All 9,024 B004 primary cluster predictions were delivered. With means plus fractions, reference agreement across the 16 method–model combinations ranged from 17.42% to 58.12% in the equally weighted test regions. Adding fractions increased agreement in 8 of 16 comparisons and reduced agreement in 8. Cross-donor annotation delivered all 9,468 planned cluster predictions; the B004-selected Astra–Leiden pipeline achieved 35.87% equal-donor agreement.
+Results: Spillover compensation did not consistently improve agreement with expert reference labels across six segmentation methods. Clustering performance varied across methods, cell types and tissue regions. In B004, adding these fractions increased agreement for eight of the 16 clustering method–LLM combinations and decreased it for the other eight. Leiden clustering with GPT-6 Astra annotation achieved the highest agreement, 58.12%, across the two B004 test regions. The same pipeline averaged 35.87% agreement across B005 and B006.
 
-Conclusion: These results show that scalable CODEX annotation is constrained by image processing, cluster composition, marker representation and model interpretation. Automated workflows can reduce manual annotation burden, but supporting-marker review and expert validation remain necessary, particularly for rare cell types and mixed clusters.
+Conclusions: CODEX annotation depends on image processing, cluster composition, marker representation and model interpretation. Variation across workflows and donors supports evaluating processing, clustering and annotation together, with expert review of markers, spatial context and mixed clusters.
 
 ## Keywords
 
@@ -23,317 +25,277 @@ Spatial proteomics, multiplexed tissue imaging, cell segmentation, unsupervised 
 
 ## 1. Introduction
 
-Spatial proteomics technologies such as CO-Detection by indEXing (CODEX) measure dozens of protein markers in situ while preserving tissue architecture [1], [2]. This spatial context supports cell-type identification and analysis of local cellular neighborhoods across healthy human tissues [3]. These capabilities have also supported large-scale atlasing efforts such as the Human BioMolecular Atlas Program (HuBMAP), which is generating reference datasets across the human body [4], [5].
+Spatial proteomics technologies such as co-detection by indexing (CODEX) measure dozens of protein markers in situ while preserving tissue architecture [1], [2]. This spatial context supports cell-type identification and analysis of local cellular neighborhoods in healthy human tissues [3]. The Human BioMolecular Atlas Program (HuBMAP) uses spatial proteomics to generate reference cell-type maps across the human body [4], [5]. Cell-type maps show cells at their measured tissue coordinates, colored by their reference or model-assigned cell-type labels.
 
-Cell-type annotation requires segmentation, feature extraction, dimensionality reduction, clustering, and marker-based interpretation [2], [6], [7]. Segmentation determines which pixels contribute to each cell’s marker intensities and can affect downstream annotation [2], [7], [8]. Spillover compensation reduces marker-expression contamination between neighboring segmented cells and has improved annotation [9], but its benefit with newer segmentation models remains unclear [7], [10]–[14].
+Cell-type annotation depends on segmentation, feature extraction, dimensionality reduction, clustering and marker-based interpretation [2], [6], [7]. Segmentation determines which pixels contribute to each cell’s marker intensities and can affect downstream annotation [2], [7], [8]. Spillover compensation reduces contamination from neighboring cells and has improved annotation [9], but its benefit with newer segmentation models remains unclear [7], [10]–[14]. CODEX benchmarks have also shown that normalization and other preprocessing choices can influence clustering quality as much as, or more than, the clustering algorithm [6].
 
-Beyond segmentation, benchmarking work in CODEX has shown that downstream cell-type annotation is sensitive not only to segmentation, but also to normalization and clustering methods [6]. Preprocessing decisions influenced clustering quality as much as or more than the clustering algorithm itself [6]. These findings suggest that preprocessing and clustering should be evaluated together when developing an annotation workflow.
+Leiden identifies communities in similarity graphs and is widely used for single-cell analysis [6], [15]. FlowSOM uses self-organizing maps and metaclustering to group cells by marker-expression profiles [16], [17]. SpatialSort combines marker information with spatial neighborhoods and optional biological priors in a Bayesian model [18]. PIXIE clusters pixels and derives cell phenotypes from each cell’s pixel composition, providing an alternative to methods that cluster cells using cell-level marker-expression features [19].
 
-Several clustering methods have been developed for high-dimensional single-cell and multiplexed imaging data, but they are based on different assumptions and have not been compared on CODEX tissues. Graph-based clustering methods such as Leiden are widely used in single-cell analysis because they are efficient and produce well-connected communities in similarity graphs [6], [15]. FlowSOM, developed for cytometry analysis, applies self-organizing maps and metaclustering to group cells by their marker-expression profiles for subsequent cell-type annotation [16], [17]. SpatialSort is a Bayesian model developed specifically for spatial proteomics data that uses spatial neighborhood structure together with marker information and optional prior knowledge to improve clustering and cell-type annotation [18]. PIXIE is another algorithm developed specifically for spatial data that performs pixel-level clustering to address issues with cell segmentation [19]. To examine how these approaches recover CODEX cell types, we compared them within B004 and in cross-donor evaluation using B005 and B006.
+Assigning cell-type labels to clusters usually requires experts to inspect marker-expression patterns. Manual review is time-consuming, and annotation decisions can vary across datasets and analysts. Marker-based scoring, probabilistic assignment and reference-based transfer methods automate parts of this task. Shared markers, differences between datasets, and inconsistent label vocabularies still make annotation difficult [20]–[24]. Spatial methods such as STELLAR use local context and learned representations for label transfer [25]. These methods depend on reference data, predefined labels or supervised training assumptions.
 
-Cluster annotation typically requires experts to assign cell-type labels by inspecting marker-expression patterns, a process that is slow, difficult to standardize, and often hard to reproduce across datasets or analysts. Earlier automated approaches, such as marker-based scoring, probabilistic assignment models, and reference-based transfer methods, have improved this process but still face challenges when cell types share markers, new datasets differ from the training data, or studies use different cell-type labels [20]–[24]. In spatial datasets, methods such as STELLAR have shown that label transfer can benefit from spatial context and learned representations [25]. However, these approaches still depend on specific references, prior label systems, or supervised training assumptions.
+LLMs such as GPT-4 can infer cell-type names from marker gene lists with strong agreement with expert labels in single-cell RNA-sequencing studies [26], although their outputs require verification against observed marker expression [27]. Performance and reproducibility vary with the model, prompt, marker selection and output constraints [28]. CASSIA uses iterative validation and quality assessment, with optional agents for retrieval or refinement [29]. CellMaster describes automated annotation and human-in-the-loop refinement [30]. How well LLMs can assign cell-type labels from spatial-proteomic profiles remains unclear.
 
-Large language models (LLMs) such as GPT-4 can infer cell-type names from marker gene lists with strong agreement with expert labels in single-cell RNA-sequencing studies [26], although outputs require verification against observed marker expression [27]. Annotation quality and reproducibility vary across model families, prompt designs, marker selections and output constraints [28]. Whether these findings extend to spatial proteomic cluster annotation remains unclear.
-
-Agentic and human-in-the-loop systems extend direct LLM annotation by adding validation, refinement, or expert feedback. CASSIA combines annotation with iterative validation and quality assessment, with optional retrieval and refinement agents [29]. The CellMaster preprint describes both automated annotation and human-in-the-loop refinement [30]. We focus on direct annotation of fixed CODEX clusters from numerical marker-expression profiles.
-
-We address these gaps by evaluating spillover compensation across recent cell segmentation foundation models, comparing four distinct clustering methods, and testing GPT, Gemini, Claude and DeepSeek for annotation of the resulting CODEX clusters. Within B004, we compare annotation from all 47 marker means with annotation from identical means plus fractions of processed marker values above zero, using the original 28-label vocabulary and the same test regions. Cross-donor evaluation applies means plus fractions and B004-derived normalization to B005 and B006.
+We evaluate six segmentation methods, four clustering methods, and four LLM. Using intestine data from three donors, we compare LLM inputs in B004 and evaluate B005/B006 annotation.
 
 ## 2. Methods
 
-### 2.1 Compensation algorithm
+### 2.1 Study design and data sources
 
-We applied REDSEA [9] to CODEX images, marker lists and segmentation masks using element-size = 2, element-shape = star and all markers. REDSEA estimates neighboring-cell contributions from shared boundaries, subtracts their weighted signal and sets negative corrected values to zero.
+We benchmarked clustering and LLM annotation using a published HuBMAP CODEX dataset of healthy human large and small intestine [3]. The study included all 809,550 cells from 24 tissue regions across three donors, with eight regions per donor: 220,082 cells from B004, 288,188 from B005 and 301,280 from B006.
 
-### 2.2 Downstream processing and clustering
+The processed H5AD contained measurements for 47 protein markers and reference labels from the original 28-label vocabulary. Primary annotation analyses retained this vocabulary, including Noise, without merging classes. Cell-level reference agreement is defined as the fraction of cells whose assigned label matches the reference label. We evaluated clustering using a harmonized 20-label vocabulary and separately scored the same annotation predictions under the original 28-label vocabulary and a 23-label vocabulary (Sections 2.3 and 2.6 and Supplementary Methods, Section SM2).
 
-The compensation comparison used processed H5AD files from before and after REDSEA with stored Leiden assignments and PCA representations. Processing included Z-normalization, noise filtering and Leiden clustering at resolution 1.5, distinct from the main clustering benchmark. Features, graph settings and stored execution parameters are detailed in Supplementary Methods, Section SM1.
+We used B004 data for within-donor benchmarking, to standardize cluster-level marker means, and to train conventional classifiers. Its eight regions were divided into four training, two validation and two test regions containing 90,296, 60,210 and 69,576 cells, respectively. For each marker, we calculated the mean and standard deviation of transformed expression across the B004 training cells and used these values to standardize the corresponding cluster-level means. The B004 benchmark therefore evaluates annotations used in sample training data. B005 and B006 provided the cross-donor evaluation (Section 2.6).
 
-Changes in which cells remained after processing were assessed separately from changes among shared segmentation objects, using the matching criteria and exclusion records described in Section 2.4. These processing exclusions were distinct from the reference annotation Noise. For the before–after comparison of shared segmentation objects, regional cell-type pairs were retained when reference or predicted cells of that type were present in either condition. F1 was set to zero when neither reference nor predicted cells of that type were present in a condition. Pairs absent in both conditions were excluded.
+Raw CODEX images were processed with the published intestine workflow [3]. The eight B004 reference image records document Cytokit segmentation followed by SPRM, with Hoechst1 as the nuclear channel and Cytokeratin as the cell channel. The processed H5AD provided x-y centroid coordinates and mean marker intensities within each retained cell mask. The compensation analysis used six separate segmentation outputs, distinct from those underlying the main clustering benchmark.
 
-### 2.3 Cluster-quality metrics
+### 2.2 Spillover compensation and cell matching
 
-We calculated silhouette scores [31], [32], Davies–Bouldin indices [33] and Calinski–Harabasz indices [34] in PCA space for each segmentation method’s pooled cells and tissue regions. Changes were calculated as after minus before compensation. Larger silhouette and Calinski–Harabasz values or smaller Davies–Bouldin values indicated improved separation.
+We applied REDSEA [9] to CODEX images, marker lists and segmentation masks from Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg and MicroSAM. REDSEA used all markers, element-size = 2 and element-shape = star. It estimates neighboring-cell contributions from shared boundaries, subtracts their weighted signal and sets negative corrected values to zero. The comparison used processed H5AD files before and after compensation, with stored Leiden assignments and principal component analysis (PCA) representations. This processing differed from the main clustering benchmark and included Z-normalization, noise filtering and Leiden clustering at resolution 1.5. Original segmentation inference settings, input channels, checkpoints and mask quality-control rules could not be established from the available records. Stored processing configurations and their limitations are detailed in Supplementary Methods, Section SM1.
 
-### 2.4 Evaluation of cell-type annotation
+Segmentation objects were matched to the nearest reference centroid in the same region within 10 source-coordinate units, allowing many-to-one matches. We also evaluated 5- and 15-unit thresholds and mutual nearest-neighbor matching. The reference x and y coordinates were swapped during reconstruction. Objects were paired before and after compensation only if they had the same regional CellID, unchanged coordinates and an accepted match to the same reference cell and label. Table S1 reports retention and matching counts. Matching audits and deterministic tie rules are provided in Supplementary Methods, Section SM1.
 
-We assigned each cluster the most frequent HuBMAP reference label among its centroid-matched cells and compared the resulting labels with the same reference annotations. This reference-informed diagnostic measures agreement of fixed clusters, rather than independent annotation performance.
+We assessed changes in cell retention separately from changes among shared segmentation objects. Processing exclusions were distinct from the reference label Noise. For each tissue region and cell type, we retained the paired comparison if reference or predicted cells of that type were present before or after compensation. F1 was set to zero in a condition containing neither reference nor predicted cells of that type. Pairs absent in both conditions were excluded.
 
-For each cell type and segmentation method, agreement between cell-type labels assigned to clusters and the HuBMAP reference was summarized using the F1 score:
+Each cluster received its reference-majority label, defined as the most frequent HuBMAP reference label among its centroid-matched cells. Agreement with those same reference annotations was summarized by cell type and segmentation method using F1:
 
 $$
 \mathrm{F1}=\frac{2\,\mathrm{precision}\,\mathrm{recall}}{\mathrm{precision}+\mathrm{recall}}\tag{1}
 $$
 
-F1 is the harmonic mean of precision and recall. Compensation-associated changes were calculated as after minus before F1.
+F1 is the harmonic mean of precision and recall. Changes in F1 score were calculated as the after-compensation score minus the before-compensation score. Because cluster labels were assigned from the reference, this analysis measures how well the fixed clusters agree with that reference.
 
-Segmentation objects were matched to their nearest reference centroid within the same region, within 10 source-coordinate units, allowing many-to-one matches. We also tested 5- and 15-unit thresholds and mutual nearest-neighbor matching. The reconstruction interchanged reference x and y coordinates. Matching audits and deterministic tie rules are in Supplementary Methods, Section SM1. Paired before–after objects required the same regional CellID, unchanged coordinates and an accepted match to the same reference cell and label. Table S1 reports retention and matching counts.
+We assessed cluster separation using silhouette scores [31], [32], Davies–Bouldin indices [33] and Calinski–Harabasz indices [34] in PCA space for each segmentation method's pooled cells and tissue regions. Changes were calculated as after minus before compensation. Higher silhouette and Calinski–Harabasz values and lower Davies–Bouldin values indicated improved separation.
 
-### 2.5 Study design and data source
+### 2.3 Clustering inputs and configurations
 
-We performed a retrospective benchmark of clustering and LLM annotation using a previously published HuBMAP CODEX dataset of healthy human large and small intestine [3]. The study included 809,550 cells across 24 regions from B004, B005 and B006, with eight regions per donor. All cells were linked to reference annotations by exact, unique (File_ID, ID) keys. B004 supplied 220,082 cells for within-donor benchmarking and conventional-classifier development; B005 and B006 supplied 288,188 and 301,280 cells for cross-donor evaluation. The annotation evidence comprised 47 protein markers. All models could predict the original 28 dataset labels, including Noise, Paneth, NK and M1 and M2 macrophages as distinct outputs. Cell-level reference agreement is the fraction of cells whose predicted label matches the provided reference label; it does not independently establish biological correctness.
+B004 clustering inputs differed by method (Table S2A). Leiden and FlowSOM used marker-expression features, whereas SpatialSort also used cell coordinates and a within-region 24-neighbor graph. These three methods used all 47 protein markers: 45 in the common expression matrix and separately stored CD123 and CDX2 measurements. FlowSOM used arcsinh(x/5) values with RobustScaler fitted on all B004 cells. PIXIE used smoothed, normalized image pixels from 47 protein channels plus Hoechst1 DNA signal, selected from 59 available channels. For each cell mask, we calculated the fractions of pixels assigned to each pixel metacluster, then clustered cells using those fractions. For later annotation, profiles from all four partitions used the same 47 markers. Supplementary Methods, Section SM3 describes feature construction.
 
-The B004 clustering inputs differed by method and are summarized in Table S2. Leiden, FlowSOM and SpatialSort used all 47 protein markers. PIXIE used its image-derived cell-composition representation. Annotation evidence used the same 47 markers for all four partitions. B004 supplied the within-donor benchmark, training normalization and conventional-classifier development. Cross-donor evaluation used B005 and B006 as described in Section 2.19. No new specimens were collected.
+All B004 workflows targeted 300 clusters using fixed method-specific configurations and primary seed 42. Leiden transformed the 47 marker values as arcsinh(x/5), standardized them within each tissue region, generated 320 local clusters and merged them to 300 using a Ward-style procedure [15]. FlowSOM used a 32 × 32 self-organizing map trained in three shuffled passes through all 220,082 cells, followed by Ward metaclustering with 300 requested and 299 nonempty clusters [16], [17]. SpatialSort performed 100 sampling sweeps, with five double Metropolis–Hastings (DMH) iterations (dmh_iter=5), using the same initialization for sampling seeds 42 and 43. It requested 300 clusters, producing 229 nonempty clusters in the primary seed-42 run and 231 in the seed-43 comparison run [18]. Seed 43 was used only to compare clustering results across random seeds and provided no additional annotation input. PIXIE used pixel and cell self-organizing maps followed by Ward metaclustering [19]. Full clustering configurations and hyperparameters are reported in Table S2A and Supplementary Methods, Section SM3.
 
-Reference labels came from the processed dataset. The primary annotation analyses retained the original 28-label vocabulary without merging classes; the evaluation-only 23-label sensitivity is specified in Section 2.19. The 20-class mapping used only for the clustering diagnostics in Figure 2 is specified in Section 2.9 and Supplementary Methods, Section SM2.
-
-### 2.6 Image processing and single-cell features
-
-Raw CODEX images were processed with the published intestine workflow [3]. The eight B004 reference image records identify Cytokit segmentation followed by SPRM, with Hoechst1 nuclei and Cytokeratin cell channels. The six-method compensation analysis used separate segmentation outputs from those used in the main clustering benchmark. For each retained cell, x-y centroid coordinates were available in the processed H5AD, together with mean intensity for each marker within the cell mask.
-
-The compensation experiment used processed outputs from Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg and MicroSAM. The available records did not establish their original inference settings, input channels, checkpoints or mask quality-control rules (Supplementary Methods, Section SM1).
-
-In B004, Leiden and FlowSOM clustered marker-expression features. SpatialSort also used cell coordinates and a within-region 24-neighbor graph. FlowSOM used arcsinh(x/5) values with RobustScaler fitted on full B004. PIXIE clustered smoothed, normalized image pixels, aggregated pixel-metacluster fractions within masks, and clustered those cell-level compositions. Detailed feature construction is in Supplementary Methods, Section SM3.
-
-The common expression matrix contained 45 protein markers. Leiden, FlowSOM and SpatialSort additionally used the separately stored CD123 and CDX2 measurements. PIXIE used those 47 protein channels plus Hoechst1 DNA signal from 59 available image channels. Table S2B specifies channel membership.
-
-### 2.7 Clustering
-
-In B004, all workflows targeted 300 clusters using fixed method-specific configurations and primary seed 42. Leiden transformed 47 markers as arcsinh(x/5), standardized within the tissue region, generated 320 local clusters and merged them to 300 using a Ward-style procedure [15]. FlowSOM used a 32 × 32 self-organizing map trained with seed 42 in three shuffled passes through all 220,082 cells (660,246 updates), followed by Ward metaclustering with 300 requested and 299 occupied clusters [16], [17]. SpatialSort used 100 actual sampling sweeps with dmh_iter=5 and a shared frozen initialization for sampling seeds 42 and 43. It requested 300 clusters, with 229 occupied clusters in the primary seed-42 run and 231 in the seed-43 sensitivity run [18]. PIXIE used pixel and cell self-organizing maps followed by Ward metaclustering [19]. Table S2A and Supplementary Methods, Section SM3 provide full settings.
-
-### 2.8 Clustering configurations and evaluation
-
-We used fixed, method-specific clustering configurations for Leiden, FlowSOM, SpatialSort and PIXIE. We evaluated the fixed partitions using weighted cluster purity, the maximum agreement attainable when each unchanged cluster receives one allowed label. SpatialSort sampling seed 43 supplied a clustering sensitivity analysis and was not an additional annotation input.
-
-Let K denote the total number of clusters, N the total number of cells in the evaluation set, and nk,c the number of cells with reference class c in cluster k. Weighted cluster purity, which was subsequently used as the cluster-majority upper bound, was calculated as
+We evaluated each fixed partition using weighted cluster purity, the highest possible reference agreement when each unchanged cluster receives one allowed label. Let K be the number of clusters, N the number of cells in the evaluation set, and nk,c the number of cells with reference class c in cluster k. Weighted cluster purity was calculated as
 
 $$
 A_{\mathrm{UB}}=\frac{\sum_{k=1}^{K}\max_{c}n_{k,c}}{N}\tag{2}
 $$
 
-This score represents the fraction of cells whose assigned label matches the reference when every cluster is assigned its majority reference label.
+This score is the fraction of cells carrying their cluster’s majority reference label and defines the maximum agreement possible with one label per cluster, termed the cluster-majority upper bound.
 
-### 2.9 Evaluation of clustering performance
+For the cell-type F1 and recall heatmaps, each fixed cluster received its harmonized reference-majority label across all eight B004 regions. These diagnostics used 209,587 non-Noise cells and the harmonized 20-label vocabulary, including the mapping of Paneth to Goblet. This population and vocabulary differ from the primary annotation analysis, which retains the original 28-label vocabulary, including Noise. F1 and recall were calculated from the resulting assignments (Supplementary Methods, Sections SM2 and SM4).
 
-For cell-type F1 and recall, each fixed cluster received its most frequent harmonized reference label across all eight B004 regions. Both heatmaps used 209,587 non-Noise cells and 20 harmonized classes, including Paneth to Goblet. This differs from the annotation analysis, which retains all 28 original labels including Noise. F1 and recall were calculated from those assignments. Full scoring definitions are in Supplementary Methods, Section SM4.
+Regional weighted F1 and cell-count-weighted cluster purity used the same non-Noise population and harmonized 20-label vocabulary, but majority labels were assigned separately within each region. Weighted F1 is the average of class-specific F1 scores weighted by the number of reference cells in each class. Conditional comparisons and their assumptions are described in Section 2.7 and Supplementary Methods, Section SM5.
 
-Regional weighted F1 and cell-count-weighted cluster purity used the same non-Noise cells and 20-class mapping, but assigned majority labels separately within each region. Weighted F1 averages class-specific F1 by reference-cell count. Cluster purity is the fraction matching each cluster’s majority reference label (Equation (2)). The eight regional values per method describe fixed-partition diagnostics within B004. Conditional comparisons and their assumptions are described in Section 2.17 and Supplementary Methods, Section SM5.
+### 2.4 LLM annotation inputs and execution
 
-### 2.10 Marker-expression profiles for LLM annotation
+Cluster profiles contained means for all 47 markers. The processed marker-expression values were transformed as arcsinh(x/5), and cluster means were standardized using marker centers and population standard deviations fitted on the 90,296 B004 training cells. A scale of one was used only for an exactly constant marker. For each cluster and marker, the positive fraction was the fraction of cells with strictly positive processed values, calculated before transformation or standardization. These fractions were not validated measures of biological marker positivity.
 
-Each cluster profile contained all 47 marker means. Authoritative processed expression values were transformed as arcsinh(x/5), then cluster means were standardized using marker centers and population standard deviations fitted on the 90,296 cells in the four B004 training regions. A scale of one was used only for an exactly constant marker. Fractions were calculated as the proportion of processed values strictly above zero before transformation or standardization. Both arrays were encoded as integer thousandths. These numerical fractions were not validated measures of biological marker positivity.
+The all-marker means input contained all 47 standardized marker means. The all-marker means plus fractions input paired the same 47 marker means with all 47 positive fractions. Within each paired comparison, we held cluster assignments, anonymous query IDs, marker and cluster order, label vocabulary and batch boundaries fixed. Prompts supplied the code dictionary for the original 28-label vocabulary and requested a JSON object containing exactly one integer label code per query ID. The prompts supplied no cell- or cluster-specific reference assignments or reference expression profiles, clustering-method identities or neighborhood summaries. Models had no retrieval, tools or web access. Cell- and cluster-specific reference assignments were also excluded from query construction and model-selected display groups.
 
-A physical model call denotes one execution of an LLM. A logical request item denotes one prescribed group of anonymous cluster queries, and an annotation set combines the request items for one method, model and input arm.
+The selected marker names input contained up to six marker names per cluster, and the selected marker means input contained numerical means for the same markers. For each fixed cluster, up to six markers were selected by positive one-versus-rest, tie-corrected Wilcoxon rank statistics. Ties were resolved using the transformed mean and then the marker name. If no marker had a positive statistic, the highest-mean marker was provided. The selected marker means were copied from the all-marker means input. Marker selection used no cell- or cluster-specific reference assignments.
 
-### 2.11 Paired marker representations
+GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017 each annotated the fixed B004 clustering results from four methods with both primary LLM input representations, giving 32 annotation sets and 9,024 planned cluster predictions. Requests contained at most 75 clusters and used supported high-reasoning settings (Table S6d). Each completed condition contributed one accepted annotation per cluster. Request counts, model bindings, inference settings and execution records are detailed in Supplementary Note 2.
 
-In B004, the means-only arm contained all 47 standardized marker means. The means-plus-fractions arm reused exactly the same means and added the corresponding 47 numerical fractions. Memberships, opaque query IDs, marker and cluster order, vocabulary and batch boundaries were fixed within pairs. Prompts requested exactly one integer label code per anonymous query ID and a JSON-object response. They contained no reference labels or profiles, clustering-method names, neighborhood summaries, retrieval, tools or web access.
+A request item was accepted only when its complete final response passed strict validation for the expected query IDs and allowed label codes, with no refusal or truncation. Failed or interrupted attempts and authorized recoveries were retained separately, and accepted outputs were not overwritten. Recovery attempts were not independent repetitions. Full acceptance rules and attempt-level records are described in Supplementary Note 2.
 
-We also compared selected marker names with numerical means for the same selected markers. For each frozen cluster, up to six markers were selected by positive one-versus-rest, tie-corrected Wilcoxon rank statistics, with transformed mean and marker name resolving ties. If no marker had a positive statistic, the highest-mean marker was supplied. The compact numerical arm copied the selected values from the full means arm. Marker selection used no reference labels.
+### 2.5 Annotation evaluation and pipeline selection
 
-Matched method-name controls supplied Claude Opus 5.5 with the same means-plus-fractions evidence and only the correct clustering-method identity added, for each of the four methods. A neighborhood control supplied Opus with the same Leiden evidence plus measured expression from each cell’s 15 nearest other cells within its region. Neighbor values were transformed as arcsinh(x/5), averaged first within each cell’s neighborhood and then within its cluster, and standardized with the frozen training scaler. Distance ties were resolved by cell ID. No neighboring labels were supplied.
-
-### 2.12 LLM models and prompting conditions
-
-In B004, GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017 each annotated the four frozen clustering outputs with both marker representations, giving 32 logical annotation sets. The 1,128 occupied clusters required four request items per method, at most 75 clusters per item, giving 128 initial items and 9,024 requested cluster predictions. All requests used supported high-reasoning settings. Model identities, actual output ceilings, seeds where supported, transport, attempts, usage and charges are preserved with the request and response records. Each logical condition contributed one accepted prediction set; recovery attempts are recorded separately (Supplementary Note 2).
-
-The four-representation comparison planned 64 logical annotation sets and 256 request items. Four Opus method-name conditions and one Opus–Leiden neighborhood condition added five sets and 20 items. Each completed condition contributed one accepted annotation per cluster; requests shared the frozen memberships, 28-label vocabulary and groups of at most 75 clusters.
-
-### 2.13 Evaluation of LLM annotation
-
-For each cluster, we defined its majority reference label and its model-predicted label. Using the notation introduced in Equation (2), let ĉk denote the model-predicted label assigned to cluster k, and let nk denote the total number of cells in that cluster.
-
-Cell-level reference agreement was calculated as the number of cells whose model-assigned label matched their original reference label, divided by N, the number of cells in the stated evaluation population:
+Let ĉk be the model-predicted label for cluster k and nk its total cell count, using the notation in Equation (2). Cell-level reference agreement was the number of cells whose model-assigned label matched their original reference label, divided by N, the number of cells in the stated evaluation population:
 
 $$
 A_{\mathrm{cell}}=\frac{\sum_{k=1}^{K}n_{k,\hat c_k}}{N}\tag{3}
 $$
 
-The B004 primary analysis calculated agreement separately in each of the two test regions and averaged the two values equally. These regions contained 69,576 cells in total. Fixed-28-label macro-F1 was calculated within each region, with absent-class F1 set to zero, and then averaged equally. Noise remained a valid label; any non-Noise prediction on a reference-Noise cell counted as an error. Missing or invalid predictions remained errors in the full planned denominator. Cell- and cluster-level delivery coverage were reported separately. Full-cohort displays retained all 220,082 cells, including 10,495 reference-Noise cells.
+The main B004 evaluation metric was reference agreement, averaged equally across the two test regions, which contained 69,576 cells in total. It was calculated from predictions using all-marker means plus fractions. Macro-F1 was calculated using the original 28-label vocabulary within each region, with absent-class F1 set to zero, and then averaged equally. Noise remained a valid label, and any non-Noise prediction on a reference-Noise cell counted as an error. Missing or invalid predictions remained errors in the full planned denominator. Cell- and cluster-level prediction coverage were reported separately. Full-cohort displays retained all 220,082 B004 cells, including 10,495 reference-Noise cells.
 
-The cluster-majority upper bound used to normalize LLM performance was the weighted cluster purity AUB defined in Equation (2). To express annotation performance relative to this upper bound, we calculated the percentage of the cluster-majority upper bound as
+For each matched method, model, cluster and test region, we subtracted all-marker means results from all-marker means plus fractions results. We reported individual regional values, their equal-weighted mean, paired label changes and prediction coverage. Calibration of cross-model support against reference agreement was evaluated separately (Section 2.7).
+
+To express annotation performance relative to the cluster-majority upper bound AUB from Equation (2), we calculated
 
 $$
 P_{\mathrm{UB}}=100\frac{A_{\mathrm{cell}}}{A_{\mathrm{UB}}}=100\frac{\sum_{k=1}^{K}n_{k,\hat c_k}}{\sum_{k=1}^{K}\max_c n_{k,c}}\tag{4}
 $$
 
-The ratio divides direct cell-level matches by matches attainable under cluster-majority labeling in the same evaluation population and label vocabulary. Minority-reference cells counted as matches whenever the model predicted their label. Secondary reference-Noise-excluded scoring removed cells only at evaluation, while predicted Noise on retained cells remained an error. Supplementary Methods, Section SM4 provides further calculation details. The aggregate error identity is
+This ratio compares observed cell-level reference agreement with its maximum possible value for the same fixed clusters, cells and label set. A cell counted as a match whenever the model predicted its reference label, even when that label differed from the cluster’s majority label. Secondary scoring excluded reference-Noise cells only at evaluation, while predicted Noise on retained cells remained an error. Supplementary Methods, Section SM4 provides further calculation details. The overall error identity is
 
 $$
 1-A_{\mathrm{cell}}=(1-A_{\mathrm{UB}})+(A_{\mathrm{UB}}-A_{\mathrm{cell}})\tag{5}
 $$
 
-The gap to maximum agreement subtracts minority-label matches from majority-label errors, divided by total cells. It does not causally attribute errors to pipeline stages.
+We calculated the gap to maximum agreement by subtracting minority-label matches from majority-label errors and dividing the result by the total cell count. This arithmetic decomposition does not show which pipeline stages caused errors.
 
-For displays summarizing predictions across the four LLMs, we used one accepted prediction per model and each cluster’s most frequent label, resolving ties in Astra, Opus, Argon and DeepSeek order without using reference labels. This display summary does not measure repeated-call consistency.
+For displays summarizing the four models, we assigned each cluster the most frequent label among the models’ accepted predictions, using one prediction per model. Ties were resolved in Astra, Opus 5.5, Argon and DeepSeek order without reference assignments. This summary does not measure repeated-call consistency.
 
-### 2.14 End-to-end Leiden–Astra analysis
+Leiden clustering with GPT-6 Astra annotation was selected for the pipeline example from the B004 benchmark results. The three example clusters were the largest nonempty Leiden clusters by cell count, with ties resolved by cluster ID. This cluster-selection rule was fixed before annotation outcomes were inspected. The main cell-type maps used the fixed mid-jejunum region. Leiden–Opus 5.5 diagnostics were retained as a supplementary comparison (Figure S1).
 
-The Leiden–GPT-6 Astra pipeline was selected for the end-to-end illustration from the B004 benchmark results. Its three example clusters remained the largest occupied Leiden clusters by cell count, with cluster-ID tie-breaking; this cluster-selection rule was fixed before annotation outcomes were inspected. Spatial displays used the fixed Figure 2C region. Leiden–Opus 5.5 diagnostics are retained as a supplementary comparison (Figure S6).
+### 2.6 Cross-donor evaluation
 
-### 2.15 Study partitions and annotation evaluation
+Cross-donor evaluation included all 288,188 B005 cells and 301,280 B006 cells, with eight regions per donor. Each of the four clustering methods used all cells within each donor, and the resulting clusters were held fixed for evaluation. Cells were joined using region identifier and cell ID together. FlowSOM used three complete passes through all donor cells with seed 42. SpatialSort used 50 sampling sweeps, five DMH iterations per sweep and seed 42, with seed 43 reserved for comparing clustering results across random seeds. The native Leiden parent included Hoechst1 alongside the 47 protein markers, whereas its local hierarchy used those markers. PIXIE retained its image-derived representation. For numerical stability, the B005 FlowSOM and SpatialSort fitting inputs were centered by each marker's median and divided by the greater of its interquartile range and population standard deviation. This numerical adjustment was applied only to the clustering inputs and did not change the profiles supplied for annotation.
 
-B004 regions were assigned to four training, two validation and two test regions containing 90,296, 60,210 and 69,576 cells, respectively. The training cells determined marker normalization. Reference labels were excluded from annotation prompts, query construction and model-selected display groups. Cluster memberships and profiles used full B004 data, including training and evaluation cells, so the B004 benchmark evaluates annotation of existing partitions rather than prospective generalization.
+Annotation profiles used the original processed measurements for all 47 protein markers. These measurements were transformed and encoded as in Section 2.4, using the centers and population standard deviations fitted to B004 training data and held fixed across donors. Fractions were calculated before transformation or standardization. Marker order and the original 28-label vocabulary, including Noise, were preserved. Requests contained at most 75 anonymous cluster profiles and no cell- or cluster-specific reference assignments, donor identities or clustering-method identities. All models used high-reasoning settings, with provider fallback disabled. Provider routes are documented in Supplementary Note 2.
 
-The means-plus-fractions arm supplied the primary four-model benchmark. The paired comparison used means-plus-fractions minus means for the same method, model, cluster and test region. We reported each test-region value, their equal-weighted mean, paired label changes and delivery coverage. Primary scoring retained all 28 labels including Noise. No repeated-call mean, standard deviation or within-model vote fraction was estimated. Cross-model reference-agreement calibration was evaluated separately (Section 2.17).
+Cross-donor annotation used the all-marker means plus fractions input representation. It included 32 donor–method–model sets, 128 logical request items and 9,468 planned cluster predictions. We scored one strictly accepted output per item where available. Missing or invalid predictions remained errors in the planned denominator, distinct from valid Noise predictions. Authorized recoveries and Argon continuation segments were retained in the execution record and were not independent repetitions. We calculated primary reference agreement and macro-F1 using the original 28-label vocabulary, averaged each metric equally across the eight regions within each donor, and then averaged equally across the two donors. Logistic-regression and nearest-centroid classifiers fitted to B004 training data were applied to cluster profiles from B005 and B006 without retraining, rebalancing classes or selecting new hyperparameters.
 
-### 2.16 Response validation and execution records
+The evaluation using the original 28-label and projected 23-label vocabularies excluded cells with the reference labels ITLN+ Epithelial, Noise or PDPN+ Stromal, retaining 270,216 B005 cells and 285,973 B006 cells. We calculated metrics for both vocabularies on these same cells. Predictions outside the projected 23-label vocabulary remained errors. Donors were the biological units, with regions as nested subsamples.
 
-Each request item was accepted atomically only after validating a complete terminal response with every expected query ID exactly once, no extra or duplicate keys or fields, integer label codes in the fixed 28-label vocabulary, and no refusal or truncation. Invalid attempts and interrupted streams remained in the execution archive. Explicitly authorized recoveries supplied missing logical items; no accepted prior output was overwritten. Each physical generation and charge was recorded once, and unresolved billing holds remained separate from confirmed charges. This recovery process does not provide independent repetitions.
+### 2.7 Supporting analyses and statistical methods
 
-### 2.17 Supporting sensitivity analyses and descriptive statistics
+For each of the four clustering methods, we added the correct method name to the input containing all-marker means plus fractions provided to Claude Opus 5.5. This was the only input change in the matched controls. A neighborhood control added measured expression from each cell's 15 nearest other cells within its region to the same Leiden–Opus 5.5 baseline annotation input. Neighbor expression values were transformed as arcsinh(x/5), averaged first within each cell’s neighborhood and then within each cluster, and standardized using the fixed training scaler. Distance ties were resolved by cell ID. No neighboring labels were provided. Two Leiden–Astra conditions used the same additions of method names and neighborhood-expression summaries. They reused the accepted blinded Astra baseline, preserving cluster joins, numerical profiles, label vocabulary and supported inference settings. The Astra controls used native OpenAI Batch, while the baseline used OpenRouter Batch, so their contrasts do not isolate prompt content from execution route.
 
-A sensitivity analysis repeated compensation evaluation with fixed FlowSOM settings across all six segmentation methods. Preprocessing was fitted separately before and after compensation, and granularity differed from processed Leiden. The comparison therefore did not isolate clustering alone (Supplementary Methods, Section SM1).
+A compensation comparison used a fixed FlowSOM configuration across all six segmentation methods. Preprocessing was fitted separately before and after compensation, and granularity differed from the processed Leiden workflow. This comparison therefore did not isolate the clustering algorithm alone (Supplementary Methods, Section SM1).
 
-Conventional baselines used nearest-centroid classification and multinomial logistic regression with 47 transformed-expression features or 94 expression/above-zero indicator features. Models were fitted using the four training regions’ cell-level reference labels, a richer source of supervision than the LLM prompts. They assigned one label to each frozen cluster using the same decoded numerical profiles supplied to the LLMs. Logistic-regression regularization was selected from C = 0.001, 0.01, 0.1, 1 and 10 by equal-weighted agreement in the two validation regions, separately by method and representation, with smaller C resolving ties. Test labels were not used for fitting or selection (Table S10).
+Conventional baselines used nearest-centroid classification and multinomial logistic regression with 47 transformed-expression features or 94 expression and positive indicator features. Models were fitted using cell-level reference labels from the four B004 training regions. These training labels were not available in the LLM prompts. The classifiers assigned one label to each fixed cluster using the same numerical cluster profiles provided to the LLMs. For each method and representation, we selected logistic-regression regularization from C = 0.001, 0.01, 0.1, 1 and 10 using agreement averaged equally across the two validation regions. Ties were resolved in favor of the smaller C. Test labels were not used for fitting or selection (Table S10).
 
-Granularity sensitivity used cell-count-weighted Ward coarsening of the full-precision, standardized 47-marker cluster means to 100 and 200 groups. Merge mappings were frozen before reference labels were loaded. Purity, adjusted Rand index and normalized mutual information retained all 28 labels, including Noise, and equally weighted the two test regions. This analysis measures post-clustering partition sensitivity, not new native cluster-count fits or stability of LLM annotation rankings (Table S11).
+We assessed the effect of merging existing clusters into 100 and 200 groups using cell-count-weighted Ward clustering of their full-precision, standardized 47-marker means. Merge mappings were frozen before reference labels were loaded. Purity, adjusted Rand index (ARI) and normalized mutual information (NMI) retained the original 28-label vocabulary, including Noise, and weighted the two test regions equally. This analysis evaluated merged versions of the existing clusters. It did not rerun clustering at the new target counts or assess whether LLM annotation rankings remained stable (Table S11).
 
-Exploratory calibration used the fraction of the four models assigning the same label as a given model, with a fixed denominator of four. A deterministic cluster-hash split separated development and evaluation clusters. Logistic calibration was fitted using development clusters in the two validation regions, with equal regional weight, and evaluated only on disjoint evaluation clusters in the two test regions. We compared raw support, recalibrated support and a development-fitted constant using Brier score, log loss and calibration error, and reported selective reference-disagreement risk with coverage at fixed support levels. This retrospective within-donor analysis concerns reference agreement, not native model probabilities, repeated-call consistency or biological confidence (Figure S9; Table S12).
+Exploratory calibration used cross-model support, defined as the fraction of the four models assigning the same label as a given model, with a fixed denominator of four. A deterministic cluster-hash split separated development and evaluation clusters. Logistic calibration was fitted to development clusters in the two validation regions, with equal regional weight, and evaluated only on nonoverlapping evaluation clusters in the two test regions. We compared raw cross-model support, recalibrated cross-model support and a development-fitted constant using Brier score, log loss and expected calibration error (ECE). Selective reference-disagreement risk and retained-cell coverage were reported at fixed support levels. This retrospective within-donor analysis concerns reference agreement, not native model probabilities, repeated-call consistency or biological confidence (Figure S2 and Tables S12a–S12d).
 
-We reported absolute metrics, regional changes and within-donor variation. Agreement and paired F1 differences were expressed in percentage points. B004 regions were subsamples of one donor and were not biological replicates. Annotation macro-F1 used the fixed 28-label vocabulary, with absent-class F1 set to zero. One accepted prediction per condition does not establish repeated-call stability, and cross-model agreement is not a native model probability. For cross-donor evaluation, we first averaged each endpoint across the eight regions within B005 or B006, then equally weighted the two donor means. These 16 regions were nested subsamples of two biological donors. Missing or invalid predictions remained errors in the planned denominator and were distinct from the valid Noise label.
+B004 regions were subsamples of one donor, not biological replicates. B005/B006 regions were nested within two biological donors, with equal region weighting within each donor followed by equal donor weighting. Annotation and paired-representation outcomes were descriptive single-run results. A single accepted prediction per condition does not establish consistency across repeated model calls, and cross-model agreement is not a native model probability.
 
-Supplementary Table S7 reports the 12 clustering-diagnostic comparisons, with Holm correction across the complete family. Exact paired sign-flip tests weighted the eight B004 regions equally. Regional bootstrap intervals described sampled-region variation. Full calculations and observations are in Supplementary Methods, Section SM5. Annotation and paired-representation outcomes are descriptive single-run results.
+The 12 clustering-diagnostic comparisons used exact paired sign-flip tests with equal weighting of the eight B004 regions and Holm correction across the complete family (Table S7). Regional bootstrap intervals described sampled-region variation. These calculations assume joint exchangeability under independent regional sign reversals: under the null hypothesis, reversing any subset of regional differences would leave their joint distribution unchanged. The sampling design does not establish this assumption. Regions may be dependent because they share fitted partitions and reference-majority labels. The tests provide a sensitivity analysis conditional on the frozen B004 clustering results. They neither establish superiority across donors nor remove retrospective selection bias. All 12 comparisons and their complete paired regional observations are provided in Supplementary Methods, Section SM5 and Table S7.
 
-These conditional clustering calculations assume joint exchangeability under independent regional sign reversals: under the null hypothesis, reversing the direction of any subset of regional differences would leave their joint distribution unchanged. The sampling design does not establish this assumption, and shared fitted partitions and reference-majority labels can couple regions. The calculations do not establish superiority across donors or remove retrospective selection bias. All 12 clustering comparisons and their paired regional observations are provided with no missing pairs.
+### 2.8 Reproducibility and data provenance
 
-### 2.18 Reproducibility
-
-We linked analyses to exact cell IDs, marker order, the original label vocabulary, frozen partitions, prompts and accepted predictions, and reconstructed predictions from stored raw responses before scoring. Source and membership checksums, request hashes, per-attempt receipts, strict parsing, coverage and confirmed charges are preserved with the reproducible scoring and figure sources. Supplementary Notes 1–2 and Supplementary Methods document inputs, execution and calculations.
-
-### 2.19 Cross-donor evaluation
-
-Cross-donor evaluation used all 288,188 B005 cells and 301,280 B006 cells, with eight tissue regions per donor. B004 supplied the within-donor benchmark, training normalization and conventional-classifier parameters. Cell joins used the region identifier and cell ID together. Each donor retained four frozen, all-cell partitions. FlowSOM used three complete all-cell passes with seed 42; SpatialSort used 50 actual sweeps, DMH=5 and seed 42. SpatialSort seed 43 was used only for clustering sensitivity. The native Leiden parent retained Hoechst1 in addition to the 47 proteins; its local hierarchy used the proteins. PIXIE retained its image-derived representation. For numerical stability, B005 FlowSOM and SpatialSort fitting inputs received uniform markerwise median centering and division by the greater of the interquartile range and population standard deviation. This conditioning did not change annotation evidence.
-
-Annotation used the original processed Float64 measurements for all 47 proteins, including observation-backed CD123 and CDX2. Means of arcsinh(expression/5) were standardized with the frozen center and population standard deviation from the four B004 training regions. Fractions were calculated from processed values above zero before transformation or standardization. Means and fractions were encoded in integer thousandths, preserving the marker and native 28-label vocabulary orders. Noise (code 21) remained a valid label. Each request contained at most 75 anonymous cluster profiles, with no reference labels, donor identities or clustering-method identities. All models used supported high-reasoning settings. Astra used native OpenAI Batch, Opus used Anthropic Batch through OpenRouter, Gemini used the Google AI Studio Flex streaming route through OpenRouter, and DeepSeek used Morph FP8 streaming through OpenRouter. Provider fallback was disabled.
-
-The single all-marker means plus fractions condition comprised 32 donor–method–model sets, 128 logical request items and 9,468 planned cluster predictions. We scored one strictly accepted annotation per cluster and condition. The evaluation protocol counts missing or invalid predictions as errors in the planned denominator. Noise remains a valid label. Authorized recoveries and Gemini continuation segments are recorded as part of delivery history.
-
-A secondary reference-only eligibility mask excluded ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 B005 and 285,973 B006 cells. Native-28-label and projected-23-label endpoints used these same cells; predictions outside the 23-label vocabulary remained errors. The two donors were the biological units; the regions were nested subsamples. Reference-label exploration informed development; the cross-donor evaluation was descriptive rather than an untouched confirmatory test.
+Analyses were linked to exact cell IDs, marker order, the original label vocabulary, fixed clustering results, prompts and accepted predictions. Predictions were reconstructed from stored raw responses before scoring. The reproducible scoring and figure sources preserve checksums of source data and cluster assignments, request hashes, records of individual attempts, strict parsing rules, coverage and confirmed charges. Supplementary Methods and Supplementary Notes 1–2 document the inputs, execution and calculations.
 
 ## 3. Results
 
-### 3.1 Spillover compensation effects depend on segmentation method, tissue region, and cell type
+### 3.1 Spillover compensation effects vary across segmentation methods and cell types
 
-We tested REDSEA compensation across six segmentation methods—Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg, and MicroSAM—to assess its effects on clustering and cell-type annotation [7], [9]–[14] (Figure 1A). Using the annotated intestine CODEX dataset, we compared compensated and uncompensated outputs with reference labels across immune, epithelial and stromal cell types in densely and sparsely populated tissue regions [3].
+We compared cluster separation and reference agreement before and after REDSEA spillover compensation across six segmentation methods: Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg and MicroSAM [7], [9]–[14] (Figure 1A).
 
-To evaluate whether compensation improved cluster separation, we calculated silhouette scores separately for each tissue region. Spillover compensation did not consistently improve silhouette scores and produced substantial regional variation. CellposeCyto3 and InstanSeg showed slightly positive changes, whereas MicroSAM, Mesmer, CellSAM, and CellposeSAM showed negative changes (Figures 1B and S1A). Most regional silhouette scores remained below zero under both conditions, consistent with overlapping or incompletely separated groups in the evaluated feature space [31], [32].
+![Figure 1](../figures/current_manuscript/PNG/Figure_1.png)
 
-We next evaluated whether this pattern was consistent across the Davies–Bouldin and Calinski–Harabasz metrics (Figure S1B–C). Davies–Bouldin indices generally increased following compensation, indicating greater within-cluster dispersion relative to separation from the most similar neighboring cluster (Figure S1B) [33]. Likewise, the Calinski–Harabasz index increased for Mesmer and CellposeCyto3 but decreased for CellposeSAM, CellSAM, InstanSeg, and MicroSAM in the analysis combining tissue regions within each segmentation method (Figure S1C) [34]. Together, these results show that the downstream effects of spillover compensation depended on both the segmentation method and the tissue region.
+Figure 1. Spillover compensation has variable effects on clustering and cell-type annotation. (A) Original schematic of the REinforcement Dynamic Spillover EliminAtion (REDSEA) workflow for six segmentation methods. Paired uncompensated and compensated data were clustered with Leiden at resolution 1.5. (B,C) Silhouette-score and cell-type F1 changes. Points represent regions (B) or cell types (C), and diamonds show regional means (B). Boxes span interquartile ranges, center lines mark medians, and whiskers reach the most extreme observations within 1.5 times the interquartile range. (D–F) Cell-type F1 changes for Mesmer, CellposeSAM and CellposeCyto3, respectively. Hollow circles show paired regional changes, horizontal lines show the observed regional ranges, and diamonds show regional means. Teal, rust, and gray diamonds indicate increases, decreases, and no change, respectively. Changes are after minus before compensation, in F1 units for C and percentage points for D–F. Panels D–F use the same scales and cell-type order and report the number of regional pairs. Pair inclusion follows Section 2.2. Positive changes indicate higher silhouette scores or greater reference agreement. Regions are subsamples of donor B004. CellposeCyto3 refers to processed cellpose_cyto3 outputs, formerly labeled Cellpose Cyto3 or CellposeV3. The original checkpoint could not be verified. Source data: Duke Research Data Repository record 565 (Availability of Data and Materials). F1 is the harmonic mean of precision and recall. Arrows indicate workflow progression. Δ means after minus before compensation. In (D)–(F), n is the number of included regional pairs for each cell type. TIF stands for Tagged Image File Format, and H5AD is the AnnData file format. Cell-label abbreviations: CD, cluster of differentiation. DC, dendritic cells. ICC, interstitial cells of Cajal. ITLN, intelectin. NK, natural killer cells. PDPN, podoplanin. TA, transit-amplifying cells.
 
-To determine how compensation affected cell-type agreement, we compared F1 scores before and after compensation using reference-majority cluster labels. Most F1 changes were small, but some cell types showed larger increases or decreases that varied across segmentation methods and tissue regions (Figure 1C–F).
+Compensation did not consistently improve cluster separation. Regional silhouette-score changes were slightly positive for CellposeCyto3 and InstanSeg but negative for MicroSAM, Mesmer, CellSAM and CellposeSAM, with substantial variation among regions (Figures 1B and S3A). Most regional silhouette scores remained below zero before and after compensation, consistent with overlapping or incompletely separated groups in the evaluated feature space [31], [32].
 
-Dendritic cells showed particularly large variation. Mesmer and CellposeCyto3 exhibited positive changes in dendritic-cell F1 score, whereas CellposeSAM exhibited a negative change (Figure 1C). We observed increases in cells assigned the dendritic-cell label for Mesmer and CellposeCyto3 and a decrease for CellposeSAM (Figure S2A). Similarly, Mesmer and CellposeCyto3 showed marked reductions in the number of cells assigned the CD8+ T-cell label after compensation, whereas CellposeSAM showed a smaller spatial change (Figure S2B).
+The other cluster-quality metrics also showed no consistent benefit (Figure S3B–C). Davies–Bouldin indices generally increased after compensation, indicating greater within-cluster dispersion relative to separation from the most similar neighboring cluster [33]. Mean regional Calinski–Harabasz indices decreased for all six segmentation methods, indicating poorer cluster separation by this metric [34].
 
-Spillover compensation did not consistently improve cluster separation or reference agreement. The effects varied across segmentation methods, tissue regions and cell types, suggesting that mask geometry, initial spillover, cell density and marker distributions may influence its downstream effects.
+We compared cell-type F1 before and after compensation. Most changes were small, although some cell types showed larger increases or decreases that differed across segmentation methods and tissue regions (Figure 1C–F).
 
-To assess sensitivity to cell matching and clustering workflow, we performed a before–after comparison of shared segmentation objects for all six segmentation methods (Figure S3A–C). For each segmentation method and clustering workflow, we first averaged F1 changes across the cell types represented by reference or predicted cells within each region, then averaged those regional values equally. Mean F1 changes varied in direction across segmentation methods for processed Leiden but were negative for all six methods under the fixed FlowSOM workflow. Individual regional changes varied in both workflows (Figure S3B–C), using the matching rule described in Section 2.4. These comparisons describe the sampled B004 cells and tissue regions. Because clustering granularity and separately fitted preprocessing differed between workflows, they do not isolate the effect of the clustering algorithm alone. Matching and retention counts differed across methods and between conditions (Table S1), supporting separate assessment of cell retention and F1 changes among shared segmentation objects.
+Dendritic-cell F1 increased for Mesmer and CellposeCyto3 but decreased for CellposeSAM (Figure 1C). The number of cells assigned the dendritic-cell label changed in the same directions (Figure S4A). Mesmer and CellposeCyto3 also showed marked reductions in the number of cells assigned the CD8+ T-cell label after compensation, whereas CellposeSAM showed a smaller spatial change (Figure S4B).
 
-### 3.2 Clustering performance varies across methods, cell types, and tissue regions
+To compare cell-matching rules and clustering workflows, we examined shared segmentation objects before and after compensation for all six segmentation methods (Figure S5A–C). Within each region, we averaged F1 changes across cell types represented by reference or predicted cells, then weighted the regional means equally. Mean F1 changes differed in direction across segmentation methods under processed Leiden but were negative for all six methods under the fixed FlowSOM workflow. Individual regional changes varied in both workflows (Figure S5B–C), using the matching rule in Section 2.2. These comparisons describe the sampled B004 cells and regions. Matching and retention counts differed across methods and conditions (Table S1), so we evaluated cell retention separately from F1 changes among shared segmentation objects.
 
-Rare cell types and shared marker-expression patterns make cell types difficult to separate, while spatially adjacent cells can belong to different cell types. We therefore compared Leiden, FlowSOM, SpatialSort and PIXIE to examine how these approaches recovered cell types.
+Spillover compensation did not consistently improve cluster separation or reference agreement. Variation across segmentation methods, tissue regions and cell types suggests that mask geometry, initial spillover, cell density and marker distributions may influence the downstream effects.
 
-We applied an established preprocessing pipeline [35] to the intestine CODEX dataset [3], generating spatial coordinates and protein marker intensities for clustering (Figure 2A). The reference cell-type annotations represented in this dataset included both abundant and rare cell types (e.g., epithelial, NK), cell subtypes (e.g., epithelial, CD66+ epithelial), and cell types only present in certain locations (e.g., Paneth), providing a varied set of challenges for unsupervised clustering (Figures 2B–C and S4A–B).
+### 3.2 Clustering performance varies across methods and reference cell types
 
-To compare workflows at a common requested cluster count, we targeted 300 clusters using fixed method-specific configurations. Leiden and PIXIE each produced 300 occupied clusters, FlowSOM produced 299, and the primary SpatialSort run produced 229 (Table S2A).
+We applied an established preprocessing pipeline [35] to the intestine CODEX dataset [3] to obtain spatial coordinates and protein marker intensities for clustering (Figure 2A). The reference annotations included abundant and rare cell types, such as epithelial and NK cells. They also included related types and subtypes, such as epithelial and CD66+ epithelial cells, and populations restricted to particular locations, such as Paneth cells (Figures 2B–C and S6A–B). UMAP projections compare the reference annotations with the reference-majority cluster assignments from the four workflows (Figure 2D).
 
-Regional weighted F1 (Figure 2E), cell-type F1 (Figure 2F), regional cell-count-weighted cluster purity (Figure 2G) and cell-type recall (Figure 2H) varied across methods, reference cell types and tissue regions. Leiden had the highest mean regional weighted F1 and cluster purity, while SpatialSort had the lowest. These values summarize reference-informed diagnostics of the fixed clustering assignments, with regional majority labels defined separately for each method. The eight regional observations describe variation within donor B004 and do not establish independent cell-type annotation performance.
+![Figure 2](../figures/current_manuscript/PNG/Figure_2.png)
 
-Under these fixed configurations, Leiden’s mean regional weighted F1 and cluster purity exceeded SpatialSort’s by 21.1 and 18.8 percentage points, respectively. Paired regional differences and descriptive intervals are reported in Supplementary Table S7.
+Figure 2. Clustering performance varies across methods and reference cell types. (A) Original workflow schematic from co-detection by indexing (CODEX) images and cell features to clustering and reference-majority labeling. Created with BioRender.com. (B,C) Reference cell counts and a representative cell-type map. Cell-type colors in C and D match those in B. (D) Uniform manifold approximation and projection (UMAP) embeddings colored by reference or cluster-assigned labels, with enlargements of the boxed regions above [36]. (E,G) Regional cell-count-weighted F1 and cluster purity after majority labeling within each region. Points represent regions. Boxes show medians and interquartile ranges, with 1.5-interquartile-range whiskers. (F,H) Cell-type F1 (0–1) and recall (0–100%) after global majority labeling, with reference-cell counts at right. Panels E–H use 209,587 non-Noise cells and the harmonized 20-label vocabulary, with alphabetical tie-breaking. The eight regions are within-donor observations. Supplementary Table S7 reports conditional comparisons. Leiden, FlowSOM and SpatialSort used 47 markers, with 299 and 229 nonempty clusters in the primary FlowSOM and SpatialSort partitions, respectively. Sections 2.3 and 2.7 describe the methods and limitations. Figure S11 shows CD8+ T marker-expression profiles. Source data: Duke Research Data Repository record 505 (Availability of Data and Materials). F1 is the harmonic mean of precision and recall. Arrows indicate workflow progression. Cell-label abbreviations: CD, cluster of differentiation. DC, dendritic cells. ICC, interstitial cells of Cajal. ITLN, intelectin. NK, natural killer cells. PDPN, podoplanin. TA, transit-amplifying cells.
 
-Cell-type-specific F1 and recall varied across the fixed clustering partitions under global majority labeling (Figures 2F and 2H). Smooth muscle F1 ranged from 0.62 to 0.90 and recall from 51.2% to 91.0% across methods. The rare CD7+ Immune reference class received no cluster-majority label from any method, yielding zero F1 and recall in all four partitions. These cell-type-specific results use one global reference-majority mapping per method, whereas the regional diagnostics in Figures 2E and 2G define majority labels separately within each region. Additional regional and cell-type clustering diagnostics are shown in Figure S4D.
+Leiden and PIXIE each produced 300 nonempty clusters, FlowSOM produced 299, and the primary SpatialSort run produced 229 (Table S2A).
 
-Using the original 28 labels including Noise, pooled cluster-majority upper bounds were 68.69% for Leiden, 47.14% for FlowSOM, 48.35% for SpatialSort and 52.94% for PIXIE (Figure S5). All 220,082 B004 cells were retained, including eight cells without measurable marker signal in a separate PIXIE group. SpatialSort sampling seeds 42 and 43 produced 229 and 231 occupied clusters, respectively, with a pooled partition ARI of 0.458. Completion of both 100-sweep chains does not establish convergence.
+Regional weighted F1, cell-type F1, regional cell-count-weighted cluster purity and cell-type recall varied across methods, reference cell types and tissue regions (Figure 2E–H). Leiden had the highest mean regional weighted F1 and purity, whereas SpatialSort had the lowest. The regional metrics used majority labels assigned separately within each region and method. These reference-based metrics assess the fixed B004 clusters across eight regions from one donor.
 
-### 3.3 LLM annotation performance varies across models, clustering methods, and cell types
+Under these configurations, Leiden exceeded SpatialSort by 21.1 percentage points in mean regional weighted F1 and 18.8 percentage points in mean regional purity. Supplementary Table S7 reports the paired regional differences and descriptive intervals.
 
-We next tested whether the four LLMs could assign cell-type labels to CODEX clusters and examined differences across clustering methods, cell types, and tissue regions. The workflow from cluster marker-expression profiles to LLM labels and reference-based evaluation is shown in Figure 3A.
+Cell-type F1 and recall also varied across methods when each cluster was assigned its reference-majority label across all eight B004 regions (Figures 2F and 2H). Smooth muscle F1 ranged from 0.62 to 0.90 and recall from 51.2% to 91.0% across methods. No cluster received CD7+ Immune as its majority reference label, so F1 and recall for this rare class were zero for all four methods. The global majority labels used here differ from the labels assigned separately within each region in Figures 2E and 2G. Figure S6D provides additional regional and cell-type diagnostics.
 
-We assigned each cluster’s predicted label to its constituent cells and compared the assignments with the original 28 reference labels. The primary benchmark used the means-plus-fractions arm and equally weighted the two test regions. Reference-majority upper bounds describe the constraints of the fixed partitions, while macro-F1 retains all 28 labels (Figures 3B–C and S7).
+With the original 28-label vocabulary, including Noise, pooled cluster-majority upper bounds were 68.69% for Leiden, 47.14% for FlowSOM, 48.35% for SpatialSort and 52.94% for PIXIE (Figure S7). This analysis retained all 220,082 B004 cells, including eight cells without measurable marker signal in a separate PIXIE group. SpatialSort seeds 42 and 43 produced 229 and 231 nonempty clusters, respectively, with a pooled partition ARI of 0.458. Completion of both 100-sweep chains does not establish convergence.
 
-Across the 16 clustering-method–model combinations, mean test-region reference agreement ranged from 17.42% to 58.12%, and fixed-28-label macro-F1 ranged from 0.114 to 0.449 (Figures 3B–C). Leiden–GPT-6 Astra had the highest agreement in these two test regions. These comparisons describe one accepted annotation per condition in B004 and do not establish general model or method superiority.
+### 3.3 LLM annotation agreement varies across models and clustering methods
 
-All 128 logical request items returned accepted outputs, covering all 9,024 planned cluster predictions. Cluster- and cell-level delivery coverage was 100% in every final annotation set. Failed and interrupted physical attempts remained in the execution record rather than being treated as independent repeats (Supplementary Note 2).
+![Figure 3](../figures/current_manuscript/PNG/Figure_3.png)
 
-Reference agreement varied across models and reference cell types in the Leiden test-region comparison (Figure 3D). Cell-type results used the same original label definitions as the primary benchmark.
+Figure 3. Large language model annotation agreement varies across models and clustering methods. (A) Original workflow schematic from cell features through clustering, marker summaries and annotation to reference-label evaluation. Created with BioRender.com. The selected-marker route is a schematic example. The primary results shown in panels B–E use all-marker means plus fractions for all 47 markers, and the executed selected-marker controls follow the rank-based rule in Section 2.4. (B,C) Reference agreement and macro-F1 calculated using the original 28-label vocabulary, respectively, averaged equally across the two test regions. The vocabulary includes Noise, and absent-class F1 is zero. (D) Label-specific recall for Leiden predictions in pooled test cells. Labels are ordered by decreasing mean recall across the four models. (E) Cell-type maps showing reference labels and each model's Leiden predictions in the fixed mid-jejunum region shown in Figure 2C. The shared four-column color key identifies labels, including Noise, across the maps, using the Figure 2C colors. Each model contributes one accepted prediction per cluster and input condition. No repeated-annotation error bars are shown. All regions are from donor B004. F1 is the harmonic mean of precision and recall. Macro-F1 is the unweighted mean of the class-specific F1 scores. CODEX stands for co-detection by indexing. Arrows indicate workflow progression. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek). Cell-label abbreviations: CD, cluster of differentiation. DC, dendritic cells. ICC, interstitial cells of Cajal. ITLN, intelectin. NK, natural killer cells. PDPN, podoplanin. TA, transit-amplifying cells.
 
-Spatial maps compare reference labels with the four models’ Leiden predictions in the fixed Figure 2C region (Figure 3E). These maps retain individual predictions and were not selected by their annotation agreement.
+Across the 16 clustering-method–model combinations, mean test-region agreement ranged from 17.42% to 58.12%, and macro-F1 calculated using the original 28-label vocabulary ranged from 0.114 to 0.449 (Figures 3B–C). Leiden–GPT-6 Astra had the highest agreement in these two regions. These single-annotation results from B004 do not establish general superiority of a model or clustering method.
 
-The primary benchmark and paired marker-representation comparison used the same frozen partitions, original 28-label vocabulary and accepted predictions. The paired comparison is reported in Section 3.5, Tables S6a–S6d and Figure S10.
+Across both primary LLM input representations, all 128 planned annotation request items eventually produced accepted outputs, providing all 9,024 planned cluster predictions. Prediction coverage was 100% at both the cluster and cell levels in every annotation set. Failed and interrupted attempts were retained in the execution record and were not counted as independent repetitions (Supplementary Note 2).
 
-### 3.4 End-to-end evaluation of the Leiden–Astra annotation pipeline
+Label-specific recall varied across models in the pooled Leiden test-region comparison (Figure 3D).
 
-We characterized the Leiden–GPT-6 Astra pipeline using confusion matrices, cell-type F1 and fixed-cluster reference-majority bounds (Figure 4). The pipeline was selected from the B004 benchmark results, where its means-plus-fractions test-region agreement was 58.12%, compared with 50.27% for Leiden–Opus 5.5. This descriptive selection does not provide an independent model-selection evaluation.
+Cell-type maps show the reference labels alongside each model's Leiden predictions in the fixed tissue region shown in Figure 2C (Figure 3E). The maps retain the individual model predictions, and the region was not selected on the basis of annotation agreement.
 
-We characterized end-to-end Leiden–GPT-6 Astra performance using a pooled test-region confusion matrix and cell-type-specific F1 scores (Figures 4B–C). Performance varied across cell types and the two test regions. Pooled test-region summaries weight cells equally and therefore differ from the equal-region primary endpoint.
+### 3.4 Positive fractions have mixed effects on annotation agreement
 
-Figures 4D–E and S6B compare full-cohort reference agreement with the maximum agreement achievable by assigning one label to each fixed cluster. The displayed components are reference agreement, the gap to maximum agreement and the within-cluster minority-label fraction. Reference agreement includes minority-reference cells whose label matches the assigned model label. These arithmetic components do not identify mutually exclusive groups of misclassified cells or causally attribute errors to pipeline stages. Figure 4E weights clusters by cell count; Figure S7 separately reports the primary equal-test-region decomposition.
+Adding positive fractions to otherwise identical mean marker-expression inputs increased agreement in 8 of the 16 method–model comparisons and reduced it in 8. Changes in agreement, averaged equally across the two test regions, ranged from −10.25 to +6.50 percentage points (Table S6a and Figure S9).
 
-The three largest Leiden clusters are shown in Figure 4D with their model-assigned and reference-majority labels. Their selection depended only on cluster size, with cluster-ID tie-breaking, rather than agreement or marker appearance.
+Selected marker names gave lower agreement than all-marker means in 15 of 16 method–model comparisons (Figure S10 and Tables S8a–S8d). Mean agreement across the 16 equally weighted conditions was 32.52% for selected marker names, 38.10% for all-marker means and 37.51% for all-marker means plus fractions. Using selected marker means, Leiden–DeepSeek achieved 41.42% agreement and a macro-F1 of 0.3576 calculated using the original 28-label vocabulary, with all 300 cluster predictions delivered.
 
-Across all 220,082 cells, Leiden–GPT-6 Astra achieved 53.88% reference agreement, compared with a cluster-majority upper bound of 68.69%, leaving a 14.80-percentage-point gap (Figure 4E). These full-cohort components are descriptive and are not the held-out test-region endpoint.
+Single-run comparisons do not establish consistency across repeated model calls. Positive fractions summarize processed measurements and have not been validated as measures of biological marker positivity. Figure S11 compares stored marker-expression profiles of groups labeled CD8+ T using the cross-model summary. Cells were not filtered by reference label for this comparison.
 
-### 3.5 Paired marker-representation comparison
+### 3.5 Annotation performance varies across cell types in the selected Leiden–Astra pipeline
 
-We compared means alone with the identical means plus fractions of processed marker values above zero across all four clustering methods and four models. Both arms delivered every planned prediction. Adding fractions increased agreement in 8 of 16 comparisons and reduced agreement in 8, with equal-test-region changes ranging from -10.25 to +6.50 percentage points (Tables S6a–S6c; Figure S10).
+We examined Leiden–GPT-6 Astra because it had the highest B004 reference agreement with all-marker means plus fractions: 58.12%, versus 50.27% for Leiden–Opus 5.5. Confusion matrices, label-specific F1 scores and cluster-majority upper bounds summarize its performance (Figure 4).
 
-Selected marker names yielded lower reference agreement than all 47 numerical means in 15 of the 16 method–model comparisons (Figure S8; Tables S8a–S8d). Mean agreement across the 16 equally weighted conditions was 32.52% for selected names, 38.10% for all means and 37.51% for means plus fractions. The [completed B004 package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) reports 41.42% agreement and macro-F1 of 0.3576 for DeepSeek–Leiden with selected numerical means, with all 300 predictions delivered.
+![Figure 4](../figures/current_manuscript/PNG/Figure_4.png)
 
-The comparison describes the observed single-run outcomes under the two input representations. It does not establish repeated-call stability, and fractions above zero are numerical summaries of processed measurements rather than validated biological positivity. Figure S11 compares stored marker-expression profiles of model-consensus CD8+ T groups, reflecting the combined clustering and annotation assignments without reference-label filtering.
+Figure 4. Cell-type performance and agreement limits of the selected Leiden–Astra pipeline. (A) Original workflow schematic from co-detection by indexing (CODEX) cell features through Leiden clustering, GPT-6 Astra annotation and cell-type maps. Created with BioRender.com. The OpenAI logo is a trademark of OpenAI. Annotation uses all-marker means plus fractions. (B) Row-normalized confusion matrix for pooled test cells. (C) Dark diamonds show pooled-test F1. Blue circles and orange squares show F1 for the transverse colon and mid-jejunum, respectively. Thin lines connect the two regional scores for each label. Both matrix axes and the aligned rows in C follow decreasing pooled-test F1. Scoring uses the original 28-label vocabulary, including Noise. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count, with ties resolved by cluster ID, before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. Components in D and E are agreement, the gap to the cluster-majority upper bound and the within-cluster minority-reference-label fraction. They are arithmetic components of reference disagreement and do not identify independent biological error classes. The pipeline was selected from the B004 benchmark results. The cluster-size selection rule and spatial region were unchanged. F1 is the harmonic mean of precision and recall. Arrows indicate workflow progression. The Cells column in (D) and (E) gives the cell count for each row. Cell-label abbreviations: CD, cluster of differentiation. DC, dendritic cells. ICC, interstitial cells of Cajal. ITLN, intelectin. NK, natural killer cells. PDPN, podoplanin. TA, transit-amplifying cells.
 
-### 3.6 Supporting annotation controls and sensitivity analyses
+The pooled test-region confusion matrix and label-specific F1 scores showed variation across cell types and between the two test regions (Figures 4B–C). Pooled summaries give each cell equal weight and therefore differ from the main reference-agreement metric, which gives each test region equal weight.
 
-Adding the correct clustering-method name reduced Opus reference agreement in all four methods, by 2.54–5.12 percentage points relative to the matched blinded means-plus-fractions conditions (Figure S9A; Table S9). Adding measured neighborhood expression reduced Opus–Leiden agreement from 50.27% to 45.97%, a 4.29-percentage-point change (Figure S9B). These single-generation contrasts do not establish repeatability or a general effect of method names or spatial context.
+Figures 4D–E decompose full-cohort results into reference agreement, the gap to the cluster-majority upper bound and the within-cluster minority-reference-label fraction. Figure S1B provides the corresponding supplementary Leiden–Opus 5.5 comparison. Reference agreement counts every cell whose reference label matches the model-assigned label, including matches to minority reference types within a cluster. The minority-reference-label fraction counts cells whose reference label differs from their cluster's majority label. These arithmetic components neither identify mutually exclusive groups of misclassified cells nor establish which pipeline stage caused an error. Figure 4E weights the cluster components by cell count. Figure S8 shows the primary decomposition, which weights the test regions equally.
 
-Conventional classifiers provided a supervised comparison using the same numerical cluster profiles (Table S10). With means plus fractions, test-region agreement ranged from 44.09% to 68.20% for logistic regression and from 35.19% to 55.74% for nearest-centroid classification. Leiden logistic regression reached 68.20%, compared with 58.12% for Leiden–Astra, but the classifier used training-cell reference labels that were not available in the LLM prompts.
+Across all 220,082 B004 cells, Leiden–GPT-6 Astra achieved 53.88% agreement against a cluster-majority upper bound of 68.69%, leaving a 14.80-percentage-point gap (Figure 4E). These full-cohort summaries are descriptive and are distinct from the main evaluation metric for the two B004 test regions.
 
-Under cell-count-weighted Ward coarsening to 100 and 200 groups, the equal-test-region purity ranking remained Leiden, PIXIE, FlowSOM and SpatialSort, using the original 28 labels including Noise (Table S11). Adjusted Rand index rankings changed with coarsening. These results describe sensitivity of existing partitions to merging, not native fits at the matched cluster counts or stability of LLM annotation rankings.
+### 3.6 Cross-donor evaluation shows variation in clustering and annotation
 
-Treating raw four-model support as a reference-agreement probability yielded a mean Brier score of 0.311, compared with 0.212 after logistic recalibration and 0.229 for a development-fitted constant (Figure S9C; Tables S12a–S12d). These means weight the 16 method–model conditions equally after equal test-region weighting. Recalibration reduced Brier score relative to raw support in all 16 conditions but was worse than the constant in three. Its mean calibration error was 0.118, compared with 0.094 for the constant. Selective-risk curves illustrate the already-selected Astra–Leiden pipeline separately in each test region (Figure S9D). These exploratory results use held-out cluster IDs within B004 and do not establish transferable confidence thresholds.
+Cross-donor evaluation included all 589,468 B005 and B006 cells and retained the original 28-label vocabulary, including Noise. When metrics were averaged equally across each donor's eight regions, Leiden had the highest purity, at 73.92% in B005 and 73.09% in B006. FlowSOM had the highest ARI, at 0.355 and 0.353, respectively (Figure S12A,B and Table S14a). Purity and ARI therefore ranked the methods differently.
 
-### 3.7 Cross-donor clustering and annotation
+After 50 sampling sweeps with five DMH iterations per sweep, the ARI between cluster assignments from SpatialSort seeds 42 and 43 was 0.692 in B005 and 0.580 in B006, calculated across cells common to both runs and pooled across all regions (Figure S12C and Table S14b).
 
-The cross-donor evaluation used all 589,468 B005/B006 cells with native 28-label references, including Noise.
+![Figure 5](../figures/current_manuscript/PNG/Figure_5.png)
 
-The frozen partitions contained 300/300 Leiden clusters, 299/300 FlowSOM clusters, 298/270 SpatialSort clusters and 300/300 PIXIE clusters in B005/B006, respectively. With purity and adjusted Rand index averaged equally across each donor’s eight regions, Leiden had the highest native-28-label purity (73.92% in B005 and 73.09% in B006), while FlowSOM had the highest ARI (0.355 and 0.353, respectively; Figure S12A,B and Table S14a). Thus, purity and ARI ranked the methods differently.
+Figure 5. Cross-donor annotation agreement using all-marker means plus fractions for all 47 markers. (A,B) Reference agreement using the original 28-label vocabulary in B005 and B006, respectively, including Noise as a valid label. Each donor's value averages its eight tissue regions equally. (C,D) Agreement and macro-F1 calculated using the original 28-label vocabulary, respectively, after equal weighting of the two donor means. Results are shown for four large language models and conventional classifiers trained on B004 data. Classifiers are grouped separately because they used training reference labels and were not retrained on the evaluation donors. Tables S13a–S13b provide the donor-specific LLM results. Each cluster had one planned annotation per condition. The evaluation used at most one accepted annotation per cluster and condition. F1 is the harmonic mean of precision and recall. Macro-F1 is the unweighted mean of the class-specific F1 scores. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek).
 
-Global common-cell partition ARI between SpatialSort seeds 42 and 43 was 0.692 in B005 and 0.580 in B006 at 50 actual sweeps and DMH=5 (Figure S12C and Table S14b). These values describe seed sensitivity at that budget; they do not establish convergence or repeated-annotation consistency.
+The B004-selected Leiden–Astra pipeline achieved reference agreement of 34.22% in B005 and 37.51% in B006 using the original 28-label vocabulary, giving 35.87% agreement after equal weighting of the donor means and a macro-F1 of 0.302. The Leiden logistic-regression classifier trained on B004 data achieved 57.66% and 61.90% agreement, respectively, giving 59.78% reference agreement averaged equally across donors and a macro-F1 of 0.414 (Figure 5C,D). The classifier used B004 training reference labels that were unavailable in the LLM prompts and was applied to both evaluation donors without additional training.
 
-All 128 logical request items passed strict acceptance, covering all 9,468 planned cluster predictions. Five DeepSeek recoveries filled 375 previously missing predictions in B005 PIXIE, B005 SpatialSort and B006 FlowSOM. Across the 16 method–model combinations, equal-donor agreement ranged from 21.14% to 38.57% and fixed-28-label macro-F1 ranged from 0.135 to 0.325 (Figure 5 and Tables S13a–S13b).
+Among the same cells retained for both label definitions, Leiden–Astra agreement was 35.70% in B005 and 37.70% in B006 using the original 28-label vocabulary, compared with 42.25% and 44.66% using the projected 23-label vocabulary. Reference agreement averaged equally across donors was 36.70% and 43.46%, respectively (Figure S13 and Tables S15a–S15b). Using the same cells for both label definitions separates the effect of label mapping from the effect of excluding cells based only on their reference labels. The full-population evaluation using the original 28-label vocabulary remains the primary result.
 
-The B004-selected Astra–Leiden pipeline achieved native-28-label agreement of 34.22% in B005 and 37.51% in B006, or 35.87% after equal weighting of the two donor means; its macro-F1 was 0.302. The B004-fitted Leiden logistic classifier reached 57.66% and 61.90% agreement in B005 and B006, respectively (59.78% equal-donor agreement; macro-F1 0.414). The supervised comparator used B004 training labels that were unavailable in the LLM prompts.
+### 3.7 Annotation controls and additional comparisons
 
-On the same reference-eligible cells, Astra–Leiden agreement was 35.70%/37.70% under the native 28-label vocabulary and 42.25%/44.66% after the 23-label projection in B005/B006. Equal-donor agreement was 36.70% and 43.46%, respectively. This comparison separates the contribution of the label projection from the reference-only cell exclusions; the full-population native-28-label result remains primary.
+Matched prompt controls did not improve Opus 5.5 agreement in the tested conditions. Adding the correct clustering-method name reduced agreement by 2.54–5.12 percentage points across the four methods. The corresponding baselines used all-marker means plus fractions and omitted clustering-method names (Figure S2A and Table S9). Adding measured neighborhood expression reduced Leiden–Opus 5.5 agreement from 50.27% to 45.97%, a 4.29-percentage-point decrease (Figure S2B). Leiden–Astra agreement decreased from 58.12% to 53.53% with the method name and to 51.43% with neighborhood-expression summaries, changes of −4.59 and −6.69 percentage points, respectively (Figure S2A,B and Table S9). Macro-F1 calculated using the original 28-label vocabulary was 0.4490 for the Astra baseline, 0.4458 with the method name and 0.4531 with neighborhood-expression summaries. These single-generation contrasts do not establish repeatability or a general effect of method names or spatial context. The Astra controls and baseline used different Batch routes (Section 2.7).
+
+Conventional classifiers provided a supervised comparison using the same numerical cluster profiles (Table S10). With all-marker means plus fractions, test-region agreement ranged from 44.09% to 68.20% for logistic regression and from 35.19% to 55.74% for nearest-centroid classification. The Leiden logistic-regression classifier achieved 68.20%, compared with 58.12% for Leiden–Astra. The classifier, however, used training-cell reference labels that were not provided in the LLM prompts.
+
+After merging clusters into 100 and 200 groups using cell-count-weighted Ward clustering, we ranked methods by their mean purity across the two equally weighted test regions. The ranking remained Leiden, PIXIE, FlowSOM and SpatialSort using the original 28-label vocabulary, including Noise (Table S11). ARI rankings changed after merging. These purity and ARI results describe merged clusters, without rerunning clustering at matching target counts or testing the stability of LLM annotation rankings.
+
+For each model, we used the fraction of all four models that assigned the same label as an estimate of the probability of reference agreement. This gave a mean Brier score of 0.311. Logistic recalibration reduced the mean Brier score to 0.212, compared with 0.229 for a constant probability estimated from the development data (Figure S2C and Tables S12a–S12d). The means weight the two test regions equally within each of the 16 method–model conditions and then weight the conditions equally. Recalibration improved Brier score relative to raw cross-model support in all 16 conditions, but the constant probability had a lower Brier score in three. Mean expected calibration error was 0.118 after recalibration and 0.094 for the constant. Figure S2D shows selective-risk curves for the already-selected Leiden–Astra pipeline separately in each test region. These exploratory analyses used held-out cluster IDs within B004 and do not establish transferable confidence thresholds.
 
 ## 4. Discussion
 
-Spatial proteomic annotation depended on image processing, clustering, marker representation and LLM interpretation, with effects varying across cell types, tissue regions, metrics and prompt conditions.
+Spatial proteomic cell-type annotation varied with image processing, cluster composition, marker representation and label assignment. Effects differed across cell types, tissue regions, evaluation metrics and prompt conditions, supporting joint evaluation of processing, clustering and annotation.
 
-REDSEA previously reduced neighboring-cell marker contamination and improved cell-type classification in multiplexed ion beam imaging (MIBI) and cyclic immunofluorescence (CyCIF) images [9]. Here, downstream gains were inconsistent across segmentation outputs and cell types in intestine CODEX data. This difference suggests that improved marker separation need not produce uniform gains in reference agreement under every workflow. Differences in tissue, marker panels, segmentation and scoring prevent direct numerical comparison. Mesmer was evaluated against manually annotated cell boundaries [7], whereas our compensation analysis assessed downstream clustering and cell-type agreement. Our findings therefore complement segmentation benchmarks without establishing relative boundary accuracy.
+REDSEA previously reduced neighboring-cell marker contamination and improved cell-type classification in multiplexed ion beam imaging (MIBI) and cyclic immunofluorescence (CyCIF) data [9]. In our intestine CODEX analysis, changes in clustering performance and reference agreement varied across segmentation methods and cell types. Improved marker separation therefore need not improve reference agreement across all workflows. Differences in tissue, marker panels, segmentation and scoring prevent direct numerical comparisons with the earlier study. Similarly, Mesmer was evaluated against manually annotated cell boundaries [7], whereas we assessed downstream clustering and cell-type F1. Our findings complement segmentation benchmarks but do not establish relative boundary accuracy.
 
-The clustering results support earlier CODEX benchmarks showing that preprocessing can strongly affect annotation [6]. We therefore recommend evaluating graph-based, self-organizing-map, spatial Bayesian and pixel-based workflows against the cell types and metrics relevant to the intended analysis [15–19].
+The clustering results are consistent with earlier CODEX benchmarks showing that preprocessing can strongly affect annotation [6]. Graph-based, self-organizing-map, spatial Bayesian and pixel-based workflows should therefore be evaluated against the cell types and metrics relevant to the intended analysis [15–19].
 
-SpatialSort reported improved clustering using spatial information and biological priors [18], while PIXIE demonstrated benefits of pixel-composition features for cell phenotyping [19]. Our results show that these approaches do not uniformly outperform alternatives under the tested intestine CODEX configurations. However, SpatialSort received no biological priors and its sampling convergence was not established. PIXIE was evaluated through mask-aggregated pixel compositions and fixed cell clusters, rather than its full interactive phenotyping workflow. Differences in representations, cluster granularity, reference-label definitions and evaluation metrics therefore limit comparison with the original studies.
+SpatialSort previously showed improved clustering with spatial information and biological priors [18], and PIXIE showed benefits from pixel-composition features for cell phenotyping [19]. Neither approach performed better than the alternatives in every tested intestine CODEX configuration. SpatialSort received no biological priors, and sampling convergence was not established. We evaluated PIXIE using pixel compositions within cell masks and fixed cell clusters, rather than its full interactive phenotyping workflow. Differences in representation, cluster granularity, reference-label definitions and evaluation metrics limit comparisons with the original studies.
 
-Cell-level annotation agreement reflects both the composition of the fixed clusters and the model-assigned label. Differences in marker-expression profiles of model-consensus CD8+ T groups therefore do not independently validate those assignments (Figure S11). We recommend reporting cell-type and regional results alongside overall agreement and reviewing images and markers where predictions disagree.
+Cell-level agreement reflects both cluster composition and the label assigned to each cluster. Marker-expression differences among groups labeled CD8+ T using the cross-model summary cannot independently validate those assignments (Figure S11). Overall agreement should be accompanied by cell-type and regional results, with image and marker review where predictions disagree.
 
-The paired marker-expression results show how annotation changed when the same 47-marker means were supplemented with fractions of processed values above zero under the tested high-reasoning, 28-label conditions. The comparison is descriptive, and the fractions were not validated measures of biological positivity. Compact marker names, method identities and measured neighborhood summaries did not consistently improve the tested annotations (Figures S8–S9). The supervised baselines and coarsening analyses further show that comparisons depend on available supervision, cluster granularity and the evaluation metric. Cross-model support required separate reference-agreement calibration and did not uniformly outperform a constant baseline, so it should not be treated as native model confidence.
+We compared annotation from all-marker means and all-marker means plus fractions, using high-reasoning settings and the original 28-label vocabulary. The agreement changes were descriptive, and positive fractions were not validated measures of biological marker positivity. Lists of up to six marker names per cluster did not consistently improve reference agreement (Figure S10). Adding clustering-method names or summaries of neighboring-cell marker expression reduced reference agreement in the tested Opus 5.5 and Astra conditions (Figure S2). Astra neighborhood-expression summaries slightly increased macro-F1 despite lower agreement. The Astra baseline and controls used different execution routes and one accepted prediction per cluster and condition, limiting attribution of agreement changes to prompt content alone. Comparisons with supervised classifiers and analyses that merged clusters also showed that performance depends on the available training labels, the number and composition of clusters, and the evaluation metric. The fraction of models supporting a predicted label required separate calibration against reference agreement and did not outperform a constant baseline in every condition. It should therefore not be interpreted as a model’s own confidence estimate.
 
-Our study evaluated direct numerical-profile annotation. We did not test the iterative validation and retrieval described in CASSIA [29] or the human-in-the-loop refinement described in the CellMaster preprint [30]. Whether these steps improve CODEX annotation remains an open question. Numerical comparisons with published RNA-sequencing results require accounting for differences in modality, tissue, label definitions and evaluation metrics.
+The B004-selected Leiden–Astra pipeline achieved 35.87% reference agreement averaged equally across B005 and B006, below its agreement in the two B004 test regions. The Leiden logistic-regression classifier trained on B004 reached 59.78% without retraining on B005 or B006, but it used reference labels that were unavailable to the LLMs. These results support retaining supervised comparison methods when suitable labeled data are available, while accounting for differences in supervision. They do not isolate the causes of the lower LLM agreement or establish performance in broader cohorts.
 
-The largest-cluster illustrations show that cluster composition and model label choice both constrain reference agreement (Figure 4D). Future systems could support expert review by displaying supporting and conflicting markers and allowing “unknown” or “mixed” labels. Noise remained a dataset reference label rather than an abstention output in this study.
+We evaluated direct annotation from numerical cluster profiles, without testing CASSIA’s iterative validation and retrieval [29] or the human-in-the-loop refinement described in the CellMaster preprint [30]. Whether those steps improve CODEX annotation remains unresolved. Comparisons with published RNA-sequencing annotation results must also account for differences in measurement type, tissue, label definitions and evaluation metrics.
 
-This study has several limitations. The B004 clustering and annotation benchmark included eight tissue regions from one donor, and full-cohort cluster memberships and profiles included the evaluation cells. Its two test regions therefore assess labeling of existing partitions. Cross-donor evaluation used B005 and B006, with regional observations nested within two biological units. Reference-label exploration informed development, so these cross-donor results provide descriptive evidence rather than an untouched confirmatory test. Generalization across diseases, tissues or marker panels requires further evaluation. Reference labels may contain errors or uncertain boundaries, and the cluster-majority upper bound depends on the reference-label composition of the evaluated clusters.
+Future systems could support expert review by displaying supporting and conflicting markers and allowing “unknown” or “mixed” labels. In this study, Noise was a valid dataset reference label, not an abstention output.
 
-The available records do not establish whether reference labels informed selection of the original clustering configurations. Method-specific preprocessing and different occupied cluster counts limit attribution of differences to the clustering algorithms alone.
+The study included only three donors, each with eight tissue regions. Clustering and cluster profiles used all cells, including evaluation cells. B004’s two test regions therefore assessed annotation of fixed clustering results.
 
-Additional limitations include the lack of independently verified cell boundaries and incomplete records of preprocessing steps. One accepted annotation per condition does not estimate repeated-call variability, and recovery attempts do not supply independent repetitions. Cross-model calibration was retrospective and within donor B004; it does not establish biological confidence or transferable thresholds. No independent second set of cell-type annotations was obtained.
+Broader cohorts, disease settings, tissues and marker panels require further evaluation. Reference labels may contain errors or uncertain boundaries, and the cluster-majority upper bound depends on the reference-label composition of the evaluated clusters.
 
-The conditional clustering tests in Supplementary Table S7 assume regional sign exchangeability and do not resolve dependence from shared clusters or retrospective selection. With eight regional pairs, exact tests have limited resolution after Holm correction. This does not establish equivalence or rule out important differences. Annotation agreement, cell-type results and paired marker-representation changes remain descriptive single-run observations within B004.
+The conditional clustering tests in Supplementary Table S7 assume regional sign exchangeability. They do not resolve dependence caused by shared clusters or retrospective selection. With eight regional pairs, exact tests have limited resolution after Holm correction, which neither establishes equivalence nor rules out important differences. B004 annotation agreement, cell-type outcomes and paired representation changes remain descriptive single-run observations.
 
 ## 5. Conclusion
 
-To develop scalable CODEX annotation workflows, image processing, clustering, marker representation and label assignment should be evaluated together. Compensation benefits varied with the workflow, and cluster composition limited reference agreement when each cluster received one label. The four-model annotation benchmark and paired marker-representation comparison showed condition-specific agreement within B004. Cross-donor evaluation assessed the same marker-profile annotation task in B005 and B006 using B004-derived normalization and classifier parameters. Expert review of markers, spatial context and mixed clusters remains necessary. Generalization to broader cohorts and repeated-call stability require separate evaluation.
+Scalable CODEX annotation requires evaluating image processing, clustering, marker representation and label assignment together. The effects of compensation varied across workflows, and cluster composition limited reference agreement when each cluster received one label. Reference agreement varied across models and LLM input representations within B004. Expert review of marker expression, spatial context and mixed clusters remains necessary. Performance in broader cohorts and consistency across repeated model calls require further evaluation.
 
 ## Acknowledgments
 
-The authors have no acknowledgments to declare.
+OpenAI Codex assisted with language editing, reference styling, manuscript formatting, code development and refinement, analysis implementation and verification, and figure preparation. The authors retain responsibility for the study design, scientific interpretation, accuracy and integrity of the manuscript.
 
-## Author contributions
+## Author Contributions
 
-Deutsch Z, Surguladze N, Miao Y, Hickey JW: Study conception and design. Review and interpretation of the data analyses. Manuscript writing, review, and editing. Surguladze N: Analyses related to Figure 1. Deutsch Z: Analyses related to Figures 2–4. Hickey JW: Study supervision and funding acquisition.
+Deutsch Z, Surguladze N, Miao Y, Hickey JW: Study conception and design. Review and interpretation of the data analyses. Manuscript writing, review, and editing. Surguladze N: Analyses related to Figure 1. Deutsch Z: Analyses related to Figures 2–5. Hickey JW: Study supervision and funding acquisition.
 
-## Conflicts of interest
+## Conflicts of Interest
 
 The authors declare no conflicts of interest.
 
@@ -351,9 +313,9 @@ Not applicable. No identifiable participant information is included in this manu
 
 ## Availability of Data and Materials
 
-Raw CODEX images and related datasets are available through the Human BioMolecular Atlas Program (HuBMAP) Data Portal under HuBMAP Collection HBM692.JRZB.356 (https://doi.org/10.35079/HBM692.JRZB.356). Annotated single-cell CODEX data are available through Dryad (https://doi.org/10.5061/dryad.pk0p2ngrf). The before/after spillover-compensation datasets underlying Figures 1, S1 and S2 are available in Duke Research Data Repository record 565 (https://doi.org/10.7924/r4r565). The main expert-annotated B004 CODEX dataset underlying the clustering and annotation analyses in Figures 2–4 is available in record 505 (https://doi.org/10.7924/r4r505).
+Raw CODEX images and related datasets are available through the Human BioMolecular Atlas Program (HuBMAP) Data Portal under HuBMAP Collection HBM692.JRZB.356 ([https://doi.org/10.35079/HBM692.JRZB.356](https://doi.org/10.35079/HBM692.JRZB.356)). Annotated single-cell CODEX data are available through Dryad ([https://doi.org/10.5061/dryad.pk0p2ngrf](https://doi.org/10.5061/dryad.pk0p2ngrf)). The before/after spillover-compensation datasets underlying Figures 1, S3 and S4 are available in Duke Research Data Repository record 565 ([https://doi.org/10.7924/r4r565](https://doi.org/10.7924/r4r565)). The main expert-annotated B004 CODEX dataset underlying the clustering and annotation analyses in Figures 2–4 is available in record 505 ([https://doi.org/10.7924/r4r505](https://doi.org/10.7924/r4r505)).
 
-All code used for data analysis and figure generation is available through the project’s GitHub repository (https://github.com/HickeyLab/LLM-Spatial-omics-Clustering).
+Code and results for the revised manuscript are available in this repository. The [B004 control outputs](../configs/reviewer47_completed_publication_20261115.json) include the exact request, validation and [offline scoring records](manuscript_reproduction.md#reviewer-controls-and-recalibration-replay). The [completed B005/B006 analysis bundle](../data/frozen/donor47_deepseek_completion_20261116/README.md) includes the frozen cluster assignments, annotation inputs, accepted predictions and scoring tables underlying Figure 5 and Figures S12–S13. The [figure index](figure_map.md) links the saved manuscript artwork and the figure sources.
 
 ## Funding Information
 
@@ -361,125 +323,148 @@ This work was supported by the U.S. National Institutes of Health (grant nos. 3U
 
 ## References
 
-1. Goltsev Y, Samusik N, Kennedy-Darling J, Bhate S, Hale M, Vazquez G, et al. Deep profiling of mouse splenic architecture with CODEX multiplexed imaging. Cell. 2018;174(4):968-981.e15. DOI: 10.1016/j.cell.2018.07.010.
-
-2. Black S, Phillips D, Hickey JW, Kennedy-Darling J, Venkataraaman VG, Samusik N, et al. CODEX multiplexed tissue imaging with DNA-conjugated antibodies. Nat Protoc. 2021;16(8):3802-3835. DOI: 10.1038/s41596-021-00556-8.
-
-3. Hickey JW, Becker WR, Nevins SA, Horning A, Perez AE, Zhu C, et al. Organization of the human intestine at single-cell resolution. Nature. 2023;619(7970):572-584. DOI: 10.1038/s41586-023-05915-x.
-
-4. HuBMAP Consortium. The human body at cellular resolution: the NIH Human BioMolecular Atlas Program. Nature. 2019;574(7777):187-192. DOI: 10.1038/s41586-019-1629-x.
-
-5. Börner K, Blood PD, Silverstein JC, Ruffalo M, Satija R, Teichmann SA, et al. Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage. Nat Methods. 2025;22(4):845-860. DOI: 10.1038/s41592-024-02563-5.
-
-6. Hickey JW, Tan Y, Nolan GP, Goltsev Y. Strategies for accurate cell type identification in CODEX multiplexed imaging data. Front Immunol. 2021;12:727626. DOI: 10.3389/fimmu.2021.727626.
-
-7. Greenwald NF, Miller G, Moen E, Kong A, Kagel A, Dougherty T, et al. Whole-cell segmentation of tissue images with human-level performance using large-scale data annotation and deep learning. Nat Biotechnol. 2022;40(4):555-565. DOI: 10.1038/s41587-021-01094-0.
-
+1. Goltsev Y, Samusik N, Kennedy-Darling J, Bhate S, Hale M, Vazquez G, et al. Deep profiling of mouse splenic architecture with CODEX multiplexed imaging. Cell. 2018, 174(4):968-981.e15. DOI: 10.1016/j.cell.2018.07.010.
+2. Black S, Phillips D, Hickey JW, Kennedy-Darling J, Venkataraaman VG, Samusik N, et al. CODEX multiplexed tissue imaging with DNA-conjugated antibodies. Nat Protoc. 2021, 16(8):3802-3835. DOI: 10.1038/s41596-021-00556-8.
+3. Hickey JW, Becker WR, Nevins SA, Horning A, Perez AE, Zhu C, et al. Organization of the human intestine at single-cell resolution. Nature. 2023, 619(7970):572-584. DOI: 10.1038/s41586-023-05915-x.
+4. HuBMAP Consortium. The human body at cellular resolution: the NIH Human BioMolecular Atlas Program. Nature. 2019, 574(7777):187-192. DOI: 10.1038/s41586-019-1629-x.
+5. Börner K, Blood PD, Silverstein JC, Ruffalo M, Satija R, Teichmann SA, et al. Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage. Nat Methods. 2025, 22(4):845-860. DOI: 10.1038/s41592-024-02563-5.
+6. Hickey JW, Tan Y, Nolan GP, Goltsev Y. Strategies for accurate cell type identification in CODEX multiplexed imaging data. Front Immunol. 2021, 12:727626. DOI: 10.3389/fimmu.2021.727626.
+7. Greenwald NF, Miller G, Moen E, Kong A, Kagel A, Dougherty T, et al. Whole-cell segmentation of tissue images with human-level performance using large-scale data annotation and deep learning. Nat Biotechnol. 2022, 40(4):555-565. DOI: 10.1038/s41587-021-01094-0.
 8. Miao Y, Surguladze N, Lerner J, Poysungnoen K, Ariano K, Li Y, et al. Foundation cell segmentation models performance on live microscopy and spatial-omics data [Preprint]. 2026. DOI: 10.64898/2026.04.18.719315.
-
-9. Bai Y, Zhu B, Rovira-Clavé X, Chen H, Markovic M, Chan CN, et al. Adjacent cell marker lateral spillover compensation and reinforcement for multiplexed images. Front Immunol. 2021;12:652631. DOI: 10.3389/fimmu.2021.652631.
-
-10. Stringer C, Pachitariu M. Cellpose3: one-click image restoration for improved cellular segmentation. Nat Methods. 2025;22(3):592-599. DOI: 10.1038/s41592-025-02595-5.
-
+9. Bai Y, Zhu B, Rovira-Clavé X, Chen H, Markovic M, Chan CN, et al. Adjacent cell marker lateral spillover compensation and reinforcement for multiplexed images. Front Immunol. 2021, 12:652631. DOI: 10.3389/fimmu.2021.652631.
+10. Stringer C, Pachitariu M. Cellpose3: one-click image restoration for improved cellular segmentation. Nat Methods. 2025, 22(3):592-599. DOI: 10.1038/s41592-025-02595-5.
 11. Pachitariu M, Rariden M, Stringer C. Cellpose-SAM: superhuman generalization for cellular segmentation [Preprint]. 2025. DOI: 10.1101/2025.04.28.651001.
-
-12. Marks M, Israel U, Dilip R, Li Q, Yu C, Laubscher E, et al. CellSAM: a foundation model for cell segmentation. Nat Methods. 2025;22(12):2585-2593. DOI: 10.1038/s41592-025-02879-w.
-
+12. Marks M, Israel U, Dilip R, Li Q, Yu C, Laubscher E, et al. CellSAM: a foundation model for cell segmentation. Nat Methods. 2025, 22(12):2585-2593. DOI: 10.1038/s41592-025-02879-w.
 13. Goldsborough T, Philps B, O’Callaghan A, Inglis F, Leplat L, Filby A, et al. InstanSeg: an embedding-based instance segmentation algorithm optimized for accurate, efficient and portable cell segmentation [Preprint]. 2024. DOI: 10.48550/arXiv.2408.15954.
+14. Archit A, Freckmann L, Nair S, Khalid N, Hilt P, Rajashekar V, et al. Segment Anything for Microscopy. Nat Methods. 2025, 22(3):579-591. DOI: 10.1038/s41592-024-02580-4.
+15. Traag VA, Waltman L, van Eck NJ. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep. 2019, 9(1):5233. DOI: 10.1038/s41598-019-41695-z.
+16. Van Gassen S, Callebaut B, Van Helden MJ, Lambrecht BN, Demeester P, Dhaene T, et al. FlowSOM: using self-organizing maps for visualization and interpretation of cytometry data. Cytometry A. 2015, 87(7):636-645. DOI: 10.1002/cyto.a.22625.
+17. Couckuyt A, Rombaut B, Saeys Y, Van Gassen S. Efficient cytometry analysis with FlowSOM in Python boosts interoperability with other single-cell tools. Bioinformatics. 2024, 40(4):btae179. DOI: 10.1093/bioinformatics/btae179.
+18. Lee E, Chern K, Nissen M, Wang X, IMAXT Consortium, Huang C, et al. SpatialSort: a Bayesian model for clustering and cell population annotation of spatial proteomics data. Bioinformatics. 2023, 39(Suppl 1):i131-i139. DOI: 10.1093/bioinformatics/btad242.
+19. Liu CC, Greenwald NF, Kong A, McCaffrey EF, Leow KX, Mrdjen D, et al. Robust phenotyping of highly multiplexed tissue imaging data using pixel-level clustering. Nat Commun. 2023, 14(1):4618. DOI: 10.1038/s41467-023-40068-5.
+20. Ianevski A, Giri AK, Aittokallio T. Fully automated and ultra-fast cell-type identification using specific marker combinations from single-cell transcriptomic data. Nat Commun. 2022, 13(1):1246. DOI: 10.1038/s41467-022-28803-w.
+21. Zhang AW, O’Flanagan C, Chavez EA, Lim JLP, Ceglia N, McPherson A, et al. Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling. Nat Methods. 2019, 16(10):1007-1015. DOI: 10.1038/s41592-019-0529-1.
+22. Aran D, Looney AP, Liu L, Wu E, Fong V, Hsu A, et al. Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage. Nat Immunol. 2019, 20(2):163-172. DOI: 10.1038/s41590-018-0276-y.
+23. Abdelaal T, Michielsen L, Cats D, Hoogduin D, Mei H, Reinders MJT, et al. A comparison of automatic cell identification methods for single-cell RNA sequencing data. Genome Biol. 2019, 20(1):194. DOI: 10.1186/s13059-019-1795-z.
+24. Osumi-Sutherland D, Xu C, Keays M, Levine AP, Kharchenko PV, Regev A, et al. Cell type ontologies of the Human Cell Atlas. Nat Cell Biol. 2021, 23(11):1129-1135. DOI: 10.1038/s41556-021-00787-7.
+25. Brbić M, Cao K, Hickey JW, Tan Y, Snyder MP, Nolan GP, et al. Annotation of spatially resolved single-cell data with STELLAR. Nat Methods. 2022, 19(11):1411-1418. DOI: 10.1038/s41592-022-01651-8.
+26. Hou W, Ji Z. Assessing GPT-4 for cell type annotation in single-cell RNA-seq analysis. Nat Methods. 2024, 21(8):1462-1465. DOI: 10.1038/s41592-024-02235-4.
+27. Ye W, Ma Y, Xiang J, Liang H, Luo J, Li Y, et al. Evaluation of cell type annotation reliability using a large language model-based identifier. Commun Biol. 2025, 8(1):1360. DOI: 10.1038/s42003-025-08745-x.
+28. Xiao T, Hua D, Wang Y, Lu X, Zhang C. Benchmarking large language models for cell typing in single-cell RNA-seq. Brief Bioinform. 2025, 26(6):bbaf677. DOI: 10.1093/bib/bbaf677.
+29. Xie E, Cheng L, Shireman J, Cai Y, Liu J, Mohanty C, et al. CASSIA: a multi-agent large language model for automated and interpretable cell annotation. Nat Commun. 2026, 17:389. DOI: 10.1038/s41467-025-67084-x.
+30. Wang Z, Gao Y, Liu J, Ma E, Chen J, Antkowiak M, et al. CellMaster: collaborative cell type annotation in single-cell analysis. arXiv [Preprint]. 2026. DOI: 10.48550/arXiv.2602.13346.
+31. Rousseeuw PJ. Silhouettes: a graphical aid to the interpretation and validation of cluster analysis. J Comput Appl Math. 1987, 20:53-65. DOI: 10.1016/0377-0427(87)90125-7.
+32. Gagolewski M, Bartoszuk M, Cena A. Are cluster validity measures (in)valid? Inf Sci. 2021, 581:620-636. DOI: 10.1016/j.ins.2021.10.004.
+33. Davies DL, Bouldin DW. A cluster separation measure. IEEE Trans Pattern Anal Mach Intell. 1979, PAMI-1(2):224-227. DOI: 10.1109/TPAMI.1979.4766909.
+34. Caliński T, Harabasz J. A dendrite method for cluster analysis. Commun Stat. 1974, 3(1):1-27. DOI: 10.1080/03610927408827101.
+35. Windhager J, Zanotelli VRT, Schulz D, Meyer L, Daniel M, Bodenmiller B, et al. An end-to-end workflow for multiplexed image processing and analysis. Nat Protoc. 2023, 18(11):3565-3613. DOI: 10.1038/s41596-023-00881-0.
+36. McInnes L, Healy J, Saul N, Großberger L. UMAP: uniform manifold approximation and projection. J Open Source Softw. 2018, 3(29):861. DOI: 10.21105/joss.00861.
 
-14. Archit A, Freckmann L, Nair S, Khalid N, Hilt P, Rajashekar V, et al. Segment Anything for Microscopy. Nat Methods. 2025;22(3):579-591. DOI: 10.1038/s41592-024-02580-4.
+## Supplementary Methods
 
-15. Traag VA, Waltman L, van Eck NJ. From Louvain to Leiden: guaranteeing well-connected communities. Sci Rep. 2019; 9(1):5233. DOI: 10.1038/s41598-019-41695-z.
+### SM1. Compensation processing and cell matching
 
-16. Van Gassen S, Callebaut B, Van Helden MJ, Lambrecht BN, Demeester P, Dhaene T, et al. FlowSOM: using self-organizing maps for visualization and interpretation of cytometry data. Cytometry A. 2015;87(7):636-645. DOI: 10.1002/cyto.a.22625.
+The processed compensation files contained 45 marker features and 44 centered principal components, with no highly variable feature selection. The stored graph-construction configuration specified 30 Euclidean neighbors in PCA space, RAPIDS and random state 0. The stored Leiden configuration specified resolution 1.5, 100 iterations and random state 0. These configurations differed from those in the main clustering benchmark (Sections 2.2–2.3).
 
-17. Couckuyt A, Rombaut B, Saeys Y, Van Gassen S. Efficient cytometry analysis with FlowSOM in Python boosts interoperability with other single-cell tools. Bioinformatics. 2024;40(4):btae179. DOI: 10.1093/bioinformatics/btae179.
+For the six compensation workflows, we could not verify the original segmentation targets (whole cells or nuclei), input channels, software versions, checkpoints, inference thresholds, mask quality-control rules, runtime or hardware. Cytokit followed by SPRM and the Hoechst1/Cytokeratin channels described in Section 2.1 apply only to the reference dataset. We did not assume current defaults or comparable whole-cell segmentation configurations.
 
-18. Lee E, Chern K, Nissen M, Wang X, IMAXT Consortium, Huang C, et al. SpatialSort: a Bayesian model for clustering and cell population annotation of spatial proteomics data. Bioinformatics. 2023;39(Suppl 1):i131-i139. DOI: 10.1093/bioinformatics/btad242.
+Centroid matching used Euclidean distances, with ties resolved by reference object ID (Section 2.2). Objects with invalid coordinates or distances beyond the threshold remained unmatched and were excluded from agreement scoring. Audits retained matching counts and fractions, distances, duplicate reference matches and objects present only before or after compensation (Table S1). Mutual nearest-neighbor matching at 10 source-coordinate units required matches in both directions and produced one-to-one pairs. A common conversion to pixels and the original registration across segmentation workflows could not be verified. Matching did not modify masks, identify biological splits or merges, or establish boundary accuracy.
 
-19. Liu CC, Greenwald NF, Kong A, McCaffrey EF, Leow KX, Mrdjen D, et al. Robust phenotyping of highly multiplexed tissue imaging data using pixel-level clustering. Nat Commun. 2023;14(1):4618. DOI: 10.1038/s41467-023-40068-5.
+The compensation comparison used a fixed FlowSOM configuration across all six segmentation methods, without selection by reference agreement. It used processed marker values without an additional arcsinh transformation. Preprocessing and clustering were fitted separately before and after compensation (Section 2.7).
 
-20. Ianevski A, Giri AK, Aittokallio T. Fully automated and ultra-fast cell-type identification using specific marker combinations from single-cell transcriptomic data. Nat Commun. 2022;13(1):1246. DOI: 10.1038/s41467-022-28803-w.
+### SM2. Reference-label harmonization
 
-21. Zhang AW, O’Flanagan C, Chavez EA, Lim JLP, Ceglia N, McPherson A, et al. Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling. Nat Methods. 2019;16(10):1007-1015. DOI: 10.1038/s41592-019-0529-1.
+Primary annotation retained the original 28-label vocabulary, including Noise, without class merges. For the clustering evaluation in Figure 2, we excluded Noise and combined selected naming variants and classes, including Paneth with Goblet, to form the harmonized 20-label vocabulary (Section 2.3). These mappings define separate analyses and are not interchangeable. Complete per-label mappings are preserved with the clustering scoring policy and annotation ontology.
 
-22. Aran D, Looney AP, Liu L, Wu E, Fong V, Hsu A, et al. Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage. Nat Immunol. 2019;20(2):163-172. DOI: 10.1038/s41590-018-0276-y.
+### SM3. Clustering inputs and configurations
 
-23. Abdelaal T, Michielsen L, Cats D, Hoogduin D, Mei H, Reinders MJT, et al. A comparison of automatic cell identification methods for single-cell RNA sequencing data. Genome Biol. 2019;20(1):194. DOI: 10.1186/s13059-019-1795-z.
+Section 2.3 and Table S2A specify the clustering inputs, transformations, scaling, requested and nonempty cluster counts, and hyperparameters. Only SpatialSort received explicit cell coordinates as clustering inputs. PIXIE paired multichannel expression images with integer-labeled cell-mask OME-TIFFs. Its 48 selected channels were smoothed and normalized before pixel clustering. Pixel assignments were aggregated within each mask into fractions of 20 pixel Ward metaclusters for later cell clustering. Figures S6 and S11 define the expression groups and scaling used only for display.
 
-24. Osumi-Sutherland D, Xu C, Keays M, Levine AP, Kharchenko PV, Regev A, et al. Cell type ontologies of the Human Cell Atlas. Nat Cell Biol. 2021;23(11):1129-1135. DOI: 10.1038/s41556-021-00787-7.
+### SM4. Scoring calculations
 
-25. Brbić M, Cao K, Hickey JW, Tan Y, Snyder MP, Nolan GP, et al. Annotation of spatially resolved single-cell data with STELLAR. Nat Methods. 2022;19(11):1411-1418. DOI: 10.1038/s41592-022-01651-8.
+For cell-type F1 and recall, true positives matched both the reference and assigned labels. False positives carried other reference labels, and false negatives carried the specified reference label but received another assignment. Global and within-region majority labeling used the populations and mappings in Section 2.3, with alphabetical tie-breaking. Both metrics used reference labels to evaluate fixed clustering results. Equations (2)–(5) define purity, reference agreement, normalization by the cluster-majority upper bound and the overall error identity. Minority-label matches contributed to reference agreement, including cell-type-specific ratios (Section 2.5).
 
-26. Hou W, Ji Z. Assessing GPT-4 for cell type annotation in single-cell RNA-seq analysis. Nat Methods. 2024;21(8):1462-1465. DOI: 10.1038/s41592-024-02235-4.
+### SM5. Conditional regional comparisons
 
-27. Ye W, Ma Y, Xiang J, Liang H, Luo J, Li Y, et al. Evaluation of cell type annotation reliability using a large language model-based identifier. Commun Biol. 2025;8(1):1360. DOI: 10.1038/s42003-025-08745-x.
+Table S7 includes all six method pairs for weighted F1 and cluster purity, with Holm correction across the 12-test family. Two-sided exact sign-flip tests evaluated all 256 sign assignments for eight equally weighted regional differences. Reported quantities include regional means, differences in percentage points, raw and adjusted p-values, and descriptive 95% intervals from 10,000 paired-region bootstrap resamples with seed 42. All 12 planned comparisons retained every regional pair. Section 2.7 discusses dependence among regions, limits on donor-level inference and the exchangeability assumption.
 
-28. Xiao T, Hua D, Wang Y, Lu X, Zhang C. Benchmarking large language models for cell typing in single-cell RNA-seq. Brief Bioinform. 2025;26(6):bbaf677. DOI: 10.1093/bib/bbaf677.
+### Supplementary Note 1. LLM prompt templates and annotation outputs
 
-29. Xie E, Cheng L, Shireman J, Cai Y, Liu J, Mohanty C, Dey M, Kendziorski C. CASSIA: a multi-agent large language model for automated and interpretable cell annotation. Nature Communications. 2026;17:389. https://doi.org/10.1038/s41467-025-67084-x.
+Primary requests contained numerical profiles for all 47 markers, anonymous cluster query IDs, the code dictionary for the original 28-label vocabulary, including Noise, and fixed task instructions. The all-marker means plus fractions input added a matrix of positive fractions to the unchanged matrix of mean marker-expression values. Neither primary input representation included cell- or cluster-specific reference assignments, reference expression profiles, clustering-method identities or neighborhood summaries. Literal requests, prompt hashes, anonymous-to-cluster mappings and accepted raw outputs are preserved with the reproducible analysis. Selected-marker and matched context controls differed only as specified in Sections 2.4 and 2.7.
 
-30. Wang Z, Gao Y, Liu J, Ma E, Chen J, Antkowiak M, et al. CellMaster: Collaborative Cell Type Annotation in Single-Cell Analysis. arXiv [Preprint]. 2026. https://doi.org/10.48550/arXiv.2602.13346.
+### Supplementary Note 2. LLM inputs, execution and response handling
 
-31. Rousseeuw PJ. Silhouettes: a graphical aid to the interpretation and validation of cluster analysis. J Comput Appl Math. 1987;20:53-65. DOI: 10.1016/0377-0427(87)90125-7.
+Inputs and design. A physical model call is one execution of an LLM. A logical request item is a predefined group of anonymous cluster queries. An annotation set combines the request items for one clustering method, model and input representation. All 220,082 B004 cells contributed to the frozen cluster profiles. The four partitions contained 300 Leiden, 299 FlowSOM, 229 SpatialSort and 300 PIXIE clusters, totaling 1,128 nonempty clusters. Each method required four request items per model and arm, with at most 75 clusters per item. The primary two-arm comparison included 32 annotation sets, 128 items and 9,024 planned cluster predictions. These sets and 32 selected-marker representation sets formed the 64-set representation comparison with 256 items. Four Opus 5.5 method-name sets and one Leiden–Opus 5.5 neighborhood set added 20 items, giving 69 base sets, 276 items and 19,476 planned cluster predictions. Two Leiden–Astra extension sets added eight items and 600 predictions, giving 71 sets, 284 items and 20,076 planned predictions overall. Each scientific condition had one planned repetition. Training-only annotation-profile standardization, integer-thousandth encoding, query order, vocabulary, and exact join and leakage checks were frozen before launch.
 
-32. Gagolewski M, Bartoszuk M, Cena A. Are cluster validity measures (in)valid? Inf Sci. 2021;581:620-636. DOI: 10.1016/j.ins.2021.10.004.
+Execution and acceptance. The primary B004 Astra arms used OpenRouter Batch, while new selected-marker Astra requests and the Astra prompt-control extension used native OpenAI Batch. Opus 5.5 used OpenRouter Batch. Argon used standard streaming requests. DeepSeek used standard streaming requests and one Batch request, with recovery attempts and provider continuation segments recorded separately where supported. In cross-donor evaluation, Astra used native OpenAI Batch, Opus 5.5 used Anthropic Batch through OpenRouter, Argon used Google AI Studio Flex streaming through OpenRouter, and DeepSeek used Morph FP8 streaming through OpenRouter. Provider fallback was disabled. All scientific requests used supported high-reasoning settings. Actual model bindings, routes, output token ceilings, supported seeds, transport, attempt status, usage and charges were recorded per physical generation rather than inferred from model aliases. We accepted each request item in full only after validating the complete final response and replaying the saved response. Validation required every expected query ID exactly once, no extra or duplicate keys or fields, integer codes in the original 28-label vocabulary, and no refusal or truncation. Accepted prior outputs were not overwritten, and failed or interrupted attempts remained in the archive. Each physical generation and charge was recorded once, with unresolved billing holds separate from confirmed charges.
 
-33. Davies DL, Bouldin DW. A cluster separation measure. IEEE Trans Pattern Anal Mach Intell. 1979;PAMI-1(2):224-227. DOI: 10.1109/TPAMI.1979.4766909.
+Costs and delivery. All 128 primary B004 items were accepted, covering 9,024 cluster predictions. The combined B004 design therefore delivered 20,076 predictions across 284 accepted items: 109 items reused from identical conditions and 175 newly accepted items.
 
-34. Caliński T, Harabasz J. A dendrite method for cluster analysis. Commun Stat. 1974;3(1):1-27. DOI: 10.1080/03610927408827101.
+Scoring and reporting. B004 outcomes equally weight the same two test regions, with scoring and paired-change definitions in Section 2.5. Calibration uses nonoverlapping clusters and regions (Section 2.7). Single accepted annotations do not estimate repeated-call variability.
 
-35. Windhager J, Zanotelli VRT, Schulz D, Meyer L, Daniel M, Bodenmiller B, et al. An end-to-end workflow for multiplexed image processing and analysis. Nat Protoc. 2023;18(11):3565-3613. DOI: 10.1038/s41596-023-00881-0.
+![Figure S1](../figures/current_manuscript/PNG/Figure_S1.png)
 
-36. McInnes L, Healy J, Saul N, Großberger L. UMAP: uniform manifold approximation and projection. J Open Source Softw. 2018;3(29):861. DOI: 10.21105/joss.00861.
+Figure S1. Supplementary Leiden–Opus 5.5 annotation diagnostics using all-marker means plus fractions. (A) Confusion matrices for pooled test cells, expressed as cell counts and row fractions under the original 28-label vocabulary, including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, in four consecutive blocks of 75. Selected cluster IDs label each block. Green indicates agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction. Opus 5.5 is Claude Opus 5.5. Cell-label abbreviations: CD, cluster of differentiation. DC, dendritic cells. ICC, interstitial cells of Cajal. ITLN, intelectin. NK, natural killer cells. PDPN, podoplanin. TA, transit-amplifying cells.
 
-![Figure 1](../figures/manuscript/Figure_1.png)
+![Figure S2](../figures/current_manuscript/PNG/Figure_S2.png)
 
-Figure 1. Effects of spillover compensation on downstream clustering and cell-type annotation. (A) REDSEA workflow using images, masks and marker lists for Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg and MicroSAM outputs. Regions were merged separately before and after compensation, preprocessed and clustered with Leiden at resolution 1.5 to produce paired H5AD files. (B) Silhouette-score changes. Points show regions, diamonds regional means and boxes distributions. (C) Cell-type-specific F1 changes. Points show cell types and boxes their distributions. (D–F) Regional cell-type F1 changes for Mesmer, CellposeSAM and CellposeCyto3, respectively. Hollow circles show paired regional changes, horizontal lines show the observed regional ranges, and diamonds show mean regional changes. Teal, rust, and gray diamonds indicate increases, decreases, and no change, respectively. F1 changes are calculated as after minus before compensation and expressed in F1 units in C and percentage points in D–F. Panels D–F share an axis scale and cell-type order, with contributing regional-pair counts shown for each type. Regional-pair inclusion follows Section 2.2. Positive changes indicate increased silhouette scores or reference agreement. Regions are subsamples of donor B004. CellposeCyto3 denotes processed cellpose_cyto3 outputs, previously labeled Cellpose Cyto3 or CellposeV3. The original checkpoint could not be verified. Source data: Duke Research Data Repository record 565 (Availability of Data and Materials).
+Figure S2. Matched prompt controls and exploratory cross-model support calibration. All analyses use B004. (A) Agreement when clustering-method names were omitted or provided correctly, for Opus 5.5 across four methods, followed by Leiden–Astra. The Opus 5.5 rows follow the Figure 3C method order. (B) Leiden–Opus 5.5 and Leiden–Astra agreement with all-marker means plus fractions alone or the same input plus measured expression from the 15 nearest other cells within each region. Panels A and B reuse identical baselines containing all-marker means plus fractions and weight the two test regions equally. (C) Brier scores for raw cross-model support, logistic recalibration and a development-set constant. Lines and dots represent the 16 method–model conditions. Diamonds show their equal-weighted means after equal regional weighting. Lower scores indicate better performance. (D) Selective reference-disagreement risk against retained-cell coverage for the already-selected Leiden–Astra pipeline, separately for each test region. Solid curves use raw cross-model support, and dashed curves use recalibration. Tied scores are retained together. Risk at zero retention is undefined and omitted. Calibration development and evaluation use nonoverlapping cluster IDs and regions, so evaluation cells differ from the full primary test population. These single-repetition, within-donor analyses do not estimate repeatability, an individual model’s confidence or biological certainty. Tables S9 and S12a–S12d provide the prompt-control and calibration-score results. The Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline, so their contrasts also differ in execution route. Opus 5.5 is Claude Opus 5.5, and Astra is GPT-6 Astra.
 
-![Figure 2](../figures/manuscript/Figure_2.png)
+![Figure S3](../figures/current_manuscript/PNG/Figure_S3.png)
 
-Figure 2. Benchmarking unsupervised clustering against reference cell-type annotations. (A) Workflow from CODEX images and cell features to clustering and reference-majority labeling. The workflow illustration was created with BioRender.com. (B–C) Reference cell counts and a representative spatial map. Cell-type colors in C and D correspond to B. (D) UMAP embeddings colored by reference or cluster-assigned labels, with boxed regions enlarged above [36]. (E, G) Regional cell-count-weighted F1 and cluster purity after majority labeling within each region. Points identify regions. Boxes show medians and interquartile ranges, with 1.5-interquartile-range whiskers. (F, H) Cell-type F1 (0–1) and recall (0–100%) after global majority labeling, with reference-cell counts at right. E–H use 209,587 non-Noise cells and 20 harmonized classes, with alphabetical tie-breaking. The eight regions are within-donor observations. Conditional comparisons are in Supplementary Table S7. Leiden, FlowSOM and SpatialSort used 47 markers. The primary FlowSOM and SpatialSort partitions contained 299 and 229 occupied clusters, respectively. Methods and limitations are in Sections 2.9 and 2.17. CD8+ T marker-expression profiles are shown in Figure S11. Source data: Duke Research Data Repository record 505 (Availability of Data and Materials).
+Figure S3. Cluster-quality metrics before and after spillover compensation. (A–C) Silhouette scores, Davies–Bouldin indices and Calinski–Harabasz indices, respectively, calculated in principal component analysis (PCA) space for Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg and MicroSAM segmentations. Gray and blue diamonds show the regional means before and after REinforcement Dynamic Spillover EliminAtion (REDSEA) compensation. Points represent imaged tissue regions (n = 8), with lines connecting measurements from the same region. Higher silhouette and Calinski–Harabasz values indicate better cluster separation, whereas lower Davies–Bouldin values indicate better separation. Metrics were calculated from the stored PCA representations and are descriptive. Figure S5 separately reports compensation effects among shared segmentation objects and comparisons of cell-matching rules and clustering workflows. Source data: Duke Research Data Repository record 565 (Availability of Data and Materials).
 
-![Figure 3](../figures/manuscript/Figure_3.png)
+![Figure S4](../figures/current_manuscript/PNG/Figure_S4.png)
 
-Figure 3. Annotation benchmark using 47-marker cluster profiles. (A) Workflow from cell features through clustering, marker summaries and annotation to reference-label evaluation, created with BioRender.com. The marker-list and threshold panels are schematic. The primary benchmark uses fixed all-marker profiles, and selected-marker controls follow Section 2.11. (B) Reference agreement and (C) fixed-28-label macro-F1 for the means-plus-fractions arm, averaged equally across the two test regions. The original 28-label vocabulary includes Noise; absent-class F1 is zero. (D) Cell-type reference agreement (recall) for Leiden predictions, using pooled test cells and cell types ordered by decreasing mean recall across the four models. (E) Reference labels and the four models' Leiden predictions in the fixed mid-jejunum region shown in Figure 2C, using the same cell-type colors. Each model supplies one accepted prediction per cluster and arm. There are no repeated-annotation error bars. All regions are from donor B004.
+Figure S4. Spatial changes in dendritic-cell and CD8+ T-cell assignments after compensation. Cell-type maps from B004-A-004 compare Human BioMolecular Atlas Program (HuBMAP) reference labels with cluster-derived assignments before and after REinforcement Dynamic Spillover EliminAtion (REDSEA) compensation for Mesmer, CellposeSAM and CellposeCyto3. (A) Dendritic cells. (B) CD8+ T cells. Dark blue marks the specified cell type, and light gray marks all other cells. The maps are representative examples. Source data: Duke Research Data Repository record 565 (Availability of Data and Materials).
 
-![Figure 4](../figures/manuscript/Figure_4.png)
+**Figure S5 (panels A and B)**
 
-Figure 4. End-to-end evaluation of Leiden clustering and GPT-6 Astra annotation using means plus fractions. (A) Workflow from CODEX cell features through Leiden clustering and Astra annotation to spatial visualization. The workflow illustration was created with BioRender.com. The OpenAI logo is a trademark of OpenAI. (B) Row-normalized confusion matrix for pooled test cells. (C) Dark diamonds show pooled-test F1. Blue circles and orange squares show F1 for the transverse colon and mid-jejunum, respectively. Thin lines connect the two regional scores for each label. Both confusion-matrix axes and the rows in C follow decreasing pooled-test F1. All 28 labels, including Noise, remain in the scoring vocabulary. (D) Reference-agreement decomposition for the three largest Leiden clusters, selected by total cell count with cluster-ID tie-breaking before examining annotation outcomes. (E) The same decomposition across all 220,082 B004 cells. D and E show agreement, the gap between agreement and the cluster-majority upper bound, and the within-cluster minority-reference-label fraction. These are arithmetic components of reference disagreement, not independent biological error classes. The illustrative pipeline was selected from the B004 benchmark results; the cluster-size rule and spatial region were unchanged.
+![Figure S5 (A)](../figures/current_manuscript/PNG/Figure_S5_part_A.png)
 
-![Figure 5](../figures/current_manuscript/PNG/Figure_5.png)
+![Figure S5 (B)](../figures/current_manuscript/PNG/Figure_S5_part_B.png)
 
-Figure 5. Cross-donor annotation agreement using all-marker means plus fractions for all 47 markers. (A,B) Reference agreement using the original 28 labels in B005 and B006, respectively, including Noise as a valid label. Each donor's value averages its eight regions equally. (C,D) Agreement and macro-F1 across all 28 labels, respectively, after equal weighting of the two donor means. Conventional classifiers used B004 training reference labels and were applied without donor refitting, rebalancing or selecting new hyperparameters. All conditions delivered one accepted annotation per cluster. Tables S13a–S13b report the donor-specific LLM results.
+**Figure S5 (continued)**
 
-![Figure S1](../figures/manuscript/Figure_S1.png)
+![Figure S5 (C)](../figures/current_manuscript/PNG/Figure_S5_part_C.png)
 
-Figure S1. Cluster-quality metrics before and after spillover compensation across segmentation methods. (A) Silhouette scores by imaged tissue region, (B) Davies–Bouldin indices, and (C) Calinski–Harabasz indices calculated in PCA space for data segmented using Mesmer, CellposeCyto3, CellposeSAM, CellSAM, InstanSeg, or MicroSAM. Gray and blue bars show the mean across tissue regions before and after REDSEA compensation, respectively. Each point represents one imaged tissue region (n = 8), and lines connect paired measurements from the same imaged tissue region. Higher silhouette scores and Calinski–Harabasz indices indicate improved cluster separation, whereas lower Davies–Bouldin indices indicate improved cluster separation. These descriptive metrics were calculated from the stored PCA representations. The before–after comparison of shared segmentation objects and sensitivity to matching rules and clustering workflow are reported separately in Figure S3. Source data: Duke Research Data Repository record 565 (see Availability of Data and Materials).
+Figure S5. Comparison of cell-matching rules and compensation effects among shared segmentation objects. Results cover six segmentation methods. (A) Percentage retained under directed matching at maximum distances of 5, 10 and 15 source-coordinate units and mutual matching at 10 units. Points represent regions, and diamonds show regional means. (B) Regional mean cell-type F1 changes for processed Leiden and fixed FlowSOM workflows under directed matching at 10 units. Points represent regions, diamonds show regional means, and bars show descriptive 95% regional bootstrap intervals. (C) Mean regional cell-type F1 changes for objects with the same regional CellID, unchanged coordinates and accepted reference matches (Section 2.2). Table S1 reports matching and retention counts. The FlowSOM configuration was fixed across segmentation methods. Changes are after minus before compensation, in percentage points. Distances use each input dataset's coordinates, without a verified common conversion to pixels. Regions are subsamples of B004 and do not establish transfer across donors. F1 is the harmonic mean of precision and recall. Δ means after minus before compensation. CellID is the source cell identifier.
 
-![Figure S2](../figures/manuscript/Figure_S2.png)
+![Figure S6](../figures/current_manuscript/PNG/Figure_S6.png)
 
-Figure S2. Spatial changes in dendritic-cell and CD8+ T-cell assignments after compensation. Representative maps from B004-A-004 compare HuBMAP reference labels with cluster-derived assignments for Mesmer, CellposeSAM and CellposeCyto3 before and after REDSEA compensation. (A) Dendritic cells. (B) CD8+ T cells. Dark blue indicates the specified type and light gray all other cells. Source data: Duke Research Data Repository record 565 (Availability of Data and Materials).
+Figure S6. Reference cell types and clustering performance. (A) Stored means and positive fractions for 27 original cell types excluding Noise (209,587 cells), using all 47 protein markers from 45 H5AD X channels plus CD123/CDX2 observation columns without further transformation. Dot size shows positive fractions, not validated marker positivity. Color shows per-marker min–max-scaled means (0–1). (B) Reference cell-type maps across eight regions. (C) Reference-label composition of the 50 largest clusters per method (60 for FlowSOM), ordered by decreasing cell count. (D) Regional adjusted Rand index (ARI) and adjusted mutual information (AMI) (black dots, n = 8), cluster Shannon diversity/purity and cell-type F1 and recall after majority labeling, using 27 original labels excluding Noise versus Figure 2’s harmonized 20-label vocabulary. Lower diversity indicates more homogeneous clusters. Colored points identify cluster-majority reference labels for diversity/purity and reference cell types for F1 and recall. Boxes span interquartile ranges, center lines mark medians, and whiskers reach the most extreme observations within 1.5 times the interquartile range. F1 is the harmonic mean of precision and recall. H5AD is the AnnData file format, and X is its stored expression matrix. Cell-label abbreviations: CD, cluster of differentiation. DC, dendritic cells. ICC, interstitial cells of Cajal. ITLN, intelectin. NK, natural killer cells. PDPN, podoplanin. TA, transit-amplifying cells. Marker symbols refer to measured protein channels, rather than gene-expression measurements.
 
-![Figure S3 (A)](../figures/manuscript/Figure_S3A.png)
+![Figure S7](../figures/current_manuscript/PNG/Figure_S7.png)
 
-![Figure S3 (B)](../figures/manuscript/Figure_S3B.png)
+Figure S7. Reference-agreement upper bounds for the primary clustering partitions. (A) Cluster-majority upper bounds under the original 28-label vocabulary, including Noise. Diamonds show upper bounds with labels assigned across pooled regions. Open circles show upper bounds with labels assigned separately in each of the eight regions. Values are percentages. All 220,082 B004 cells are retained, including eight cells without measurable marker signal in a separate PIXIE group. All regions are from donor B004.
 
-![Figure S3 (C)](../figures/manuscript/Figure_S3C.png)
+![Figure S8](../figures/current_manuscript/PNG/Figure_S8.png)
 
-Figure S3. Matching-rule sensitivity and compensation effects among shared segmentation objects across six methods. (A) Percentage retained under directed matching at maximum distances of 5, 10 and 15 source-coordinate units and mutual matching at 10 units. Points show regions and diamonds regional means. (B) Regional mean cell-type F1 changes for processed Leiden and fixed FlowSOM workflows under directed matching at 10 units. Points show regions, diamonds regional means and bars descriptive 95% regional bootstrap intervals. (C) Mean regional cell-type F1 changes for objects with the same regional CellID, unchanged coordinates and accepted reference matches (Section 2.4). Table S1 reports matching and retention counts. FlowSOM settings were fixed across methods. Changes are percentage points, calculated as after minus before compensation. Distances use each input dataset's coordinates, with no verified common conversion to pixels. Regions are subsamples of B004 and do not establish transfer across donors.
+Figure S8. Reference-agreement decomposition across clustering methods and models. Results cover the 16 method–model combinations using all-marker means plus fractions. Within each test region, agreement, the gap to the cluster-majority upper bound and the within-cluster minority-reference-label fraction sum to one. The two regions receive equal weight. Scoring retains the original 28-label vocabulary, including Noise, and numbers within bars are percentages. These arithmetic components do not identify independent biological error mechanisms. Each condition contributes one accepted annotation per cluster. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek).
 
-![Figure S4](../figures/manuscript/Figure_S4.png)
+![Figure S9](../figures/current_manuscript/PNG/Figure_S9.png)
 
-Figure S4. Reference cell types and comparative clustering evaluation. (A) Stored marker means and fractions above 0.0 across 27 original non-Noise reference types (209,587 cells), using all 47 stored protein markers (45 H5AD X channels plus CD123 and CDX2 observation columns) without another transformation. Dot size shows above-cutoff fractions, which are not validated marker-positive fractions. Color shows mean expression min–max scaled to 0–1 independently by marker across the displayed types. (B) Reference-label maps across eight regions. (C) Reference-type composition of the 50 largest clusters per method (60 for FlowSOM), ordered by decreasing cell count, with colored segments indicating reference types. (D) Regional adjusted Rand index (ARI) and adjusted mutual information (AMI) (black dots, n = 8), cluster-level reference-label Shannon diversity and purity, and cell-type F1 and recall after majority labeling. Panel D uses 27 original non-Noise reference labels, distinct from the 20-class mapping in Figure 2. Lower Shannon diversity indicates less heterogeneous clusters. Colored points denote cluster-majority reference labels for diversity and purity, and reference types for F1 and recall. Boxes show interquartile ranges, center lines medians and whiskers 1.5 times the interquartile range.
+Figure S9. Paired effects of adding positive fractions to all-marker means. (A–D) Results for Claude Opus 5.5, GPT-6 Astra, Gemini 4 Argon and DeepSeek V4.1 Flash 1017, respectively. Points show agreement averaged equally across the two test regions under the original 28-label vocabulary, including Noise. Lines connect the two representations evaluated using the same fixed clustering results. The right-hand column gives the change after adding positive fractions, in percentage points. Each arm contributes one accepted annotation per cluster, with no across-repetition standard deviation or repeatability estimate. Marker means, marker order, anonymous query IDs, label vocabulary and request batch boundaries are identical within each pair. Only the positive-fraction matrix is added.
 
-![Figure S5](../figures/manuscript/Figure_S5.png)
+![Figure S10](../figures/current_manuscript/PNG/Figure_S10.png)
 
-Figure S5. Reference agreement upper bounds for the primary clustering assignments. (A) Cluster-majority upper bounds using the original 28 reference labels including Noise. Bars use pooled regions and points use labels assigned within each of the eight regions. All 220,082 B004 cells are retained, including eight cells without measurable marker signal in a separate PIXIE group. All regions are from donor B004.
+Figure S10. LLM input-representation controls using fixed B004 clustering results. (A–D) Reference agreement for GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017, respectively, averaged equally across the two test regions. Rows identify clustering methods in the Figure 3C order. Columns compare selected marker names, selected marker means, all-marker means and all-marker means plus fractions. Up to six markers per cluster were selected without cell- or cluster-specific reference assignments, while the full representations retain all 47 markers. Each condition contributes one accepted annotation per cluster under the original 28-label vocabulary, including Noise. All 64 representation conditions delivered every planned prediction. Tables S8a–S8d report reference agreement and macro-F1. F1 is the harmonic mean of precision and recall. Macro-F1 is the unweighted mean of the class-specific F1 scores.
 
-![Figure S6](../figures/manuscript/Figure_S6.png)
+![Figure S11](../figures/current_manuscript/PNG/Figure_S11.png)
 
-Figure S6. Leiden–Opus 5.5 annotation diagnostics retained as a supplementary comparison for the means-plus-fractions arm. (A) Confusion matrices for pooled test cells, shown as cell counts and row fractions over the fixed 28-label vocabulary including Noise. Rows without reference cells have zero row fractions. (B) Reference-agreement decomposition for all 300 Leiden clusters across all 220,082 B004 cells. Clusters are ordered by decreasing cluster-majority reference fraction, with cluster-ID tie-breaking, and displayed in four consecutive blocks of 75. Selected cluster IDs label each block. Green denotes agreement, orange the gap to the cluster-majority upper bound, and gray the within-cluster minority-reference-label fraction.
+Figure S11. Marker-expression profiles of model-annotated CD8+ T groups. (A) Profiles of cells in clusters assigned CD8+ T by a cross-model summary. Each cluster receives its most frequent label across Astra, Opus 5.5, Argon and DeepSeek, with ties resolved in that order without reference assignments. Each model contributes one accepted prediction per cluster. All 47 stored marker channels are shown, including CD123 and CDX2. Dot color represents mean stored processed expression, min–max scaled independently by marker across the four method groups, without further transformation. Dot size represents the fraction of strictly positive processed values. These fractions are not validated measures of biological marker positivity. Profiles reflect combined clustering and annotation assignments and neither independently validate labels nor measure repeated-call consistency. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek). n is the number of cells in each displayed method group. Marker symbols refer to measured protein channels, rather than gene-expression measurements.
+
+![Figure S12](../figures/current_manuscript/PNG/Figure_S12.png)
+
+Figure S12. Fixed cross-donor clustering results and SpatialSort comparisons across random seeds. (A,B) Purity and adjusted Rand index (ARI), respectively, against the original 28-label vocabulary, including Noise. Each donor's eight regions receive equal weight. Table S14a reports whole-donor cell counts and nonempty-cluster counts. (C) Global common-cell partition ARI between SpatialSort seeds 42 and 43 within each donor, using 50 actual sweeps and a double Metropolis–Hastings (DMH) iteration count of 5. Seed 42 supplies the primary partition. Seed 43 is used only to compare clustering results across random seeds, without separate annotation calls. This comparison does not establish convergence.
+
+![Figure S13](../figures/current_manuscript/PNG/Figure_S13.png)
+
+Figure S13. Evaluation using the original 28-label and projected 23-label vocabularies. (A,B) Agreement using the original 28-label vocabulary and the projected 23-label vocabulary in B005. (C,D) The corresponding comparison in B006. Each panel averages eight regions equally. Both vocabularies are evaluated on the same reference-eligible cells. The fixed reference-only mask excludes ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 cells in B005 and 285,973 in B006. Predictions outside the projected vocabulary remain errors. The comparison reuses the same accepted predictions generated under the original 28-label vocabulary, without additional annotation calls or prediction-dependent exclusions. Tables S15a–S15b report projected-vocabulary coverage. ITLN stands for intelectin, and PDPN stands for podoplanin. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek).
+
+![Figure S14](../figures/current_manuscript/PNG/Figure_S14.png)
+
+Figure S14. Spatial distribution of reference-labeled cells across the 24 study regions. Columns show B004, B005 and B006, and rows align the eight anatomical sites. Each dot represents one benchmark cell at its tissue coordinates. Colors show the dataset reference cell-type annotations, including Noise. All panels use the same spatial scale. The scale bar represents 2,000 pixels in the source images.
 
 ### TABLE S1
 
@@ -494,7 +479,7 @@ REDSEA MATCHING AND CELL RETENTION AUDIT
 | InstanSeg | 198,959 / 196,717 | 146,477 / 144,996 | 195,459 | 3,500 | 1,258 |
 | MicroSAM | 197,314 / 197,400 | 149,626 / 149,080 | 196,124 | 1,190 | 1,276 |
 
-Counts are pooled across eight B004 regions. Processed counts refer to objects in the processed H5ADs after preprocessing. Matched counts include all objects accepted by directed nearest-neighbor matching at a maximum distance of 10 source-coordinate units after interchanging the reference x and y coordinates. Multiple segmented objects could match the same reference cell. Shared segmentation objects had the same CellID within a region and unchanged coordinates. Before-only and after-only counts use CellID, not saved row indices. The before–after comparison of shared segmentation objects further required an accepted match to the same reference cell and label in both conditions, so the shared-ID column is not its final scoring denominator. These counts describe retention and correspondence, not segmentation-boundary accuracy.
+Counts are pooled across the eight B004 regions. Processed counts refer to segmentation objects retained in the processed H5ADs. Matched counts include objects accepted by directed nearest-neighbor matching within 10 source-coordinate units after swapping the reference x and y coordinates. Multiple segmentation objects could match the same reference cell. Shared objects had the same CellID within a region and unchanged coordinates. Before-only and after-only counts were based on CellID, not saved row indices. Paired F1 evaluation also required an accepted match to the same reference cell and label in both conditions, so the shared-ID column is not its final scoring denominator. These counts describe retention and matching, not segmentation-boundary accuracy.
 
 ### TABLE S2A
 
@@ -502,82 +487,22 @@ CLUSTERING CONFIGURATIONS AND HYPERPARAMETERS
 
 | Field | Leiden | FlowSOM | SpatialSort | PIXIE |
 | --- | --- | --- | --- | --- |
-| Inputs | 47 markers | 47 markers | 47 markers | 48 image channels |
+| Clustering inputs | 47 marker-expression features | 47 marker-expression features | 47 marker-expression features, cell coordinates and a within-region 24-neighbor graph | 48 image channels and cell masks |
 | Transform | arcsinh(x/5) | arcsinh(x/5) | arcsinh(x/5) | Pixel and cell composition pipeline |
 | Scaling | StandardScaler within each region | RobustScaler on all B004 cells | RobustScaler on all B004 cells | Channel and composition normalization |
-| Configured and occupied clusters | 300 and 300 | 300 requested and 299 occupied | 300 requested. 229 occupied in the primary chain and 231 in the sensitivity chain | 300 and 300 |
+| Configured and nonempty clusters | 300 and 300 | 300 requested and 299 nonempty | 300 requested. 229 nonempty in the primary chain and 231 in the seed-43 comparison chain | 300 and 300 |
 | Implementation | K320 local Leiden with 20 within-parent merges | 32×32 self-organizing map followed by Ward clustering | 24 neighbors and precision 0.65 | 10×10 pixel map and 24×24 cell map |
-| Sigma and learning rate | See Leiden procedure in Section 2.7 | 1.0 and 0.3 | Not applicable | Pixel 5.0 and 0.05. Cell 2.0 and 0.3 |
-| Iterations | See Leiden procedure in Section 2.7 | 3 whole-cohort passes, giving 660,246 updates | 100 actual sweeps per chain with dmh_iter=5 | One pixel pass and 5,000 cell iterations |
-| Seed | 42 | 42 | Sampling seed 42 primary and 43 sensitivity | 42 |
+| Sigma and learning rate | See Leiden procedure in Section 2.3 | 1.0 and 0.3 | Not applicable | Pixel 5.0 and 0.05. Cell 2.0 and 0.3 |
+| Iterations | See Leiden procedure in Section 2.3 | 3 whole-cohort passes, giving 660,246 updates | 100 actual sweeps per chain with dmh_iter=5 | One pixel pass and 5,000 cell iterations |
+| Seed | 42 | 42 | Sampling seeds 42 (primary) and 43 (comparison) | 42 |
 
-Table S2A reports the clustering configurations and hyperparameters. Occupied clusters are those containing at least one cell. Additional procedure details are given in Section 2.7. Leiden, FlowSOM and SpatialSort used 47 protein markers. PIXIE selected 47 protein channels and the Hoechst1 DNA channel from the 59 available image channels, then converted pixel-cluster assignments into vectors of pixel-metacluster fractions. Pixel-level and cell-level settings are reported separately for PIXIE. Table S2B identifies channel membership.
-
-### TABLE S2B
-
-CHANNEL MEMBERSHIP
-
-| Channel group | Leiden | FlowSOM | SpatialSort | PIXIE |
-| --- | --- | --- | --- | --- |
-| Shared 45 protein markers | Included | Included | Included | Included |
-| CD123 | Included | Included | Included | Included |
-| CDX2 | Included | Included | Included | Included |
-| Hoechst1 | Excluded | Excluded | Excluded | Included |
-| Total selected inputs | 47 | 47 | 47 | 48 |
-
-Membership refers to inputs used for clustering, not all channels available in the source images. Hoechst1 is a DNA channel. PIXIE uses selected-channel pixel intensities to construct vectors of pixel-metacluster fractions. Table_S1_channel_membership.csv lists all 48 channel names, source locations, OME aliases, method membership and supporting evidence.
-
-## Supplementary Methods
-
-### SM1. Compensation processing and cell matching
-
-The processed compensation files contained 45 marker features and 44 centered principal components, without highly variable feature selection. Stored graph settings were 30 Euclidean neighbors in PCA space, RAPIDS and random state 0. Stored Leiden settings were resolution 1.5, 100 iterations and random state 0, distinct from the main clustering benchmark (Section 2.2).
-
-Original segmentation targets (whole cells or nuclei), channels, software versions, checkpoints, inference thresholds, mask quality-control rules, runtime and hardware could not be verified for the six compensation workflows. The Cytokit+SPRM attribution and Hoechst1/Cytokeratin channels in Section 2.6 apply only to the reference dataset. Current defaults and comparable whole-cell settings were not assumed.
-
-For the centroid matching in Section 2.4, distances were Euclidean and ties were resolved by reference object ID. Objects with invalid coordinates or distances beyond the threshold remained unmatched and were excluded from agreement scoring. Audits retained matched counts and fractions, distances, duplicate reference matches and before-only/after-only objects (Table S1). Mutual nearest-neighbor matching at 10 units required reciprocal matches and yielded one-to-one pairs. The common conversion to pixels and original registration across segmentation workflows could not be verified. Matching did not modify masks or detect biological splits or merges and did not establish boundary accuracy.
-
-The FlowSOM compensation sensitivity analysis used the same settings across all six methods without selection by reference agreement. It used processed marker values without another arcsinh transformation, fitting preprocessing and clustering separately before and after compensation (Section 2.17).
-
-### SM2. Reference-label harmonization
-
-The annotation analysis retains the original 28 reference labels, including Noise, without class merges. The 20-class clustering diagnostics in Figure 2 exclude Noise and combine selected naming variants and classes, including Paneth to Goblet (Section 2.9). These mappings are separate analysis definitions and are not interchangeable. Full per-label mappings are preserved with the clustering scoring policy and the annotation ontology.
-
-### SM3. Clustering inputs and configuration
-
-Sections 2.6–2.8 and Tables S2A–S2B specify marker membership, transformations, scaling, requested/occupied cluster counts and hyperparameters. Only SpatialSort received explicit cell coordinates as clustering inputs. PIXIE paired multichannel expression images with integer-labeled cell-mask OME-TIFFs. Its 48 selected channels were smoothed and normalized before pixel clustering. Pixel assignments were aggregated within each mask into pixel-metacluster fractions for cell clustering, with 20 pixel Ward metaclusters. The primary FlowSOM fit used three shuffled whole-cohort passes with seed 42. SpatialSort used 100 actual sweeps and dmh_iter=5 in each of two chains with sampling seeds 42 and 43. Frozen inputs and full-state checkpoints were preserved across the allocation handoff. An implementation-only arithmetic-reuse optimization was introduced after exact copied-checkpoint replay and restart-parity checks. Figure S4 and Figure S11 define the expression groups and scaling used only for display.
-
-### SM4. Scoring calculations
-
-For cell-type F1 and recall, true positives matched both reference and assigned labels, false positives carried other reference labels and false negatives carried the specified reference label but received another assignment. Global and within-region majority labeling used the populations and mappings in Section 2.9, with alphabetical tie-breaking. Both metrics were reference-informed fixed-partition diagnostics. Equations (2)–(5) define purity, direct agreement and normalization by the cluster-majority upper bound. Minority-label matches contributed to direct agreement, including in cell-type-specific ratios (Section 2.13).
-
-### SM5. Conditional regional comparisons
-
-Supplementary Table S7 includes all six method pairs for each of weighted F1 and cluster purity, with Holm correction across the 12-test family. Two-sided exact sign-flip tests enumerated all 256 sign assignments for eight equally weighted regional differences. Reported quantities were regional means, differences in percentage points, raw and adjusted p-values, and descriptive 95% intervals from 10,000 paired-region resamples with seed 42. All 12 planned comparisons retained every regional pair. The unestablished exchangeability assumption, regional dependence and limits on donor-level inference are stated in Section 2.17.
-
-### Supplementary Note 1. LLM prompt templates and model outputs for cell-type annotation.
-
-The primary requests contained numerical profiles for all 47 markers, anonymous cluster query identifiers, the original 28-label code dictionary including Noise, and fixed task instructions. The means-plus-fractions arm added a fraction matrix to the identical means matrix. Neither primary arm received reference labels or profiles, clustering-method identities, neighborhood summaries, retrieval, tools or web access. Requests specified exactly one allowed integer label code for every query ID in a JSON object. Literal requests, prompt hashes, anonymous-to-cluster mappings and accepted raw outputs are preserved with the reproducible analysis. Compact marker and matched context controls differed only as specified in Section 2.11.
-
-### Supplementary Note 2. LLM inputs, execution and response handling.
-
-Inputs and design. All 220,082 B004 cells contributed to the frozen cluster profiles. The four partitions contained 300 Leiden, 299 FlowSOM, 229 SpatialSort and 300 PIXIE clusters. The primary two-arm comparison contained 32 annotation sets, 128 logical request items and 9,024 cluster predictions. These primary sets and 32 compact-representation sets formed the 64-set representation matrix; four Opus method-name sets and one Opus–Leiden neighborhood set gave 69 base sets, 276 request items and 19,476 planned cluster predictions. Each scientific condition had one planned repetition, with groups of at most 75 clusters. Training-only normalization, integer-thousandth encoding, query order, vocabulary and exact join and leakage checks were frozen before launch.
-
-Execution and acceptance. The primary Astra arms used OpenRouter Batch, while new compact Astra requests used native OpenAI Batch. Opus used OpenRouter Batch. Gemini and DeepSeek used standard streaming requests with separately recorded recovery attempts and provider continuation segments where supported. All scientific requests used supported high-reasoning settings. Actual model bindings, routes, token ceilings, supported seeds, transport and attempt status are recorded per physical generation rather than inferred from a model alias. Final outputs were accepted only after strict, complete JSON validation and saved-response replay. Recoveries required explicit authorization; prior accepted outputs and every failed or interrupted attempt were preserved.
-
-Costs and delivery. All 128 primary B004 items were accepted, covering 9,024 cluster predictions. The [completed B004 package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) includes the recovered selected-means item and eight Astra condition items, giving 284 accepted items and 20,076 predictions across all B004 conditions. The November 11 supplemental plots and tables on this branch document the earlier snapshot. Execution records preserve per-generation usage, confirmed charges, unresolved billing holds and the distinction between authorized recovery and independent repetition.
-
-Scoring and reporting. The primary endpoint is the equal-weighted mean of reference agreement across the same two test regions. Fixed-28-label macro-F1 treats absent classes as zero. Means-plus-fractions minus means changes reuse the accepted outputs, with paired label changes and full-denominator coverage reported separately. Each completed condition contributes one accepted annotation per cluster, without across-repetition standard deviation or within-model voting. Exploratory cross-model reference-agreement calibration uses the disjoint cluster and region populations described in Section 2.17. Figures 3–4, S6–S11 and Tables S6a–S6d and S8a–S12d use the same frozen partitions and the condition-specific accepted predictions. Pending conditions are identified explicitly and have no finalized accuracy.
-
-![Figure S7](../figures/manuscript/Figure_S7.png)
-
-Figure S7. Reference-agreement decomposition for the 16 clustering-method/model combinations in the means-plus-fractions arm. For each test region, the fraction of correctly labeled cells, the gap to the cluster-majority upper bound, and the within-cluster minority-reference-label fraction sum to one. The two test-region fractions are averaged equally. The original 28-label vocabulary includes Noise. Values inside bars are percentages. The components describe arithmetic reference disagreement and do not identify independent biological error mechanisms. Each condition uses one accepted annotation per cluster.
+Leiden, FlowSOM and SpatialSort used 47 protein markers. PIXIE selected 47 protein channels and Hoechst1 DNA signal from the 59 available image channels, then converted pixel-cluster assignments into vectors of pixel-metacluster fractions. Pixel-level and cell-level configurations are reported separately for PIXIE.
 
 ### TABLE S6a
 
 PAIRED REFERENCE AGREEMENT
 
-| Clustering | Model | Means (%) | Means + fractions (%) | Paired change (pp) |
+| Clustering method | Model | All-marker means (%) | All-marker means plus fractions (%) | Paired change (pp) |
 | --- | --- | --- | --- | --- |
 | Leiden | GPT-6 Astra | 52.86 | 58.12 | +5.26 |
 | FlowSOM | GPT-6 Astra | 36.66 | 36.05 | -0.61 |
@@ -596,57 +521,7 @@ PAIRED REFERENCE AGREEMENT
 | SpatialSort | DeepSeek V4.1 Flash 1017 | 20.25 | 17.42 | -2.83 |
 | PIXIE | DeepSeek V4.1 Flash 1017 | 33.42 | 27.35 | -6.07 |
 
-Values are single-run outcomes after equally averaging the same two test regions. Paired changes are means-plus-fractions minus means in percentage points (pp). Missing or invalid predictions remain errors in the full planned denominator.
-
-### TABLE S6b
-
-MACRO-F1 AND PREDICTION COVERAGE (DATA FILE: Table_S6b.csv)
-
-| Clustering | Model | Means macro-F1 | Means + fractions macro-F1 | Means coverage (%) | Means + fractions coverage (%) |
-| --- | --- | --- | --- | --- | --- |
-| Leiden | GPT-6 Astra | 0.4582 | 0.4490 | 100.00 | 100.00 |
-| FlowSOM | GPT-6 Astra | 0.3028 | 0.2713 | 100.00 | 100.00 |
-| SpatialSort | GPT-6 Astra | 0.2152 | 0.2074 | 100.00 | 100.00 |
-| PIXIE | GPT-6 Astra | 0.2777 | 0.2553 | 100.00 | 100.00 |
-| Leiden | Claude Opus 5.5 | 0.3842 | 0.4165 | 100.00 | 100.00 |
-| FlowSOM | Claude Opus 5.5 | 0.2884 | 0.2999 | 100.00 | 100.00 |
-| SpatialSort | Claude Opus 5.5 | 0.1966 | 0.2226 | 100.00 | 100.00 |
-| PIXIE | Claude Opus 5.5 | 0.2527 | 0.2751 | 100.00 | 100.00 |
-| Leiden | Gemini 4 Argon | 0.4073 | 0.4133 | 100.00 | 100.00 |
-| FlowSOM | Gemini 4 Argon | 0.3189 | 0.2917 | 100.00 | 100.00 |
-| SpatialSort | Gemini 4 Argon | 0.2090 | 0.2154 | 100.00 | 100.00 |
-| PIXIE | Gemini 4 Argon | 0.2689 | 0.2619 | 100.00 | 100.00 |
-| Leiden | DeepSeek V4.1 Flash 1017 | 0.4084 | 0.2974 | 100.00 | 100.00 |
-| FlowSOM | DeepSeek V4.1 Flash 1017 | 0.2373 | 0.2196 | 100.00 | 100.00 |
-| SpatialSort | DeepSeek V4.1 Flash 1017 | 0.1230 | 0.1145 | 100.00 | 100.00 |
-| PIXIE | DeepSeek V4.1 Flash 1017 | 0.1895 | 0.1660 | 100.00 | 100.00 |
-
-Macro-F1 uses all 28 labels, with absent-class F1 set to zero in each test region. Prediction coverage is the proportion of cells with a valid prediction. Values equally average the two test-region outcomes and have no across-repetition standard deviation.
-
-### TABLE S6c
-
-DECOMPOSITION OF PAIRED AGREEMENT CHANGES
-
-| Clustering | Model | Valid-label term (pp) | Delivery term (pp) | Total change (pp) |
-| --- | --- | --- | --- | --- |
-| Leiden | GPT-6 Astra | +5.26 | 0.00 | +5.26 |
-| FlowSOM | GPT-6 Astra | -0.61 | 0.00 | -0.61 |
-| SpatialSort | GPT-6 Astra | -3.75 | 0.00 | -3.75 |
-| PIXIE | GPT-6 Astra | -5.68 | 0.00 | -5.68 |
-| Leiden | Claude Opus 5.5 | +3.49 | 0.00 | +3.49 |
-| FlowSOM | Claude Opus 5.5 | -0.66 | 0.00 | -0.66 |
-| SpatialSort | Claude Opus 5.5 | +3.06 | 0.00 | +3.06 |
-| PIXIE | Claude Opus 5.5 | +6.50 | 0.00 | +6.50 |
-| Leiden | Gemini 4 Argon | +1.35 | 0.00 | +1.35 |
-| FlowSOM | Gemini 4 Argon | +2.27 | 0.00 | +2.27 |
-| SpatialSort | Gemini 4 Argon | +0.49 | 0.00 | +0.49 |
-| PIXIE | Gemini 4 Argon | -2.30 | 0.00 | -2.30 |
-| Leiden | DeepSeek V4.1 Flash 1017 | -10.25 | 0.00 | -10.25 |
-| FlowSOM | DeepSeek V4.1 Flash 1017 | +0.24 | 0.00 | +0.24 |
-| SpatialSort | DeepSeek V4.1 Flash 1017 | -2.83 | 0.00 | -2.83 |
-| PIXIE | DeepSeek V4.1 Flash 1017 | -6.07 | 0.00 | -6.07 |
-
-Both terms use the full region denominator and sum to the means-plus-fractions minus means agreement change. The label term counts net reference matches gained or lost when both arms returned valid labels. The delivery term counts matches gained or lost when only one arm returned a valid label. Neither term estimates labels for failed calls. All final predictions were delivered, so delivery terms are zero and observed agreement changes arise from label changes. Changes are percentage points (pp).
+Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Values are single-run outcomes averaged equally across the two B004 test regions. Paired changes subtract agreement using all-marker means from agreement using all-marker means plus fractions, in percentage points (pp). Missing or invalid predictions remain errors in the full planned denominator. All planned predictions were delivered; paired changes therefore reflect changes between valid labels.
 
 ### TABLE S6d
 
@@ -654,193 +529,159 @@ MODEL IDENTITIES AND INFERENCE SETTINGS
 
 | Model | Requested model ID | Transport | Reasoning | Decoding fields sent |
 | --- | --- | --- | --- | --- |
-| GPT-6 Astra | gpt-6-astra; openai/gpt-6-astra | Batch | high | Combined output ceiling 32,768; seed 42; temperature/top-p omitted |
-| Claude Opus 5.5 | anthropic/claude-opus-5.5 | Batch | high | Combined output ceiling 32,768; seed omitted; temperature/top-p omitted |
-| Gemini 4 Argon | google/gemini-4-argon | Standard streaming | high | Combined output ceiling 943,718; seed 42; temperature/top-p omitted |
-| DeepSeek V4.1 Flash 1017 | deepseek/deepseek-v4.1-flash-1017 | Standard streaming | high | Combined output ceiling 943,718; seed omitted; temperature/top-p omitted |
+| GPT-6 Astra | gpt-6-astra, openai/gpt-6-astra | Batch | high | Combined output ceiling 32,768, seed 42, temperature/top-p omitted |
+| Claude Opus 5.5 | anthropic/claude-opus-5.5 | Batch | high | Combined output ceiling 32,768, seed omitted, temperature/top-p omitted |
+| Gemini 4 Argon | google/gemini-4-argon | Standard streaming | high | Combined output ceiling 943,718, seed 42, temperature/top-p omitted |
+| DeepSeek V4.1 Flash 1017 | deepseek/deepseek-v4.1-flash-1017 | Standard streaming and Batch | high | Combined output ceiling 943,718, seed omitted, temperature/top-p omitted |
 
-Requests used supported high reasoning, no tools or retrieval, at most 75 clusters per item and no automatic model/provider fallback. Table S6d summarizes requested model identities, transport, supported seeds and combined output ceilings. Native OpenAI and OpenRouter bindings, routes, per-attempt status, usage and confirmed charges are preserved per physical generation in the execution records. Requests and recovery attempts are linked to prompt, parser and source hashes. Requested output ceilings differ from observed token use; recovery attempts do not provide independent repetitions.
-
-![Figure S8](../figures/manuscript/Figure_S8.png)
-
-Figure S8. Marker-representation controls using the frozen B004 clustering partitions. Panels show equal-test-region reference agreement for (A) GPT-6 Astra, (B) Claude Opus 5.5, (C) Gemini 4 Argon and (D) DeepSeek V4.1 Flash 1017. Rows are clustering methods and columns are selected marker names, selected numerical means, all 47 numerical means and all means plus fractions. Method rows follow the method order in Figure 3C. Selected markers were chosen without reference labels, with at most six per cluster. The full arms retain all 47 markers. Each completed condition contributes one accepted annotation per cluster, using the original 28-label vocabulary including Noise. Color and printed values show percentages on the same 0–100 scale. In this November 11 snapshot, the hatched DeepSeek–Leiden selected-means cell represents the then-incomplete condition; its 225 delivered predictions out of 300 clusters are retained in coverage, and no partial accuracy is displayed. Tables S8a–S8d report complete-condition macro-F1 and planned-cluster delivery.
-
-![Figure S9](../figures/manuscript/Figure_S9.png)
-
-Figure S9. Matched prompt controls and exploratory cross-model agreement calibration in B004. (A) Opus 5.5 reference agreement with blinded versus correctly named clustering methods. Method rows in A follow the method order in Figure 3C. (B) Opus–Leiden marker evidence alone versus the same evidence plus measured expression from 15 nearest other cells within each region. A and B use identical means-plus-fractions baselines and equal weighting of the two test regions. (C) Brier scores for raw four-model agreement, logistic recalibration and a development-set constant. Lines and dots show the 16 method/model conditions; diamonds are their equal-weighted means of the equal-region scores. Lower Brier scores are better. (D) Selective reference error versus retained-cell coverage for the already-selected illustrative Astra–Leiden pipeline, shown separately for each test region. Solid and dashed curves use raw agreement and recalibration, respectively; tied scores are retained together and zero-retention risk is undefined and omitted. Calibration development and evaluation use disjoint cluster IDs and disjoint regions, so these evaluation cells differ from the full primary test population. These one-repetition within-donor analyses do not estimate repeatability, native model confidence or biological certainty. Tables S9 and S12a–S12d provide complete results; the later Astra extension is available in the [completed B004 package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50).
-
-![Figure S10](../figures/manuscript/Figure_S10.png)
-
-Figure S10. Descriptive comparison of all-marker means with means plus fractions for (A) Claude Opus 5.5, (B) GPT-6 Astra, (C) Gemini 4 Argon and (D) DeepSeek V4.1 Flash 1017. Points show reference agreement averaged equally across the two test regions, using the fixed 28-label vocabulary including Noise. Lines connect the two input arms for the same frozen clustering method. The right-hand column gives the change after adding positive fractions, in percentage points. Each arm uses one accepted annotation per cluster; no across-repetition SD or repeatability estimate is shown. Means, marker order, anonymous query IDs, label vocabulary and request batch boundaries are identical within each input pair; only the fractions matrix is added.
-
-## Supplementary table file index
-
-[IEEE-style table assets](tables/ieee/README.md) provide native-paste HTML, LaTeX, PDF and PNG versions of Tables S1, S2A and S2B. [Updated annotation and supporting tables](tables/ieee_reviewer47_20261111/README.md) provide the same formats for Tables S6a–S6d and S8a–S12d.
-
-Complete numerical sources, accepted prediction mappings, execution receipts and reproducible scoring and figure scripts are provided with the GitHub revision. Tables S1–S2 and S7 document compensation and clustering. Tables S6a–S6d report the paired annotation outcomes, delivery and execution settings. Tables S8a–S8d report representation controls, Table S9 matched Opus controls, Table S10 supervised classifiers, Table S11 coarsening and Tables S12a–S12d cross-model calibration. Companion benchmark tables provide regional, cell-type, cluster, confusion-matrix and complete selective-risk values. Existing versioned releases and original source evidence remain preserved separately from the active analysis.
-
-Table S2B channel membership: Table_S1_channel_membership.csv. Complete 48-channel inventory with H5AD locations, OME aliases, method membership and evidence references.
-
-### Table S6a: Paired reference agreement. File: Table_S6a.csv.
-
-### Table S6b: Macro-F1 and prediction coverage. File: Table_S6b.csv.
-
-### Table S6c: Decomposition of paired agreement changes. File: Table_S6c.csv.
-
-### Table S6d: Model identities and inference settings. File: Table_S6d.csv.
-
-### Table S7: Clustering-only conditional_comparisons.csv and paired_regional_observations.csv; all 12 planned clustering comparisons and their paired regional observations.
-
-Tables S8a–S8d: Marker-representation controls by model. Files: Table_S8a.csv–Table_S8d.csv. Table S9: Matched Opus prompt controls. File: Table_S9.csv. Table S10: Conventional classifiers. File: Table_S10.csv. Table S11: Post-clustering coarsening. File: Table_S11.csv. Tables S12a–S12d: Cross-model reference-agreement calibration by model, with the complete selective-risk CSV as a companion.
-
-![Figure S11](../figures/manuscript/Figure_S11.png)
-
-Figure S11. Marker profiles of cells assigned CD8+ T by each clustering method. (A) A single accepted prediction from each of the four models contributes to a most-frequent-label summary for each cluster; ties follow the fixed Astra, Opus, Argon and DeepSeek order. Row counts indicate cells in clusters assigned CD8+ T by that summary. All 47 stored marker channels are displayed, including CD123 and CDX2. Dot color shows mean stored processed expression, min–max scaled independently by marker across the four displayed method groups; no additional transformation is applied. Dot size shows the fraction of processed values strictly above zero, which is a numerical cutoff rather than validated biological marker positivity. This cross-model display does not measure repeated-call consistency.
+Requests used supported high-reasoning settings, no tools or retrieval, at most 75 clusters per item, and no automatic model or provider fallback. Table S6d reports requested model identities, transport, supported seeds and combined output ceilings. Execution records preserve native OpenAI and OpenRouter bindings, routes, attempt status, usage and confirmed charges for each physical generation. Requests and recoveries are linked to prompt, parser and source hashes. Requested output ceilings are distinct from observed token use, and recoveries do not provide independent repetitions.
 
 ### TABLE S8a
 
 GPT-6 ASTRA MARKER-REPRESENTATION COMPARISON
 
-| Clustering | Input | Agreement (%) | Macro-F1 | Clusters delivered |
-| --- | --- | --- | --- | --- |
-| Leiden | Selected names | 46.76 | 0.3948 | 300/300 |
-| Leiden | Selected means | 51.03 | 0.4511 | 300/300 |
-| Leiden | All means | 52.86 | 0.4582 | 300/300 |
-| Leiden | Means + fractions | 58.12 | 0.4490 | 300/300 |
-| FlowSOM | Selected names | 24.23 | 0.2338 | 299/299 |
-| FlowSOM | Selected means | 35.60 | 0.2827 | 299/299 |
-| FlowSOM | All means | 36.66 | 0.3028 | 299/299 |
-| FlowSOM | Means + fractions | 36.05 | 0.2713 | 299/299 |
-| SpatialSort | Selected names | 34.11 | 0.2026 | 229/229 |
-| SpatialSort | Selected means | 33.77 | 0.2121 | 229/229 |
-| SpatialSort | All means | 36.13 | 0.2152 | 229/229 |
-| SpatialSort | Means + fractions | 32.38 | 0.2074 | 229/229 |
-| PIXIE | Selected names | 39.04 | 0.2543 | 300/300 |
-| PIXIE | Selected means | 41.69 | 0.2817 | 300/300 |
-| PIXIE | All means | 41.32 | 0.2777 | 300/300 |
-| PIXIE | Means + fractions | 35.64 | 0.2553 | 300/300 |
+| Clustering method | Input | Agreement (%) | Macro-F1 |
+| --- | --- | --- | --- |
+| Leiden | Selected marker names | 46.76 | 0.3948 |
+| Leiden | Selected marker means | 51.03 | 0.4511 |
+| Leiden | All-marker means | 52.86 | 0.4582 |
+| Leiden | All-marker means plus fractions | 58.12 | 0.4490 |
+| FlowSOM | Selected marker names | 24.23 | 0.2338 |
+| FlowSOM | Selected marker means | 35.60 | 0.2827 |
+| FlowSOM | All-marker means | 36.66 | 0.3028 |
+| FlowSOM | All-marker means plus fractions | 36.05 | 0.2713 |
+| SpatialSort | Selected marker names | 34.11 | 0.2026 |
+| SpatialSort | Selected marker means | 33.77 | 0.2121 |
+| SpatialSort | All-marker means | 36.13 | 0.2152 |
+| SpatialSort | All-marker means plus fractions | 32.38 | 0.2074 |
+| PIXIE | Selected marker names | 39.04 | 0.2543 |
+| PIXIE | Selected marker means | 41.69 | 0.2817 |
+| PIXIE | All-marker means | 41.32 | 0.2777 |
+| PIXIE | All-marker means plus fractions | 35.64 | 0.2553 |
 
-Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.
+Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.
 
 ### TABLE S8b
 
 CLAUDE OPUS 5.5 MARKER-REPRESENTATION COMPARISON
 
-| Clustering | Input | Agreement (%) | Macro-F1 | Clusters delivered |
-| --- | --- | --- | --- | --- |
-| Leiden | Selected names | 42.16 | 0.3437 | 300/300 |
-| Leiden | Selected means | 43.23 | 0.3654 | 300/300 |
-| Leiden | All means | 46.78 | 0.3842 | 300/300 |
-| Leiden | Means + fractions | 50.27 | 0.4165 | 300/300 |
-| FlowSOM | Selected names | 27.91 | 0.2414 | 299/299 |
-| FlowSOM | Selected means | 33.42 | 0.2739 | 299/299 |
-| FlowSOM | All means | 37.48 | 0.2884 | 299/299 |
-| FlowSOM | Means + fractions | 36.82 | 0.2999 | 299/299 |
-| SpatialSort | Selected names | 29.36 | 0.1915 | 229/229 |
-| SpatialSort | Selected means | 28.40 | 0.1897 | 229/229 |
-| SpatialSort | All means | 33.11 | 0.1966 | 229/229 |
-| SpatialSort | Means + fractions | 36.17 | 0.2226 | 229/229 |
-| PIXIE | Selected names | 35.41 | 0.2458 | 300/300 |
-| PIXIE | Selected means | 38.61 | 0.2610 | 300/300 |
-| PIXIE | All means | 36.04 | 0.2527 | 300/300 |
-| PIXIE | Means + fractions | 42.54 | 0.2751 | 300/300 |
+| Clustering method | Input | Agreement (%) | Macro-F1 |
+| --- | --- | --- | --- |
+| Leiden | Selected marker names | 42.16 | 0.3437 |
+| Leiden | Selected marker means | 43.23 | 0.3654 |
+| Leiden | All-marker means | 46.78 | 0.3842 |
+| Leiden | All-marker means plus fractions | 50.27 | 0.4165 |
+| FlowSOM | Selected marker names | 27.91 | 0.2414 |
+| FlowSOM | Selected marker means | 33.42 | 0.2739 |
+| FlowSOM | All-marker means | 37.48 | 0.2884 |
+| FlowSOM | All-marker means plus fractions | 36.82 | 0.2999 |
+| SpatialSort | Selected marker names | 29.36 | 0.1915 |
+| SpatialSort | Selected marker means | 28.40 | 0.1897 |
+| SpatialSort | All-marker means | 33.11 | 0.1966 |
+| SpatialSort | All-marker means plus fractions | 36.17 | 0.2226 |
+| PIXIE | Selected marker names | 35.41 | 0.2458 |
+| PIXIE | Selected marker means | 38.61 | 0.2610 |
+| PIXIE | All-marker means | 36.04 | 0.2527 |
+| PIXIE | All-marker means plus fractions | 42.54 | 0.2751 |
 
-Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.
+Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.
 
 ### TABLE S8c
 
 GEMINI 4 ARGON MARKER-REPRESENTATION COMPARISON
 
-| Clustering | Input | Agreement (%) | Macro-F1 | Clusters delivered |
-| --- | --- | --- | --- | --- |
-| Leiden | Selected names | 37.33 | 0.3233 | 300/300 |
-| Leiden | Selected means | 45.76 | 0.4075 | 300/300 |
-| Leiden | All means | 46.16 | 0.4073 | 300/300 |
-| Leiden | Means + fractions | 47.51 | 0.4133 | 300/300 |
-| FlowSOM | Selected names | 25.91 | 0.2299 | 299/299 |
-| FlowSOM | Selected means | 40.09 | 0.2946 | 299/299 |
-| FlowSOM | All means | 39.57 | 0.3189 | 299/299 |
-| FlowSOM | Means + fractions | 41.84 | 0.2917 | 299/299 |
-| SpatialSort | Selected names | 32.39 | 0.2060 | 229/229 |
-| SpatialSort | Selected means | 32.78 | 0.2007 | 229/229 |
-| SpatialSort | All means | 33.31 | 0.2090 | 229/229 |
-| SpatialSort | Means + fractions | 33.80 | 0.2154 | 229/229 |
-| PIXIE | Selected names | 37.96 | 0.2566 | 300/300 |
-| PIXIE | Selected means | 40.93 | 0.2737 | 300/300 |
-| PIXIE | All means | 38.70 | 0.2689 | 300/300 |
-| PIXIE | Means + fractions | 36.40 | 0.2619 | 300/300 |
+| Clustering method | Input | Agreement (%) | Macro-F1 |
+| --- | --- | --- | --- |
+| Leiden | Selected marker names | 37.33 | 0.3233 |
+| Leiden | Selected marker means | 45.76 | 0.4075 |
+| Leiden | All-marker means | 46.16 | 0.4073 |
+| Leiden | All-marker means plus fractions | 47.51 | 0.4133 |
+| FlowSOM | Selected marker names | 25.91 | 0.2299 |
+| FlowSOM | Selected marker means | 40.09 | 0.2946 |
+| FlowSOM | All-marker means | 39.57 | 0.3189 |
+| FlowSOM | All-marker means plus fractions | 41.84 | 0.2917 |
+| SpatialSort | Selected marker names | 32.39 | 0.2060 |
+| SpatialSort | Selected marker means | 32.78 | 0.2007 |
+| SpatialSort | All-marker means | 33.31 | 0.2090 |
+| SpatialSort | All-marker means plus fractions | 33.80 | 0.2154 |
+| PIXIE | Selected marker names | 37.96 | 0.2566 |
+| PIXIE | Selected marker means | 40.93 | 0.2737 |
+| PIXIE | All-marker means | 38.70 | 0.2689 |
+| PIXIE | All-marker means plus fractions | 36.40 | 0.2619 |
 
-Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.
+Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.
 
 ### TABLE S8d
 
 DEEPSEEK V4.1 FLASH 1017 MARKER-REPRESENTATION COMPARISON
 
-| Clustering | Input | Agreement (%) | Macro-F1 | Clusters delivered |
-| --- | --- | --- | --- | --- |
-| Leiden | Selected names | 35.28 | 0.3083 | 300/300 |
-| Leiden | Selected means | Pending | Pending | 225/300 |
-| Leiden | All means | 50.17 | 0.4084 | 300/300 |
-| Leiden | Means + fractions | 39.92 | 0.2974 | 300/300 |
-| FlowSOM | Selected names | 17.24 | 0.1681 | 299/299 |
-| FlowSOM | Selected means | 28.13 | 0.2495 | 299/299 |
-| FlowSOM | All means | 27.62 | 0.2373 | 299/299 |
-| FlowSOM | Means + fractions | 27.87 | 0.2196 | 299/299 |
-| SpatialSort | Selected names | 25.45 | 0.1623 | 229/229 |
-| SpatialSort | Selected means | 26.53 | 0.1748 | 229/229 |
-| SpatialSort | All means | 20.25 | 0.1230 | 229/229 |
-| SpatialSort | Means + fractions | 17.42 | 0.1145 | 229/229 |
-| PIXIE | Selected names | 29.74 | 0.2080 | 300/300 |
-| PIXIE | Selected means | 33.54 | 0.2446 | 300/300 |
-| PIXIE | All means | 33.42 | 0.1895 | 300/300 |
-| PIXIE | Means + fractions | 27.35 | 0.1660 | 300/300 |
+| Clustering method | Input | Agreement (%) | Macro-F1 |
+| --- | --- | --- | --- |
+| Leiden | Selected marker names | 35.28 | 0.3083 |
+| Leiden | Selected marker means | 41.42 | 0.3576 |
+| Leiden | All-marker means | 50.17 | 0.4084 |
+| Leiden | All-marker means plus fractions | 39.92 | 0.2974 |
+| FlowSOM | Selected marker names | 17.24 | 0.1681 |
+| FlowSOM | Selected marker means | 28.13 | 0.2495 |
+| FlowSOM | All-marker means | 27.62 | 0.2373 |
+| FlowSOM | All-marker means plus fractions | 27.87 | 0.2196 |
+| SpatialSort | Selected marker names | 25.45 | 0.1623 |
+| SpatialSort | Selected marker means | 26.53 | 0.1748 |
+| SpatialSort | All-marker means | 20.25 | 0.1230 |
+| SpatialSort | All-marker means plus fractions | 17.42 | 0.1145 |
+| PIXIE | Selected marker names | 29.74 | 0.2080 |
+| PIXIE | Selected marker means | 33.54 | 0.2446 |
+| PIXIE | All-marker means | 33.42 | 0.1895 |
+| PIXIE | All-marker means plus fractions | 27.35 | 0.1660 |
 
-Agreement and fixed-28-label macro-F1 average the two B004 test regions equally. Missing requests remain in planned coverage. A partial condition is Pending and has no public accuracy or F1.
+Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.
 
 ### TABLE S9
 
-OPUS 5.5 MATCHED PROMPT CONTROLS
+LLM MATCHED-EVIDENCE PROMPT CONTROLS
 
-| Clustering | Control | Blinded (%) | Control (%) | Change (pp) | Changed clusters |
+| Clustering method–LLM | Control | Blinded (%) | Control (%) | Change (pp) | Changed clusters |
 | --- | --- | --- | --- | --- | --- |
-| Leiden | Method name | 50.27 | 45.15 | -5.12 | 75 |
-| FlowSOM | Method name | 36.82 | 34.00 | -2.83 | 50 |
-| SpatialSort | Method name | 36.17 | 31.11 | -5.06 | 53 |
-| PIXIE | Method name | 42.54 | 40.00 | -2.54 | 51 |
-| Leiden | Neighborhood | 50.27 | 45.97 | -4.29 | 63 |
+| Leiden–Opus 5.5 | Method name | 50.27 | 45.15 | -5.12 | 75 |
+| FlowSOM–Opus 5.5 | Method name | 36.82 | 34.00 | -2.83 | 50 |
+| SpatialSort–Opus 5.5 | Method name | 36.17 | 31.11 | -5.06 | 53 |
+| PIXIE–Opus 5.5 | Method name | 42.54 | 40.00 | -2.54 | 51 |
+| Leiden–Opus 5.5 | Neighborhood | 50.27 | 45.97 | -4.29 | 63 |
+| Leiden–Astra | Method name | 58.12 | 53.53 | -4.59 | 40 |
+| Leiden–Astra | Neighborhood | 58.12 | 51.43 | -6.69 | 39 |
 
-Each comparison reuses its blinded means-plus-fractions baseline. Agreement averages two test regions equally. Changed-cluster counts retain all planned clusters. The [completed B004 package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) reports the later Astra extension.
+Each comparison reuses its blinded baseline containing all-marker means plus fractions. Reference agreement averages the two B004 test regions equally. Changed-cluster counts use all planned clusters. Astra macro-F1 calculated using the original 28-label vocabulary was 0.4490 for the baseline, 0.4458 with the method name and 0.4531 with neighborhood-expression summaries. Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline. These single-generation comparisons do not establish repeatability or a general prompt effect. Opus 5.5 is Claude Opus 5.5, and Astra is GPT-6 Astra.
 
 ### TABLE S10
 
 CONVENTIONAL B004 ANNOTATION CLASSIFIERS
 
-| Clustering | Classifier | Input | Agreement (%) | Macro-F1 |
+| Clustering method | Classifier | Input | Agreement (%) | Macro-F1 |
 | --- | --- | --- | --- | --- |
-| Leiden | Nearest centroid | All means | 58.20 | 0.4341 |
-| Leiden | Nearest centroid | Means + fractions | 55.74 | 0.4370 |
-| Leiden | Logistic regression | All means | 67.05 | 0.4981 |
-| Leiden | Logistic regression | Means + fractions | 68.20 | 0.5030 |
-| FlowSOM | Nearest centroid | All means | 35.63 | 0.2745 |
-| FlowSOM | Nearest centroid | Means + fractions | 35.19 | 0.2787 |
-| FlowSOM | Logistic regression | All means | 45.69 | 0.3078 |
-| FlowSOM | Logistic regression | Means + fractions | 45.72 | 0.3059 |
-| SpatialSort | Nearest centroid | All means | 36.10 | 0.1798 |
-| SpatialSort | Nearest centroid | Means + fractions | 35.26 | 0.1778 |
-| SpatialSort | Logistic regression | All means | 44.12 | 0.2165 |
-| SpatialSort | Logistic regression | Means + fractions | 44.09 | 0.2170 |
-| PIXIE | Nearest centroid | All means | 46.76 | 0.2551 |
-| PIXIE | Nearest centroid | Means + fractions | 46.96 | 0.2577 |
-| PIXIE | Logistic regression | All means | 49.95 | 0.2684 |
-| PIXIE | Logistic regression | Means + fractions | 51.92 | 0.2728 |
+| Leiden | Nearest centroid | All-marker means | 58.20 | 0.4341 |
+| Leiden | Nearest centroid | All-marker means plus fractions | 55.74 | 0.4370 |
+| Leiden | Logistic regression | All-marker means | 67.05 | 0.4981 |
+| Leiden | Logistic regression | All-marker means plus fractions | 68.20 | 0.5030 |
+| FlowSOM | Nearest centroid | All-marker means | 35.63 | 0.2745 |
+| FlowSOM | Nearest centroid | All-marker means plus fractions | 35.19 | 0.2787 |
+| FlowSOM | Logistic regression | All-marker means | 45.69 | 0.3078 |
+| FlowSOM | Logistic regression | All-marker means plus fractions | 45.72 | 0.3059 |
+| SpatialSort | Nearest centroid | All-marker means | 36.10 | 0.1798 |
+| SpatialSort | Nearest centroid | All-marker means plus fractions | 35.26 | 0.1778 |
+| SpatialSort | Logistic regression | All-marker means | 44.12 | 0.2165 |
+| SpatialSort | Logistic regression | All-marker means plus fractions | 44.09 | 0.2170 |
+| PIXIE | Nearest centroid | All-marker means | 46.76 | 0.2551 |
+| PIXIE | Nearest centroid | All-marker means plus fractions | 46.96 | 0.2577 |
+| PIXIE | Logistic regression | All-marker means | 49.95 | 0.2684 |
+| PIXIE | Logistic regression | All-marker means plus fractions | 51.92 | 0.2728 |
 
-Classifiers used B004 training-region cell labels, richer supervision than the LLM prompts. Hyperparameters were chosen in validation regions. Metrics average the two test regions equally; fixed 28-label macro-F1 includes absent classes as zero.
+Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Classifiers used cell-level reference labels from the B004 training regions, providing richer supervision than the LLM prompts. Hyperparameters were selected in the validation regions. Metrics average the two test regions equally. Macro-F1 calculated using the original 28-label vocabulary assigns zero F1 to absent classes.
 
 ### TABLE S11
 
-B004 PARTITION GRANULARITY SENSITIVITY
+EFFECT OF MERGING EXISTING B004 CLUSTERS
 
-| Clustering | Occupied clusters | Purity | ARI | NMI |
+| Clustering method | Nonempty clusters | Purity | ARI | NMI |
 | --- | --- | --- | --- | --- |
 | Leiden | 100 | 0.6792 | 0.3168 | 0.5485 |
 | Leiden | 200 | 0.7036 | 0.2760 | 0.5363 |
@@ -855,100 +696,91 @@ B004 PARTITION GRANULARITY SENSITIVITY
 | PIXIE | 200 | 0.5609 | 0.2122 | 0.4115 |
 | PIXIE | 300 | 0.5641 | 0.2093 | 0.4085 |
 
-K100 and K200 are cell-count-weighted Ward coarsenings of frozen full-precision cluster profiles, sealed before reference scoring. They are not native-K refits or LLM ranking-stability experiments. Metrics average the two test regions equally.
+K100 and K200 were formed by cell-count-weighted Ward merging of frozen, full-precision cluster profiles, with merge mappings fixed before reference scoring. They do not represent clustering rerun at those target counts or tests of whether LLM rankings remain stable. Metrics average the two test regions equally.
 
 ### TABLE S12a
 
-GPT-6 ASTRA CROSS-MODEL AGREEMENT CALIBRATION
+GPT-6 ASTRA CROSS-MODEL SUPPORT CALIBRATION
 
-| Clustering | Score | Brier | Log loss | ECE |
+| Clustering method | Score | Brier | Log loss | ECE |
 | --- | --- | --- | --- | --- |
-| Leiden | Raw agreement | 0.2928 | 4.3298 | 0.2111 |
+| Leiden | Raw cross-model support | 0.2928 | 4.3298 | 0.2111 |
 | Leiden | Logistic recalibration | 0.2577 | 0.7166 | 0.1295 |
 | Leiden | Development constant | 0.2545 | 0.7022 | 0.1023 |
-| FlowSOM | Raw agreement | 0.3348 | 4.8255 | 0.2953 |
+| FlowSOM | Raw cross-model support | 0.3348 | 4.8255 | 0.2953 |
 | FlowSOM | Logistic recalibration | 0.2670 | 0.7331 | 0.1717 |
 | FlowSOM | Development constant | 0.2634 | 0.7228 | 0.1325 |
-| SpatialSort | Raw agreement | 0.3559 | 4.7292 | 0.3305 |
+| SpatialSort | Raw cross-model support | 0.3559 | 4.7292 | 0.3305 |
 | SpatialSort | Logistic recalibration | 0.2191 | 0.6304 | 0.0803 |
 | SpatialSort | Development constant | 0.2253 | 0.6440 | 0.0585 |
-| PIXIE | Raw agreement | 0.3116 | 4.1445 | 0.3292 |
+| PIXIE | Raw cross-model support | 0.3116 | 4.1445 | 0.3292 |
 | PIXIE | Logistic recalibration | 0.1987 | 0.5694 | 0.1020 |
 | PIXIE | Development constant | 0.2264 | 0.6453 | 0.1408 |
 
-Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.
+ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.
 
 ### TABLE S12b
 
-CLAUDE OPUS 5.5 CROSS-MODEL AGREEMENT CALIBRATION
+CLAUDE OPUS 5.5 CROSS-MODEL SUPPORT CALIBRATION
 
-| Clustering | Score | Brier | Log loss | ECE |
+| Clustering method | Score | Brier | Log loss | ECE |
 | --- | --- | --- | --- | --- |
-| Leiden | Raw agreement | 0.2797 | 4.3007 | 0.2420 |
+| Leiden | Raw cross-model support | 0.2797 | 4.3007 | 0.2420 |
 | Leiden | Logistic recalibration | 0.2223 | 0.6364 | 0.0912 |
 | Leiden | Development constant | 0.2523 | 0.6978 | 0.0486 |
-| FlowSOM | Raw agreement | 0.2992 | 4.7481 | 0.3038 |
+| FlowSOM | Raw cross-model support | 0.2992 | 4.7481 | 0.3038 |
 | FlowSOM | Logistic recalibration | 0.2258 | 0.6436 | 0.1710 |
 | FlowSOM | Development constant | 0.2284 | 0.6492 | 0.0866 |
-| SpatialSort | Raw agreement | 0.3934 | 4.8111 | 0.3665 |
+| SpatialSort | Raw cross-model support | 0.3934 | 4.8111 | 0.3665 |
 | SpatialSort | Logistic recalibration | 0.2356 | 0.6648 | 0.0724 |
 | SpatialSort | Development constant | 0.2356 | 0.6647 | 0.0518 |
-| PIXIE | Raw agreement | 0.3471 | 4.2212 | 0.3536 |
+| PIXIE | Raw cross-model support | 0.3471 | 4.2212 | 0.3536 |
 | PIXIE | Logistic recalibration | 0.2394 | 0.6719 | 0.1677 |
 | PIXIE | Development constant | 0.2426 | 0.6783 | 0.1222 |
 
-Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.
+ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.
 
 ### TABLE S12c
 
-GEMINI 4 ARGON CROSS-MODEL AGREEMENT CALIBRATION
+GEMINI 4 ARGON CROSS-MODEL SUPPORT CALIBRATION
 
-| Clustering | Score | Brier | Log loss | ECE |
+| Clustering method | Score | Brier | Log loss | ECE |
 | --- | --- | --- | --- | --- |
-| Leiden | Raw agreement | 0.2671 | 4.2733 | 0.2420 |
+| Leiden | Raw cross-model support | 0.2671 | 4.2733 | 0.2420 |
 | Leiden | Logistic recalibration | 0.2095 | 0.6089 | 0.0949 |
 | Leiden | Development constant | 0.2523 | 0.6977 | 0.0662 |
-| FlowSOM | Raw agreement | 0.3072 | 4.7653 | 0.2720 |
+| FlowSOM | Raw cross-model support | 0.3072 | 4.7653 | 0.2720 |
 | FlowSOM | Logistic recalibration | 0.2877 | 0.7786 | 0.2710 |
 | FlowSOM | Development constant | 0.2799 | 0.7578 | 0.1734 |
-| SpatialSort | Raw agreement | 0.3865 | 4.7954 | 0.3571 |
+| SpatialSort | Raw cross-model support | 0.3865 | 4.7954 | 0.3571 |
 | SpatialSort | Logistic recalibration | 0.2342 | 0.6669 | 0.0850 |
 | SpatialSort | Development constant | 0.2343 | 0.6633 | 0.0772 |
-| PIXIE | Raw agreement | 0.3558 | 4.2403 | 0.3847 |
+| PIXIE | Raw cross-model support | 0.3558 | 4.2403 | 0.3847 |
 | PIXIE | Logistic recalibration | 0.2197 | 0.6310 | 0.1469 |
 | PIXIE | Development constant | 0.2340 | 0.6610 | 0.1345 |
 
-Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.
+ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.
 
 ### TABLE S12d
 
-DEEPSEEK V4.1 FLASH 1017 CROSS-MODEL AGREEMENT CALIBRATION
+DEEPSEEK V4.1 FLASH 1017 CROSS-MODEL SUPPORT CALIBRATION
 
-| Clustering | Score | Brier | Log loss | ECE |
+| Clustering method | Score | Brier | Log loss | ECE |
 | --- | --- | --- | --- | --- |
-| Leiden | Raw agreement | 0.2487 | 4.2329 | 0.2864 |
+| Leiden | Raw cross-model support | 0.2487 | 4.2329 | 0.2864 |
 | Leiden | Logistic recalibration | 0.1746 | 0.5212 | 0.0805 |
 | Leiden | Development constant | 0.2422 | 0.6777 | 0.0489 |
-| FlowSOM | Raw agreement | 0.2616 | 4.6661 | 0.3529 |
+| FlowSOM | Raw cross-model support | 0.2616 | 4.6661 | 0.3529 |
 | FlowSOM | Logistic recalibration | 0.1414 | 0.4324 | 0.1335 |
 | FlowSOM | Development constant | 0.1779 | 0.5413 | 0.1404 |
-| SpatialSort | Raw agreement | 0.2862 | 4.5765 | 0.3666 |
+| SpatialSort | Raw cross-model support | 0.2862 | 4.5765 | 0.3666 |
 | SpatialSort | Logistic recalibration | 0.1232 | 0.3888 | 0.0398 |
 | SpatialSort | Development constant | 0.1494 | 0.4758 | 0.0213 |
-| PIXIE | Raw agreement | 0.2466 | 4.0019 | 0.2991 |
+| PIXIE | Raw cross-model support | 0.2466 | 4.0019 | 0.2991 |
 | PIXIE | Logistic recalibration | 0.1314 | 0.4155 | 0.0484 |
 | PIXIE | Development constant | 0.1689 | 0.5237 | 0.1019 |
 
-Lower scores are better. These are equal-test-region metrics on hash-held-out evaluation clusters, not the full benchmark population. Development uses disjoint clusters and regions. Agreement support has denominator four. This is retrospective within-donor reference-agreement calibration, not repeatability, native model confidence or biological certainty.
-
-
-![Figure S12](../figures/current_manuscript/PNG/Figure_S12.png)
-
-Figure S12. Frozen donor partitions and SpatialSort seed sensitivity. (A,B) Purity and adjusted Rand index against the native 28-label reference, including Noise, averaged equally across each donor's eight regions. Whole-donor cell and occupied-cluster counts are reported in Table S14a. (C) Global common-cell partition ARI between SpatialSort seeds 42 and 43 in each donor, using 50 actual sweeps and DMH=5. Seed 42 supplies the primary partition; seed 43 is used only for clustering sensitivity, without separate annotation calls. This seed comparison does not establish convergence.
-
-![Figure S13](../figures/current_manuscript/PNG/Figure_S13.png)
-
-Figure S13. Evaluation using the original 28-label and projected 23-label vocabularies. (A,B) Agreement using the original 28-label vocabulary and the projected 23-label vocabulary in B005. (C,D) The corresponding comparison in B006. Each panel averages eight regions equally. Both vocabularies are evaluated on the same reference-eligible cells. The fixed reference-only mask excludes ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 cells in B005 and 285,973 in B006. Predictions outside the projected vocabulary remain errors. The comparison reuses the same accepted predictions generated under the original 28-label vocabulary, without additional annotation calls or prediction-dependent exclusions. Tables S15a–S15b report projected-vocabulary coverage. ITLN stands for intelectin, and PDPN stands for podoplanin. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek).
+ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.
 
 ### TABLE S13a
 
@@ -1015,22 +847,22 @@ FROZEN DONOR CLUSTERING
 | B006 | SpatialSort | 301,280 | 270 | 0.5600 | 0.1703 | 0.4330 |
 | B006 | PIXIE | 301,280 | 300 | 0.5116 | 0.2371 | 0.4106 |
 
-Partitions use the frozen method-specific inputs; annotation profiles contain all 47 proteins. Clustering is evaluated against the native 28-label reference, including Noise. Purity, ARI and NMI average the eight regions equally; cells and occupied clusters are whole-donor counts. SpatialSort seed 42 is primary; each donor chain uses 50 sweeps and DMH = 5.
+Partitions use frozen method-specific inputs, and annotation profiles contain all 47 protein markers. Clustering is evaluated against the original 28-label vocabulary, including Noise. Purity, adjusted Rand index and normalized mutual information average the eight regions equally. Cell and nonempty-cluster counts cover the whole donor. SpatialSort seed 42 is primary, with 50 sweeps and five DMH iterations per sweep in each donor chain.
 
 ### TABLE S14b
 
-SPATIALSORT SEED SENSITIVITY
+SPATIALSORT COMPARISON ACROSS RANDOM SEEDS
 
 | Donor | Cells | Seed 42 clusters | Seed 43 clusters | Partition ARI |
 | --- | --- | --- | --- | --- |
 | B005 | 288,188 | 298 | 298 | 0.6917 |
 | B006 | 301,280 | 270 | 267 | 0.5805 |
 
-Both seeds use the same donor cells, 47-marker source and 50-sweep/DMH = 5 budget. Partition ARI compares the two memberships on all common donor cells. Seed 43 is used only for clustering sensitivity, with no additional annotation calls or reference-guided seed selection.
+Both seeds use the same donor cells, 47-marker source and computational budget of 50 sweeps with five DMH iterations per sweep. Partition ARI compares the two sets of cluster assignments across all common donor cells. Seed 43 is used only to compare clustering results across random seeds, without additional annotation calls or reference-guided seed selection.
 
 ### TABLE S15a
 
-B005 EVALUATION VOCABULARY SENSITIVITY
+B005 EVALUATION USING THE ORIGINAL 28-LABEL AND PROJECTED 23-LABEL VOCABULARIES
 
 | Clustering method | Model | Original 28-label agreement (%) | Projected 23-label agreement (%) | Change (pp) | Original 28-label macro-F1 | Projected 23-label macro-F1 | Projected-vocabulary coverage (%) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1051,11 +883,11 @@ B005 EVALUATION VOCABULARY SENSITIVITY
 | PIXIE | Argon | 29.06 | 38.21 | +9.15 | 0.1725 | 0.2286 | 88.49 |
 | PIXIE | DeepSeek | 28.44 | 37.94 | +9.50 | 0.1649 | 0.2235 | 86.49 |
 
-Both vocabularies use exactly the same reference-eligible cells. Shared-23 evaluation merges or renames the approved classes; reference ITLN+Epithelial, Noise and PDPN+Stromal are outside that eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells. Vocabulary coverage is separate from native output delivery coverage. Macro-F1 uses its stated fixed vocabulary (28 or 23); class-count changes are part of the sensitivity, with no new model generation.
+Both vocabularies use exactly the same reference-eligible cells. The 23-label projection merges or renames the specified classes. Reference ITLN+ Epithelial, Noise and PDPN+ Stromal cells are excluded from the eligibility set. Projected predictions outside the projected 23-label vocabulary remain errors and never remove cells from evaluation. Projected-vocabulary coverage is separate from prediction coverage. Macro-F1 uses the original 28-label or projected 23-label vocabulary. Both vocabularies score the same predictions.
 
 ### TABLE S15b
 
-B006 EVALUATION VOCABULARY SENSITIVITY
+B006 EVALUATION USING THE ORIGINAL 28-LABEL AND PROJECTED 23-LABEL VOCABULARIES
 
 | Clustering method | Model | Original 28-label agreement (%) | Projected 23-label agreement (%) | Change (pp) | Original 28-label macro-F1 | Projected 23-label macro-F1 | Projected-vocabulary coverage (%) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1076,4 +908,14 @@ B006 EVALUATION VOCABULARY SENSITIVITY
 | PIXIE | Argon | 17.29 | 28.61 | +11.32 | 0.1072 | 0.1542 | 71.26 |
 | PIXIE | DeepSeek | 19.16 | 24.62 | +5.46 | 0.0986 | 0.1192 | 93.65 |
 
-Both vocabularies use exactly the same reference-eligible cells. Shared-23 evaluation merges or renames the approved classes; reference ITLN+Epithelial, Noise and PDPN+Stromal are outside that eligibility set. Projected predictions outside the 23-label vocabulary remain errors and never remove cells. Vocabulary coverage is separate from native output delivery coverage. Macro-F1 uses its stated fixed vocabulary (28 or 23); class-count changes are part of the sensitivity, with no new model generation.
+Both vocabularies use exactly the same reference-eligible cells. The 23-label projection merges or renames the specified classes. Reference ITLN+ Epithelial, Noise and PDPN+ Stromal cells are excluded from the eligibility set. Projected predictions outside the projected 23-label vocabulary remain errors and never remove cells from evaluation. Projected-vocabulary coverage is separate from prediction coverage. Macro-F1 uses the original 28-label or projected 23-label vocabulary. Both vocabularies score the same predictions.
+
+## Supplementary table file index
+
+The Supplementary Reproducibility Archive and the versioned project repository provide numerical sources, accepted-prediction mappings, execution receipts, and reproducible scoring and figure scripts. Companion tables provide regional, cell-type, cluster, confusion-matrix and complete selective-risk values.
+
+Table S6a: Paired reference agreement. File: [Table_S6a.csv](tables/ieee_reviewer47_20261119/Table_S6a.csv).
+
+Table S6d: Model identities and inference settings. File: [Table_S6d.csv](tables/ieee_reviewer47_20261119/Table_S6d.csv).
+
+Table S7: [conditional_comparisons.csv](../data/frozen/clustering47_primary_20261108/conditional_comparisons.csv) and [paired_regional_observations.csv](../data/frozen/clustering47_primary_20261108/paired_regional_observations.csv) contain all 12 planned clustering-diagnostic comparisons and their paired regional observations.

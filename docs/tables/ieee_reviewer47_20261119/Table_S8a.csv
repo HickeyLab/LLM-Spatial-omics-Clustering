@@ -1,0 +1,17 @@
+Clustering method,Input,Agreement (%),Macro-F1
+Leiden,Selected marker names,46.76,0.3948
+Leiden,Selected marker means,51.03,0.4511
+Leiden,All-marker means,52.86,0.4582
+Leiden,All-marker means plus fractions,58.12,0.4490
+FlowSOM,Selected marker names,24.23,0.2338
+FlowSOM,Selected marker means,35.60,0.2827
+FlowSOM,All-marker means,36.66,0.3028
+FlowSOM,All-marker means plus fractions,36.05,0.2713
+SpatialSort,Selected marker names,34.11,0.2026
+SpatialSort,Selected marker means,33.77,0.2121
+SpatialSort,All-marker means,36.13,0.2152
+SpatialSort,All-marker means plus fractions,32.38,0.2074
+PIXIE,Selected marker names,39.04,0.2543
+PIXIE,Selected marker means,41.69,0.2817
+PIXIE,All-marker means,41.32,0.2777
+PIXIE,All-marker means plus fractions,35.64,0.2553

@@ -1,6 +1,6 @@
 # Reproduce the retained manuscript
 
-The [active figure inventory](../configs/manuscript_inventory.json), [figure map](figure_map.md) and [table map](supplementary_table_numbering.md) define the retained manuscript figures and tables. The completed annotation campaign is frozen under [annotation47_results_20261111](../data/frozen/annotation47_results_20261111/manifest.json); primary clustering inputs are separately pinned under [clustering47_primary_20261108](../data/frozen/clustering47_primary_20261108/manifest.json). Figure S4A separately uses the [47-channel reference-profile manifest](../data/frozen/reference47_profiles_20261110/manifest.json), covering all 27 non-Noise reference types and all 47 stored channels. Reproduction is offline after installing Python dependencies. It makes no model calls or clustering updates. Optional recalibration fits use the frozen development data only.
+The [figure map](figure_map.md), [display crosswalk](../configs/manuscript_display_crosswalk.json) and [table index](supplementary_table_numbering.md) define the current manuscript figures and tables. The [B004 primary annotation bank](../data/frozen/annotation47_results_20261111/manifest.json) and [primary clustering manifest](../data/frozen/clustering47_primary_20261108/manifest.json) pin the primary results and inputs. Figure S6A uses the [47-channel reference-profile manifest](../data/frozen/reference47_profiles_20261110/manifest.json), covering all 27 non-Noise reference types and all 47 stored channels. Reproduction works offline after installing Python dependencies. It makes no model calls or clustering updates. Optional recalibration fits use the frozen development data.
 
 ## Current scoring replay
 
@@ -18,50 +18,52 @@ Use a fresh output directory for each replay. The canonical accepted bank contai
 
 ## Reviewer controls and recalibration replay
 
-The [portable replay instructions](revision/reviewer47_publication_replay.md) bind the completed primary bank, all 69 planned reviewer sets and safe visible-response evidence. They verify all 276 literal request bodies and strictly re-parse the 275 accepted answers before opening reference values:
+The [completed B004 package](revision/reviewer47_completed_publication_20261115.md) contains 71 completed sets, 284 accepted logical requests and 20,076 cluster predictions. It includes the 32-set primary benchmark, the recovered 75-cluster DeepSeek–Leiden selected-means item and eight native OpenAI Batch requests for the two Leiden–Astra controls.
 
 ```bash
 python3.12 -m pip install -r requirements-reviewer47.txt
-python3.12 -B scripts/replay_reviewer47_publication.py \
-  --output outputs/reviewer47_replay_fresh \
-  --recompute-calibration
+python3.12 -B scripts/replay_completed_reviewer47.py \
+  --output outputs/reviewer47_completed_replay
 ```
 
-Use a new output path. This command reproduces the November 11 snapshot of 68 complete reviewer sets. The [completed B004 reviewer package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) also provides the recovered DeepSeek selected-means batch, the eight Astra control requests and their replay instructions.
+Use a fresh output path. The replay checks the immutable manifests, re-parses the saved visible answers and recomputes scores for the 69 base conditions and two Astra extensions. It writes the completed counts and verification to `verification.json` and the November 11 replay to `original_snapshot/`. The [complete score table](../data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv) and [seven matched contrasts](../data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv) record the expected values. The replay uses saved inputs and requires no local H5AD or API key.
 
-The replay recomputes per-set metrics and the five completed Opus contrasts with independent Counter arithmetic, compares the 32 primary conditions against the same admitted full-arm bank, and optionally refits the 16 frozen-development logistic calibrators. With recalibration enabled, its split and calibration/risk CSV hashes must match the frozen export. Marker selection and literal neighborhood vectors are already present in the published request bodies; no original H5AD is needed for this replay.
+To refit the 16 frozen-development logistic calibrators and compare calibration and risk-coverage hashes, use the [November 11 replay](revision/reviewer47_publication_replay.md) with `--recompute-calibration`. Those summaries use the 32 primary B004 sets, which were complete in that snapshot.
 
-IEEE table exports are regenerated from checked tables, retaining explicit pending cells:
+The [current B004 and processing table exports](tables/ieee_reviewer47_20261119/manifest.json) match the displayed manuscript tables. The [table index](supplementary_table_numbering.md) links the complete results, donor tables and file-only Table S7. The conventional classifiers use training reference labels. K100/200 coarsening merges existing clusters. Calibration estimates within-donor reference agreement.
+
+## Manuscript artwork and figure generation
+
+The [saved manuscript artwork](../figures/current_manuscript/PNG) uses the current figure numbers, including S14. The [figure and notebook index](../notebooks/final_figures/README.md) maps current figure numbers to stable renderer identifiers and source files. In the native renderer, figures S1–S10 refer to the earlier file identifiers documented in the index.
+
+To render current Figures S2 and S10 from the completed B004 results, use a fresh output directory:
 
 ```bash
-python3.12 scripts/revision/render_reviewer47_tables.py \
-  --output outputs/reviewer47_ieee_replay
+python3.12 scripts/render_reviewer47_figures.py --output outputs/reviewer47_completed_figures
 ```
 
-The current S6a–d, S8a–d, S9, S10, S11 and S12a–d display tables are under [ieee_reviewer47_20261111](tables/ieee_reviewer47_20261111/manifest.json), rather than embedded in the primary result folder. S1, S2A/B and S7 retain their separately documented inputs. The new conventional classifiers use richer reference-label training supervision; coarsening is post-clustering rather than native-K fitting; calibration is retrospective within-donor reference agreement, not native confidence or repeated-call consistency.
-
-## Current figure generation
+For the other native figure exports, use the renderer identifiers below:
 
 ```bash
-python3.12 scripts/render_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S8 S9 S10 S11
-python3.12 scripts/verify_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S8 S9 S10 S11
+python3.12 scripts/render_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S10 S11
+python3.12 scripts/verify_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S10 S11
 ```
 
-The renderer checks input hashes before producing 600 dpi PNG/TIFF and editable SVG/native PDF exports. The primary annotation figures are defined in `scripts/render_annotation47_figures.py`; S8 and S9 use `scripts/render_reviewer47_figures.py` and the separate reviewer result manifest. Figure 4 and S6 preserve their rendered scientific bytes, with current-bank equivalence verified for all 24 non-DeepSeek full-arm conditions. The clustering-only renderer uses the primary47 bindings. Figures 2E–H retain 20-class non-Noise harmonization, S4D retains original non-Noise diagnostics, and S5A uses all 28 labels including Noise. These populations are distinct from the held-out annotation endpoint.
+The renderer checks input hashes before producing 600 dpi PNG/TIFF and editable SVG/native PDF exports. The [figure map](figure_map.md) identifies the source for each panel. Figures 2E–H use the harmonized 20-label vocabulary. Figure S6D uses the original non-Noise labels and Figure S7A uses the original 28-label vocabulary including Noise.
 
 To synchronize verified changed exports into manuscript artwork and notebook previews, use:
 
 ```bash
-python3.12 scripts/sync_publication_artwork.py --figures 2 3 4 S4 S5 S6 S7 S8 S9 S10 S11
+python3.12 scripts/sync_publication_artwork.py --figures 2 3 4 S4 S5 S6 S7 S10 S11
 ```
 
-Syncing changes tracked artwork and inventories and is therefore a publication-maintenance command, not necessary for a read-only numerical replay. Final Google Docs placement is checked separately because preview compression and pending image suggestions can differ from native exports.
+This maintenance command updates the native artwork and notebook previews. The saved Google Docs artwork is published under `figures/current_manuscript`.
 
 ## Independent compensation analyses
 
-Figures 1, S1, S2 and S3 retain their compensation and matching inputs. Their existing H5AD workflows and compact frozen tables are distinct from the primary cluster annotation study. The external input identities are pinned for [Duke record 565](../configs/duke_record_565_manifest.json). Figure 1B and S1 retain the available source precision rather than claiming recovery of unavailable full-precision metrics. Shared-object matching, coordinate limits and within-donor interpretation remain unchanged. The current renderer can rebuild their published frozen presentations using figure IDs `1 S1 S2 S3A S3B S3C`.
+Figures 1, S3, S4 and S5 use the compensation and matching inputs pinned to [Duke record 565](../configs/duke_record_565_manifest.json). The native renderer can reconstruct them from frozen inputs with the identifiers `1 S1 S2 S3A S3B S3C`.
 
-The S4A profiles can also be regenerated from the checksum-matched reference H5AD using `scripts/revision/prepare_reference47_profiles.py`; its arguments specify the H5AD, exact reference-cell keys, protocol and a fresh output directory. The source binds the 45 H5AD X channels plus the CD123/CDX2 observation channels and uses stored values without another transformation. The frozen profile CSV is sufficient for ordinary figure replay.
+The Figure S6A profiles can be regenerated from the checksum-matched reference H5AD using `scripts/revision/prepare_reference47_profiles.py`. Its arguments specify the H5AD, exact reference-cell keys, protocol and a fresh output directory. The source uses the stored values for the 45 H5AD X channels and the CD123/CDX2 observation channels. The frozen profile CSV is sufficient for ordinary figure replay.
 
 ## Completed cross-donor scoring
 
@@ -88,7 +90,7 @@ The [November 14 donor bank](../data/frozen/donor47_results_20261114/manifest.js
 
 ## Archived entry points
 
-The [publication archive](../data/historical/publication_before_primary47_20261109/index.json) preserves the excluded Figure 5 and earlier S8/S9, annotation artwork, controls, repeatability and table snapshots. The active S8/S9 are newly rendered from the current reviewer export. The one-, three- and five-repetition preparation configurations remain byte-preserved; only the completed one-repetition outputs define current annotation results. The [pre-scoring record](../data/historical/annotation47_pre_scoring_20261110/manifest.json) preserves earlier active documentation.
+The [publication archive](../data/historical/publication_before_primary47_20261109/index.json) preserves figures, controls, repeatability and table snapshots from earlier revisions. The one-, three- and five-repetition preparation configurations are preserved with the [pre-scoring record](../data/historical/annotation47_pre_scoring_20261110/manifest.json). The completed single-repetition outputs define the current annotation results.
 
 Earlier `render_figure_03_manuscript.py`, `render_figure_04_historical_claude.py` where present, `render_current_tables.py`, `render_figure_s09.py` and revision scripts for donor transfer, means-only replotting and repeated paired decompositions reconstruct archival snapshots. Their labels, vocabularies and model settings can differ from the current study and must not be substituted into active manuscript figures. The same boundary applies to `notebooks/historical_reconstructions`, the prior replay manifest and the unchanged [October 30 release](revision_public_deposition_20261030.md). Archival checksum checks verify preservation, not current scientific results.
 

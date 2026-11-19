@@ -12,4 +12,7 @@ data/historical/flowsom_cluster_count_sweep_20261103/figures/publication/*.svg l
 # Preserve the frozen B004 publication banks and archived native SVG bytes.
 data/frozen/annotation47_results_20261111/** -text whitespace=cr-at-eol
 data/frozen/reviewer47_results_20261111/** -text whitespace=cr-at-eol
+data/frozen/reviewer47_deepseek_completion_20261115/** -text whitespace=cr-at-eol
+data/frozen/astra_prompt_controls_results_20261115/** -text whitespace=cr-at-eol
+docs/tables/ieee_reviewer47_20261119/** -text
 archive/reviewer47_publication_before_20261111/artwork/figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "sets": 71,
+  "accepted_requests": 284,
+  "delivered_predictions": 20076,
+  "extension_requests": 8,
+  "extension_predictions": 600,
+  "primary_b004_unchanged": true,
+  "primary_cells": 220082,
+  "test_cells": 69576,
+  "prior_frozen_sources_unchanged": true,
+  "new_generation_calls": 0,
+  "baseline_route": "OpenRouter Batch",
+  "control_route": "native OpenAI Batch",
+  "reference_sources": {
+    "data/frozen/annotation47_results_20261111/reference_cells.csv.gz": "75b352db32dce01de600371be2149f94e734b276120dd28538e1bde6e9065df2",
+    "data/frozen/annotation47_results_20261111/protocol.json": "ab59943742dde0b79032fc799ba28018c09e77ea955113e3698a58f6ccf475ba"
+  },
+  "original_prediction_freeze_sha256": "ee841075d951bde344421e6ef32baf7ec1724de46b7e04e52eada200e4831d2d"
+}
