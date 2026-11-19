@@ -1,15 +1,15 @@
 {
   "schema": "cell_masks.separate_figures_current.v1",
-  "created_utc": "2026-11-19T21:23:37.852421+00:00",
+  "created_utc": "2026-11-19T21:53:23.804025+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
-  "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f",
-  "source_saved_export": "Revised manuscript Word copy",
-  "source_saved_export_time_local": "2026-11-19T16:23:37.852421-05:00 America/New_York",
+  "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+  "source_saved_export": "Saved Google Docs manuscript Word export",
+  "source_saved_export_time_local": "2026-11-19T16:53:23.804025-05:00 America/New_York",
   "figure_count": 19,
   "png_count": 21,
   "numbering": "Current manuscript labels. Figure S5 is supplied in three parts A, B and C.",
   "all_png_sources_preserved_without_resampling": true,
-  "all_current_native_pngs_bound_to_saved_live_content": false,
+  "all_current_native_pngs_bound_to_saved_live_content": true,
   "strict_all_elements_600dpi_certification": false,
   "known_source_limits": [
     {
@@ -44,9 +44,20 @@
         247.8532
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1586,
+        1648
+      ],
+      "live_display_width_inches": 6.4,
       "native_export_pixels_per_display_inch": 247.8125,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.0
+      },
+      "live_docx_image_sha256": "2c80f63e966b22a6b1de145f38b772c19146aa44682d3971d5193a223d78b2e6",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 6.646153762029746
     },
     {
       "current_figure": "2",
@@ -64,9 +75,20 @@
         244.1448
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1455,
+        1800
+      ],
+      "live_display_width_inches": 5.96,
       "native_export_pixels_per_display_inch": 244.1275167785235,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.0
+      },
+      "live_docx_image_sha256": "cd25f997441b88fc06ea06d23f05b349f552144d116cb1ee91324fc3c78c55fd",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 7.372061461067367
     },
     {
       "current_figure": "3",
@@ -84,9 +106,20 @@
         260.2992
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1598,
+        1487
+      ],
+      "live_display_width_inches": 6.14,
       "native_export_pixels_per_display_inch": 260.26058631921825,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.0
+      },
+      "live_docx_image_sha256": "08da9a712ff97f850e46a659fe9f4565c4de931451e6c531b5e986f404f49468",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 5.714923447069117
     },
     {
       "current_figure": "4",
@@ -104,9 +137,20 @@
         621.8428
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        1793
+      ],
+      "live_display_width_inches": 6.35,
       "native_export_pixels_per_display_inch": 621.8897637795276,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 1.339795
+      },
+      "live_docx_image_sha256": "3d18ebe40dac60d277205acea414fbd2672cf9d891633118d6e4fbee2259edba",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 5.558692038495188
     },
     {
       "current_figure": "5",
@@ -124,9 +168,20 @@
         315.087
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1909,
+        795
+      ],
+      "live_display_width_inches": 6.06,
       "native_export_pixels_per_display_inch": 315.016501650165,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.0
+      },
+      "live_docx_image_sha256": "c2b7fcb9a231e038d3bd025c2631da5e647951a74e36184181cc240c205dbe3e",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 2.52
     },
     {
       "current_figure": "S1",
@@ -144,9 +199,20 @@
         258.36879999999996
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1313,
+        1843
+      ],
+      "live_display_width_inches": 5.08,
       "native_export_pixels_per_display_inch": 258.46456692913387,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.0
+      },
+      "live_docx_image_sha256": "866b3adbaeb74139fa22762434eda317fa469a925b7bae995513f6f952d1dbc9",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 7.134348206474191
     },
     {
       "current_figure": "S2",
@@ -164,9 +230,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        1537
+      ],
+      "live_display_width_inches": 5.69,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.873035
+      },
+      "live_docx_image_sha256": "48c488318f9f06021cd69cc6aa33509644fe921d9d68cefd67c7d8645d8c6965",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 4.271876640419947
     },
     {
       "current_figure": "S3",
@@ -184,9 +261,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        1380
+      ],
+      "live_display_width_inches": 5.72,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.898796
+      },
+      "live_docx_image_sha256": "e191eb5e17b5760a1d28df9eb65b6a3c57984b4b9e1d514abd670249c82eac3f",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 3.851466535433071
     },
     {
       "current_figure": "S4",
@@ -204,9 +292,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        2003
+      ],
+      "live_display_width_inches": 5.19,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.511264
+      },
+      "live_docx_image_sha256": "2854238d494e72926ecd232db4896adc31fdbd356f29cdec137ac2caa33fba51",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 5.0782152230971125
     },
     {
       "current_figure": "S5",
@@ -224,9 +323,20 @@
         659.8919999999999
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        716
+      ],
+      "live_display_width_inches": 5.61,
       "native_export_pixels_per_display_inch": 659.8930481283422,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.333199
+      },
+      "live_docx_image_sha256": "1a95bfeb429d3b7e8bf3c2df6386f7f650306b57aeae30f2a5a31e335727cd36",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 1.9649234470691164
     },
     {
       "current_figure": "S5",
@@ -244,9 +354,20 @@
         659.8919999999999
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        765
+      ],
+      "live_display_width_inches": 5.19,
       "native_export_pixels_per_display_inch": 659.9229287090558,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.799869
+      },
+      "live_docx_image_sha256": "a9381e3d902daea8819e5c725f984f6af54aaaff8dd0e2ac92d437c4d78140a7",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 1.940761154855643
     },
     {
       "current_figure": "S5",
@@ -264,9 +385,20 @@
         659.8919999999999
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        1712
+      ],
+      "live_display_width_inches": 4.78,
       "native_export_pixels_per_display_inch": 659.8326359832636,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.978634
+      },
+      "live_docx_image_sha256": "1c9fc7349965907d24f8a10bc7fbc8e61f33528572b13602efbf938f88c3ca68",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 3.99
     },
     {
       "current_figure": "S6",
@@ -284,9 +416,20 @@
         659.8919999999999
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        1806,
+        2048
+      ],
+      "live_display_width_inches": 5.75,
       "native_export_pixels_per_display_inch": 659.8260869565217,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 1.427436
+      },
+      "live_docx_image_sha256": "41dc98851b71809dc7f13189993a431b49a6525f19c6c0a7bbe2806b57f3f1b9",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 6.518612204724409
     },
     {
       "current_figure": "S7",
@@ -304,9 +447,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        711
+      ],
+      "live_display_width_inches": 5.3,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.193025
+      },
+      "live_docx_image_sha256": "c28b93048a859bc068363a9d7dedb1397355238d605a1892a92dd3b590965d64",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 1.8427690288713912
     },
     {
       "current_figure": "S8",
@@ -324,9 +478,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        855
+      ],
+      "live_display_width_inches": 5.93,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 1.497866
+      },
+      "live_docx_image_sha256": "b5b8f0047932e54685c309c909336e333683741763ce77db74540aea037835b3",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 2.48
     },
     {
       "current_figure": "S9",
@@ -344,9 +509,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        1055
+      ],
+      "live_display_width_inches": 5.32,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.553911
+      },
+      "live_docx_image_sha256": "76be9820468f2e23a48f19b15739730fe9e5c4d37ee82f3f9c4d034353909d91",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 2.741846019247594
     },
     {
       "current_figure": "S10",
@@ -364,9 +540,20 @@
         630.1486
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        2007
+      ],
+      "live_display_width_inches": 3.53,
       "native_export_pixels_per_display_inch": 630.028328611898,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BILINEAR",
+        "mae_0_255": 0.69229
+      },
+      "live_docx_image_sha256": "11bf9ce8281440270834477693ba0e1fd06408d83d2eef24437c78723f9ffb38",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 3.4593996062992125
     },
     {
       "current_figure": "S11",
@@ -384,9 +571,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        420
+      ],
+      "live_display_width_inches": 5.97,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 1.724355
+      },
+      "live_docx_image_sha256": "d05cd454b09590195b8b8867c8f85c96c1d30311b12744ee550e84cbb4f9cb22",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 1.2215540244969378
     },
     {
       "current_figure": "S12",
@@ -404,9 +602,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        849
+      ],
+      "live_display_width_inches": 5.33,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 0.3926
+      },
+      "live_docx_image_sha256": "fa6f923814a630afa29c220ec1a99a418dbfad0a4e556b13cace05605db64cbe",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 2.21
     },
     {
       "current_figure": "S13",
@@ -424,9 +633,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        2048,
+        1315
+      ],
+      "live_display_width_inches": 5.05,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BOX",
+        "mae_0_255": 0.5841
+      },
+      "live_docx_image_sha256": "932f4098333ea59dec4d660e4aa7d23332b77fd8764c9d328c127321fec2b546",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 3.239769247594051
     },
     {
       "current_figure": "S14",
@@ -444,9 +664,20 @@
         599.9988
       ],
       "native_file_copied_byte_exactly": true,
+      "live_docx_image_dimensions_px": [
+        895,
+        2048
+      ],
+      "live_display_width_inches": 3.14,
       "native_export_pixels_per_display_inch": 600.0,
-      "source": "verified_artwork_at_revised_manuscript_word_placement_width",
-      "source_manuscript_docx_sha256": "f94213aa8f8106806f416b71b8a1f4d07c5ab9fdeb98f5d0fc607cdbc99dea3f"
+      "live_content_match": {
+        "filter": "BICUBIC",
+        "mae_0_255": 4.648834
+      },
+      "live_docx_image_sha256": "24d0b1f04b04b51c8915532d5066ccfb50df5232c60e3fe6507c1cdccf981028",
+      "source": "verified_figure_artwork_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_display_height_inches": 7.18
     }
   ],
   "prior_public_figure_snapshot": "1b73a57e0b659f7d3233290f082fa4c93f19a23a",
