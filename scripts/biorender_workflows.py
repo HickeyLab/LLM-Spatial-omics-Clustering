@@ -97,9 +97,11 @@ def add_workflow(f,key,annotation_model="Opus 5.5"):
         f._biorender_overlays = []
     f._biorender_overlays.append(spec)
     if key == '2A':
-        for x,title in [(16.5,'CODEX images'),(44,'Cell-level features'),(74,'Clustering'),
-                        (92,'UMAP'),(124,'Reference-majority\ncluster labels'),(151,'Evaluation')]:
-            text(f,x,3,title,size=6.6,ha='center')
+        # Center headings over the fixed workflow steps. The first heading is
+        # close to the left edge and sits below the separate panel letter.
+        for x,title in [(11.3,'CODEX images'),(44,'Cell-level features'),(72.2,'Clustering'),
+                        (92,'UMAP'),(123.5,'Reference-majority\ncluster labels'),(152.4,'Evaluation')]:
+            text(f,x,6.2,title,size=6.6,ha='center')
         # Retain the table's right edge and clear the incoming arrow tip.
         feature_table(f,25.9,16.5,36.2,14,size=6.6)
         for x,label in zip([146.5,151.7,156.9],'ABC'):

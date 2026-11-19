@@ -3013,49 +3013,49 @@
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="433.298778" y="407.956435" transform="rotate(-0 433.298778 407.956435)">31.3%</text>
    </g>
   </g>
-  <g id="text_124">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="6.80315" y="11.395541" transform="rotate(-0 6.80315 11.395541)">a</text>
+  <g id="panel-letter-a">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="6.80315" y="11.395541" transform="rotate(-0 6.80315 11.395541)">a</text>
   </g>
-  <g id="text_125">
+  <g id="text_124">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="42.519685" y="13.239796" transform="rotate(-0 42.519685 13.239796)">CODEX images</text>
   </g>
-  <g id="text_126">
+  <g id="text_125">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="153.070866" y="13.156515" transform="rotate(-0 153.070866 13.156515)">Cell-level features</text>
   </g>
-  <g id="text_127">
+  <g id="text_126">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="277.795276" y="13.156515" transform="rotate(-0 277.795276 13.156515)">Leiden clustering</text>
   </g>
-  <g id="text_128">
+  <g id="text_127">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="345.826772" y="13.156515" transform="rotate(-0 345.826772 13.156515)">Astra annotation</text>
   </g>
-  <g id="text_129">
+  <g id="text_128">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="422.362205" y="13.235734" transform="rotate(-0 422.362205 13.235734)">Spatial visualization</text>
   </g>
-  <g id="text_130">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="95.856194" transform="rotate(-0 8.503937 95.856194)">b</text>
+  <g id="panel-letter-b">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="95.856194" transform="rotate(-0 8.503937 95.856194)">b</text>
   </g>
-  <g id="text_131">
+  <g id="text_129">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="95.774648" transform="rotate(-0 31.181102 95.774648)">Test-cell confusion</text>
   </g>
-  <g id="text_132">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="246.614173" y="95.856194" transform="rotate(-0 246.614173 95.856194)">c</text>
+  <g id="panel-letter-c">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="246.614173" y="95.856194" transform="rotate(-0 246.614173 95.856194)">c</text>
   </g>
-  <g id="text_133">
+  <g id="text_130">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="269.291339" y="95.853866" transform="rotate(-0 269.291339 95.853866)">Cell-type F1</text>
   </g>
-  <g id="text_134">
+  <g id="text_131">
    <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #506172" x="365.102362" y="337.668844" transform="rotate(-0 365.102362 337.668844)">Lines connect the two regional scores.</text>
   </g>
-  <g id="text_135">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="369.355652" transform="rotate(-0 8.503937 369.355652)">d</text>
+  <g id="panel-letter-d">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="369.355652" transform="rotate(-0 8.503937 369.355652)">d</text>
   </g>
-  <g id="text_136">
+  <g id="text_132">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="369.274106" transform="rotate(-0 31.181102 369.274106)">Three largest Leiden clusters</text>
   </g>
-  <g id="text_137">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="249.448819" y="369.355652" transform="rotate(-0 249.448819 369.355652)">e</text>
+  <g id="panel-letter-e">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="249.448819" y="369.355652" transform="rotate(-0 249.448819 369.355652)">e</text>
   </g>
-  <g id="text_138">
+  <g id="text_133">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="272.125984" y="369.274106" transform="rotate(-0 272.125984 369.274106)">All B004 cells</text>
   </g>
   <g id="legend_1">
@@ -3067,7 +3067,7 @@
      <use xlink:href="#md00ae54eb8" x="300.851648" y="326.384646" style="fill: #213047; stroke: #ffffff; stroke-width: 0.155; stroke-linejoin: miter" />
     </g>
    </g>
-   <g id="text_139">
+   <g id="text_134">
     <text style="font-size: 5.55px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #252b34" x="305.014148" y="328.327146" transform="rotate(-0 305.014148 328.327146)">Pooled test</text>
    </g>
    <g id="line2d_133">
@@ -3078,7 +3078,7 @@
      <use xlink:href="#m3e82eae920" x="341.661492" y="326.384646" style="fill: #2864a5; stroke: #ffffff; stroke-width: 0.155" />
     </g>
    </g>
-   <g id="text_140">
+   <g id="text_135">
     <text style="font-size: 5.55px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #252b34" x="345.823992" y="328.327146" transform="rotate(-0 345.823992 328.327146)">Transverse colon</text>
    </g>
    <g id="line2d_134">
@@ -3089,7 +3089,7 @@
      <use xlink:href="#m511d60009e" x="397.060898" y="326.384646" style="fill: #bc6535; stroke: #ffffff; stroke-width: 0.155; stroke-linejoin: miter" />
     </g>
    </g>
-   <g id="text_141">
+   <g id="text_136">
     <text style="font-size: 5.55px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #252b34" x="401.223398" y="328.327146" transform="rotate(-0 401.223398 328.327146)">Mid-jejunum</text>
    </g>
   </g>
@@ -3097,19 +3097,19 @@
    <g id="patch_69">
     <path d="M 109.893789 465.094726  L 114.568789 465.094726  L 114.568789 461.244726  L 109.893789 461.244726  z " style="fill: #2a6f5b; stroke: #2a6f5b; stroke-linejoin: miter" />
    </g>
-   <g id="text_142">
+   <g id="text_137">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="118.968789" y="465.094726" transform="rotate(-0 118.968789 465.094726)">Reference agreement</text>
    </g>
    <g id="patch_70">
     <path d="M 177.662383 465.094726  L 182.337383 465.094726  L 182.337383 461.244726  L 177.662383 461.244726  z " style="fill: #d9852b; stroke: #d9852b; stroke-linejoin: miter" />
    </g>
-   <g id="text_143">
+   <g id="text_138">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="186.737383" y="465.094726" transform="rotate(-0 186.737383 465.094726)">Gap to maximum agreement</text>
    </g>
    <g id="patch_71">
     <path d="M 261.927539 465.094726  L 266.602539 465.094726  L 266.602539 461.244726  L 261.927539 461.244726  z " style="fill: #d9d9d9; stroke: #d9d9d9; stroke-linejoin: miter" />
    </g>
-   <g id="text_144">
+   <g id="text_139">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="271.002539" y="465.094726" transform="rotate(-0 271.002539 465.094726)">Within-cluster minority-label fraction</text>
    </g>
   </g>

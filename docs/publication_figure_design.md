@@ -41,8 +41,9 @@ inventory and hashes are in `figures/manuscript/manifest.json`.
 
 ## Typography and panel letters
 
-The nominal artwork width is 165.1 mm (6.5 inches). Arial is used for native editable labels,
-with black 8 pt regular-weight panel letters, 6.5 pt panel headings, and no native text below 5.5 pt.
+The nominal artwork width is 165.1 mm (6.5 inches). Arial is used for native editable labels.
+Panel letters are 8 pt bold and black. Other text is regular-weight, including 6.5 pt panel
+headings. The minimum native text size is 5.5 pt.
 Figure 1A preserves the original illustrations and arrows, with its small
 bitmap labels replaced by larger editable Arial text. Step captions and
 H5AD use 6.5 pt, input descriptions use 6 pt, and the small TIF icon uses
@@ -54,7 +55,7 @@ PDF fonts are embedded TrueType and SVG labels remain editable text. An
 installed Arial is needed to reproduce the committed font appearance.
 
 Main and supplementary artwork use lowercase panel letters without
-parentheses. These letters are black Arial Regular. Captions may refer to
+parentheses. These letters are black Arial Bold. Captions may refer to
 panels using parenthesized letters. Single-panel artwork without panel
 identifiers needs no lettering.
 

@@ -1011,17 +1011,17 @@ L 456.377953 330.540482
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
   </g>
-  <g id="text_45">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="14.230187" transform="rotate(-0 8.503937 14.230187)">a</text>
+  <g id="panel-letter-a">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="14.230187" transform="rotate(-0 8.503937 14.230187)">a</text>
   </g>
-  <g id="text_46">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="14.230187" transform="rotate(-0 240.944882 14.230187)">b</text>
+  <g id="panel-letter-b">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="14.230187" transform="rotate(-0 240.944882 14.230187)">b</text>
   </g>
-  <g id="text_47">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="179.865157" transform="rotate(-0 8.503937 179.865157)">c</text>
+  <g id="panel-letter-c">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="179.865157" transform="rotate(-0 8.503937 179.865157)">c</text>
   </g>
-  <g id="text_48">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="179.865157" transform="rotate(-0 240.944882 179.865157)">d</text>
+  <g id="panel-letter-d">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="240.944882" y="179.865157" transform="rotate(-0 240.944882 179.865157)">d</text>
   </g>
   <g id="legend_2">
    <g id="line2d_83">
@@ -1030,7 +1030,7 @@ L 304.006211 358.396216
 L 308.681211 358.396216 
 " style="fill: none; stroke: #2864a5; stroke-linecap: square"/>
    </g>
-   <g id="text_49">
+   <g id="text_45">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="313.081211" y="360.321216" transform="rotate(-0 313.081211 360.321216)">Transverse colon</text>
    </g>
    <g id="line2d_84">
@@ -1039,7 +1039,7 @@ L 304.006211 366.176138
 L 308.681211 366.176138 
 " style="fill: none; stroke: #b55224; stroke-linecap: square"/>
    </g>
-   <g id="text_50">
+   <g id="text_46">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="313.081211" y="368.101138" transform="rotate(-0 313.081211 368.101138)">Mid-jejunum</text>
    </g>
    <g id="line2d_85">
@@ -1064,7 +1064,7 @@ z
      <use xlink:href="#mda2989a97e" x="364.131523" y="358.396216" style="fill: #444444; stroke: #444444"/>
     </g>
    </g>
-   <g id="text_51">
+   <g id="text_47">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="373.206523" y="360.321216" transform="rotate(-0 373.206523 360.321216)">Raw agreement</text>
    </g>
    <g id="line2d_86">
@@ -1084,7 +1084,7 @@ z
      <use xlink:href="#m404b06d1b0" x="364.131523" y="366.240591" style="fill: #444444; stroke: #444444; stroke-linejoin: miter"/>
     </g>
    </g>
-   <g id="text_52">
+   <g id="text_48">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="373.206523" y="368.165591" transform="rotate(-0 373.206523 368.165591)">Recalibrated</text>
    </g>
   </g>

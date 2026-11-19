@@ -22,7 +22,7 @@ from matplotlib.text import Text
 from matplotlib.ticker import PercentFormatter, MaxNLocator, FuncFormatter
 
 from publication_figure_design import (
-    ROOT, STYLE, METHODS, METHOD_KEYS, METHOD_COLORS, MODELS, MODEL_KEYS, MODEL_COLORS,
+    ROOT, PANEL_LETTER_GID, METHODS, METHOD_KEYS, METHOD_COLORS, MODELS, MODEL_KEYS, MODEL_COLORS,
     figure, axes, text, panel, grid, heatmap, colorbar, flow, finish, sha,
 )
 
@@ -171,10 +171,9 @@ def figure_2(out):
         matrix=csv(filename).set_index("cell_type").reindex(rows)[method_order].to_numpy()*scale
         count_heatmap(f,matrix,rows,method_order,x+27,163,38,39,nref,limits=(0,scale),rotation=55)
     # This dense figure has a small placement margin when fitted to one page.
-    panel_labels = {STYLE["panel_letter_format"].format(letter=letter.lower()) for letter in "ABCDEFGH"}
     for t in f.findobj(Text):
         if t.get_fontsize()<6.6:t.set_fontsize(6.6)
-        if t.get_text() in panel_labels:t.set_fontsize(10.3)
+        if (t.get_gid() or "").startswith(PANEL_LETTER_GID):t.set_fontsize(10.3)
     names=["reference_plot_cells.csv.gz","umap_coordinates.csv.gz","figure2_regional_metrics.csv","figure2_f1.csv","figure2_recall.csv"]
     return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. E–H share descending mean regional weighted-F1 method order. F/H share descending across-method mean F1 cell-type order. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."])
 
@@ -291,8 +290,7 @@ def draw_figure_1_regional_effects(f, reg, top):
         for x in (-50, 50):
             ax.axvline(x, color="#DCE2E6", linewidth=.35, zorder=0)
         ax.axvline(0, color="#77828A", linewidth=.55, zorder=1)
-        label = STYLE["panel_letter_format"].format(letter=letter.lower())
-        text(f, 3 if i == 0 else left - 3, top + 3.45, label, size=8.2, va="center")
+        panel(f, letter, 3 if i == 0 else left - 3, top + 3.45, letter_size=8.2, letter_va="center")
         text(f, center, top + 3.45, method, size=7.2, color=ink, ha="center", va="center")
         count_x = left + width + 2.55
         text(f, count_x, row_top - 1.1, "n", color=secondary, style="italic", ha="center", va="bottom")

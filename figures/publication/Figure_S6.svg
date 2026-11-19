@@ -17836,19 +17836,19 @@ L 453.543307 606.438524
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
   </g>
-  <g id="text_173">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">a</text>
+  <g id="panel-letter-a">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="11.395541" transform="rotate(-0 8.503937 11.395541)">a</text>
   </g>
-  <g id="text_174">
+  <g id="text_173">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="135.070866" y="24.495098" transform="rotate(-0 135.070866 24.495098)">Counts</text>
   </g>
-  <g id="text_175">
+  <g id="text_174">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="364.677165" y="24.495098" transform="rotate(-0 364.677165 24.495098)">Row fraction</text>
   </g>
-  <g id="text_176">
-   <text style="font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="298.076102" transform="rotate(-0 8.503937 298.076102)">b</text>
+  <g id="panel-letter-b">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="298.076102" transform="rotate(-0 8.503937 298.076102)">b</text>
   </g>
-  <g id="text_177">
+  <g id="text_175">
    <text style="font-size: 6.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="297.994556" transform="rotate(-0 31.181102 297.994556)">All 300 Leiden clusters</text>
   </g>
   <g id="legend_1">
@@ -17860,7 +17860,7 @@ L 109.893789 310.679743
 z
 " style="fill: #2a6f5b; stroke: #2a6f5b; stroke-linejoin: miter"/>
    </g>
-   <g id="text_178">
+   <g id="text_176">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="118.968789" y="314.529743" transform="rotate(-0 118.968789 314.529743)">Reference agreement</text>
    </g>
    <g id="patch_915">
@@ -17871,7 +17871,7 @@ L 177.662383 310.679743
 z
 " style="fill: #d9852b; stroke: #d9852b; stroke-linejoin: miter"/>
    </g>
-   <g id="text_179">
+   <g id="text_177">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="186.737383" y="314.529743" transform="rotate(-0 186.737383 314.529743)">Gap to maximum agreement</text>
    </g>
    <g id="patch_916">
@@ -17882,7 +17882,7 @@ L 261.927539 310.679743
 z
 " style="fill: #d9d9d9; stroke: #d9d9d9; stroke-linejoin: miter"/>
    </g>
-   <g id="text_180">
+   <g id="text_178">
     <text style="font-size: 5.5px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="271.002539" y="314.529743" transform="rotate(-0 271.002539 314.529743)">Within-cluster minority-label fraction</text>
    </g>
   </g>

@@ -23,6 +23,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 STYLE = json.loads((ROOT / "configs/publication_figure_style.json").read_text())
+PANEL_LETTER_GID = "panel-letter-"
 MM = 1 / 25.4
 METHODS = ["Leiden", "FlowSOM", "SpatialSort", "PIXIE"]
 METHOD_KEYS = ["leiden", "flowsom", "spatialsort", "pixie_tiff"]
@@ -37,7 +38,7 @@ def sha(path):
 
 
 def configure():
-    for suffix in ("", " Italic"):
+    for suffix in ("", " Bold", " Italic"):
         path = Path("/System/Library/Fonts/Supplemental") / ("Arial" + suffix + ".ttf")
         if path.exists():
             font_manager.fontManager.addfont(str(path))
@@ -79,9 +80,12 @@ def text(f, x, y, value, size=6, **kw):
                   va=kw.pop("va", "top"), **kw)
 
 
-def panel(f, letter, x, y, title=None, title_x=None):
-    label = STYLE["panel_letter_format"].format(letter=letter.lower())
-    text(f, x, y, label, size=STYLE["panel_letter_font_pt"], color="black")
+def panel(f, letter, x, y, title=None, title_x=None, *, letter_size=None, letter_va="top"):
+    letter = letter.lower()
+    label = STYLE["panel_letter_format"].format(letter=letter)
+    size = STYLE["panel_letter_font_pt"] if letter_size is None else letter_size
+    text(f, x, y, label, size=size, weight=STYLE["panel_letter_weight"], color="black",
+         va=letter_va, gid=f"{PANEL_LETTER_GID}{letter}")
     if title:
         text(f, title_x if title_x is not None else x + 8, y + .35,
              title, size=6.5)
@@ -276,9 +280,15 @@ def finish(f, name, output, inputs=None, notes=None):
                                    for label in (tick.label1,tick.label2))
     visible=[t for t in f.findobj(Text) if t.get_visible() and t.get_text().strip()
              and (t not in cached_ticks or t in drawn_ticks)]
-    non_regular = [t.get_text() for t in visible if t.get_fontweight() not in ("normal", "regular", 400)]
-    if non_regular:
-        raise ValueError(f"Non-regular text in {name}: {non_regular}")
+    panel_weight = font_manager.weight_dict[STYLE["panel_letter_weight"]]
+    incorrect_weights = []
+    for artist in visible:
+        expected = panel_weight if (artist.get_gid() or "").startswith(PANEL_LETTER_GID) else 400
+        weight = artist.get_fontweight()
+        if font_manager.weight_dict.get(weight, weight) != expected:
+            incorrect_weights.append(artist.get_text())
+    if incorrect_weights:
+        raise ValueError(f"Incorrect text weight in {name}: {incorrect_weights}")
     min_size=min(t.get_fontsize() for t in visible)
     if min_size < STYLE["minimum_font_pt"]-1e-5:
         bad=[(t.get_text(),t.get_fontsize()) for t in visible if t.get_fontsize()<5.5-1e-5]
@@ -318,6 +328,7 @@ def finish(f, name, output, inputs=None, notes=None):
              "raster_dpi":600,"raster_size_pixels":pixel_size,
              "vector_text_editable":True,
              "panel_letter_format":STYLE["panel_letter_format"].format(letter="a"),
+             "panel_letter_weight":STYLE["panel_letter_weight"],
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
              "provider_logos":getattr(f,"_provider_logo_overlays",None),
              "layout_compaction":f._layout_compaction,

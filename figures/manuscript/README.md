@@ -10,7 +10,7 @@ Figure numbers, figure-level titles and explanatory notes remain in manuscript
 captions. Descriptive subfigure titles are omitted. Distinguishing condition,
 model, method, population and metric labels, axes, keys, units and scientific
 values are retained. Panel letters are lowercase, unparenthesized, and set
-in black Arial Regular. The [design notes](../../docs/publication_figure_design.md)
+in black Arial Bold. The [design notes](../../docs/publication_figure_design.md)
 document the type sizes and proportional placement.
 
 Figures 2A, 3A and 4A use the author's original BioRender illustrations.
