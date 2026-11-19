@@ -76,7 +76,7 @@ def figure_s8(out):
         x = 3 + (i % 2) * 82
         y = 3 + (i // 2) * 66
         panel(f, chr(65 + i), x, y)
-        text(f, x + 42, y, MODELS[i], size=6.5, ha="center", weight="bold")
+        text(f, x + 42, y, MODELS[i], size=6.5, ha="center")
         a = axes(f, x + 22, y + 11, 48, 35)
         matrix = representation_matrix(rows, family)
         method_names = [METHODS[METHOD_KEYS.index(m)] for m in benchmark_orders()[1]]

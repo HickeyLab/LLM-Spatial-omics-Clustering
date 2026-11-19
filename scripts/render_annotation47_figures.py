@@ -91,7 +91,7 @@ def benchmark_orders():
 
 
 def matrix_panel(f, x, y, metric, title, limits=(0, 100), fmt=".1f"):
-    text(f, x+39, y, title, size=6.5, ha="center", weight="bold")
+    text(f, x+39, y, title, size=6.5, ha="center")
     a = axes(f, x+19, y+10, 48, 37)
     models, methods = benchmark_orders()
     rows = [MODEL_KEYS.index(m) for m in models]
@@ -290,7 +290,7 @@ def figure_s6(out):
     panel(f,"A",3,2)
     for i,(mat,title,lim) in enumerate([(counts.to_numpy(),"Counts",float(counts.to_numpy().max())),(row,"Row fraction",1)]):
         x=4.65+i*81
-        text(f,x+43,7,title,size=6.5,ha="center",weight="bold")
+        text(f,x+43,7,title,size=6.5,ha="center")
         a=axes(f,x+22,25,56,56)
         h=heatmap(a,mat,counts.index,counts.columns,0,lim,cmap="RdYlGn",cell_dividers=False)
         plt.setp(a.get_xticklabels(),rotation=90)

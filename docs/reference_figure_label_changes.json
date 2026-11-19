@@ -6,7 +6,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_01.png",
       "source_file": "figures/manuscript/Figure_1.png",
-      "source_sha256": "5f37a7f03af6ea38687845f0a28be70f88dcab97a4e0bc673ace142383b57adc",
+      "source_sha256": "e10f11daee7a45594032d494116f10f45741fd0aa4953607393ebeabfac4e3cd",
       "labels": [],
       "size_pixels": [
         3900,
@@ -16,7 +16,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_02.png",
       "source_file": "figures/manuscript/Figure_2.png",
-      "source_sha256": "a5d9b13ad33376d73da82390d5fba581ab64bc0e33e84764b63e6e34a457f95a",
+      "source_sha256": "22b90bf1d19c5d3a186c899ea3689986eec3719e5b1668e52192de928194d1e5",
       "labels": [],
       "size_pixels": [
         3900,
@@ -26,7 +26,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_03.png",
       "source_file": "figures/manuscript/Figure_3.png",
-      "source_sha256": "ab2f9e543338ebcb611f84864801d759993dfc7e2d93f08d9e65be7bed05eabc",
+      "source_sha256": "4b62d195c5f25f7986afcc453d475630a83de5cf1b4d595628daef8df3f9bd9b",
       "labels": [],
       "size_pixels": [
         3900,
@@ -36,7 +36,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_04.png",
       "source_file": "figures/manuscript/Figure_4.png",
-      "source_sha256": "5cd7403a998ecc710490176a9430ab67d65617e7e669258c6a7334f2f68dbff5",
+      "source_sha256": "c6280f6395bbf3abab6a1ec97725f9c318de339c4eedb0e36bafe39beb44f228",
       "labels": [],
       "size_pixels": [
         3900,
@@ -46,7 +46,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s01.png",
       "source_file": "figures/manuscript/Figure_S1.png",
-      "source_sha256": "ee58a0a5094a882c95c327dc0418d82c9fcf48a595009b1c54678e47e041157b",
+      "source_sha256": "e5df92301f4556da86021315d29437b990f61a6a7ba1d859536be6961c999327",
       "labels": [],
       "size_pixels": [
         3900,
@@ -56,7 +56,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s02.png",
       "source_file": "figures/manuscript/Figure_S2.png",
-      "source_sha256": "18d776fc766a0270f24689040177ada7b0001ab2cf79e8fe7e5eafd21b85d0b6",
+      "source_sha256": "533644063283bafcdcd75c7d4ee3928fc0c816b0d98ac56249ba0e8c7c32eadd",
       "labels": [],
       "size_pixels": [
         3900,
@@ -66,7 +66,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s03_a.png",
       "source_file": "figures/manuscript/Figure_S3A.png",
-      "source_sha256": "c90842c4991399b1a206cb6fa073376bcb2465745240f7940c3ee2275b698084",
+      "source_sha256": "86979120809851c355ae889ed7551c254997d2cd56b1fcb2a9c8c0d1c0bbe16d",
       "labels": [],
       "size_pixels": [
         3900,
@@ -76,7 +76,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s03_b.png",
       "source_file": "figures/manuscript/Figure_S3B.png",
-      "source_sha256": "873b4f7eb73b7ae4e164d01815bcea93c8806230134d5cd0afff705eb99cd7a4",
+      "source_sha256": "1f5a4d0175a7779814a6042ec381610bcd07763957d2d44d3a7917fd946fa228",
       "labels": [],
       "size_pixels": [
         3900,
@@ -86,7 +86,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s03_c.png",
       "source_file": "figures/manuscript/Figure_S3C.png",
-      "source_sha256": "53d78955391ed5f0fffb7fc47dd1560a8a8a2a915bec44134c1b394503587940",
+      "source_sha256": "17033ed9c3d4c5b197b0e9270cd6a5d21d122d93b5fcc037399cdb8e50e64c22",
       "labels": [],
       "size_pixels": [
         3900,
@@ -96,7 +96,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s04.png",
       "source_file": "figures/manuscript/Figure_S4.png",
-      "source_sha256": "8744d02547a26b000d59a76bcdb0e42d3cdff1e7aaa861d23d78c9e1c1b10edb",
+      "source_sha256": "01f744a02bac2568caee9ef2915348e888cedc41223f68b6835cb6d635efe9b9",
       "labels": [],
       "size_pixels": [
         3900,
@@ -106,7 +106,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s05.png",
       "source_file": "figures/manuscript/Figure_S5.png",
-      "source_sha256": "bd931552fd04c99df41534c4674430367afca6ea8167183dd81e679dbda5a07f",
+      "source_sha256": "1e77e74c9351aaa1b81aedd5ec3a70398d3230b3fe8a3bd3678452a001d0b62b",
       "labels": [],
       "size_pixels": [
         3900,
@@ -116,7 +116,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s06.png",
       "source_file": "figures/manuscript/Figure_S6.png",
-      "source_sha256": "17b60c2331669e227094bcc3893942deb36a4777241107d5c59d7007498561b3",
+      "source_sha256": "620fcba28b01cdff8dd627eb043d5481446a4c707f01129fdd784a0d9cc14442",
       "labels": [],
       "size_pixels": [
         3900,
@@ -136,7 +136,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s10.png",
       "source_file": "figures/manuscript/Figure_S10.png",
-      "source_sha256": "e3931152fcc1b34dc49fd65653bd3836360010ab72d851835d7e5cbfa458e42f",
+      "source_sha256": "396962a27a19ec212da080bced4347cf0ff64347a041874a8d1460bf907ad9d3",
       "labels": [],
       "size_pixels": [
         3900,
@@ -146,7 +146,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s11.png",
       "source_file": "figures/manuscript/Figure_S11.png",
-      "source_sha256": "e79c805bd67ed343410d903a8de9d403b9064157c38454a6c9d15ce8e4201f30",
+      "source_sha256": "9b77356b9322a4df66a2befe6d7c045094d7bbacac9b9e02dfb3c344b8dc4cbd",
       "labels": [],
       "size_pixels": [
         3900,
@@ -156,7 +156,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s08.png",
       "source_file": "figures/manuscript/Figure_S8.png",
-      "source_sha256": "234a75c721f7bb103dcba7cdb6e0ea76fa029402ca10a3878ced784291938692",
+      "source_sha256": "797027fe0e5b34eec44ae67bb634adefe9f73ff8105349e9b05a5f1c588aae73",
       "labels": [],
       "size_pixels": [
         3900,
@@ -166,7 +166,7 @@
     {
       "file": "notebooks/final_figures/previews/figure_s09.png",
       "source_file": "figures/manuscript/Figure_S9.png",
-      "source_sha256": "53e77c2ed6dd7fc612a80138e5fcf32c1b5dacdc22042d5f87aeb1b76e26e095",
+      "source_sha256": "b24769daa02463e648976634b9c0c17afbbadd46894ee33c3f4f037becf6c52a",
       "labels": [],
       "size_pixels": [
         3900,

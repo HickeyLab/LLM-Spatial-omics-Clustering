@@ -112,7 +112,7 @@ def figure_2(out):
     counts = ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
     split = (len(counts) + 1) // 2
     palette = cell_colors()
-    text(f, 57.1, 40.2, "Reference cell counts", size=6.6, ha="center", weight="bold", color="#111827")
+    text(f, 57.1, 40.2, "Reference cell counts", size=6.6, ha="center", color="#111827")
     for left, block in zip((28.4, 85.4), (counts.iloc[:split], counts.iloc[split:])):
         a = axes(f, left, 44.05, 18.8, 30.9)
         rows = range(len(block))
@@ -171,10 +171,10 @@ def figure_2(out):
         matrix=csv(filename).set_index("cell_type").reindex(rows)[method_order].to_numpy()*scale
         count_heatmap(f,matrix,rows,method_order,x+27,163,38,39,nref,limits=(0,scale),rotation=55)
     # This dense figure has a small placement margin when fitted to one page.
-    panel_labels = {STYLE["panel_letter_format"].format(letter=letter) for letter in "ABCDEFGH"}
+    panel_labels = {STYLE["panel_letter_format"].format(letter=letter.lower()) for letter in "ABCDEFGH"}
     for t in f.findobj(Text):
         if t.get_fontsize()<6.6:t.set_fontsize(6.6)
-        if t.get_text() in panel_labels and t.get_weight()=="bold":t.set_fontsize(10.3)
+        if t.get_text() in panel_labels:t.set_fontsize(10.3)
     names=["reference_plot_cells.csv.gz","umap_coordinates.csv.gz","figure2_regional_metrics.csv","figure2_f1.csv","figure2_recall.csv"]
     return finish(f,"Figure_2",out,{**inputs(*names),**workflow_inputs},notes=["Current A–H manuscript arrangement. E–H share descending mean regional weighted-F1 method order. F/H share descending across-method mean F1 cell-type order. Archived shared UMAP coordinates retained and recolored from the frozen primary partitions. Annotation-dependent results require the 47-marker annotation outputs. Suggested manuscript width: 128.27 mm (5.05 in)."])
 
@@ -212,7 +212,7 @@ def figure_s4(out):
     comp=csv("figureS4_compositions.csv.gz");colors=cell_colors()
     for i,(m,title) in enumerate(zip(["leiden","flowsom","spatialsort","pixie"],METHODS)):
         x=3+(i%2)*83;y=99+(i//2)*27
-        text(f,x+44,y-5,title,size=6.5,weight="bold",ha="center")
+        text(f,x+44,y-5,title,size=6.5,ha="center")
         a=axes(f,x+10,y,65,17)
         z=comp[comp.method.eq(m)];tot=z.groupby("cluster").n_cells.sum().sort_values(ascending=False,kind="stable")
         top=tot.head(cfg["panel_c"]["displayed_cluster_limit"].get(m,50)).index
@@ -291,9 +291,9 @@ def draw_figure_1_regional_effects(f, reg, top):
         for x in (-50, 50):
             ax.axvline(x, color="#DCE2E6", linewidth=.35, zorder=0)
         ax.axvline(0, color="#77828A", linewidth=.55, zorder=1)
-        label = STYLE["panel_letter_format"].format(letter=letter)
-        text(f, 3 if i == 0 else left - 3, top + 3.45, label, weight="bold", size=8.2, va="center")
-        text(f, center, top + 3.45, method, weight="bold", size=7.2, color=ink, ha="center", va="center")
+        label = STYLE["panel_letter_format"].format(letter=letter.lower())
+        text(f, 3 if i == 0 else left - 3, top + 3.45, label, size=8.2, va="center")
+        text(f, center, top + 3.45, method, size=7.2, color=ink, ha="center", va="center")
         count_x = left + width + 2.55
         text(f, count_x, row_top - 1.1, "n", color=secondary, style="italic", ha="center", va="bottom")
         for row, name in enumerate(labels):
@@ -391,7 +391,7 @@ def figure_s2(out):
         text(f,49,y+33,"Before compensation",size=5.5,rotation=90,ha="center",va="center")
         text(f,49,y+65,"After compensation",size=5.5,rotation=90,ha="center",va="center")
         for j,m in enumerate(["Mesmer","CellposeSAM","CellposeCyto3"]):
-            x=56+j*36;text(f,x+15,y+8,m,size=6,weight="bold",ha="center")
+            x=56+j*36;text(f,x+15,y+8,m,size=6,ha="center")
             for k,cond in enumerate(["before","after"]):
                 a=axes(f,x,y+15+k*32,30,29)
                 draw(a,d[d.method.eq(m)&d.condition.eq(cond)],target,"predicted_label")
@@ -412,7 +412,7 @@ def figure_s3c(out):
     method_order=rank_labels(SEG, df.groupby("method").mean_difference.mean().reindex(SEG))
     for i,backend in enumerate(config["backends"]):
         x=43+i*59
-        text(f,x+25,10,backend,size=6.5,weight="bold",ha="center")
+        text(f,x+25,10,backend,size=6.5,ha="center")
         a=axes(f,x,15,51,84)
         mat=df[df.clustering.eq(backend)].pivot(index="cell_type",columns="method",values="mean_difference").reindex(index=labels,columns=method_order).to_numpy()*100
         assert mat.shape==(28,6) and np.isfinite(mat).all()
@@ -488,7 +488,7 @@ def figure_s3b(out):
     method_order=rank_labels(SEG, d.groupby("method").mean_celltype_delta.mean().reindex(SEG))
     panel(f,"B",3,2)
     for i,(backend,c) in enumerate([("Leiden","#0072B2"),("FlowSOM","#D55E00")]):
-        x=3+82*i;text(f,x+45,15,backend,size=6.5,weight="bold",ha="center")
+        x=3+82*i;text(f,x+45,15,backend,size=6.5,ha="center")
         a=axes(f,x+15,24,63,36)
         for j,m in enumerate(method_order):
             z=d[d.method.eq(m)&d.clustering.eq(backend)].sort_values("region")
@@ -536,7 +536,7 @@ def figure_slot(out, key):
     """Create a plain pending-result slot; never read annotation tables."""
     out.mkdir(parents=True,exist_ok=True)
     f=figure(48)
-    text(f,82.55,10,"Figure "+key,size=11,weight="bold",ha="center")
+    text(f,82.55,10,"Figure "+key,size=11,ha="center")
     text(f,82.55,25,"[[annotation results pending]]",size=12,ha="center")
     text(f,82.55,38,"47-marker primary clustering · annotation outputs required",size=8,ha="center")
     name="Figure_"+key

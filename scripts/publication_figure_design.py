@@ -37,14 +37,14 @@ def sha(path):
 
 
 def configure():
-    for suffix in ("", " Bold", " Italic", " Bold Italic"):
+    for suffix in ("", " Italic"):
         path = Path("/System/Library/Fonts/Supplemental") / ("Arial" + suffix + ".ttf")
         if path.exists():
             font_manager.fontManager.addfont(str(path))
     # Other systems can use an installed Arial or the metrically similar font.
     plt.rcParams.update({
         "font.family": "sans-serif", "font.sans-serif": ["Arial", "Liberation Sans", "DejaVu Sans"],
-        "font.size": 6, "axes.labelsize": 6, "axes.titlesize": 6.5,
+        "font.size": 6, "font.weight": "normal", "axes.labelsize": 6, "axes.titlesize": 6.5,
         "xtick.labelsize": 5.5, "ytick.labelsize": 5.5, "legend.fontsize": 5.5,
         "figure.titlesize": 6.5, "axes.linewidth": .5,
         "xtick.major.width": .5, "ytick.major.width": .5,
@@ -80,11 +80,11 @@ def text(f, x, y, value, size=6, **kw):
 
 
 def panel(f, letter, x, y, title=None, title_x=None):
-    label = STYLE["panel_letter_format"].format(letter=letter)
-    text(f, x, y, label, size=STYLE["panel_letter_font_pt"], weight="bold")
+    label = STYLE["panel_letter_format"].format(letter=letter.lower())
+    text(f, x, y, label, size=STYLE["panel_letter_font_pt"], color="black")
     if title:
         text(f, title_x if title_x is not None else x + 8, y + .35,
-             title, size=6.5, weight="bold")
+             title, size=6.5)
 
 
 def grid(ax, axis="y"):
@@ -276,6 +276,9 @@ def finish(f, name, output, inputs=None, notes=None):
                                    for label in (tick.label1,tick.label2))
     visible=[t for t in f.findobj(Text) if t.get_visible() and t.get_text().strip()
              and (t not in cached_ticks or t in drawn_ticks)]
+    non_regular = [t.get_text() for t in visible if t.get_fontweight() not in ("normal", "regular", 400)]
+    if non_regular:
+        raise ValueError(f"Non-regular text in {name}: {non_regular}")
     min_size=min(t.get_fontsize() for t in visible)
     if min_size < STYLE["minimum_font_pt"]-1e-5:
         bad=[(t.get_text(),t.get_fontsize()) for t in visible if t.get_fontsize()<5.5-1e-5]
@@ -314,7 +317,7 @@ def finish(f, name, output, inputs=None, notes=None):
              "minimum_placement_width_mm":round(fw*5/min_size,3),
              "raster_dpi":600,"raster_size_pixels":pixel_size,
              "vector_text_editable":True,
-             "panel_letter_format":STYLE["panel_letter_format"].format(letter="A"),
+             "panel_letter_format":STYLE["panel_letter_format"].format(letter="a"),
              "biorender_workflow":getattr(f,"_biorender_overlays",None),
              "provider_logos":getattr(f,"_provider_logo_overlays",None),
              "layout_compaction":f._layout_compaction,

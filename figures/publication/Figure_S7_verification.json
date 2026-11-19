@@ -11,7 +11,7 @@
     2837
   ],
   "vector_text_editable": true,
-  "panel_letter_format": "A",
+  "panel_letter_format": "a",
   "biorender_workflow": null,
   "provider_logos": null,
   "layout_compaction": {

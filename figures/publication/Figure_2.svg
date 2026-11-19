@@ -3169,7 +3169,7 @@
    <path d="M 400.446307 284.672841  Q 400.774335 278.399413 401.102362 272.125984  " style="fill: none; stroke: #777777; stroke-width: 0.35; stroke-linecap: round" />
   </g>
   <g id="text_158">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="13.167369" transform="rotate(-0 8.503937 13.167369)">(A)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="13.041838" transform="rotate(-0 8.503937 13.041838)">a</text>
   </g>
   <g id="text_159">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="46.771654" y="13.312656" transform="rotate(-0 46.771654 13.312656)">CODEX images</text>
@@ -3200,16 +3200,16 @@
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="444.755906" y="102.519432" transform="rotate(-0 444.755906 102.519432)">C</text>
   </g>
   <g id="text_168">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="118.049259" transform="rotate(-0 8.503937 118.049259)">(B)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="117.923728" transform="rotate(-0 8.503937 117.923728)">b</text>
   </g>
   <g id="text_169">
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111827" x="161.858268" y="118.676912" transform="rotate(-0 161.858268 118.676912)">Reference cell counts</text>
+   <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111827" x="161.858268" y="118.676912" transform="rotate(-0 161.858268 118.676912)">Reference cell counts</text>
   </g>
   <g id="text_170">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="325.984252" y="118.049259" transform="rotate(-0 325.984252 118.049259)">(C)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="325.984252" y="117.923728" transform="rotate(-0 325.984252 117.923728)">c</text>
   </g>
   <g id="text_171">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="239.939023" transform="rotate(-0 8.503937 239.939023)">(D)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="239.813492" transform="rotate(-0 8.503937 239.813492)">d</text>
   </g>
   <g id="text_172">
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(48.555184 237.165101)">Reference</text>
@@ -3228,22 +3228,22 @@
    <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="415.275591" y="237.165101" transform="rotate(-0 415.275591 237.165101)">PIXIE</text>
   </g>
   <g id="text_177">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="342.46233" transform="rotate(-0 8.503937 342.46233)">(E)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="342.336799" transform="rotate(-0 8.503937 342.336799)">e</text>
   </g>
   <g id="text_178">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="243.779528" y="342.46233" transform="rotate(-0 243.779528 342.46233)">(G)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="243.779528" y="342.216096" transform="rotate(-0 243.779528 342.216096)">g</text>
   </g>
   <g id="text_179">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="424.667055" transform="rotate(-0 8.503937 424.667055)">(F)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="8.503937" y="424.541523" transform="rotate(-0 8.503937 424.541523)">f</text>
   </g>
   <g id="text_180">
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="422.885259" transform="rotate(-0 31.181102 422.885259)">F1</text>
+   <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="31.181102" y="422.885259" transform="rotate(-0 31.181102 422.885259)">F1</text>
   </g>
   <g id="text_181">
-   <text style="font-weight: 700; font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="243.779528" y="424.667055" transform="rotate(-0 243.779528 424.667055)">(H)</text>
+   <text style="font-size: 10.3px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="243.779528" y="424.541523" transform="rotate(-0 243.779528 424.541523)">h</text>
   </g>
   <g id="text_182">
-   <text style="font-weight: 700; font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="266.456693" y="422.965696" transform="rotate(-0 266.456693 422.965696)">Recall (%)</text>
+   <text style="font-size: 6.6px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="266.456693" y="422.965696" transform="rotate(-0 266.456693 422.965696)">Recall (%)</text>
   </g>
  </g>
  <defs>

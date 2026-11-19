@@ -42,7 +42,7 @@ inventory and hashes are in `figures/manuscript/manifest.json`.
 ## Typography and panel letters
 
 The nominal artwork width is 165.1 mm (6.5 inches). Arial is used for native editable labels,
-with 8 pt bold panel letters, 6.5 pt panel headings, and no native text below 5.5 pt.
+with black 8 pt regular-weight panel letters, 6.5 pt panel headings, and no native text below 5.5 pt.
 Figure 1A preserves the original illustrations and arrows, with its small
 bitmap labels replaced by larger editable Arial text. Step captions and
 H5AD use 6.5 pt, input descriptions use 6 pt, and the small TIF icon uses
@@ -53,16 +53,15 @@ recommended placement, its panel letters are approximately 8 pt.
 PDF fonts are embedded TrueType and SVG labels remain editable text. An
 installed Arial is needed to reproduce the committed font appearance.
 
-The [EXO author instructions](https://sciexplor.com/exo/author_instructions)
-show panel labels in the form “(A), (B), (C)”. Main and supplementary artwork
-use bold uppercase letters in parentheses. Captions use the same convention.
-Single-panel artwork without panel identifiers needs no lettering.
+Main and supplementary artwork use lowercase panel letters without
+parentheses. These letters are black Arial Regular. Captions may refer to
+panels using parenthesized letters. Single-panel artwork without panel
+identifiers needs no lettering.
 
 The [Nature research figure guide](https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/)
 and the supplied [Hickey et al. Nature example](https://www.nature.com/articles/s41586-023-05915-x)
 inform the restrained sans-serif typography, aligned layouts and editable
-labels. Nature's lowercase-letter convention is not substituted for EXO's
-published uppercase examples.
+labels.
 
 ## Resolution and placement
 
