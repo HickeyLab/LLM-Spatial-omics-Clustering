@@ -49,7 +49,7 @@ python3.12 scripts/render_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S10
 python3.12 scripts/verify_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S10 S11
 ```
 
-The renderer checks input hashes before producing 600 dpi PNG/TIFF and editable SVG/native PDF exports. The [figure map](figure_map.md) identifies the source for each panel. Figures 2E–H use the harmonized 20-label vocabulary. Figure S6D uses the original non-Noise labels and Figure S7A uses the original 28-label vocabulary including Noise.
+The renderer checks input hashes before producing 600 dpi PNG/TIFF and editable SVG/native PDF exports. The [figure map](figure_map.md) identifies the source for each panel. Figure 2E–H uses the original 28-label vocabulary, including Noise. The [Figure 2 scoring bundle](../data/frozen/figure2_native28_20261119/README.md) links the numerical replay for the current manuscript composite and Table S7. Figure S6D uses the original non-Noise labels and Figure S7A uses the original 28-label vocabulary including Noise.
 
 To synchronize verified changed exports into manuscript artwork and notebook previews, use:
 

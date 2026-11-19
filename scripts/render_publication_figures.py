@@ -109,7 +109,7 @@ def figure_2(out):
     panel(f,"A",3,0.8)
     workflow_inputs=add_workflow(f,"2A")
     panel(f,"B",3,39)
-    counts = ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
+    counts = ref.cell_type_update.value_counts().sort_values(ascending=False)
     split = (len(counts) + 1) // 2
     palette = cell_colors()
     text(f, 57.1, 40.2, "Reference cell counts", size=6.6, ha="center", color="#111827")
@@ -162,8 +162,7 @@ def figure_2(out):
             z=region[region.method.eq(m)].sort_values("region")
             a.scatter(j+np.linspace(-.08,.08,8),z[key],s=7,c=z.region.map({k:v["color"] for k,v in rcfg.items()}),zorder=3)
         a.set(xticks=range(4),xticklabels=method_order,ylim=(.3,.9),yticks=[.3,.5,.7,.9],ylabel=ylab);grid(a)
-    norm=cfg['panel_e']['evaluation']['harmonization_map']
-    nref=ref.loc[ref.cell_type_update.ne('Noise'),'cell_type_update'].replace(norm).value_counts().to_dict()
+    nref = ref.cell_type_update.value_counts().to_dict()
     f1=csv("figure2_f1.csv").set_index("cell_type")
     rows=rank_labels(f1.index, f1[METHODS].mean(axis=1))
     for i,(letter,filename,title,scale) in enumerate([("F","figure2_f1.csv","F1",1),("H","figure2_recall.csv","Recall (%)",100)]):

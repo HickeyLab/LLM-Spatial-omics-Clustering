@@ -1,0 +1,55 @@
+{
+  "base_commit": "ae0005e834f2c55f8d944973ce44b6da2008661a",
+  "base_image_sha256": "cd25f997441b88fc06ea06d23f05b349f552144d116cb1ee91324fc3c78c55fd",
+  "reference_cells_sha256": "839092c2705d44b6586e2ce8b5c6f21c8aa667f49c08e760ea7aede5f9ccd433",
+  "n_cells": 220082,
+  "n_reference_labels": 28,
+  "n_noise": 10495,
+  "reference_vocabulary": "native labels including Noise",
+  "majority_map": {
+    "E": "within region",
+    "F": "global",
+    "G": "within region",
+    "H": "global"
+  },
+  "tie_break": "alphabetical",
+  "unchanged_raster_panels": [
+    "A",
+    "C",
+    "D"
+  ],
+  "files": {
+    "reference_counts.csv": {
+      "sha256": "2442477cd59f4ca7df788b36d0a480f9e5e46c9e64f3ebe864ef35a88f41427b",
+      "bytes": 468
+    },
+    "regional_metrics.csv": {
+      "sha256": "e2c57533bc2374d1e39c1f57c206da54f672dc016391a82fa2a4b3fe2013ccfd",
+      "bytes": 3191
+    },
+    "panel_F_values.csv": {
+      "sha256": "29148ca5f7a126d152d550788f17b368ab8b5d57248a1aaa3102e1168a9970d2",
+      "bytes": 2024
+    },
+    "panel_H_values.csv": {
+      "sha256": "ab80d9745f4d018a40ca306e553a98192e82f0bd7d7d38220884d9c3168ad506",
+      "bytes": 2037
+    },
+    "celltype_metrics.csv": {
+      "sha256": "2109a276e12269bb1aa8ec3a0913c4695a5ba747702de06a70266e5580c25b4f",
+      "bytes": 7796
+    },
+    "conditional_comparisons.csv": {
+      "sha256": "7dffcc584508ba040c2a552a9284e3102899747a50cabdce0dbe035a3b5e400f",
+      "bytes": 7200
+    },
+    "paired_regional_observations.csv": {
+      "sha256": "cd83f4a38e379d8d5e3ac89fe35e0073bb86779151578d94f2dc6ae5f0eb52aa",
+      "bytes": 14680
+    },
+    "Figure_2.png": {
+      "sha256": "742734d5b8025987b7965206427030246df3e0c760369d0c5a0a3b5637088d06",
+      "bytes": 651609
+    }
+  }
+}

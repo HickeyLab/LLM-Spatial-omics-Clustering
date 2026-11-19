@@ -1,0 +1,56 @@
+{
+  "schema": "figure2.native28.v1",
+  "frozen_clustering_manifest": "data/frozen/clustering47_primary_20261108/manifest.json",
+  "source_commit": "ae0005e834f2c55f8d944973ce44b6da2008661a",
+  "n_cells": 220082,
+  "n_reference_labels": 28,
+  "n_noise": 10495,
+  "panel_policies": {
+    "Figure2B": "Original 28 reference labels across 220,082 B004 cells, including 10,495 Noise cells.",
+    "Figure2E_G": "Original 28-label vocabulary including Noise, within-region majorities, alphabetical ties.",
+    "Figure2F_H": "Original 28-label vocabulary including Noise, one global majority mapping per method, alphabetical ties.",
+    "SupplementaryTableS7_Figure2_EG_12": "Original 28-label Figure 2E/G scores. Twelve comparisons across eight paired B004 regions, with Holm correction."
+  },
+  "files": {
+    "data/frozen/figure2_native28_20261119/reference_counts.csv": {
+      "sha256": "2442477cd59f4ca7df788b36d0a480f9e5e46c9e64f3ebe864ef35a88f41427b",
+      "bytes": 468
+    },
+    "data/frozen/figure2_native28_20261119/regional_metrics.csv": {
+      "sha256": "e2c57533bc2374d1e39c1f57c206da54f672dc016391a82fa2a4b3fe2013ccfd",
+      "bytes": 3191
+    },
+    "data/frozen/figure2_native28_20261119/panel_F_values.csv": {
+      "sha256": "29148ca5f7a126d152d550788f17b368ab8b5d57248a1aaa3102e1168a9970d2",
+      "bytes": 2024
+    },
+    "data/frozen/figure2_native28_20261119/panel_H_values.csv": {
+      "sha256": "ab80d9745f4d018a40ca306e553a98192e82f0bd7d7d38220884d9c3168ad506",
+      "bytes": 2037
+    },
+    "data/frozen/figure2_native28_20261119/celltype_metrics.csv": {
+      "sha256": "2109a276e12269bb1aa8ec3a0913c4695a5ba747702de06a70266e5580c25b4f",
+      "bytes": 7796
+    },
+    "data/frozen/figure2_native28_20261119/conditional_comparisons.csv": {
+      "sha256": "7dffcc584508ba040c2a552a9284e3102899747a50cabdce0dbe035a3b5e400f",
+      "bytes": 7200
+    },
+    "data/frozen/figure2_native28_20261119/paired_regional_observations.csv": {
+      "sha256": "cd83f4a38e379d8d5e3ac89fe35e0073bb86779151578d94f2dc6ae5f0eb52aa",
+      "bytes": 14680
+    },
+    "figures/current_manuscript/PNG/Figure_2.png": {
+      "sha256": "742734d5b8025987b7965206427030246df3e0c760369d0c5a0a3b5637088d06",
+      "bytes": 651609
+    },
+    "data/frozen/figure2_native28_20261119/scoring_manifest.json": {
+      "sha256": "b71446fd76fc80386cb4c0332fefea573239f4c2e1c0ccd154442486f568aee6",
+      "bytes": 1740
+    },
+    "scripts/score_render_figure2_native28.py": {
+      "sha256": "946367a17866783f1e0c8fdda8bfcc6f3b45658a6276967d07693e320e10c021",
+      "bytes": 17914
+    }
+  }
+}
