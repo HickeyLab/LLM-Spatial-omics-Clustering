@@ -104,9 +104,12 @@
           "supervision": "Four training-region cell reference labels; richer supervision than LLM prompts."
         },
         "B005_B006_transfer": {
-          "status": "pending",
-          "results_included": false,
-          "dependency": "Separate 50-sweep donor SpatialSort and cohort admission work."
+          "status": "completed",
+          "results_included": true,
+          "request_items": 128,
+          "cluster_predictions": 9468,
+          "results": "data/frozen/donor47_deepseek_completion_20261116/manifest.json",
+          "tables": "docs/tables/ieee_donor47_20261116/manifest.json"
         },
         "reference_assisted_annotation": {
           "status": "archived",
@@ -127,26 +130,25 @@
     {
       "id": 10,
       "experiment": "Compact marker names versus selected names-plus-means, with validation-only selection",
-      "status": "reported_partial",
+      "status": "reported_completed",
       "new_execution": false,
       "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
       "prior_results_remain_reported": false,
-      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "result_manifest": "data/frozen/reviewer47_deepseek_completion_20261115/manifest.json",
       "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
       "components": {
         "matched47marker_representations": {
-          "status": "partial",
+          "status": "completed",
           "planned_annotation_sets": 64,
-          "complete_annotation_sets": 63,
+          "complete_annotation_sets": 64,
           "planned_request_items": 256,
-          "accepted_request_items": 255,
-          "pending_request_items": 1,
-          "pending_condition": "deepseek/leiden/selected_means",
-          "pending_clusters": 75,
-          "incomplete_condition_accuracy": null,
+          "accepted_request_items": 256,
+          "pending_request_items": 0,
+          "completed_condition": "deepseek/leiden/selected_means",
+          "recovered_clusters": 75,
           "overall_four_arm_aggregate": null,
-          "metrics": "data/frozen/reviewer47_results_20261111/set_metrics.csv"
+          "metrics": "data/frozen/reviewer47_deepseek_completion_20261115/set_metrics.csv"
         },
         "prior_compact_selection_study": {
           "status": "archived",
@@ -157,12 +159,12 @@
     {
       "id": 11,
       "experiment": "Clustering-method identity prompt ablation",
-      "status": "reported_partial",
+      "status": "reported_completed",
       "new_execution": false,
       "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
       "prior_results_remain_reported": false,
-      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "result_manifest": "data/frozen/astra_prompt_controls_results_20261115/manifest.json",
       "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
       "components": {
         "Opus_four_methods": {
@@ -172,10 +174,11 @@
           "results": "data/frozen/reviewer47_results_20261111/control_contrasts.csv"
         },
         "Astra_Leiden": {
-          "status": "pending",
+          "status": "completed",
           "annotation_sets": 1,
           "request_items": 4,
-          "results_included": false
+          "results_included": true,
+          "results": "data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv"
         }
       }
     },
@@ -203,12 +206,12 @@
     {
       "id": 13,
       "experiment": "GPT-Leiden marker-only versus neighborhood-augmented input",
-      "status": "reported_partial",
+      "status": "reported_completed",
       "new_execution": false,
       "active_manuscript_result": true,
       "archive": "data/historical/publication_before_primary47_20261109/index.json",
       "prior_results_remain_reported": false,
-      "result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+      "result_manifest": "data/frozen/astra_prompt_controls_results_20261115/manifest.json",
       "original_evidence_archive": "data/historical/publication_before_primary47_20261109/index.json",
       "components": {
         "Opus_Leiden": {
@@ -219,10 +222,12 @@
           "results": "data/frozen/reviewer47_results_20261111/control_contrasts.csv"
         },
         "Astra_Leiden": {
-          "status": "pending",
+          "status": "completed",
           "annotation_sets": 1,
           "request_items": 4,
-          "results_included": false
+          "neighbors": 15,
+          "results_included": true,
+          "results": "data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv"
         }
       }
     },
@@ -257,10 +262,14 @@
   "annotation_protocol": "configs/primary_annotation47_1repeat_opus55_v1.json",
   "completed_result_ids": [
     7,
+    10,
+    11,
     12,
+    13,
     14
   ],
   "result_manifest": "data/frozen/annotation47_results_20261111/manifest.json",
-  "followup_result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
-  "reported_component_note": "An ID can have a completed reported B004 component while other original components are archived or pending; component completion does not imply completion of the entire original experiment."
+  "followup_result_manifest": "data/frozen/astra_prompt_controls_results_20261115/manifest.json",
+  "followup_original_result_manifest": "data/frozen/reviewer47_results_20261111/manifest.json",
+  "reported_component_note": "Completion applies to the scope of the active reported analyses. Archived original components retain their own records."
 }

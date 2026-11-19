@@ -52,31 +52,45 @@ class ReviewerPublicationArtworkTests(unittest.TestCase):
 
     def test_native_table_rows_and_covariates_are_preserved(self):
         original = read("docs/tables/ieee/source_tables.json")["tables"]
-        current = read("docs/tables/ieee_reviewer47_20261111/source_tables.json")["tables"]
+        snapshot = read("docs/tables/ieee_reviewer47_20261111/source_tables.json")["tables"]
         for key in ["S6a", "S6b", "S6c"]:
-            self.assertEqual([r[:2] for r in current[key]["rows"][1:]],
+            self.assertEqual([r[:2] for r in snapshot[key]["rows"][1:]],
                              [r[:2] for r in original[key]["rows"][1:]])
-        self.assertIn("Means + fractions macro-F1", current["S6b"]["rows"][0])
-        deep = current["S8d"]["rows"]
+        self.assertIn("Means + fractions macro-F1", snapshot["S6b"]["rows"][0])
+        deep = snapshot["S8d"]["rows"]
         selected = next(r for r in deep[1:] if r[:2] == ["Leiden", "Selected means"])
         self.assertEqual(selected[2:4], ["Pending", "Pending"])
         self.assertEqual(selected[4], "225/300")
 
+        current = read("docs/tables/ieee_reviewer47_20261119/source_tables.json")["tables"]
+        self.assertNotIn("S6b", current)
+        self.assertNotIn("S6c", current)
+        deep = current["S8d"]["rows"]
+        selected = next(r for r in deep[1:] if r[:2] == ["Leiden", "Selected marker means"])
+        self.assertEqual(selected[2:], ["41.42", "0.3576"])
+        self.assertIn("Standard streaming and Batch", current["S6d"]["rows"][-1])
+        self.assertEqual(current["S9"]["rows"][-2:], [
+            ["Leiden–Astra", "Method name", "58.12", "53.53", "-4.59", "40"],
+            ["Leiden–Astra", "Neighborhood", "58.12", "51.43", "-6.69", "39"],
+        ])
+
     def test_export_hashes_and_ieee_style(self):
-        folder = ROOT / "docs/tables/ieee_reviewer47_20261111"
-        manifest = read("docs/tables/ieee_reviewer47_20261111/manifest.json")
-        self.assertEqual(len(manifest["tables"]), 15)
-        for key, record in manifest["tables"].items():
-            for suffix, entry in record["files"].items():
-                self.assertEqual(sha(folder / (key + suffix)), entry["sha256"])
-            html = (folder / (key + ".html")).read_text()
-            self.assertIn("font-size:10pt", html)
-            self.assertIn("Times New Roman", html)
-            self.assertNotIn("border-left:", html)
-            self.assertNotIn("border-right:", html)
-            self.assertEqual(record["render"]["horizontal_rules"], 3)
-            self.assertEqual(record["render"]["vertical_rules"], 0)
-            self.assertEqual(record["render"]["font_points"], 10)
+        for date in ("20261111", "20261119"):
+            folder = ROOT / f"docs/tables/ieee_reviewer47_{date}"
+            manifest = read(folder / "manifest.json")
+            self.assertEqual(len(manifest["tables"]), 15)
+            for key, record in manifest["tables"].items():
+                for suffix, entry in record["files"].items():
+                    self.assertEqual(sha(folder / (key + suffix)), entry["sha256"])
+                self.assertEqual(sha(folder / record["csv_companion"]["path"]), record["csv_companion"]["sha256"])
+                html = (folder / (key + ".html")).read_text()
+                self.assertIn("font-size:10pt", html)
+                self.assertIn("Times New Roman", html)
+                self.assertNotIn("border-left:", html)
+                self.assertNotIn("border-right:", html)
+                self.assertEqual(record["render"]["horizontal_rules"], 3)
+                self.assertEqual(record["render"]["vertical_rules"], 0)
+                self.assertEqual(record["render"]["font_points"], 10)
 
     def test_new_figures_and_archived_predecessors_have_distinct_bindings(self):
         inventory = read("configs/manuscript_inventory.json")

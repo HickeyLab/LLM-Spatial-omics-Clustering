@@ -62,7 +62,7 @@ class ActiveStudyTests(unittest.TestCase):
             self.assertFalse(entry["prior_results_remain_reported"])
             self.assertFalse(entry["new_execution"])
             self.assertIn(experiment_id, self.registry["active_reported_ids"])
-        self.assertEqual(self.registry["completed_result_ids"], [7, 12, 14])
+        self.assertEqual(self.registry["completed_result_ids"], [7, 10, 11, 12, 13, 14])
         self.assertFalse(self.active["execution"]["enabled"])
         self.assertFalse(self.active["execution"]["automatic_launch"])
         self.assertEqual(self.active["execution"]["new_annotation_calls_by_publication_update"], 0)
@@ -144,31 +144,43 @@ class ActiveStudyTests(unittest.TestCase):
             self.assertNotIn(experiment_id, self.registry["active_reported_ids"])
         self.assertEqual(new_entries[5]["components"]["native_requested_K_study"]["status"], "archived")
         self.assertEqual(new_entries[8]["components"]["reference_assisted_annotation"]["status"], "archived")
-        self.assertEqual(new_entries[8]["components"]["B005_B006_transfer"]["status"], "pending")
-        for experiment_id in (8, 10, 11, 13):
-            self.assertEqual(new_entries[experiment_id]["status"], "reported_partial")
+        donor = new_entries[8]["components"]["B005_B006_transfer"]
+        self.assertEqual(donor["status"], "completed")
+        self.assertEqual(donor["cluster_predictions"], 9468)
+        self.assertTrue(donor["results_included"])
+        self.assertEqual(new_entries[8]["status"], "reported_partial")
+        for experiment_id in (10, 11, 13):
+            self.assertEqual(new_entries[experiment_id]["status"], "reported_completed")
 
-    def test_followup_pending_results_are_not_called_completed(self):
+    def test_followup_completion_keeps_the_original_pending_snapshot(self):
         followup = self.active["followup_components"]
+        release = load(followup["completed_publication"])
         self.assertEqual(followup["planned_base_annotation_sets"], 69)
-        self.assertEqual(followup["complete_base_annotation_sets"], 68)
+        self.assertEqual(followup["complete_base_annotation_sets"], release["base_sets"])
         self.assertEqual(followup["planned_base_request_items"], 276)
-        self.assertEqual(followup["accepted_base_request_items"], 275)
-        self.assertEqual(followup["total_pending_request_items"], 9)
+        self.assertEqual(followup["accepted_base_request_items"], release["base_accepted_items"])
+        self.assertEqual(followup["total_completed_annotation_sets"], release["sets"])
+        self.assertEqual(followup["total_accepted_request_items"], release["accepted_logical_items"])
+        self.assertEqual(followup["total_accepted_cluster_predictions"], release["cluster_predictions"])
+        self.assertEqual(followup["total_pending_request_items"], 0)
         self.assertEqual(followup["exact_reused_request_items"], 109)
-        self.assertEqual(followup["newly_accepted_request_items"], 166)
+        self.assertEqual(followup["newly_accepted_request_items"], 167)
         self.assertFalse(followup["donor_results_included"])
         self.assertFalse(followup["private_high_xhigh_pilot_included"])
         self.assertEqual(sha(followup["result_manifest"]), followup["result_manifest_sha256"])
+        original_summary = load(followup["execution_summary"])
+        self.assertEqual(original_summary["followup_base"]["accepted_requests"], 275)
+        self.assertEqual(original_summary["total_pending_requests"], 9)
         entries = {row["id"]: row for row in self.registry["experiments"]}
         compact = entries[10]["components"]["matched47marker_representations"]
-        self.assertEqual(compact["complete_annotation_sets"], 63)
-        self.assertEqual(compact["pending_clusters"], 75)
-        self.assertIsNone(compact["incomplete_condition_accuracy"])
+        self.assertEqual(compact["complete_annotation_sets"], 64)
+        self.assertEqual(compact["recovered_clusters"], 75)
+        self.assertEqual(compact["pending_request_items"], 0)
         self.assertIsNone(compact["overall_four_arm_aggregate"])
         for experiment_id in (11, 13):
-            self.assertEqual(entries[experiment_id]["components"]["Astra_Leiden"]["status"], "pending")
-            self.assertFalse(entries[experiment_id]["components"]["Astra_Leiden"]["results_included"])
+            astra = entries[experiment_id]["components"]["Astra_Leiden"]
+            self.assertEqual(astra["status"], "completed")
+            self.assertTrue(astra["results_included"])
 
     def test_original_publication_metadata_is_hash_preserved(self):
         index = load("archive/reviewer47_publication_before_20261111/metadata_index.json")

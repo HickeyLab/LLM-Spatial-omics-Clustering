@@ -1,0 +1,1476 @@
+{
+  "schema": "reviewer47.ieee_table_cells.v1",
+  "tables": {
+    "S1": {
+      "rows": [
+        [
+          "Segmentation method",
+          "Processed before / after",
+          "Matched before / after",
+          "Shared IDs, fixed coordinates",
+          "Before-only IDs",
+          "After-only IDs"
+        ],
+        [
+          "Mesmer",
+          "162,439 / 161,867",
+          "133,665 / 133,266",
+          "161,656",
+          "783",
+          "211"
+        ],
+        [
+          "CellposeCyto3",
+          "145,925 / 145,270",
+          "118,668 / 118,104",
+          "145,011",
+          "914",
+          "259"
+        ],
+        [
+          "CellposeSAM",
+          "173,783 / 172,465",
+          "137,808 / 136,927",
+          "172,169",
+          "1,614",
+          "296"
+        ],
+        [
+          "CellSAM",
+          "195,752 / 194,832",
+          "154,163 / 153,385",
+          "194,071",
+          "1,681",
+          "761"
+        ],
+        [
+          "InstanSeg",
+          "198,959 / 196,717",
+          "146,477 / 144,996",
+          "195,459",
+          "3,500",
+          "1,258"
+        ],
+        [
+          "MicroSAM",
+          "197,314 / 197,400",
+          "149,626 / 149,080",
+          "196,124",
+          "1,190",
+          "1,276"
+        ]
+      ],
+      "caption": "Table S1. REDSEA matching and cell retention audit.",
+      "note": "Counts are pooled across the eight B004 regions. Processed counts refer to segmentation objects retained in the processed H5ADs. Matched counts include objects accepted by directed nearest-neighbor matching within 10 source-coordinate units after swapping the reference x and y coordinates. Multiple segmentation objects could match the same reference cell. Shared objects had the same CellID within a region and unchanged coordinates. Before-only and after-only counts were based on CellID, not saved row indices. Paired F1 evaluation also required an accepted match to the same reference cell and label in both conditions, so the shared-ID column is not its final scoring denominator. These counts describe retention and matching, not segmentation-boundary accuracy.",
+      "cell_order_sha256": "4275ec628067f81164f828339b11bd18b9006f01ad4b3865ad26d5c64b8264e0",
+      "sources": {
+        "docs/tables/ieee/source_tables.json": "57a61733dc57146d68dee23c39e66bded219c2b0d82ebbd828c04f34139f8f53"
+      }
+    },
+    "S2A": {
+      "rows": [
+        [
+          "Field",
+          "Leiden",
+          "FlowSOM",
+          "SpatialSort",
+          "PIXIE"
+        ],
+        [
+          "Clustering inputs",
+          "47 marker-expression features",
+          "47 marker-expression features",
+          "47 marker-expression features, cell coordinates and a within-region 24-neighbor graph",
+          "48 image channels and cell masks"
+        ],
+        [
+          "Transform",
+          "arcsinh(x/5)",
+          "arcsinh(x/5)",
+          "arcsinh(x/5)",
+          "Pixel and cell composition pipeline"
+        ],
+        [
+          "Scaling",
+          "StandardScaler within each region",
+          "RobustScaler on all B004 cells",
+          "RobustScaler on all B004 cells",
+          "Channel and composition normalization"
+        ],
+        [
+          "Configured and nonempty clusters",
+          "300 and 300",
+          "300 requested and 299 nonempty",
+          "300 requested. 229 nonempty in the primary chain and 231 in the seed-43 comparison chain",
+          "300 and 300"
+        ],
+        [
+          "Implementation",
+          "K320 local Leiden with 20 within-parent merges",
+          "32×32 self-organizing map followed by Ward clustering",
+          "24 neighbors and precision 0.65",
+          "10×10 pixel map and 24×24 cell map"
+        ],
+        [
+          "Sigma and learning rate",
+          "See Leiden procedure in Section 2.3",
+          "1.0 and 0.3",
+          "Not applicable",
+          "Pixel 5.0 and 0.05. Cell 2.0 and 0.3"
+        ],
+        [
+          "Iterations",
+          "See Leiden procedure in Section 2.3",
+          "3 whole-cohort passes, giving 660,246 updates",
+          "100 actual sweeps per chain with dmh_iter=5",
+          "One pixel pass and 5,000 cell iterations"
+        ],
+        [
+          "Seed",
+          "42",
+          "42",
+          "Sampling seeds 42 (primary) and 43 (comparison)",
+          "42"
+        ]
+      ],
+      "caption": "Table S2A. Clustering configurations and hyperparameters.",
+      "note": "Leiden, FlowSOM and SpatialSort used 47 protein markers. PIXIE selected 47 protein channels and Hoechst1 DNA signal from the 59 available image channels, then converted pixel-cluster assignments into vectors of pixel-metacluster fractions. Pixel-level and cell-level configurations are reported separately for PIXIE.",
+      "cell_order_sha256": "ac7d1755c68c072779b5c23494ac9b9e8ecb601b7bd696905e937577b26dec3f",
+      "sources": {
+        "data/frozen/clustering47_primary_20261108/current_tables.json": "0ab49e1663ffcea8a73c80a0b8ea488b775b0f77ccdddf0e8bcfbb64272eb750"
+      }
+    },
+    "S6a": {
+      "rows": [
+        [
+          "Clustering method",
+          "Model",
+          "All-marker means (%)",
+          "All-marker means plus fractions (%)",
+          "Paired change (pp)"
+        ],
+        [
+          "Leiden",
+          "GPT-6 Astra",
+          "52.86",
+          "58.12",
+          "+5.26"
+        ],
+        [
+          "FlowSOM",
+          "GPT-6 Astra",
+          "36.66",
+          "36.05",
+          "-0.61"
+        ],
+        [
+          "SpatialSort",
+          "GPT-6 Astra",
+          "36.13",
+          "32.38",
+          "-3.75"
+        ],
+        [
+          "PIXIE",
+          "GPT-6 Astra",
+          "41.32",
+          "35.64",
+          "-5.68"
+        ],
+        [
+          "Leiden",
+          "Claude Opus 5.5",
+          "46.78",
+          "50.27",
+          "+3.49"
+        ],
+        [
+          "FlowSOM",
+          "Claude Opus 5.5",
+          "37.48",
+          "36.82",
+          "-0.66"
+        ],
+        [
+          "SpatialSort",
+          "Claude Opus 5.5",
+          "33.11",
+          "36.17",
+          "+3.06"
+        ],
+        [
+          "PIXIE",
+          "Claude Opus 5.5",
+          "36.04",
+          "42.54",
+          "+6.50"
+        ],
+        [
+          "Leiden",
+          "Gemini 4 Argon",
+          "46.16",
+          "47.51",
+          "+1.35"
+        ],
+        [
+          "FlowSOM",
+          "Gemini 4 Argon",
+          "39.57",
+          "41.84",
+          "+2.27"
+        ],
+        [
+          "SpatialSort",
+          "Gemini 4 Argon",
+          "33.31",
+          "33.80",
+          "+0.49"
+        ],
+        [
+          "PIXIE",
+          "Gemini 4 Argon",
+          "38.70",
+          "36.40",
+          "-2.30"
+        ],
+        [
+          "Leiden",
+          "DeepSeek V4.1 Flash 1017",
+          "50.17",
+          "39.92",
+          "-10.25"
+        ],
+        [
+          "FlowSOM",
+          "DeepSeek V4.1 Flash 1017",
+          "27.62",
+          "27.87",
+          "+0.24"
+        ],
+        [
+          "SpatialSort",
+          "DeepSeek V4.1 Flash 1017",
+          "20.25",
+          "17.42",
+          "-2.83"
+        ],
+        [
+          "PIXIE",
+          "DeepSeek V4.1 Flash 1017",
+          "33.42",
+          "27.35",
+          "-6.07"
+        ]
+      ],
+      "caption": "Table S6a. Paired reference agreement.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Values are single-run outcomes averaged equally across the two B004 test regions. Paired changes subtract agreement using all-marker means from agreement using all-marker means plus fractions, in percentage points (pp). Missing or invalid predictions remain errors in the full planned denominator. All planned predictions were delivered; paired changes therefore reflect changes between valid labels.",
+      "cell_order_sha256": "1d4d464fdb465ea37ee247859d968ced573b60e99c2a7a8c0c90f4b977bd93b7",
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      }
+    },
+    "S6d": {
+      "rows": [
+        [
+          "Model",
+          "Requested model ID",
+          "Transport",
+          "Reasoning",
+          "Decoding fields sent"
+        ],
+        [
+          "GPT-6 Astra",
+          "gpt-6-astra, openai/gpt-6-astra",
+          "Batch",
+          "high",
+          "Combined output ceiling 32,768, seed 42, temperature/top-p omitted"
+        ],
+        [
+          "Claude Opus 5.5",
+          "anthropic/claude-opus-5.5",
+          "Batch",
+          "high",
+          "Combined output ceiling 32,768, seed omitted, temperature/top-p omitted"
+        ],
+        [
+          "Gemini 4 Argon",
+          "google/gemini-4-argon",
+          "Standard streaming",
+          "high",
+          "Combined output ceiling 943,718, seed 42, temperature/top-p omitted"
+        ],
+        [
+          "DeepSeek V4.1 Flash 1017",
+          "deepseek/deepseek-v4.1-flash-1017",
+          "Standard streaming and Batch",
+          "high",
+          "Combined output ceiling 943,718, seed omitted, temperature/top-p omitted"
+        ]
+      ],
+      "caption": "Table S6d. Model identities and inference settings.",
+      "note": "Requests used supported high-reasoning settings, no tools or retrieval, at most 75 clusters per item, and no automatic model or provider fallback. Table S6d reports requested model identities, transport, supported seeds and combined output ceilings. Execution records preserve native OpenAI and OpenRouter bindings, routes, attempt status, usage and confirmed charges for each physical generation. Requests and recoveries are linked to prompt, parser and source hashes. Requested output ceilings are distinct from observed token use, and recoveries do not provide independent repetitions.",
+      "cell_order_sha256": "6ebc915f0a39b204b82dfe30d29572c95cef8c63ea4eb5005c6f9910ffda1aa0",
+      "sources": {
+        "data/frozen/reviewer47_deepseek_completion_20261115/model_settings.json": "ef79874fead505258601ee02dadf0a7b245c9e6d0a59d1beaccc24a84c3e8551",
+        "data/frozen/astra_prompt_controls_results_20261115/provider_batch.json": "c8863ca547e8a3f3a0c7a46c491f92851561469350dd53c743808150d29740fd"
+      }
+    },
+    "S8a": {
+      "rows": [
+        [
+          "Clustering method",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Selected marker names",
+          "46.76",
+          "0.3948"
+        ],
+        [
+          "Leiden",
+          "Selected marker means",
+          "51.03",
+          "0.4511"
+        ],
+        [
+          "Leiden",
+          "All-marker means",
+          "52.86",
+          "0.4582"
+        ],
+        [
+          "Leiden",
+          "All-marker means plus fractions",
+          "58.12",
+          "0.4490"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker names",
+          "24.23",
+          "0.2338"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker means",
+          "35.60",
+          "0.2827"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means",
+          "36.66",
+          "0.3028"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means plus fractions",
+          "36.05",
+          "0.2713"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker names",
+          "34.11",
+          "0.2026"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker means",
+          "33.77",
+          "0.2121"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means",
+          "36.13",
+          "0.2152"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means plus fractions",
+          "32.38",
+          "0.2074"
+        ],
+        [
+          "PIXIE",
+          "Selected marker names",
+          "39.04",
+          "0.2543"
+        ],
+        [
+          "PIXIE",
+          "Selected marker means",
+          "41.69",
+          "0.2817"
+        ],
+        [
+          "PIXIE",
+          "All-marker means",
+          "41.32",
+          "0.2777"
+        ],
+        [
+          "PIXIE",
+          "All-marker means plus fractions",
+          "35.64",
+          "0.2553"
+        ]
+      ],
+      "caption": "Table S8a. GPT-6 Astra marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "cell_order_sha256": "73bee3105075254928b00ecc75bcfbea4999da411dfc919c81f11f1f9deabdc6",
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      }
+    },
+    "S8b": {
+      "rows": [
+        [
+          "Clustering method",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Selected marker names",
+          "42.16",
+          "0.3437"
+        ],
+        [
+          "Leiden",
+          "Selected marker means",
+          "43.23",
+          "0.3654"
+        ],
+        [
+          "Leiden",
+          "All-marker means",
+          "46.78",
+          "0.3842"
+        ],
+        [
+          "Leiden",
+          "All-marker means plus fractions",
+          "50.27",
+          "0.4165"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker names",
+          "27.91",
+          "0.2414"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker means",
+          "33.42",
+          "0.2739"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means",
+          "37.48",
+          "0.2884"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means plus fractions",
+          "36.82",
+          "0.2999"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker names",
+          "29.36",
+          "0.1915"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker means",
+          "28.40",
+          "0.1897"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means",
+          "33.11",
+          "0.1966"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means plus fractions",
+          "36.17",
+          "0.2226"
+        ],
+        [
+          "PIXIE",
+          "Selected marker names",
+          "35.41",
+          "0.2458"
+        ],
+        [
+          "PIXIE",
+          "Selected marker means",
+          "38.61",
+          "0.2610"
+        ],
+        [
+          "PIXIE",
+          "All-marker means",
+          "36.04",
+          "0.2527"
+        ],
+        [
+          "PIXIE",
+          "All-marker means plus fractions",
+          "42.54",
+          "0.2751"
+        ]
+      ],
+      "caption": "Table S8b. Claude Opus 5.5 marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "cell_order_sha256": "6023fd20e699e6666ce32b860a01e33bfe0cfabe87401d77b094d7e0ae0f6cd1",
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      }
+    },
+    "S8c": {
+      "rows": [
+        [
+          "Clustering method",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Selected marker names",
+          "37.33",
+          "0.3233"
+        ],
+        [
+          "Leiden",
+          "Selected marker means",
+          "45.76",
+          "0.4075"
+        ],
+        [
+          "Leiden",
+          "All-marker means",
+          "46.16",
+          "0.4073"
+        ],
+        [
+          "Leiden",
+          "All-marker means plus fractions",
+          "47.51",
+          "0.4133"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker names",
+          "25.91",
+          "0.2299"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker means",
+          "40.09",
+          "0.2946"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means",
+          "39.57",
+          "0.3189"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means plus fractions",
+          "41.84",
+          "0.2917"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker names",
+          "32.39",
+          "0.2060"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker means",
+          "32.78",
+          "0.2007"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means",
+          "33.31",
+          "0.2090"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means plus fractions",
+          "33.80",
+          "0.2154"
+        ],
+        [
+          "PIXIE",
+          "Selected marker names",
+          "37.96",
+          "0.2566"
+        ],
+        [
+          "PIXIE",
+          "Selected marker means",
+          "40.93",
+          "0.2737"
+        ],
+        [
+          "PIXIE",
+          "All-marker means",
+          "38.70",
+          "0.2689"
+        ],
+        [
+          "PIXIE",
+          "All-marker means plus fractions",
+          "36.40",
+          "0.2619"
+        ]
+      ],
+      "caption": "Table S8c. Gemini 4 Argon marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "cell_order_sha256": "1bf56bf3ed8a85e9bf70b80171fb926a0393ae33821c9ec1a884db2b72ed2bb1",
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      }
+    },
+    "S8d": {
+      "rows": [
+        [
+          "Clustering method",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Selected marker names",
+          "35.28",
+          "0.3083"
+        ],
+        [
+          "Leiden",
+          "Selected marker means",
+          "41.42",
+          "0.3576"
+        ],
+        [
+          "Leiden",
+          "All-marker means",
+          "50.17",
+          "0.4084"
+        ],
+        [
+          "Leiden",
+          "All-marker means plus fractions",
+          "39.92",
+          "0.2974"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker names",
+          "17.24",
+          "0.1681"
+        ],
+        [
+          "FlowSOM",
+          "Selected marker means",
+          "28.13",
+          "0.2495"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means",
+          "27.62",
+          "0.2373"
+        ],
+        [
+          "FlowSOM",
+          "All-marker means plus fractions",
+          "27.87",
+          "0.2196"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker names",
+          "25.45",
+          "0.1623"
+        ],
+        [
+          "SpatialSort",
+          "Selected marker means",
+          "26.53",
+          "0.1748"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means",
+          "20.25",
+          "0.1230"
+        ],
+        [
+          "SpatialSort",
+          "All-marker means plus fractions",
+          "17.42",
+          "0.1145"
+        ],
+        [
+          "PIXIE",
+          "Selected marker names",
+          "29.74",
+          "0.2080"
+        ],
+        [
+          "PIXIE",
+          "Selected marker means",
+          "33.54",
+          "0.2446"
+        ],
+        [
+          "PIXIE",
+          "All-marker means",
+          "33.42",
+          "0.1895"
+        ],
+        [
+          "PIXIE",
+          "All-marker means plus fractions",
+          "27.35",
+          "0.1660"
+        ]
+      ],
+      "caption": "Table S8d. DeepSeek V4.1 Flash 1017 marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "cell_order_sha256": "615e03f4166d44a20a06a494cf486f8f3ef61446c0a658aab745d6bddc591a9d",
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      }
+    },
+    "S9": {
+      "rows": [
+        [
+          "Clustering method–LLM",
+          "Control",
+          "Blinded (%)",
+          "Control (%)",
+          "Change (pp)",
+          "Changed clusters"
+        ],
+        [
+          "Leiden–Opus 5.5",
+          "Method name",
+          "50.27",
+          "45.15",
+          "-5.12",
+          "75"
+        ],
+        [
+          "FlowSOM–Opus 5.5",
+          "Method name",
+          "36.82",
+          "34.00",
+          "-2.83",
+          "50"
+        ],
+        [
+          "SpatialSort–Opus 5.5",
+          "Method name",
+          "36.17",
+          "31.11",
+          "-5.06",
+          "53"
+        ],
+        [
+          "PIXIE–Opus 5.5",
+          "Method name",
+          "42.54",
+          "40.00",
+          "-2.54",
+          "51"
+        ],
+        [
+          "Leiden–Opus 5.5",
+          "Neighborhood",
+          "50.27",
+          "45.97",
+          "-4.29",
+          "63"
+        ],
+        [
+          "Leiden–Astra",
+          "Method name",
+          "58.12",
+          "53.53",
+          "-4.59",
+          "40"
+        ],
+        [
+          "Leiden–Astra",
+          "Neighborhood",
+          "58.12",
+          "51.43",
+          "-6.69",
+          "39"
+        ]
+      ],
+      "caption": "Table S9. LLM matched-evidence prompt controls.",
+      "note": "Each comparison reuses its blinded baseline containing all-marker means plus fractions. Reference agreement averages the two B004 test regions equally. Changed-cluster counts use all planned clusters. Astra macro-F1 calculated using the original 28-label vocabulary was 0.4490 for the baseline, 0.4458 with the method name and 0.4531 with neighborhood-expression summaries. Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline. These single-generation comparisons do not establish repeatability or a general prompt effect. Opus 5.5 is Claude Opus 5.5, and Astra is GPT-6 Astra.",
+      "cell_order_sha256": "ccfa72cd1937cd298f33d92ce4166fd63ed0ef9602034ae885fc4b802ab2bd0a",
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv": "ea4a32683fb61dbc5fc6f77413f289a18c9a1c480f1dde834be2a3563f3185cd"
+      }
+    },
+    "S10": {
+      "rows": [
+        [
+          "Clustering method",
+          "Classifier",
+          "Input",
+          "Agreement (%)",
+          "Macro-F1"
+        ],
+        [
+          "Leiden",
+          "Nearest centroid",
+          "All-marker means",
+          "58.20",
+          "0.4341"
+        ],
+        [
+          "Leiden",
+          "Nearest centroid",
+          "All-marker means plus fractions",
+          "55.74",
+          "0.4370"
+        ],
+        [
+          "Leiden",
+          "Logistic regression",
+          "All-marker means",
+          "67.05",
+          "0.4981"
+        ],
+        [
+          "Leiden",
+          "Logistic regression",
+          "All-marker means plus fractions",
+          "68.20",
+          "0.5030"
+        ],
+        [
+          "FlowSOM",
+          "Nearest centroid",
+          "All-marker means",
+          "35.63",
+          "0.2745"
+        ],
+        [
+          "FlowSOM",
+          "Nearest centroid",
+          "All-marker means plus fractions",
+          "35.19",
+          "0.2787"
+        ],
+        [
+          "FlowSOM",
+          "Logistic regression",
+          "All-marker means",
+          "45.69",
+          "0.3078"
+        ],
+        [
+          "FlowSOM",
+          "Logistic regression",
+          "All-marker means plus fractions",
+          "45.72",
+          "0.3059"
+        ],
+        [
+          "SpatialSort",
+          "Nearest centroid",
+          "All-marker means",
+          "36.10",
+          "0.1798"
+        ],
+        [
+          "SpatialSort",
+          "Nearest centroid",
+          "All-marker means plus fractions",
+          "35.26",
+          "0.1778"
+        ],
+        [
+          "SpatialSort",
+          "Logistic regression",
+          "All-marker means",
+          "44.12",
+          "0.2165"
+        ],
+        [
+          "SpatialSort",
+          "Logistic regression",
+          "All-marker means plus fractions",
+          "44.09",
+          "0.2170"
+        ],
+        [
+          "PIXIE",
+          "Nearest centroid",
+          "All-marker means",
+          "46.76",
+          "0.2551"
+        ],
+        [
+          "PIXIE",
+          "Nearest centroid",
+          "All-marker means plus fractions",
+          "46.96",
+          "0.2577"
+        ],
+        [
+          "PIXIE",
+          "Logistic regression",
+          "All-marker means",
+          "49.95",
+          "0.2684"
+        ],
+        [
+          "PIXIE",
+          "Logistic regression",
+          "All-marker means plus fractions",
+          "51.92",
+          "0.2728"
+        ]
+      ],
+      "caption": "Table S10. Conventional B004 annotation classifiers.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Classifiers used cell-level reference labels from the B004 training regions, providing richer supervision than the LLM prompts. Hyperparameters were selected in the validation regions. Metrics average the two test regions equally. Macro-F1 calculated using the original 28-label vocabulary assigns zero F1 to absent classes.",
+      "cell_order_sha256": "24177446c807e51c782d16123e42f6dea999015a0d5d62d5a071235781859ea6",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/baselines/classifier_equal_test_region_metrics.csv": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801"
+      }
+    },
+    "S11": {
+      "rows": [
+        [
+          "Clustering method",
+          "Nonempty clusters",
+          "Purity",
+          "ARI",
+          "NMI"
+        ],
+        [
+          "Leiden",
+          "100",
+          "0.6792",
+          "0.3168",
+          "0.5485"
+        ],
+        [
+          "Leiden",
+          "200",
+          "0.7036",
+          "0.2760",
+          "0.5363"
+        ],
+        [
+          "Leiden",
+          "300",
+          "0.7149",
+          "0.1765",
+          "0.5224"
+        ],
+        [
+          "FlowSOM",
+          "100",
+          "0.4958",
+          "0.1837",
+          "0.4040"
+        ],
+        [
+          "FlowSOM",
+          "200",
+          "0.5035",
+          "0.1806",
+          "0.3999"
+        ],
+        [
+          "FlowSOM",
+          "299",
+          "0.5071",
+          "0.1807",
+          "0.3997"
+        ],
+        [
+          "SpatialSort",
+          "100",
+          "0.4758",
+          "0.2466",
+          "0.3964"
+        ],
+        [
+          "SpatialSort",
+          "200",
+          "0.4910",
+          "0.1750",
+          "0.3953"
+        ],
+        [
+          "SpatialSort",
+          "229",
+          "0.4955",
+          "0.1105",
+          "0.3841"
+        ],
+        [
+          "PIXIE",
+          "100",
+          "0.5554",
+          "0.2200",
+          "0.4214"
+        ],
+        [
+          "PIXIE",
+          "200",
+          "0.5609",
+          "0.2122",
+          "0.4115"
+        ],
+        [
+          "PIXIE",
+          "300",
+          "0.5641",
+          "0.2093",
+          "0.4085"
+        ]
+      ],
+      "caption": "Table S11. Effect of merging existing B004 clusters.",
+      "note": "K100 and K200 were formed by cell-count-weighted Ward merging of frozen, full-precision cluster profiles, with merge mappings fixed before reference scoring. They do not represent clustering rerun at those target counts or tests of whether LLM rankings remain stable. Metrics average the two test regions equally.",
+      "cell_order_sha256": "143aef32cd50d2bac4e44e63deec9a75217474a3ed62e98640f395b4ce163287",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/granularity/equal_test_region_metrics.csv": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a"
+      }
+    },
+    "S12a": {
+      "rows": [
+        [
+          "Clustering method",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw cross-model support",
+          "0.2928",
+          "4.3298",
+          "0.2111"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.2577",
+          "0.7166",
+          "0.1295"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2545",
+          "0.7022",
+          "0.1023"
+        ],
+        [
+          "FlowSOM",
+          "Raw cross-model support",
+          "0.3348",
+          "4.8255",
+          "0.2953"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.2670",
+          "0.7331",
+          "0.1717"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.2634",
+          "0.7228",
+          "0.1325"
+        ],
+        [
+          "SpatialSort",
+          "Raw cross-model support",
+          "0.3559",
+          "4.7292",
+          "0.3305"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.2191",
+          "0.6304",
+          "0.0803"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.2253",
+          "0.6440",
+          "0.0585"
+        ],
+        [
+          "PIXIE",
+          "Raw cross-model support",
+          "0.3116",
+          "4.1445",
+          "0.3292"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.1987",
+          "0.5694",
+          "0.1020"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.2264",
+          "0.6453",
+          "0.1408"
+        ]
+      ],
+      "caption": "Table S12a. GPT-6 Astra cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "cell_order_sha256": "e3bcfc80945e2c7bf9000f1652c905d7ce129c58af3c1c4e29dfdadf6f4bdf0d",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    },
+    "S12b": {
+      "rows": [
+        [
+          "Clustering method",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw cross-model support",
+          "0.2797",
+          "4.3007",
+          "0.2420"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.2223",
+          "0.6364",
+          "0.0912"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2523",
+          "0.6978",
+          "0.0486"
+        ],
+        [
+          "FlowSOM",
+          "Raw cross-model support",
+          "0.2992",
+          "4.7481",
+          "0.3038"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.2258",
+          "0.6436",
+          "0.1710"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.2284",
+          "0.6492",
+          "0.0866"
+        ],
+        [
+          "SpatialSort",
+          "Raw cross-model support",
+          "0.3934",
+          "4.8111",
+          "0.3665"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.2356",
+          "0.6648",
+          "0.0724"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.2356",
+          "0.6647",
+          "0.0518"
+        ],
+        [
+          "PIXIE",
+          "Raw cross-model support",
+          "0.3471",
+          "4.2212",
+          "0.3536"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.2394",
+          "0.6719",
+          "0.1677"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.2426",
+          "0.6783",
+          "0.1222"
+        ]
+      ],
+      "caption": "Table S12b. Claude Opus 5.5 cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "cell_order_sha256": "e5453bbdb513911b7d18454b7053f6fc3e07855edef9e0b20096ee6b9459e7df",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    },
+    "S12c": {
+      "rows": [
+        [
+          "Clustering method",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw cross-model support",
+          "0.2671",
+          "4.2733",
+          "0.2420"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.2095",
+          "0.6089",
+          "0.0949"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2523",
+          "0.6977",
+          "0.0662"
+        ],
+        [
+          "FlowSOM",
+          "Raw cross-model support",
+          "0.3072",
+          "4.7653",
+          "0.2720"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.2877",
+          "0.7786",
+          "0.2710"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.2799",
+          "0.7578",
+          "0.1734"
+        ],
+        [
+          "SpatialSort",
+          "Raw cross-model support",
+          "0.3865",
+          "4.7954",
+          "0.3571"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.2342",
+          "0.6669",
+          "0.0850"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.2343",
+          "0.6633",
+          "0.0772"
+        ],
+        [
+          "PIXIE",
+          "Raw cross-model support",
+          "0.3558",
+          "4.2403",
+          "0.3847"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.2197",
+          "0.6310",
+          "0.1469"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.2340",
+          "0.6610",
+          "0.1345"
+        ]
+      ],
+      "caption": "Table S12c. Gemini 4 Argon cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "cell_order_sha256": "b54ed803a829e32c5f2c1f810fc02176f2c3690105d33659d34cc002f966a592",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    },
+    "S12d": {
+      "rows": [
+        [
+          "Clustering method",
+          "Score",
+          "Brier",
+          "Log loss",
+          "ECE"
+        ],
+        [
+          "Leiden",
+          "Raw cross-model support",
+          "0.2487",
+          "4.2329",
+          "0.2864"
+        ],
+        [
+          "Leiden",
+          "Logistic recalibration",
+          "0.1746",
+          "0.5212",
+          "0.0805"
+        ],
+        [
+          "Leiden",
+          "Development constant",
+          "0.2422",
+          "0.6777",
+          "0.0489"
+        ],
+        [
+          "FlowSOM",
+          "Raw cross-model support",
+          "0.2616",
+          "4.6661",
+          "0.3529"
+        ],
+        [
+          "FlowSOM",
+          "Logistic recalibration",
+          "0.1414",
+          "0.4324",
+          "0.1335"
+        ],
+        [
+          "FlowSOM",
+          "Development constant",
+          "0.1779",
+          "0.5413",
+          "0.1404"
+        ],
+        [
+          "SpatialSort",
+          "Raw cross-model support",
+          "0.2862",
+          "4.5765",
+          "0.3666"
+        ],
+        [
+          "SpatialSort",
+          "Logistic recalibration",
+          "0.1232",
+          "0.3888",
+          "0.0398"
+        ],
+        [
+          "SpatialSort",
+          "Development constant",
+          "0.1494",
+          "0.4758",
+          "0.0213"
+        ],
+        [
+          "PIXIE",
+          "Raw cross-model support",
+          "0.2466",
+          "4.0019",
+          "0.2991"
+        ],
+        [
+          "PIXIE",
+          "Logistic recalibration",
+          "0.1314",
+          "0.4155",
+          "0.0484"
+        ],
+        [
+          "PIXIE",
+          "Development constant",
+          "0.1689",
+          "0.5237",
+          "0.1019"
+        ]
+      ],
+      "caption": "Table S12d. DeepSeek V4.1 Flash 1017 cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "cell_order_sha256": "181e8ed996020e948bf565a01414ada6ed5e31cda21df728ca9dad42df698489",
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      }
+    }
+  }
+}

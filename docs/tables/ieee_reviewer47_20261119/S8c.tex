@@ -1,0 +1,34 @@
+% Requires booktabs, tabularx, array; preserve supplementary IDs.
+% IEEE-style layout adaptation; no scientific values changed.
+\begin{table*}[t]
+\centering
+\begingroup
+\fontsize{10}{12}\selectfont
+TABLE S8c\\
+GEMINI 4 ARGON MARKER-REPRESENTATION COMPARISON\par\smallskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.88\hsize\raggedright\arraybackslash}X>{\hsize=1.68\hsize\raggedright\arraybackslash}X>{\hsize=0.8\hsize\raggedleft\arraybackslash}X>{\hsize=0.64\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Clustering method} & \textbf{Input} & \textbf{Agreement (\%)} & \textbf{Macro-F1} \\
+\midrule
+Leiden & Selected marker names & 37.33 & 0.3233 \\
+Leiden & Selected marker means & 45.76 & 0.4075 \\
+Leiden & All-marker means & 46.16 & 0.4073 \\
+Leiden & All-marker means plus fractions & 47.51 & 0.4133 \\
+FlowSOM & Selected marker names & 25.91 & 0.2299 \\
+FlowSOM & Selected marker means & 40.09 & 0.2946 \\
+FlowSOM & All-marker means & 39.57 & 0.3189 \\
+FlowSOM & All-marker means plus fractions & 41.84 & 0.2917 \\
+SpatialSort & Selected marker names & 32.39 & 0.2060 \\
+SpatialSort & Selected marker means & 32.78 & 0.2007 \\
+SpatialSort & All-marker means & 33.31 & 0.2090 \\
+SpatialSort & All-marker means plus fractions & 33.80 & 0.2154 \\
+PIXIE & Selected marker names & 37.96 & 0.2566 \\
+PIXIE & Selected marker means & 40.93 & 0.2737 \\
+PIXIE & All-marker means & 38.70 & 0.2689 \\
+PIXIE & All-marker means plus fractions & 36.40 & 0.2619 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table*}

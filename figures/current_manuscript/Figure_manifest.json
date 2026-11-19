@@ -660,21 +660,12 @@
         "S9",
         "S10",
         "S11",
-        "S12"
-      ],
-      "source_manuscript_docx_sha256": "85f59f4f053417ff715033fa262e1febdf5183bd0731dcef805adb26e43e0be2"
-    },
-    {
-      "figures": [
+        "S12",
+        "S13",
         "S14"
       ],
-      "source_manuscript_docx_sha256": "4b693cb7e6ba7471cd757a57b470081161cd60dd87150079f13a903e79d07dfd"
-    },
-    {
-      "figures": [
-        "S13"
-      ],
-      "source_manuscript_docx_sha256": "51d1de8c6be54841fc62934f34b3d28e7ec45e6ec88ee073bef6d66a0eb16bd9"
+      "source_manuscript_docx_sha256": "d660af323c87a7ff4ed383abe24e8598e6b85c9b6bf6d688eb5839647f37a07f"
     }
-  ]
+  ],
+  "captions_sha256": "28bfaa67430d526cda67ca004eea5d861a33efa85445dbe4ba7994ff98c1cfc7"
 }

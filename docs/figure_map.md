@@ -1,39 +1,34 @@
 # Current manuscript figure map
 
-The [inventory](../configs/manuscript_inventory.json) records the retained 47-marker study and the checked manuscript artwork. Display identifiers are retained even where intervening archived figures have been removed.
+The [current figure index](../configs/manuscript_display_crosswalk.json) records 19 figures in 21 PNG files. Each image is pinned by SHA-256. The [caption file](../figures/current_manuscript/Figure_captions.txt) follows the saved manuscript.
 
-| Figure | Panels | Notebook |
-| --- | --- | --- |
-| 1 | A–F | [figure_01_spillover_compensation.ipynb](../notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
-| 2 | A–H | [figure_02_clustering_method_benchmark.ipynb](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
-| 3 | A–E | [figure_03_llm_annotation_benchmark.ipynb](../notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
-| 4 | A–E | [figure_04_leiden_gpt_end_to_end.ipynb](../notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb) |
-| S1 | A–C | [figure_s01_clustering_metrics.ipynb](../notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
-| S2 | A–B | [figure_s02_spatial_celltypes.ipynb](../notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
-| S3 | A–C | [figure_s03_matching_and_compensation.ipynb](../notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
-| S4 | A–D | [figure_s04_reference_and_clustering_diagnostics.ipynb](../notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
-| S5 | A | [figure_s05_reference_bounds.ipynb](../notebooks/final_figures/figure_s05_reference_bounds.ipynb) |
-| S6 | A–B | [figure_s06_annotation_diagnostics.ipynb](../notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb) |
-| S7 | Unlettered | [figure_s07_agreement_decomposition.ipynb](../notebooks/final_figures/figure_s07_agreement_decomposition.ipynb) |
-| S8 | A–D | [figure_s08_marker_representation_controls.ipynb](../notebooks/final_figures/figure_s08_marker_representation_controls.ipynb) |
-| S9 | A–D | [figure_s09_prompt_controls_and_calibration.ipynb](../notebooks/final_figures/figure_s09_prompt_controls_and_calibration.ipynb) |
-| S10 | A–D | [figure_s10_paired_representations.ipynb](../notebooks/final_figures/figure_s10_paired_representations.ipynb) |
-| S11 | A | [figure_s11_cd8_profiles.ipynb](../notebooks/final_figures/figure_s11_cd8_profiles.ipynb) |
-| 5 | A–D; ready | [Donor renderer](../scripts/render_donor47_figures.py) |
-| S12 | A–C; ready | [Donor renderer](../scripts/render_donor47_figures.py) |
-| S13 | A–D; ready | [Donor renderer](../scripts/render_donor47_figures.py) |
+Native source IDs and filenames identify the reproducibility snapshots. The PNGs and captions use the manuscript display numbers. Figure S5 is supplied in three parts. Figure S14 is available as saved artwork. The native notebooks linked for S2 and S10 replay the November 11 snapshot. The [completed B004 replay](revision/reviewer47_completed_publication_20261115.md) verifies the saved manuscript's supplemental results, and the [completed figure renderer](../scripts/render_reviewer47_figures.py) rebuilds S2 and S10 from those results.
 
-Figures 1, S1, S2 and S3 retain the independent spillover-compensation and matching analyses. Figure 2A–H uses the frozen primary clustering partitions; E–H score 209,587 non-Noise cells with the stated 20-class mapping. S4 uses [all-47-channel reference profiles](../data/frozen/reference47_profiles_20261110/manifest.json) and clustering diagnostics, and S5A reports fixed-partition upper bounds with the original 28 labels including Noise. S5 has no shared-45-marker cluster-count sensitivity panel.
+| Manuscript figure | Panels | Current artwork | Native source |
+| --- | --- | --- | --- |
+| 1. Spillover compensation | A–F | [PNG](../figures/current_manuscript/PNG/Figure_1.png) | 1 · [figure_01_spillover_compensation.ipynb](../notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
+| 2. Clustering benchmark | A–H | [PNG](../figures/current_manuscript/PNG/Figure_2.png) | 2 · [figure_02_clustering_method_benchmark.ipynb](../notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
+| 3. LLM annotation benchmark | A–E | [PNG](../figures/current_manuscript/PNG/Figure_3.png) | 3 · [figure_03_llm_annotation_benchmark.ipynb](../notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
+| 4. Selected Leiden–Astra pipeline | A–E | [PNG](../figures/current_manuscript/PNG/Figure_4.png) | 4 · [figure_04_leiden_gpt_end_to_end.ipynb](../notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb) |
+| 5. Cross-donor annotation | A–D | [PNG](../figures/current_manuscript/PNG/Figure_5.png) | [Donor renderer](../scripts/render_donor47_figures.py) |
+| S1. Leiden–Opus 5.5 diagnostics | A–B | [PNG](../figures/current_manuscript/PNG/Figure_S1.png) | S6 · [figure_s06_annotation_diagnostics.ipynb](../notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb) |
+| S2. Matched prompt controls and cross-model support calibration | A–D | [PNG](../figures/current_manuscript/PNG/Figure_S2.png) | S9 · [figure_s09_prompt_controls_and_calibration.ipynb](../notebooks/final_figures/figure_s09_prompt_controls_and_calibration.ipynb) (Nov. 11 snapshot) |
+| S3. Cluster quality after compensation | A–C | [PNG](../figures/current_manuscript/PNG/Figure_S3.png) | S1 · [figure_s01_clustering_metrics.ipynb](../notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
+| S4. Spatial label changes after compensation | A–B | [PNG](../figures/current_manuscript/PNG/Figure_S4.png) | S2 · [figure_s02_spatial_celltypes.ipynb](../notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
+| S5. Matching-rule sensitivity and shared-object compensation | A–C | [Part A](../figures/current_manuscript/PNG/Figure_S5_part_A.png) · [Part B](../figures/current_manuscript/PNG/Figure_S5_part_B.png) · [Part C](../figures/current_manuscript/PNG/Figure_S5_part_C.png) | S3 · [figure_s03_matching_and_compensation.ipynb](../notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
+| S6. Reference cell types and clustering diagnostics | A–D | [PNG](../figures/current_manuscript/PNG/Figure_S6.png) | S4 · [figure_s04_reference_and_clustering_diagnostics.ipynb](../notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
+| S7. Reference-agreement upper bounds | A | [PNG](../figures/current_manuscript/PNG/Figure_S7.png) | S5 · [figure_s05_reference_bounds.ipynb](../notebooks/final_figures/figure_s05_reference_bounds.ipynb) |
+| S8. Reference-agreement decomposition | Unlettered | [PNG](../figures/current_manuscript/PNG/Figure_S8.png) | S7 · [figure_s07_agreement_decomposition.ipynb](../notebooks/final_figures/figure_s07_agreement_decomposition.ipynb) |
+| S9. Paired means and fractions comparison | A–D | [PNG](../figures/current_manuscript/PNG/Figure_S9.png) | S10 · [figure_s10_paired_representations.ipynb](../notebooks/final_figures/figure_s10_paired_representations.ipynb) |
+| S10. Marker-representation controls | A–D | [PNG](../figures/current_manuscript/PNG/Figure_S10.png) | S8 · [figure_s08_marker_representation_controls.ipynb](../notebooks/final_figures/figure_s08_marker_representation_controls.ipynb) (Nov. 11 snapshot) |
+| S11. CD8+ T marker-expression profiles | A | [PNG](../figures/current_manuscript/PNG/Figure_S11.png) | S11 · [figure_s11_cd8_profiles.ipynb](../notebooks/final_figures/figure_s11_cd8_profiles.ipynb) |
+| S12. Donor clustering and SpatialSort seed sensitivity | A–C | [PNG](../figures/current_manuscript/PNG/Figure_S12.png) | [Donor renderer](../scripts/render_donor47_figures.py) |
+| S13. Original 28-label and projected 23-label evaluation | A–D | [PNG](../figures/current_manuscript/PNG/Figure_S13.png) | [Donor renderer](../scripts/render_donor47_figures.py) |
+| S14. Reference cell maps for all 24 regions | Unlettered | [PNG](../figures/current_manuscript/PNG/Figure_S14.png) | Saved manuscript artwork |
 
-Figures 3, 4, S6, S7, S10 and S11 are numerically rebuilt from the [completed annotation results](../data/frozen/annotation47_results_20261111/manifest.json). Figure 3B/C report equal-test-region agreement and fixed-28-label macro-F1; D uses pooled Leiden test cells, and E shows the fixed Figure 2C mid-jejunum region. Figure 4 uses the Leiden–Astra pipeline selected for detailed presentation from the B004 benchmark results: B/C use test cells and D/E use all cells. Figure S6 retains the Leiden–Opus 5.5 test confusion and full-cohort cluster diagnostics as a supplementary comparison. S7 decomposes the 16 primary test-region outcomes; S10 compares the two input arms without repeated-generation SD. S11 displays raw processed marker profiles of four model-consensus CD8+ T groups, with ties in Astra, Opus, Argon and DeepSeek order and no reference-label selection.
+- Figures 1 and S3–S5 cover the independent spillover-compensation and matching analyses. Figures 2, S6 and S7 use the frozen B004 clustering partitions. Figure 2E–H scores 209,587 non-Noise cells using the harmonized 20-label vocabulary. Figure S7 uses the original 28-label vocabulary including Noise.
+- Figures 3, 4, S1, S8, S9 and S11 use the [completed B004 primary annotation bank](../data/frozen/annotation47_results_20261111/manifest.json). Figure 4 shows the selected Leiden–Astra pipeline. Figure S1 is the supplementary Leiden–Opus 5.5 comparison.
+- Figure S2 uses the completed matched prompt controls and the cross-model support calibration. Figure S10 uses all 64 completed marker-representation conditions. The [completed B004 replay](revision/reviewer47_completed_publication_20261115.md) verifies the recovered DeepSeek item and the Astra extension.
+- Figures 5, S12 and S13 use the [completed cross-donor bank](../data/frozen/donor47_deepseek_completion_20261116/manifest.json). Figure S14 shows the dataset reference annotations across all 24 regions.
 
-Eighteen figure identifiers reserve 20 PNG images because S3 has three image parts. Ready PNG/TIFF/PDF/SVG exports and image hashes are synchronized. The current Figure 5 binding is cross-donor annotation; Figures 5 and S13 use the completed response bank. Its archived predecessor and superseded panel arrangements remain in the [archive](../data/historical/publication_before_primary47_20261109/index.json); they do not define the active donor figures. [Reproduction instructions](manuscript_reproduction.md) identify the current renderers and clearly separate archival reconstruction commands.
-
-Figures S8 and S9 use the [reviewer result bank](../data/frozen/reviewer47_results_20261111/manifest.json): S8 compares four marker representations and marks the missing DeepSeek–Leiden selected-means condition in the November 11 snapshot; S9 reports the five complete Opus controls and exploratory cross-model agreement calibration. Calibration uses cluster-held-out cells in the two test regions, not the full primary test population. The [completed B004 package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) includes the recovered DeepSeek item and the eight-item Astra extension. Original Figure 4 and S6 bytes remain unchanged, supported by the [new-bank equality check](../data/frozen/annotation47_results_20261111/bank_change_verification.json). The prior S8/S9 artwork remains archival and is not an input to these new figures.
-
-
-The November 14 presentation update retains the six-stage BioRender artwork in Figure 3A, including the original marker-list and threshold-setting images as schematic examples, and uses the OpenAI logo in Figure 4A. Comparison views share ranked display orders where appropriate. Figure 3D sorts by mean four-model recall, while both Figure 4B axes and Figure 4C rows sort by pooled-test cell-type F1. The frozen November 11 scientific results and scoring definitions remain unchanged.
-
-Cross-donor figures use the [donor score bank](../data/frozen/donor47_deepseek_completion_20261116/manifest.json): Figure S12 shows native 28-label equal-region purity/ARI and global seed 42/43 partition ARI. Figures 5 and S13 report planned-denominator annotation/baseline comparisons and the same-cell evaluation-only 23-label projection. The donor renderer and source manifest enforce separate clustering-ready and terminal-annotation admission.
-
-The [saved manuscript PNGs](../figures/current_manuscript/PNG) for Figures 5, S12 and S13 match the verified November 19 export. The [native renderer](../scripts/render_donor47_figures.py) generates editable exports from the completed donor bank.
+The [native exports](../figures/publication) and [reproduction instructions](manuscript_reproduction.md) retain the stable source paths for replay and editable artwork.

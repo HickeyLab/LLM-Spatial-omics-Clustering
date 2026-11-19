@@ -1,39 +1,18 @@
-# Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
+# Evaluation of Clustering Methods and Large Language Models for Spatial Proteomic Cell Type Annotation
 
 ## Current manuscript figures
 
-[View the current Figures 1–5 and S1–S14 PNGs](figures/current_manuscript/PNG), or browse the [manuscript-numbered notebook index](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/codex/rtr-submission-sync-20261115/notebooks/final_figures/README.md).
+Read the [manuscript](docs/manuscript_primary47.md) or browse [Figures 1–5 and S1–S14](figures/current_manuscript/PNG) and their [captions](figures/current_manuscript/Figure_captions.txt).
 
 The study comprises **809,550 cells across 24 tissue regions from three donors**. B004 supplies within-donor benchmarking and classifier development. B005/B006 supply cross-donor evaluation. All annotation evidence uses 47 protein markers and the native 28-label vocabulary including Noise.
 
-The B004 primary campaign comprises **220,082 cells, four clustering methods, four models, two marker-representation arms, 32 annotation sets, 128 accepted logical request items and 9,024 cluster predictions**. The [B004 active study record](configs/annotation47_active_study.json), [figure inventory](configs/manuscript_inventory.json) and [B004 scored result manifest](data/frozen/annotation47_results_20261111/manifest.json) define those publication inputs.
+The B004 primary campaign comprises **220,082 cells, four clustering methods, four models, two marker-representation arms, 32 annotation sets, 128 accepted logical request items and 9,024 cluster predictions**. The [B004 study record](configs/annotation47_active_study.json) and [primary results](data/frozen/annotation47_results_20261111/manifest.json) define those publication inputs.
 
 In B004, Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occupied clusters. FlowSOM used three complete shuffled passes, and the primary SpatialSort partition is seed 42 at sweep 100 with `dmh_iter=5`. Seed 43 remains a clustering sensitivity result. The annotation models are GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017.
 
 ## Figure reproduction
 
-| Figure | Panels | Notebook |
-| --- | --- | --- |
-| 1 | A–F | [figure_01_spillover_compensation.ipynb](notebooks/final_figures/figure_01_spillover_compensation.ipynb) |
-| 2 | A–H | [figure_02_clustering_method_benchmark.ipynb](notebooks/final_figures/figure_02_clustering_method_benchmark.ipynb) |
-| 3 | A–E | [figure_03_llm_annotation_benchmark.ipynb](notebooks/final_figures/figure_03_llm_annotation_benchmark.ipynb) |
-| 4 | A–E | [figure_04_leiden_gpt_end_to_end.ipynb](notebooks/final_figures/figure_04_leiden_gpt_end_to_end.ipynb) |
-| S1 | A–C | [figure_s01_clustering_metrics.ipynb](notebooks/final_figures/figure_s01_clustering_metrics.ipynb) |
-| S2 | A–B | [figure_s02_spatial_celltypes.ipynb](notebooks/final_figures/figure_s02_spatial_celltypes.ipynb) |
-| S3 | A–C | [figure_s03_matching_and_compensation.ipynb](notebooks/final_figures/figure_s03_matching_and_compensation.ipynb) |
-| S4 | A–D | [figure_s04_reference_and_clustering_diagnostics.ipynb](notebooks/final_figures/figure_s04_reference_and_clustering_diagnostics.ipynb) |
-| S5 | A | [figure_s05_reference_bounds.ipynb](notebooks/final_figures/figure_s05_reference_bounds.ipynb) |
-| S6 | A–B | [figure_s06_annotation_diagnostics.ipynb](notebooks/final_figures/figure_s06_annotation_diagnostics.ipynb) |
-| S7 | Unlettered | [figure_s07_agreement_decomposition.ipynb](notebooks/final_figures/figure_s07_agreement_decomposition.ipynb) |
-| S8 | A–D | [figure_s08_marker_representation_controls.ipynb](notebooks/final_figures/figure_s08_marker_representation_controls.ipynb) |
-| S9 | A–D | [figure_s09_prompt_controls_and_calibration.ipynb](notebooks/final_figures/figure_s09_prompt_controls_and_calibration.ipynb) |
-| S10 | A–D | [figure_s10_paired_representations.ipynb](notebooks/final_figures/figure_s10_paired_representations.ipynb) |
-| S11 | A | [figure_s11_cd8_profiles.ipynb](notebooks/final_figures/figure_s11_cd8_profiles.ipynb) |
-| 5 | A–D; ready | [Donor renderer](scripts/render_donor47_figures.py) |
-| S12 | A–C; ready | [Donor renderer](scripts/render_donor47_figures.py) |
-| S13 | A–D; ready | [Donor renderer](scripts/render_donor47_figures.py) |
-
-The native exports cover 18 figures in 20 image files because Figure S3 has three parts. The current manuscript PNG collection also includes the S14 reference cell maps. [Saved manuscript PNGs](figures/current_manuscript/PNG) and reproducible native exports for Figures 5, S12 and S13 use the completed cross-donor scores. [Submission exports](figures/publication) contain the native PDF/SVG and 600 dpi PNG/TIFF versions. [Notebook previews](notebooks/final_figures/previews) and manuscript artwork use the same checked result set. The [figure map](docs/figure_map.md) describes each figure's population and source.
+The [manuscript figure map](docs/figure_map.md) and [notebook index](notebooks/final_figures/README.md) map all 19 figures to their sources. The saved manuscript artwork contains 21 PNGs because Figure S5 has three parts. The [display crosswalk](configs/manuscript_display_crosswalk.json) binds the current figure numbers and artwork hashes to the stable identifiers used in [native figure exports](figures/publication). Figure S14 is available as saved manuscript artwork.
 
 ## Annotation results and scoring
 
@@ -41,9 +20,9 @@ The means-plus-fractions arm supplies the benchmark. Reference agreement is calc
 
 Across the 16 benchmark combinations, equal-test-region agreement ranges from **17.42% to 58.12%** and macro-F1 from **0.114 to 0.449**. Leiden–Astra has the highest agreement in these two regions. Adding fractions is associated with higher agreement in eight conditions and lower agreement in eight, with changes from **−10.25 to +6.50 percentage points**. These are descriptive single-run outcomes on existing B004 partitions, not estimates of repeated-call variability or generalization to new donors.
 
-Figure 4 uses the Leiden–Astra pipeline selected for detailed presentation from the B004 benchmark results. Figure S6 retains Leiden–Opus 5.5 as a supplementary comparison. The three Figure 4 example clusters were selected by cell count before outcomes were inspected. Figure S11 uses one accepted prediction per model, fixed model-order modal ties, and no reference-label filtering to select CD8+ T groups.
+Figure 4 uses the Leiden–Astra pipeline selected for detailed presentation from the B004 benchmark results. Figure S1 retains Leiden–Opus 5.5 as a supplementary comparison. The three Figure 4 example clusters were selected by cell count before outcomes were inspected. Figure S11 uses one accepted prediction per model, fixed model-order modal ties, and no reference-label filtering to select CD8+ T groups.
 
-The [B004 presentation amendment](docs/revision/b004_astra_presentation_amendment_20261111.md) records this selection. The eight native Batch requests for the Astra–Leiden control extension were completed in the [B004 completion package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50).
+The [B004 presentation amendment](docs/revision/b004_astra_presentation_amendment_20261111.md) records this selection.
 
 ## Cross-donor evaluation
 
@@ -53,25 +32,24 @@ The all-marker means plus fractions arm contains **32 donor–method–model set
 
 ## Reviewer experiments
 
-The [completed B004 reviewer package](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/8f5e5e5612d168bf336b4d71e798666f231e7bec/README.md#L42-L50) records **71 completed sets, 284 accepted items and 20,076 cluster predictions**. The November 11 [reviewer result export](data/frozen/reviewer47_results_20261111/manifest.json) is the earlier snapshot, with 275 accepted items across 69 planned base sets. The later package includes the recovered 75-cluster DeepSeek–Leiden selected-means item and the eight Astra control requests.
+The [completed B004 reviewer package](configs/reviewer47_completed_publication_20261115.json) contains **71 completed sets, 284 accepted items and 20,076 cluster predictions**, including the primary benchmark. The completion adds a recovered 75-cluster DeepSeek–Leiden selected-means item and eight Astra control requests to the [November 11 snapshot](data/frozen/reviewer47_results_20261111/manifest.json).
 
-Figure S8 and Tables S8a–d report the four marker representations. Figure S9 and Table S9 report the completed Opus method-name and 15-neighbor controls. The linked B004 completion package provides the later Astra controls and updated supporting figures. Tables S10 and S11 report the matched supervised classifiers and post-clustering K=100/200 coarsening. Figure S9 and Tables S12a–d use calibration recomputed on the current complete primary bank, with both cluster and region separation. Classifiers receive richer training-label supervision than LLM prompts; coarsening is not native-K fitting; within-donor cross-model agreement is not repeated-call consistency or biological confidence.
+Figure S10 and Tables S8a–d report the four marker representations. DeepSeek–Leiden selected means reaches **41.42% agreement and 0.3576 macro-F1** with all 300 cluster predictions delivered. Figure S2A–B and Table S9 report seven matched prompt contrasts. For Leiden–Astra, agreement was **58.12%** at baseline, **53.53%** with the method name and **51.43%** with measured neighborhood expression. Figure S2C–D and Tables S12a–d summarize within-donor calibration. Tables S10 and S11 report the matched supervised classifiers and post-clustering K=100/200 coarsening.
 
-The [current execution summary](docs/revision/reviewer47_execution_summary_20261111.json), [per-request settings](data/frozen/reviewer47_results_20261111/model_settings.json) and [physical-attempt accounting](data/frozen/reviewer47_results_20261111/logical_physical_accounting.json) distinguish logical answers, exact reuses, Batch items, streaming continuations and authorized recoveries. Astra/Opus retain high reasoning and a 32,768-token combined ceiling; Gemini/DeepSeek retain high reasoning and 943,718 tokens. Unsupported seeds are omitted. Each physical generation and provider-reported charge is counted once; unresolved billing remains unknown. The previous $77.08/$90 financial record covers an earlier scope and is preserved in the [metadata archive](archive/reviewer47_publication_before_20261111/metadata_index.json); it is not the cost or cap of the enlarged study.
+The [completed execution record](docs/revision/reviewer47_completed_publication_20261115.md) documents the actual settings, routes, recoveries and known charges. The original [execution summary](docs/revision/reviewer47_execution_summary_20261111.json), [per-request settings](data/frozen/reviewer47_results_20261111/model_settings.json) and [physical-attempt accounting](data/frozen/reviewer47_results_20261111/logical_physical_accounting.json) describe the November 11 snapshot. Unresolved billing remains unknown.
 
-All 276 literal scientific request bodies, anonymous query maps, marker selections, fixed training scaler and [literal saved visible responses](data/frozen/reviewer47_response_evidence_20261111/manifest.json) are available for offline replay without a local H5AD or API key. Nineteen full-arm DeepSeek items follow the presealed reviewer route reconciliation; their scientific messages match exactly and were not selected by reference score. Primary figures, paired comparisons and calibration use that same admitted bank. Earlier frozen data and the disabled preparations remain unchanged. This publication update makes zero annotation calls or scheduler actions.
+The [offline B004 replay](docs/manuscript_reproduction.md#reviewer-controls-and-recalibration-replay) validates the pinned requests and saved visible responses and recomputes the scores without credentials or an H5AD file.
 
 ## Tables and offline reproduction
 
-Active supplementary tables are **S1, S2A/B, S6a–d, S7, S8a–d, S9, S10, S11, S12a–d, S13a–b, S14a–b and S15a–b**. The [table map](docs/supplementary_table_numbering.md) links their exact inputs. S7 contains only the 12 clustering-diagnostic comparisons and their 96 paired regional observations.
+The [table index](docs/supplementary_table_numbering.md) links the 21 displayed supplementary tables and their source files. Table S7 is supplied as files containing the 12 clustering comparisons and 96 paired regional observations.
 
 ```bash
-python3.12 -m pip install -r requirements-publication-figures.txt
-python3.12 scripts/render_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S8 S9 S10 S11
-python3.12 scripts/verify_publication_figures.py --figures 2 3 4 S4 S5 S6 S7 S8 S9 S10 S11
+python3.12 -m pip install -r requirements-reviewer47.txt
+python3.12 -B scripts/replay_completed_reviewer47.py --output outputs/reviewer47_completed_replay
 ```
 
-[Reproduction instructions](docs/manuscript_reproduction.md) explain scoring replay, immutable source hashes, retained compensation analyses and the separation of current sources from archival entry points. No API key or live inference is required. Optional offline recalibration fits are separated from label prediction; the [portable reviewer replay](docs/revision/reviewer47_publication_replay.md) verifies all saved answers and denominators.
+Use a fresh output path for each run. The [reproduction guide](docs/manuscript_reproduction.md) also covers donor replay, optional offline recalibration and figure generation.
 
 ## Archived evidence
 

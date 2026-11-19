@@ -1,0 +1,850 @@
+{
+  "schema": "reviewer47.ieee_tables.v1",
+  "new_scientific_calls_or_fits": 0,
+  "stable_supplementary_ids_preserved": true,
+  "tables": {
+    "S1": {
+      "caption_label": "TABLE S1",
+      "caption_title": "REDSEA MATCHING AND CELL RETENTION AUDIT",
+      "caption": "Table S1. REDSEA matching and cell retention audit.",
+      "note": "Counts are pooled across the eight B004 regions. Processed counts refer to segmentation objects retained in the processed H5ADs. Matched counts include objects accepted by directed nearest-neighbor matching within 10 source-coordinate units after swapping the reference x and y coordinates. Multiple segmentation objects could match the same reference cell. Shared objects had the same CellID within a region and unchanged coordinates. Before-only and after-only counts were based on CellID, not saved row indices. Paired F1 evaluation also required an accepted match to the same reference cell and label in both conditions, so the shared-ID column is not its final scoring denominator. These counts describe retention and matching, not segmentation-boundary accuracy.",
+      "rows_including_header": 7,
+      "columns": 6,
+      "cell_order_sha256": "4275ec628067f81164f828339b11bd18b9006f01ad4b3865ad26d5c64b8264e0",
+      "numeric_columns_zero_based": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 4.25,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "docs/tables/ieee/source_tables.json": "57a61733dc57146d68dee23c39e66bded219c2b0d82ebbd828c04f34139f8f53"
+      },
+      "files": {
+        ".html": {
+          "sha256": "151e03c21d1f45a8cd5763e8ee3fc2bbf6c142bf0094a98eb927fa6c7e68f84a",
+          "bytes": 16711
+        },
+        ".standalone.html": {
+          "sha256": "d9cf558b55a33c9ec6f1830a60974cf5192448ceb9df825183b9809d5595f604",
+          "bytes": 16773
+        },
+        ".tsv": {
+          "sha256": "cfba8be686efb4e14139fca8d4cb8fff746a5752f076ecc12c080d1bff6372c6",
+          "bytes": 513
+        },
+        ".tex": {
+          "sha256": "2abc62397cb061a713f5577474f6eb429bf7e3c8a925f86756bac4eb8ecaf9c9",
+          "bytes": 1373
+        },
+        ".pdf": {
+          "sha256": "d8b69ad4cf8546685f097957bd33a898ea286cf448af890f0e6577e6bfdeac99",
+          "bytes": 56318
+        },
+        ".png": {
+          "sha256": "570d39df6dad7aadf93de4613bb2cdaf251b5bc88a7199e009d2467ca986745a",
+          "bytes": 866534
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S1.csv",
+        "sha256": "29a3158af9bc47af7cb9003bcc9d0271f6285832584e029d614df7b3106392a5"
+      }
+    },
+    "S2A": {
+      "caption_label": "TABLE S2A",
+      "caption_title": "CLUSTERING CONFIGURATIONS AND HYPERPARAMETERS",
+      "caption": "Table S2A. Clustering configurations and hyperparameters.",
+      "note": "Leiden, FlowSOM and SpatialSort used 47 protein markers. PIXIE selected 47 protein channels and Hoechst1 DNA signal from the 59 available image channels, then converted pixel-cluster assignments into vectors of pixel-metacluster fractions. Pixel-level and cell-level configurations are reported separately for PIXIE.",
+      "rows_including_header": 9,
+      "columns": 5,
+      "cell_order_sha256": "ac7d1755c68c072779b5c23494ac9b9e8ecb601b7bd696905e937577b26dec3f",
+      "numeric_columns_zero_based": [],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.805555555555555,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/clustering47_primary_20261108/current_tables.json": "0ab49e1663ffcea8a73c80a0b8ea488b775b0f77ccdddf0e8bcfbb64272eb750"
+      },
+      "files": {
+        ".html": {
+          "sha256": "de4a162fbbd483b1e57ec150a389b5201b51b8841cd2f8cd3d0349c81a0852cd",
+          "bytes": 17936
+        },
+        ".standalone.html": {
+          "sha256": "8461b78970cd1317a836c2fa3cc9802d2aa51dac10fb8de331733b30897a50e0",
+          "bytes": 17998
+        },
+        ".tsv": {
+          "sha256": "11f00d2a905ecf85e4f4b7b0e393dc8e820b6b1564fa7c962498e4e23b156f5f",
+          "bytes": 1190
+        },
+        ".tex": {
+          "sha256": "3f0898359eedf43410b231cc9daabbe22f0bdd7d9ed8957a949a1024681ec659",
+          "bytes": 2021
+        },
+        ".pdf": {
+          "sha256": "94a97f26bfa9988b2239924ac3f2e8c253f94225c971238568c65bc13e67a9e1",
+          "bytes": 57875
+        },
+        ".png": {
+          "sha256": "c0b33233dabf4600e0c81c579a97e570f5a9f0557d120eb14a4a66d6372c1616",
+          "bytes": 1109216
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S2A.csv",
+        "sha256": "8e65503d48bd630ae43be3724a8506a0f945d73d0030fdec3faba7cd8dd960ae"
+      }
+    },
+    "S6a": {
+      "caption_label": "TABLE S6a",
+      "caption_title": "PAIRED REFERENCE AGREEMENT",
+      "caption": "Table S6a. Paired reference agreement.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Values are single-run outcomes averaged equally across the two B004 test regions. Paired changes subtract agreement using all-marker means from agreement using all-marker means plus fractions, in percentage points (pp). Missing or invalid predictions remain errors in the full planned denominator. All planned predictions were delivered; paired changes therefore reflect changes between valid labels.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "1d4d464fdb465ea37ee247859d968ced573b60e99c2a7a8c0c90f4b977bd93b7",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 7.361111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/annotation47_results_20261111/metrics.csv": "baa86e8504be9c0f863c3bda340276f05cec44e4375d5973dc23ae8efbf4efff",
+        "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
+      },
+      "files": {
+        ".html": {
+          "sha256": "d36090499ca2bb562adc4d50dc07fe37734ac9dd28c06b7c6682bf6888b73d52",
+          "bytes": 31275
+        },
+        ".standalone.html": {
+          "sha256": "07a99972288cb6435e7272ff605e456a1b6f141cf586936abe5b1bd6448b6f19",
+          "bytes": 31337
+        },
+        ".tsv": {
+          "sha256": "342e08eba241de67b26f2b90284104630bf4b79f4bcdc870d45d4229a3e4e6ea",
+          "bytes": 793
+        },
+        ".tex": {
+          "sha256": "955fc3a027e4f139912045023064a108fa7059a8233425dc90dbcda937bc674e",
+          "bytes": 1674
+        },
+        ".pdf": {
+          "sha256": "0e80d6b40ad6e2920ac52e12b109726e752a1178d85d5ce6de84cec22db06bdf",
+          "bytes": 57633
+        },
+        ".png": {
+          "sha256": "fc9f7be69cd413a26e56df32be5103f315fac0050217ac993589f341bf50fa5e",
+          "bytes": 1093334
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S6a.csv",
+        "sha256": "cc7453d696c9ccc54ac6329e0058e857d60074d90af0386d544c039f3058a236"
+      }
+    },
+    "S6d": {
+      "caption_label": "TABLE S6d",
+      "caption_title": "MODEL IDENTITIES AND INFERENCE SETTINGS",
+      "caption": "Table S6d. Model identities and inference settings.",
+      "note": "Requests used supported high-reasoning settings, no tools or retrieval, at most 75 clusters per item, and no automatic model or provider fallback. Table S6d reports requested model identities, transport, supported seeds and combined output ceilings. Execution records preserve native OpenAI and OpenRouter bindings, routes, attempt status, usage and confirmed charges for each physical generation. Requests and recoveries are linked to prompt, parser and source hashes. Requested output ceilings are distinct from observed token use, and recoveries do not provide independent repetitions.",
+      "rows_including_header": 5,
+      "columns": 5,
+      "cell_order_sha256": "6ebc915f0a39b204b82dfe30d29572c95cef8c63ea4eb5005c6f9910ffda1aa0",
+      "numeric_columns_zero_based": [],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 4.527777777777778,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_deepseek_completion_20261115/model_settings.json": "ef79874fead505258601ee02dadf0a7b245c9e6d0a59d1beaccc24a84c3e8551",
+        "data/frozen/astra_prompt_controls_results_20261115/provider_batch.json": "c8863ca547e8a3f3a0c7a46c491f92851561469350dd53c743808150d29740fd"
+      },
+      "files": {
+        ".html": {
+          "sha256": "6b54f87699f6d7657f9339891f283ca0246e09e0b83e2c0d711c1c9ff6c26002",
+          "bytes": 10748
+        },
+        ".standalone.html": {
+          "sha256": "6a0f1aab9e25c028c6a4e6128281ae859673384ea9745f427ddac59c9e3c1458",
+          "bytes": 10810
+        },
+        ".tsv": {
+          "sha256": "6469c9835574e05fa0a353c266850ac9f043fc68731d577e5c7728608dcac409",
+          "bytes": 608
+        },
+        ".tex": {
+          "sha256": "7520720c950fbe663370b03b8b09e24c4ee2a25e02d865bee10c7d0ed1611b13",
+          "bytes": 1377
+        },
+        ".pdf": {
+          "sha256": "2bf8c353851c3ec5e0c9caa6684830238cc1a2a0925f5cdb3f6328f5598e6f02",
+          "bytes": 53502
+        },
+        ".png": {
+          "sha256": "bb583ff1e391cc19389228e6f918fe00fd62066b630a9604bb633310465a4b12",
+          "bytes": 869100
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S6d.csv",
+        "sha256": "9f0e60650dc63c7d99727fe76953b45fa2e0deb505aee5ac53cf181cb6605b1f"
+      }
+    },
+    "S8a": {
+      "caption_label": "TABLE S8a",
+      "caption_title": "GPT-6 ASTRA MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8a. GPT-6 Astra marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "rows_including_header": 17,
+      "columns": 4,
+      "cell_order_sha256": "73bee3105075254928b00ecc75bcfbea4999da411dfc919c81f11f1f9deabdc6",
+      "numeric_columns_zero_based": [
+        2,
+        3
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.194444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      },
+      "files": {
+        ".html": {
+          "sha256": "9b3c2f7d977512c14f3d6c786199155b9c5079defa1c1e13e6cb8b2f56bf86fc",
+          "bytes": 25249
+        },
+        ".standalone.html": {
+          "sha256": "f7b28f2291d4a0b01b27e0f9303fb9f3ad33fffedeb6cfa72564c22598dbe9e8",
+          "bytes": 25311
+        },
+        ".tsv": {
+          "sha256": "e83ba3eb47957ce5dab1c723fb8d771a65e426424cdfbd3e08ca7273277375a1",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "7dfd56d4bcbb7f519389eed5bac9f4856d64762a206077d6e8ab611e58afb598",
+          "bytes": 1575
+        },
+        ".pdf": {
+          "sha256": "69a6c9b091e676e6c6d643528a169dd3a9205381b9ccba54e4f0b984866b6038",
+          "bytes": 55950
+        },
+        ".png": {
+          "sha256": "d4a642cdc72b7da5a206aabe308e32a9005d4da252dd26479013bc16cc268dc0",
+          "bytes": 1004564
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8a.csv",
+        "sha256": "dc1aca19e31b8fd08891c9ad436240c2470f7ad1e31e003892f73c3cd2397f19"
+      }
+    },
+    "S8b": {
+      "caption_label": "TABLE S8b",
+      "caption_title": "CLAUDE OPUS 5.5 MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8b. Claude Opus 5.5 marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "rows_including_header": 17,
+      "columns": 4,
+      "cell_order_sha256": "6023fd20e699e6666ce32b860a01e33bfe0cfabe87401d77b094d7e0ae0f6cd1",
+      "numeric_columns_zero_based": [
+        2,
+        3
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.194444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      },
+      "files": {
+        ".html": {
+          "sha256": "164eb182a8dcf98d1c77d3e8979e5fc36f78923807fcc6e0e469968e59c892c9",
+          "bytes": 25253
+        },
+        ".standalone.html": {
+          "sha256": "e9b13520c66717e9b67122135eab8c45489c727b025242bd3541f57b216e16c9",
+          "bytes": 25315
+        },
+        ".tsv": {
+          "sha256": "238d05aff915ac33fb5088757aac3dc1720e5e97005f85d44e69a5a2cf6ecd4d",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "2f5221cbe6defbc819f04c376d22997d61347626973b5685e6d44ed3c42b2995",
+          "bytes": 1579
+        },
+        ".pdf": {
+          "sha256": "9b594aa1211bb45dd415be22902d07befe81c9011f1e50b5c80207b7792795f9",
+          "bytes": 56204
+        },
+        ".png": {
+          "sha256": "a2b2c1205f05ab6ab87668940f7c69fd55a7a8f62112a635fe25730babcf44e2",
+          "bytes": 1011347
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8b.csv",
+        "sha256": "f19b8a326db1849db234f15f07ac815fde0c5b07efb40858a9cb485ee30f25bb"
+      }
+    },
+    "S8c": {
+      "caption_label": "TABLE S8c",
+      "caption_title": "GEMINI 4 ARGON MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8c. Gemini 4 Argon marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "rows_including_header": 17,
+      "columns": 4,
+      "cell_order_sha256": "1bf56bf3ed8a85e9bf70b80171fb926a0393ae33821c9ec1a884db2b72ed2bb1",
+      "numeric_columns_zero_based": [
+        2,
+        3
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.194444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      },
+      "files": {
+        ".html": {
+          "sha256": "1d0f4751768e7548e4e512a68f9b39afd43489e7f8c3855ae53e0e92d7715d07",
+          "bytes": 25252
+        },
+        ".standalone.html": {
+          "sha256": "f5aaa99569a7fbff972fe950f2cdf33f3ed4136eceb805cd759086a52c88774f",
+          "bytes": 25314
+        },
+        ".tsv": {
+          "sha256": "50f88e4d68eab43679b75b6c493c917af6cf26d28e291380f49632c4bfe8e03a",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "a726f0247775b89a22435fb30070d493a75f57c216f3f4058f2af97a0365fbd4",
+          "bytes": 1578
+        },
+        ".pdf": {
+          "sha256": "a65ed21cbe471ad3e9cb10c6339b645fa3bf266f0eb9cdf46c0599c35b76b545",
+          "bytes": 55927
+        },
+        ".png": {
+          "sha256": "27174ac187086703d17a406fd369fee43f9e4efdbed743908a211e5fdf799049",
+          "bytes": 1014518
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8c.csv",
+        "sha256": "dbb1d31090adff0ce493ed6b70d4c0a0c6fffc74358047eed2f9b41abbc7bf36"
+      }
+    },
+    "S8d": {
+      "caption_label": "TABLE S8d",
+      "caption_title": "DEEPSEEK V4.1 FLASH 1017 MARKER-REPRESENTATION COMPARISON",
+      "caption": "Table S8d. DeepSeek V4.1 Flash 1017 marker-representation comparison.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Reference agreement and macro-F1 calculated using the original 28-label vocabulary average the two B004 test regions equally. All planned cluster predictions were delivered. Each condition has one accepted annotation per cluster.",
+      "rows_including_header": 17,
+      "columns": 4,
+      "cell_order_sha256": "615e03f4166d44a20a06a494cf486f8f3ef61446c0a658aab745d6bddc591a9d",
+      "numeric_columns_zero_based": [
+        2,
+        3
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 6.194444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv": "aee17bb74f262c3b8e529b7b502b6d1b127f5e40b0ba695f392d78c92bcb02d8"
+      },
+      "files": {
+        ".html": {
+          "sha256": "b3301b4a2e403465d1cfe66d4996849627425975664c6e0704b924da1714bf5f",
+          "bytes": 25262
+        },
+        ".standalone.html": {
+          "sha256": "3f1233b1c0be19a57b44314560b4b6ed0ef4755bceb9b4824adcc2033ccf0bf4",
+          "bytes": 25324
+        },
+        ".tsv": {
+          "sha256": "b5cb013a5acf9835074f361472a61b84d5582ab3d91ac42c56e52ad90a20ddde",
+          "bytes": 759
+        },
+        ".tex": {
+          "sha256": "f9aaa91bbdf9e9faf4c43fa06ff83a13b5a65a07932b3cbabef7a4c7f6ee0bf7",
+          "bytes": 1588
+        },
+        ".pdf": {
+          "sha256": "ea2e673d2a6558c9013f2b5ba753e2b97c84e91423e63a1c9028866b76b9dd3a",
+          "bytes": 56682
+        },
+        ".png": {
+          "sha256": "c36b3c8e75e830fe5bd94e80c4e597698f5bb0c0bedb9bf08548c76b37096960",
+          "bytes": 1009740
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S8d.csv",
+        "sha256": "7b51ca193b63cf9b61ffc89e6785ca19cf4c9c3aaa4975134df343344ee27347"
+      }
+    },
+    "S9": {
+      "caption_label": "TABLE S9",
+      "caption_title": "LLM MATCHED-EVIDENCE PROMPT CONTROLS",
+      "caption": "Table S9. LLM matched-evidence prompt controls.",
+      "note": "Each comparison reuses its blinded baseline containing all-marker means plus fractions. Reference agreement averages the two B004 test regions equally. Changed-cluster counts use all planned clusters. Astra macro-F1 calculated using the original 28-label vocabulary was 0.4490 for the baseline, 0.4458 with the method name and 0.4531 with neighborhood-expression summaries. Astra controls used native OpenAI Batch and reused the OpenRouter Batch baseline. These single-generation comparisons do not establish repeatability or a general prompt effect. Opus 5.5 is Claude Opus 5.5, and Astra is GPT-6 Astra.",
+      "rows_including_header": 8,
+      "columns": 6,
+      "cell_order_sha256": "ccfa72cd1937cd298f33d92ce4166fd63ed0ef9602034ae885fc4b802ab2bd0a",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 4.194444444444445,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv": "ea4a32683fb61dbc5fc6f77413f289a18c9a1c480f1dde834be2a3563f3185cd"
+      },
+      "files": {
+        ".html": {
+          "sha256": "12e7a1570424291556e824ece72a14fa0a73c2d145b3b7d986341b388627625b",
+          "bytes": 18498
+        },
+        ".standalone.html": {
+          "sha256": "cbb3cb10481c31a9e68befb782d3cd77c8f5008fcc36c39f8fc012635f6d8498",
+          "bytes": 18560
+        },
+        ".tsv": {
+          "sha256": "f3744e0e18aa4e286fe89304416e148ff58546def34b1da28a0d405716f0010a",
+          "bytes": 443
+        },
+        ".tex": {
+          "sha256": "a41ea03d9f7922e1a8ad652211566dc2bcbcd233fcee6f975a93b247484cd891",
+          "bytes": 1314
+        },
+        ".pdf": {
+          "sha256": "30fce8346c79b254efdee93f94237e190e33ca19776bfc72a9b7946df3a3377d",
+          "bytes": 55885
+        },
+        ".png": {
+          "sha256": "9ea1813a866d057bdb0fea337c0fd2ba6a49a80098e4673106c39131d0ba4653",
+          "bytes": 765269
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S9.csv",
+        "sha256": "7bd5eaaff5198ea81edc5e89567928be068a5e3d1aea1e449c1d02556512dcc5"
+      }
+    },
+    "S10": {
+      "caption_label": "TABLE S10",
+      "caption_title": "CONVENTIONAL B004 ANNOTATION CLASSIFIERS",
+      "caption": "Table S10. Conventional B004 annotation classifiers.",
+      "note": "Means are the transformed and standardized cluster-level marker-expression means defined in Section 2.4. Positive fractions are the per-marker proportions of cells with positive processed expression. Classifiers used cell-level reference labels from the B004 training regions, providing richer supervision than the LLM prompts. Hyperparameters were selected in the validation regions. Metrics average the two test regions equally. Macro-F1 calculated using the original 28-label vocabulary assigns zero F1 to absent classes.",
+      "rows_including_header": 17,
+      "columns": 5,
+      "cell_order_sha256": "24177446c807e51c782d16123e42f6dea999015a0d5d62d5a071235781859ea6",
+      "numeric_columns_zero_based": [
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 7.861111111111111,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/baselines/classifier_equal_test_region_metrics.csv": "5c2b72325e36ea0d5f39dcc0735191b440e839801b229322ea424883bb760801"
+      },
+      "files": {
+        ".html": {
+          "sha256": "200ae07a7d08b3a8bb4ebabda200036a3b8522a16ec50df5e2a589b6abf20c44",
+          "bytes": 31489
+        },
+        ".standalone.html": {
+          "sha256": "955822b07077039b3e54cf9b6d1f6d6369cca11d476be18c71ba949a12a9c88b",
+          "bytes": 31551
+        },
+        ".tsv": {
+          "sha256": "d941e71599341c28b3bf9cbc767104c06f0008d5c341213dfc0181424608d1fd",
+          "bytes": 1086
+        },
+        ".tex": {
+          "sha256": "1b8054b1cfa3987b154d774489c8adc681f21c1eb736d94f4e9854defe64b74b",
+          "bytes": 1987
+        },
+        ".pdf": {
+          "sha256": "83400711729f8753c57b346f4feeb9dcd3bb5949b7500a4b5f3b8ea940cd1274",
+          "bytes": 56497
+        },
+        ".png": {
+          "sha256": "73f63015a361dca3014b50efa614382b2fa77d8882d1391cda582c08d8e7bb51",
+          "bytes": 1307348
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S10.csv",
+        "sha256": "fbfabd8e9655d106c32a83f7be4b9cabce5396c58b399d2f9d61550c016c4ab8"
+      }
+    },
+    "S11": {
+      "caption_label": "TABLE S11",
+      "caption_title": "EFFECT OF MERGING EXISTING B004 CLUSTERS",
+      "caption": "Table S11. Effect of merging existing B004 clusters.",
+      "note": "K100 and K200 were formed by cell-count-weighted Ward merging of frozen, full-precision cluster profiles, with merge mappings fixed before reference scoring. They do not represent clustering rerun at those target counts or tests of whether LLM rankings remain stable. Metrics average the two test regions equally.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "143aef32cd50d2bac4e44e63deec9a75217474a3ed62e98640f395b4ce163287",
+      "numeric_columns_zero_based": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 4.916666666666667,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/granularity/equal_test_region_metrics.csv": "3e4518743a8f50a9ffa0905aa3ed1997c307e221b48f409611517a7e4bef217a"
+      },
+      "files": {
+        ".html": {
+          "sha256": "e9d22e6fef606239888344e82b7535f710cef3936a3e57d57100562c91dacbb9",
+          "bytes": 23896
+        },
+        ".standalone.html": {
+          "sha256": "08d80e3efc49115524104e66e0827885844b01dfbfabf073e4ce26c96195f360",
+          "bytes": 23958
+        },
+        ".tsv": {
+          "sha256": "770f6fff5ce83fbd3b01b171c05eed5bb346957e01231999a16f0fb8853d7bb6",
+          "bytes": 450
+        },
+        ".tex": {
+          "sha256": "a9bbcb745d08215f9ff7b34cb2a12f42150d8773312f937f26850fb4b9ce4f44",
+          "bytes": 1306
+        },
+        ".pdf": {
+          "sha256": "ba11d01c9c02d8b3c3b9c04dc0120ee11dda78ef3cdb18c498c24fa0543579fd",
+          "bytes": 56617
+        },
+        ".png": {
+          "sha256": "b88d3fbff22d89d6bf0d50015abbb55172083b665b713de68f94ebb0f0215d9c",
+          "bytes": 674030
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S11.csv",
+        "sha256": "8740ef50325c13ce69de7dab7bc28fc7b445b7db9395ea26c0568ce13f0a5c66"
+      }
+    },
+    "S12a": {
+      "caption_label": "TABLE S12a",
+      "caption_title": "GPT-6 ASTRA CROSS-MODEL SUPPORT CALIBRATION",
+      "caption": "Table S12a. GPT-6 Astra cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "e3bcfc80945e2c7bf9000f1652c905d7ce129c58af3c1c4e29dfdadf6f4bdf0d",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.25,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "0783b25c7a9a238b9b47a6747073fea2237cfcea3a2b1a3be5d21f773d25dcdb",
+          "bytes": 24280
+        },
+        ".standalone.html": {
+          "sha256": "764cd9a2ff737b4f3e413b73e67f320073b0ca38230a684fb002e4c103f3c47c",
+          "bytes": 24342
+        },
+        ".tsv": {
+          "sha256": "436390e206c399bf691efdc577bba27c41213928e7e040b7c89e1e7312e3035c",
+          "bytes": 666
+        },
+        ".tex": {
+          "sha256": "430f629c4733e7c053b38b0185d6b6d752b0c511a55d7d6bb68ac81a31e8a14c",
+          "bytes": 1525
+        },
+        ".pdf": {
+          "sha256": "6f03ac2b40e406c587cd114b308c07dc7c63693a35d77cc33ba5b7c0e82d8fe4",
+          "bytes": 53994
+        },
+        ".png": {
+          "sha256": "afa2e9e53c7638e600b24877fb4281ac29eb9cd61cd866f7e10111d6ea1632b8",
+          "bytes": 907014
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12a.csv",
+        "sha256": "6fbd98fef62cc99b859acd71cb208b89df387c2cc0455419cfff7e06321edf98"
+      }
+    },
+    "S12b": {
+      "caption_label": "TABLE S12b",
+      "caption_title": "CLAUDE OPUS 5.5 CROSS-MODEL SUPPORT CALIBRATION",
+      "caption": "Table S12b. Claude Opus 5.5 cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "e5453bbdb513911b7d18454b7053f6fc3e07855edef9e0b20096ee6b9459e7df",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.25,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "2f1743846e9330a6f4ff4035ccb5fc5d2f59d3a6071fc6dcb4a8254684649a48",
+          "bytes": 24284
+        },
+        ".standalone.html": {
+          "sha256": "b9e86cfb0b82e2cbd3f3b71816c1a05fd5e4837a9dbba348a11afee9b1475d3a",
+          "bytes": 24346
+        },
+        ".tsv": {
+          "sha256": "3301b7daaff3f5912f2d7bb057f6a8b4aa73c610e12560a0c7b292a04954d2b9",
+          "bytes": 666
+        },
+        ".tex": {
+          "sha256": "3c3440dd5b802ad6dc78e2d1cbdc65dbd715033349ba423aa88df905157395a2",
+          "bytes": 1529
+        },
+        ".pdf": {
+          "sha256": "0cd01f942924978f15626d8264368616d967d97ad7d509d61ff3c9da5ae78a51",
+          "bytes": 53586
+        },
+        ".png": {
+          "sha256": "9e0e21485b1641ab33d880de12cb56d9f3f4289a1f73ada36da0fdfab7192ea2",
+          "bytes": 914156
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12b.csv",
+        "sha256": "aa677cf815ca388fab6cb9a872443de9dd0e4bf14907a0faebc8c34e4e7d3feb"
+      }
+    },
+    "S12c": {
+      "caption_label": "TABLE S12c",
+      "caption_title": "GEMINI 4 ARGON CROSS-MODEL SUPPORT CALIBRATION",
+      "caption": "Table S12c. Gemini 4 Argon cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "b54ed803a829e32c5f2c1f810fc02176f2c3690105d33659d34cc002f966a592",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.25,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "42e2c6e52f05e3e1955db6bb0bd1eaf0ca93176a5631b339efffa956f466389f",
+          "bytes": 24283
+        },
+        ".standalone.html": {
+          "sha256": "e1ead171a270bfb834230b6d0cb8b2e9e53953b04e03f8c829b140ced5808405",
+          "bytes": 24345
+        },
+        ".tsv": {
+          "sha256": "acf7533ef9523d8661abf9f26d41b09e86adb93d7597283d68b5b82dd0ad8dbc",
+          "bytes": 666
+        },
+        ".tex": {
+          "sha256": "f4396b62cfb5b3aa10c3bc32db5820674126e909f5639c562a9dd36289c4697c",
+          "bytes": 1528
+        },
+        ".pdf": {
+          "sha256": "c0eba23711b7ed1a63f9303111661cbe67ac11bb7bcfd516af9c046953d3b828",
+          "bytes": 53977
+        },
+        ".png": {
+          "sha256": "8e805f75d0ee6c7b6fac1c773ce7fb5ddf228944f2a0d262d9097d24eb456303",
+          "bytes": 915803
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12c.csv",
+        "sha256": "e8734df5f1b8286f3590a0ece180a8e262344a3806b20373d0307f1172ce8af5"
+      }
+    },
+    "S12d": {
+      "caption_label": "TABLE S12d",
+      "caption_title": "DEEPSEEK V4.1 FLASH 1017 CROSS-MODEL SUPPORT CALIBRATION",
+      "caption": "Table S12d. DeepSeek V4.1 Flash 1017 cross-model support calibration.",
+      "note": "ECE is expected calibration error. Lower scores are better. Metrics give equal weight to the two test regions and use only evaluation clusters held out by the cluster-hash split, rather than the full benchmark population. Development and evaluation use nonoverlapping clusters and regions. Cross-model support has a denominator of four. This retrospective within-donor calibration measures reference agreement, not repeatability, an individual model’s confidence or biological certainty.",
+      "rows_including_header": 13,
+      "columns": 5,
+      "cell_order_sha256": "181e8ed996020e948bf565a01414ada6ed5e31cda21df728ca9dad42df698489",
+      "numeric_columns_zero_based": [
+        2,
+        3,
+        4
+      ],
+      "render": {
+        "width_inches": 6.5,
+        "height_inches": 5.25,
+        "font_points": 10,
+        "font_file_basename": "Times New Roman.ttf",
+        "horizontal_rules": 3,
+        "vertical_rules": 0,
+        "interior_body_rules": 0
+      },
+      "sources": {
+        "data/frozen/reviewer47_results_20261111/calibration/calibration_equal_test_region_metrics.csv": "c865dc755a4dac023de02cd0dfe5812a3360732fbf28d6077a7d7d58698d6846"
+      },
+      "files": {
+        ".html": {
+          "sha256": "36a95cb4de86e29f1a6025211b98c781e93333625e32fbc24886f2172fed7019",
+          "bytes": 24293
+        },
+        ".standalone.html": {
+          "sha256": "0e3dcdb78e07cc1bae2e458c76446128ef4946fb1016ea63eedac2ca57190775",
+          "bytes": 24355
+        },
+        ".tsv": {
+          "sha256": "06fdc0c97b48bdccb71a24dcc9597489286044000d4d89a81f37422cfcd61f20",
+          "bytes": 666
+        },
+        ".tex": {
+          "sha256": "002c9cbabe6e6efb3ca21b5fa9bda58fdd6571b6c00b8f2dc50c287a10e04156",
+          "bytes": 1538
+        },
+        ".pdf": {
+          "sha256": "c8ede63a2adb95c7faf32f6c278b285bdacdd4c58ec92f3aa0de94a5994e63a1",
+          "bytes": 55049
+        },
+        ".png": {
+          "sha256": "27f5786d5dc33d7c943813b091f6d8417637b4e61a140f9fa2f5b947ae1f2641",
+          "bytes": 912210
+        }
+      },
+      "csv_companion": {
+        "path": "Table_S12d.csv",
+        "sha256": "e30466f91e37f49567c1a45c9bbf58ce9140d518c8fdeaa5a159e7aad1d4312b"
+      }
+    }
+  },
+  "combined_files": {
+    "all_tables.html": {
+      "sha256": "b182ba228ec3be87be1e6439939d361386d05aaa77061a2db0fca1f638185552",
+      "bytes": 348345
+    },
+    "source_tables.json": {
+      "sha256": "0d043bcba137ab42f9223f68721bc73f5625d609b654fcc6e883d70b83af27c1",
+      "bytes": 40696
+    }
+  }
+}

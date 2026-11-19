@@ -1,6 +1,6 @@
-# B004 supporting analyses and publication record
+# B004 supporting analyses and November 11 publication record
 
-Status: **completed results integrated within the scope below; three annotation sets remain incomplete**. This publication record adds no inference or scheduler job and does not change the B005/B006 work in the separate producer chat. The [prepared protocol](reviewer47_credit_batch_protocol.md) and its disabled configuration remain unchanged; execution and scoring evidence are versioned separately.
+The [completed B004 release](reviewer47_completed_publication_20261115.md) includes the three annotation sets that were incomplete in this November 11 snapshot. The [prepared protocol](reviewer47_credit_batch_protocol.md) and its disabled configuration are preserved with the original execution and scoring evidence.
 
 ## Scientific scope and delivery
 

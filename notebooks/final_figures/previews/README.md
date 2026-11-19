@@ -1,12 +1,7 @@
-# Current manuscript previews
+# Native replay previews
 
-These 17 PNG previews are byte-identical copies of the pinned artwork in `figures/manuscript/` for the 15 retained manuscript figures. Figure S3 has three image parts. The [current inventory](../../../configs/manuscript_inventory.json) controls figure numbering, panels and captions.
+The previews use stable native renderer IDs. The [figure map](../../../docs/figure_map.md) connects those IDs to the saved manuscript's [19 figures in 21 PNG files](../../../figures/current_manuscript).
 
-Figures 2, S4 and S5 use the primary 47-marker clustering outputs. Figures 3, 4, S6, S7, S10 and S11 use the completed single-annotation study. The source data and scoring checks are [frozen separately](../../../data/frozen/annotation47_results_20261111). No repeat SD, within-model repeat vote or repeatability claim is implied by these previews.
+The [preview manifest](../../../docs/reference_figure_label_changes.json) pins the native source and target files. Run `python scripts/update_reference_figure_labels.py --check` to verify the preview pixels.
 
-All current [native exports](../../../figures/publication) include 600 dpi PNG/TIFF and editable PDF/SVG. The [preview manifest](../../../docs/reference_figure_label_changes.json) pins the source and target files. `python scripts/update_reference_figure_labels.py --check` verifies preview pixels. These previews are display copies, not analytical inputs.
-
-New S8/S9 previews use the frozen reviewer-result bank. The pending DeepSeek selected-means cell is masked; no pending Astra control result is shown.
-
-
-Figure 3A retains the original BioRender marker-list and threshold-setting artwork as schematic examples, and Figure 4A identifies Astra with the OpenAI logo. Comparison views use the ranked display orders recorded in the native renderer receipts. These presentation changes preserve the frozen November 11 results.
+Native S8 and S9 display the November 11 B004 reviewer snapshot. Current Figures S10 and S2 show the [completed B004 results](../../../docs/revision/reviewer47_completed_publication_20261115.md).

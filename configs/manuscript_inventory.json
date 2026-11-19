@@ -408,5 +408,8 @@
     "cross_donor_strict_valid_logical_items": 128,
     "cross_donor_delivered_cluster_predictions": 9468,
     "cross_donor_missing_predictions": 0
-  }
+  },
+  "figure_numbering": "Stable native renderer and replay identifiers. Manuscript display numbers and current captions are in the current manuscript figure index.",
+  "current_manuscript_figure_index": "configs/manuscript_display_crosswalk.json",
+  "current_supplementary_table_crosswalk": "configs/supplementary_table_crosswalk.json"
 }

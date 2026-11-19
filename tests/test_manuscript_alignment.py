@@ -103,9 +103,12 @@ class ManuscriptAlignmentTests(unittest.TestCase):
         crosswalk = json.loads((ROOT / 'configs/supplementary_table_crosswalk.json').read_text())['tables']
         self.assertEqual(len({e['path'] for e in crosswalk}), len(crosswalk))
         labels = {e['filename']: e['current_label'] for e in crosswalk}
-        self.assertEqual(set(labels.values()), {'S2B','S6a','S6b','S6c','S6d','S7'})
-        for part in 'abcd':
-            self.assertEqual(labels['Table_S6'+part+'.csv'], 'S6'+part)
+        displayed = {'S1', 'S2A', 'S6a', 'S6d', 'S9', 'S10', 'S11'}
+        displayed.update(f'S{number}{part}' for number in (8, 12) for part in 'abcd')
+        displayed.update(f'S{number}{part}' for number in (13, 14, 15) for part in 'ab')
+        self.assertEqual(set(labels.values()), displayed | {'S7'})
+        for label in displayed:
+            self.assertEqual(labels[f'Table_{label}.csv'], label)
         self.assertEqual(labels['conditional_comparisons.csv'], 'S7')
         self.assertEqual(labels['paired_regional_observations.csv'], 'S7')
         self.assertNotIn('S3a_regional_metrics.csv', labels)
@@ -126,7 +129,7 @@ class ManuscriptAlignmentTests(unittest.TestCase):
         self.assertEqual(membership['CDX2'][2:4], ['Included','Included'])
         self.assertEqual(membership['Total selected inputs'][2:4], ['47','47'])
         sources=json.loads((ROOT/'configs/supplementary_table_crosswalk.json').read_text())['native_table_sources']
-        self.assertEqual({v['current_label'] for v in sources}, {'S1','S2A','S2B'})
+        self.assertEqual({v['current_label'] for v in sources}, {'S1','S2A'})
         for source in sources:
             tables=json.loads((ROOT/source['path']).read_text())['tables']
             self.assertIn(source['table_label_selector'], {v['label'] for v in tables})

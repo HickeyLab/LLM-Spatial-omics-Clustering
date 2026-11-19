@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "prior_manifests": [
+    [
+      "5f1ec944dd8ab4dfe2c691f36cabf0b61f1d3f6df3eb3bdcea96d3a3d02f834a",
+      335
+    ],
+    [
+      "ddc897d33efe2ccd4f94ae930045d5bf3f4784cc3c06630e3f3bcfd102577120",
+      26
+    ]
+  ],
+  "prior_accepted_items_unchanged": 275,
+  "newly_admitted_items": 1,
+  "newly_admitted_predictions": 75,
+  "accepted_base_items": 276,
+  "planned_base_predictions": 19476,
+  "complete_base_sets": 69,
+  "new_generation_calls": 0,
+  "independent_scoring_agrees": true,
+  "completed_condition_metrics": {
+    "family": "deepseek",
+    "model": "DeepSeek V4.1 Flash 1017",
+    "method": "leiden",
+    "arm": "selected_means",
+    "status": "complete",
+    "planned_requests": "4",
+    "accepted_requests": 4,
+    "planned_clusters": "300",
+    "delivered_clusters": 300,
+    "cluster_delivery_coverage": 1.0,
+    "planned_test_cells": "69576",
+    "delivered_test_cells": 69576,
+    "cell_delivery_coverage": 1.0,
+    "agreement": 0.41421655633688514,
+    "fixed28_macro_f1": 0.3575828217902255
+  }
+}
