@@ -2,7 +2,7 @@
   "schema": "cell_masks.separate_figures_current.v1",
   "created_utc": "2026-11-19T17:14:05.120781+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
-  "source_manuscript_docx_sha256": "893bcab722753c6b069af530f37958cdf6f5b4840dc905efbbe110b852b638d0",
+  "source_manuscript_docx_sha256": "db7d54f5573c4dd6f7d7c04d5ca6e99ee711b2b50b6bba8ee92dbc80c5834881",
   "source_saved_export": "Saved Google Docs manuscript Word export",
   "source_saved_export_time_local": "2026-11-19 America/New_York",
   "figure_count": 18,
@@ -61,7 +61,7 @@
       "current_figure": "2",
       "part": null,
       "filename": "PNG/Figure_2.png",
-      "sha256": "effe991b5d9508f6f75a1f15562bfff15720f1202240d559c73d7e3b0ff89713",
+      "sha256": "765dd1ef570e90a0ae33d4b11477712c98ff968c830f1f776408ccb3fed7427a",
       "bytes": 2753674,
       "dimensions_px": [
         3900,
@@ -81,9 +81,9 @@
       "native_export_pixels_per_display_inch": 600.0,
       "live_content_match": {
         "filter": "BOX",
-        "mae_0_255": 1.2587092
+        "mae_0_255": 1.2587064
       },
-      "live_docx_image_sha256": "3605c07cb2a34b978967d5ffe25e91f1dedc0c9d23a1ede188754223809d0bb6",
+      "live_docx_image_sha256": "e5a10dc8aebf7dc0c495175dee74e2cb7c4960e212f8886d5b21a090e12eeed6",
       "source": "verified_higher_resolution_approved_figure_artwork"
     },
     {
@@ -609,5 +609,5 @@
       "source": "verified_higher_resolution_approved_figure_artwork"
     }
   ],
-  "prior_public_figure_snapshot": "c998fd401684529ac683d677402863f45a3cab82"
+  "prior_public_figure_snapshot": "9e1444b306f575c7041ea8819c5962d297515bce"
 }
