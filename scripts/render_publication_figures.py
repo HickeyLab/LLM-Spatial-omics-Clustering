@@ -109,11 +109,24 @@ def figure_2(out):
     panel(f,"A",3,2)
     workflow_inputs=add_workflow(f,"2A")
     panel(f,"B",3,39)
-    a=axes(f,15,45,96,9)
-    counts=ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
-    a.bar(range(27),counts,color=[cell_colors()[s] for s in counts.index],width=.88)
-    a.set(xticks=range(27),xticklabels=counts.index,yticks=[0,15000,30000],yticklabels=["0","15k","30k"],ylabel="Cell count",xlim=(-.6,26.6))
-    plt.setp(a.get_xticklabels(),rotation=90)
+    counts = ref.cell_type_update.value_counts().drop("Noise").sort_values(ascending=False)
+    split = (len(counts) + 1) // 2
+    palette = cell_colors()
+    text(f, 57.1, 40.2, "Reference cell counts", size=6.6, ha="center", weight="bold", color="#111827")
+    for left, block in zip((28.4, 85.4), (counts.iloc[:split], counts.iloc[split:])):
+        a = axes(f, left, 44.05, 18.8, 30.9)
+        rows = range(len(block))
+        a.barh(rows, block, color=[palette[label] for label in block.index], height=.57, linewidth=0, zorder=3)
+        a.set(yticks=rows, yticklabels=block.index, ylim=(split - .5, -.5),
+              xticks=(0, 15000, 30000), xticklabels=("0", "15k", "30k"), xlim=(0, 33000))
+        a.tick_params(axis="y", length=0, pad=2.7, labelcolor="#111827")
+        a.tick_params(axis="x", length=1.8, pad=1.25, width=.45, labelcolor="#374151")
+        a.spines["left"].set_visible(False)
+        a.spines["bottom"].set_color("#8c929a")
+        grid(a, axis="x")
+        for row, count in enumerate(block):
+            a.text(1.36, row, f"{count:,}", ha="right", va="center",
+                   transform=a.get_yaxis_transform(), color="#111827")
     panel(f,"C",115,39)
     a=axes(f,126,45,30,30);r=ref[ref.File_ID.eq("8da8f27977d946b8c912d42c8827b55c")].copy()
     spatial(a,r,size=.2)
@@ -241,6 +254,81 @@ def figure_s4(out):
 
 
 
+def draw_figure_1_regional_effects(f, reg, top):
+    methods = ("Mesmer", "CellposeSAM", "CellposeCyto3")
+    displayed = reg[reg.method.isin(methods)]
+    groups = displayed.groupby(["method", "cell_type"]).delta_pp
+    categories = sorted(displayed.cell_type.unique())
+    labels = rank_labels(categories, displayed.groupby("cell_type").delta_pp.mean().reindex(categories))
+    row_top, row_span = top + 9.4, 77.8
+    row_height = row_span / len(labels)
+    down, flat, up = "#A04427", "#76838C", "#176984"
+    ranges, dot = "#9CA6AD", "#767F86"
+    ink, secondary = "#172127", "#435159"
+
+    # One background spans the labels and all three methods. Keep the full
+    # block together when the publication layout trims unused vertical space.
+    band_top, band_height = top + 1, 100.5
+    band = axes(f, 2.7, band_top, 159.8, band_height)
+    band.set_axis_off()
+    band.set_ylim((band_top + band_height - row_top) / row_height - .5,
+                  (band_top - row_top) / row_height - .5)
+    for row in range(0, len(labels), 2):
+        band.axhspan(row - .5, row + .5, color="#F3F6F7", lw=0)
+
+    ticks = [-100, -50, 0, 50, 100]
+    width = 36
+    for i, (method, letter, center) in enumerate(zip(methods, "DEF", (57.2, 99.1, 141.0))):
+        left = center - width / 2
+        ax = axes(f, left, row_top, width, row_span)
+        ax.set_zorder(1)
+        ax.set_facecolor("none")
+        ax.set(xlim=(-100, 100), ylim=(len(labels) - .5, -.5), xticks=ticks, yticks=[])
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda value, pos: f"{value:g}".replace("-", "−")))
+        ax.spines[["top", "right", "left"]].set_visible(False)
+        ax.spines["bottom"].set(color="#636F77", linewidth=.42)
+        ax.tick_params(axis="x", length=2.25, width=.45, pad=1.5, colors=secondary, labelsize=5.8)
+        for x in (-50, 50):
+            ax.axvline(x, color="#DCE2E6", linewidth=.35, zorder=0)
+        ax.axvline(0, color="#77828A", linewidth=.55, zorder=1)
+        label = STYLE["panel_letter_format"].format(letter=letter)
+        text(f, 3 if i == 0 else left - 3, top + 3.45, label, weight="bold", size=8.2, va="center")
+        text(f, center, top + 3.45, method, weight="bold", size=7.2, color=ink, ha="center", va="center")
+        count_x = left + width + 2.55
+        text(f, count_x, row_top - 1.1, "n", color=secondary, style="italic", ha="center", va="bottom")
+        for row, name in enumerate(labels):
+            values = groups.get_group((method, name)).to_numpy()
+            count = len(values)
+            mean = values.mean()
+            row_y = row_top + (row + .5) * row_height
+            if i == 0:
+                text(f, left - 1.35, row_y, name, color=ink, ha="right", va="center")
+            mean_color = up if mean > 0 else down if mean < 0 else flat
+            ax.plot([values.min(), values.max()], [row, row], lw=.57, color=ranges,
+                    solid_capstyle="round", zorder=2)
+            # Vertical offsets separate overlapping dots without shifting their values.
+            ax.scatter(values, row + np.linspace(-.21, .21, count), s=4.7,
+                       facecolors="white", edgecolors=dot, linewidths=.35, zorder=3)
+            ax.scatter([mean], [row], s=12.5, marker="D", color=mean_color,
+                       edgecolors="white", linewidths=.35, zorder=4)
+            text(f, count_x, row_y, str(count), size=5.8, ha="center", va="center", color=secondary)
+
+    text(f, 99.1, row_top + row_span + 6.4, "F1 change (percentage points)",
+         color=ink, size=6.25, va="center", ha="center")
+    handles = [
+        Line2D([0], [0], marker="o", color="none", markerfacecolor="white",
+               markeredgecolor=dot, markeredgewidth=.5, markersize=2.55, label="Tissue region"),
+        Line2D([0], [0], color=ranges, linewidth=.8, label="Observed regional range"),
+    ]
+    for color, label in ((down, "Mean decrease"), (flat, "No mean change"), (up, "Mean increase")):
+        handles.append(Line2D([0], [0], marker="D", color="none", markerfacecolor=color,
+                              markeredgecolor="white", markeredgewidth=.35, markersize=3.5, label=label))
+    f.legend(handles=handles, ncol=5, frameon=False, loc="center",
+             bbox_to_anchor=(.56, 1 - (top + 99.6513) / f._physical_mm[1]), fontsize=5.75,
+             handlelength=1.25, handletextpad=.45, columnspacing=1.12, labelcolor=ink,
+             borderaxespad=0, borderpad=0)
+
+
 def figure_1(out):
     names=["figureS1_archived_metrics.csv","figure1_pooled_f1_changes.csv"]
     m=csv(names[0]);c=csv(names[1]);p=ROOT/"data/frozen/figure_01_descriptive/regional_f1_changes.csv";reg=pd.read_csv(p)
@@ -282,27 +370,8 @@ def figure_1(out):
     handles=[Line2D([],[],marker="o",color=co,linestyle="",markersize=2.5,label=lab) for lab,co in palette.items()]
     f.legend(handles=handles,loc="upper left",bbox_to_anchor=(.015,.615),ncol=4,fontsize=5.5,
              handlelength=.6,handletextpad=.4,columnspacing=1.8,labelspacing=.3)
-    labels=sorted(reg.cell_type.unique())
-    displayed=reg[reg.method.isin(["Mesmer","CellposeSAM","CellposeCyto3"])]
-    labels=rank_labels(labels, displayed.groupby("cell_type").delta_pp.mean().reindex(labels))
-    for i,(method,x,w) in enumerate([("Mesmer",39,36),("CellposeSAM",83,36),("CellposeCyto3",127,34)]):
-        panel(f,chr(68+i),3 if i==0 else x-3,109,method,title_x=x+9)
-        a=axes(f,x,117,w,76)
-        for j,lab in enumerate(labels):
-            if j%2==0:a.axhspan(j-.5,j+.5,color="#f4f4f4",zorder=0)
-            values=reg[reg.method.eq(method)&reg.cell_type.eq(lab)].delta_pp.to_numpy()
-            a.plot([values.min(),values.max()],[j,j],color="#888888",lw=.6,zorder=2)
-            a.scatter(values,j+np.linspace(-.1,.1,len(values)),s=6,c="#c4c4c4",edgecolors="#888888",linewidths=.2,zorder=3)
-            a.scatter(values.mean(),j,marker="D",s=12,color="black",zorder=4)
-            a.text(1.025,j,str(len(values)),transform=a.get_yaxis_transform(),ha="left",va="center",fontsize=5.5)
-        a.text(1.025,1.02,"n",transform=a.transAxes,fontsize=5.5,ha="left")
-        a.axvline(0,color="#555555",lw=.5);a.set(xlim=(-100,100),ylim=(27.5,-.5),yticks=range(28),yticklabels=labels if i==0 else [""]*28,xticks=[-100,-50,0,50,100],xlabel="F1 change (percentage points)")
-        a.spines["left"].set_visible(False);a.tick_params(axis="y",length=0)
-    f.legend(handles=[Line2D([],[],marker="o",linestyle="",markersize=3,color="#bbbbbb",label="Individual tissue region"),
-                      Line2D([],[],marker="D",linestyle="",markersize=3,color="black",label="Mean regional change"),
-                      Line2D([],[],color="#888888",lw=.7,label="Observed regional range")],
-             loc="upper center",bbox_to_anchor=(.58,1-202/216),ncol=3,fontsize=5.5,columnspacing=1.1,handlelength=1.1)
-    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.","Panel B retains the precision archived in the executed notebook. B/C share descending mean pooled cell-type F1-change method order. D–F share descending mean regional F1-change cell-type order across the three displayed methods."])
+    draw_figure_1_regional_effects(f, reg, top=105.85)
+    return finish(f,"Figure_1",out,{**workflow_inputs,**inputs(*names),str(p.relative_to(ROOT)):sha(p)},notes=["Panel A retains the original illustrations and arrows. Only declared raster text rectangles are cleared, with larger editable Arial labels placed over them.","Panel B retains the precision archived in the executed notebook. B/C share descending mean pooled cell-type F1-change method order. D–F share descending mean regional F1-change cell-type order across the three displayed methods. Hollow dots show frozen individual regional changes; lines span their minimum and maximum. Diamond colors encode the sign of each mean."])
 
 
 def figure_s2(out):

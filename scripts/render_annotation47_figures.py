@@ -189,6 +189,54 @@ def figure_3(out):
                          "B/C: equal-weighted two test regions, all original28 labels including Noise. Both share descending mean macro-F1 model/method rankings. D: pooled test cells, cell types sorted by descending mean four-model recall. E: fixed Figure2C region."])
 
 
+def _plot_celltype_f1(ax, labels):
+    d = table("per_type_metrics.csv")
+    d = d[d.model_family.eq("openai") & d.method.eq("leiden") & d.arm.eq(ARM) & d.population.eq("all_labels")]
+    pooled = d[d.scope.eq("pooled_test")].set_index("label").reindex(labels).f1.to_numpy()
+    regional = d[d.scope.eq("region") & d.split.eq("test")]
+    regions = regional.region.drop_duplicates().tolist()
+    if len(regions) != 2:
+        raise ValueError("Expected two test regions for the cell-type F1 panel")
+    scores = np.stack([pooled, *[
+        regional[regional.region.eq(region)].set_index("label").reindex(labels).f1.to_numpy()
+        for region in regions
+    ]])
+    if not np.isfinite(scores).all() or ((scores < 0) | (scores > 1)).any():
+        raise ValueError("Cell-type F1 scores must be finite and between zero and one")
+
+    rows = np.arange(len(labels))
+    for row in rows[::2]:
+        ax.axhspan(row-.5, row+.5, color="#f6f8fa", linewidth=0, zorder=0)
+    ax.set(yticks=rows, yticklabels=labels, ylim=(len(labels)-.5, -.5), xlim=(0, 1),
+           xticks=[0, .5, 1], xlabel="F1 score")
+    ax.set_xticklabels(["0.0", "0.5", "1.0"])
+    ax.tick_params(axis="y", length=0, pad=3.9, labelsize=5.7, colors="#252b34")
+    ax.tick_params(axis="x", length=1.6, width=.4, pad=2.55, labelsize=5.7, colors="#252b34")
+    ax.xaxis.label.set(color="#252b34", fontsize=5.9)
+    ax.xaxis.labelpad = 2.8
+    for edge in ("top", "right", "left"):
+        ax.spines[edge].set_visible(False)
+    ax.spines["bottom"].set(color="#8c99a7", linewidth=.44)
+    ax.set_axisbelow(True)
+    ax.grid(axis="x", color="#dde2e7", linewidth=.37)
+
+    # Offset the two regional marks within each row so matching scores remain visible.
+    region_offset = .24
+    for row, (transverse, mid_jejunum) in enumerate(zip(scores[1], scores[2])):
+        ax.plot((transverse, mid_jejunum), (row-region_offset, row+region_offset),
+                color="#a3adb5", linewidth=.37, zorder=1)
+    styles = (("#213047", "D", 4.7, 0), ("#2864a5", "o", 4.0, -region_offset),
+              ("#bc6535", "s", 3.9, region_offset))
+    for values, (color, marker, area, offset) in zip(scores, styles):
+        ax.scatter(values, rows+offset, s=area, color=color, marker=marker,
+                   edgecolors="white", linewidths=.155, clip_on=False, zorder=4)
+    names = json.loads((ROOT / "configs/figure_04_historical_claude.json").read_text())["regions"]
+    labels = ["Pooled test", *(names[region]["name"] for region in regions)]
+    return [Line2D([], [], linestyle="", marker=marker, markerfacecolor=color,
+                   markeredgecolor="white", markeredgewidth=.155, markersize=2.43, label=label)
+            for (color, marker, _, _), label in zip(styles, labels)]
+
+
 def figure_4(out):
     f = figure(191)
     panel(f, "A", 2.4, 2)
@@ -201,23 +249,13 @@ def figure_4(out):
     a.set_xlabel("Predicted cell type"); a.set_ylabel("Reference cell type")
     colorbar(f, h, (29,43,56,1.7), None, ticks=[0,.5,1])
     panel(f, "C", 87, 35, "Cell-type F1")
-    d = table("per_type_metrics.csv")
-    d = d[d.model_family.eq("openai") & d.method.eq("leiden") & d.arm.eq(ARM) & d.population.eq("all_labels")]
-    labels = counts.index.tolist()
-    pooled = d[d.scope.eq("pooled_test")].set_index("label").reindex(labels)
-    a = axes(f, 119, 47, 42, 73)
-    a.barh(range(28), pooled.f1, color="#e7e8ec", edgecolor="#9ca3af", linewidth=.35, height=.7)
-    regions = d[d.scope.eq("region") & d.split.eq("test")].region.drop_duplicates().tolist()
-    colors = ["#2864a5", "#bc6535"]
-    names = json.loads((ROOT / "configs/figure_04_historical_claude.json").read_text())["regions"]
-    handles = [Patch(color="#e7e8ec", label="Pooled test")]
-    for region,c in zip(regions,colors):
-        v = d[d.scope.eq("region") & d.region.eq(region)].set_index("label").reindex(labels).f1
-        a.scatter(v, range(28), s=6, color=c, edgecolors="white", linewidths=.15, zorder=3)
-        handles.append(Line2D([],[],marker="o",ls="",color=c,markersize=2.5,label=names[region]["name"]))
-    a.set(yticks=range(28), yticklabels=labels, ylim=(27.7,-.7), xlim=(0,1), xticks=[0,.5,1], xlabel="F1 score")
-    grid(a,"x")
-    f.legend(handles=handles, loc="upper center", bbox_to_anchor=(.77,1-123/191), ncol=1, fontsize=5.5)
+    ax = axes(f, 119, 54, 42, 56)
+    handles = _plot_celltype_f1(ax, counts.index.tolist())
+    f.legend(handles=handles, loc="center", bbox_to_anchor=(.78, 1-126.4/191),
+             ncol=3, fontsize=5.55, handletextpad=.35, handlelength=.8, columnspacing=1.2,
+             borderaxespad=0, labelcolor="#252b34")
+    text(f, 128.8, 129.7, "Lines connect the two regional scores.",
+         size=5.5, ha="center", va="center", color="#506172")
     d = focal_clusters(model_family="openai")
     ex = d.sort_values(["n_cells", "cluster_id"], ascending=[False, True], kind="stable").head(3)
     panel(f, "D", 3, 145, "Three largest Leiden clusters")
@@ -243,7 +281,7 @@ def figure_4(out):
     a.xaxis.set_major_formatter(PercentFormatter(1,decimals=0))
     legend_components(f,181)
     return finish(f,"Figure_4",out,{**input_hashes("confusion.csv.gz","per_type_metrics.csv","cluster_predictions.csv","protocol.json"),**workflow_inputs},
-                  notes=["Leiden–Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the bar y axis. D/E use all220082 cells and original28 labels.","Examples chosen by descending cell count, then clusterID; no reference-agreement selection."])
+                  notes=["Leiden–Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and aligned dot-plot rows. Lines connect the two regional scores. D/E use all220082 cells and original28 labels.","Examples chosen by descending cell count, then clusterID; no reference-agreement selection."])
 
 
 def figure_s6(out):
@@ -300,24 +338,52 @@ def figure_s7(out):
 
 
 def figure_s10(out):
-    f=figure(126)
+    f = figure(93.75)
     models, methods = benchmark_orders()
-    method_names = [METHODS[METHOD_KEYS.index(m)] for m in methods]
-    for i,model in enumerate(models):
-        title = FULL_MODELS[MODEL_KEYS.index(model)]
-        x=3+(i%2)*82;y=14+(i//2)*50
-        panel(f,chr(65+i),x,y,title)
-        a=axes(f,x+20,y+10,57,29)
-        d=metric_rows(arm="all_means");e=metric_rows(arm=ARM)
-        p=d[d.model_family.eq(model)].set_index("method").reindex(methods).agreement.to_numpy()*100
-        q=e[e.model_family.eq(model)].set_index("method").reindex(methods).agreement.to_numpy()*100
-        for j in range(4):a.plot([p[j],q[j]],[j,j],color="#c9d2da",lw=.8,zorder=1)
-        a.scatter(p,np.arange(4)-.06,s=12,marker="o",color="#2864a5",zorder=2)
-        a.scatter(q,np.arange(4)+.06,s=12,marker="s",color="#b55224",zorder=2)
-        a.set(yticks=range(4),yticklabels=method_names,ylim=(3.5,-.5),xlim=(0,100),xticks=[0,25,50,75,100],xlabel="Reference agreement (%)")
-        grid(a,"x")
-    f.legend(handles=[Line2D([],[],marker="o",ls="",color="#2864a5",markersize=3,label="All-marker means"),Line2D([],[],marker="s",ls="",color="#b55224",markersize=3,label="Means plus fractions")],loc="upper center",bbox_to_anchor=(.5,.995),ncol=2,fontsize=6)
-    return finish(f,"Figure_S10",out,input_hashes("metrics.csv","paired_contrasts.csv"),notes=["Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."])
+    method_names = [METHODS[METHOD_KEYS.index(method)] for method in methods]
+    means = metric_rows(arm="all_means").set_index(["model_family", "method"])
+    fractions = metric_rows().set_index(["model_family", "method"])
+    means_color, fractions_color = "#2B5D8A", "#B6542E"
+    f.legend(handles=[
+        Line2D([], [], marker="o", mfc="white", mec=means_color, mew=1,
+               linestyle="none", markersize=4.5, label="All-marker means"),
+        Line2D([], [], marker="s", mfc=fractions_color, mec="white", mew=.3,
+               linestyle="none", markersize=4.5, label="All-marker means plus fractions"),
+    ], loc="upper center", bbox_to_anchor=(.5, .989), ncol=2, handletextpad=.35,
+       columnspacing=2.3, fontsize=7.3)
+
+    for i, model in enumerate(models):
+        row, col = divmod(i, 2)
+        left, bottom, width, height = .108 + .495 * col, .558 - .412 * row, .285, .263
+        title_y = bottom + height + .046
+        panel(f, chr(65 + i), (.018 + .495 * col) * 165.1, (1 - title_y) * 93.75 - 1.4)
+        f.text(left + width / 2, title_y, FULL_MODELS[MODEL_KEYS.index(model)],
+               fontsize=8, ha="center", va="center")
+        a = f.add_axes((left, bottom, width, height))
+        a.text(1.27, 1.016, "Change (pp)", transform=a.transAxes, ha="right",
+               va="bottom", fontsize=6.4, color="#48535E")
+        a.set(yticks=range(len(methods)), yticklabels=method_names,
+              ylim=(len(methods) - .5, -.5), xlim=(0, 100), xticks=[0, 25, 50, 75, 100])
+        a.tick_params(axis="y", length=0, pad=4, labelsize=7.05)
+        a.tick_params(axis="x", length=2.1, pad=2, labelsize=6.5)
+        a.spines["left"].set_visible(False)
+        a.spines["bottom"].set_color("#70808D")
+        a.grid(axis="x", color="#E3E7EB", linewidth=.6)
+        a.set_axisbelow(True)
+        for j, method in enumerate(methods):
+            start = 100 * means.loc[(model, method), "agreement"]
+            end = 100 * fractions.loc[(model, method), "agreement"]
+            a.plot((start, end), (j - .105, j + .105), color="#85909B", linewidth=1.05, zorder=2)
+            a.scatter(start, j - .105, marker="o", s=19, facecolors="white",
+                      edgecolors=means_color, linewidths=.9, zorder=4)
+            a.scatter(end, j + .105, marker="s", s=17, facecolors=fractions_color,
+                      edgecolors="white", linewidths=.3, zorder=5)
+            a.text(1.27, j, f"{end - start:+.1f}".replace("-", "−"),
+                   transform=a.get_yaxis_transform(), ha="right", va="center", fontsize=7)
+    f.text(.5, .047, "Reference agreement (%)", ha="center", va="center", fontsize=7.5)
+    return finish(f, "Figure_S10", out, input_hashes("metrics.csv", "paired_contrasts.csv"),
+                  notes=["Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims.",
+                         "Change is means plus fractions minus means alone, in percentage points."])
 
 
 def figure_s11(out):

@@ -1,14 +1,14 @@
 {
   "figure": "Figure_4",
   "width_mm": 165.1,
-  "height_mm": 169.05401482094095,
+  "height_mm": 167.55401482094095,
   "minimum_font_pt": 5.5,
   "font_family": "Arial",
   "minimum_placement_width_mm": 150.091,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    3994
+    3958
   ],
   "vector_text_editable": true,
   "panel_letter_format": "(A)",
@@ -41,8 +41,8 @@
   ],
   "layout_compaction": {
     "original_height_mm": 191,
-    "height_mm": 169.05401482094095,
-    "height_reduction_percent": 11.490044596365996,
+    "height_mm": 167.55401482094095,
+    "height_reduction_percent": 12.275384910502122,
     "vacant_bands_removed_mm": [
       [
         30.295841209829867,
@@ -50,7 +50,7 @@
       ],
       [
         39.13599999999999,
-        45.49999999999999
+        47.0
       ],
       [
         137.84853124999998,
@@ -77,25 +77,25 @@
     "data/frozen/provider_logos/manifest.json": "50769d43eadab420e85aa8b4b995c118faab641cbbf0873f1be1339261260e35"
   },
   "notes": [
-    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and the bar y axis. D/E use all220082 cells and original28 labels.",
+    "Leiden\u2013Astra means-plus-fractions pipeline selected from the B004 benchmark results. B/C use test cells and share descending pooled cell-type F1 order on both confusion axes and aligned dot-plot rows. Lines connect the two regional scores. D/E use all220082 cells and original28 labels.",
     "Examples chosen by descending cell count, then clusterID; no reference-agreement selection."
   ],
   "files": {
     "Figure_4.svg": {
-      "sha256": "0529bd32ab88d16a88a746226b348d1e76b7251b95c22a831a7267218712cd72",
-      "bytes": 2677011
+      "sha256": "0f097318a8a6f590028cb3c444f5c13886be1e9cbd39ad3704be996592ec8d71",
+      "bytes": 2678724
     },
     "Figure_4.pdf": {
-      "sha256": "1cf36bdc3f05ebf8fcfdc1b712720471fdcfddab3d6c2f02cb6cb06923e4a91a",
-      "bytes": 1336270
+      "sha256": "8799a57c830a498d991a15cb7b3cb0a2c35a93e4f865447ed98bf36292c5104b",
+      "bytes": 1336809
     },
     "Figure_4.png": {
-      "sha256": "736971c51b2a45a756cd267b86355063c70606575c68038042ed6c567bad65d2",
-      "bytes": 1248679
+      "sha256": "5cd7403a998ecc710490176a9430ab67d65617e7e669258c6a7334f2f68dbff5",
+      "bytes": 1271645
     },
     "Figure_4.tiff": {
-      "sha256": "44a0d3dce42bbca5cfa482a11da5f842527dc921bcef089221700704ee342ebe",
-      "bytes": 2289402
+      "sha256": "8601316839b26f4d3a758faee2a765ef43381582932d2d2a7f8c1a12783c3fb3",
+      "bytes": 2314442
     }
   }
 }

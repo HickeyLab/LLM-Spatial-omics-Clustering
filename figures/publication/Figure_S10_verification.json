@@ -1,39 +1,35 @@
 {
   "figure": "Figure_S10",
   "width_mm": 165.1,
-  "height_mm": 93.75400694444443,
-  "minimum_font_pt": 5.5,
+  "height_mm": 88.67808333333333,
+  "minimum_font_pt": 6.4,
   "font_family": "Arial",
-  "minimum_placement_width_mm": 150.091,
+  "minimum_placement_width_mm": 128.984,
   "raster_dpi": 600,
   "raster_size_pixels": [
     3900,
-    2214
+    2094
   ],
   "vector_text_editable": true,
   "panel_letter_format": "(A)",
   "biorender_workflow": null,
   "provider_logos": null,
   "layout_compaction": {
-    "original_height_mm": 126,
-    "height_mm": 93.75400694444443,
-    "height_reduction_percent": 25.592057980599662,
+    "original_height_mm": 93.75,
+    "height_mm": 88.67808333333333,
+    "height_reduction_percent": 5.410044444444444,
     "vacant_bands_removed_mm": [
       [
-        6.61733333333334,
-        12.500000000000009
+        8.189805555555557,
+        9.568749999999987
       ],
       [
-        18.136000000000003,
-        22.500000000000018
+        46.669888888888885,
+        48.193749999999994
       ],
       [
-        59.932336805555565,
-        62.5
-      ],
-      [
-        68.136,
-        72.50000000000001
+        85.29488888888888,
+        86.70075
       ]
     ],
     "minimum_gap_mm": 3.0,
@@ -46,24 +42,25 @@
     "data/frozen/annotation47_results_20261111/paired_contrasts.csv": "4e0552ed36bac30e51d452f9bf91d35071fc872ca8970220f871192cb7d7e9bf"
   },
   "notes": [
-    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims."
+    "Single-annotation descriptive input comparisons; equal-weighted test-region agreement. Models and methods share the main benchmark mean macro-F1 ranking. No repeated-generation SD, confidence intervals, majority votes or repeatability claims.",
+    "Change is means plus fractions minus means alone, in percentage points."
   ],
   "files": {
     "Figure_S10.svg": {
-      "sha256": "c1f76a7c42a09020b61903b264ab7ff704690c12de12c6a6e76f28a9a94adfa1",
-      "bytes": 37097
+      "sha256": "15764023527d8c6f554c4b626bc8a39f42278ad05c168bf06773839172cc5642",
+      "bytes": 40006
     },
     "Figure_S10.pdf": {
-      "sha256": "49e82fba6f9e111fceb5c7d7038cab1361fa6a726d71b73afb574efaef105b9d",
-      "bytes": 44842
+      "sha256": "d461338519576c33051244f49513074bcaca668a3ca271e47212d733fe1cb024",
+      "bytes": 40444
     },
     "Figure_S10.png": {
-      "sha256": "77ec666081703d4f283c4e670206965e2e25f4c10a7360f20a7a2d8ff504f019",
-      "bytes": 186547
+      "sha256": "e3931152fcc1b34dc49fd65653bd3836360010ab72d851835d7e5cbfa458e42f",
+      "bytes": 258469
     },
     "Figure_S10.tiff": {
-      "sha256": "d6c871fe715a27dbb4c72401cc0901a82e82d799a6529af7740f30088bc50825",
-      "bytes": 396160
+      "sha256": "a8601ee8293ad8621ed1849ff66db33cb73aad77cc563ed46ba3cc07b73a73a2",
+      "bytes": 429448
     }
   }
 }

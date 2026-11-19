@@ -10,14 +10,14 @@
     {
       "file": "figures/manuscript/Figure_1.png",
       "source_file": "figures/publication/Figure_1.png",
-      "source_sha256": "cce5aa67f4a4b8da3a83f5c2b296a7c53eb073a003201512c6826fcf706baeef",
-      "output_sha256": "cce5aa67f4a4b8da3a83f5c2b296a7c53eb073a003201512c6826fcf706baeef",
+      "source_sha256": "5f37a7f03af6ea38687845f0a28be70f88dcab97a4e0bc673ace142383b57adc",
+      "output_sha256": "5f37a7f03af6ea38687845f0a28be70f88dcab97a4e0bc673ace142383b57adc",
       "size_pixels": [
         3900,
-        4540
+        4655
       ],
       "width_mm": 165.1,
-      "height_mm": 192.19465277850452,
+      "height_mm": 197.09481250072676,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -29,8 +29,8 @@
     {
       "file": "figures/manuscript/Figure_2.png",
       "source_file": "figures/publication/Figure_2.png",
-      "source_sha256": "092f5e450dec1b087ee3bdc28bcd9677c9d2f9e6cd4bac564b8dabe29a57b68b",
-      "output_sha256": "092f5e450dec1b087ee3bdc28bcd9677c9d2f9e6cd4bac564b8dabe29a57b68b",
+      "source_sha256": "a5d9b13ad33376d73da82390d5fba581ab64bc0e33e84764b63e6e34a457f95a",
+      "output_sha256": "a5d9b13ad33376d73da82390d5fba581ab64bc0e33e84764b63e6e34a457f95a",
       "size_pixels": [
         3900,
         5008
@@ -67,14 +67,14 @@
     {
       "file": "figures/manuscript/Figure_4.png",
       "source_file": "figures/publication/Figure_4.png",
-      "source_sha256": "736971c51b2a45a756cd267b86355063c70606575c68038042ed6c567bad65d2",
-      "output_sha256": "736971c51b2a45a756cd267b86355063c70606575c68038042ed6c567bad65d2",
+      "source_sha256": "5cd7403a998ecc710490176a9430ab67d65617e7e669258c6a7334f2f68dbff5",
+      "output_sha256": "5cd7403a998ecc710490176a9430ab67d65617e7e669258c6a7334f2f68dbff5",
       "size_pixels": [
         3900,
-        3994
+        3958
       ],
       "width_mm": 165.1,
-      "height_mm": 169.05401482094095,
+      "height_mm": 167.55401482094095,
       "minimum_font_pt": 5.5,
       "minimum_placement_width_mm": 150.091,
       "dpi": 600,
@@ -295,16 +295,16 @@
     {
       "file": "figures/manuscript/Figure_S10.png",
       "source_file": "figures/publication/Figure_S10.png",
-      "source_sha256": "77ec666081703d4f283c4e670206965e2e25f4c10a7360f20a7a2d8ff504f019",
-      "output_sha256": "77ec666081703d4f283c4e670206965e2e25f4c10a7360f20a7a2d8ff504f019",
+      "source_sha256": "e3931152fcc1b34dc49fd65653bd3836360010ab72d851835d7e5cbfa458e42f",
+      "output_sha256": "e3931152fcc1b34dc49fd65653bd3836360010ab72d851835d7e5cbfa458e42f",
       "size_pixels": [
         3900,
-        2214
+        2094
       ],
       "width_mm": 165.1,
-      "height_mm": 93.75400694444443,
-      "minimum_font_pt": 5.5,
-      "minimum_placement_width_mm": 150.091,
+      "height_mm": 88.67808333333333,
+      "minimum_font_pt": 6.4,
+      "minimum_placement_width_mm": 128.984,
       "dpi": 600,
       "vector_files": [
         "figures/publication/Figure_S10.pdf",
