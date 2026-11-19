@@ -1,12 +1,16 @@
 # Evaluation of Clustering Methods and LLMs for CODEX Cell-Type Annotation
 
-The study comprises **809,550 cells across 24 tissue regions from three donors**. B004 supplies within-donor benchmarking and classifier development; B005/B006 supply cross-donor evaluation. All annotation evidence uses 47 protein markers and the native 28-label vocabulary including Noise.
+## Current manuscript figures
+
+[View the current Figures 1–5 and S1–S14 PNGs](figures/current_manuscript/PNG), or browse the [manuscript-numbered notebook index](https://github.com/HickeyLab/LLM-Spatial-omics-Clustering/blob/codex/rtr-submission-sync-20261115/notebooks/final_figures/README.md).
+
+The study comprises **809,550 cells across 24 tissue regions from three donors**. B004 supplies within-donor benchmarking and classifier development. B005/B006 supply cross-donor evaluation. All annotation evidence uses 47 protein markers and the native 28-label vocabulary including Noise.
 
 The B004 primary campaign comprises **220,082 cells, four clustering methods, four models, two marker-representation arms, 32 annotation sets, 128 accepted logical request items and 9,024 cluster predictions**. The [B004 active study record](configs/annotation47_active_study.json), [figure inventory](configs/manuscript_inventory.json) and [B004 scored result manifest](data/frozen/annotation47_results_20261111/manifest.json) define those publication inputs.
 
 In B004, Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occupied clusters. FlowSOM used three complete shuffled passes, and the primary SpatialSort partition is seed 42 at sweep 100 with `dmh_iter=5`. Seed 43 remains a clustering sensitivity result. The annotation models are GPT-6 Astra, Claude Opus 5.5, Gemini 4 Argon and DeepSeek V4.1 Flash 1017.
 
-## Retained figures
+## Figure reproduction
 
 | Figure | Panels | Notebook |
 | --- | --- | --- |
@@ -29,7 +33,7 @@ In B004, Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occup
 | S12 | A–C; ready | [Donor renderer](scripts/render_donor47_figures.py) |
 | S13 | A–D; ready | [Donor renderer](scripts/render_donor47_figures.py) |
 
-There are 18 figure identifiers and 20 image files because Figure S3 has three parts. [Saved manuscript PNGs](figures/current_manuscript/PNG) and reproducible native exports for Figures 5, S12 and S13 use the completed cross-donor scores. [Submission exports](figures/publication) contain the native PDF/SVG and 600 dpi PNG/TIFF versions. [Notebook previews](notebooks/final_figures/previews) and manuscript artwork use the same checked result set. The [figure map](docs/figure_map.md) describes each figure's population and source.
+The native exports cover 18 figures in 20 image files because Figure S3 has three parts. The current manuscript PNG collection also includes the S14 reference cell maps. [Saved manuscript PNGs](figures/current_manuscript/PNG) and reproducible native exports for Figures 5, S12 and S13 use the completed cross-donor scores. [Submission exports](figures/publication) contain the native PDF/SVG and 600 dpi PNG/TIFF versions. [Notebook previews](notebooks/final_figures/previews) and manuscript artwork use the same checked result set. The [figure map](docs/figure_map.md) describes each figure's population and source.
 
 ## Annotation results and scoring
 
