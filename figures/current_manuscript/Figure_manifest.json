@@ -2,9 +2,9 @@
   "schema": "cell_masks.separate_figures_current.v1",
   "created_utc": "2026-11-19T20:20:42.041122+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
-  "source_manuscript_docx_sha256": "ada9e9ead9ee3fd1cc52a7fa607b90f9944724132f14fea7f61ff7032608da59",
+  "source_manuscript_docx_sha256": "cc1d472e5762b2d1a99c6aa94b398dcdbeeb13d4e3e195040dd13bdd3799231c",
   "source_saved_export": "Saved Google Docs manuscript Word export",
-  "source_saved_export_time_local": "2026-11-19T15:20:42.041122-05:00 America/New_York",
+  "source_saved_export_time_local": "2026-11-19T15:27:04.259277-05:00 America/New_York",
   "figure_count": 19,
   "png_count": 21,
   "numbering": "Current manuscript labels. Figure S5 is supplied in three parts A, B and C.",
@@ -61,8 +61,8 @@
       "current_figure": "2",
       "part": null,
       "filename": "PNG/Figure_2.png",
-      "sha256": "2c365db0c3928aed41fd61ae014e297e5d6326e8e5299c10acd2e787bcb7d163",
-      "bytes": 736849,
+      "sha256": "e0fe7edbfa3276bd08e62d887f4a8f1693b6bb1848edd71951e11027fa42d1fa",
+      "bytes": 738066,
       "dimensions_px": [
         1587,
         2048
@@ -83,7 +83,7 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "2c365db0c3928aed41fd61ae014e297e5d6326e8e5299c10acd2e787bcb7d163",
+      "live_docx_image_sha256": "e0fe7edbfa3276bd08e62d887f4a8f1693b6bb1848edd71951e11027fa42d1fa",
       "source": "verified_figure_artwork_at_manuscript_display_width"
     },
     {
