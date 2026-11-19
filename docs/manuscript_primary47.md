@@ -948,7 +948,7 @@ Figure S12. Frozen donor partitions and SpatialSort seed sensitivity. (A,B) Puri
 
 ![Figure S13](../figures/current_manuscript/PNG/Figure_S13.png)
 
-Figure S13. Evaluation using 28 and 23 labels. (A,B) Agreement using the original 28 labels and the 23-label projected vocabulary in B005. (C,D) The corresponding comparison in B006. Each panel averages eight regions equally. Both vocabularies use the same reference-eligible cells. The fixed reference-only mask excludes ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 cells in B005 and 285,973 in B006. Predictions outside the projected vocabulary remain errors. The comparison reuses the accepted 28-label predictions. Tables S15a–S15b report projected-vocabulary coverage.
+Figure S13. Evaluation using the original 28-label and projected 23-label vocabularies. (A,B) Agreement using the original 28-label vocabulary and the projected 23-label vocabulary in B005. (C,D) The corresponding comparison in B006. Each panel averages eight regions equally. Both vocabularies are evaluated on the same reference-eligible cells. The fixed reference-only mask excludes ITLN+ Epithelial, Noise and PDPN+ Stromal cells, retaining 270,216 cells in B005 and 285,973 in B006. Predictions outside the projected vocabulary remain errors. The comparison reuses the same accepted predictions generated under the original 28-label vocabulary, without additional annotation calls or prediction-dependent exclusions. Tables S15a–S15b report projected-vocabulary coverage. ITLN stands for intelectin, and PDPN stands for podoplanin. Model names are GPT-6 Astra (Astra), Claude Opus 5.5 (Opus 5.5), Gemini 4 Argon (Argon) and DeepSeek V4.1 Flash 1017 (DeepSeek).
 
 ### TABLE S13a
 

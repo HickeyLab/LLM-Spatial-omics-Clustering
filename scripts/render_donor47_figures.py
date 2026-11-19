@@ -222,21 +222,31 @@ def figure_s12(scores,output):
 def figure_s13(scores,output):
     if scores.scope!='annotation':raise ValueError('Annotation figure cannot use clustering-only admission')
     rows=scores.table('annotation_donor_metrics.csv')
-    native=evaluation(rows,ELIGIBLE_NATIVE);coarse=evaluation(rows,SHARED23)
-    validate_coverage(native);validate_coverage(coarse)
-    validate_paired_population(native,coarse)
-    f=design.figure(125)
-    for i,donor in enumerate(DONORS):
-        for j,(selected,label) in enumerate([(native,'Native 28'),(coarse,'Shared 23')]):
-            data=selected[selected.donor.eq(donor)]
-            matrix_panel(f,chr(65+i*2+j),3+80*j,3+62*i,metric_matrix(data,'agreement'),MODEL_LABELS,
-                donor+' / '+label,coverage=metric_matrix(data,'cell_delivery_coverage'))
-    return design.finish(f,'Figure_S13',output,dict(scores.inputs),notes=[
-        'All four panels use exactly the same reference-eligible cells within donor; no new annotation calls.',
-        'Native 28-label and approved shared-23 projection are evaluation vocabularies, not two generation protocols.',
-        'Predictions mapped outside the 23-label vocabulary stay errors; no prediction-dependent cell exclusion.',
-        'Noise, ITLN+Epithelial and PDPN+Stromal reference labels are outside the shared-23 eligible population.',
-        'The completed bank has 100% native prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, † marks incomplete native delivery.',
+    original = evaluation(rows, ELIGIBLE_NATIVE)
+    projected = evaluation(rows, SHARED23)
+    validate_coverage(original)
+    validate_coverage(projected)
+    validate_paired_population(original, projected)
+
+    f = design.figure(125)
+    vocabularies = (
+        (original, 'Original 28-label vocabulary'),
+        (projected, 'Projected 23-label vocabulary'),
+    )
+    for i, donor in enumerate(DONORS):
+        for j, (selected, vocabulary) in enumerate(vocabularies):
+            data = selected[selected.donor.eq(donor)]
+            matrix_panel(
+                f, chr(65 + i * 2 + j), 3 + 80 * j, 3 + 62 * i,
+                metric_matrix(data, 'agreement'), MODEL_LABELS,
+                f'{donor} / {vocabulary}',
+                coverage=metric_matrix(data, 'cell_delivery_coverage'),
+            )
+    return design.finish(f, 'Figure_S13', output, dict(scores.inputs), notes=[
+        'Both vocabularies score the same predictions on the same reference-eligible cells within each donor.',
+        'Predictions outside the projected 23-label vocabulary remain errors.',
+        'The evaluation excludes cells with Noise, ITLN+ Epithelial and PDPN+ Stromal reference labels.',
+        'The completed bank has 100% prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, † marks incomplete prediction delivery.',
     ])
 
 

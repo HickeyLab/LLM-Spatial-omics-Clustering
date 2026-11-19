@@ -8,7 +8,7 @@
   "planned_cluster_predictions": 9468,
   "annotation_arm": "all_means_fractions",
   "source_manifest_sha256": "c42ed641865e06ba88bbbd376419c9b66b638e7236e0c50c86af3a554884af6c",
-  "renderer_sha256": "82843c94a8df1217558f0750cdc58081790b81386d47a94149fa0827abe55736",
+  "renderer_sha256": "c2f9e4b506aeb97decf85a632812559aa40b1eb60059fa501a3b81ca3fcdb0ba",
   "shared_style_sha256": "f12e5c5fd22dcd38b76d1c6dde4aac2ea3f80885b704306c2a2d34a62aca1c55",
   "figures": {
     "5": {
@@ -194,28 +194,27 @@
         "data/frozen/donor47_deepseek_completion_20261116/annotation_donor_metrics.csv": "863dffeddc93d02fe35d8c6a2b253162fd8269d2231aa83edd52df1f3da758b8"
       },
       "notes": [
-        "All four panels use exactly the same reference-eligible cells within donor; no new annotation calls.",
-        "Native 28-label and approved shared-23 projection are evaluation vocabularies, not two generation protocols.",
-        "Predictions mapped outside the 23-label vocabulary stay errors; no prediction-dependent cell exclusion.",
-        "Noise, ITLN+Epithelial and PDPN+Stromal reference labels are outside the shared-23 eligible population.",
-        "The completed bank has 100% native prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, \u2020 marks incomplete native delivery."
+        "Both vocabularies score the same predictions on the same reference-eligible cells within each donor.",
+        "Predictions outside the projected 23-label vocabulary remain errors.",
+        "The evaluation excludes cells with Noise, ITLN+ Epithelial and PDPN+ Stromal reference labels.",
+        "The completed bank has 100% prediction delivery. Table S15 reports projected-vocabulary coverage. For archival inputs, \u2020 marks incomplete prediction delivery."
       ],
       "files": {
         "Figure_S13.svg": {
-          "sha256": "66f0c0ce719d22e814cb7129ab9ed5e902e6e12913b063389395d0ad70a8fd79",
-          "bytes": 56338
+          "sha256": "d3df21226da93c20fe331e6124b19635d10a6f7840a79e421de1b3d5df08a60a",
+          "bytes": 56208
         },
         "Figure_S13.pdf": {
-          "sha256": "f4373176b91bcf870dd0e7b090239efe3b66f538cfb98d3318785b6246344a60",
-          "bytes": 44482
+          "sha256": "4afba023889c87b4ffb58ded41de354c363361e261aca437a7926e9964989461",
+          "bytes": 45849
         },
         "Figure_S13.png": {
-          "sha256": "2e8b56a1a3a1bbaf442a0b8247a491b2aea5b3c24a96560c3d6f76e4a2eefa2b",
-          "bytes": 375716
+          "sha256": "7ea3c1e4f03c499fa630231ea4fc5a9d0923c72ff1e56768d3f056b08dec21bf",
+          "bytes": 381344
         },
         "Figure_S13.tiff": {
-          "sha256": "312fc0e3744b2e3b23494df742cddde051bcc84509662c81968cfb889790131a",
-          "bytes": 1042324
+          "sha256": "75fe156f9e51c6d698751ca4c0a285488dfb127cfb67f8e1a0da0c8de74540f7",
+          "bytes": 1067320
         }
       }
     }
