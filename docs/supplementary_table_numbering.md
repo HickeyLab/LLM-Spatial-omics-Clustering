@@ -8,7 +8,7 @@ The saved manuscript contains 21 displayed supplementary tables. Table S7 is sup
 | S2A | Frozen clustering configurations and hyperparameters | [Table_S2A.csv](tables/ieee_reviewer47_20261119/Table_S2A.csv), [47-marker clustering manifest](../data/frozen/clustering47_primary_20261108/manifest.json) |
 | S6a | Equal-test-region agreement for both input arms and paired change | [Table_S6a.csv](tables/ieee_reviewer47_20261119/Table_S6a.csv) |
 | S6d | Requested model identities, transport and inference settings | [Table_S6d.csv](tables/ieee_reviewer47_20261119/Table_S6d.csv), [completed execution records](revision/reviewer47_completed_publication_20261115.md) |
-| S7 | Twelve conditional clustering comparisons | [conditional_comparisons.csv](../data/frozen/clustering47_primary_20261108/conditional_comparisons.csv), [96 regional observations](../data/frozen/clustering47_primary_20261108/paired_regional_observations.csv) |
+| S7 | Twelve conditional clustering comparisons | [conditional_comparisons.csv](../data/frozen/figure2_native28_20261119/conditional_comparisons.csv), [96 regional observations](../data/frozen/figure2_native28_20261119/paired_regional_observations.csv) |
 | S8a–d | Four marker representations, one table per model | [IEEE tables](tables/ieee_reviewer47_20261119/manifest.json), [complete condition metrics and coverage](../data/frozen/astra_prompt_controls_results_20261115/set_metrics.csv) |
 | S9 | Five Opus 5.5 controls and two Astra–Leiden controls | [Table_S9.csv](tables/ieee_reviewer47_20261119/Table_S9.csv), [full contrasts](../data/frozen/astra_prompt_controls_results_20261115/control_contrasts.csv) |
 | S10 | Conventional B004 annotation classifiers | [Table_S10.csv](tables/ieee_reviewer47_20261119/Table_S10.csv) |

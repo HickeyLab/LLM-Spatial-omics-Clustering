@@ -31,14 +31,14 @@
     {
       "current_label": "S7",
       "filename": "conditional_comparisons.csv",
-      "path": "data/frozen/clustering47_primary_20261108/conditional_comparisons.csv",
-      "sha256": "7e28740f387be750897dbd2b95fc36c634a9c7b0973a4825fab26fa7937e285b"
+      "path": "data/frozen/figure2_native28_20261119/conditional_comparisons.csv",
+      "sha256": "7dffcc584508ba040c2a552a9284e3102899747a50cabdce0dbe035a3b5e400f"
     },
     {
       "current_label": "S7",
       "filename": "paired_regional_observations.csv",
-      "path": "data/frozen/clustering47_primary_20261108/paired_regional_observations.csv",
-      "sha256": "b32487d19c49a8a88de82d5a1cc19b7d40647f4d3c623d3e9fb816d66a70f9eb"
+      "path": "data/frozen/figure2_native28_20261119/paired_regional_observations.csv",
+      "sha256": "cd83f4a38e379d8d5e3ac89fe35e0073bb86779151578d94f2dc6ae5f0eb52aa"
     },
     {
       "current_label": "S8a",

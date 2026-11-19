@@ -1,0 +1,29 @@
+cell_type,n_cells
+Epithelial,30833
+Stromal,21084
+Smooth muscle,19362
+Plasma,19301
+M2 Macrophage,14803
+CD8+ T,14048
+Nerve,10715
+Noise,10495
+CD49a+ Smooth muscle,9749
+CD66+ Epithelial,9468
+TA,8170
+CD4+ T,8140
+CD36 low Endothelial,7846
+Goblet,7068
+CD36 high Endothelial,5287
+MUC1+ Epithelial,3746
+ITLN+ Epithelial,3664
+DC,3102
+PDPN+ Stromal,2703
+B,2587
+Cycling TA,2524
+M1 Macrophage,1266
+Paneth,1070
+Neuroendocrine,1020
+Neutrophil,903
+ICC,769
+CD57+ Epithelial,185
+NK,174

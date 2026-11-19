@@ -1,5 +1,7 @@
 # Figure 2, Panel B — Ground-truth cell type distribution
 
+The current [manuscript Figure 2](../figures/current_manuscript/PNG/Figure_2.png) displays all 28 native reference labels, including 10,495 Noise cells. The standalone reproduction below preserves the earlier 27-label panel. See the [current Figure 2 scoring bundle](../data/frozen/figure2_native28_20261119/README.md).
+
 ## Scope
 
 Panel B uses only the eight B004 `File_ID` values declared in

@@ -1,10 +1,10 @@
 {
   "schema": "cell_masks.separate_figures_current.v1",
-  "created_utc": "2026-11-19T21:53:23.804025+00:00",
+  "created_utc": "2026-11-19T22:18:16.295150+00:00",
   "source_manuscript_title": "20260731_LLMSpatialOmicsClustering_manuscript_revised",
-  "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+  "source_manuscript_docx_sha256": "ba3453ce646c4322c70af4c93a401efc5e28b64454b6d84e08ce44f4d4cf78bd",
   "source_saved_export": "Saved Google Docs manuscript Word export",
-  "source_saved_export_time_local": "2026-11-19T16:53:23.804025-05:00 America/New_York",
+  "source_saved_export_time_local": "2026-11-19T17:16:09.316451-05:00 America/New_York",
   "figure_count": 19,
   "png_count": 21,
   "numbering": "Current manuscript labels. Figure S5 is supplied in three parts A, B and C.",
@@ -63,13 +63,13 @@
       "current_figure": "2",
       "part": null,
       "filename": "PNG/Figure_2.png",
-      "sha256": "cd25f997441b88fc06ea06d23f05b349f552144d116cb1ee91324fc3c78c55fd",
-      "bytes": 726857,
+      "sha256": "742734d5b8025987b7965206427030246df3e0c760369d0c5a0a3b5637088d06",
+      "bytes": 651609,
       "dimensions_px": [
         1455,
         1800
       ],
-      "mode": "RGBA",
+      "mode": "RGB",
       "dpi_metadata": [
         244.1448,
         244.1448
@@ -85,9 +85,9 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "cd25f997441b88fc06ea06d23f05b349f552144d116cb1ee91324fc3c78c55fd",
-      "source": "verified_figure_artwork_at_manuscript_display_width",
-      "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
+      "live_docx_image_sha256": "742734d5b8025987b7965206427030246df3e0c760369d0c5a0a3b5637088d06",
+      "source": "verified_native28_rescore_at_manuscript_display_width",
+      "source_manuscript_docx_sha256": "ba3453ce646c4322c70af4c93a401efc5e28b64454b6d84e08ce44f4d4cf78bd",
       "live_display_height_inches": 7.372061461067367
     },
     {
@@ -705,7 +705,15 @@
         "S14"
       ],
       "source_manuscript_docx_sha256": "f05a2b5b7f4313f90f02c78e3dd7618293ed15eb0d0c7ed953e8ea1eddb6b04c"
+    },
+    {
+      "figures": [
+        "2",
+        "S6"
+      ],
+      "source_manuscript_docx_sha256": "ba3453ce646c4322c70af4c93a401efc5e28b64454b6d84e08ce44f4d4cf78bd",
+      "scope": "Verified scoring vocabulary updates within the prior caption snapshot."
     }
   ],
-  "captions_sha256": "21f04f3d0d9d0e98c537e4696eb88a099179a927c7abbcf721d038ed56ff70fe"
+  "captions_sha256": "5fa56a596316a795f719990e7923b599dc55dc34f92159abae436eec1da5e426"
 }

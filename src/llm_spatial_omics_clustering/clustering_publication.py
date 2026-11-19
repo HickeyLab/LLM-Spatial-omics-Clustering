@@ -31,6 +31,18 @@ def contract(root=ROOT):
         raise ValueError('Unsupported current clustering contract')
     if manifest['primary_spatialsort_seed'] != 42 or manifest['spatialsort_sensitivity_seed'] != 43:
         raise ValueError('Frozen SpatialSort primary/sensitivity selection changed')
+    rescore = config.get('figure_2_rescore')
+    if rescore is not None:
+        rescore_path = root / rescore['manifest']
+        if digest(rescore_path) != rescore['manifest_sha256']:
+            raise ValueError('Current Figure 2 rescore manifest checksum differs')
+        figure_2 = json.loads(rescore_path.read_text())
+        if figure_2['schema'] != 'figure2.native28.v1':
+            raise ValueError('Unsupported current Figure 2 rescore contract')
+        if set(manifest['files']) & set(figure_2['files']):
+            raise ValueError('Current Figure 2 rescore overlaps the frozen clustering inputs')
+        manifest['files'].update(figure_2['files'])
+        manifest['panel_policies'].update(figure_2['panel_policies'])
     return config, manifest
 
 
