@@ -90,13 +90,13 @@
       "current_figure": "3",
       "part": null,
       "filename": "PNG/Figure_3.png",
-      "sha256": "899a7d2d90f66d271eab335a3349baedf3fe0fe235d1912ee2336f9fa86b7c2e",
-      "bytes": 772544,
+      "sha256": "30fdd25669f83d593f972528445410d1a020d5fd2feb4b083bbb1ae2364e286d",
+      "bytes": 853718,
       "dimensions_px": [
         1692,
         2048
       ],
-      "mode": "RGB",
+      "mode": "RGBA",
       "dpi_metadata": [
         260.2992,
         260.2992
@@ -112,7 +112,7 @@
         "filter": "BOX",
         "mae_0_255": 0.0
       },
-      "live_docx_image_sha256": "899a7d2d90f66d271eab335a3349baedf3fe0fe235d1912ee2336f9fa86b7c2e",
+      "live_docx_image_sha256": "30fdd25669f83d593f972528445410d1a020d5fd2feb4b083bbb1ae2364e286d",
       "source": "verified_approved_figure_artwork_at_saved_raster_resolution"
     },
     {
