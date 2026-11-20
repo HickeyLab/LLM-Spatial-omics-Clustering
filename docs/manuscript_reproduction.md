@@ -34,12 +34,18 @@ The [current B004 and processing table exports](tables/ieee_reviewer47_20261119/
 
 ## Manuscript artwork and figure generation
 
-The [saved manuscript artwork](../figures/current_manuscript/PNG) uses the current figure numbers, including S14. The [figure and notebook index](../notebooks/final_figures/README.md) maps current figure numbers to stable renderer identifiers and source files. In the native renderer, figures S1–S10 refer to the earlier file identifiers documented in the index.
+The [saved manuscript artwork](../figures/current_manuscript/PNG) uses the current figure numbers, including S14 and S15. The [figure and notebook index](../notebooks/final_figures/README.md) maps current figure numbers to stable renderer identifiers and source files. In the native renderer, figures S1–S10 refer to the earlier file identifiers documented in the index.
 
 To render current Figures S2 and S10 from the completed B004 results, use a fresh output directory:
 
 ```bash
 python3.12 scripts/render_reviewer47_figures.py --output outputs/reviewer47_completed_figures
+```
+
+Figure S15 uses the [frozen B004 Leiden Noise sensitivity results](../data/frozen/b004_astra_noise_20261120/manifest.json). Rebuild the two panels offline:
+
+```bash
+python3.12 scripts/render_figure_s15.py --output outputs/Figure_S15.png
 ```
 
 For the other native figure exports, use the renderer identifiers below:

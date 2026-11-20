@@ -1,6 +1,6 @@
 # Current manuscript figure map
 
-The [current figure index](../configs/manuscript_display_crosswalk.json) records 19 figures in 21 PNG files. Each image is pinned by SHA-256. The [caption file](../figures/current_manuscript/Figure_captions.txt) follows the saved manuscript.
+The [current figure index](../configs/manuscript_display_crosswalk.json) records 20 figures in 22 PNG files. Each image is pinned by SHA-256. The [caption file](../figures/current_manuscript/Figure_captions.txt) follows the saved manuscript.
 
 Native source IDs and filenames identify the reproducibility snapshots. The PNGs and captions use the manuscript display numbers. Figure S5 is supplied in three parts. Figure S14 is available as saved artwork. The native notebooks linked for S2 and S10 replay the November 11 snapshot. The [completed B004 replay](revision/reviewer47_completed_publication_20261115.md) verifies the saved manuscript's supplemental results, and the [completed figure renderer](../scripts/render_reviewer47_figures.py) rebuilds S2 and S10 from those results.
 
@@ -25,6 +25,7 @@ Native source IDs and filenames identify the reproducibility snapshots. The PNGs
 | S12. Donor clustering and SpatialSort seed sensitivity | A–C | [PNG](../figures/current_manuscript/PNG/Figure_S12.png) | [Donor renderer](../scripts/render_donor47_figures.py) |
 | S13. Original 28-label and projected 23-label evaluation | A–D | [PNG](../figures/current_manuscript/PNG/Figure_S13.png) | [Donor renderer](../scripts/render_donor47_figures.py) |
 | S14. Reference cell maps for all 24 regions | Unlettered | [PNG](../figures/current_manuscript/PNG/Figure_S14.png) | Saved manuscript artwork |
+| S15. B004 Leiden Noise sensitivity | A–B | [PNG](../figures/current_manuscript/PNG/Figure_S15.png) | [Noise sensitivity renderer](../scripts/render_figure_s15.py) |
 
 - Figures 1 and S3–S5 cover the independent spillover-compensation and matching analyses. Figures 2, S6 and S7 use the frozen B004 clustering partitions. Figure 2E–H scores 220,082 cells using the original 28-label vocabulary, including Noise. Figure S7 uses the original 28-label vocabulary including Noise.
 - Figures 3, 4, S1, S8, S9 and S11 use the [completed B004 primary annotation bank](../data/frozen/annotation47_results_20261111/manifest.json). Figure 4 shows the selected Leiden–Astra pipeline. Figure S1 is the supplementary Leiden–Opus 5.5 comparison.

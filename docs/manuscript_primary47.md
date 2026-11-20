@@ -115,7 +115,7 @@ $$
 P_{\mathrm{UB}}=100\frac{A_{\mathrm{cell}}}{A_{\mathrm{UB}}}=100\frac{\sum_{k=1}^{K}n_{k,\hat c_k}}{\sum_{k=1}^{K}\max_c n_{k,c}}\tag{4}
 $$
 
-This ratio compares observed cell-level reference agreement with its maximum possible value for the same fixed clusters, cells and label set. A cell counted as a match whenever the model predicted its reference label, even when that label differed from the cluster’s majority label. Secondary scoring excluded reference-Noise cells only at evaluation, while predicted Noise on retained cells remained an error. Supplementary Methods, Section SM4 provides further calculation details. The overall error identity is
+This ratio compares observed cell-level reference agreement with its maximum possible value for the same fixed clusters, cells and label set. A cell counted as a match whenever the model predicted its reference label, even when that label differed from the cluster’s majority label. For B004 Leiden, we varied whether the model could predict Noise and whether reference-Noise cells counted toward the score (Figure S15). The overall error identity is
 
 $$
 1-A_{\mathrm{cell}}=(1-A_{\mathrm{UB}})+(A_{\mathrm{UB}}-A_{\mathrm{cell}})\tag{5}
@@ -250,6 +250,8 @@ Among the same cells retained for both label definitions, Leiden–Astra agreeme
 ### 3.7 Annotation controls and additional comparisons
 
 Matched prompt controls did not improve Opus 5.5 agreement in the tested conditions. Adding the correct clustering-method name reduced agreement by 2.54–5.12 percentage points across the four methods. The corresponding baselines used all-marker means plus fractions and omitted clustering-method names (Figure S2A and Table S9). Adding measured neighborhood expression reduced Leiden–Opus 5.5 agreement from 50.27% to 45.97%, a 4.29-percentage-point decrease (Figure S2B). Leiden–Astra agreement decreased from 58.12% to 53.53% with the method name and to 51.43% with neighborhood-expression summaries, changes of −4.59 and −6.69 percentage points, respectively (Figure S2A,B and Table S9). Macro-F1 calculated using the original 28-label vocabulary was 0.4490 for the Astra baseline, 0.4458 with the method name and 0.4531 with neighborhood-expression summaries. These single-generation contrasts do not establish repeatability or a general effect of method names or spatial context. The Astra controls and baseline used different Batch routes (Section 2.7).
+
+Allowing Noise increased mean test-region agreement by 5.11 percentage points when reference Noise cells were included, with mixed effects after those cells were excluded (Figure S15).
 
 Conventional classifiers provided a supervised comparison using the same numerical cluster profiles (Table S10). With all-marker means plus fractions, test-region agreement ranged from 44.09% to 68.20% for logistic regression and from 35.19% to 55.74% for nearest-centroid classification. The Leiden logistic-regression classifier achieved 68.20%, compared with 58.12% for Leiden–Astra. The classifier, however, used training-cell reference labels that were not provided in the LLM prompts.
 
@@ -465,6 +467,10 @@ Figure S13. Evaluation using the original 28-label and projected 23-label vocabu
 ![Figure S14](../figures/current_manuscript/PNG/Figure_S14.png)
 
 Figure S14. Spatial distribution of reference-labeled cells across the 24 study regions. Columns show B004, B005 and B006, and rows align the eight anatomical sites. Each dot represents one benchmark cell at its tissue coordinates. Colors show the dataset reference cell-type annotations, including Noise. All panels use the same spatial scale. The scale bar represents 2,000 pixels in the source images.
+
+![Figure S15](../figures/current_manuscript/PNG/Figure_S15.png)
+
+Figure S15. Noise sensitivity of B004 Leiden annotation. (A) Reference agreement and macro-F1 from four OpenAI Batch calls using GPT-6.2 Astra at maximum reasoning, one per condition. (B) Change in agreement when Noise was an eligible prediction. Pairs 1 and 2 use the calls from the counted and excluded columns of A, respectively. Both pairs were scored under both reference policies. Scores equally weight transverse colon and mid-jejunum. Counting reference Noise retains 69,576 cells and uses 28 labels for macro-F1. Excluding it retains 63,862 cells and uses 27 labels.
 
 ### TABLE S1
 

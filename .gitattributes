@@ -14,5 +14,7 @@ data/frozen/annotation47_results_20261111/** -text whitespace=cr-at-eol
 data/frozen/reviewer47_results_20261111/** -text whitespace=cr-at-eol
 data/frozen/reviewer47_deepseek_completion_20261115/** -text whitespace=cr-at-eol
 data/frozen/astra_prompt_controls_results_20261115/** -text whitespace=cr-at-eol
+data/frozen/b004_astra_noise_20261120/*.csv -text whitespace=cr-at-eol
+figures/current_manuscript/Figure_inventory.csv -text whitespace=cr-at-eol
 docs/tables/ieee_reviewer47_20261119/** -text
 archive/reviewer47_publication_before_20261111/artwork/figures/publication/*.svg -text linguist-generated=true whitespace=-blank-at-eol

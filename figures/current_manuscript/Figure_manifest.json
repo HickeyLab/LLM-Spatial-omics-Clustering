@@ -5,8 +5,8 @@
   "source_manuscript_docx_sha256": "ba3453ce646c4322c70af4c93a401efc5e28b64454b6d84e08ce44f4d4cf78bd",
   "source_saved_export": "Saved Google Docs manuscript Word export",
   "source_saved_export_time_local": "2026-11-19T17:16:09.316451-05:00 America/New_York",
-  "figure_count": 19,
-  "png_count": 21,
+  "figure_count": 20,
+  "png_count": 22,
   "numbering": "Current manuscript labels. Figure S5 is supplied in three parts A, B and C.",
   "all_png_sources_preserved_without_resampling": true,
   "all_current_native_pngs_bound_to_saved_live_content": true,
@@ -678,6 +678,28 @@
       "source": "verified_figure_artwork_at_manuscript_display_width",
       "source_manuscript_docx_sha256": "ec4939e75c85ee3895c9e2a7eb85a98cf9f1ad5cd45b66a9462f7efa315c6a40",
       "live_display_height_inches": 7.18
+    },
+    {
+      "current_figure": "S15",
+      "part": null,
+      "filename": "PNG/Figure_S15.png",
+      "sha256": "e2dee07453be5fb82ecf130a90c6df8c2d83da5f25a7d3d1abea1751785c71e8",
+      "bytes": 149544,
+      "dimensions_px": [
+        3900,
+        1140
+      ],
+      "mode": "RGBA",
+      "dpi_metadata": [
+        599.9988,
+        599.9988
+      ],
+      "native_file_copied_byte_exactly": true,
+      "display_width_inches": 6.5,
+      "native_export_pixels_per_display_inch": 600.0,
+      "source": "Created from the frozen B004 Noise sensitivity scores and verified in the accepted manuscript.",
+      "scored_inputs": "data/frozen/b004_astra_noise_20261120/manifest.json",
+      "renderer": "scripts/render_figure_s15.py"
     }
   ],
   "prior_public_figure_snapshot": "1b73a57e0b659f7d3233290f082fa4c93f19a23a",
@@ -713,7 +735,15 @@
       ],
       "source_manuscript_docx_sha256": "ba3453ce646c4322c70af4c93a401efc5e28b64454b6d84e08ce44f4d4cf78bd",
       "scope": "Verified scoring vocabulary updates within the prior caption snapshot."
+    },
+    {
+      "figures": [
+        "S15"
+      ],
+      "verified_date": "2026-11-20",
+      "caption_sha256": "2eeb3f67a239ccc33b1753f002f81e6b77cc69b783ccd9e5e59c9f6f05f4b8e5",
+      "scope": "Caption read back from the accepted B004 Noise sensitivity update in the live manuscript."
     }
   ],
-  "captions_sha256": "5fa56a596316a795f719990e7923b599dc55dc34f92159abae436eec1da5e426"
+  "captions_sha256": "66562818497d6a31506c24f5b2ff7c6fe35e1aceaea844303c4734e228299d55"
 }
