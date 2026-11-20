@@ -1,6 +1,6 @@
 # Manuscript figure notebooks and replay
 
-The [current figure index](../../configs/manuscript_display_crosswalk.json) records the saved manuscript's 19 figures in 21 PNG files. The [current captions](../../figures/current_manuscript/Figure_captions.txt) use the same figure numbers as the manuscript.
+The [current figure index](../../configs/manuscript_display_crosswalk.json) records the saved manuscript's 20 figures in 22 PNG files. The [current captions](../../figures/current_manuscript/Figure_captions.txt) use the same figure numbers as the manuscript.
 
 Native source IDs and filenames identify the reproducibility snapshots. The PNGs and captions use the manuscript display numbers. Figure S5 is supplied in three parts. Figure S14 is available as saved artwork. The native notebooks linked for S2 and S10 replay the November 11 snapshot. The [completed figure renderer](../../scripts/render_reviewer47_figures.py) rebuilds current S2 and S10 from the completed B004 result bank.
 
@@ -25,6 +25,7 @@ Native source IDs and filenames identify the reproducibility snapshots. The PNGs
 | S12. Donor clustering and SpatialSort seed sensitivity | A–C | [PNG](../../figures/current_manuscript/PNG/Figure_S12.png) | [Donor renderer](../../scripts/render_donor47_figures.py) |
 | S13. Original 28-label and projected 23-label evaluation | A–D | [PNG](../../figures/current_manuscript/PNG/Figure_S13.png) | [Donor renderer](../../scripts/render_donor47_figures.py) |
 | S14. Reference cell maps for all 24 regions | Unlettered | [PNG](../../figures/current_manuscript/PNG/Figure_S14.png) | Saved manuscript artwork |
+| S15. B004 Leiden Noise sensitivity | A–B | [PNG](../../figures/current_manuscript/PNG/Figure_S15.png) | [Noise sensitivity renderer](../../scripts/render_figure_s15.py) |
 
 - [Completed B004 offline replay](../../docs/revision/reviewer47_completed_publication_20261115.md) verifies the recovered DeepSeek result, the completed Astra controls and the earlier frozen results.
 - [Cross-donor offline replay](../../docs/manuscript_reproduction.md#completed-cross-donor-scoring) verifies the donor panel inputs and tables.

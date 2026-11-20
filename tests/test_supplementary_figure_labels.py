@@ -44,7 +44,7 @@ class SupplementaryFigureLabelTests(unittest.TestCase):
     def test_navigation_lists_every_current_supplement(self):
         index = json.loads((ROOT / 'configs/manuscript_display_crosswalk.json').read_text())
         records = index['figures']
-        expected_ids = {str(i) for i in range(1, 6)} | {f'S{i}' for i in range(1, 15)}
+        expected_ids = {str(i) for i in range(1, 6)} | {f'S{i}' for i in range(1, 16)}
         self.assertEqual(set(records), expected_ids)
         caption_path = ROOT / 'figures/current_manuscript/Figure_captions.txt'
         artwork_manifest = json.loads((ROOT / index['current_artwork_manifest']).read_text())
@@ -63,7 +63,7 @@ class SupplementaryFigureLabelTests(unittest.TestCase):
                     image = ROOT / entry['path']
                     self.assertIn(image.name, text)
                     self.assertEqual(hashlib.sha256(image.read_bytes()).hexdigest(), entry['sha256'])
-        self.assertEqual(sum(len(r['images']) for r in records.values()), 21)
+        self.assertEqual(sum(len(r['images']) for r in records.values()), 22)
         self.assertEqual(len(records['S5']['images']), 3)
 
 

@@ -2,9 +2,9 @@
 
 ## Current manuscript figures
 
-Read the [manuscript](docs/manuscript_primary47.md) or browse [Figures 1–5 and S1–S14](figures/current_manuscript/PNG) and their [captions](figures/current_manuscript/Figure_captions.txt).
+Read the [manuscript](docs/manuscript_primary47.md) or browse [Figures 1–5 and S1–S15](figures/current_manuscript/PNG) and their [captions](figures/current_manuscript/Figure_captions.txt).
 
-The study comprises **809,550 cells across 24 tissue regions from three donors**. B004 supplies within-donor benchmarking and classifier development. B005/B006 supply cross-donor evaluation. All annotation evidence uses 47 protein markers and the native 28-label vocabulary including Noise.
+The study comprises **809,550 cells across 24 tissue regions from three donors**. B004 supplies within-donor benchmarking and classifier development. B005/B006 supply cross-donor evaluation. The primary annotation comparison uses 47 protein markers and the native 28-label vocabulary including Noise.
 
 The B004 primary campaign comprises **220,082 cells, four clustering methods, four models, two marker-representation arms, 32 annotation sets, 128 accepted logical request items and 9,024 cluster predictions**. The [B004 study record](configs/annotation47_active_study.json) and [primary results](data/frozen/annotation47_results_20261111/manifest.json) define those publication inputs.
 
@@ -12,7 +12,7 @@ In B004, Leiden, FlowSOM, SpatialSort and PIXIE have 300, 299, 229 and 300 occup
 
 ## Figure reproduction
 
-The [manuscript figure map](docs/figure_map.md) and [notebook index](notebooks/final_figures/README.md) map all 19 figures to their sources. The saved manuscript artwork contains 21 PNGs because Figure S5 has three parts. The [display crosswalk](configs/manuscript_display_crosswalk.json) binds the current figure numbers and artwork hashes to the stable identifiers used in [native figure exports](figures/publication). Figure S14 is available as saved manuscript artwork.
+The [manuscript figure map](docs/figure_map.md) and [notebook index](notebooks/final_figures/README.md) map all 20 figures to their sources. The saved manuscript artwork contains 22 PNGs because Figure S5 has three parts. The [display crosswalk](configs/manuscript_display_crosswalk.json) binds the current figure numbers and artwork hashes to the stable identifiers used in [native figure exports](figures/publication). Figure S14 is available as saved manuscript artwork. Figure S15 uses the [frozen B004 Leiden Noise sensitivity results](data/frozen/b004_astra_noise_20261120/manifest.json).
 
 ## Annotation results and scoring
 
